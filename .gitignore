@@ -1,0 +1,6 @@
+# Ignore Jetbrains files
+# .clang-format is used for formatting instead
+.idea
+
+# Ignore build folders
+bin/
