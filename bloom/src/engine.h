@@ -3,15 +3,12 @@
  * \author Xein <xgonip@gmail.com>
  * \date 20/11/2024
  *
- * \brief [Brief description of the file's purpose]
+ * \brief Main engine class
  */
 
 #pragma once
 
-#include <iostream>
-
 #include "core.h"
-
 
 namespace bloom {
 
@@ -22,11 +19,18 @@ public:
   virtual ~Engine() = default;
 
   // Functions
+  /// \brief Core game loop function
   void Run();
 
 };
 
-// To be defined on client
+/*
+ *  This provides us with a way to create an entrypoint for the bloom engine
+ *  Note for future xein: this is wanted as it makes the main function be handled by our engine
+ *  rather than by our game
+ *
+ *  This function is declared here but implemented on main.cpp on the game project
+ */
 Engine* CreateEngine();
 
 }

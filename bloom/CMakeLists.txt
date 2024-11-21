@@ -10,7 +10,8 @@ add_library(bloom-engine SHARED
             src/engine.cpp
             src/core.h
             src/entrypoint.h
-            src/logger.h
+            src/Log.h
+            src/log.cpp
 )
 
 target_include_directories(bloom-engine PUBLIC lib/spdlog/include)

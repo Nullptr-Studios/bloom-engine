@@ -8,6 +8,9 @@
 
 #include <bloom.h>
 
+/**
+ *  Main class for the game
+ */
 class Sandbox : public bloom::Engine {
 public:
   Sandbox() = default;

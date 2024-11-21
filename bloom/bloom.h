@@ -3,13 +3,13 @@
  * \author Xein <xgonip@gmail.com>
  * \date 20/11/2024
  *
- * \brief [Brief description of the file's purpose]
+ * \brief DLL Wrapper for our game engine
  */
 
 #pragma once
 
-#include "src/core.h"
-
 // ---Entry point------------------
 #include "src/entrypoint.h"
 // --------------------------------
+
+#include "src/core.h"

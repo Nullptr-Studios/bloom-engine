@@ -3,19 +3,25 @@
  * \author Xein <xgonip@gmail.com>
  * \date 20/11/2024
  *
- * \brief [Brief description of the file's purpose]
+ * \brief Entrypoint for our main function
  */
 
 #pragma once
-#include "engine.h"
 #include <spdlog/spdlog.h>
+#include "engine.h"
+#include "log.h"
 
 #ifdef BLOOM_PLATFORM_WINDOWS
 
 int main(int argc, char** argv) {
+  bloom::Log::Init();
+  BLOOM_WARN("Test warning");
+  BLOOM_INFO("Test info");
+  BLOOM_TRACE("Test trace");
+  BLOOM_ERROR("Test error");
+  GAME_CRITICAL("Test info");
+
   auto _engine = bloom::CreateEngine();
-  spdlog::warn("Easy padding in numbers like {:08d}", 12);
-  spdlog::critical("Support for int: {0:d};  hex: {0:x};  oct: {0:o}; bin: {0:b}", 42);
   _engine->Run();
   delete _engine;
 }
