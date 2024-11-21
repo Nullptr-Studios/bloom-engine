@@ -15,11 +15,11 @@
 
 int main(int argc, char** argv) {
   bloom::Log::Init();
+  GAME_CRITICAL("Test info");
+  BLOOM_ERROR("Test error");
   BLOOM_WARN("Test warning");
   BLOOM_INFO("Test info");
-  BLOOM_TRACE("Test trace");
-  BLOOM_ERROR("Test error");
-  GAME_CRITICAL("Test info");
+  BLOOM_LOG("Test trace");
 
   auto _engine = bloom::CreateEngine();
   _engine->Run();

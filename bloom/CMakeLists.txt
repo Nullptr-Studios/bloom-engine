@@ -12,6 +12,11 @@ add_library(bloom-engine SHARED
             src/entrypoint.h
             src/Log.h
             src/log.cpp
+            src/events/event.h
+            src/events/game_event.h
+            src/events/key_event.h
+            src/events/mouse_event.h
+            src/events/key_event.h
 )
 
 target_include_directories(bloom-engine PUBLIC lib/spdlog/include)

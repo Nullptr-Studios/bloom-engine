@@ -24,12 +24,22 @@ public:
 
 };
 
-/*
- *  This provides us with a way to create an entrypoint for the bloom engine
- *  Note for future xein: this is wanted as it makes the main function be handled by our engine
- *  rather than by our game
+/**
+ * @brief Creates an entry point for the Bloom engine.
  *
- *  This function is declared here but implemented on main.cpp on the game project
+ * This function serves as the primary entry point for the engine, allowing it to handle
+ * the main execution flow instead of the game directly. By abstracting the @c main function,
+ * the engine can take full control over initialization, execution, and shutdown processes.
+ *
+ * @note For future Xein: This design is intentional to ensure that the engine manages
+ * the @c main function rather than the game project. Any game-specific logic should
+ * integrate with this entry point.
+ *
+ * @details While this function is declared here, its implementation resides in main.cpp
+ * within the game project. This separation ensures modularity between the engine
+ * and game layers.
+ *
+ * @returns A pointer to the @c Engine class instance, which is used to manage the engine's lifecycle.
  */
 Engine* CreateEngine();
 

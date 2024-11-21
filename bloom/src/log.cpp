@@ -11,6 +11,7 @@ void Log::Init() {
   _bloomLogger->set_level(spdlog::level::trace);
   _gameLogger = spdlog::stdout_color_mt("GAME");
   _gameLogger->set_level(spdlog::level::trace);
+
 }
 
 } // namespace bloom
