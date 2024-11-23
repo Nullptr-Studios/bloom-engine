@@ -9,3 +9,4 @@ set(CMAKE_CXX_STANDARD 23)
 
 add_subdirectory(bloom)
 add_subdirectory(sandbox)
+add_subdirectory(tools/tracy)

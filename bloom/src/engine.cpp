@@ -2,8 +2,20 @@
 
 namespace bloom {
 
-  void Engine::Run() {
-    while (true) {}
+  Engine::Engine() {
+
+  }
+
+  void Engine::Begin() {
+
+  }
+
+  void Engine::Tick() {
+
+  }
+
+  void Engine::End() {
+
   }
 
 } // namespace bloom

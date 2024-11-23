@@ -7,23 +7,28 @@
  */
 
 #pragma once
-#include <spdlog/spdlog.h>
 #include "engine.h"
 #include "log.h"
+#include <spdlog/spdlog.h>
+
+#define GLFW_INCLUDE_VULKAN
+#include <GLFW/glfw3.h>
 
 #ifdef BLOOM_PLATFORM_WINDOWS
 
 int main(int argc, char** argv) {
-  bloom::Log::Init();
-  GAME_CRITICAL("Test info");
-  BLOOM_ERROR("Test error");
-  BLOOM_WARN("Test warning");
-  BLOOM_INFO("Test info");
-  BLOOM_LOG("Test trace");
+  const auto _engine = bloom::CreateEngine();
 
-  auto _engine = bloom::CreateEngine();
-  _engine->Run();
-  delete _engine;
+  glfwInit();
+  _engine->Begin();
+
+  while (_engine->ShouldRun()) {
+    _engine->Tick();
+    _engine->Render();
+    BLOOM_LOG("Running...");
+  }
+
+  _engine->End();
 }
 
 #endif

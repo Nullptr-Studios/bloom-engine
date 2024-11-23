@@ -1,3 +1,9 @@
 [submodule "bloom/lib/spdlog"]
 	path = bloom/lib/spdlog
 	url = https://github.com/gabime/spdlog
+[submodule "tools/tracy"]
+	path = tools/tracy
+	url = https://github.com/wolfpld/tracy.git
+[submodule "bloom/lib/glfw"]
+	path = bloom/lib/glfw
+	url = https://github.com/glfw/glfw.git

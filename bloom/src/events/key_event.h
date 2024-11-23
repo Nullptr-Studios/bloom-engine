@@ -12,7 +12,7 @@
 
 #pragma once
 #include "event.h"
-#include <sstream>
+#include "bloom_header.h"
 
 namespace bloom {
 

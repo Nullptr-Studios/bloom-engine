@@ -9,18 +9,26 @@
 #pragma once
 
 #include "core.h"
+#include "window.h"
 
 namespace bloom {
 
 class BLOOM_API Engine {
 
 public:
-  Engine() = default;
+  Engine();
   virtual ~Engine() = default;
 
   // Functions
-  /// \brief Core game loop function
-  void Run();
+  void Begin();
+  void Tick();
+  void Render() {};
+  void End();
+
+  inline bool ShouldRun() { return true; }
+
+protected:
+  Window* _window = nullptr;
 
 };
 
@@ -41,6 +49,6 @@ public:
  *
  * @returns A pointer to the @c Engine class instance, which is used to manage the engine's lifecycle.
  */
-Engine* CreateEngine();
+std::unique_ptr<bloom::Engine> CreateEngine();
 
 }
