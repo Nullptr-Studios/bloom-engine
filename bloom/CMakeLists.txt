@@ -8,21 +8,21 @@ set(VULKAN_SDK "C:/VulkanSDK/1.3.296.0")
 
 add_library(bloom-engine SHARED
             bloom.h
+            bloom_header.h
             src/engine.h
             src/engine.cpp
             src/core.h
             src/entrypoint.h
-            src/Log.h
+            src/log.h
             src/log.cpp
+            src/window.h
+            src/window.cpp
             src/events/event.h
             src/events/game_event.h
             src/events/key_event.h
             src/events/mouse_event.h
             src/events/key_event.h
-        bloom_header.h
-        src/window.cpp
-        src/window.h
-)
+ )
 
 target_precompile_headers(bloom-engine PRIVATE bloom_header.h)
 if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")

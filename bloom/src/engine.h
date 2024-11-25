@@ -22,10 +22,11 @@ public:
   // Functions
   void Begin();
   void Tick();
-  void Render() {};
+  void Render();
   void End();
 
   inline bool ShouldRun() { return true; }
+  void OnEvent(Event& e);
 
 protected:
   Window* _window = nullptr;

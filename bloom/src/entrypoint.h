@@ -25,7 +25,6 @@ int main(int argc, char** argv) {
   while (_engine->ShouldRun()) {
     _engine->Tick();
     _engine->Render();
-    BLOOM_LOG("Running...");
   }
 
   _engine->End();

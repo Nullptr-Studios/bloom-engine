@@ -13,10 +13,8 @@
  */
 class Sandbox : public bloom::Engine {
 public:
-  Sandbox() {
-    _window = new bloom::Window(800, 600, "Bloom");
-  };
+  Sandbox() = default;
   ~Sandbox() override = default;
 };
 
-std::unique_ptr<bloom::Engine> bloom::CreateEngine() { return std::unique_ptr<Sandbox>(); }
+std::unique_ptr<bloom::Engine> bloom::CreateEngine() { return std::make_unique<Sandbox>(); }

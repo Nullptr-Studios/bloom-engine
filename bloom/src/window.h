@@ -8,7 +8,7 @@
 
 #pragma once
 #include "bloom_header.h"
-#include "log.h"
+#include "events/event.h"
 #include <GLFW/glfw3.h>
 
 namespace bloom {
@@ -16,11 +16,19 @@ namespace bloom {
 class BLOOM_API Window {
 
 public:
+  using EventCalbackFn = std::function<void(Event&)>;
+
   Window(int width, int height, std::string title);
   ~Window();
 
   // Functions
-  bool WindowShouldClose() const;
+  void OnInit();
+  void OnTick();
+  bool OnWindowExit() const;
+
+  inline void SetEventCallback(const EventCalbackFn& callback) { _data.callback = callback; };
+  void SetVSync(bool enabled);
+  inline bool IsVSync() const { return _data.vsync; };
 
   // Variables
 
@@ -31,6 +39,15 @@ private:
   int _width;
   int _height;
   std::string _title;
+
+  struct WindowData {
+    std::string title;
+    int width, height;
+    bool vsync;
+    EventCalbackFn callback;
+  }_data;
+
+  static void GLFWErrorCallback(int error, const char* description);
 };
 
 }

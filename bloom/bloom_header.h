@@ -1,5 +1,5 @@
 /**
- * \file bloompch.h
+ * \file bloom_header.h
  * \author Xein <xgonip@gmail.com>
  * \date 23/11/2024
  *
@@ -19,6 +19,8 @@
 #include <vector>
 #include <unordered_map>
 #include <unordered_set>
+
+#include "src/log.h"
 
 #ifdef BLOOM_PLATFORM_WINDOWS
 #include <Windows.h>
