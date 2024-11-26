@@ -7,8 +7,8 @@
  */
 
 #pragma once
-#include "engine.h"
-#include "log.h"
+#include "engine.hpp"
+#include "log.hpp"
 #include <spdlog/spdlog.h>
 
 #define GLFW_INCLUDE_VULKAN

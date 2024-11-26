@@ -6,7 +6,7 @@
  * \brief [Brief description of the file's purpose]
  */
 
-#include <bloom.h>
+#include <bloom.hpp>
 
 /**
  *  Main class for the game

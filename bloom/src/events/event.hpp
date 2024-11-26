@@ -14,8 +14,8 @@
 
 #pragma once
 
-#include "src/core.h"
-#include "bloom_header.h"
+#include "src/core.hpp"
+#include "bloom_header.hpp"
 
 namespace bloom {
 

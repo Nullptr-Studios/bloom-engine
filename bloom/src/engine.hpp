@@ -8,8 +8,9 @@
 
 #pragma once
 
-#include "core.h"
-#include "window.h"
+#include "core.hpp"
+#include "window.hpp"
+#include "render/pipeline.hpp"
 
 namespace bloom {
 
@@ -29,7 +30,8 @@ public:
   void OnEvent(Event& e);
 
 protected:
-  Window* _window = nullptr;
+  Window *_window = nullptr;
+  render::Pipeline _pipeline{"resources/shaders/defaut.vert.spv", "resources/shaders/default.frag.spv"};
 
 };
 

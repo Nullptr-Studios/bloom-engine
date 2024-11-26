@@ -1,8 +1,8 @@
-#include "window.h"
+#include "window.hpp"
 
-#include "events/game_event.h"
-#include "events/key_event.h"
-#include "events/mouse_event.h"
+#include "events/game_event.hpp"
+#include "events/key_event.hpp"
+#include "events/mouse_event.hpp"
 
 namespace bloom {
 
@@ -120,7 +120,7 @@ void Window::SetVSync(bool enabled) {
 }
 
 void Window::GLFWErrorCallback(int error, const char *description) {
-  BLOOM_ERROR("GLFW error ({0}): {1}", error, description);
+  //BLOOM_ERROR("GLFW error ({0}): {1}", error, description);
 }
 
 bool Window::OnWindowExit() const { return glfwWindowShouldClose(_window); }

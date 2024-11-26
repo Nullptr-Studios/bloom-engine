@@ -3,30 +3,32 @@ project(bloom_engine)
 
 add_compile_definitions(BLOOM_PLATFORM_WINDOWS)
 add_compile_definitions(BLOOM_BUILD_DLL)
-
+set(CMAKE_CXX_STANDARD 23)
 set(VULKAN_SDK "C:/VulkanSDK/1.3.296.0")
 
 add_library(bloom-engine SHARED
-            bloom.h
-            bloom_header.h
-            src/engine.h
+            bloom.hpp
+            bloom_header.hpp
+            src/engine.hpp
             src/engine.cpp
-            src/core.h
-            src/entrypoint.h
-            src/log.h
+            src/core.hpp
+            src/entrypoint.hpp
+            src/log.hpp
             src/log.cpp
-            src/window.h
+            src/window.hpp
             src/window.cpp
-            src/events/event.h
-            src/events/game_event.h
-            src/events/key_event.h
-            src/events/mouse_event.h
-            src/events/key_event.h
- )
+            src/events/event.hpp
+            src/events/game_event.hpp
+            src/events/key_event.hpp
+            src/events/mouse_event.hpp
+            src/events/key_event.hpp
+            src/render/pipeline.hpp 
+            src/render/pipeline.cpp
+)
 
-target_precompile_headers(bloom-engine PRIVATE bloom_header.h)
+target_precompile_headers(bloom-engine PRIVATE bloom_header.hpp)
 if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
-  target_compile_options(bloom-engine PRIVATE -include bloom_header.h)
+  target_compile_options(bloom-engine PRIVATE -include bloom_header.hpp)
 endif()
 
 target_include_directories(bloom-engine PUBLIC

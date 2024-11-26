@@ -20,7 +20,7 @@
 #include <unordered_map>
 #include <unordered_set>
 
-#include "src/log.h"
+#include "src/log.hpp"
 
 #ifdef BLOOM_PLATFORM_WINDOWS
 #include <Windows.h>

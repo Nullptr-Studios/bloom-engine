@@ -11,8 +11,8 @@
  */
 
 #pragma once
-#include "event.h"
-#include "bloom_header.h"
+#include "event.hpp"
+#include "bloom_header.hpp"
 
 namespace bloom {
 

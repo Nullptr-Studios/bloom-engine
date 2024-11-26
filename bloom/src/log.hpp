@@ -14,7 +14,7 @@
  */
 
 #pragma once
-#include "core.h"
+#include "core.hpp"
 
 #include <spdlog/spdlog.h>
 #include <spdlog/sinks/stdout_color_sinks.h>

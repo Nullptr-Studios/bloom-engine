@@ -9,7 +9,7 @@
 #pragma once
 
 // ---Entry point------------------
-#include "src/entrypoint.h"
+#include "src/entrypoint.hpp"
 // --------------------------------
 
-#include "src/core.h"
+#include "src/core.hpp"
