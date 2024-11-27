@@ -11,6 +11,8 @@ void Engine::Begin() {
   _window = new Window(800, 600, "Bloom");
   _window->SetEventCallback(std::bind(&Engine::OnEvent, this, std::placeholders::_1));
   _window->OnInit();
+
+  _pipeline = new render::Pipeline("resources/shaders/default.vert.spv", "resources/shaders/default.frag.spv");
 }
 
 void Engine::Tick() {

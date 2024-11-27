@@ -31,7 +31,7 @@ public:
 
 protected:
   Window *_window = nullptr;
-  render::Pipeline _pipeline{"resources/shaders/defaut.vert.spv", "resources/shaders/default.frag.spv"};
+  render::Pipeline* _pipeline = nullptr;
 
 };
 

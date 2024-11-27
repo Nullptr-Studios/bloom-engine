@@ -7,6 +7,7 @@
  */
 
 #pragma once
+#define GLFW_INCLUDE_VULKAN
 
 #include <iostream>
 #include <memory>
@@ -19,6 +20,9 @@
 #include <vector>
 #include <unordered_map>
 #include <unordered_set>
+
+#include <GLFW/glfw3.h>
+#include <vulkan/vulkan.h>
 
 #include "src/log.hpp"
 

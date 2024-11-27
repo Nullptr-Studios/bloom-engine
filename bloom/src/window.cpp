@@ -119,6 +119,12 @@ void Window::SetVSync(bool enabled) {
   _data.vsync = enabled;*/
 }
 
+void Window::CreateWindowSurface(VkInstance instance, VkSurfaceKHR *surface) {
+  if(glfwCreateWindowSurface(instance, _window, nullptr, surface) != VK_SUCCESS) {
+    BLOOM_CRITICAL("Failed to create window surface");
+  }
+}
+
 void Window::GLFWErrorCallback(int error, const char *description) {
   //BLOOM_ERROR("GLFW error ({0}): {1}", error, description);
 }

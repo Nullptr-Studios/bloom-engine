@@ -30,6 +30,8 @@ public:
   void SetVSync(bool enabled);
   inline bool IsVSync() const { return _data.vsync; };
 
+  void CreateWindowSurface(VkInstance instance, VkSurfaceKHR* surface);
+
   // Variables
 
 
