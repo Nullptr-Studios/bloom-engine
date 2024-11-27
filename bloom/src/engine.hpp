@@ -11,6 +11,7 @@
 #include "core.hpp"
 #include "window.hpp"
 #include "render/pipeline.hpp"
+#include "render/devices.hpp"
 
 namespace bloom {
 
@@ -31,6 +32,7 @@ public:
 
 protected:
   Window *_window = nullptr;
+  render::Devices* _devices = nullptr;
   render::Pipeline* _pipeline = nullptr;
 
 };

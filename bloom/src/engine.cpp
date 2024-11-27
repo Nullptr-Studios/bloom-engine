@@ -12,7 +12,8 @@ void Engine::Begin() {
   _window->SetEventCallback(std::bind(&Engine::OnEvent, this, std::placeholders::_1));
   _window->OnInit();
 
-  _pipeline = new render::Pipeline("resources/shaders/default.vert.spv", "resources/shaders/default.frag.spv");
+  _devices = new render::Devices(*_window);
+  _pipeline = new render::Pipeline(*_devices, "resources/shaders/default.vert.spv", "resources/shaders/default.frag.spv", render::Pipeline::defaultPipelineConfig(800, 600));
 }
 
 void Engine::Tick() {
