@@ -13,12 +13,25 @@
 
 namespace bloom::render {
 
-struct PipelineConfiguration{};
+struct PipelineConfiguration {
+  VkViewport viewport;
+  VkRect2D scissor;
+  VkPipelineViewportStateCreateInfo viewportInfo;
+  VkPipelineInputAssemblyStateCreateInfo inputAssemblyInfo;
+  VkPipelineRasterizationStateCreateInfo rasterizationInfo;
+  VkPipelineMultisampleStateCreateInfo multisampleInfo;
+  VkPipelineColorBlendAttachmentState colorBlendAttachment;
+  VkPipelineColorBlendStateCreateInfo colorBlendInfo;
+  VkPipelineDepthStencilStateCreateInfo depthStencilInfo;
+  VkPipelineLayout pipelineLayout = nullptr;
+  VkRenderPass renderPass = nullptr;
+  uint32_t subpass = 0;
+};
 
 class Pipeline {
 public:
   Pipeline(Devices& device, const std::string& vertPath, const std::string& fragPath, const PipelineConfiguration& config);
-  ~Pipeline() {};
+  ~Pipeline();
 
   Pipeline(const Pipeline&) = delete;
   Pipeline& operator=(const Pipeline&) = delete;
