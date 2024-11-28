@@ -14,6 +14,10 @@ Pipeline::~Pipeline() {
   vkDestroyPipeline(_device.device(), _graphicsPipeline, nullptr);
 }
 
+void Pipeline::Bind(VkCommandBuffer commandBuffer) {
+  vkCmdBindPipeline(commandBuffer, VK_PIPELINE_BIND_POINT_GRAPHICS, _graphicsPipeline);
+}
+
 PipelineConfiguration Pipeline::defaultPipelineConfig(uint32_t width, uint32_t height) {
   PipelineConfiguration config{};
 
@@ -30,12 +34,6 @@ PipelineConfiguration Pipeline::defaultPipelineConfig(uint32_t width, uint32_t h
 
   config.scissor.offset = {0, 0};
   config.scissor.extent = {width, height};
-
-  config.viewportInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_VIEWPORT_STATE_CREATE_INFO;
-  config.viewportInfo.viewportCount = 1;
-  config.viewportInfo.pViewports = &config.viewport;
-  config.viewportInfo.scissorCount = 1;
-  config.viewportInfo.pScissors = &config.scissor;
 
   config.rasterizationInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_RASTERIZATION_STATE_CREATE_INFO;
   config.rasterizationInfo.depthClampEnable = VK_FALSE;
@@ -93,21 +91,28 @@ PipelineConfiguration Pipeline::defaultPipelineConfig(uint32_t width, uint32_t h
 }
 
 std::vector<char> Pipeline::ReadFile(const std::string &path) {
-	std::ifstream file{path, std::ios::ate | std::ios::binary};
+	std::ifstream file{path,std::ios::binary};
   
   // Check if we can open the file
   if (!file.is_open()) {
     BLOOM_ERROR("Failed to open file {0}", path);
+    return {};
   }
 
-  size_t fileSize = static_cast<size_t>(file.tellg());
-  std::vector<char> buffer(fileSize);
+  std::vector<char> buffer(std::istreambuf_iterator<char>(file), {});
 
   file.close();
   return buffer;
 }
 
 void Pipeline::CreatePipeline(const std::string &vertPath, const std::string &fragPath, const PipelineConfiguration &config) {
+  if (config.pipelineLayout == VK_NULL_HANDLE) {
+    BLOOM_CRITICAL("Cannot create graphics pipeline, no pipelineLayout specified");
+  }
+  if (config.renderPass == VK_NULL_HANDLE) {
+    BLOOM_CRITICAL("Cannot create graphics pipeline, no renderPass specified");
+  }
+  
   auto vertShader = ReadFile(vertPath);
   auto fragShader = ReadFile(fragPath);
 
@@ -136,17 +141,25 @@ void Pipeline::CreatePipeline(const std::string &vertPath, const std::string &fr
   vertexInputInfo.pVertexAttributeDescriptions = nullptr;
   vertexInputInfo.pVertexBindingDescriptions = nullptr;
 
+  VkPipelineViewportStateCreateInfo viewportInfo{};
+  viewportInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_VIEWPORT_STATE_CREATE_INFO;
+  viewportInfo.viewportCount = 1;
+  viewportInfo.pViewports = &config.viewport;
+  viewportInfo.scissorCount = 1;
+  viewportInfo.pScissors = &config.scissor;
+
   VkGraphicsPipelineCreateInfo pipelineInfo{};
   pipelineInfo.sType = VK_STRUCTURE_TYPE_GRAPHICS_PIPELINE_CREATE_INFO;
   pipelineInfo.stageCount = 2;
   pipelineInfo.pStages = shaderStages;
   pipelineInfo.pVertexInputState = &vertexInputInfo;
   pipelineInfo.pInputAssemblyState = &config.inputAssemblyInfo;
-  pipelineInfo.pViewportState = &config.viewportInfo;
+  pipelineInfo.pViewportState = &viewportInfo;
   pipelineInfo.pRasterizationState = &config.rasterizationInfo;
   pipelineInfo.pMultisampleState = &config.multisampleInfo;
   pipelineInfo.pColorBlendState = &config.colorBlendInfo;
   pipelineInfo.pDepthStencilState = &config.depthStencilInfo;
+
   pipelineInfo.pDynamicState = nullptr;
 
   pipelineInfo.layout = config.pipelineLayout;

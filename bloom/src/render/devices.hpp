@@ -1,5 +1,5 @@
 /**
- * \file devices.h
+ * \file devices.hpp
  * \author Brendan Galea
  * \date 27/11/2024
  *

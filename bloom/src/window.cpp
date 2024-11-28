@@ -32,7 +32,7 @@ void Window::OnInit() {
     BLOOM_CRITICAL("Failed to create GLFW window");
   }
 
-  //xTODO: This is OpenGL specific
+  // TODO: This is OpenGL specific
   //glfwMakeContextCurrent(_window);
   glfwSetWindowUserPointer(_window, &_data);
   BLOOM_INFO("Window created");
@@ -107,7 +107,7 @@ void Window::OnInit() {
 
 void Window::OnTick() {
   glfwPollEvents();
-  // xTODO: This is OpenGL specific
+  // TODO: This is OpenGL specific
   //glfwSwapBuffers(_window);
 }
 
@@ -129,6 +129,8 @@ void Window::GLFWErrorCallback(int error, const char *description) {
   //BLOOM_ERROR("GLFW error ({0}): {1}", error, description);
 }
 
-bool Window::OnWindowExit() const { return glfwWindowShouldClose(_window); }
+void Window::CloseWindow() {
+  glfwSetWindowShouldClose(_window, GLFW_TRUE);
+}
 
 }

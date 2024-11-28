@@ -1,5 +1,5 @@
 /**
- * \file bloom.h
+ * \file bloom.hpp
  * \author Xein <xgonip@gmail.com>
  * \date 20/11/2024
  *

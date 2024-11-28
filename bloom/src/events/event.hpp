@@ -1,5 +1,5 @@
 /**
- * @file event.h
+ * @file event.hpp
  * @author Xein
  * @date 21/11/2024
  *

@@ -1,5 +1,5 @@
 /**
- * @file log.h
+ * @file log.hpp
  * @author Xein <xgonip@gmail.com>
  * @date 11/21/2024
  *
@@ -86,7 +86,7 @@ private:
  * @param ... The message and optional arguments to log.
  */
 #define BLOOM_ERROR(...)      ::bloom::Log::GetBloomLogger()->error(__VA_ARGS__);\
-                              __debugbreak()
+                              //__debugbreak()
 
 /**
  * @def BLOOM_WARN(message)

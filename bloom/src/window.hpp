@@ -1,5 +1,5 @@
 /**
- * \file window.h
+ * \file window.hpp
  * \author Xein <xgonip@gmail.com>
  * \date 23/11/2024
  *
@@ -24,11 +24,13 @@ public:
   // Functions
   void OnInit();
   void OnTick();
-  bool OnWindowExit() const;
+  void CloseWindow();
 
   inline void SetEventCallback(const EventCalbackFn& callback) { _data.callback = callback; };
   void SetVSync(bool enabled);
   inline bool IsVSync() const { return _data.vsync; };
+  inline bool ShouldClose() const { return glfwWindowShouldClose(_window); };
+  VkExtent2D GetExtent() {return {static_cast<uint32_t>(_width), static_cast<uint32_t>(_height)}; }
 
   void CreateWindowSurface(VkInstance instance, VkSurfaceKHR* surface);
 

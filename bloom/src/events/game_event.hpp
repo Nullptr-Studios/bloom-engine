@@ -1,5 +1,5 @@
 /**
- * @file game_event.h
+ * @file game_event.hpp
  * @author Xein
  * @date 21/11/2024
  *

@@ -1,5 +1,5 @@
 /**
- * \file main.h
+ * \file main.cpp
  * \author Xein <xgonip@gmail.com>
  * \date 20/11/2024
  *

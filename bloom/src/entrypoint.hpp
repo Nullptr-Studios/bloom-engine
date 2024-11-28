@@ -1,5 +1,5 @@
 /**
- * \file entrypoint.h
+ * \file entrypoint.hpp
  * \author Xein <xgonip@gmail.com>
  * \date 20/11/2024
  *
@@ -22,7 +22,7 @@ int main(int argc, char** argv) {
   glfwInit();
   _engine->Begin();
 
-  while (_engine->ShouldRun()) {
+  while (!_engine->ShouldClose()) {
     _engine->Tick();
     _engine->Render();
   }

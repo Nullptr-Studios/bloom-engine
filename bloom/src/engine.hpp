@@ -1,5 +1,5 @@
 /**
- * \file Engine.h
+ * \file engine.hpp
  * \author Xein <xgonip@gmail.com>
  * \date 20/11/2024
  *
@@ -12,6 +12,7 @@
 #include "window.hpp"
 #include "render/pipeline.hpp"
 #include "render/devices.hpp"
+#include "render/swap_chain.hpp"
 
 namespace bloom {
 
@@ -19,7 +20,10 @@ class BLOOM_API Engine {
 
 public:
   Engine();
-  virtual ~Engine() = default;
+  virtual ~Engine();
+
+  Engine(const Engine&) = delete;
+  Engine& operator=(const Engine&) = delete;
 
   // Functions
   void Begin();
@@ -27,13 +31,21 @@ public:
   void Render();
   void End();
 
-  inline bool ShouldRun() { return true; }
+  inline bool ShouldClose() { return _window->ShouldClose(); }
   void OnEvent(Event& e);
 
 protected:
+  void CreatePipelineLayout();
+  void CreatePipeline();
+  void CreateCommandBuffers();
+  void DrawFrame();
+
   Window *_window = nullptr;
-  render::Devices* _devices = nullptr;
-  render::Pipeline* _pipeline = nullptr;
+  std::unique_ptr<render::Devices> _devices = nullptr;
+  std::unique_ptr<render::SwapChain> _swapChain = nullptr;
+  std::unique_ptr<render::Pipeline> _pipeline = nullptr;
+  VkPipelineLayout _pipelineLayout;
+  std::vector<VkCommandBuffer> _commandBuffers;
 
 };
 

@@ -1,5 +1,5 @@
 /**
- * \file pipeline.h
+ * \file pipeline.hpp
  * \author Xein <xgonip@gmail.com>
  * \date 26/11/2024
  *
@@ -16,7 +16,6 @@ namespace bloom::render {
 struct PipelineConfiguration {
   VkViewport viewport;
   VkRect2D scissor;
-  VkPipelineViewportStateCreateInfo viewportInfo;
   VkPipelineInputAssemblyStateCreateInfo inputAssemblyInfo;
   VkPipelineRasterizationStateCreateInfo rasterizationInfo;
   VkPipelineMultisampleStateCreateInfo multisampleInfo;
@@ -36,6 +35,7 @@ public:
   Pipeline(const Pipeline&) = delete;
   Pipeline& operator=(const Pipeline&) = delete;
 
+  void Bind(VkCommandBuffer commandBuffer);
   static PipelineConfiguration defaultPipelineConfig(uint32_t width, uint32_t height);
 
 private:

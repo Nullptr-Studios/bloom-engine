@@ -18,10 +18,10 @@ static VKAPI_ATTR VkBool32 VKAPI_CALL debugCallback(
   std::string message = fmt::format("Vulkan call: {0}", pCallbackData->pMessage);
   switch (messageSeverity) {
     case VK_DEBUG_UTILS_MESSAGE_SEVERITY_VERBOSE_BIT_EXT:
-      BLOOM_LOG(message);
+      //BLOOM_LOG(message);
       break;
     case VK_DEBUG_UTILS_MESSAGE_SEVERITY_INFO_BIT_EXT:
-      BLOOM_INFO(message);
+      //BLOOM_INFO(message);
       break;
     case VK_DEBUG_UTILS_MESSAGE_SEVERITY_WARNING_BIT_EXT:
       BLOOM_WARN(message);

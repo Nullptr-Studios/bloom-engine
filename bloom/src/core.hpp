@@ -1,5 +1,5 @@
 /**
- * \file core.h
+ * \file core.hpp
  * \author Xein <xgonip@gmail.com>
  * \date 20/11/2024
  *
