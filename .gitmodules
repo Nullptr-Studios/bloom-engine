@@ -4,3 +4,6 @@
 [submodule "bloom/lib/glfw"]
 	path = bloom/lib/glfw
 	url = https://github.com/glfw/glfw.git
+[submodule "bloom/lib/glm"]
+    path = bloom/lib/glm
+    url = https://github.com/g-truc/glm.git
