@@ -8,6 +8,8 @@
 
 #pragma once
 #define GLFW_INCLUDE_VULKAN
+#define GLM_FORCE_RADIANS
+#define GLM_FORCE_DEPTH_ZERO_TO_ONE
 
 #include <iostream>
 #include <memory>
@@ -23,6 +25,7 @@
 
 #include <GLFW/glfw3.h>
 #include <vulkan/vulkan.h>
+#include <glm/glm.hpp>
 
 #include "src/log.hpp"
 

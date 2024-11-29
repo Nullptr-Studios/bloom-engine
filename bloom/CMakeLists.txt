@@ -27,6 +27,7 @@ add_library(bloom-engine SHARED
         src/render/devices.cpp
         src/render/swap_chain.hpp
         src/render/swap_chain.cpp
+        src/render/renderer.cpp
 )
 
 target_precompile_headers(bloom-engine PRIVATE bloom_header.hpp)
@@ -38,6 +39,10 @@ target_include_directories(bloom-engine PUBLIC
         lib/spdlog/include
         ${VULKAN_SDK}/Include
 )
+
+# GLM INCLUDE
+add_subdirectory(lib/glm)
+target_link_libraries(bloom-engine glm::glm)
 
 # GLFW INCLUDE
 set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)

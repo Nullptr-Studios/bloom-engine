@@ -1,14 +1,15 @@
 /**
- * \file pipeline.hpp
- * \author Xein <xgonip@gmail.com>
- * \date 26/11/2024
+ * @file pipeline.hpp
+ * @author Xein <xgonip@gmail.com>
+ * @date 26/11/2024
  *
- * \brief [File description here]
+ * @brief [File description here]
  */
 
 #pragma once
 
 #include "devices.hpp"
+#include "renderer.hpp"
 #include <bloom_header.hpp>
 
 namespace bloom::render {

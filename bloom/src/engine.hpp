@@ -13,6 +13,7 @@
 #include "render/pipeline.hpp"
 #include "render/devices.hpp"
 #include "render/swap_chain.hpp"
+#include "render/renderer.hpp"
 
 namespace bloom {
 
@@ -39,13 +40,15 @@ protected:
   void CreatePipeline();
   void CreateCommandBuffers();
   void DrawFrame();
+  void LoadModels();
 
   Window *_window = nullptr;
-  std::unique_ptr<render::Devices> _devices = nullptr;
-  std::unique_ptr<render::SwapChain> _swapChain = nullptr;
-  std::unique_ptr<render::Pipeline> _pipeline = nullptr;
-  VkPipelineLayout _pipelineLayout;
-  std::vector<VkCommandBuffer> _commandBuffers;
+  std::unique_ptr<render::Devices> m_devices = nullptr;
+  std::unique_ptr<render::SwapChain> m_swapChain = nullptr;
+  std::unique_ptr<render::Pipeline> m_pipeline = nullptr;
+  std::unique_ptr<render::Renderer> m_renderer = nullptr;
+  VkPipelineLayout m_pipelineLayout;
+  std::vector<VkCommandBuffer> m_commandBuffers;
 
 };
 

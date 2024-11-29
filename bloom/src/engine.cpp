@@ -4,7 +4,7 @@ namespace bloom {
 
 Engine::Engine() { }
 Engine::~Engine() {
-  vkDestroyPipelineLayout(_devices->device(), _pipelineLayout, nullptr);
+  vkDestroyPipelineLayout(m_devices->device(), m_pipelineLayout, nullptr);
 }
 
 void Engine::Begin() {
@@ -15,8 +15,9 @@ void Engine::Begin() {
   _window->SetEventCallback(std::bind(&Engine::OnEvent, this, std::placeholders::_1));
   _window->OnInit();
 
-  _devices = std::make_unique<render::Devices>(*_window);
-  _swapChain = std::make_unique<render::SwapChain>(*_devices, _window->GetExtent());
+  m_devices = std::make_unique<render::Devices>(*_window);
+  m_swapChain = std::make_unique<render::SwapChain>(*m_devices, _window->GetExtent());
+  LoadModels();
   CreatePipelineLayout();
   CreatePipeline();
   CreateCommandBuffers();
@@ -31,7 +32,7 @@ void Engine::Render() {
 }
 
 void Engine::End() {
-  vkDeviceWaitIdle(_devices->device());
+  vkDeviceWaitIdle(m_devices->device());
   delete _window;
 }
 
@@ -50,7 +51,7 @@ void Engine::CreatePipelineLayout() {
   pipelineLayoutInfo.pSetLayouts = nullptr;
   pipelineLayoutInfo.pushConstantRangeCount = 0;
   pipelineLayoutInfo.pPushConstantRanges = nullptr;
-  auto result = vkCreatePipelineLayout(_devices->device(), &pipelineLayoutInfo, nullptr, &_pipelineLayout);
+  auto result = vkCreatePipelineLayout(m_devices->device(), &pipelineLayoutInfo, nullptr, &m_pipelineLayout);
 
   if (result != VK_SUCCESS) {
     BLOOM_CRITICAL("Failed to create pipeline layout");
@@ -58,30 +59,30 @@ void Engine::CreatePipelineLayout() {
 }
 
 void Engine::CreatePipeline() { 
-  auto pipelineConfig = render::Pipeline::defaultPipelineConfig(_swapChain->width(), _swapChain->height());
+  auto pipelineConfig = render::Pipeline::defaultPipelineConfig(m_swapChain->width(), m_swapChain->height());
   // Tells what layout to expect to the render buffer
-  pipelineConfig.renderPass = _swapChain->GetRenderPass();
-  pipelineConfig.pipelineLayout = _pipelineLayout;
-  _pipeline = std::make_unique<render::Pipeline>(*_devices, "resources/shaders/default.vert.spv", "resources/shaders/default.frag.spv", pipelineConfig);
+  pipelineConfig.renderPass = m_swapChain->GetRenderPass();
+  pipelineConfig.pipelineLayout = m_pipelineLayout;
+  m_pipeline = std::make_unique<render::Pipeline>(*m_devices, "resources/shaders/default.vert.spv", "resources/shaders/default.frag.spv", pipelineConfig);
 }
 
 void Engine::CreateCommandBuffers() {
-  _commandBuffers.resize(_swapChain->ImageCount());
+  m_commandBuffers.resize(m_swapChain->ImageCount());
   VkCommandBufferAllocateInfo allocInfo{};
   allocInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_ALLOCATE_INFO;
   allocInfo.level = VK_COMMAND_BUFFER_LEVEL_PRIMARY;
-  allocInfo.commandPool = _devices->getCommandPool();
-  allocInfo.commandBufferCount = static_cast<uint32_t>(_commandBuffers.size());
-  auto allocResult = vkAllocateCommandBuffers(_devices->device(), &allocInfo, _commandBuffers.data());
+  allocInfo.commandPool = m_devices->getCommandPool();
+  allocInfo.commandBufferCount = static_cast<uint32_t>(m_commandBuffers.size());
+  auto allocResult = vkAllocateCommandBuffers(m_devices->device(), &allocInfo, m_commandBuffers.data());
 
   if (allocResult != VK_SUCCESS) {
     BLOOM_CRITICAL("Failed to allocate command buffers");
   }
 
-  for (int i = 0; i < _commandBuffers.size(); i++) {
+  for (int i = 0; i < m_commandBuffers.size(); i++) {
     VkCommandBufferBeginInfo beginInfo{};
     beginInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO;
-    auto result = vkBeginCommandBuffer(_commandBuffers[i], &beginInfo);
+    auto result = vkBeginCommandBuffer(m_commandBuffers[i], &beginInfo);
 
     if (result != VK_SUCCESS) {
       BLOOM_CRITICAL("Failed to begin recording command buffer");
@@ -89,22 +90,23 @@ void Engine::CreateCommandBuffers() {
 
     VkRenderPassBeginInfo renderPassInfo{};
     renderPassInfo.sType = VK_STRUCTURE_TYPE_RENDER_PASS_BEGIN_INFO;
-    renderPassInfo.renderPass = _swapChain->GetRenderPass();
-    renderPassInfo.framebuffer = _swapChain->GetFrameBuffer(i);
+    renderPassInfo.renderPass = m_swapChain->GetRenderPass();
+    renderPassInfo.framebuffer = m_swapChain->GetFrameBuffer(i);
 
     renderPassInfo.renderArea.offset = {0, 0};
-    renderPassInfo.renderArea.extent = _swapChain->GetSwapChainExtent();
+    renderPassInfo.renderArea.extent = m_swapChain->GetSwapChainExtent();
     std::array<VkClearValue, 2> clearValues{};
     clearValues[0].color = {0.1f, 0.1f, 0.1f, 1.0f};
     clearValues[1].depthStencil = {1.0f, 0};
     renderPassInfo.clearValueCount = static_cast<uint32_t>(clearValues.size());
     renderPassInfo.pClearValues = clearValues.data();
 
-    vkCmdBeginRenderPass(_commandBuffers[i], &renderPassInfo, VK_SUBPASS_CONTENTS_INLINE);
-    _pipeline->Bind(_commandBuffers[i]);
-    vkCmdDraw(_commandBuffers[i], 3, 1, 0, 0);
-    vkCmdEndRenderPass(_commandBuffers[i]);
-    if (vkEndCommandBuffer(_commandBuffers[i]) != VK_SUCCESS) {
+    vkCmdBeginRenderPass(m_commandBuffers[i], &renderPassInfo, VK_SUBPASS_CONTENTS_INLINE);
+    m_pipeline->Bind(m_commandBuffers[i]);
+    m_renderer->Bind(m_commandBuffers[i]);
+    m_renderer->Draw(m_commandBuffers[i]);
+    vkCmdEndRenderPass(m_commandBuffers[i]);
+    if (vkEndCommandBuffer(m_commandBuffers[i]) != VK_SUCCESS) {
       BLOOM_CRITICAL("Failed to record command buffer");
     }
   }
@@ -112,15 +114,25 @@ void Engine::CreateCommandBuffers() {
 
 void Engine::DrawFrame() {
   uint32_t imageIndex;
-  auto result = _swapChain->AcquireNextImage(&imageIndex);
+  auto result = m_swapChain->AcquireNextImage(&imageIndex);
   if (result != VK_SUCCESS && result != VK_SUBOPTIMAL_KHR) {
     BLOOM_ERROR("Failed to acquire next image");
   }
 
-  result = _swapChain->SubmitCommandBuffers(&_commandBuffers[imageIndex], &imageIndex);
+  result = m_swapChain->SubmitCommandBuffers(&m_commandBuffers[imageIndex], &imageIndex);
   if (result != VK_SUCCESS) {
     BLOOM_ERROR("Failed to submit command buffer");
   }
+}
+
+void Engine::LoadModels() {
+  std::vector<render::Renderer::Vertex> vertices {
+  {{0.0f, -0.5f}},
+  {{0.5f, 0.5f}},
+  {{-0.5f, 0.5f}}
+  };
+
+  m_renderer = std::make_unique<render::Renderer>(m_devices.get(), vertices);
 }
 
 } // namespace bloom
