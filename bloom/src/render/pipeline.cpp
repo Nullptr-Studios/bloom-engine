@@ -18,22 +18,16 @@ void Pipeline::Bind(VkCommandBuffer commandBuffer) {
   vkCmdBindPipeline(commandBuffer, VK_PIPELINE_BIND_POINT_GRAPHICS, _graphicsPipeline);
 }
 
-PipelineConfiguration Pipeline::defaultPipelineConfig(uint32_t width, uint32_t height) {
-  PipelineConfiguration config{};
-
+void Pipeline::defaultPipelineConfig(PipelineConfiguration& config) {
   config.inputAssemblyInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_INPUT_ASSEMBLY_STATE_CREATE_INFO;
   config.inputAssemblyInfo.topology = VK_PRIMITIVE_TOPOLOGY_TRIANGLE_LIST;
   config.inputAssemblyInfo.primitiveRestartEnable = VK_FALSE;
 
-  config.viewport.x = 0.0f;
-  config.viewport.y = 0.0f;
-  config.viewport.width = static_cast<float>(width);
-  config.viewport.height = static_cast<float>(height);
-  config.viewport.minDepth = 0.0f;
-  config.viewport.maxDepth = 1.0f;
-
-  config.scissor.offset = {0, 0};
-  config.scissor.extent = {width, height};
+  config.viewportInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_VIEWPORT_STATE_CREATE_INFO;
+  config.viewportInfo.viewportCount = 1;
+  config.viewportInfo.pViewports = nullptr;
+  config.viewportInfo.scissorCount = 1;
+  config.viewportInfo.pScissors = nullptr;
 
   config.rasterizationInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_RASTERIZATION_STATE_CREATE_INFO;
   config.rasterizationInfo.depthClampEnable = VK_FALSE;
@@ -87,7 +81,11 @@ PipelineConfiguration Pipeline::defaultPipelineConfig(uint32_t width, uint32_t h
   config.depthStencilInfo.front = {};  // Optional
   config.depthStencilInfo.back = {};   // Optional
 
-  return config;
+  config.dynamicStateEnables = {VK_DYNAMIC_STATE_VIEWPORT, VK_DYNAMIC_STATE_SCISSOR};
+  config.dynamicStateInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_DYNAMIC_STATE_CREATE_INFO;
+  config.dynamicStateInfo.pDynamicStates = config.dynamicStateEnables.data();
+  config.dynamicStateInfo.dynamicStateCount = static_cast<uint32_t>(config.dynamicStateEnables.size());
+  config.dynamicStateInfo.flags = 0;
 }
 
 std::vector<char> Pipeline::ReadFile(const std::string &path) {
@@ -143,26 +141,19 @@ void Pipeline::CreatePipeline(const std::string &vertPath, const std::string &fr
   vertexInputInfo.pVertexAttributeDescriptions = attributeDescriptions.data();
   vertexInputInfo.pVertexBindingDescriptions = bindingDescriptions.data();
 
-  VkPipelineViewportStateCreateInfo viewportInfo{};
-  viewportInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_VIEWPORT_STATE_CREATE_INFO;
-  viewportInfo.viewportCount = 1;
-  viewportInfo.pViewports = &config.viewport;
-  viewportInfo.scissorCount = 1;
-  viewportInfo.pScissors = &config.scissor;
-
   VkGraphicsPipelineCreateInfo pipelineInfo{};
   pipelineInfo.sType = VK_STRUCTURE_TYPE_GRAPHICS_PIPELINE_CREATE_INFO;
   pipelineInfo.stageCount = 2;
   pipelineInfo.pStages = shaderStages;
   pipelineInfo.pVertexInputState = &vertexInputInfo;
   pipelineInfo.pInputAssemblyState = &config.inputAssemblyInfo;
-  pipelineInfo.pViewportState = &viewportInfo;
+  pipelineInfo.pViewportState = &config.viewportInfo;
   pipelineInfo.pRasterizationState = &config.rasterizationInfo;
   pipelineInfo.pMultisampleState = &config.multisampleInfo;
   pipelineInfo.pColorBlendState = &config.colorBlendInfo;
   pipelineInfo.pDepthStencilState = &config.depthStencilInfo;
 
-  pipelineInfo.pDynamicState = nullptr;
+  pipelineInfo.pDynamicState = &config.dynamicStateInfo;
 
   pipelineInfo.layout = config.pipelineLayout;
   pipelineInfo.renderPass = config.renderPass;

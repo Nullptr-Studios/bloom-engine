@@ -39,8 +39,11 @@ protected:
   void CreatePipelineLayout();
   void CreatePipeline();
   void CreateCommandBuffers();
+  void FreeCommandBuffers();
   void DrawFrame();
   void LoadModels();
+  void RecreateSwapChain();
+  void RecordCommandBuffer(int index);
 
   Window *_window = nullptr;
   std::unique_ptr<render::Devices> m_devices = nullptr;

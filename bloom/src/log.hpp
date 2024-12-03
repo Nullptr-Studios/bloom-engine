@@ -72,9 +72,9 @@ private:
  *
  * @param ... The message and optional arguments to log.
  */
-#define BLOOM_CRITICAL(...)   ::bloom::Log::GetBloomLogger()->critical(__VA_ARGS__);\
+#define BLOOM_CRITICAL(...)   {::bloom::Log::GetBloomLogger()->critical(__VA_ARGS__);\
                               __debugbreak();\
-                              std::exit(1)
+                              std::exit(1);}
 
 /**
  * @def BLOOM_ERROR(message)

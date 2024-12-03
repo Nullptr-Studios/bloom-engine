@@ -7,7 +7,7 @@
 namespace bloom {
 
 Window::Window(int width, int height, std::string title)
-  : _width(width), _height(height), _title(title) { }
+  : m_width(width), m_height(height), m_title(title) { }
 
 Window::~Window() {
   glfwDestroyWindow(_window);
@@ -15,18 +15,20 @@ Window::~Window() {
 }
 
 void Window::OnInit() {
-  _data.title = _title;
-  _data.width = _width;
-  _data.height = _height;
+  m_data.title = m_title;
+  m_data.width = m_width;
+  m_data.height = m_height;
   SetVSync(true);
 
   glfwSetErrorCallback(GLFWErrorCallback);
 
-  BLOOM_LOG("Creating window {0} ({1}, {2})", _title, _width, _height);
+  BLOOM_LOG("Creating window {0} ({1}, {2})", m_title, m_width, m_height);
 
   glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
-  glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
-  _window = glfwCreateWindow(_width, _height, _title.c_str(), nullptr, nullptr);
+  glfwWindowHint(GLFW_RESIZABLE, GLFW_TRUE);
+  _window = glfwCreateWindow(m_width, m_height, m_title.c_str(), nullptr, nullptr);
+  glfwSetWindowUserPointer(_window, this);
+  glfwSetFramebufferSizeCallback(_window, FramebufferResizedCallback);
 
   if(_window == nullptr) {
     BLOOM_CRITICAL("Failed to create GLFW window");
@@ -34,7 +36,7 @@ void Window::OnInit() {
 
   // TODO: This is OpenGL specific
   //glfwMakeContextCurrent(_window);
-  glfwSetWindowUserPointer(_window, &_data);
+  glfwSetWindowUserPointer(_window, &m_data);
   BLOOM_INFO("Window created");
 
   #pragma region callbacks
@@ -123,6 +125,19 @@ void Window::CreateWindowSurface(VkInstance instance, VkSurfaceKHR *surface) {
   if(glfwCreateWindowSurface(instance, _window, nullptr, surface) != VK_SUCCESS) {
     BLOOM_CRITICAL("Failed to create window surface");
   }
+}
+
+void Window::FramebufferResizedCallback(GLFWwindow *window, int width, int height) {
+  auto wd = reinterpret_cast<Window*>(glfwGetWindowUserPointer(window));
+  wd->m_framebufferResized = true;
+  wd->SetDimensions(width, height);
+}
+
+void Window::SetDimensions(int width, int height) {
+  m_width = width;
+  m_height = height;
+  m_data.width = width;
+  m_data.height = height;
 }
 
 void Window::GLFWErrorCallback(int error, const char *description) {
