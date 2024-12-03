@@ -1,5 +1,5 @@
 /**
- * @file model.hpp
+ * @file renderer.hpp
  * @author Xein <xgonip@gmail.com>
  * @date 29/11/2024
  *
@@ -16,6 +16,7 @@ class BLOOM_API Renderer {
 public:
   struct Vertex {
     glm::vec2 position;
+    glm::vec4 color;
 
     static std::vector<VkVertexInputBindingDescription> GetBindingDescriptions();
     static std::vector<VkVertexInputAttributeDescription> GetAttributeDescriptions();

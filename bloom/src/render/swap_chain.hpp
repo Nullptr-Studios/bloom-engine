@@ -13,7 +13,7 @@ public:
   ~SwapChain();
 
   SwapChain(const SwapChain &) = delete;
-  void operator=(const SwapChain &) = delete;
+  SwapChain& operator=(const SwapChain &) = delete;
 
   VkFramebuffer GetFrameBuffer(int index) { return SwapChainFramebuffers_[index]; }
   VkRenderPass GetRenderPass() { return renderPass_; }

@@ -127,9 +127,9 @@ void Engine::DrawFrame() {
 
 void Engine::LoadModels() {
   std::vector<render::Renderer::Vertex> vertices {
-  {{0.0f, -0.5f}},
-  {{0.5f, 0.5f}},
-  {{-0.5f, 0.5f}}
+  {{0.0f, -0.5f}, {1.0f, 0.0f, 0.0f, 1.0f}},
+  {{0.5f, 0.5f}, {0.0f, 1.0f, 0.0f, 1.0f}},
+  {{-0.5f, 0.5f}, {0.0f, 0.0f, 1.0f, 1.0f}}
   };
 
   m_renderer = std::make_unique<render::Renderer>(m_devices.get(), vertices);
