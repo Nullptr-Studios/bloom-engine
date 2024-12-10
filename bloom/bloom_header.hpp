@@ -27,6 +27,7 @@
 #include <vulkan/vulkan.h>
 #include <glm/glm.hpp>
 
+#include "src/core.hpp"
 #include "src/log.hpp"
 
 #ifdef BLOOM_PLATFORM_WINDOWS

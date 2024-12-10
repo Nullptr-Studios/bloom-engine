@@ -1,43 +1,59 @@
 /**
  * @file renderer.hpp
  * @author Xein <xgonip@gmail.com>
- * @date 29/11/2024
+ * @date 20/11/2024
  *
- * @brief [Insert file description]
+ * @brief Main engine class
  */
 
 #pragma once
+
+#include "src/window.hpp"
 #include "devices.hpp"
+#include "swap_chain.hpp"
 #include <bloom_header.hpp>
 
 namespace bloom::render {
 
+struct SimplePushConstantData {
+  glm::mat2 transform = glm::mat2(1.0f);
+  glm::vec2 offset;
+  alignas(16) glm::vec3 color;
+};
+
 class BLOOM_API Renderer {
+
 public:
-  struct Vertex {
-    glm::vec2 position;
-    glm::vec4 color;
-
-    static std::vector<VkVertexInputBindingDescription> GetBindingDescriptions();
-    static std::vector<VkVertexInputAttributeDescription> GetAttributeDescriptions();
-  };
-
-  Renderer(Devices* device, const std::vector<Vertex> &vertices);
+  Renderer(Window* window, Devices* devices);
   ~Renderer();
 
   Renderer(const Renderer&) = delete;
-  Renderer &operator=(const Renderer&) = delete;
+  Renderer& operator=(const Renderer&) = delete;
 
-  void Bind(VkCommandBuffer commandBuffer);
-  void Draw(VkCommandBuffer commandBuffer);
+  VkCommandBuffer BeginFrame();
+  void EndFrame();
+  void BeginRenderPass(VkCommandBuffer commandBuffer);
+  void EndRenderPass(VkCommandBuffer commandBuffer);
 
-private:
-  void CreateVBO(const std::vector<Vertex> &vertices);
+  bool GetFrameStarted() const { return m_frameStarted; }
+  VkCommandBuffer GetCurrentCommandBuffer() const {
+    if (!m_frameStarted) { BLOOM_WARN("Cannot get CommandBuffer when frame not in progress"); }
+    return m_commandBuffers[m_currentImageIndex];
+  }
+  VkRenderPass GetRenderPass() const { return m_swapChain->GetRenderPass(); }
 
-  Devices* m_device;
-  VkBuffer m_VBO;
-  VkDeviceMemory m_VBOMemory;
-  unsigned int m_vertexCount;
+protected:
+  void CreateCommandBuffers();
+  void FreeCommandBuffers();
+  void RecreateSwapChain();
+
+  Window* m_window = nullptr;
+  Devices* m_devices = nullptr;
+  std::unique_ptr<SwapChain> m_swapChain = nullptr;
+  std::vector<VkCommandBuffer> m_commandBuffers;
+
+  unsigned int m_currentImageIndex = 0;
+  bool m_frameStarted = false;
 };
 
 }

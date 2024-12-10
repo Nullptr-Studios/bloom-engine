@@ -27,6 +27,9 @@ add_library(bloom-engine SHARED
         src/render/devices.cpp
         src/render/swap_chain.hpp
         src/render/swap_chain.cpp
+        src/render/model.hpp
+        src/render/model.cpp
+        src/render/renderer.hpp
         src/render/renderer.cpp
         src/object.hpp
         src/factory.hpp

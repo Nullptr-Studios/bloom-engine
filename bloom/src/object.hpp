@@ -47,7 +47,7 @@ public:
   Object& operator=(Object&&) = default;
 
   Transform transform;
-  std::shared_ptr<render::Renderer> model;
+  std::shared_ptr<render::Model> model;
   glm::vec3 color;
 
 private:

@@ -132,8 +132,8 @@ void Pipeline::CreatePipeline(const std::string &vertPath, const std::string &fr
   shaderStages[1].pNext = nullptr;
   shaderStages[1].pSpecializationInfo = nullptr;
 
-  auto attributeDescriptions = Renderer::Vertex::GetAttributeDescriptions();
-  auto bindingDescriptions = Renderer::Vertex::GetBindingDescriptions();
+  auto attributeDescriptions = Model::Vertex::GetAttributeDescriptions();
+  auto bindingDescriptions = Model::Vertex::GetBindingDescriptions();
   VkPipelineVertexInputStateCreateInfo vertexInputInfo{};
   vertexInputInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_VERTEX_INPUT_STATE_CREATE_INFO;
   vertexInputInfo.vertexAttributeDescriptionCount = static_cast<unsigned int>(attributeDescriptions.size());

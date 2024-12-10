@@ -12,7 +12,8 @@
 #include "window.hpp"
 #include "render/pipeline.hpp"
 #include "render/devices.hpp"
-#include "render/swap_chain.hpp"
+#include "render/model.hpp"
+#include "render/renderer.hpp"
 #include "factory.hpp"
 #include "object.hpp"
 #include <bloom_header.hpp>
@@ -42,7 +43,7 @@ public:
   void Render();
   void End();
 
-  inline bool ShouldClose() { return _window->ShouldClose(); }
+  inline bool ShouldClose() { return m_window->ShouldClose(); }
   void OnEvent(Event& e);
 
   std::unique_ptr<Factory> factory = nullptr;
@@ -50,20 +51,14 @@ public:
 protected:
   void CreatePipelineLayout();
   void CreatePipeline();
-  void CreateCommandBuffers();
-  void FreeCommandBuffers();
-  void DrawFrame();
   void LoadObjects();
   void RenderObjects(VkCommandBuffer commandBuffer);
-  void RecreateSwapChain();
-  void RecordCommandBuffer(int index);
 
-  Window *_window = nullptr;
+  Window* m_window = nullptr;
   std::unique_ptr<render::Devices> m_devices = nullptr;
-  std::unique_ptr<render::SwapChain> m_swapChain = nullptr;
   std::unique_ptr<render::Pipeline> m_pipeline = nullptr;
+  std::unique_ptr<render::Renderer> m_renderer = nullptr;
   VkPipelineLayout m_pipelineLayout;
-  std::vector<VkCommandBuffer> m_commandBuffers;
 
   std::vector<Object> gameObjects;
 

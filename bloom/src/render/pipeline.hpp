@@ -9,7 +9,7 @@
 #pragma once
 
 #include "devices.hpp"
-#include "renderer.hpp"
+#include "model.hpp"
 #include <bloom_header.hpp>
 
 namespace bloom::render {
