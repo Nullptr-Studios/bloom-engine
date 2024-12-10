@@ -28,6 +28,8 @@ add_library(bloom-engine SHARED
         src/render/swap_chain.hpp
         src/render/swap_chain.cpp
         src/render/renderer.cpp
+        src/object.hpp
+        src/factory.hpp
 )
 
 target_precompile_headers(bloom-engine PRIVATE bloom_header.hpp)

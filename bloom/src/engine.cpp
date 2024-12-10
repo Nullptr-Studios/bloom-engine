@@ -1,5 +1,7 @@
 #include "engine.hpp"
 
+#include "glm/gtc/constants.hpp"
+
 namespace bloom {
 
 Engine::Engine() { }
@@ -11,13 +13,15 @@ void Engine::Begin() {
   glfwInit();
 	Log::Init();
 
-  _window = new Window(800, 600, "Bloom");
+  _window = new Window(800, 800, "Bloom");
   _window->SetEventCallback(std::bind(&Engine::OnEvent, this, std::placeholders::_1));
   _window->OnInit();
 
+  factory = std::make_unique<Factory>();
+
   m_devices = std::make_unique<render::Devices>(*_window);
   m_swapChain = std::make_unique<render::SwapChain>(*m_devices, _window->GetExtent());
-  LoadModels();
+  LoadObjects();
   CreatePipelineLayout();
   CreatePipeline();
   CreateCommandBuffers();
@@ -37,7 +41,7 @@ void Engine::End() {
 }
 
 void Engine::OnEvent(Event &e) {
-  BLOOM_LOG("{0}", e.ToString());
+  BLOOM_INFO("{0}", e.ToString());
 
   if (e.GetEventType() == EventType::WindowClose) {
     _window->CloseWindow();
@@ -45,12 +49,17 @@ void Engine::OnEvent(Event &e) {
 }
 
 void Engine::CreatePipelineLayout() {
+  VkPushConstantRange pushConstantRange{};
+  pushConstantRange.stageFlags = VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT;
+  pushConstantRange.offset = 0;
+  pushConstantRange.size = sizeof(SimplePushConstantData);
+
   VkPipelineLayoutCreateInfo pipelineLayoutInfo{};
   pipelineLayoutInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_LAYOUT_CREATE_INFO;
   pipelineLayoutInfo.setLayoutCount = 0;
   pipelineLayoutInfo.pSetLayouts = nullptr;
-  pipelineLayoutInfo.pushConstantRangeCount = 0;
-  pipelineLayoutInfo.pPushConstantRanges = nullptr;
+  pipelineLayoutInfo.pushConstantRangeCount = 1;
+  pipelineLayoutInfo.pPushConstantRanges = &pushConstantRange;
   auto result = vkCreatePipelineLayout(m_devices->device(), &pipelineLayoutInfo, nullptr, &m_pipelineLayout);
 
   if (result != VK_SUCCESS) {
@@ -117,14 +126,48 @@ void Engine::DrawFrame() {
   }
 }
 
-void Engine::LoadModels() {
+void Engine::LoadObjects() {
   std::vector<render::Renderer::Vertex> vertices {
   {{ 0.0f, -0.5f}, {1.0f, 0.0f, 0.0f, 1.0f}},
   {{ 0.5f,  0.5f}, {0.0f, 1.0f, 0.0f, 1.0f}},
   {{-0.5f,  0.5f}, {0.0f, 0.0f, 1.0f, 1.0f}}
 };
 
-  m_renderer = std::make_unique<render::Renderer>(m_devices.get(), vertices);
+  auto m_model = std::make_shared<render::Renderer>(m_devices.get(), vertices);
+
+  auto triangle = factory->CreateObject<Object>();
+  triangle.model = m_model;
+  triangle.color = {0.8f, 0.1f, 0.8f};
+  triangle.transform.position.x = 0.0f;
+  triangle.transform.scale = {1.0f, 1.0f};
+  triangle.transform.rotation = 0.25f * glm::two_pi<float>();
+
+  gameObjects.push_back(std::move(triangle));
+}
+
+void Engine::RenderObjects(VkCommandBuffer commandBuffer) {
+  m_pipeline->Bind(commandBuffer);
+
+  for (auto& obj : gameObjects) {
+    obj.transform.rotation = glm::mod(obj.transform.rotation + 0.0001f, glm::two_pi<float>());
+
+    SimplePushConstantData push{};
+    push.offset = obj.transform.position;
+    push.color = obj.color;
+    push.transform = obj.transform.mat2();
+
+    vkCmdPushConstants(
+      commandBuffer,
+      m_pipelineLayout,
+      VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT,
+      0,
+      sizeof(SimplePushConstantData),
+      &push
+    );
+
+    obj.model->Bind(commandBuffer);
+    obj.model->Draw(commandBuffer);
+  }
 }
 
 void Engine::RecreateSwapChain() {
@@ -183,9 +226,8 @@ void Engine::RecordCommandBuffer(int index) {
   vkCmdSetViewport(m_commandBuffers[index], 0, 1, &viewport);
   vkCmdSetScissor(m_commandBuffers[index], 0, 1, &scissor);
 
-  m_pipeline->Bind(m_commandBuffers[index]);
-  m_renderer->Bind(m_commandBuffers[index]);
-  m_renderer->Draw(m_commandBuffers[index]);
+  RenderObjects(m_commandBuffers[index]);
+
   vkCmdEndRenderPass(m_commandBuffers[index]);
   if (vkEndCommandBuffer(m_commandBuffers[index]) != VK_SUCCESS) {
     BLOOM_CRITICAL("Failed to record command buffer");

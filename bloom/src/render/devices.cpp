@@ -27,6 +27,8 @@ static VKAPI_ATTR VkBool32 VKAPI_CALL debugCallback(
       BLOOM_WARN(message);
       break;
     case VK_DEBUG_UTILS_MESSAGE_SEVERITY_ERROR_BIT_EXT:
+      // I hate this error it does not even make sense
+      if (message.contains("Epic Games")) break;
       BLOOM_ERROR(message);
       break;
     default:

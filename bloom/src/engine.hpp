@@ -13,9 +13,19 @@
 #include "render/pipeline.hpp"
 #include "render/devices.hpp"
 #include "render/swap_chain.hpp"
-#include "render/renderer.hpp"
+#include "factory.hpp"
+#include "object.hpp"
+#include <bloom_header.hpp>
 
 namespace bloom {
+
+struct SimplePushConstantData {
+  glm::mat2 transform = glm::mat2(1.0f);
+  glm::vec2 offset;
+  alignas(16) glm::vec3 color;
+};
+
+class Factory;
 
 class BLOOM_API Engine {
 
@@ -35,13 +45,16 @@ public:
   inline bool ShouldClose() { return _window->ShouldClose(); }
   void OnEvent(Event& e);
 
+  std::unique_ptr<Factory> factory = nullptr;
+
 protected:
   void CreatePipelineLayout();
   void CreatePipeline();
   void CreateCommandBuffers();
   void FreeCommandBuffers();
   void DrawFrame();
-  void LoadModels();
+  void LoadObjects();
+  void RenderObjects(VkCommandBuffer commandBuffer);
   void RecreateSwapChain();
   void RecordCommandBuffer(int index);
 
@@ -49,9 +62,10 @@ protected:
   std::unique_ptr<render::Devices> m_devices = nullptr;
   std::unique_ptr<render::SwapChain> m_swapChain = nullptr;
   std::unique_ptr<render::Pipeline> m_pipeline = nullptr;
-  std::unique_ptr<render::Renderer> m_renderer = nullptr;
   VkPipelineLayout m_pipelineLayout;
   std::vector<VkCommandBuffer> m_commandBuffers;
+
+  std::vector<Object> gameObjects;
 
 };
 
