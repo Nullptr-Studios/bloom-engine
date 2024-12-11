@@ -26,7 +26,7 @@ void Engine::Begin() {
 void Engine::Tick() {
   m_deltaTime = m_window->GetDeltaTime();
   m_window->OnTick();
-  BLOOM_LOG("{0}", 1/m_deltaTime);
+  BLOOM_LOG("{0}FPS", 1/m_deltaTime);
 }
 
 void Engine::Render() {
@@ -53,23 +53,70 @@ void Engine::OnEvent(const Event &e) const {
   }
 }
 
+std::unique_ptr<render::Model> createCubeModel(render::Devices* device, glm::vec3 offset) {
+  std::vector<render::Model::Vertex> vertices = {
+      {{-.5f, -.5f, -.5f}, {.9f, .9f, .9f, 1.0f}},
+      {{-.5f, .5f, .5f}, {0.9f, 0.9f, 0.9f, 1.0f}},
+      {{-.5f, -.5f, .5f}, {0.9f, 0.9f, 0.9f, 1.0f}},
+      {{-.5f, -.5f, -.5f}, {0.9f, 0.9f, 0.9f, 1.0f}},
+      {{-.5f, .5f, -.5f}, {0.9f, 0.9f, 0.9f, 1.0f}},
+      {{-.5f, .5f, .5f}, {0.9f, 0.9f, 0.9f, 1.0f}},
+ 
+      // right face (yellow)
+      {{.5f, -.5f, -.5f}, {0.8f, 0.8f, 0.1f, 1.0f}},
+      {{.5f, .5f, .5f}, {0.8f, 0.8f, 0.1f, 1.0f}},
+      {{.5f, -.5f, .5f}, {0.8f, 0.8f, 0.1f, 1.0f}},
+      {{.5f, -.5f, -.5f}, {0.8f, 0.8f, 0.1f, 1.0f}},
+      {{.5f, .5f, -.5f}, {0.8f, 0.8f, 0.1f, 1.0f}},
+      {{.5f, .5f, .5f}, {0.8f, 0.8f, 0.1f, 1.0f}},
+ 
+      // top face (orange, remember y axis points down)
+      {{-.5f, -.5f, -.5f}, {0.9f, 0.6f, 0.1f, 1.0f}},
+      {{.5f, -.5f, .5f}, {0.9f, 0.6f, 0.1f, 1.0f}},
+      {{-.5f, -.5f, .5f}, {0.9f, 0.6f, 0.1f, 1.0f}},
+      {{-.5f, -.5f, -.5f}, {0.9f, 0.6f, 0.1f, 1.0f}},
+      {{.5f, -.5f, -.5f}, {0.9f, 0.6f, 0.1f, 1.0f}},
+      {{.5f, -.5f, .5f}, {0.9f, 0.6f, 0.1f, 1.0f}},
+ 
+      // bottom face (red)
+      {{-.5f, .5f, -.5f}, {0.8f, 0.1f, 0.1f, 1.0f}},
+      {{.5f, .5f, .5f}, {0.8f, 0.1f, 0.1f, 1.0f}},
+      {{-.5f, .5f, .5f}, {0.8f, 0.1f, 0.1f, 1.0f}},
+      {{-.5f, .5f, -.5f}, {0.8f, 0.1f, 0.1f, 1.0f}},
+      {{.5f, .5f, -.5f}, {0.8f, 0.1f, 0.1f, 1.0f}},
+      {{.5f, .5f, .5f}, {0.8f, 0.1f, 0.1f, 1.0f}},
+ 
+      // nose face (blue)
+      {{-.5f, -.5f, 0.5f}, {0.1f, 0.1f, 0.8f, 1.0f}},
+      {{.5f, .5f, 0.5f}, {0.1f, 0.1f, 0.8f, 1.0f}},
+      {{-.5f, .5f, 0.5f}, {0.1f, 0.1f, 0.8f, 1.0f}},
+      {{-.5f, -.5f, 0.5f}, {0.1f, 0.1f, 0.8f, 1.0f}},
+      {{.5f, -.5f, 0.5f}, {0.1f, 0.1f, 0.8f, 1.0f}},
+      {{.5f, .5f, 0.5f}, {0.1f, 0.1f, 0.8f, 1.0f}},
+ 
+      // tail face (green)
+      {{-.5f, -.5f, -0.5f}, {0.1f, 0.8f, 0.1f, 1.0f}},
+      {{.5f, .5f, -0.5f}, {0.1f, 0.8f, 0.1f, 1.0f}},
+      {{-.5f, .5f, -0.5f}, {0.1f, 0.8f, 0.1f, 1.0f}},
+      {{-.5f, -.5f, -0.5f}, {0.1f, 0.8f, 0.1f, 1.0f}},
+      {{.5f, -.5f, -0.5f}, {0.1f, 0.8f, 0.1f, 1.0f}},
+      {{.5f, .5f, -0.5f}, {0.1f, 0.8f, 0.1f, 1.0f}},
+ 
+  };
+  for (auto& v : vertices) {
+    v.position += offset;
+  }
+  return std::make_unique<render::Model>(device, vertices);
+}
+
 void Engine::LoadObjects() {
-  std::vector<render::Model::Vertex> vertices {
-  {{ 0.0f, -0.5f}, {1.0f, 0.0f, 0.0f, 1.0f}},
-  {{ 0.5f,  0.5f}, {0.0f, 1.0f, 0.0f, 1.0f}},
-  {{-0.5f,  0.5f}, {0.0f, 0.0f, 1.0f, 1.0f}}
-};
+  std::shared_ptr<render::Model> model = createCubeModel(m_devices.get(), {0.0f, 0.0f, 0.0f});
 
-  auto m_model = std::make_shared<render::Model>(m_devices.get(), vertices);
-
-  auto triangle = factory->CreateObject<Object>();
-  triangle.model = m_model;
-  triangle.color = {0.8f, 0.1f, 0.8f};
-  triangle.transform.position.x = 0.0f;
-  triangle.transform.scale = {1.0f, 1.0f};
-  triangle.transform.rotation = 0.25f * glm::two_pi<float>();
-
-  gameObjects.push_back(std::move(triangle));
+  auto cube = factory->CreateObject<Object>();
+  cube.model = model;
+  cube.transform.position = {0.0f, 0.0f, 0.5f};
+  cube.transform.scale = {0.5f, 0.5f, 0.5f};
+  gameObjects.push_back(std::move(cube));
 }
 
 } // namespace bloom

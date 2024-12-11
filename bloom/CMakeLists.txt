@@ -68,10 +68,18 @@ target_include_directories(bloom-engine PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 # Define the output directory for the DLL
 set(SANDBOX_DIR "${CMAKE_BINARY_DIR}/sandbox")
+set(WANDERER_DIR "${CMAKE_BINARY_DIR}/wanderer")
 
 # Add a post-build command to copy the DLL to the sandbox folder
 add_custom_command(TARGET bloom-engine POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E copy_if_different
         "$<TARGET_FILE:bloom-engine>"
         "${SANDBOX_DIR}/$<TARGET_FILE_NAME:bloom-engine>"
+)
+
+# Add a post-build command to copy the DLL to the wanderer folder
+add_custom_command(TARGET bloom-engine POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        "$<TARGET_FILE:bloom-engine>"
+        "${WANDERER_DIR}/$<TARGET_FILE_NAME:bloom-engine>"
 )

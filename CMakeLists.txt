@@ -10,3 +10,4 @@ set(CMAKE_CXX_FLAGS "-Wall -Wextra")
 
 add_subdirectory(bloom)
 add_subdirectory(sandbox)
+add_subdirectory(wanderer)

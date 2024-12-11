@@ -377,7 +377,7 @@ VkPresentModeKHR SwapChain::ChooseSwapPresentMode(
   for (const auto &availablePresentMode : availablePresentModes) {
     if (availablePresentMode == VK_PRESENT_MODE_MAILBOX_KHR) {
       BLOOM_LOG("Present mode: Mailbox");
-      return availablePresentMode;
+      return VK_PRESENT_MODE_MAILBOX_KHR;
     }
   }
 
