@@ -36,7 +36,7 @@ class Devices {
 #endif
 
   Devices(Window &window);
-  ~Devices();
+  virtual ~Devices();
 
   // Not copyable or movable
   Devices(const Devices &) = delete;

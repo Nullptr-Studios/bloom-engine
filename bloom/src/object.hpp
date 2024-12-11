@@ -7,8 +7,7 @@
  */
 
 #pragma once
-#include "engine.hpp"
-#include "render/renderer.hpp"
+#include "render/model.hpp"
 #include <bloom_header.hpp>
 
 namespace bloom {

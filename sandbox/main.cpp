@@ -14,7 +14,6 @@
 class Sandbox : public bloom::Engine {
 public:
   Sandbox() = default;
-  ~Sandbox() override = default;
 };
 
 std::unique_ptr<bloom::Engine> bloom::CreateEngine() { return std::make_unique<Sandbox>(); }

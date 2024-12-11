@@ -33,6 +33,8 @@ add_library(bloom-engine SHARED
         src/render/renderer.cpp
         src/object.hpp
         src/factory.hpp
+        src/simple_render_system.cpp
+        src/simple_render_system.hpp
 )
 
 target_precompile_headers(bloom-engine PRIVATE bloom_header.hpp)

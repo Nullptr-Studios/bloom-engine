@@ -1,67 +1,55 @@
 /**
- * \file engine.hpp
- * \author Xein <xgonip@gmail.com>
- * \date 20/11/2024
+ * @file engine.hpp
+ * @author Xein <xgonip@gmail.com>
+ * @date 20/11/2024
  *
- * \brief Main engine class
+ * @brief Main engine class
  */
 
 #pragma once
 
 #include "core.hpp"
 #include "window.hpp"
-#include "render/pipeline.hpp"
-#include "render/devices.hpp"
-#include "render/model.hpp"
-#include "render/renderer.hpp"
 #include "factory.hpp"
 #include "object.hpp"
+#include "render/devices.hpp"
+#include "render/renderer.hpp"
+#include "simple_render_system.hpp"
 #include <bloom_header.hpp>
 
 namespace bloom {
 
-struct SimplePushConstantData {
-  glm::mat2 transform = glm::mat2(1.0f);
-  glm::vec2 offset;
-  alignas(16) glm::vec3 color;
-};
-
 class Factory;
 
 class BLOOM_API Engine {
-
 public:
-  Engine();
-  virtual ~Engine();
+  Engine() = default;
 
   Engine(const Engine&) = delete;
   Engine& operator=(const Engine&) = delete;
 
-  // Functions
+  // Game loop
   void Begin();
   void Tick();
   void Render();
-  void End();
+  void End() const;
 
-  inline bool ShouldClose() { return m_window->ShouldClose(); }
-  void OnEvent(Event& e);
+  bool ShouldClose() const { return m_window->ShouldClose(); }
+  void OnEvent(const Event & e) const;
 
   std::unique_ptr<Factory> factory = nullptr;
 
 protected:
-  void CreatePipelineLayout();
-  void CreatePipeline();
   void LoadObjects();
-  void RenderObjects(VkCommandBuffer commandBuffer);
 
   Window* m_window = nullptr;
   std::unique_ptr<render::Devices> m_devices = nullptr;
-  std::unique_ptr<render::Pipeline> m_pipeline = nullptr;
   std::unique_ptr<render::Renderer> m_renderer = nullptr;
-  VkPipelineLayout m_pipelineLayout;
+  SimpleRenderSystem* m_simpleRenderSystem = nullptr;
 
   std::vector<Object> gameObjects;
 
+  double m_deltaTime;
 };
 
 /**

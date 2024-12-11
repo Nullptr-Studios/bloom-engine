@@ -33,6 +33,11 @@ public:
   VkResult AcquireNextImage(uint32_t *imageIndex);
   VkResult SubmitCommandBuffers(const VkCommandBuffer *buffers, uint32_t *imageIndex);
 
+  bool compareSwapFormats(const SwapChain& swapChain) const {
+    return swapChain.m_swapChainDepthFormat == m_swapChainDepthFormat &&
+           swapChain.m_swapChainImageFormat == m_swapChainImageFormat;
+  }
+
 private:
   void Init();
   void CreateSwapChain();
@@ -50,6 +55,7 @@ private:
   VkExtent2D ChooseSwapExtent(const VkSurfaceCapabilitiesKHR &capabilities);
 
   VkFormat m_swapChainImageFormat;
+  VkFormat m_swapChainDepthFormat;
   VkExtent2D m_swapChainExtent;
 
   std::vector<VkFramebuffer> m_swapChainFramebuffers;

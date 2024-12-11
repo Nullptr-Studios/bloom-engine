@@ -38,9 +38,17 @@ public:
   bool GetFrameStarted() const { return m_frameStarted; }
   VkCommandBuffer GetCurrentCommandBuffer() const {
     if (!m_frameStarted) { BLOOM_WARN("Cannot get CommandBuffer when frame not in progress"); }
-    return m_commandBuffers[m_currentImageIndex];
+    return m_commandBuffers[m_currentFrameIndex];
   }
   VkRenderPass GetRenderPass() const { return m_swapChain->GetRenderPass(); }
+
+  int GetFrameIndex() const {
+    if (!m_frameStarted) {
+      BLOOM_WARN("Cannot get frame index when frame not in progress");
+      return -1;
+    }
+    return m_currentFrameIndex;
+  }
 
 protected:
   void CreateCommandBuffers();
@@ -53,6 +61,7 @@ protected:
   std::vector<VkCommandBuffer> m_commandBuffers;
 
   unsigned int m_currentImageIndex = 0;
+  int m_currentFrameIndex;
   bool m_frameStarted = false;
 };
 

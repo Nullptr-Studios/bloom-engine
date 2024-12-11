@@ -30,7 +30,8 @@ public:
   void SetVSync(bool enabled);
   inline bool IsVSync() const { return m_data.vsync; };
   inline bool ShouldClose() const { return glfwWindowShouldClose(_window); };
-  VkExtent2D GetExtent() {return {static_cast<uint32_t>(m_width), static_cast<uint32_t>(m_height)}; }
+  VkExtent2D GetExtent() { return {static_cast<uint32_t>(m_width), static_cast<uint32_t>(m_height)}; }
+  double GetDeltaTime();
 
   void CreateWindowSurface(VkInstance instance, VkSurfaceKHR* surface);
 

@@ -1,13 +1,10 @@
 #include "engine.hpp"
-
+#include "render/model.hpp"
 #include "glm/gtc/constants.hpp"
 
 namespace bloom {
 
-Engine::Engine() { }
-Engine::~Engine() {
-  vkDestroyPipelineLayout(m_devices->device(), m_pipelineLayout, nullptr);
-}
+#pragma region Game Loop
 
 void Engine::Begin() {
   glfwInit();
@@ -22,63 +19,38 @@ void Engine::Begin() {
   m_devices = std::make_unique<render::Devices>(*m_window);
   m_renderer = std::make_unique<render::Renderer>(m_window, m_devices.get());
   LoadObjects();
-  CreatePipelineLayout();
-  CreatePipeline();
+  m_simpleRenderSystem = new SimpleRenderSystem(m_devices.get());
+  m_simpleRenderSystem->Begin(m_renderer->GetRenderPass());
 }
 
 void Engine::Tick() {
+  m_deltaTime = m_window->GetDeltaTime();
   m_window->OnTick();
+  BLOOM_LOG("{0}", 1/m_deltaTime);
 }
 
 void Engine::Render() {
   if (auto commandBuffer = m_renderer->BeginFrame()) {
     m_renderer->BeginRenderPass(commandBuffer);
-    RenderObjects(commandBuffer);
+    m_simpleRenderSystem->RenderObjects(commandBuffer, gameObjects);
     m_renderer->EndRenderPass(commandBuffer);
     m_renderer->EndFrame();
   }
 }
 
-void Engine::End() {
+void Engine::End() const {
   vkDeviceWaitIdle(m_devices->device());
   delete m_window;
 }
 
-void Engine::OnEvent(Event &e) {
+#pragma endregion // -------------------------------------------------------------------------------------------------
+
+void Engine::OnEvent(const Event &e) const {
   BLOOM_INFO("{0}", e.ToString());
 
   if (e.GetEventType() == EventType::WindowClose) {
     m_window->CloseWindow();
   }
-}
-
-void Engine::CreatePipelineLayout() {
-  VkPushConstantRange pushConstantRange{};
-  pushConstantRange.stageFlags = VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT;
-  pushConstantRange.offset = 0;
-  pushConstantRange.size = sizeof(SimplePushConstantData);
-
-  VkPipelineLayoutCreateInfo pipelineLayoutInfo{};
-  pipelineLayoutInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_LAYOUT_CREATE_INFO;
-  pipelineLayoutInfo.setLayoutCount = 0;
-  pipelineLayoutInfo.pSetLayouts = nullptr;
-  pipelineLayoutInfo.pushConstantRangeCount = 1;
-  pipelineLayoutInfo.pPushConstantRanges = &pushConstantRange;
-  auto result = vkCreatePipelineLayout(m_devices->device(), &pipelineLayoutInfo, nullptr, &m_pipelineLayout);
-
-  if (result != VK_SUCCESS) {
-    BLOOM_CRITICAL("Failed to create pipeline layout");
-  }
-}
-
-void Engine::CreatePipeline() {
-  if (m_pipelineLayout == nullptr) BLOOM_CRITICAL("Pipeline layout is null");
-  render::PipelineConfiguration pipelineConfig{};
-  render::Pipeline::defaultPipelineConfig(pipelineConfig);
-  // Tells what layout to expect to the render buffer
-  pipelineConfig.renderPass = m_renderer->GetRenderPass();
-  pipelineConfig.pipelineLayout = m_pipelineLayout;
-  m_pipeline = std::make_unique<render::Pipeline>(*m_devices, "resources/shaders/default.vert.spv", "resources/shaders/default.frag.spv", pipelineConfig);
 }
 
 void Engine::LoadObjects() {
@@ -98,31 +70,6 @@ void Engine::LoadObjects() {
   triangle.transform.rotation = 0.25f * glm::two_pi<float>();
 
   gameObjects.push_back(std::move(triangle));
-}
-
-void Engine::RenderObjects(VkCommandBuffer commandBuffer) {
-  m_pipeline->Bind(commandBuffer);
-
-  for (auto& obj : gameObjects) {
-    obj.transform.rotation = glm::mod(obj.transform.rotation + 0.0001f, glm::two_pi<float>());
-
-    SimplePushConstantData push{};
-    push.offset = obj.transform.position;
-    push.color = obj.color;
-    push.transform = obj.transform.mat2();
-
-    vkCmdPushConstants(
-      commandBuffer,
-      m_pipelineLayout,
-      VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT,
-      0,
-      sizeof(SimplePushConstantData),
-      &push
-    );
-
-    obj.model->Bind(commandBuffer);
-    obj.model->Draw(commandBuffer);
-  }
 }
 
 } // namespace bloom

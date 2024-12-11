@@ -13,9 +13,7 @@
  */
 
 #pragma once
-
-#include "src/core.hpp"
-#include "bloom_header.hpp"
+#include <bloom_header.hpp>
 
 namespace bloom {
 

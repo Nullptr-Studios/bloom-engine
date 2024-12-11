@@ -121,6 +121,12 @@ void Window::SetVSync(bool enabled) {
   _data.vsync = enabled;*/
 }
 
+double Window::GetDeltaTime() {
+  auto currentFrame = glfwGetTime();
+  glfwSetTime(0);
+  return currentFrame;
+}
+
 void Window::CreateWindowSurface(VkInstance instance, VkSurfaceKHR *surface) {
   if(glfwCreateWindowSurface(instance, _window, nullptr, surface) != VK_SUCCESS) {
     BLOOM_CRITICAL("Failed to create window surface");
