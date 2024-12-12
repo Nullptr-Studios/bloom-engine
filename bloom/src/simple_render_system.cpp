@@ -14,11 +14,22 @@ SimpleRenderSystem::~SimpleRenderSystem() {
 }
 
 void SimpleRenderSystem::Begin(VkRenderPass renderPass) {
+  m_textureLayout = std::make_unique<render::DescriptorSetLayout>(m_devices, std::vector<VkDescriptorSetLayoutBinding>{
+          {0, VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, 1, VK_SHADER_STAGE_FRAGMENT_BIT, nullptr}
+      });
+
+  CreateDescriptorPool();
+  CreateDescriptorSets();
   CreatePipelineLayout();
   CreatePipeline(renderPass);
 }
 
 void SimpleRenderSystem::CreatePipelineLayout() {
+
+  std::array<VkDescriptorSetLayout, 1> descriptorSetLayouts = {
+    m_textureLayout->getDescriptorSetLayout()
+  };
+
   VkPushConstantRange pushConstantRange{};
   pushConstantRange.stageFlags = VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT;
   pushConstantRange.offset = 0;
@@ -26,8 +37,8 @@ void SimpleRenderSystem::CreatePipelineLayout() {
 
   VkPipelineLayoutCreateInfo pipelineLayoutInfo{};
   pipelineLayoutInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_LAYOUT_CREATE_INFO;
-  pipelineLayoutInfo.setLayoutCount = 0;
-  pipelineLayoutInfo.pSetLayouts = nullptr;
+  pipelineLayoutInfo.setLayoutCount = static_cast<unsigned int>(descriptorSetLayouts.size());
+  pipelineLayoutInfo.pSetLayouts = descriptorSetLayouts.data();
   pipelineLayoutInfo.pushConstantRangeCount = 1;
   pipelineLayoutInfo.pPushConstantRanges = &pushConstantRange;
   auto result = vkCreatePipelineLayout(m_devices->device(), &pipelineLayoutInfo, nullptr, &m_pipelineLayout);
@@ -67,9 +78,60 @@ void SimpleRenderSystem::RenderObjects(VkCommandBuffer commandBuffer, std::vecto
       &push
     );
 
+    VkDescriptorImageInfo imageInfo{};
+    if (obj.texture != nullptr) {
+      imageInfo.imageLayout = obj.texture->GetImageLayout();
+      imageInfo.imageView = obj.texture->GetImageView();
+      imageInfo.sampler = obj.texture->GetSampler();
+
+      VkWriteDescriptorSet descriptorWrite{};
+      descriptorWrite.sType = VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;
+      descriptorWrite.dstSet = m_globalDescriptorSets[obj.GetID()];
+      descriptorWrite.dstBinding = 0;
+      descriptorWrite.dstArrayElement = 0;
+      descriptorWrite.descriptorType = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
+      descriptorWrite.descriptorCount = 1;
+      descriptorWrite.pImageInfo = &imageInfo;
+      vkDeviceWaitIdle(m_devices->device());
+      vkUpdateDescriptorSets(m_devices->device(), 1, &descriptorWrite, 0, nullptr);
+    }
+
+    // TODO: I should wrap all vulkan calls on DescriptorSet class
+    vkCmdBindDescriptorSets(commandBuffer, VK_PIPELINE_BIND_POINT_GRAPHICS, m_pipelineLayout, 0, 1, &m_globalDescriptorSets[obj.GetID()], 0, nullptr);
+
     obj.model->Bind(commandBuffer);
     obj.model->Draw(commandBuffer);
   }
+}
+
+void SimpleRenderSystem::CreateDescriptorPool() {
+  std::vector<VkDescriptorPoolSize> poolSizes{};
+  poolSizes.resize(1);
+  poolSizes[0].type = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
+  poolSizes[0].descriptorCount = static_cast<unsigned int>(m_poolSizes.imageSampler);
+
+  m_globalPool = std::make_unique<render::DescriptorPool>(m_devices, static_cast<unsigned int>(poolSizes.size()));
+}
+
+void SimpleRenderSystem::CreateDescriptorSets() {
+  m_globalDescriptorSets.resize(1);
+  for (size_t i = 0; i < 1; i++) {
+    m_globalDescriptorSets[i] = AllocateDescriptorSet(m_textureLayout->getDescriptorSetLayout());
+  }
+}
+
+VkDescriptorSet SimpleRenderSystem::AllocateDescriptorSet(VkDescriptorSetLayout layout) {
+  VkDescriptorSetAllocateInfo allocInfo{};
+  allocInfo.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_ALLOCATE_INFO;
+  allocInfo.descriptorPool = m_globalPool->getDescriptorPool();
+  allocInfo.descriptorSetCount = 1;
+  allocInfo.pSetLayouts = &layout;
+  VkDescriptorSet descriptorSet;
+  auto result = vkAllocateDescriptorSets(m_devices->device(), &allocInfo, &descriptorSet);
+  if (result != VK_SUCCESS) {
+    BLOOM_CRITICAL("Failed to allocate descriptor set");
+  }
+  return descriptorSet;
 }
 
 }

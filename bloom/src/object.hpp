@@ -8,6 +8,7 @@
 
 #pragma once
 #include "render/model.hpp"
+#include "render/texture.hpp"
 #include "glm/gtc/matrix_transform.hpp"
 #include <bloom_header.hpp>
 
@@ -64,6 +65,9 @@ public:
   std::shared_ptr<render::Model> model;
   glm::vec3 color;
 
+  render::Texture* texture;
+
+  id_t GetID() const { return m_id; }
 private:
   const id_t m_id;
 };

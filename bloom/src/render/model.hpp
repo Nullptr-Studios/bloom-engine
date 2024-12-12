@@ -16,6 +16,7 @@ class BLOOM_API Model {
 public:
   struct Vertex {
     glm::vec3 position;
+    glm::vec2 texCoord;
     glm::vec4 color;
 
     static std::vector<VkVertexInputBindingDescription> GetBindingDescriptions();

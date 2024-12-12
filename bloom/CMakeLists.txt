@@ -35,6 +35,12 @@ add_library(bloom-engine SHARED
         src/factory.hpp
         src/simple_render_system.cpp
         src/simple_render_system.hpp
+        src/render/texture.cpp
+        src/render/texture.hpp
+        src/render/descriptor_set_layout.cpp
+        src/render/descriptor_set_layout.hpp
+        src/render/descriptor_pool.cpp
+        src/render/descriptor_pool.hpp
 )
 
 target_precompile_headers(bloom-engine PRIVATE bloom_header.hpp)
@@ -50,6 +56,9 @@ target_include_directories(bloom-engine PUBLIC
 # GLM INCLUDE
 add_subdirectory(lib/glm)
 target_link_libraries(bloom-engine glm::glm)
+
+# STB INCLUDE
+target_include_directories(bloom-engine PUBLIC lib/stb)
 
 # GLFW INCLUDE
 set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
