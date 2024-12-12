@@ -1,0 +1,83 @@
+\doxysection{bloom\+::render\+::Renderer Class Reference}
+\hypertarget{classbloom_1_1render_1_1_renderer}{}\label{classbloom_1_1render_1_1_renderer}\index{bloom::render::Renderer@{bloom::render::Renderer}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classbloom_1_1render_1_1_renderer_aae30e467b51084563099ed080f46a7e9}\label{classbloom_1_1render_1_1_renderer_aae30e467b51084563099ed080f46a7e9} 
+{\bfseries Renderer} (\mbox{\hyperlink{classbloom_1_1_window}{Window}} \texorpdfstring{$\ast$}{*}window, \mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}} \texorpdfstring{$\ast$}{*}devices)
+\item 
+\Hypertarget{classbloom_1_1render_1_1_renderer_a16f842c8089d394e4ae0b2bd08d86e93}\label{classbloom_1_1render_1_1_renderer_a16f842c8089d394e4ae0b2bd08d86e93} 
+{\bfseries Renderer} (const \mbox{\hyperlink{classbloom_1_1render_1_1_renderer}{Renderer}} \&)=delete
+\item 
+\Hypertarget{classbloom_1_1render_1_1_renderer_a23d1426c3940b22ba4f9d5b2914fb0aa}\label{classbloom_1_1render_1_1_renderer_a23d1426c3940b22ba4f9d5b2914fb0aa} 
+\mbox{\hyperlink{classbloom_1_1render_1_1_renderer}{Renderer}} \& {\bfseries operator=} (const \mbox{\hyperlink{classbloom_1_1render_1_1_renderer}{Renderer}} \&)=delete
+\item 
+\Hypertarget{classbloom_1_1render_1_1_renderer_a94da13e42d7b93417c6f0fe4b9deb4a2}\label{classbloom_1_1render_1_1_renderer_a94da13e42d7b93417c6f0fe4b9deb4a2} 
+Vk\+Command\+Buffer {\bfseries Begin\+Frame} ()
+\item 
+\Hypertarget{classbloom_1_1render_1_1_renderer_aa6fc56f0251174818ec7d8a5a644a4f7}\label{classbloom_1_1render_1_1_renderer_aa6fc56f0251174818ec7d8a5a644a4f7} 
+void {\bfseries End\+Frame} ()
+\item 
+\Hypertarget{classbloom_1_1render_1_1_renderer_a370097aa9bca53d021c25c820818e5a2}\label{classbloom_1_1render_1_1_renderer_a370097aa9bca53d021c25c820818e5a2} 
+void {\bfseries Begin\+Render\+Pass} (Vk\+Command\+Buffer command\+Buffer)
+\item 
+\Hypertarget{classbloom_1_1render_1_1_renderer_a2543d4c79bf023022d16a3f406ae3149}\label{classbloom_1_1render_1_1_renderer_a2543d4c79bf023022d16a3f406ae3149} 
+void {\bfseries End\+Render\+Pass} (Vk\+Command\+Buffer command\+Buffer)
+\item 
+\Hypertarget{classbloom_1_1render_1_1_renderer_a3e0df9f1c46ca8ddb8df4f435c5ab260}\label{classbloom_1_1render_1_1_renderer_a3e0df9f1c46ca8ddb8df4f435c5ab260} 
+bool {\bfseries Get\+Frame\+Started} () const
+\item 
+\Hypertarget{classbloom_1_1render_1_1_renderer_a47669e12b11c73d06a1a01db272c94aa}\label{classbloom_1_1render_1_1_renderer_a47669e12b11c73d06a1a01db272c94aa} 
+Vk\+Command\+Buffer {\bfseries Get\+Current\+Command\+Buffer} () const
+\item 
+\Hypertarget{classbloom_1_1render_1_1_renderer_a6d9c51736de357a7ffe8b025d86fe092}\label{classbloom_1_1render_1_1_renderer_a6d9c51736de357a7ffe8b025d86fe092} 
+Vk\+Render\+Pass {\bfseries Get\+Render\+Pass} () const
+\item 
+\Hypertarget{classbloom_1_1render_1_1_renderer_a0547050d3457fcb39a2b9ff0ee00ad02}\label{classbloom_1_1render_1_1_renderer_a0547050d3457fcb39a2b9ff0ee00ad02} 
+float {\bfseries Get\+Aspect\+Ratio} () const
+\item 
+\Hypertarget{classbloom_1_1render_1_1_renderer_aa3f6c2d55817bcf09fe8eff8f9b585a9}\label{classbloom_1_1render_1_1_renderer_aa3f6c2d55817bcf09fe8eff8f9b585a9} 
+int {\bfseries Get\+Frame\+Index} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classbloom_1_1render_1_1_renderer_a71f1babbca6183896473fdf1e3cd5d83}\label{classbloom_1_1render_1_1_renderer_a71f1babbca6183896473fdf1e3cd5d83} 
+void {\bfseries Create\+Command\+Buffers} ()
+\item 
+\Hypertarget{classbloom_1_1render_1_1_renderer_adc758a86366dc3001f4b696c1a6e74c6}\label{classbloom_1_1render_1_1_renderer_adc758a86366dc3001f4b696c1a6e74c6} 
+void {\bfseries Free\+Command\+Buffers} ()
+\item 
+\Hypertarget{classbloom_1_1render_1_1_renderer_a2664237b6ac6a448ddcb091d37c850d2}\label{classbloom_1_1render_1_1_renderer_a2664237b6ac6a448ddcb091d37c850d2} 
+void {\bfseries Recreate\+Swap\+Chain} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classbloom_1_1render_1_1_renderer_a1bf49925c8398a887c96ebdb441aa050}\label{classbloom_1_1render_1_1_renderer_a1bf49925c8398a887c96ebdb441aa050} 
+\mbox{\hyperlink{classbloom_1_1_window}{Window}} \texorpdfstring{$\ast$}{*} {\bfseries m\+\_\+window} = nullptr
+\item 
+\Hypertarget{classbloom_1_1render_1_1_renderer_a6b3f6421e2998f06dfbe2c15cf1b9fa3}\label{classbloom_1_1render_1_1_renderer_a6b3f6421e2998f06dfbe2c15cf1b9fa3} 
+\mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}} \texorpdfstring{$\ast$}{*} {\bfseries m\+\_\+devices} = nullptr
+\item 
+\Hypertarget{classbloom_1_1render_1_1_renderer_a3280c5599ca83b0eba84660d8aa96b54}\label{classbloom_1_1render_1_1_renderer_a3280c5599ca83b0eba84660d8aa96b54} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1render_1_1_swap_chain}{Swap\+Chain}} $>$ {\bfseries m\+\_\+swap\+Chain} = nullptr
+\item 
+\Hypertarget{classbloom_1_1render_1_1_renderer_a566d3c0a63492b05664e6efad3959366}\label{classbloom_1_1render_1_1_renderer_a566d3c0a63492b05664e6efad3959366} 
+std\+::vector$<$ Vk\+Command\+Buffer $>$ {\bfseries m\+\_\+command\+Buffers}
+\item 
+\Hypertarget{classbloom_1_1render_1_1_renderer_a3d05fc0f816af649bb2de8e95285f283}\label{classbloom_1_1render_1_1_renderer_a3d05fc0f816af649bb2de8e95285f283} 
+unsigned int {\bfseries m\+\_\+current\+Image\+Index} = 0
+\item 
+\Hypertarget{classbloom_1_1render_1_1_renderer_a9138507ea6da594a459c9cf732e9a38a}\label{classbloom_1_1render_1_1_renderer_a9138507ea6da594a459c9cf732e9a38a} 
+int {\bfseries m\+\_\+current\+Frame\+Index} = 0
+\item 
+\Hypertarget{classbloom_1_1render_1_1_renderer_a1af023cd0139db4714e639f611a3b23a}\label{classbloom_1_1render_1_1_renderer_a1af023cd0139db4714e639f611a3b23a} 
+bool {\bfseries m\+\_\+frame\+Started} = false
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/xgoni/bloom/bloom/src/render/\mbox{\hyperlink{renderer_8hpp}{renderer.\+hpp}}\item 
+C\+:/\+Users/xgoni/bloom/bloom/src/render/renderer.\+cpp\end{DoxyCompactItemize}

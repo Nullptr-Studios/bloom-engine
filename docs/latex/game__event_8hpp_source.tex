@@ -1,0 +1,61 @@
+\doxysection{game\+\_\+event.\+hpp}
+\hypertarget{game__event_8hpp_source}{}\label{game__event_8hpp_source}\index{C:/Users/xgoni/bloom/bloom/src/events/game\_event.hpp@{C:/Users/xgoni/bloom/bloom/src/events/game\_event.hpp}}
+\mbox{\hyperlink{game__event_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{event_8hpp}{event.hpp}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{bloom__header_8hpp}{bloom\_header.hpp}}"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }bloom\ \{}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{class\ }BLOOM\_API\ \mbox{\hyperlink{classbloom_1_1_window_resize_event}{WindowResizeEvent}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classbloom_1_1_event}{Event}}\ \{}
+\DoxyCodeLine{00027\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00033\ \ \ \mbox{\hyperlink{classbloom_1_1_window_resize_event_a4bf1fd9a7f951664327c589ef95bc8d6}{WindowResizeEvent}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ height)}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ :\ \_width(width),\ \_height(height)\ \{\}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00040\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classbloom_1_1_window_resize_event_a8d105a1607236ebd51d3f9e03f716614}{GetWidth}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_width;\ \}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00046\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classbloom_1_1_window_resize_event_a51f355e92154fc6f793bc4a71a84e077}{GetHeight}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_height;\ \}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00052\ \ \ std::string\ \mbox{\hyperlink{classbloom_1_1_window_resize_event_a8be8cba1d6436bd544894ba38426f556}{ToString}}()\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00053\ \ \ \ \ std::stringstream\ ss;}
+\DoxyCodeLine{00054\ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}WindowResizeEvent:\ "{}}\ <<\ \_width\ <<\ \textcolor{stringliteral}{"{},\ "{}}\ <<\ \_height;}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordflow}{return}\ ss.str();}
+\DoxyCodeLine{00056\ \ \ \}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \mbox{\hyperlink{event_8hpp_a80d534fc4d69a68eefd1573fd0ac2f44}{EVENT\_CLASS\_TYPE}}(WindowResize)}
+\DoxyCodeLine{00059\ \ \ \mbox{\hyperlink{event_8hpp_abd52deea587a36ef619e596a0c691839}{EVENT\_CLASS\_CATEGORY}}(EventCategoryGame)}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00062\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \_width;\ \ }
+\DoxyCodeLine{00063\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \_height;\ }
+\DoxyCodeLine{00064\ \};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00072\ \textcolor{keyword}{class\ }BLOOM\_API\ \mbox{\hyperlink{classbloom_1_1_window_close_event}{WindowCloseEvent}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classbloom_1_1_event}{Event}}\ \{}
+\DoxyCodeLine{00073\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00077\ \ \ \mbox{\hyperlink{classbloom_1_1_window_close_event_a7474baa50c66dbd5a7f7f6a690975107}{WindowCloseEvent}}()\ \{\}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \mbox{\hyperlink{event_8hpp_a80d534fc4d69a68eefd1573fd0ac2f44}{EVENT\_CLASS\_TYPE}}(WindowClose)}
+\DoxyCodeLine{00080\ \ \ \mbox{\hyperlink{event_8hpp_abd52deea587a36ef619e596a0c691839}{EVENT\_CLASS\_CATEGORY}}(EventCategoryGame)}
+\DoxyCodeLine{00081\ \};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00090\ \textcolor{keyword}{class\ }BLOOM\_API\ \mbox{\hyperlink{classbloom_1_1_game_tick_event}{GameTickEvent}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classbloom_1_1_event}{Event}}\ \{}
+\DoxyCodeLine{00091\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00095\ \ \ \mbox{\hyperlink{classbloom_1_1_game_tick_event_af13d24161400130457cec680a88b04f2}{GameTickEvent}}()\ \{\}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \mbox{\hyperlink{event_8hpp_a80d534fc4d69a68eefd1573fd0ac2f44}{EVENT\_CLASS\_TYPE}}(GameTick)}
+\DoxyCodeLine{00098\ \ \ \mbox{\hyperlink{event_8hpp_abd52deea587a36ef619e596a0c691839}{EVENT\_CLASS\_CATEGORY}}(EventCategoryGame)}
+\DoxyCodeLine{00099\ \};}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00108\ \textcolor{keyword}{class\ }BLOOM\_API\ \mbox{\hyperlink{classbloom_1_1_game_render_event}{GameRenderEvent}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classbloom_1_1_event}{Event}}\ \{}
+\DoxyCodeLine{00109\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00113\ \ \ \mbox{\hyperlink{classbloom_1_1_game_render_event_a8dbd4ef6fb6078c9eaa4efcb60ac226b}{GameRenderEvent}}()\ \{\}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \mbox{\hyperlink{event_8hpp_a80d534fc4d69a68eefd1573fd0ac2f44}{EVENT\_CLASS\_TYPE}}(GameRender)}
+\DoxyCodeLine{00116\ \ \ \mbox{\hyperlink{event_8hpp_abd52deea587a36ef619e596a0c691839}{EVENT\_CLASS\_CATEGORY}}(EventCategoryGame)}
+\DoxyCodeLine{00117\ \};}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \}}
+
+\end{DoxyCode}

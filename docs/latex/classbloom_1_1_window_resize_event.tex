@@ -1,0 +1,121 @@
+\doxysection{bloom\+::Window\+Resize\+Event Class Reference}
+\hypertarget{classbloom_1_1_window_resize_event}{}\label{classbloom_1_1_window_resize_event}\index{bloom::WindowResizeEvent@{bloom::WindowResizeEvent}}
+
+
+Represents an event triggered when the application window is resized.  
+
+
+
+
+{\ttfamily \#include $<$game\+\_\+event.\+hpp$>$}
+
+Inheritance diagram for bloom\+::Window\+Resize\+Event\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classbloom_1_1_window_resize_event}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbloom_1_1_window_resize_event_a4bf1fd9a7f951664327c589ef95bc8d6}{Window\+Resize\+Event}} (unsigned int width, unsigned int height)
+\begin{DoxyCompactList}\small\item\em Constructs a {\ttfamily \doxylink{classbloom_1_1_window_resize_event}{Window\+Resize\+Event}}. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classbloom_1_1_window_resize_event_a8d105a1607236ebd51d3f9e03f716614}{Get\+Width}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the width of the window after resizing. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classbloom_1_1_window_resize_event_a51f355e92154fc6f793bc4a71a84e077}{Get\+Height}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the height of the window after resizing. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classbloom_1_1_window_resize_event_a8be8cba1d6436bd544894ba38426f556}{To\+String}} () const override
+\begin{DoxyCompactList}\small\item\em Overrides the {\ttfamily To\+String} function to provide a detailed string representation of the event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classbloom_1_1_event}{bloom\+::\+Event}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{event_8hpp_a62777e271a1f3f6e4a8ba9055c2e4df9}{Event\+Type}} \mbox{\hyperlink{classbloom_1_1_event_afb0cc62325b1fbd939fafe1096c6c624}{Get\+Event\+Type}} () const =0
+\begin{DoxyCompactList}\small\item\em Gets the type of the event. \end{DoxyCompactList}\item 
+virtual const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classbloom_1_1_event_ab5bb7f0fc80e71886658e3acb181fd16}{Get\+Name}} () const =0
+\begin{DoxyCompactList}\small\item\em Gets the name of the event. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classbloom_1_1_event_aae34b363173e9c057ac00f6fe78bcf9a}{Get\+Category\+Flags}} () const =0
+\begin{DoxyCompactList}\small\item\em Gets the category flags for the event. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classbloom_1_1_event_ad407353c8d035d38f9bc21eedd0b8c69}{Is\+In\+Category}} (const \mbox{\hyperlink{event_8hpp_a85f0d8c71d473ca68946d8c5bcdab3f5}{Event\+Category}} category) const
+\begin{DoxyCompactList}\small\item\em Checks if the event belongs to a specific category. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classbloom_1_1_event}{bloom\+::\+Event}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classbloom_1_1_event_abc466e96deb4ed6616be51c35a35e796}{\+\_\+handled}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents an event triggered when the application window is resized. 
+
+This event is dispatched when the window\textquotesingle{}s width or height changes. It contains information about the new dimensions of the window and provides a string representation for debugging. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classbloom_1_1_window_resize_event_a4bf1fd9a7f951664327c589ef95bc8d6}\index{bloom::WindowResizeEvent@{bloom::WindowResizeEvent}!WindowResizeEvent@{WindowResizeEvent}}
+\index{WindowResizeEvent@{WindowResizeEvent}!bloom::WindowResizeEvent@{bloom::WindowResizeEvent}}
+\doxysubsubsection{\texorpdfstring{WindowResizeEvent()}{WindowResizeEvent()}}
+{\footnotesize\ttfamily \label{classbloom_1_1_window_resize_event_a4bf1fd9a7f951664327c589ef95bc8d6} 
+bloom\+::\+Window\+Resize\+Event\+::\+Window\+Resize\+Event (\begin{DoxyParamCaption}\item[{unsigned int}]{width}{, }\item[{unsigned int}]{height}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a {\ttfamily \doxylink{classbloom_1_1_window_resize_event}{Window\+Resize\+Event}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & The new width of the window. \\
+\hline
+{\em height} & The new height of the window. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classbloom_1_1_window_resize_event_a51f355e92154fc6f793bc4a71a84e077}\index{bloom::WindowResizeEvent@{bloom::WindowResizeEvent}!GetHeight@{GetHeight}}
+\index{GetHeight@{GetHeight}!bloom::WindowResizeEvent@{bloom::WindowResizeEvent}}
+\doxysubsubsection{\texorpdfstring{GetHeight()}{GetHeight()}}
+{\footnotesize\ttfamily \label{classbloom_1_1_window_resize_event_a51f355e92154fc6f793bc4a71a84e077} 
+unsigned int bloom\+::\+Window\+Resize\+Event\+::\+Get\+Height (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the height of the window after resizing. 
+
+\begin{DoxyReturn}{Returns}
+The height of the window. 
+\end{DoxyReturn}
+\Hypertarget{classbloom_1_1_window_resize_event_a8d105a1607236ebd51d3f9e03f716614}\index{bloom::WindowResizeEvent@{bloom::WindowResizeEvent}!GetWidth@{GetWidth}}
+\index{GetWidth@{GetWidth}!bloom::WindowResizeEvent@{bloom::WindowResizeEvent}}
+\doxysubsubsection{\texorpdfstring{GetWidth()}{GetWidth()}}
+{\footnotesize\ttfamily \label{classbloom_1_1_window_resize_event_a8d105a1607236ebd51d3f9e03f716614} 
+unsigned int bloom\+::\+Window\+Resize\+Event\+::\+Get\+Width (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the width of the window after resizing. 
+
+\begin{DoxyReturn}{Returns}
+The width of the window. 
+\end{DoxyReturn}
+\Hypertarget{classbloom_1_1_window_resize_event_a8be8cba1d6436bd544894ba38426f556}\index{bloom::WindowResizeEvent@{bloom::WindowResizeEvent}!ToString@{ToString}}
+\index{ToString@{ToString}!bloom::WindowResizeEvent@{bloom::WindowResizeEvent}}
+\doxysubsubsection{\texorpdfstring{ToString()}{ToString()}}
+{\footnotesize\ttfamily \label{classbloom_1_1_window_resize_event_a8be8cba1d6436bd544894ba38426f556} 
+std\+::string bloom\+::\+Window\+Resize\+Event\+::\+To\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Overrides the {\ttfamily To\+String} function to provide a detailed string representation of the event. 
+
+\begin{DoxyReturn}{Returns}
+A string containing the event details. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classbloom_1_1_event_a1e826d312aa922abd9401a02ee33ab3d}{bloom\+::\+Event}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/xgoni/bloom/bloom/src/events/\mbox{\hyperlink{game__event_8hpp}{game\+\_\+event.\+hpp}}\end{DoxyCompactItemize}

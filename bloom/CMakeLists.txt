@@ -41,6 +41,8 @@ add_library(bloom-engine SHARED
         src/render/descriptor_set_layout.hpp
         src/render/descriptor_pool.cpp
         src/render/descriptor_pool.hpp
+        src/camera.cpp
+        src/camera.hpp
 )
 
 target_precompile_headers(bloom-engine PRIVATE bloom_header.hpp)
@@ -66,9 +68,6 @@ set(GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
 set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
 add_subdirectory(lib/glfw)
 target_link_libraries(bloom-engine glfw)
-
-find_package(OpenGL REQUIRED)
-target_link_libraries(bloom-engine OpenGL::GL)
 
 find_package(Vulkan REQUIRED)
 target_link_libraries(bloom-engine Vulkan::Vulkan)

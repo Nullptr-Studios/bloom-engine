@@ -1,0 +1,30 @@
+\doxysection{core.\+hpp}
+\hypertarget{core_8hpp_source}{}\label{core_8hpp_source}\index{C:/Users/xgoni/bloom/bloom/src/core.hpp@{C:/Users/xgoni/bloom/bloom/src/core.hpp}}
+\mbox{\hyperlink{core_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifdef\ BLOOM\_PLATFORM\_WINDOWS}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\ \ \#ifdef\ BLOOM\_BUILD\_DLL}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\ \ \ \ \#define\ BLOOM\_API\ \_\_declspec(dllexport)}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\ \ \#else}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\ \ \ \ \#define\ BLOOM\_API\ \_\_declspec(dllimport)}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\ \ \#endif}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\ \ \#error\ Bloom\ only\ supports\ windows!}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ BIT(x)\ (1\ <<\ x)}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{enum}\ megabool\ \{}
+\DoxyCodeLine{00025\ \ \ FALSE,\ TRUE,\ NEITHER,\ BOTH,}
+\DoxyCodeLine{00026\ \ \ MAYBE,\ TRUEISH,\ FALSEISH,}
+\DoxyCodeLine{00027\ \ \ IT\_DEPENDS,\ OSCILLATING,}
+\DoxyCodeLine{00028\ \ \ ITS\_COMPLICATED,}
+\DoxyCodeLine{00029\ \ \ DOUBLE\_FALSE,\ DOUBLE\_TRUE,}
+\DoxyCodeLine{00030\ \ \ UNKNOWN,\ UNDEFINED}
+\DoxyCodeLine{00031\ \};}
+
+\end{DoxyCode}

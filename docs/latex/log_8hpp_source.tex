@@ -1,0 +1,57 @@
+\doxysection{log.\+hpp}
+\hypertarget{log_8hpp_source}{}\label{log_8hpp_source}\index{C:/Users/xgoni/bloom/bloom/src/log.hpp@{C:/Users/xgoni/bloom/bloom/src/log.hpp}}
+\mbox{\hyperlink{log_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{core_8hpp}{core.hpp}}"{}}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <spdlog/spdlog.h>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <spdlog/sinks/stdout\_color\_sinks.h>}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{namespace\ }bloom\ \{}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{class\ }BLOOM\_API\ \mbox{\hyperlink{classbloom_1_1_log}{Log}}\ \{}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00044\ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ Init();}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00050\ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{static}\ std::shared\_ptr<spdlog::logger>\&\ \mbox{\hyperlink{classbloom_1_1_log_aad38d3784727402356dcb4110857960b}{GetBloomLogger}}()\ \{\ \textcolor{keywordflow}{return}\ \_bloomLogger;\ \}}
+\DoxyCodeLine{00055\ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{static}\ std::shared\_ptr<spdlog::logger>\&\ \mbox{\hyperlink{classbloom_1_1_log_ae0d90b09e56830d02412deb0d1f87d0c}{GetGameLogger}}()\ \{\ \textcolor{keywordflow}{return}\ \_gameLogger;\ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00058\ \ \ \textcolor{keyword}{static}\ std::shared\_ptr<spdlog::logger>\ \_bloomLogger;}
+\DoxyCodeLine{00059\ \ \ \textcolor{keyword}{static}\ std::shared\_ptr<spdlog::logger>\ \_gameLogger;}
+\DoxyCodeLine{00060\ \};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{comment}{//\ Engine\ log\ macros}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#define\ BLOOM\_CRITICAL(...)\ \ \ \{::bloom::Log::GetBloomLogger()-\/>critical(\_\_VA\_ARGS\_\_);\(\backslash\)}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_debugbreak();\(\backslash\)}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::exit(1);\}}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#define\ BLOOM\_ERROR(...)\ \ \ \ \ \ ::bloom::Log::GetBloomLogger()-\/>error(\_\_VA\_ARGS\_\_);\(\backslash\)}}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_debugbreak()}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#define\ BLOOM\_WARN(...)\ \ \ \ \ \ \ ::bloom::Log::GetBloomLogger()-\/>warn(\_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#define\ BLOOM\_INFO(...)\ \ \ \ \ \ \ ::bloom::Log::GetBloomLogger()-\/>info(\_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\#define\ BLOOM\_LOG(...)\ \ \ \ \ \ \ \ ::bloom::Log::GetBloomLogger()-\/>trace(\_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \textcolor{comment}{//\ Game\ log\ macros}}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\#define\ GAME\_CRITICAL(...)\ \ \ \ ::bloom::Log::GetGameLogger()-\/>critical(\_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\#define\ GAME\_ERROR(...)\ \ \ \ \ \ \ ::bloom::Log::GetGameLogger()-\/>error(\_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00157\ \textcolor{preprocessor}{\#define\ GAME\_WARN(...)\ \ \ \ \ \ \ \ ::bloom::Log::GetGameLogger()-\/>warn(\_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00168\ \textcolor{preprocessor}{\#define\ GAME\_INFO(...)\ \ \ \ \ \ \ \ ::bloom::Log::GetGameLogger()-\/>info(\_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00179\ \textcolor{preprocessor}{\#define\ GAME\_LOG(...)\ \ \ \ \ \ \ \ \ ::bloom::Log::GetGameLogger()-\/>trace(\_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{00180\ }
+
+\end{DoxyCode}

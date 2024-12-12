@@ -1,0 +1,32 @@
+\doxysection{entrypoint.\+hpp}
+\hypertarget{entrypoint_8hpp_source}{}\label{entrypoint_8hpp_source}\index{C:/Users/xgoni/bloom/bloom/src/entrypoint.hpp@{C:/Users/xgoni/bloom/bloom/src/entrypoint.hpp}}
+\mbox{\hyperlink{entrypoint_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{engine_8hpp}{engine.hpp}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{log_8hpp}{log.hpp}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <spdlog/spdlog.h>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ GLFW\_INCLUDE\_VULKAN}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <GLFW/glfw3.h>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifdef\ BLOOM\_PLATFORM\_WINDOWS}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keywordtype}{int}\ main(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}**\ argv)\ \{}
+\DoxyCodeLine{00020\ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \_engine\ =\ \mbox{\hyperlink{engine_8hpp_a8a68fb9b4e5dc5c0eb680b3f32781872}{bloom::CreateEngine}}();}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ glfwInit();}
+\DoxyCodeLine{00023\ \ \ \_engine-\/>Begin();}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \textcolor{keywordflow}{while}\ (!\_engine-\/>ShouldClose())\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \_engine-\/>Tick();}
+\DoxyCodeLine{00027\ \ \ \ \ \_engine-\/>Render();}
+\DoxyCodeLine{00028\ \ \ \}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \_engine-\/>End();}
+\DoxyCodeLine{00031\ \}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

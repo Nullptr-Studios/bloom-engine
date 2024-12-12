@@ -1,0 +1,64 @@
+\doxysection{bloom\+::Log Class Reference}
+\hypertarget{classbloom_1_1_log}{}\label{classbloom_1_1_log}\index{bloom::Log@{bloom::Log}}
+
+
+Centralized logging system for the engine and game.  
+
+
+
+
+{\ttfamily \#include $<$log.\+hpp$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classbloom_1_1_log_a9b14d69152140370e565749b0fee499e}\label{classbloom_1_1_log_a9b14d69152140370e565749b0fee499e} 
+static void {\bfseries Init} ()
+\begin{DoxyCompactList}\small\item\em This function initializes the logger for the game. \end{DoxyCompactList}\item 
+static std\+::shared\+\_\+ptr$<$ spdlog\+::logger $>$ \& \mbox{\hyperlink{classbloom_1_1_log_aad38d3784727402356dcb4110857960b}{Get\+Bloom\+Logger}} ()
+\item 
+static std\+::shared\+\_\+ptr$<$ spdlog\+::logger $>$ \& \mbox{\hyperlink{classbloom_1_1_log_ae0d90b09e56830d02412deb0d1f87d0c}{Get\+Game\+Logger}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Centralized logging system for the engine and game. 
+
+The {\ttfamily \doxylink{classbloom_1_1_log}{Log}} class provides a unified interface for handling logging operations within the engine and game. It acts as a wrapper around the {\bfseries{spdlog}} library, offering convenient methods to log messages at various severity levels (e.\+g., trace, info, warning, error, critical).
+
+This class manages two primary logging consoles\+:
+\begin{DoxyItemize}
+\item {\bfseries{Bloom}} Console\+: Used for logging messages related to the engine\textquotesingle{}s internal systems.
+\item {\bfseries{Game}} Console\+: Used for logging messages specific to the game logic and runtime.
+\end{DoxyItemize}
+
+\begin{DoxyNote}{Note}
+The {\ttfamily BLOOM\+\_\+\+API} macro is used to expose this class for external use in a shared library context. 
+\end{DoxyNote}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classbloom_1_1_log_aad38d3784727402356dcb4110857960b}\index{bloom::Log@{bloom::Log}!GetBloomLogger@{GetBloomLogger}}
+\index{GetBloomLogger@{GetBloomLogger}!bloom::Log@{bloom::Log}}
+\doxysubsubsection{\texorpdfstring{GetBloomLogger()}{GetBloomLogger()}}
+{\footnotesize\ttfamily \label{classbloom_1_1_log_aad38d3784727402356dcb4110857960b} 
+static std\+::shared\+\_\+ptr$<$ spdlog\+::logger $>$ \& bloom\+::\+Log\+::\+Get\+Bloom\+Logger (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Gets the bloom log console \begin{DoxyReturn}{Returns}
+Bloom \doxylink{classbloom_1_1_log}{Log} console shared pointer 
+\end{DoxyReturn}
+\Hypertarget{classbloom_1_1_log_ae0d90b09e56830d02412deb0d1f87d0c}\index{bloom::Log@{bloom::Log}!GetGameLogger@{GetGameLogger}}
+\index{GetGameLogger@{GetGameLogger}!bloom::Log@{bloom::Log}}
+\doxysubsubsection{\texorpdfstring{GetGameLogger()}{GetGameLogger()}}
+{\footnotesize\ttfamily \label{classbloom_1_1_log_ae0d90b09e56830d02412deb0d1f87d0c} 
+static std\+::shared\+\_\+ptr$<$ spdlog\+::logger $>$ \& bloom\+::\+Log\+::\+Get\+Game\+Logger (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Gets the game log console \begin{DoxyReturn}{Returns}
+Game \doxylink{classbloom_1_1_log}{Log} console shared pointer 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/xgoni/bloom/bloom/src/\mbox{\hyperlink{log_8hpp}{log.\+hpp}}\item 
+C\+:/\+Users/xgoni/bloom/bloom/src/log.\+cpp\end{DoxyCompactItemize}

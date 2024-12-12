@@ -1,0 +1,99 @@
+\doxysection{mouse\+\_\+event.\+hpp}
+\hypertarget{mouse__event_8hpp_source}{}\label{mouse__event_8hpp_source}\index{C:/Users/xgoni/bloom/bloom/src/events/mouse\_event.hpp@{C:/Users/xgoni/bloom/bloom/src/events/mouse\_event.hpp}}
+\mbox{\hyperlink{mouse__event_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{event_8hpp}{event.hpp}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{bloom__header_8hpp}{bloom\_header.hpp}}"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }bloom\ \{}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }BLOOM\_API\ \mbox{\hyperlink{classbloom_1_1_mouse_moved_event}{MouseMovedEvent}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classbloom_1_1_event}{Event}}\ \{}
+\DoxyCodeLine{00026\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \ \ \mbox{\hyperlink{classbloom_1_1_mouse_moved_event_a0e2234c62b7cf4b6524c8fb3c8cf2795}{MouseMovedEvent}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ y)\ :\ \_mouseX(x),\ \_mouseY(y)\ \{\}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00038\ \ \ [[nodiscard]]\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classbloom_1_1_mouse_moved_event_ad28f935f38fce52e7da84a0372d899c7}{GetX}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_mouseX;\ \}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00044\ \ \ [[nodiscard]]\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classbloom_1_1_mouse_moved_event_a9e33c893017fa4307c12e831f9a2238b}{GetY}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_mouseY;\ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \mbox{\hyperlink{event_8hpp_a80d534fc4d69a68eefd1573fd0ac2f44}{EVENT\_CLASS\_TYPE}}(MouseMoved)}
+\DoxyCodeLine{00047\ \ \ \mbox{\hyperlink{event_8hpp_abd52deea587a36ef619e596a0c691839}{EVENT\_CLASS\_CATEGORY}}(EventCategoryMouse\ |\ EventCategoryInput)}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ }
+\DoxyCodeLine{00053\ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classbloom_1_1_mouse_moved_event_a66e03c370f8df2b5d8889926ed68b6d9}{ToString}}()\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00054\ \ \ \ \ std::stringstream\ ss;}
+\DoxyCodeLine{00055\ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}MouseMovedEvent:\ "{}}\ <<\ \_mouseX\ <<\ \textcolor{stringliteral}{"{},\ "{}}\ <<\ \_mouseY;}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordflow}{return}\ ss.str();}
+\DoxyCodeLine{00057\ \ \ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00060\ \ \ \textcolor{keywordtype}{float}\ \_mouseX,\ \_mouseY;\ \ }
+\DoxyCodeLine{00061\ \};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00069\ \textcolor{keyword}{class\ }BLOOM\_API\ \mbox{\hyperlink{classbloom_1_1_mouse_scrolled_event}{MouseScrolledEvent}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classbloom_1_1_event}{Event}}\ \{}
+\DoxyCodeLine{00070\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00076\ \ \ \mbox{\hyperlink{classbloom_1_1_mouse_scrolled_event_a681cb73ee7b5ffb6cbffe7b8825e917f}{MouseScrolledEvent}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ xOffset,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ yOffset)}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ :\ \_mouseXOffset(xOffset),\ \_mouseYOffset(yOffset)\ \{\}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00083\ \ \ [[nodiscard]]\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classbloom_1_1_mouse_scrolled_event_aead7e4e6330487821e1bcf45ff015784}{GetXOffset}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_mouseXOffset;\ \}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00089\ \ \ [[nodiscard]]\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classbloom_1_1_mouse_scrolled_event_a15cd2694bc0201e3fccef873d4b0aaf6}{GetYOffset}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_mouseYOffset;\ \}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \mbox{\hyperlink{event_8hpp_a80d534fc4d69a68eefd1573fd0ac2f44}{EVENT\_CLASS\_TYPE}}(MouseScrolled)\ \ }
+\DoxyCodeLine{00092\ \ \ \mbox{\hyperlink{event_8hpp_abd52deea587a36ef619e596a0c691839}{EVENT\_CLASS\_CATEGORY}}(EventCategoryMouse\ |\ EventCategoryInput)}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ }
+\DoxyCodeLine{00098\ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classbloom_1_1_mouse_scrolled_event_ae373067be63601a16d7b7749059ff8df}{ToString}}()\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00099\ \ \ \ \ std::stringstream\ ss;}
+\DoxyCodeLine{00100\ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}MouseScrolledEvent:\ "{}}\ <<\ \_mouseXOffset\ <<\ \textcolor{stringliteral}{"{},\ "{}}\ <<\ \_mouseYOffset;}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordflow}{return}\ ss.str();}
+\DoxyCodeLine{00102\ \ \ \}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00105\ \ \ \textcolor{keywordtype}{float}\ \_mouseXOffset,\ \_mouseYOffset;\ \ }
+\DoxyCodeLine{00106\ \};}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00116\ \textcolor{keyword}{class\ }BLOOM\_API\ \mbox{\hyperlink{classbloom_1_1_mouse_button_event}{MouseButtonEvent}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classbloom_1_1_event}{Event}}\ \{}
+\DoxyCodeLine{00117\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00122\ \ \ [[nodiscard]]\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classbloom_1_1_mouse_button_event_a9dea15429e61a352874dc5e30d6be390}{GetMouseButton}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_button;\ \}}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \mbox{\hyperlink{event_8hpp_abd52deea587a36ef619e596a0c691839}{EVENT\_CLASS\_CATEGORY}}(EventCategoryMouseButton\ |\ EventCategoryMouse\ |\ EventCategoryInput)}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00131\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classbloom_1_1_mouse_button_event_a2fa0ee41f2323bda453fe62815da3c62}{MouseButtonEvent}}(\textcolor{keywordtype}{int}\ button)\ :\ \_button(button)\ \{\}}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classbloom_1_1_mouse_button_event_ab74145ee4fea53450ab3a8220770c417}{\_button}};\ \ }
+\DoxyCodeLine{00134\ \};}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00140\ \textcolor{keyword}{class\ }BLOOM\_API\ \mbox{\hyperlink{classbloom_1_1_mouse_button_pressed_event}{MouseButtonPressedEvent}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classbloom_1_1_mouse_button_event}{MouseButtonEvent}}\ \{}
+\DoxyCodeLine{00141\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00146\ \ \ \mbox{\hyperlink{classbloom_1_1_mouse_button_pressed_event_a58e2ea349acb6263de29df48b66e1d83}{MouseButtonPressedEvent}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ button)\ :\ \mbox{\hyperlink{classbloom_1_1_mouse_button_event}{MouseButtonEvent}}(button)\ \{\}}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \mbox{\hyperlink{event_8hpp_a80d534fc4d69a68eefd1573fd0ac2f44}{EVENT\_CLASS\_TYPE}}(MouseButtonPressed)}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \ \ }
+\DoxyCodeLine{00154\ \ \ std::\textcolor{keywordtype}{string}\ ToString()\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00155\ \ \ \ \ std::stringstream\ ss;}
+\DoxyCodeLine{00156\ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}MouseButtonPressedEvent:\ "{}}\ <<\ \_button;}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordflow}{return}\ ss.str();}
+\DoxyCodeLine{00158\ \ \ \}}
+\DoxyCodeLine{00159\ \};}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00165\ \textcolor{keyword}{class\ }BLOOM\_API\ \mbox{\hyperlink{classbloom_1_1_mouse_button_released_event}{MouseButtonReleasedEvent}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classbloom_1_1_mouse_button_event}{MouseButtonEvent}}\ \{}
+\DoxyCodeLine{00166\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00171\ \ \ \mbox{\hyperlink{classbloom_1_1_mouse_button_released_event_a65ce39ddb3fa14dde00b4e17405dcb2f}{MouseButtonReleasedEvent}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ button)\ :\ \mbox{\hyperlink{classbloom_1_1_mouse_button_event}{MouseButtonEvent}}(button)\ \{\}}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \ \ \mbox{\hyperlink{event_8hpp_a80d534fc4d69a68eefd1573fd0ac2f44}{EVENT\_CLASS\_TYPE}}(MouseButtonReleased)}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \ \ }
+\DoxyCodeLine{00179\ \ \ std::\textcolor{keywordtype}{string}\ ToString()\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00180\ \ \ \ \ std::stringstream\ ss;}
+\DoxyCodeLine{00181\ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}MouseButtonReleasedEvent:\ "{}}\ <<\ \_button;}
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{keywordflow}{return}\ ss.str();}
+\DoxyCodeLine{00183\ \ \ \}}
+\DoxyCodeLine{00184\ \};}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ \}\ \ \textcolor{comment}{//\ namespace\ bloom}}
+
+\end{DoxyCode}

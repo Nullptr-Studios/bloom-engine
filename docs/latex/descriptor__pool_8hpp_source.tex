@@ -1,0 +1,25 @@
+\doxysection{descriptor\+\_\+pool.\+hpp}
+\hypertarget{descriptor__pool_8hpp_source}{}\label{descriptor__pool_8hpp_source}\index{C:/Users/xgoni/bloom/bloom/src/render/descriptor\_pool.hpp@{C:/Users/xgoni/bloom/bloom/src/render/descriptor\_pool.hpp}}
+\mbox{\hyperlink{descriptor__pool_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{devices_8hpp}{devices.hpp}}"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }bloom::render\ \{}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }BLOOM\_API\ \mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_pool}{DescriptorPool}}\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_pool}{DescriptorPool}}(\mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}}*\ devices,\ uint32\_t\ maxSets);}
+\DoxyCodeLine{00017\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_pool}{\string~DescriptorPool}}();}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ VkDescriptorPool\ getDescriptorPool()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ descriptorPool;\ \}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00022\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}}*\ devices;}
+\DoxyCodeLine{00023\ \ \ VkDescriptorPool\ descriptorPool;}
+\DoxyCodeLine{00024\ \};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \}}
+
+\end{DoxyCode}

@@ -1,3 +1,11 @@
+/**
+ * \file swap_chain.hpp
+ * \author Brendan Galea
+ * \date 12/12/2024
+ *
+ * \brief Swap chain implementation file
+ */
+
 #pragma once
 
 #include "devices.hpp"

@@ -41,6 +41,7 @@ public:
     return m_commandBuffers[m_currentFrameIndex];
   }
   VkRenderPass GetRenderPass() const { return m_swapChain->GetRenderPass(); }
+  float GetAspectRatio() const { return m_swapChain->ExtentAspectRatio(); }
 
   int GetFrameIndex() const {
     if (!m_frameStarted) {
@@ -61,7 +62,7 @@ protected:
   std::vector<VkCommandBuffer> m_commandBuffers;
 
   unsigned int m_currentImageIndex = 0;
-  int m_currentFrameIndex;
+  int m_currentFrameIndex = 0;
   bool m_frameStarted = false;
 };
 

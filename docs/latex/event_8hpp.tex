@@ -1,0 +1,142 @@
+\doxysection{C\+:/\+Users/xgoni/bloom/bloom/src/events/event.hpp File Reference}
+\hypertarget{event_8hpp}{}\label{event_8hpp}\index{C:/Users/xgoni/bloom/bloom/src/events/event.hpp@{C:/Users/xgoni/bloom/bloom/src/events/event.hpp}}
+
+
+Provides the base classes and macros to define and handle events in the Bloom Engine.  
+
+
+{\ttfamily \#include $<$bloom\+\_\+header.\+hpp$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classbloom_1_1_event}{bloom\+::\+Event}}
+\begin{DoxyCompactList}\small\item\em Abstract base class for all events in the Bloom \doxylink{classbloom_1_1_engine}{Engine}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classbloom_1_1_event_dispatcher}{bloom\+::\+Event\+Dispatcher}}
+\begin{DoxyCompactList}\small\item\em A utility class for dispatching events to appropriate handlers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{event_8hpp_a80d534fc4d69a68eefd1573fd0ac2f44}{EVENT\+\_\+\+CLASS\+\_\+\+TYPE}}(type)
+\begin{DoxyCompactList}\small\item\em Defines a macro to declare a static type for an event class. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{event_8hpp_abd52deea587a36ef619e596a0c691839}{EVENT\+\_\+\+CLASS\+\_\+\+CATEGORY}}(category)
+\begin{DoxyCompactList}\small\item\em Defines a macro to declare category flags for an event class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{event_8hpp_a62777e271a1f3f6e4a8ba9055c2e4df9}{bloom\+::\+Event\+Type}} \{ \newline
+{\bfseries None} = 0
+, {\bfseries Window\+Close}
+, {\bfseries Window\+Resize}
+, {\bfseries Window\+Focus}
+, \newline
+{\bfseries Window\+Lost\+Focus}
+, {\bfseries Window\+Moved}
+, {\bfseries Game\+Tick}
+, {\bfseries Game\+Update}
+, \newline
+{\bfseries Game\+Render}
+, {\bfseries Key\+Pressed}
+, {\bfseries Key\+Released}
+, {\bfseries Mouse\+Button\+Pressed}
+, \newline
+{\bfseries Mouse\+Button\+Released}
+, {\bfseries Mouse\+Moved}
+, {\bfseries Mouse\+Scrolled}
+ \}
+\begin{DoxyCompactList}\small\item\em Represents the various types of events supported by the Bloom Engine. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{event_8hpp_a85f0d8c71d473ca68946d8c5bcdab3f5}{bloom\+::\+Event\+Category}} \{ \newline
+{\bfseries None} = 0
+, {\bfseries Event\+Category\+Game} = BIT(0)
+, {\bfseries Event\+Category\+Input} = BIT(1)
+, {\bfseries Event\+Category\+Keyboard} = BIT(2)
+, \newline
+{\bfseries Event\+Category\+Mouse} = BIT(3)
+, {\bfseries Event\+Category\+Mouse\+Button} = BIT(4)
+ \}
+\begin{DoxyCompactList}\small\item\em Represents categories of events, allowing for logical grouping of event types. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides the base classes and macros to define and handle events in the Bloom Engine. 
+
+\begin{DoxyAuthor}{Author}
+Xein 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+21/11/2024
+\end{DoxyDate}
+
+
+This file contains the foundational classes and structures for the event system used within the Bloom Engine. The event system is designed to facilitate communication between different parts of the engine or game logic. Events are categorized and can be dynamically dispatched using a dispatcher mechanism. The system ensures that events can be handled efficiently and flexibly, while also supporting extension for new event types. 
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{event_8hpp_abd52deea587a36ef619e596a0c691839}\index{event.hpp@{event.hpp}!EVENT\_CLASS\_CATEGORY@{EVENT\_CLASS\_CATEGORY}}
+\index{EVENT\_CLASS\_CATEGORY@{EVENT\_CLASS\_CATEGORY}!event.hpp@{event.hpp}}
+\doxysubsubsection{\texorpdfstring{EVENT\_CLASS\_CATEGORY}{EVENT\_CLASS\_CATEGORY}}
+{\footnotesize\ttfamily \label{event_8hpp_abd52deea587a36ef619e596a0c691839} 
+\#define EVENT\+\_\+\+CLASS\+\_\+\+CATEGORY(\begin{DoxyParamCaption}\item[{}]{category}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ GetCategoryFlags()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ category;\ \}}
+
+\end{DoxyCode}
+
+
+Defines a macro to declare category flags for an event class. 
+
+This macro provides an override function that returns the category flags for a specific event.
+
+
+\begin{DoxyParams}{Parameters}
+{\em category} & The category flags to associate with the event. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{event_8hpp_a80d534fc4d69a68eefd1573fd0ac2f44}\index{event.hpp@{event.hpp}!EVENT\_CLASS\_TYPE@{EVENT\_CLASS\_TYPE}}
+\index{EVENT\_CLASS\_TYPE@{EVENT\_CLASS\_TYPE}!event.hpp@{event.hpp}}
+\doxysubsubsection{\texorpdfstring{EVENT\_CLASS\_TYPE}{EVENT\_CLASS\_TYPE}}
+{\footnotesize\ttfamily \label{event_8hpp_a80d534fc4d69a68eefd1573fd0ac2f44} 
+\#define EVENT\+\_\+\+CLASS\+\_\+\+TYPE(\begin{DoxyParamCaption}\item[{}]{type}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ EventType\ GetStaticType()\ \{\ \textcolor{keywordflow}{return}\ EventType::type;\ \}\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ EventType\ GetEventType()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ GetStaticType();\ \}\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ GetName()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \#type;\ \}}
+
+\end{DoxyCode}
+
+
+Defines a macro to declare a static type for an event class. 
+
+This macro simplifies the definition of the static and dynamic type system for events. It declares functions to get the static event type, the dynamic event type, and the name of the event.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The event type to associate with the class. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{event_8hpp_a85f0d8c71d473ca68946d8c5bcdab3f5}\index{event.hpp@{event.hpp}!EventCategory@{EventCategory}}
+\index{EventCategory@{EventCategory}!event.hpp@{event.hpp}}
+\doxysubsubsection{\texorpdfstring{EventCategory}{EventCategory}}
+{\footnotesize\ttfamily \label{event_8hpp_a85f0d8c71d473ca68946d8c5bcdab3f5} 
+enum \mbox{\hyperlink{event_8hpp_a85f0d8c71d473ca68946d8c5bcdab3f5}{bloom\+::\+Event\+Category}}}
+
+
+
+Represents categories of events, allowing for logical grouping of event types. 
+
+Events are grouped into categories to facilitate efficient filtering and handling. Each category is represented by a single bit flag, enabling bitwise operations to determine if an event belongs to one or more categories. \Hypertarget{event_8hpp_a62777e271a1f3f6e4a8ba9055c2e4df9}\index{event.hpp@{event.hpp}!EventType@{EventType}}
+\index{EventType@{EventType}!event.hpp@{event.hpp}}
+\doxysubsubsection{\texorpdfstring{EventType}{EventType}}
+{\footnotesize\ttfamily \label{event_8hpp_a62777e271a1f3f6e4a8ba9055c2e4df9} 
+enum class \mbox{\hyperlink{event_8hpp_a62777e271a1f3f6e4a8ba9055c2e4df9}{bloom\+::\+Event\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Represents the various types of events supported by the Bloom Engine. 
+
+Each value in the enum corresponds to a specific type of event that can occur during the execution of the application. This enum is used to identify and differentiate between event types, allowing for specific handling logic to be applied. 

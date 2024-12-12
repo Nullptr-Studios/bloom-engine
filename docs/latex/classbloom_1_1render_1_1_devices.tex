@@ -1,0 +1,80 @@
+\doxysection{bloom\+::render\+::Devices Class Reference}
+\hypertarget{classbloom_1_1render_1_1_devices}{}\label{classbloom_1_1render_1_1_devices}\index{bloom::render::Devices@{bloom::render::Devices}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classbloom_1_1render_1_1_devices_ab83d1a9aa16cf8a861247c61fa318b79}\label{classbloom_1_1render_1_1_devices_ab83d1a9aa16cf8a861247c61fa318b79} 
+{\bfseries Devices} (\mbox{\hyperlink{classbloom_1_1_window}{Window}} \&window)
+\item 
+\Hypertarget{classbloom_1_1render_1_1_devices_a83c8813285f69ff4b4821837a690057c}\label{classbloom_1_1render_1_1_devices_a83c8813285f69ff4b4821837a690057c} 
+{\bfseries Devices} (const \mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}} \&)=delete
+\item 
+\Hypertarget{classbloom_1_1render_1_1_devices_a4f6882471a3f81d33420842d137158ad}\label{classbloom_1_1render_1_1_devices_a4f6882471a3f81d33420842d137158ad} 
+\mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}} \& {\bfseries operator=} (const \mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}} \&)=delete
+\item 
+\Hypertarget{classbloom_1_1render_1_1_devices_aae02de385133ea692593f6b8f2d32dc0}\label{classbloom_1_1render_1_1_devices_aae02de385133ea692593f6b8f2d32dc0} 
+{\bfseries Devices} (\mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}} \&\&)=delete
+\item 
+\Hypertarget{classbloom_1_1render_1_1_devices_aa8fa43f313aa2fd7790854d771a02233}\label{classbloom_1_1render_1_1_devices_aa8fa43f313aa2fd7790854d771a02233} 
+\mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}} \& {\bfseries operator=} (\mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}} \&\&)=delete
+\item 
+\Hypertarget{classbloom_1_1render_1_1_devices_a4aba06e179cb539b59a144e024357fcd}\label{classbloom_1_1render_1_1_devices_a4aba06e179cb539b59a144e024357fcd} 
+Vk\+Command\+Pool {\bfseries get\+Command\+Pool} ()
+\item 
+\Hypertarget{classbloom_1_1render_1_1_devices_a919c8667de135c316a8af7be233a168b}\label{classbloom_1_1render_1_1_devices_a919c8667de135c316a8af7be233a168b} 
+Vk\+Device {\bfseries device} ()
+\item 
+\Hypertarget{classbloom_1_1render_1_1_devices_aa8e259681a8197ad08cf6199e97ee804}\label{classbloom_1_1render_1_1_devices_aa8e259681a8197ad08cf6199e97ee804} 
+Vk\+Surface\+KHR {\bfseries surface} ()
+\item 
+\Hypertarget{classbloom_1_1render_1_1_devices_a7a56b73d25e5b161a4314a3e1657cc1c}\label{classbloom_1_1render_1_1_devices_a7a56b73d25e5b161a4314a3e1657cc1c} 
+Vk\+Queue {\bfseries graphics\+Queue} ()
+\item 
+\Hypertarget{classbloom_1_1render_1_1_devices_afd47331fe9a94abfedec083f501fe73e}\label{classbloom_1_1render_1_1_devices_afd47331fe9a94abfedec083f501fe73e} 
+Vk\+Queue {\bfseries present\+Queue} ()
+\item 
+\Hypertarget{classbloom_1_1render_1_1_devices_a9d187fa8196704810fbce6bb5a13d78d}\label{classbloom_1_1render_1_1_devices_a9d187fa8196704810fbce6bb5a13d78d} 
+\mbox{\hyperlink{structbloom_1_1render_1_1_swap_chain_support_details}{Swap\+Chain\+Support\+Details}} {\bfseries get\+Swap\+Chain\+Support} ()
+\item 
+\Hypertarget{classbloom_1_1render_1_1_devices_a49debed98bee5ba6c8b0b5d3b0b94cc5}\label{classbloom_1_1render_1_1_devices_a49debed98bee5ba6c8b0b5d3b0b94cc5} 
+uint32\+\_\+t {\bfseries find\+Memory\+Type} (uint32\+\_\+t type\+Filter, Vk\+Memory\+Property\+Flags properties)
+\item 
+\Hypertarget{classbloom_1_1render_1_1_devices_abe7c9f34a2489ce7377ad259c75a638f}\label{classbloom_1_1render_1_1_devices_abe7c9f34a2489ce7377ad259c75a638f} 
+\mbox{\hyperlink{structbloom_1_1render_1_1_queue_family_indices}{Queue\+Family\+Indices}} {\bfseries find\+Physical\+Queue\+Families} ()
+\item 
+\Hypertarget{classbloom_1_1render_1_1_devices_a08ddad4e612bb7f09f45a14e821ea341}\label{classbloom_1_1render_1_1_devices_a08ddad4e612bb7f09f45a14e821ea341} 
+Vk\+Format {\bfseries find\+Supported\+Format} (const std\+::vector$<$ Vk\+Format $>$ \&candidates, Vk\+Image\+Tiling tiling, Vk\+Format\+Feature\+Flags features)
+\item 
+\Hypertarget{classbloom_1_1render_1_1_devices_a4d9417462cebbc48e659099056786a79}\label{classbloom_1_1render_1_1_devices_a4d9417462cebbc48e659099056786a79} 
+void {\bfseries create\+Buffer} (Vk\+Device\+Size size, Vk\+Buffer\+Usage\+Flags usage, Vk\+Memory\+Property\+Flags properties, Vk\+Buffer \&buffer, Vk\+Device\+Memory \&buffer\+Memory)
+\item 
+\Hypertarget{classbloom_1_1render_1_1_devices_aaad5b3f1ed3018736182a8eaff2a5718}\label{classbloom_1_1render_1_1_devices_aaad5b3f1ed3018736182a8eaff2a5718} 
+Vk\+Command\+Buffer {\bfseries begin\+Single\+Time\+Commands} ()
+\item 
+\Hypertarget{classbloom_1_1render_1_1_devices_aed7864948282268cc58beaa07a7a85d9}\label{classbloom_1_1render_1_1_devices_aed7864948282268cc58beaa07a7a85d9} 
+void {\bfseries end\+Single\+Time\+Commands} (Vk\+Command\+Buffer command\+Buffer)
+\item 
+\Hypertarget{classbloom_1_1render_1_1_devices_ab28526d95692aaacb2cd6831267fc13c}\label{classbloom_1_1render_1_1_devices_ab28526d95692aaacb2cd6831267fc13c} 
+void {\bfseries copy\+Buffer} (Vk\+Buffer src\+Buffer, Vk\+Buffer dst\+Buffer, Vk\+Device\+Size size)
+\item 
+\Hypertarget{classbloom_1_1render_1_1_devices_a1029a7356dc3afe07c215ac11999623b}\label{classbloom_1_1render_1_1_devices_a1029a7356dc3afe07c215ac11999623b} 
+void {\bfseries copy\+Buffer\+To\+Image} (Vk\+Buffer buffer, Vk\+Image image, uint32\+\_\+t width, uint32\+\_\+t height, uint32\+\_\+t layer\+Count)
+\item 
+\Hypertarget{classbloom_1_1render_1_1_devices_a43fc532c675f3473449d20fa339d2d70}\label{classbloom_1_1render_1_1_devices_a43fc532c675f3473449d20fa339d2d70} 
+void {\bfseries create\+Image\+With\+Info} (const Vk\+Image\+Create\+Info \&image\+Info, Vk\+Memory\+Property\+Flags properties, Vk\+Image \&image, Vk\+Device\+Memory \&image\+Memory)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classbloom_1_1render_1_1_devices_a68bce3e85728a4e6534e0a443a757866}\label{classbloom_1_1render_1_1_devices_a68bce3e85728a4e6534e0a443a757866} 
+const bool {\bfseries enable\+Validation\+Layers} = true
+\item 
+\Hypertarget{classbloom_1_1render_1_1_devices_ae924c6ce72359e0725706de861120030}\label{classbloom_1_1render_1_1_devices_ae924c6ce72359e0725706de861120030} 
+Vk\+Physical\+Device\+Properties {\bfseries properties}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/xgoni/bloom/bloom/src/render/\mbox{\hyperlink{devices_8hpp}{devices.\+hpp}}\item 
+C\+:/\+Users/xgoni/bloom/bloom/src/render/devices.\+cpp\end{DoxyCompactItemize}

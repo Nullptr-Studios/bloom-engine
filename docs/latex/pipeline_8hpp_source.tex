@@ -1,0 +1,53 @@
+\doxysection{pipeline.\+hpp}
+\hypertarget{pipeline_8hpp_source}{}\label{pipeline_8hpp_source}\index{C:/Users/xgoni/bloom/bloom/src/render/pipeline.hpp@{C:/Users/xgoni/bloom/bloom/src/render/pipeline.hpp}}
+\mbox{\hyperlink{pipeline_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{devices_8hpp}{devices.hpp}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{model_8hpp}{model.hpp}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{bloom__header_8hpp}{bloom\_header.hpp}}>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }bloom::render\ \{}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structbloom_1_1render_1_1_pipeline_configuration}{PipelineConfiguration}}\ \{}
+\DoxyCodeLine{00018\ \ \ VkPipelineViewportStateCreateInfo\ viewportInfo;}
+\DoxyCodeLine{00019\ \ \ VkPipelineInputAssemblyStateCreateInfo\ inputAssemblyInfo;}
+\DoxyCodeLine{00020\ \ \ VkPipelineRasterizationStateCreateInfo\ rasterizationInfo;}
+\DoxyCodeLine{00021\ \ \ VkPipelineMultisampleStateCreateInfo\ multisampleInfo;}
+\DoxyCodeLine{00022\ \ \ VkPipelineColorBlendAttachmentState\ colorBlendAttachment;}
+\DoxyCodeLine{00023\ \ \ VkPipelineColorBlendStateCreateInfo\ colorBlendInfo;}
+\DoxyCodeLine{00024\ \ \ VkPipelineDepthStencilStateCreateInfo\ depthStencilInfo;}
+\DoxyCodeLine{00025\ \ \ std::vector<VkDynamicState>\ dynamicStateEnables;}
+\DoxyCodeLine{00026\ \ \ VkPipelineDynamicStateCreateInfo\ dynamicStateInfo;}
+\DoxyCodeLine{00027\ \ \ VkPipelineLayout\ pipelineLayout\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00028\ \ \ VkRenderPass\ renderPass\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00029\ \ \ uint32\_t\ subpass\ =\ 0;}
+\DoxyCodeLine{00030\ \};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classbloom_1_1render_1_1_pipeline}{Pipeline}}\ \{}
+\DoxyCodeLine{00033\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00034\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_pipeline}{Pipeline}}(\mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}}\&\ device,\ \textcolor{keyword}{const}\ std::string\&\ vertPath,\ \textcolor{keyword}{const}\ std::string\&\ fragPath,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structbloom_1_1render_1_1_pipeline_configuration}{PipelineConfiguration}}\&\ config);}
+\DoxyCodeLine{00035\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_pipeline}{\string~Pipeline}}();}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_pipeline}{Pipeline}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classbloom_1_1render_1_1_pipeline}{Pipeline}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00038\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_pipeline}{Pipeline}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classbloom_1_1render_1_1_pipeline}{Pipeline}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \textcolor{keywordtype}{void}\ Bind(VkCommandBuffer\ commandBuffer);}
+\DoxyCodeLine{00041\ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ defaultPipelineConfig(\mbox{\hyperlink{structbloom_1_1render_1_1_pipeline_configuration}{PipelineConfiguration}}\&\ config);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00044\ \ \ \textcolor{keyword}{static}\ std::vector<char>\ ReadFile(\textcolor{keyword}{const}\ std::string\&\ path);}
+\DoxyCodeLine{00045\ \ \ \textcolor{keywordtype}{void}\ CreatePipeline(\textcolor{keyword}{const}\ std::string\&\ vertPath,\ \textcolor{keyword}{const}\ std::string\&\ fragPath,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structbloom_1_1render_1_1_pipeline_configuration}{PipelineConfiguration}}\&\ config);}
+\DoxyCodeLine{00046\ \ \ \textcolor{keywordtype}{void}\ CreateShaderModule(\textcolor{keyword}{const}\ std::vector<char>\&\ code,\ VkShaderModule*\ shaderModule);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}}\&\ \_device;}
+\DoxyCodeLine{00049\ \ \ VkPipeline\ \_graphicsPipeline;}
+\DoxyCodeLine{00050\ \ \ VkShaderModule\ \_vertShaderModule;}
+\DoxyCodeLine{00051\ \ \ VkShaderModule\ \_fragShaderModule;}
+\DoxyCodeLine{00052\ \};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \}}
+
+\end{DoxyCode}

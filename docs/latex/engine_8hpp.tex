@@ -1,0 +1,60 @@
+\doxysection{C\+:/\+Users/xgoni/bloom/bloom/src/engine.hpp File Reference}
+\hypertarget{engine_8hpp}{}\label{engine_8hpp}\index{C:/Users/xgoni/bloom/bloom/src/engine.hpp@{C:/Users/xgoni/bloom/bloom/src/engine.hpp}}
+
+
+Main engine class.  
+
+
+{\ttfamily \#include "{}core.\+hpp"{}}\newline
+{\ttfamily \#include "{}window.\+hpp"{}}\newline
+{\ttfamily \#include "{}factory.\+hpp"{}}\newline
+{\ttfamily \#include "{}object.\+hpp"{}}\newline
+{\ttfamily \#include "{}render/devices.\+hpp"{}}\newline
+{\ttfamily \#include "{}render/renderer.\+hpp"{}}\newline
+{\ttfamily \#include "{}simple\+\_\+render\+\_\+system.\+hpp"{}}\newline
+{\ttfamily \#include "{}camera.\+hpp"{}}\newline
+{\ttfamily \#include $<$bloom\+\_\+header.\+hpp$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classbloom_1_1_engine}{bloom\+::\+Engine}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1_engine}{bloom\+::\+Engine}} $>$ \mbox{\hyperlink{engine_8hpp_a8a68fb9b4e5dc5c0eb680b3f32781872}{bloom\+::\+Create\+Engine}} ()
+\begin{DoxyCompactList}\small\item\em Creates an entry point for the Bloom engine. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main engine class. 
+
+\begin{DoxyAuthor}{Author}
+Xein \href{mailto:xgonip@gmail.com}{\texttt{ xgonip@gmail.\+com}} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+20/11/2024 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{engine_8hpp_a8a68fb9b4e5dc5c0eb680b3f32781872}\index{engine.hpp@{engine.hpp}!CreateEngine@{CreateEngine}}
+\index{CreateEngine@{CreateEngine}!engine.hpp@{engine.hpp}}
+\doxysubsubsection{\texorpdfstring{CreateEngine()}{CreateEngine()}}
+{\footnotesize\ttfamily \label{engine_8hpp_a8a68fb9b4e5dc5c0eb680b3f32781872} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1_engine}{bloom\+::\+Engine}} $>$ bloom\+::\+Create\+Engine (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Creates an entry point for the Bloom engine. 
+
+This function serves as the primary entry point for the engine, allowing it to handle the main execution flow instead of the game directly. By abstracting the {\ttfamily main} function, the engine can take full control over initialization, execution, and shutdown processes.
+
+\begin{DoxyNote}{Note}
+For future Xein\+: This design is intentional to ensure that the engine manages the {\ttfamily main} function rather than the game project. Any game-\/specific logic should integrate with this entry point.
+\end{DoxyNote}
+While this function is declared here, its implementation resides in main.\+cpp within the game project. This separation ensures modularity between the engine and game layers.
+
+\begin{DoxyReturn}{Returns}
+A pointer to the {\ttfamily Engine} class instance, which is used to manage the engine\textquotesingle{}s lifecycle. 
+\end{DoxyReturn}

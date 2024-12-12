@@ -1,0 +1,74 @@
+\doxysection{object.\+hpp}
+\hypertarget{object_8hpp_source}{}\label{object_8hpp_source}\index{C:/Users/xgoni/bloom/bloom/src/object.hpp@{C:/Users/xgoni/bloom/bloom/src/object.hpp}}
+\mbox{\hyperlink{object_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{model_8hpp}{render/model.hpp}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}render/texture.hpp"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}glm/gtc/matrix\_transform.hpp"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{bloom__header_8hpp}{bloom\_header.hpp}}>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }bloom\ \{}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{struct\ }BLOOM\_API\ \mbox{\hyperlink{structbloom_1_1_transform}{Transform}}\ \{}
+\DoxyCodeLine{00018\ \ \ glm::vec3\ position\ =\ \{\};}
+\DoxyCodeLine{00019\ \ \ glm::vec3\ scale\ =\ \{1.0f,\ 1.0f,\ 1.0f\};}
+\DoxyCodeLine{00020\ \ \ glm::vec3\ rotation\ =\ \{\};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ glm::mat4\ mat4()\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ c3\ =\ glm::cos(rotation.z);}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ s3\ =\ glm::sin(rotation.z);}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ c2\ =\ glm::cos(rotation.x);}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ s2\ =\ glm::sin(rotation.x);}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ c1\ =\ glm::cos(rotation.y);}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ s1\ =\ glm::sin(rotation.y);}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordflow}{return}\ glm::mat4\{}
+\DoxyCodeLine{00030\ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ scale.x\ *\ (c1\ *\ c3\ +\ s1\ *\ s2\ *\ s3),}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ scale.x\ *\ (c2\ *\ s3),}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ scale.x\ *\ (c1\ *\ s2\ *\ s3\ -\/\ c3\ *\ s1),}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ 0.0f,}
+\DoxyCodeLine{00035\ \ \ \ \ \},}
+\DoxyCodeLine{00036\ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ scale.y\ *\ (c3\ *\ s1\ *\ s2\ -\/\ c1\ *\ s3),}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ scale.y\ *\ (c2\ *\ c3),}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ scale.y\ *\ (c1\ *\ c3\ *\ s2\ +\ s1\ *\ s3),}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ 0.0f,}
+\DoxyCodeLine{00041\ \ \ \ \ \},}
+\DoxyCodeLine{00042\ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ scale.z\ *\ (c2\ *\ s1),}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ scale.z\ *\ (-\/s2),}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ scale.z\ *\ (c1\ *\ c2),}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ 0.0f,}
+\DoxyCodeLine{00047\ \ \ \ \ \},}
+\DoxyCodeLine{00048\ \ \ \ \ \{position.x,\ position.y,\ position.z,\ 1.0f\}\};}
+\DoxyCodeLine{00049\ \ \ \}}
+\DoxyCodeLine{00050\ \};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{class\ }BLOOM\_API\ \mbox{\hyperlink{classbloom_1_1_object}{Object}}\ \{}
+\DoxyCodeLine{00053\ \ \ \textcolor{keyword}{using\ }id\_t\ =\ \textcolor{keywordtype}{unsigned}\ int;}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00056\ \ \ \mbox{\hyperlink{classbloom_1_1_object}{Object}}(\textcolor{keyword}{const}\ id\_t\ \textcolor{keywordtype}{id})\ :\ m\_id(\textcolor{keywordtype}{id})\ \{\};}
+\DoxyCodeLine{00057\ \ \ \mbox{\hyperlink{classbloom_1_1_object}{\string~Object}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00058\ \ \ \ \ }
+\DoxyCodeLine{00059\ \ \ \mbox{\hyperlink{classbloom_1_1_object}{Object}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classbloom_1_1_object}{Object}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00060\ \ \ \mbox{\hyperlink{classbloom_1_1_object}{Object}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classbloom_1_1_object}{Object}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00061\ \ \ \mbox{\hyperlink{classbloom_1_1_object}{Object}}(\mbox{\hyperlink{classbloom_1_1_object}{Object}}\&\&)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00062\ \ \ \mbox{\hyperlink{classbloom_1_1_object}{Object}}\&\ operator=(\mbox{\hyperlink{classbloom_1_1_object}{Object}}\&\&)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \mbox{\hyperlink{structbloom_1_1_transform}{Transform}}\ transform;}
+\DoxyCodeLine{00065\ \ \ std::shared\_ptr<render::Model>\ model;}
+\DoxyCodeLine{00066\ \ \ glm::vec3\ color;}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_texture}{render::Texture}}*\ texture;}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ id\_t\ GetID()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_id;\ \}}
+\DoxyCodeLine{00071\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00072\ \ \ \textcolor{keyword}{const}\ id\_t\ m\_id;}
+\DoxyCodeLine{00073\ \};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \}}
+
+\end{DoxyCode}

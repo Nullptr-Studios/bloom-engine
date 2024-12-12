@@ -1,0 +1,157 @@
+\doxysection{bloom\+::Event Class Reference}
+\hypertarget{classbloom_1_1_event}{}\label{classbloom_1_1_event}\index{bloom::Event@{bloom::Event}}
+
+
+Abstract base class for all events in the Bloom \doxylink{classbloom_1_1_engine}{Engine}.  
+
+
+
+
+{\ttfamily \#include $<$event.\+hpp$>$}
+
+Inheritance diagram for bloom\+::Event\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=9.000000cm]{classbloom_1_1_event}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{event_8hpp_a62777e271a1f3f6e4a8ba9055c2e4df9}{Event\+Type}} \mbox{\hyperlink{classbloom_1_1_event_afb0cc62325b1fbd939fafe1096c6c624}{Get\+Event\+Type}} () const =0
+\begin{DoxyCompactList}\small\item\em Gets the type of the event. \end{DoxyCompactList}\item 
+virtual const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classbloom_1_1_event_ab5bb7f0fc80e71886658e3acb181fd16}{Get\+Name}} () const =0
+\begin{DoxyCompactList}\small\item\em Gets the name of the event. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classbloom_1_1_event_aae34b363173e9c057ac00f6fe78bcf9a}{Get\+Category\+Flags}} () const =0
+\begin{DoxyCompactList}\small\item\em Gets the category flags for the event. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classbloom_1_1_event_a1e826d312aa922abd9401a02ee33ab3d}{To\+String}} () const
+\begin{DoxyCompactList}\small\item\em Converts the event to a string representation. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classbloom_1_1_event_ad407353c8d035d38f9bc21eedd0b8c69}{Is\+In\+Category}} (const \mbox{\hyperlink{event_8hpp_a85f0d8c71d473ca68946d8c5bcdab3f5}{Event\+Category}} category) const
+\begin{DoxyCompactList}\small\item\em Checks if the event belongs to a specific category. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classbloom_1_1_event_abc466e96deb4ed6616be51c35a35e796}{\+\_\+handled}} = false
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classbloom_1_1_event_aad5f38ccd490ea17008460423f52325a}\label{classbloom_1_1_event_aad5f38ccd490ea17008460423f52325a} 
+class {\bfseries Event\+Dispatcher}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class for all events in the Bloom \doxylink{classbloom_1_1_engine}{Engine}. 
+
+The {\ttfamily \doxylink{classbloom_1_1_event}{Event}} class serves as the base for all event types. It provides a common interface for retrieving the event type, name, and category flags. Events can also be converted to string representations and checked against specific categories. Derived event classes must override the pure virtual functions to provide specific details for each event type. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classbloom_1_1_event_aae34b363173e9c057ac00f6fe78bcf9a}\index{bloom::Event@{bloom::Event}!GetCategoryFlags@{GetCategoryFlags}}
+\index{GetCategoryFlags@{GetCategoryFlags}!bloom::Event@{bloom::Event}}
+\doxysubsubsection{\texorpdfstring{GetCategoryFlags()}{GetCategoryFlags()}}
+{\footnotesize\ttfamily \label{classbloom_1_1_event_aae34b363173e9c057ac00f6fe78bcf9a} 
+virtual int bloom\+::\+Event\+::\+Get\+Category\+Flags (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [pure virtual]}}
+
+
+
+Gets the category flags for the event. 
+
+This is a pure virtual function that must be implemented by all derived event classes. It returns the category flags for the event, which can be used to filter events by category.
+
+\begin{DoxyReturn}{Returns}
+An integer representing the category flags of the event. 
+\end{DoxyReturn}
+\Hypertarget{classbloom_1_1_event_afb0cc62325b1fbd939fafe1096c6c624}\index{bloom::Event@{bloom::Event}!GetEventType@{GetEventType}}
+\index{GetEventType@{GetEventType}!bloom::Event@{bloom::Event}}
+\doxysubsubsection{\texorpdfstring{GetEventType()}{GetEventType()}}
+{\footnotesize\ttfamily \label{classbloom_1_1_event_afb0cc62325b1fbd939fafe1096c6c624} 
+virtual \mbox{\hyperlink{event_8hpp_a62777e271a1f3f6e4a8ba9055c2e4df9}{Event\+Type}} bloom\+::\+Event\+::\+Get\+Event\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [pure virtual]}}
+
+
+
+Gets the type of the event. 
+
+This is a pure virtual function that must be implemented by all derived event classes. It returns the type of the event, allowing it to be identified at runtime.
+
+\begin{DoxyReturn}{Returns}
+The {\ttfamily Event\+Type} of the event. 
+\end{DoxyReturn}
+\Hypertarget{classbloom_1_1_event_ab5bb7f0fc80e71886658e3acb181fd16}\index{bloom::Event@{bloom::Event}!GetName@{GetName}}
+\index{GetName@{GetName}!bloom::Event@{bloom::Event}}
+\doxysubsubsection{\texorpdfstring{GetName()}{GetName()}}
+{\footnotesize\ttfamily \label{classbloom_1_1_event_ab5bb7f0fc80e71886658e3acb181fd16} 
+virtual const char \texorpdfstring{$\ast$}{*} bloom\+::\+Event\+::\+Get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [pure virtual]}}
+
+
+
+Gets the name of the event. 
+
+This is a pure virtual function that must be implemented by all derived event classes. It returns the name of the event as a string.
+
+\begin{DoxyReturn}{Returns}
+A 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ }
+
+\end{DoxyCode}
+ representing the name of the event. 
+\end{DoxyReturn}
+\Hypertarget{classbloom_1_1_event_ad407353c8d035d38f9bc21eedd0b8c69}\index{bloom::Event@{bloom::Event}!IsInCategory@{IsInCategory}}
+\index{IsInCategory@{IsInCategory}!bloom::Event@{bloom::Event}}
+\doxysubsubsection{\texorpdfstring{IsInCategory()}{IsInCategory()}}
+{\footnotesize\ttfamily \label{classbloom_1_1_event_ad407353c8d035d38f9bc21eedd0b8c69} 
+bool bloom\+::\+Event\+::\+Is\+In\+Category (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{event_8hpp_a85f0d8c71d473ca68946d8c5bcdab3f5}{Event\+Category}}}]{category}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+
+
+Checks if the event belongs to a specific category. 
+
+This function performs a bitwise comparison to determine if the event\textquotesingle{}s category flags include the specified category.
+
+
+\begin{DoxyParams}{Parameters}
+{\em category} & The {\ttfamily Event\+Category} to check against. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the event belongs to the specified category; otherwise, {\ttfamily false}. 
+\end{DoxyReturn}
+\Hypertarget{classbloom_1_1_event_a1e826d312aa922abd9401a02ee33ab3d}\index{bloom::Event@{bloom::Event}!ToString@{ToString}}
+\index{ToString@{ToString}!bloom::Event@{bloom::Event}}
+\doxysubsubsection{\texorpdfstring{ToString()}{ToString()}}
+{\footnotesize\ttfamily \label{classbloom_1_1_event_a1e826d312aa922abd9401a02ee33ab3d} 
+virtual std\+::string bloom\+::\+Event\+::\+To\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}, {\ttfamily [virtual]}}
+
+
+
+Converts the event to a string representation. 
+
+This function returns a string representation of the event, primarily for debugging purposes. Derived classes may override this function to provide more detailed representations.
+
+\begin{DoxyReturn}{Returns}
+A 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{std::string\ }
+
+\end{DoxyCode}
+ containing the string representation of the event. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classbloom_1_1_key_pressed_event_afc9dca82c85f300cca5f94f09e632448}{bloom\+::\+Key\+Pressed\+Event}}, \mbox{\hyperlink{classbloom_1_1_key_released_event_a220adca8205466c1677d898e21763d90}{bloom\+::\+Key\+Released\+Event}}, \mbox{\hyperlink{classbloom_1_1_mouse_button_pressed_event_a127ef183371b8fef1b35977e5d2b5505}{bloom\+::\+Mouse\+Button\+Pressed\+Event}}, \mbox{\hyperlink{classbloom_1_1_mouse_button_released_event_a694f5d138b6082a7c47ab4315cde5ed5}{bloom\+::\+Mouse\+Button\+Released\+Event}}, \mbox{\hyperlink{classbloom_1_1_mouse_moved_event_a66e03c370f8df2b5d8889926ed68b6d9}{bloom\+::\+Mouse\+Moved\+Event}}, \mbox{\hyperlink{classbloom_1_1_mouse_scrolled_event_ae373067be63601a16d7b7749059ff8df}{bloom\+::\+Mouse\+Scrolled\+Event}}, and \mbox{\hyperlink{classbloom_1_1_window_resize_event_a8be8cba1d6436bd544894ba38426f556}{bloom\+::\+Window\+Resize\+Event}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classbloom_1_1_event_abc466e96deb4ed6616be51c35a35e796}\index{bloom::Event@{bloom::Event}!\_handled@{\_handled}}
+\index{\_handled@{\_handled}!bloom::Event@{bloom::Event}}
+\doxysubsubsection{\texorpdfstring{\_handled}{\_handled}}
+{\footnotesize\ttfamily \label{classbloom_1_1_event_abc466e96deb4ed6616be51c35a35e796} 
+bool bloom\+::\+Event\+::\+\_\+handled = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+Indicates whether the event has been handled. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/xgoni/bloom/bloom/src/events/\mbox{\hyperlink{event_8hpp}{event.\+hpp}}\end{DoxyCompactItemize}

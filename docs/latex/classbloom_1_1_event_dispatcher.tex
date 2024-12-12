@@ -1,0 +1,75 @@
+\doxysection{bloom\+::Event\+Dispatcher Class Reference}
+\hypertarget{classbloom_1_1_event_dispatcher}{}\label{classbloom_1_1_event_dispatcher}\index{bloom::EventDispatcher@{bloom::EventDispatcher}}
+
+
+A utility class for dispatching events to appropriate handlers.  
+
+
+
+
+{\ttfamily \#include $<$event.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbloom_1_1_event_dispatcher_a5d6252c544ee2fbed1ca112e09baa407}{Event\+Dispatcher}} (\mbox{\hyperlink{classbloom_1_1_event}{Event}} \&event)
+\begin{DoxyCompactList}\small\item\em Constructs an {\ttfamily \doxylink{classbloom_1_1_event_dispatcher}{Event\+Dispatcher}} for a given event. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{classbloom_1_1_event_dispatcher_aa0c2418e5ca113ee8c648be770d8e225}{Dispatch}} (Event\+Fn$<$ T $>$ func)
+\begin{DoxyCompactList}\small\item\em Dispatches the event to a handler function if the types match. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A utility class for dispatching events to appropriate handlers. 
+
+The {\ttfamily \doxylink{classbloom_1_1_event_dispatcher}{Event\+Dispatcher}} class provides a mechanism for safely and efficiently handling events by invoking user-\/defined callback functions. It ensures that events are only handled by functions designed for their specific type. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classbloom_1_1_event_dispatcher_a5d6252c544ee2fbed1ca112e09baa407}\index{bloom::EventDispatcher@{bloom::EventDispatcher}!EventDispatcher@{EventDispatcher}}
+\index{EventDispatcher@{EventDispatcher}!bloom::EventDispatcher@{bloom::EventDispatcher}}
+\doxysubsubsection{\texorpdfstring{EventDispatcher()}{EventDispatcher()}}
+{\footnotesize\ttfamily \label{classbloom_1_1_event_dispatcher_a5d6252c544ee2fbed1ca112e09baa407} 
+bloom\+::\+Event\+Dispatcher\+::\+Event\+Dispatcher (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbloom_1_1_event}{Event}} \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Constructs an {\ttfamily \doxylink{classbloom_1_1_event_dispatcher}{Event\+Dispatcher}} for a given event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The {\ttfamily \doxylink{classbloom_1_1_event}{Event}} to be dispatched. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classbloom_1_1_event_dispatcher_aa0c2418e5ca113ee8c648be770d8e225}\index{bloom::EventDispatcher@{bloom::EventDispatcher}!Dispatch@{Dispatch}}
+\index{Dispatch@{Dispatch}!bloom::EventDispatcher@{bloom::EventDispatcher}}
+\doxysubsubsection{\texorpdfstring{Dispatch()}{Dispatch()}}
+{\footnotesize\ttfamily \label{classbloom_1_1_event_dispatcher_aa0c2418e5ca113ee8c648be770d8e225} 
+template$<$typename T $>$ \\
+bool bloom\+::\+Event\+Dispatcher\+::\+Dispatch (\begin{DoxyParamCaption}\item[{Event\+Fn$<$ T $>$}]{func}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Dispatches the event to a handler function if the types match. 
+
+This function compares the type of the event with the static type of the handler\textquotesingle{}s event type. If they match, the handler function is called, and the event is marked as handled.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of event to handle. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em func} & The handler function to invoke. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the event was handled; otherwise, {\ttfamily false}. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/xgoni/bloom/bloom/src/events/\mbox{\hyperlink{event_8hpp}{event.\+hpp}}\end{DoxyCompactItemize}

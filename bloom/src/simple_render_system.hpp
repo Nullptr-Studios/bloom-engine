@@ -12,6 +12,7 @@
 #include "render/pipeline.hpp"
 #include "render/descriptor_set_layout.hpp"
 #include "render/descriptor_pool.hpp"
+#include "camera.hpp"
 
 namespace bloom {
 
@@ -24,7 +25,7 @@ public:
   SimpleRenderSystem& operator=(const SimpleRenderSystem&) = delete;
 
   void Begin(VkRenderPass renderPass);
-  void RenderObjects(VkCommandBuffer commandBuffer, std::vector<Object> &objects);
+  void RenderObjects(VkCommandBuffer commandBuffer, std::vector<Object> &objects, const Camera &camera);
 
   constexpr static unsigned int MAX_OBJECTS = 1024;
 

@@ -1,0 +1,56 @@
+\doxysection{bloom\+::Window Class Reference}
+\hypertarget{classbloom_1_1_window}{}\label{classbloom_1_1_window}\index{bloom::Window@{bloom::Window}}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classbloom_1_1_window_a6be788610a377a9e9aec70e766ce56ea}\label{classbloom_1_1_window_a6be788610a377a9e9aec70e766ce56ea} 
+using {\bfseries Event\+Calback\+Fn} = std\+::function$<$void(\mbox{\hyperlink{classbloom_1_1_event}{Event}}\&)$>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classbloom_1_1_window_a2a19c3e7ed1c8883639fce9bec71e3d2}\label{classbloom_1_1_window_a2a19c3e7ed1c8883639fce9bec71e3d2} 
+{\bfseries Window} (int width, int height, std\+::string title)
+\item 
+\Hypertarget{classbloom_1_1_window_a6d58dd99f686e7aa7558ab2c5ce0764a}\label{classbloom_1_1_window_a6d58dd99f686e7aa7558ab2c5ce0764a} 
+void {\bfseries On\+Init} ()
+\item 
+\Hypertarget{classbloom_1_1_window_a19ad73e6e9ff9e0984f07b6a52114eb1}\label{classbloom_1_1_window_a19ad73e6e9ff9e0984f07b6a52114eb1} 
+void {\bfseries On\+Tick} ()
+\item 
+\Hypertarget{classbloom_1_1_window_ae68f4fca49941274d9b303956973c5af}\label{classbloom_1_1_window_ae68f4fca49941274d9b303956973c5af} 
+void {\bfseries Close\+Window} ()
+\item 
+\Hypertarget{classbloom_1_1_window_a90033e72277154ebcaf116557335b3fc}\label{classbloom_1_1_window_a90033e72277154ebcaf116557335b3fc} 
+void {\bfseries Set\+Event\+Callback} (const Event\+Calback\+Fn \&callback)
+\item 
+\Hypertarget{classbloom_1_1_window_a3a0cedcef089707bb829efe34c39e898}\label{classbloom_1_1_window_a3a0cedcef089707bb829efe34c39e898} 
+void {\bfseries Set\+VSync} (bool enabled)
+\item 
+\Hypertarget{classbloom_1_1_window_a30d6027cdcb41b77f91c3c19f68b880f}\label{classbloom_1_1_window_a30d6027cdcb41b77f91c3c19f68b880f} 
+bool {\bfseries Is\+VSync} () const
+\item 
+\Hypertarget{classbloom_1_1_window_aecb3b154139b954243fa586a160bd5a0}\label{classbloom_1_1_window_aecb3b154139b954243fa586a160bd5a0} 
+bool {\bfseries Should\+Close} () const
+\item 
+\Hypertarget{classbloom_1_1_window_a93a55b73b23d976b64f2c09e4bcf59f8}\label{classbloom_1_1_window_a93a55b73b23d976b64f2c09e4bcf59f8} 
+Vk\+Extent2D {\bfseries Get\+Extent} ()
+\item 
+\Hypertarget{classbloom_1_1_window_aa5ea8ce646f83ee6aa05407d943e8264}\label{classbloom_1_1_window_aa5ea8ce646f83ee6aa05407d943e8264} 
+double {\bfseries Get\+Delta\+Time} ()
+\item 
+\Hypertarget{classbloom_1_1_window_a027e302ac91df7254a1fba577be10796}\label{classbloom_1_1_window_a027e302ac91df7254a1fba577be10796} 
+void {\bfseries Create\+Window\+Surface} (Vk\+Instance instance, Vk\+Surface\+KHR \texorpdfstring{$\ast$}{*}surface)
+\item 
+\Hypertarget{classbloom_1_1_window_a3aa68bf0f3632d1fd9cb69d204c939ca}\label{classbloom_1_1_window_a3aa68bf0f3632d1fd9cb69d204c939ca} 
+bool {\bfseries Get\+Window\+Resized} ()
+\item 
+\Hypertarget{classbloom_1_1_window_af3c61031a50660718dac55a1a6286744}\label{classbloom_1_1_window_af3c61031a50660718dac55a1a6286744} 
+void {\bfseries Reset\+Window\+Resized} ()
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/xgoni/bloom/bloom/src/\mbox{\hyperlink{window_8hpp}{window.\+hpp}}\item 
+C\+:/\+Users/xgoni/bloom/bloom/src/window.\+cpp\end{DoxyCompactItemize}

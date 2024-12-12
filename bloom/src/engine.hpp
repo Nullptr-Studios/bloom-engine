@@ -15,6 +15,7 @@
 #include "render/devices.hpp"
 #include "render/renderer.hpp"
 #include "simple_render_system.hpp"
+#include "camera.hpp"
 #include <bloom_header.hpp>
 
 namespace bloom {
@@ -49,7 +50,10 @@ protected:
 
   std::vector<Object> gameObjects;
 
+  Camera m_camera;
+
   double m_deltaTime;
+  float m_rotation;
 };
 
 /**

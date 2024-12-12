@@ -22,18 +22,28 @@ void Engine::Begin() {
   LoadObjects();
   m_simpleRenderSystem = new SimpleRenderSystem(m_devices.get());
   m_simpleRenderSystem->Begin(m_renderer->GetRenderPass());
+
+  m_camera = Camera();
+  m_camera.SetViewDirection(glm::vec3(0.0f), glm::vec3(-0.5f, 0.0f, -1.0f));
 }
 
 void Engine::Tick() {
+  float aspect = m_renderer->GetAspectRatio();
+  m_camera.SetPerspectiveProjection(glm::radians(50.0f), aspect, 0.1f, 100.0f);
+
   m_deltaTime = m_window->GetDeltaTime();
   m_window->OnTick();
   BLOOM_LOG("{0}FPS", 1/m_deltaTime);
+
+  m_rotation += m_deltaTime * 0.1f;
+  if (m_rotation > .7f) m_rotation = -.7f;
+  m_camera.SetViewDirection(glm::vec3(0.0f), glm::vec3(m_rotation, 0.0f, -1.0f));
 }
 
 void Engine::Render() {
   if (auto commandBuffer = m_renderer->BeginFrame()) {
     m_renderer->BeginRenderPass(commandBuffer);
-    m_simpleRenderSystem->RenderObjects(commandBuffer, gameObjects);
+    m_simpleRenderSystem->RenderObjects(commandBuffer, gameObjects, m_camera);
     m_renderer->EndRenderPass(commandBuffer);
     m_renderer->EndFrame();
   }
@@ -115,7 +125,7 @@ void Engine::LoadObjects() {
 
   auto cube = factory->CreateObject<Object>();
   cube.model = model;
-  cube.transform.position = {0.0f, 0.0f, 0.5f};
+  cube.transform.position = {0.0f, 0.0f, -2.5f};
   cube.transform.scale = {0.5f, 0.5f, 0.5f};
   cube.texture = new render::Texture(m_devices.get(), "resources/textures/cat.png");
   gameObjects.push_back(std::move(cube));
