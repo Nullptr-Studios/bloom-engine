@@ -1,0 +1,112 @@
+\doxysection{devices.\+hpp}
+\hypertarget{devices_8hpp_source}{}\label{devices_8hpp_source}\index{C:/Users/xgoni/bloom/bloom/src/render/devices.hpp@{C:/Users/xgoni/bloom/bloom/src/render/devices.hpp}}
+\mbox{\hyperlink{devices_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{window_8hpp}{src/window.hpp}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{bloom__header_8hpp}{bloom\_header.hpp}}>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }bloom::render\ \{}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structbloom_1_1render_1_1_swap_chain_support_details}{SwapChainSupportDetails}}\ \{}
+\DoxyCodeLine{00017\ \ \ VkSurfaceCapabilitiesKHR\ capabilities;}
+\DoxyCodeLine{00018\ \ \ std::vector<VkSurfaceFormatKHR>\ formats;}
+\DoxyCodeLine{00019\ \ \ std::vector<VkPresentModeKHR>\ presentModes;}
+\DoxyCodeLine{00020\ \};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structbloom_1_1render_1_1_queue_family_indices}{QueueFamilyIndices}}\ \{}
+\DoxyCodeLine{00023\ \ \ uint32\_t\ graphicsFamily;}
+\DoxyCodeLine{00024\ \ \ uint32\_t\ presentFamily;}
+\DoxyCodeLine{00025\ \ \ \textcolor{keywordtype}{bool}\ graphicsFamilyHasValue\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00026\ \ \ \textcolor{keywordtype}{bool}\ presentFamilyHasValue\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00027\ \ \ \textcolor{keywordtype}{bool}\ isComplete()\ \{\ \textcolor{keywordflow}{return}\ graphicsFamilyHasValue\ \&\&\ presentFamilyHasValue;\ \}}
+\DoxyCodeLine{00028\ \};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}}\ \{}
+\DoxyCodeLine{00031\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#ifdef\ NDEBUG}}
+\DoxyCodeLine{00033\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ enableValidationLayers\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00035\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ enableValidationLayers\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}}(\mbox{\hyperlink{classbloom_1_1_window}{Window}}\ \&window);}
+\DoxyCodeLine{00039\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classbloom_1_1render_1_1_devices}{\string~Devices}}();}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \textcolor{comment}{//\ Not\ copyable\ or\ movable}}
+\DoxyCodeLine{00042\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}}\ \&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00043\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}}\ \&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00044\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}}(\mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}}\ \&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00045\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}}\&\ operator=(\mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}}\ \&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ VkCommandPool\ getCommandPool()\ \{\ \textcolor{keywordflow}{return}\ commandPool;\ \}}
+\DoxyCodeLine{00048\ \ \ VkDevice\ device()\ \{\ \textcolor{keywordflow}{return}\ device\_;\ \}}
+\DoxyCodeLine{00049\ \ \ VkSurfaceKHR\ surface()\ \{\ \textcolor{keywordflow}{return}\ surface\_;\ \}}
+\DoxyCodeLine{00050\ \ \ VkQueue\ graphicsQueue()\ \{\ \textcolor{keywordflow}{return}\ graphicsQueue\_;\ \}}
+\DoxyCodeLine{00051\ \ \ VkQueue\ presentQueue()\ \{\ \textcolor{keywordflow}{return}\ presentQueue\_;\ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \mbox{\hyperlink{structbloom_1_1render_1_1_swap_chain_support_details}{SwapChainSupportDetails}}\ getSwapChainSupport()\ \{\ \textcolor{keywordflow}{return}\ querySwapChainSupport(physicalDevice);\ \}}
+\DoxyCodeLine{00054\ \ \ uint32\_t\ findMemoryType(uint32\_t\ typeFilter,\ VkMemoryPropertyFlags\ properties);}
+\DoxyCodeLine{00055\ \ \ \mbox{\hyperlink{structbloom_1_1render_1_1_queue_family_indices}{QueueFamilyIndices}}\ findPhysicalQueueFamilies()\ \{\ \textcolor{keywordflow}{return}\ findQueueFamilies(physicalDevice);\ \}}
+\DoxyCodeLine{00056\ \ \ VkFormat\ findSupportedFormat(}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<VkFormat>\ \&candidates,\ VkImageTiling\ tiling,\ VkFormatFeatureFlags\ features);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \textcolor{comment}{//\ Buffer\ Helper\ Functions}}
+\DoxyCodeLine{00060\ \ \ \textcolor{keywordtype}{void}\ createBuffer(}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ VkDeviceSize\ size,}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ VkBufferUsageFlags\ usage,}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ VkMemoryPropertyFlags\ properties,}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ VkBuffer\ \&buffer,}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ VkDeviceMemory\ \&bufferMemory);}
+\DoxyCodeLine{00066\ \ \ VkCommandBuffer\ beginSingleTimeCommands();}
+\DoxyCodeLine{00067\ \ \ \textcolor{keywordtype}{void}\ endSingleTimeCommands(VkCommandBuffer\ commandBuffer);}
+\DoxyCodeLine{00068\ \ \ \textcolor{keywordtype}{void}\ copyBuffer(VkBuffer\ srcBuffer,\ VkBuffer\ dstBuffer,\ VkDeviceSize\ size);}
+\DoxyCodeLine{00069\ \ \ \textcolor{keywordtype}{void}\ copyBufferToImage(}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ VkBuffer\ buffer,\ VkImage\ image,\ uint32\_t\ width,\ uint32\_t\ height,\ uint32\_t\ layerCount);}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \textcolor{keywordtype}{void}\ createImageWithInfo(}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \textcolor{keyword}{const}\ VkImageCreateInfo\ \&imageInfo,}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ VkMemoryPropertyFlags\ properties,}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ VkImage\ \&image,}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ VkDeviceMemory\ \&imageMemory);}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ VkPhysicalDeviceProperties\ properties;}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00081\ \ \ \textcolor{keywordtype}{void}\ createInstance();}
+\DoxyCodeLine{00082\ \ \ \textcolor{keywordtype}{void}\ setupDebugMessenger();}
+\DoxyCodeLine{00083\ \ \ \textcolor{keywordtype}{void}\ createSurface();}
+\DoxyCodeLine{00084\ \ \ \textcolor{keywordtype}{void}\ pickPhysicalDevice();}
+\DoxyCodeLine{00085\ \ \ \textcolor{keywordtype}{void}\ createLogicalDevice();}
+\DoxyCodeLine{00086\ \ \ \textcolor{keywordtype}{void}\ createCommandPool();}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \textcolor{comment}{//\ helper\ functions}}
+\DoxyCodeLine{00089\ \ \ \textcolor{keywordtype}{bool}\ isDeviceSuitable(VkPhysicalDevice\ device);}
+\DoxyCodeLine{00090\ \ \ std::vector<const\ char\ *>\ getRequiredExtensions();}
+\DoxyCodeLine{00091\ \ \ \textcolor{keywordtype}{bool}\ checkValidationLayerSupport();}
+\DoxyCodeLine{00092\ \ \ \mbox{\hyperlink{structbloom_1_1render_1_1_queue_family_indices}{QueueFamilyIndices}}\ findQueueFamilies(VkPhysicalDevice\ device);}
+\DoxyCodeLine{00093\ \ \ \textcolor{keywordtype}{void}\ populateDebugMessengerCreateInfo(VkDebugUtilsMessengerCreateInfoEXT\ \&createInfo);}
+\DoxyCodeLine{00094\ \ \ \textcolor{keywordtype}{void}\ hasGflwRequiredInstanceExtensions();}
+\DoxyCodeLine{00095\ \ \ \textcolor{keywordtype}{bool}\ checkDeviceExtensionSupport(VkPhysicalDevice\ device);}
+\DoxyCodeLine{00096\ \ \ \mbox{\hyperlink{structbloom_1_1render_1_1_swap_chain_support_details}{SwapChainSupportDetails}}\ querySwapChainSupport(VkPhysicalDevice\ device);}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ VkInstance\ instance;}
+\DoxyCodeLine{00099\ \ \ VkDebugUtilsMessengerEXT\ debugMessenger;}
+\DoxyCodeLine{00100\ \ \ VkPhysicalDevice\ physicalDevice\ =\ VK\_NULL\_HANDLE;}
+\DoxyCodeLine{00101\ \ \ \mbox{\hyperlink{classbloom_1_1_window}{Window}}\ \&window;}
+\DoxyCodeLine{00102\ \ \ VkCommandPool\ commandPool;}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ VkDevice\ device\_;}
+\DoxyCodeLine{00105\ \ \ VkSurfaceKHR\ surface\_;}
+\DoxyCodeLine{00106\ \ \ VkQueue\ graphicsQueue\_;}
+\DoxyCodeLine{00107\ \ \ VkQueue\ presentQueue\_;}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \textcolor{keyword}{const}\ std::vector<const\ char\ *>\ validationLayers\ =\ \{\textcolor{stringliteral}{"{}VK\_LAYER\_KHRONOS\_validation"{}}\};}
+\DoxyCodeLine{00110\ \ \ \textcolor{keyword}{const}\ std::vector<const\ char\ *>\ deviceExtensions\ =\ \{VK\_KHR\_SWAPCHAIN\_EXTENSION\_NAME\};}
+\DoxyCodeLine{00111\ \};}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \}\ \ \textcolor{comment}{//\ namespace\ lve}}
+
+\end{DoxyCode}

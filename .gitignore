@@ -4,3 +4,7 @@
 
 # Ignore build folders
 bin/
+.vs
+
+# Obsidian shit
+.obsidian

@@ -1,0 +1,65 @@
+\doxysection{Wanderer Class Reference}
+\hypertarget{class_wanderer}{}\label{class_wanderer}\index{Wanderer@{Wanderer}}
+Inheritance diagram for Wanderer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_wanderer}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classbloom_1_1_engine}{bloom\+::\+Engine}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Engine} (const \mbox{\hyperlink{classbloom_1_1_engine}{Engine}} \&)=delete
+\item 
+\mbox{\hyperlink{classbloom_1_1_engine}{Engine}} \& {\bfseries operator=} (const \mbox{\hyperlink{classbloom_1_1_engine}{Engine}} \&)=delete
+\item 
+void {\bfseries Begin} ()
+\item 
+void {\bfseries Tick} ()
+\item 
+void {\bfseries Render} ()
+\item 
+void {\bfseries End} () const
+\item 
+bool {\bfseries Should\+Close} () const
+\item 
+void {\bfseries On\+Event} (const \mbox{\hyperlink{classbloom_1_1_event}{Event}} \&e) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classbloom_1_1_engine}{bloom\+::\+Engine}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1_factory}{Factory}} $>$ {\bfseries factory} = nullptr
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classbloom_1_1_engine}{bloom\+::\+Engine}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Load\+Objects} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classbloom_1_1_engine}{bloom\+::\+Engine}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbloom_1_1_window}{Window}} \texorpdfstring{$\ast$}{*} {\bfseries m\+\_\+window} = nullptr
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1render_1_1_devices}{render\+::\+Devices}} $>$ {\bfseries m\+\_\+devices} = nullptr
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1render_1_1_renderer}{render\+::\+Renderer}} $>$ {\bfseries m\+\_\+renderer} = nullptr
+\item 
+\mbox{\hyperlink{classbloom_1_1_simple_render_system}{Simple\+Render\+System}} \texorpdfstring{$\ast$}{*} {\bfseries m\+\_\+simple\+Render\+System} = nullptr
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classbloom_1_1_object}{Object}} $>$ {\bfseries game\+Objects}
+\item 
+\mbox{\hyperlink{classbloom_1_1_camera}{Camera}} {\bfseries m\+\_\+camera}
+\item 
+double {\bfseries m\+\_\+delta\+Time}
+\item 
+float {\bfseries m\+\_\+rotation}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main class for the game 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/xgoni/bloom/wanderer/\mbox{\hyperlink{wanderer_2main_8cpp}{main.\+cpp}}\end{DoxyCompactItemize}

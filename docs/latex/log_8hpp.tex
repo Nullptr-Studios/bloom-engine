@@ -1,0 +1,279 @@
+\doxysection{C\+:/\+Users/xgoni/bloom/bloom/src/log.hpp File Reference}
+\hypertarget{log_8hpp}{}\label{log_8hpp}\index{C:/Users/xgoni/bloom/bloom/src/log.hpp@{C:/Users/xgoni/bloom/bloom/src/log.hpp}}
+
+
+Header file for the Log library class.  
+
+
+{\ttfamily \#include "{}core.\+hpp"{}}\newline
+{\ttfamily \#include $<$spdlog/spdlog.\+h$>$}\newline
+{\ttfamily \#include $<$spdlog/sinks/stdout\+\_\+color\+\_\+sinks.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classbloom_1_1_log}{bloom\+::\+Log}}
+\begin{DoxyCompactList}\small\item\em Centralized logging system for the engine and game. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{log_8hpp_af6ca84c4d0058fec875875ed0cdf9f41}{BLOOM\+\_\+\+CRITICAL}}(...)
+\begin{DoxyCompactList}\small\item\em Logs a critical error message to the Bloom logger. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{log_8hpp_a23eb17bcc83048e0735c5e77e2638a33}{BLOOM\+\_\+\+ERROR}}(...)
+\begin{DoxyCompactList}\small\item\em Logs an error message to the Bloom logger. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{log_8hpp_a9fec9a7ec72f5b447a6e2ca9ec36edd0}{BLOOM\+\_\+\+WARN}}(...)
+\begin{DoxyCompactList}\small\item\em Logs a warning message to the Bloom logger. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{log_8hpp_ac5b86dacb08981467781745537e91c30}{BLOOM\+\_\+\+INFO}}(...)
+\begin{DoxyCompactList}\small\item\em Logs an informational message to the Bloom logger. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{log_8hpp_a8c5578dbc768405ebaa784866ea2728e}{BLOOM\+\_\+\+LOG}}(...)
+\begin{DoxyCompactList}\small\item\em Logs a trace/debug message to the Bloom logger. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{log_8hpp_a4bb0d487d8ffdea891dd3956424c665e}{GAME\+\_\+\+CRITICAL}}(...)
+\begin{DoxyCompactList}\small\item\em Logs a critical error message to the Game logger. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{log_8hpp_ab2e7e1a5568f63190b51106c8364aae2}{GAME\+\_\+\+ERROR}}(...)
+\begin{DoxyCompactList}\small\item\em Logs an error message to the Game logger. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{log_8hpp_a5242ab9b8cb5d62d5d0e48787ab4737d}{GAME\+\_\+\+WARN}}(...)
+\begin{DoxyCompactList}\small\item\em Logs a warning message to the Game logger. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{log_8hpp_ae2300416c5629b4129d9a800ae26ddda}{GAME\+\_\+\+INFO}}(...)
+\begin{DoxyCompactList}\small\item\em Logs an informational message to the Game logger. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{log_8hpp_afd3a8bed7f500548c0150fa4550b2e54}{GAME\+\_\+\+LOG}}(...)
+\begin{DoxyCompactList}\small\item\em Logs a trace/debug message to the Game logger. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file for the Log library class. 
+
+\begin{DoxyAuthor}{Author}
+Xein \href{mailto:xgonip@gmail.com}{\texttt{ xgonip@gmail.\+com}} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+11/21/2024
+\end{DoxyDate}
+
+
+This file declares the {\ttfamily Log} class, which provides a centralized logging system for both the engine and the game. The logging functionality is built on top of the {\bfseries{spdlog}} library and supports multiple log levels (e.\+g., trace, info, warning, error).
+
+The file also includes the necessary macros and definitions for the Bloom and Game logging consoles, ensuring clear separation between engine and game logs. 
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{log_8hpp_af6ca84c4d0058fec875875ed0cdf9f41}\index{log.hpp@{log.hpp}!BLOOM\_CRITICAL@{BLOOM\_CRITICAL}}
+\index{BLOOM\_CRITICAL@{BLOOM\_CRITICAL}!log.hpp@{log.hpp}}
+\doxysubsubsection{\texorpdfstring{BLOOM\_CRITICAL}{BLOOM\_CRITICAL}}
+{\footnotesize\ttfamily \label{log_8hpp_af6ca84c4d0058fec875875ed0cdf9f41} 
+\#define BLOOM\+\_\+\+CRITICAL(\begin{DoxyParamCaption}\item[{}]{}...{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\mbox{\hyperlink{classbloom_1_1_log_aad38d3784727402356dcb4110857960b}{::bloom::Log::GetBloomLogger}}()-\/>critical(\_\_VA\_ARGS\_\_);\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_debugbreak();\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::exit(1);\}}
+
+\end{DoxyCode}
+
+
+Logs a critical error message to the Bloom logger. 
+
+This macro sends a critical-\/level log message using the Bloom logger. Critical messages are the most severe and indicate fatal errors.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ...} & The message and optional arguments to log. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{log_8hpp_a23eb17bcc83048e0735c5e77e2638a33}\index{log.hpp@{log.hpp}!BLOOM\_ERROR@{BLOOM\_ERROR}}
+\index{BLOOM\_ERROR@{BLOOM\_ERROR}!log.hpp@{log.hpp}}
+\doxysubsubsection{\texorpdfstring{BLOOM\_ERROR}{BLOOM\_ERROR}}
+{\footnotesize\ttfamily \label{log_8hpp_a23eb17bcc83048e0735c5e77e2638a33} 
+\#define BLOOM\+\_\+\+ERROR(\begin{DoxyParamCaption}\item[{}]{}...{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classbloom_1_1_log_aad38d3784727402356dcb4110857960b}{::bloom::Log::GetBloomLogger}}()-\/>error(\_\_VA\_ARGS\_\_);\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_debugbreak()}
+
+\end{DoxyCode}
+
+
+Logs an error message to the Bloom logger. 
+
+This macro sends an error-\/level log message using the Bloom logger. Error messages indicate a significant problem but may not terminate the application.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ...} & The message and optional arguments to log. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{log_8hpp_ac5b86dacb08981467781745537e91c30}\index{log.hpp@{log.hpp}!BLOOM\_INFO@{BLOOM\_INFO}}
+\index{BLOOM\_INFO@{BLOOM\_INFO}!log.hpp@{log.hpp}}
+\doxysubsubsection{\texorpdfstring{BLOOM\_INFO}{BLOOM\_INFO}}
+{\footnotesize\ttfamily \label{log_8hpp_ac5b86dacb08981467781745537e91c30} 
+\#define BLOOM\+\_\+\+INFO(\begin{DoxyParamCaption}\item[{}]{}...{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classbloom_1_1_log_aad38d3784727402356dcb4110857960b}{::bloom::Log::GetBloomLogger}}()-\/>info(\_\_VA\_ARGS\_\_)}
+
+\end{DoxyCode}
+
+
+Logs an informational message to the Bloom logger. 
+
+This macro sends an informational-\/level log message using the Bloom logger. Informational messages are used to provide general details about application state.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ...} & The message and optional arguments to log. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{log_8hpp_a8c5578dbc768405ebaa784866ea2728e}\index{log.hpp@{log.hpp}!BLOOM\_LOG@{BLOOM\_LOG}}
+\index{BLOOM\_LOG@{BLOOM\_LOG}!log.hpp@{log.hpp}}
+\doxysubsubsection{\texorpdfstring{BLOOM\_LOG}{BLOOM\_LOG}}
+{\footnotesize\ttfamily \label{log_8hpp_a8c5578dbc768405ebaa784866ea2728e} 
+\#define BLOOM\+\_\+\+LOG(\begin{DoxyParamCaption}\item[{}]{}...{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classbloom_1_1_log_aad38d3784727402356dcb4110857960b}{::bloom::Log::GetBloomLogger}}()-\/>trace(\_\_VA\_ARGS\_\_)}
+
+\end{DoxyCode}
+
+
+Logs a trace/debug message to the Bloom logger. 
+
+This macro sends a trace-\/level log message using the Bloom logger. Trace messages are used for debugging purposes and provide detailed application flow.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ...} & The message and optional arguments to log. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{log_8hpp_a9fec9a7ec72f5b447a6e2ca9ec36edd0}\index{log.hpp@{log.hpp}!BLOOM\_WARN@{BLOOM\_WARN}}
+\index{BLOOM\_WARN@{BLOOM\_WARN}!log.hpp@{log.hpp}}
+\doxysubsubsection{\texorpdfstring{BLOOM\_WARN}{BLOOM\_WARN}}
+{\footnotesize\ttfamily \label{log_8hpp_a9fec9a7ec72f5b447a6e2ca9ec36edd0} 
+\#define BLOOM\+\_\+\+WARN(\begin{DoxyParamCaption}\item[{}]{}...{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classbloom_1_1_log_aad38d3784727402356dcb4110857960b}{::bloom::Log::GetBloomLogger}}()-\/>warn(\_\_VA\_ARGS\_\_)}
+
+\end{DoxyCode}
+
+
+Logs a warning message to the Bloom logger. 
+
+This macro sends a warning-\/level log message using the Bloom logger. Warning messages indicate potential issues that might require attention.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ...} & The message and optional arguments to log. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{log_8hpp_a4bb0d487d8ffdea891dd3956424c665e}\index{log.hpp@{log.hpp}!GAME\_CRITICAL@{GAME\_CRITICAL}}
+\index{GAME\_CRITICAL@{GAME\_CRITICAL}!log.hpp@{log.hpp}}
+\doxysubsubsection{\texorpdfstring{GAME\_CRITICAL}{GAME\_CRITICAL}}
+{\footnotesize\ttfamily \label{log_8hpp_a4bb0d487d8ffdea891dd3956424c665e} 
+\#define GAME\+\_\+\+CRITICAL(\begin{DoxyParamCaption}\item[{}]{}...{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classbloom_1_1_log_ae0d90b09e56830d02412deb0d1f87d0c}{::bloom::Log::GetGameLogger}}()-\/>critical(\_\_VA\_ARGS\_\_)}
+
+\end{DoxyCode}
+
+
+Logs a critical error message to the Game logger. 
+
+This macro sends a critical-\/level log message using the Game logger. Critical messages indicate fatal errors related to the game system.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ...} & The message and optional arguments to log. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{log_8hpp_ab2e7e1a5568f63190b51106c8364aae2}\index{log.hpp@{log.hpp}!GAME\_ERROR@{GAME\_ERROR}}
+\index{GAME\_ERROR@{GAME\_ERROR}!log.hpp@{log.hpp}}
+\doxysubsubsection{\texorpdfstring{GAME\_ERROR}{GAME\_ERROR}}
+{\footnotesize\ttfamily \label{log_8hpp_ab2e7e1a5568f63190b51106c8364aae2} 
+\#define GAME\+\_\+\+ERROR(\begin{DoxyParamCaption}\item[{}]{}...{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classbloom_1_1_log_ae0d90b09e56830d02412deb0d1f87d0c}{::bloom::Log::GetGameLogger}}()-\/>error(\_\_VA\_ARGS\_\_)}
+
+\end{DoxyCode}
+
+
+Logs an error message to the Game logger. 
+
+This macro sends an error-\/level log message using the Game logger. Error messages indicate problems in the game system that require attention.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ...} & The message and optional arguments to log. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{log_8hpp_ae2300416c5629b4129d9a800ae26ddda}\index{log.hpp@{log.hpp}!GAME\_INFO@{GAME\_INFO}}
+\index{GAME\_INFO@{GAME\_INFO}!log.hpp@{log.hpp}}
+\doxysubsubsection{\texorpdfstring{GAME\_INFO}{GAME\_INFO}}
+{\footnotesize\ttfamily \label{log_8hpp_ae2300416c5629b4129d9a800ae26ddda} 
+\#define GAME\+\_\+\+INFO(\begin{DoxyParamCaption}\item[{}]{}...{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classbloom_1_1_log_ae0d90b09e56830d02412deb0d1f87d0c}{::bloom::Log::GetGameLogger}}()-\/>info(\_\_VA\_ARGS\_\_)}
+
+\end{DoxyCode}
+
+
+Logs an informational message to the Game logger. 
+
+This macro sends an informational-\/level log message using the Game logger. Informational messages provide general status updates about the game system.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ...} & The message and optional arguments to log. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{log_8hpp_afd3a8bed7f500548c0150fa4550b2e54}\index{log.hpp@{log.hpp}!GAME\_LOG@{GAME\_LOG}}
+\index{GAME\_LOG@{GAME\_LOG}!log.hpp@{log.hpp}}
+\doxysubsubsection{\texorpdfstring{GAME\_LOG}{GAME\_LOG}}
+{\footnotesize\ttfamily \label{log_8hpp_afd3a8bed7f500548c0150fa4550b2e54} 
+\#define GAME\+\_\+\+LOG(\begin{DoxyParamCaption}\item[{}]{}...{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classbloom_1_1_log_ae0d90b09e56830d02412deb0d1f87d0c}{::bloom::Log::GetGameLogger}}()-\/>trace(\_\_VA\_ARGS\_\_)}
+
+\end{DoxyCode}
+
+
+Logs a trace/debug message to the Game logger. 
+
+This macro sends a trace-\/level log message using the Game logger. Trace messages provide detailed debugging information for the game system.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ...} & The message and optional arguments to log. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{log_8hpp_a5242ab9b8cb5d62d5d0e48787ab4737d}\index{log.hpp@{log.hpp}!GAME\_WARN@{GAME\_WARN}}
+\index{GAME\_WARN@{GAME\_WARN}!log.hpp@{log.hpp}}
+\doxysubsubsection{\texorpdfstring{GAME\_WARN}{GAME\_WARN}}
+{\footnotesize\ttfamily \label{log_8hpp_a5242ab9b8cb5d62d5d0e48787ab4737d} 
+\#define GAME\+\_\+\+WARN(\begin{DoxyParamCaption}\item[{}]{}...{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classbloom_1_1_log_ae0d90b09e56830d02412deb0d1f87d0c}{::bloom::Log::GetGameLogger}}()-\/>warn(\_\_VA\_ARGS\_\_)}
+
+\end{DoxyCode}
+
+
+Logs a warning message to the Game logger. 
+
+This macro sends a warning-\/level log message using the Game logger. Warning messages indicate non-\/critical issues in the game system.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ...} & The message and optional arguments to log. \\
+\hline
+\end{DoxyParams}

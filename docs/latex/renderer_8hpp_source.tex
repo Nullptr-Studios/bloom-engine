@@ -1,0 +1,68 @@
+\doxysection{renderer.\+hpp}
+\hypertarget{renderer_8hpp_source}{}\label{renderer_8hpp_source}\index{C:/Users/xgoni/bloom/bloom/src/render/renderer.hpp@{C:/Users/xgoni/bloom/bloom/src/render/renderer.hpp}}
+\mbox{\hyperlink{renderer_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{window_8hpp}{src/window.hpp}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{devices_8hpp}{devices.hpp}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{swap__chain_8hpp}{swap\_chain.hpp}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{bloom__header_8hpp}{bloom\_header.hpp}}>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{namespace\ }bloom::render\ \{}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structbloom_1_1render_1_1_simple_push_constant_data}{SimplePushConstantData}}\ \{}
+\DoxyCodeLine{00019\ \ \ glm::mat2\ transform\ =\ glm::mat2(1.0f);}
+\DoxyCodeLine{00020\ \ \ glm::vec2\ offset;}
+\DoxyCodeLine{00021\ \ \ \textcolor{keyword}{alignas}(16)\ glm::vec3\ color;}
+\DoxyCodeLine{00022\ \};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }BLOOM\_API\ \mbox{\hyperlink{classbloom_1_1render_1_1_renderer}{Renderer}}\ \{}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_renderer}{Renderer}}(\mbox{\hyperlink{classbloom_1_1_window}{Window}}*\ window,\ \mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}}*\ devices);}
+\DoxyCodeLine{00028\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_renderer}{\string~Renderer}}();}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_renderer}{Renderer}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classbloom_1_1render_1_1_renderer}{Renderer}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00031\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_renderer}{Renderer}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classbloom_1_1render_1_1_renderer}{Renderer}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ VkCommandBuffer\ BeginFrame();}
+\DoxyCodeLine{00034\ \ \ \textcolor{keywordtype}{void}\ EndFrame();}
+\DoxyCodeLine{00035\ \ \ \textcolor{keywordtype}{void}\ BeginRenderPass(VkCommandBuffer\ commandBuffer);}
+\DoxyCodeLine{00036\ \ \ \textcolor{keywordtype}{void}\ EndRenderPass(VkCommandBuffer\ commandBuffer);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \textcolor{keywordtype}{bool}\ GetFrameStarted()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_frameStarted;\ \}}
+\DoxyCodeLine{00039\ \ \ VkCommandBuffer\ GetCurrentCommandBuffer()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordflow}{if}\ (!m\_frameStarted)\ \{\ \mbox{\hyperlink{log_8hpp_a9fec9a7ec72f5b447a6e2ca9ec36edd0}{BLOOM\_WARN}}(\textcolor{stringliteral}{"{}Cannot\ get\ CommandBuffer\ when\ frame\ not\ in\ progress"{}});\ \}}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_commandBuffers[m\_currentFrameIndex];}
+\DoxyCodeLine{00042\ \ \ \}}
+\DoxyCodeLine{00043\ \ \ VkRenderPass\ GetRenderPass()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_swapChain-\/>GetRenderPass();\ \}}
+\DoxyCodeLine{00044\ \ \ \textcolor{keywordtype}{float}\ GetAspectRatio()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_swapChain-\/>ExtentAspectRatio();\ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \textcolor{keywordtype}{int}\ GetFrameIndex()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordflow}{if}\ (!m\_frameStarted)\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \mbox{\hyperlink{log_8hpp_a9fec9a7ec72f5b447a6e2ca9ec36edd0}{BLOOM\_WARN}}(\textcolor{stringliteral}{"{}Cannot\ get\ frame\ index\ when\ frame\ not\ in\ progress"{}});}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00050\ \ \ \ \ \}}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_currentFrameIndex;}
+\DoxyCodeLine{00052\ \ \ \}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00055\ \ \ \textcolor{keywordtype}{void}\ CreateCommandBuffers();}
+\DoxyCodeLine{00056\ \ \ \textcolor{keywordtype}{void}\ FreeCommandBuffers();}
+\DoxyCodeLine{00057\ \ \ \textcolor{keywordtype}{void}\ RecreateSwapChain();}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \mbox{\hyperlink{classbloom_1_1_window}{Window}}*\ m\_window\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00060\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}}*\ m\_devices\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00061\ \ \ std::unique\_ptr<SwapChain>\ m\_swapChain\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00062\ \ \ std::vector<VkCommandBuffer>\ m\_commandBuffers;}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ m\_currentImageIndex\ =\ 0;}
+\DoxyCodeLine{00065\ \ \ \textcolor{keywordtype}{int}\ m\_currentFrameIndex\ =\ 0;}
+\DoxyCodeLine{00066\ \ \ \textcolor{keywordtype}{bool}\ m\_frameStarted\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00067\ \};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \}}
+
+\end{DoxyCode}

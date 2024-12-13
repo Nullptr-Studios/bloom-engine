@@ -1,0 +1,95 @@
+\doxysection{bloom\+::Key\+Event Class Reference}
+\hypertarget{classbloom_1_1_key_event}{}\label{classbloom_1_1_key_event}\index{bloom::KeyEvent@{bloom::KeyEvent}}
+
+
+Base class for all keyboard events.  
+
+
+
+
+{\ttfamily \#include $<$key\+\_\+event.\+hpp$>$}
+
+Inheritance diagram for bloom\+::Key\+Event\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classbloom_1_1_key_event}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classbloom_1_1_key_event_a72ff8f3941a9d575f4b3f9275fe93fde}{Get\+Key\+Code}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the key code associated with the event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classbloom_1_1_event}{bloom\+::\+Event}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{event_8hpp_a62777e271a1f3f6e4a8ba9055c2e4df9}{Event\+Type}} \mbox{\hyperlink{classbloom_1_1_event_afb0cc62325b1fbd939fafe1096c6c624}{Get\+Event\+Type}} () const =0
+\begin{DoxyCompactList}\small\item\em Gets the type of the event. \end{DoxyCompactList}\item 
+virtual const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classbloom_1_1_event_ab5bb7f0fc80e71886658e3acb181fd16}{Get\+Name}} () const =0
+\begin{DoxyCompactList}\small\item\em Gets the name of the event. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classbloom_1_1_event_aae34b363173e9c057ac00f6fe78bcf9a}{Get\+Category\+Flags}} () const =0
+\begin{DoxyCompactList}\small\item\em Gets the category flags for the event. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classbloom_1_1_event_a1e826d312aa922abd9401a02ee33ab3d}{To\+String}} () const
+\begin{DoxyCompactList}\small\item\em Converts the event to a string representation. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classbloom_1_1_event_ad407353c8d035d38f9bc21eedd0b8c69}{Is\+In\+Category}} (const \mbox{\hyperlink{event_8hpp_a85f0d8c71d473ca68946d8c5bcdab3f5}{Event\+Category}} category) const
+\begin{DoxyCompactList}\small\item\em Checks if the event belongs to a specific category. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbloom_1_1_key_event_a2e8b75fd3fa39db1f1873f22766eaeb1}{Key\+Event}} (const int keycode)
+\begin{DoxyCompactList}\small\item\em Constructs a {\ttfamily \doxylink{classbloom_1_1_key_event}{Key\+Event}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classbloom_1_1_key_event_a57ba914731e07b227d0e5bcefcacc5c8}\label{classbloom_1_1_key_event_a57ba914731e07b227d0e5bcefcacc5c8} 
+int {\bfseries \+\_\+key\+Code}
+\begin{DoxyCompactList}\small\item\em The key code associated with the event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classbloom_1_1_event}{bloom\+::\+Event}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classbloom_1_1_event_abc466e96deb4ed6616be51c35a35e796}{\+\_\+handled}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for all keyboard events. 
+
+The {\ttfamily \doxylink{classbloom_1_1_key_event}{Key\+Event}} class provides the common functionality for keyboard-\/related events, such as retrieving the key code of the event. This class is designed to be extended by specific event types, such as {\ttfamily \doxylink{classbloom_1_1_key_pressed_event}{Key\+Pressed\+Event}} and {\ttfamily \doxylink{classbloom_1_1_key_released_event}{Key\+Released\+Event}}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classbloom_1_1_key_event_a2e8b75fd3fa39db1f1873f22766eaeb1}\index{bloom::KeyEvent@{bloom::KeyEvent}!KeyEvent@{KeyEvent}}
+\index{KeyEvent@{KeyEvent}!bloom::KeyEvent@{bloom::KeyEvent}}
+\doxysubsubsection{\texorpdfstring{KeyEvent()}{KeyEvent()}}
+{\footnotesize\ttfamily \label{classbloom_1_1_key_event_a2e8b75fd3fa39db1f1873f22766eaeb1} 
+bloom\+::\+Key\+Event\+::\+Key\+Event (\begin{DoxyParamCaption}\item[{const int}]{keycode}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [protected]}}
+
+
+
+Constructs a {\ttfamily \doxylink{classbloom_1_1_key_event}{Key\+Event}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em keycode} & The key code associated with the event. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classbloom_1_1_key_event_a72ff8f3941a9d575f4b3f9275fe93fde}\index{bloom::KeyEvent@{bloom::KeyEvent}!GetKeyCode@{GetKeyCode}}
+\index{GetKeyCode@{GetKeyCode}!bloom::KeyEvent@{bloom::KeyEvent}}
+\doxysubsubsection{\texorpdfstring{GetKeyCode()}{GetKeyCode()}}
+{\footnotesize\ttfamily \label{classbloom_1_1_key_event_a72ff8f3941a9d575f4b3f9275fe93fde} 
+int bloom\+::\+Key\+Event\+::\+Get\+Key\+Code (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+
+
+Retrieves the key code associated with the event. 
+
+\begin{DoxyReturn}{Returns}
+The key code as an integer. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/xgoni/bloom/bloom/src/events/\mbox{\hyperlink{key__event_8hpp}{key\+\_\+event.\+hpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,80 @@
+\doxysection{bloom\+::Engine Class Reference}
+\hypertarget{classbloom_1_1_engine}{}\label{classbloom_1_1_engine}\index{bloom::Engine@{bloom::Engine}}
+Inheritance diagram for bloom\+::Engine\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classbloom_1_1_engine}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classbloom_1_1_engine_ad4e4c7ae869ce56bf4986afafb895822}\label{classbloom_1_1_engine_ad4e4c7ae869ce56bf4986afafb895822} 
+{\bfseries Engine} (const \mbox{\hyperlink{classbloom_1_1_engine}{Engine}} \&)=delete
+\item 
+\Hypertarget{classbloom_1_1_engine_a541e2dd7ada86a9a25b9477bd60553c8}\label{classbloom_1_1_engine_a541e2dd7ada86a9a25b9477bd60553c8} 
+\mbox{\hyperlink{classbloom_1_1_engine}{Engine}} \& {\bfseries operator=} (const \mbox{\hyperlink{classbloom_1_1_engine}{Engine}} \&)=delete
+\item 
+\Hypertarget{classbloom_1_1_engine_a88a1aae163129e74c7486ac57d310035}\label{classbloom_1_1_engine_a88a1aae163129e74c7486ac57d310035} 
+void {\bfseries Begin} ()
+\item 
+\Hypertarget{classbloom_1_1_engine_a14a73b59a5c71909ed7419bd385fd1c1}\label{classbloom_1_1_engine_a14a73b59a5c71909ed7419bd385fd1c1} 
+void {\bfseries Tick} ()
+\item 
+\Hypertarget{classbloom_1_1_engine_ad255ccd51c12fec57ce713ff879d4775}\label{classbloom_1_1_engine_ad255ccd51c12fec57ce713ff879d4775} 
+void {\bfseries Render} ()
+\item 
+\Hypertarget{classbloom_1_1_engine_a56743ef3554bf57bc79ce5dc00fa234b}\label{classbloom_1_1_engine_a56743ef3554bf57bc79ce5dc00fa234b} 
+void {\bfseries End} () const
+\item 
+\Hypertarget{classbloom_1_1_engine_aacbe3434463b409ea1d93f9db8ad37bc}\label{classbloom_1_1_engine_aacbe3434463b409ea1d93f9db8ad37bc} 
+bool {\bfseries Should\+Close} () const
+\item 
+\Hypertarget{classbloom_1_1_engine_a0e9e685a0831e8b2dcacb12fc3e026fa}\label{classbloom_1_1_engine_a0e9e685a0831e8b2dcacb12fc3e026fa} 
+void {\bfseries On\+Event} (const \mbox{\hyperlink{classbloom_1_1_event}{Event}} \&e) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classbloom_1_1_engine_ab6d184cb4b143c4bbcbfeb8906298adb}\label{classbloom_1_1_engine_ab6d184cb4b143c4bbcbfeb8906298adb} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1_factory}{Factory}} $>$ {\bfseries factory} = nullptr
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classbloom_1_1_engine_ad4b7e975f524d6a6d2398052f0a81037}\label{classbloom_1_1_engine_ad4b7e975f524d6a6d2398052f0a81037} 
+void {\bfseries Load\+Objects} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classbloom_1_1_engine_acc77f05b53f50af915b1872dcc057367}\label{classbloom_1_1_engine_acc77f05b53f50af915b1872dcc057367} 
+\mbox{\hyperlink{classbloom_1_1_window}{Window}} \texorpdfstring{$\ast$}{*} {\bfseries m\+\_\+window} = nullptr
+\item 
+\Hypertarget{classbloom_1_1_engine_aa9b4b565146cc845c5ec1641a533badb}\label{classbloom_1_1_engine_aa9b4b565146cc845c5ec1641a533badb} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1render_1_1_devices}{render\+::\+Devices}} $>$ {\bfseries m\+\_\+devices} = nullptr
+\item 
+\Hypertarget{classbloom_1_1_engine_a2cba17e0da5ccea5d481664aac9357e1}\label{classbloom_1_1_engine_a2cba17e0da5ccea5d481664aac9357e1} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1render_1_1_renderer}{render\+::\+Renderer}} $>$ {\bfseries m\+\_\+renderer} = nullptr
+\item 
+\Hypertarget{classbloom_1_1_engine_a1e1f9560eea6c443b54afcf6fe49d913}\label{classbloom_1_1_engine_a1e1f9560eea6c443b54afcf6fe49d913} 
+\mbox{\hyperlink{classbloom_1_1_simple_render_system}{Simple\+Render\+System}} \texorpdfstring{$\ast$}{*} {\bfseries m\+\_\+simple\+Render\+System} = nullptr
+\item 
+\Hypertarget{classbloom_1_1_engine_a755180bb2c0c676ed9fbb66ea7b3c8b3}\label{classbloom_1_1_engine_a755180bb2c0c676ed9fbb66ea7b3c8b3} 
+std\+::vector$<$ \mbox{\hyperlink{classbloom_1_1_object}{Object}} $>$ {\bfseries game\+Objects}
+\item 
+\Hypertarget{classbloom_1_1_engine_a65137d25d0964216567130207b3c3322}\label{classbloom_1_1_engine_a65137d25d0964216567130207b3c3322} 
+\mbox{\hyperlink{classbloom_1_1_camera}{Camera}} {\bfseries m\+\_\+camera}
+\item 
+\Hypertarget{classbloom_1_1_engine_a15c91423cb127ff1a8aebaa4119d7659}\label{classbloom_1_1_engine_a15c91423cb127ff1a8aebaa4119d7659} 
+double {\bfseries m\+\_\+delta\+Time}
+\item 
+\Hypertarget{classbloom_1_1_engine_acac7f77a6e1eef0333ba3762100709d4}\label{classbloom_1_1_engine_acac7f77a6e1eef0333ba3762100709d4} 
+float {\bfseries m\+\_\+rotation}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/xgoni/bloom/bloom/src/\mbox{\hyperlink{engine_8hpp}{engine.\+hpp}}\item 
+C\+:/\+Users/xgoni/bloom/bloom/src/engine.\+cpp\end{DoxyCompactItemize}

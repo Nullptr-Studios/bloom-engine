@@ -1,0 +1,102 @@
+\doxysection{bloom\+::Mouse\+Button\+Pressed\+Event Class Reference}
+\hypertarget{classbloom_1_1_mouse_button_pressed_event}{}\label{classbloom_1_1_mouse_button_pressed_event}\index{bloom::MouseButtonPressedEvent@{bloom::MouseButtonPressedEvent}}
+
+
+Represents an event triggered when a mouse button is pressed.  
+
+
+
+
+{\ttfamily \#include $<$mouse\+\_\+event.\+hpp$>$}
+
+Inheritance diagram for bloom\+::Mouse\+Button\+Pressed\+Event\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classbloom_1_1_mouse_button_pressed_event}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbloom_1_1_mouse_button_pressed_event_a58e2ea349acb6263de29df48b66e1d83}{Mouse\+Button\+Pressed\+Event}} (const int button)
+\begin{DoxyCompactList}\small\item\em Constructs a {\ttfamily \doxylink{classbloom_1_1_mouse_button_pressed_event}{Mouse\+Button\+Pressed\+Event}}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classbloom_1_1_mouse_button_pressed_event_a127ef183371b8fef1b35977e5d2b5505}{To\+String}} () const override
+\begin{DoxyCompactList}\small\item\em Provides a string representation of the {\ttfamily \doxylink{classbloom_1_1_mouse_button_pressed_event}{Mouse\+Button\+Pressed\+Event}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classbloom_1_1_mouse_button_event}{bloom\+::\+Mouse\+Button\+Event}}}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classbloom_1_1_mouse_button_event_a9dea15429e61a352874dc5e30d6be390}{Get\+Mouse\+Button}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the mouse button involved in the event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classbloom_1_1_event}{bloom\+::\+Event}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{event_8hpp_a62777e271a1f3f6e4a8ba9055c2e4df9}{Event\+Type}} \mbox{\hyperlink{classbloom_1_1_event_afb0cc62325b1fbd939fafe1096c6c624}{Get\+Event\+Type}} () const =0
+\begin{DoxyCompactList}\small\item\em Gets the type of the event. \end{DoxyCompactList}\item 
+virtual const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classbloom_1_1_event_ab5bb7f0fc80e71886658e3acb181fd16}{Get\+Name}} () const =0
+\begin{DoxyCompactList}\small\item\em Gets the name of the event. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classbloom_1_1_event_aae34b363173e9c057ac00f6fe78bcf9a}{Get\+Category\+Flags}} () const =0
+\begin{DoxyCompactList}\small\item\em Gets the category flags for the event. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classbloom_1_1_event_ad407353c8d035d38f9bc21eedd0b8c69}{Is\+In\+Category}} (const \mbox{\hyperlink{event_8hpp_a85f0d8c71d473ca68946d8c5bcdab3f5}{Event\+Category}} category) const
+\begin{DoxyCompactList}\small\item\em Checks if the event belongs to a specific category. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classbloom_1_1_mouse_button_event}{bloom\+::\+Mouse\+Button\+Event}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbloom_1_1_mouse_button_event_a2fa0ee41f2323bda453fe62815da3c62}{Mouse\+Button\+Event}} (int button)
+\begin{DoxyCompactList}\small\item\em Constructs a {\ttfamily \doxylink{classbloom_1_1_mouse_button_event}{Mouse\+Button\+Event}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classbloom_1_1_mouse_button_event}{bloom\+::\+Mouse\+Button\+Event}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries \+\_\+button}
+\begin{DoxyCompactList}\small\item\em The mouse button involved in the event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classbloom_1_1_event}{bloom\+::\+Event}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classbloom_1_1_event_abc466e96deb4ed6616be51c35a35e796}{\+\_\+handled}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents an event triggered when a mouse button is pressed. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classbloom_1_1_mouse_button_pressed_event_a58e2ea349acb6263de29df48b66e1d83}\index{bloom::MouseButtonPressedEvent@{bloom::MouseButtonPressedEvent}!MouseButtonPressedEvent@{MouseButtonPressedEvent}}
+\index{MouseButtonPressedEvent@{MouseButtonPressedEvent}!bloom::MouseButtonPressedEvent@{bloom::MouseButtonPressedEvent}}
+\doxysubsubsection{\texorpdfstring{MouseButtonPressedEvent()}{MouseButtonPressedEvent()}}
+{\footnotesize\ttfamily \label{classbloom_1_1_mouse_button_pressed_event_a58e2ea349acb6263de29df48b66e1d83} 
+bloom\+::\+Mouse\+Button\+Pressed\+Event\+::\+Mouse\+Button\+Pressed\+Event (\begin{DoxyParamCaption}\item[{const int}]{button}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a {\ttfamily \doxylink{classbloom_1_1_mouse_button_pressed_event}{Mouse\+Button\+Pressed\+Event}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em button} & The button that was pressed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classbloom_1_1_mouse_button_pressed_event_a127ef183371b8fef1b35977e5d2b5505}\index{bloom::MouseButtonPressedEvent@{bloom::MouseButtonPressedEvent}!ToString@{ToString}}
+\index{ToString@{ToString}!bloom::MouseButtonPressedEvent@{bloom::MouseButtonPressedEvent}}
+\doxysubsubsection{\texorpdfstring{ToString()}{ToString()}}
+{\footnotesize\ttfamily \label{classbloom_1_1_mouse_button_pressed_event_a127ef183371b8fef1b35977e5d2b5505} 
+std\+::string bloom\+::\+Mouse\+Button\+Pressed\+Event\+::\+To\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Provides a string representation of the {\ttfamily \doxylink{classbloom_1_1_mouse_button_pressed_event}{Mouse\+Button\+Pressed\+Event}}. 
+
+\begin{DoxyReturn}{Returns}
+A string containing the button information. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classbloom_1_1_event_a1e826d312aa922abd9401a02ee33ab3d}{bloom\+::\+Event}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/xgoni/bloom/bloom/src/events/\mbox{\hyperlink{mouse__event_8hpp}{mouse\+\_\+event.\+hpp}}\end{DoxyCompactItemize}

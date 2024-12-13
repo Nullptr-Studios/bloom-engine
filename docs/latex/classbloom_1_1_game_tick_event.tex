@@ -1,0 +1,52 @@
+\doxysection{bloom\+::Game\+Tick\+Event Class Reference}
+\hypertarget{classbloom_1_1_game_tick_event}{}\label{classbloom_1_1_game_tick_event}\index{bloom::GameTickEvent@{bloom::GameTickEvent}}
+
+
+Represents an event triggered during the game update phase.  
+
+
+
+
+{\ttfamily \#include $<$game\+\_\+event.\+hpp$>$}
+
+Inheritance diagram for bloom\+::Game\+Tick\+Event\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classbloom_1_1_game_tick_event}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classbloom_1_1_game_tick_event_af13d24161400130457cec680a88b04f2}\label{classbloom_1_1_game_tick_event_af13d24161400130457cec680a88b04f2} 
+{\bfseries Game\+Tick\+Event} ()
+\begin{DoxyCompactList}\small\item\em Constructs a {\ttfamily \doxylink{classbloom_1_1_game_tick_event}{Game\+Tick\+Event}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classbloom_1_1_event}{bloom\+::\+Event}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{event_8hpp_a62777e271a1f3f6e4a8ba9055c2e4df9}{Event\+Type}} \mbox{\hyperlink{classbloom_1_1_event_afb0cc62325b1fbd939fafe1096c6c624}{Get\+Event\+Type}} () const =0
+\begin{DoxyCompactList}\small\item\em Gets the type of the event. \end{DoxyCompactList}\item 
+virtual const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classbloom_1_1_event_ab5bb7f0fc80e71886658e3acb181fd16}{Get\+Name}} () const =0
+\begin{DoxyCompactList}\small\item\em Gets the name of the event. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classbloom_1_1_event_aae34b363173e9c057ac00f6fe78bcf9a}{Get\+Category\+Flags}} () const =0
+\begin{DoxyCompactList}\small\item\em Gets the category flags for the event. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classbloom_1_1_event_a1e826d312aa922abd9401a02ee33ab3d}{To\+String}} () const
+\begin{DoxyCompactList}\small\item\em Converts the event to a string representation. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classbloom_1_1_event_ad407353c8d035d38f9bc21eedd0b8c69}{Is\+In\+Category}} (const \mbox{\hyperlink{event_8hpp_a85f0d8c71d473ca68946d8c5bcdab3f5}{Event\+Category}} category) const
+\begin{DoxyCompactList}\small\item\em Checks if the event belongs to a specific category. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classbloom_1_1_event}{bloom\+::\+Event}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classbloom_1_1_event_abc466e96deb4ed6616be51c35a35e796}{\+\_\+handled}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents an event triggered during the game update phase. 
+
+This event is dispatched every time the game performs an update tick, which is used for logic updates, such as moving objects or processing game mechanics. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/xgoni/bloom/bloom/src/events/\mbox{\hyperlink{game__event_8hpp}{game\+\_\+event.\+hpp}}\end{DoxyCompactItemize}

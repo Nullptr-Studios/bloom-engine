@@ -1,0 +1,34 @@
+\doxysection{factory.\+hpp}
+\hypertarget{factory_8hpp_source}{}\label{factory_8hpp_source}\index{C:/Users/xgoni/bloom/bloom/src/factory.hpp@{C:/Users/xgoni/bloom/bloom/src/factory.hpp}}
+\mbox{\hyperlink{factory_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{engine_8hpp}{engine.hpp}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{object_8hpp}{object.hpp}}"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }bloom\ \{}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }Object;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }BLOOM\_API\ \mbox{\hyperlink{classbloom_1_1_factory}{Factory}}\ \{}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ =\ std::enable\_if\_t<std::is\_base\_of\_v<Object,\ T>>>}
+\DoxyCodeLine{00027\ \ \ T\ CreateObject();}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00030\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ n\_currentID\ =\ 0;}
+\DoxyCodeLine{00031\ \ \ \ \ }
+\DoxyCodeLine{00032\ \};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}>}
+\DoxyCodeLine{00035\ T\ \mbox{\hyperlink{classbloom_1_1_factory_a10c277ff8d3e61c1f8475580acd046fd}{Factory::CreateObject}}()\ \{}
+\DoxyCodeLine{00036\ \ \ \textcolor{keyword}{auto}\ \_obj\ =\ T(n\_currentID);}
+\DoxyCodeLine{00037\ \ \ n\_currentID++;}
+\DoxyCodeLine{00038\ \ \ \textcolor{keywordflow}{return}\ \_obj;}
+\DoxyCodeLine{00039\ \}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \}}
+
+\end{DoxyCode}
