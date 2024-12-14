@@ -7,3 +7,6 @@
 [submodule "bloom/lib/glm"]
 	path = bloom/lib/glm
 	url = https://github.com/g-truc/glm.git
+[submodule "bloom/lib/stb"]
+	path = bloom/lib/stb
+	url = https://git.xein.es/xein/stb.git
