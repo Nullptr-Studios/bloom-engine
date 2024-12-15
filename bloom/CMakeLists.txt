@@ -41,6 +41,8 @@ add_library(bloom-engine SHARED
         src/objects/camera.hpp
         src/objects/actor.cpp
         src/objects/actor.hpp
+        src/render/buffer.cpp
+        src/render/buffer.hpp
 )
 
 target_precompile_headers(bloom-engine PRIVATE bloom_header.hpp)

@@ -8,6 +8,7 @@
 
 #pragma once
 #include "devices.hpp"
+#include "buffer.hpp"
 #include <bloom_header.hpp>
 
 namespace bloom::render {
@@ -45,15 +46,13 @@ private:
 
   // VBO stuff
   void CreateVBO(const std::vector<Vertex> &vertices);
-  VkBuffer m_VBO;
-  VkDeviceMemory m_VBOMemory;
+  std::unique_ptr<Buffer> m_VBO;
   unsigned int m_vertexCount;
 
   // EBO stuff
   void CreateEBO(const std::vector<unsigned short> &indices);
   bool m_hasIndices;
-  VkBuffer m_EBO;
-  VkDeviceMemory m_EBOMemory;
+  std::unique_ptr<Buffer> m_EBO;
   unsigned short m_indexCount;
 };
 

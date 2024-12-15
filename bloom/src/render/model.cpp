@@ -32,23 +32,15 @@ Model::Model(Devices* device, const Builder& builder) : m_device(device) {
   CreateEBO(builder.indices);
 }
 
-Model::~Model() {
-  vkDestroyBuffer(m_device->device(), m_VBO, nullptr);
-  vkFreeMemory(m_device->device(), m_VBOMemory, nullptr);
-
-  if (m_hasIndices) {
-    vkDestroyBuffer(m_device->device(), m_EBO, nullptr);
-    vkFreeMemory(m_device->device(), m_EBOMemory, nullptr);
-  }
-}
+Model::~Model() { }
 
 void Model::Bind(VkCommandBuffer commandBuffer) {
-  VkBuffer buffers[] = {m_VBO};
+  VkBuffer buffers[] = {m_VBO->getBuffer()};
   VkDeviceSize offsets[] = {0};
   vkCmdBindVertexBuffers(commandBuffer, 0, 1, buffers, offsets);
 
   if (m_hasIndices) {
-    vkCmdBindIndexBuffer(commandBuffer, m_EBO, 0, VK_INDEX_TYPE_UINT16);
+    vkCmdBindIndexBuffer(commandBuffer, m_EBO->getBuffer(), 0, VK_INDEX_TYPE_UINT16);
   }
 }
 
@@ -69,33 +61,28 @@ void Model::CreateVBO(const std::vector<Vertex> &vertices) {
     return;
   }
   VkDeviceSize bufferSize = sizeof(vertices[0]) * m_vertexCount;
+  unsigned int vertexSize = sizeof(vertices[0]);
 
-  VkBuffer stagingBuffer;
-  VkDeviceMemory stagingBufferMemory;
-  m_device->createBuffer(
-    bufferSize,
+  Buffer stagingBuffer(
+    *m_device,
+    vertexSize,
+    m_vertexCount,
     VK_BUFFER_USAGE_TRANSFER_SRC_BIT,
-    VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT,
-    stagingBuffer,
-    stagingBufferMemory
+    VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT
   );
 
-  void* data;
-  vkMapMemory(m_device->device(), stagingBufferMemory, 0, bufferSize, 0, &data);
-  memcpy(data, vertices.data(), static_cast<size_t>(bufferSize));
-  vkUnmapMemory(m_device->device(), stagingBufferMemory);
+  stagingBuffer.map();
+  stagingBuffer.writeToBuffer((void*)vertices.data());
 
-  m_device->createBuffer(
-    bufferSize,
+  m_VBO = std::make_unique<Buffer>(
+    *m_device,
+    vertexSize,
+    m_vertexCount,
     VK_BUFFER_USAGE_VERTEX_BUFFER_BIT | VK_BUFFER_USAGE_TRANSFER_DST_BIT,
-    VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT,
-    m_VBO,
-    m_VBOMemory
+    VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT
   );
-  m_device->copyBuffer(stagingBuffer, m_VBO, bufferSize);
 
-  vkDestroyBuffer(m_device->device(), stagingBuffer, nullptr);
-  vkFreeMemory(m_device->device(), stagingBufferMemory, nullptr);
+  m_device->copyBuffer(stagingBuffer.getBuffer(), m_VBO->getBuffer(), bufferSize);
 }
 
 void Model::CreateEBO(const std::vector<unsigned short>& indices) {
@@ -103,33 +90,27 @@ void Model::CreateEBO(const std::vector<unsigned short>& indices) {
   m_hasIndices = m_indexCount > 0;
   if (!m_hasIndices) return;
   VkDeviceSize bufferSize = sizeof(indices[0]) * m_indexCount;
+  unsigned int indexSize = sizeof(indices[0]);
 
-  VkBuffer stagingBuffer;
-  VkDeviceMemory stagingBufferMemory;
-  m_device->createBuffer(
-    bufferSize,
+  Buffer stagingBuffer(
+    *m_device,
+    indexSize,
+    m_indexCount,
     VK_BUFFER_USAGE_TRANSFER_SRC_BIT,
-    VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT,
-    stagingBuffer,
-    stagingBufferMemory
+    VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT
   );
 
-  void* data;
-  vkMapMemory(m_device->device(), stagingBufferMemory, 0, bufferSize, 0, &data);
-  memcpy(data, indices.data(), static_cast<size_t>(bufferSize));
-  vkUnmapMemory(m_device->device(), stagingBufferMemory);
+  stagingBuffer.map();
+  stagingBuffer.writeToBuffer((void*)indices.data());
 
-  m_device->createBuffer(
-    bufferSize,
+  m_EBO = std::make_unique<Buffer>(
+    *m_device,
+    indexSize,
+    m_indexCount,
     VK_BUFFER_USAGE_INDEX_BUFFER_BIT | VK_BUFFER_USAGE_TRANSFER_DST_BIT,
-    VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT,
-    m_EBO,
-    m_EBOMemory
+    VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT
   );
-  m_device->copyBuffer(stagingBuffer, m_EBO, bufferSize);
-
-  vkDestroyBuffer(m_device->device(), stagingBuffer, nullptr);
-  vkFreeMemory(m_device->device(), stagingBufferMemory, nullptr);
+  m_device->copyBuffer(stagingBuffer.getBuffer(), m_EBO->getBuffer(), bufferSize);
 }
 
 }
