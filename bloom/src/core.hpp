@@ -21,11 +21,10 @@
 
 #define BIT(x) (1 << x)
 
-enum megabool {
-  FALSE, TRUE, NEITHER, BOTH,
-  MAYBE, TRUEISH, FALSEISH,
-  IT_DEPENDS, OSCILLATING,
-  ITS_COMPLICATED,
-  DOUBLE_FALSE, DOUBLE_TRUE,
-  UNKNOWN, UNDEFINED
-};
+typedef unsigned int id_t;
+
+#define DELETE_COPY_CONSTRUCTOR(classname) \
+  classname(const classname&) = delete; \
+  classname& operator=(const classname&) = delete; \
+  classname(classname&&) = default; \
+  classname& operator=(classname&&) = default

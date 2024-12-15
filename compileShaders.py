@@ -1,7 +1,7 @@
 import os
 
 shaderdir = "./resources/shaders"
-outdir = "./bin/debug/sandbox/resources/shaders"
+outdir = "./bin/debug/wanderer/resources/shaders"
 
 shaders = os.listdir(shaderdir)
 shaders = [shaderdir + '/' + shader for shader in shaders if shader.endswith('.frag') or shader.endswith('.vert')]

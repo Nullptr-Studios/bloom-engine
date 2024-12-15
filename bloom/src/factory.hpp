@@ -7,16 +7,15 @@
  */
 
 #pragma once
-#include "engine.hpp"
-#include "object.hpp"
+#include "objects/actor.hpp"
+#include "objects/object.hpp"
 
 namespace bloom {
 
-class Object;
-
 class BLOOM_API Factory {
-
 public:
+  Factory () {}
+
   /**
    * Creates an Entity and does all the set-up processes that need to happen
    *
@@ -24,18 +23,35 @@ public:
    * @return Created entity
    */
   template <typename T, typename = std::enable_if_t<std::is_base_of_v<Object, T>>>
-  T CreateObject();
+  std::shared_ptr<T> CreateObject();
+
+  ObjectMap GetObjects() { return objects; }
+  ActorMap GetRenderables() { return renderables; }
 
 private:
-  unsigned int n_currentID = 0;
-    
+  /**
+   * This variable keeps track of the current object ID
+   */
+  id_t m_currentID = 0;
+
+  ObjectMap objects;
+  ActorMap renderables;
 };
 
 template<typename T, typename>
-T Factory::CreateObject() {
-  auto _obj = T(n_currentID);
-  n_currentID++;
-  return _obj;
+std::shared_ptr<T> Factory::CreateObject() {
+  std::shared_ptr<T> obj = std::make_shared<T>(m_currentID);
+  m_currentID++;
+
+  objects.emplace(obj->GetID(), std::static_pointer_cast<Object>(obj));
+
+  // Adding to the renderable list if it's an Actor
+  if constexpr (std::is_base_of_v<Actor, T>) {
+    renderables.emplace(obj->GetID(), std::static_pointer_cast<Actor>(obj));
+  }
+
+  BLOOM_INFO("Created object with ID: {0}", obj->GetID());
+  return obj;
 }
 
 }

@@ -7,8 +7,8 @@
  */
 
 #pragma once
-#include "render/model.hpp"
-#include "render/texture.hpp"
+#include "src/render/model.hpp"
+#include "src/render/texture.hpp"
 #include "glm/gtc/matrix_transform.hpp"
 #include <bloom_header.hpp>
 
@@ -50,26 +50,25 @@ struct BLOOM_API Transform {
 };
 
 class BLOOM_API Object {
-  using id_t = unsigned int;
-
 public:
   Object(const id_t id) : m_id(id) {};
-  ~Object() = default;
-    
-  Object(const Object&) = delete;
-  Object& operator=(const Object&) = delete;
-  Object(Object&&) = default;
+  virtual ~Object() = default;
+  Object(const Object&) = delete; 
+  Object& operator=(const Object&) = delete; 
+  Object(Object&&) = default; 
   Object& operator=(Object&&) = default;
 
-  Transform transform;
-  std::shared_ptr<render::Model> model;
-  glm::vec3 color;
+  virtual void Begin() {}
+  virtual void Tick(float deltaTime) {}
+  virtual void End() {}
 
-  render::Texture* texture;
+  Transform transform;
 
   id_t GetID() const { return m_id; }
 private:
-  const id_t m_id;
+  id_t m_id;
 };
+
+typedef std::unordered_map<id_t,std::shared_ptr<Object>> ObjectMap;
 
 }

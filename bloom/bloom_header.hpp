@@ -30,6 +30,6 @@
 #include "src/core.hpp"
 #include "src/log.hpp"
 
-#ifdef BLOOM_PLATFORM_WINDOWS
-#include <Windows.h>
-#endif
+// #ifdef BLOOM_PLATFORM_WINDOWS
+// #include <Windows.h>
+// #endif

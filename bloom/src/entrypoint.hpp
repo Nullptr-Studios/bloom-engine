@@ -16,7 +16,7 @@
 
 #ifdef BLOOM_PLATFORM_WINDOWS
 
-int main(int argc, char** argv) {
+int main() {
   const auto _engine = bloom::CreateEngine();
 
   glfwInit();

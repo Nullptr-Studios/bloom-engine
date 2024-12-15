@@ -7,20 +7,16 @@
  */
 
 #pragma once
-
 #include "core.hpp"
 #include "window.hpp"
 #include "factory.hpp"
-#include "object.hpp"
 #include "render/devices.hpp"
 #include "render/renderer.hpp"
 #include "simple_render_system.hpp"
-#include "camera.hpp"
+#include "objects/camera.hpp"
 #include <bloom_header.hpp>
 
 namespace bloom {
-
-class Factory;
 
 class BLOOM_API Engine {
 public:
@@ -31,9 +27,9 @@ public:
 
   // Game loop
   void Begin();
-  void Tick();
+  virtual void Tick();
   void Render();
-  void End() const;
+  virtual void End() const;
 
   bool ShouldClose() const { return m_window->ShouldClose(); }
   void OnEvent(const Event & e) const;
@@ -41,19 +37,16 @@ public:
   std::unique_ptr<Factory> factory = nullptr;
 
 protected:
-  void LoadObjects();
+  virtual void OnBegin();
 
   Window* m_window = nullptr;
   std::unique_ptr<render::Devices> m_devices = nullptr;
   std::unique_ptr<render::Renderer> m_renderer = nullptr;
   SimpleRenderSystem* m_simpleRenderSystem = nullptr;
 
-  std::vector<Object> gameObjects;
-
-  Camera m_camera;
+  std::shared_ptr<Camera> m_activeCamera;
 
   double m_deltaTime;
-  float m_rotation;
 };
 
 /**
