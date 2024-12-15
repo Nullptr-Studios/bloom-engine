@@ -23,7 +23,15 @@ public:
     static std::vector<VkVertexInputAttributeDescription> GetAttributeDescriptions();
   };
 
-  Model(Devices* device, const std::vector<Vertex> &vertices);
+  struct Builder {
+    std::vector<Vertex> vertices;
+    // unsigned short will limit the number of vertices to 65,535 -x
+    // unsigned int will limit the number of vertices to 4,294,967,295 -x
+    // Remember to update the bind function -x
+    std::vector<unsigned short> indices;
+  };
+
+  Model(Devices* device, const Builder& builder);
   ~Model();
 
   Model(const Model&) = delete;
@@ -33,12 +41,20 @@ public:
   void Draw(VkCommandBuffer commandBuffer);
 
 private:
-  void CreateVBO(const std::vector<Vertex> &vertices);
-
   Devices* m_device;
+
+  // VBO stuff
+  void CreateVBO(const std::vector<Vertex> &vertices);
   VkBuffer m_VBO;
   VkDeviceMemory m_VBOMemory;
   unsigned int m_vertexCount;
+
+  // EBO stuff
+  void CreateEBO(const std::vector<unsigned short> &indices);
+  bool m_hasIndices;
+  VkBuffer m_EBO;
+  VkDeviceMemory m_EBOMemory;
+  unsigned short m_indexCount;
 };
 
 }
