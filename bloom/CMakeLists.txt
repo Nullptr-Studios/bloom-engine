@@ -3,8 +3,6 @@ project(bloom_engine)
 
 add_compile_definitions(BLOOM_PLATFORM_WINDOWS)
 add_compile_definitions(BLOOM_BUILD_DLL)
-set(CMAKE_CXX_STANDARD 23)
-set(VULKAN_SDK "C:/VulkanSDK/1.3.296.0")
 
 add_library(bloom-engine SHARED
         bloom.hpp
@@ -52,7 +50,6 @@ endif()
 
 target_include_directories(bloom-engine PUBLIC
         lib/spdlog/include
-        ${VULKAN_SDK}/Include
 )
 
 # GLM INCLUDE
@@ -70,6 +67,7 @@ add_subdirectory(lib/glfw)
 target_link_libraries(bloom-engine glfw)
 
 find_package(Vulkan REQUIRED)
+message(STATUS "Found Vulkan: $ENV{VULKAN_SDK}")
 target_link_libraries(bloom-engine Vulkan::Vulkan)
 
 target_include_directories(bloom-engine PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
