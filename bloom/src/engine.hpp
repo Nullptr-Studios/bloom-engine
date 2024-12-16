@@ -14,13 +14,14 @@
 #include "render/renderer.hpp"
 #include "simple_render_system.hpp"
 #include "objects/camera.hpp"
+#include "render/descriptors.hpp"
 #include <bloom_header.hpp>
 
 namespace bloom {
 
 class BLOOM_API Engine {
 public:
-  Engine() = default;
+  Engine();
 
   Engine(const Engine&) = delete;
   Engine& operator=(const Engine&) = delete;
@@ -46,7 +47,12 @@ protected:
 
   std::shared_ptr<Camera> m_activeCamera;
 
-  double m_deltaTime;
+  float m_deltaTime;
+
+private:
+  std::unique_ptr<render::DescriptorPool> m_globalPool;
+  std::vector<VkDescriptorSet> m_globalDescriptorSets;
+  std::vector<render::Buffer*> m_UBOBuffers;
 };
 
 /**

@@ -11,6 +11,7 @@
 #include "render/devices.hpp"
 #include "render/pipeline.hpp"
 #include "objects/camera.hpp"
+#include "render/frame_info.hpp"
 
 namespace bloom {
 
@@ -22,13 +23,13 @@ public:
   SimpleRenderSystem(const SimpleRenderSystem&) = delete;
   SimpleRenderSystem& operator=(const SimpleRenderSystem&) = delete;
 
-  void Begin(VkRenderPass renderPass);
-  void RenderObjects(VkCommandBuffer commandBuffer, ActorMap actors, const Camera* camera);
+  void Begin(VkRenderPass renderPass, VkDescriptorSetLayout globalSetLayout);
+  void RenderObjects(render::FrameInfo& frameInfo, ActorMap actors);
 
   constexpr static unsigned int MAX_OBJECTS = 1024;
 
 protected:
-  void CreatePipelineLayout();
+  void CreatePipelineLayout(VkDescriptorSetLayout globalSetLayout);
   void CreatePipeline(VkRenderPass renderPass);
 
   render::Devices* m_devices = nullptr;

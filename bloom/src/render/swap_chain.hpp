@@ -15,7 +15,7 @@ namespace bloom::render {
 
 class SwapChain {
 public:
-  static constexpr int MAX_FRAMES_IN_FLIGHT = 3;
+  static constexpr int MAX_FRAMES_IN_FLIGHT = 2;
 
   SwapChain(Devices &deviceRef, VkExtent2D windowExtent);
   SwapChain(Devices &deviceRef, VkExtent2D windowExtent, std::shared_ptr<SwapChain> previous);

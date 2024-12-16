@@ -17,17 +17,17 @@
 #ifdef BLOOM_PLATFORM_WINDOWS
 
 int main() {
-  const auto _engine = bloom::CreateEngine();
+  const auto m_engine = bloom::CreateEngine();
 
   glfwInit();
-  _engine->Begin();
+  m_engine->Begin();
 
-  while (!_engine->ShouldClose()) {
-    _engine->Tick();
-    _engine->Render();
+  while (!m_engine->ShouldClose()) {
+    m_engine->Tick();
+    m_engine->Render();
   }
 
-  _engine->End();
+  m_engine->End();
 }
 
 #endif

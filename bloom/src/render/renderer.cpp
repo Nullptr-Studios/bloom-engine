@@ -58,6 +58,7 @@ void Renderer::EndFrame() {
   }
 
   m_frameStarted = false;
+  // TODO: This should be a char
   m_currentFrameIndex = (m_currentFrameIndex + 1) % SwapChain::MAX_FRAMES_IN_FLIGHT;
 }
 

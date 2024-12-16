@@ -9,6 +9,8 @@ set(VULKAN_SDK "C:/VulkanSDK/1.3.296.0")
 add_library(bloom-engine SHARED
         bloom.hpp
         bloom_header.hpp
+        src/render/descriptors.cpp
+        src/render/descriptors.hpp
         src/engine.hpp
         src/engine.cpp
         src/core.hpp
@@ -43,6 +45,7 @@ add_library(bloom-engine SHARED
         src/objects/actor.hpp
         src/render/buffer.cpp
         src/render/buffer.hpp
+        src/render/frame_info.hpp
 )
 
 target_precompile_headers(bloom-engine PRIVATE bloom_header.hpp)

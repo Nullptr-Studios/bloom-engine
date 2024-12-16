@@ -13,23 +13,25 @@ SimpleRenderSystem::~SimpleRenderSystem() {
   vkDestroyPipelineLayout(m_devices->device(), m_pipelineLayout, nullptr);
 }
 
-void SimpleRenderSystem::Begin(VkRenderPass renderPass) {
+void SimpleRenderSystem::Begin(VkRenderPass renderPass, VkDescriptorSetLayout globalSetLayout) {
   CreateDescriptorPool();
   CreateDescriptorSets();
-  CreatePipelineLayout();
+  CreatePipelineLayout(globalSetLayout);
   CreatePipeline(renderPass);
 }
 
-void SimpleRenderSystem::CreatePipelineLayout() {
+void SimpleRenderSystem::CreatePipelineLayout(VkDescriptorSetLayout globalSetLayout) {
   VkPushConstantRange pushConstantRange{};
   pushConstantRange.stageFlags = VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT;
   pushConstantRange.offset = 0;
   pushConstantRange.size = sizeof(SimplePushConstantData);
 
+  std::vector<VkDescriptorSetLayout> descriptorSetLayouts = { globalSetLayout };
+
   VkPipelineLayoutCreateInfo pipelineLayoutInfo{};
   pipelineLayoutInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_LAYOUT_CREATE_INFO;
-  pipelineLayoutInfo.setLayoutCount = 0;
-  pipelineLayoutInfo.pSetLayouts = nullptr;
+  pipelineLayoutInfo.setLayoutCount = static_cast<unsigned int>(descriptorSetLayouts.size());
+  pipelineLayoutInfo.pSetLayouts = descriptorSetLayouts.data();
   pipelineLayoutInfo.pushConstantRangeCount = 1;
   pipelineLayoutInfo.pPushConstantRanges = &pushConstantRange;
   auto result = vkCreatePipelineLayout(m_devices->device(), &pipelineLayoutInfo, nullptr, &m_pipelineLayout);
@@ -49,22 +51,29 @@ void SimpleRenderSystem::CreatePipeline(VkRenderPass renderPass) {
   m_pipeline = std::make_unique<render::Pipeline>(*m_devices, "resources/shaders/default.vert.spv", "resources/shaders/default.frag.spv", pipelineConfig);
 }
 
-void SimpleRenderSystem::RenderObjects(VkCommandBuffer commandBuffer, ActorMap actors, const Camera* camera) {
-  m_pipeline->Bind(commandBuffer);
+void SimpleRenderSystem::RenderObjects(render::FrameInfo& frameInfo, ActorMap actors) {
+  m_pipeline->Bind(frameInfo.commandBuffer);
 
-  auto projectionView = camera->GetProjection() * camera->GetView();
+  vkCmdBindDescriptorSets(
+    frameInfo.commandBuffer,
+    VK_PIPELINE_BIND_POINT_GRAPHICS,
+    m_pipelineLayout,
+    0, 1,
+    &frameInfo.globalDescriptorSet,
+    0, nullptr
+  );
 
   for (auto& object : actors) {
     auto& obj = object.second;
-    obj->transform.rotation.y = glm::mod(obj->transform.rotation.y + 0.0001f, glm::two_pi<float>());
-    obj->transform.rotation.x = glm::mod(obj->transform.rotation.x + 0.00005f, glm::two_pi<float>());
+    obj->transform.rotation.y = glm::mod(obj->transform.rotation.y + 0.001f, glm::two_pi<float>());
+    obj->transform.rotation.x = glm::mod(obj->transform.rotation.x + 0.0005f, glm::two_pi<float>());
 
     SimplePushConstantData push{};
     push.color = obj->tintColor;
-    push.transform = projectionView * obj->transform.mat4();
+    push.transform = obj->transform.mat4();
 
     vkCmdPushConstants(
-      commandBuffer,
+      frameInfo.commandBuffer,
       m_pipelineLayout,
       VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT,
       0,
@@ -75,8 +84,8 @@ void SimpleRenderSystem::RenderObjects(VkCommandBuffer commandBuffer, ActorMap a
     // // TODO: I should wrap all vulkan calls on DescriptorSet class
     // vkCmdBindDescriptorSets(commandBuffer, VK_PIPELINE_BIND_POINT_GRAPHICS, m_pipelineLayout, 0, 0, nullptr, 0, nullptr);
 
-    obj->model->Bind(commandBuffer);
-    obj->model->Draw(commandBuffer);
+    obj->model->Bind(frameInfo.commandBuffer);
+    obj->model->Draw(frameInfo.commandBuffer);
   }
 }
 

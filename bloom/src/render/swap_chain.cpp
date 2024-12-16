@@ -374,12 +374,14 @@ VkSurfaceFormatKHR SwapChain::ChooseSwapSurfaceFormat(
 
 VkPresentModeKHR SwapChain::ChooseSwapPresentMode(
     const std::vector<VkPresentModeKHR> &availablePresentModes) {
-  for (const auto &availablePresentMode : availablePresentModes) {
-    if (availablePresentMode == VK_PRESENT_MODE_MAILBOX_KHR) {
-      BLOOM_LOG("Present mode: Mailbox");
-      return VK_PRESENT_MODE_MAILBOX_KHR;
-    }
-  }
+  // TODO: for now this is forcing V-Sync
+
+  // for (const auto &availablePresentMode : availablePresentModes) {
+  //   if (availablePresentMode == VK_PRESENT_MODE_MAILBOX_KHR) {
+  //     BLOOM_LOG("Present mode: Mailbox");
+  //     return VK_PRESENT_MODE_MAILBOX_KHR;
+  //   }
+  // }
 
   // for (const auto &availablePresentMode : availablePresentModes) {
   //   if (availablePresentMode == VK_PRESENT_MODE_IMMEDIATE_KHR) {

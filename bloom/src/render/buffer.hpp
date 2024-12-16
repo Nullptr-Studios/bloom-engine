@@ -14,12 +14,13 @@ namespace bloom::render {
 class Buffer {
 public:
   Buffer(
-      Devices& device,
-      VkDeviceSize instanceSize,
-      uint32_t instanceCount,
-      VkBufferUsageFlags usageFlags,
-      VkMemoryPropertyFlags memoryPropertyFlags,
-      VkDeviceSize minOffsetAlignment = 1);
+    Devices& device,
+    VkDeviceSize instanceSize,
+    uint32_t instanceCount,
+    VkBufferUsageFlags usageFlags,
+    VkMemoryPropertyFlags memoryPropertyFlags,
+    VkDeviceSize minOffsetAlignment = 1
+  );
   ~Buffer();
  
   Buffer(const Buffer&) = delete;
