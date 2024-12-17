@@ -46,12 +46,14 @@ protected:
   SimpleRenderSystem* m_simpleRenderSystem = nullptr;
 
   std::shared_ptr<Camera> m_activeCamera;
-
+  std::unique_ptr<render::DescriptorSetLayout> m_materialSetLayout;
   float m_deltaTime;
 
 private:
   std::unique_ptr<render::DescriptorPool> m_globalPool;
+  std::unique_ptr<render::DescriptorPool> m_materialPool;
   std::vector<VkDescriptorSet> m_globalDescriptorSets;
+  std::vector<VkDescriptorSet> m_materialDescriptorSets;
   std::vector<render::Buffer*> m_UBOBuffers;
 };
 

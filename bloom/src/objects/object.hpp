@@ -51,7 +51,7 @@ struct BLOOM_API Transform {
 
 class BLOOM_API Object {
 public:
-  Object(const id_t id) : m_id(id) {};
+  explicit Object(const id_t id, render::Devices* devices) : m_id(id), m_devices(devices) {};
   virtual ~Object() = default;
   Object(const Object&) = delete; 
   Object& operator=(const Object&) = delete; 
@@ -65,6 +65,8 @@ public:
   Transform transform;
 
   id_t GetID() const { return m_id; }
+protected:
+  render::Devices* m_devices = nullptr;
 private:
   id_t m_id;
 };

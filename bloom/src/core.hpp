@@ -21,7 +21,7 @@
 
 #define BIT(x) (1 << x)
 
-typedef unsigned int id_t;
+typedef unsigned short id_t;
 
 #define DELETE_COPY_CONSTRUCTOR(classname) \
   classname(const classname&) = delete; \

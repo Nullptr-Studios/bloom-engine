@@ -20,7 +20,7 @@ namespace bloom {
 
 class BLOOM_API Camera : public Object {
 public:
-  Camera(id_t id) : Object(id) {};
+  explicit Camera(const id_t id, render::Devices* devices) : Object(id, devices) {}
 
   void Begin() override;
   void Tick(float deltaTime) override;

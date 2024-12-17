@@ -68,11 +68,13 @@ void Wanderer::OnBegin() {
   cube->model = model;
   cube->transform.position = {-0.5f, 0.0f, -2.5f};
   cube->transform.scale = {0.5f, 0.5f, 0.5f};
+  cube->LoadTextures(m_materialSetLayout.get(), "resources/textures/cat.png");
 
   auto cube2 = factory->CreateObject<Actor>();
   cube2->model = model;
   cube2->transform.position = {0.5f, 0.0f, -2.5f};
   cube2->transform.scale = {0.5f, 0.5f, 0.5f};
+  cube2->LoadTextures(m_materialSetLayout.get(), "resources/textures/bloom.png");
 }
 
 void Wanderer::Tick() {

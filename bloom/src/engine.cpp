@@ -24,7 +24,9 @@ void Engine::Begin() {
   factory = std::make_unique<Factory>();
 
   m_devices = std::make_unique<render::Devices>(*m_window);
+  factory->SetDevice(m_devices.get());
 
+  // TODO: I probably want to move all this elsewhere
   m_globalPool = render::DescriptorPool::Builder(*m_devices)
     .setMaxSets(render::SwapChain::MAX_FRAMES_IN_FLIGHT)
     .addPoolSize(VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, render::SwapChain::MAX_FRAMES_IN_FLIGHT)
@@ -42,8 +44,17 @@ void Engine::Begin() {
     m_UBOBuffers[i]->map();
   }
 
+  // GLOBAL DESCRIPTOR SET ------------------------------------------
   auto globalSetLayout = render::DescriptorSetLayout::Builder(*m_devices)
     .addBinding(0, VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VK_SHADER_STAGE_ALL_GRAPHICS)
+  .build();
+
+  // MATERIAL DESCRIPTOR SET ----------------------------------------
+  m_materialSetLayout = render::DescriptorSetLayout::Builder(*m_devices)
+    .addBinding(0, VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VK_SHADER_STAGE_FRAGMENT_BIT) // albedo
+    .addBinding(1, VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VK_SHADER_STAGE_FRAGMENT_BIT) // RMO
+    .addBinding(2, VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VK_SHADER_STAGE_FRAGMENT_BIT) // normal
+    .addBinding(3, VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VK_SHADER_STAGE_FRAGMENT_BIT) // emission
   .build();
 
   m_globalDescriptorSets.resize(render::SwapChain::MAX_FRAMES_IN_FLIGHT);
@@ -56,7 +67,7 @@ void Engine::Begin() {
 
   m_renderer = std::make_unique<render::Renderer>(m_window, m_devices.get());
   m_simpleRenderSystem = new SimpleRenderSystem(m_devices.get());
-  m_simpleRenderSystem->Begin(m_renderer->GetRenderPass(), globalSetLayout->getDescriptorSetLayout());
+  m_simpleRenderSystem->Begin(m_renderer->GetRenderPass(), globalSetLayout->getDescriptorSetLayout(), m_materialSetLayout->getDescriptorSetLayout());
 
   OnBegin();
 

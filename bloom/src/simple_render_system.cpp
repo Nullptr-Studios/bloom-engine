@@ -13,20 +13,20 @@ SimpleRenderSystem::~SimpleRenderSystem() {
   vkDestroyPipelineLayout(m_devices->device(), m_pipelineLayout, nullptr);
 }
 
-void SimpleRenderSystem::Begin(VkRenderPass renderPass, VkDescriptorSetLayout globalSetLayout) {
+void SimpleRenderSystem::Begin(VkRenderPass renderPass, VkDescriptorSetLayout globalSetLayout, VkDescriptorSetLayout materialSetLayout) {
   CreateDescriptorPool();
   CreateDescriptorSets();
-  CreatePipelineLayout(globalSetLayout);
+  CreatePipelineLayout(globalSetLayout, materialSetLayout);
   CreatePipeline(renderPass);
 }
 
-void SimpleRenderSystem::CreatePipelineLayout(VkDescriptorSetLayout globalSetLayout) {
+void SimpleRenderSystem::CreatePipelineLayout(VkDescriptorSetLayout globalSetLayout, VkDescriptorSetLayout materialSetLayout) {
   VkPushConstantRange pushConstantRange{};
   pushConstantRange.stageFlags = VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT;
   pushConstantRange.offset = 0;
   pushConstantRange.size = sizeof(SimplePushConstantData);
 
-  std::vector<VkDescriptorSetLayout> descriptorSetLayouts = { globalSetLayout };
+  std::vector<VkDescriptorSetLayout> descriptorSetLayouts = { globalSetLayout, materialSetLayout };
 
   VkPipelineLayoutCreateInfo pipelineLayoutInfo{};
   pipelineLayoutInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_LAYOUT_CREATE_INFO;
@@ -63,14 +63,25 @@ void SimpleRenderSystem::RenderObjects(render::FrameInfo& frameInfo, ActorMap ac
     0, nullptr
   );
 
-  for (auto& object : actors) {
-    auto& obj = object.second;
-    obj->transform.rotation.y = glm::mod(obj->transform.rotation.y + 0.001f, glm::two_pi<float>());
-    obj->transform.rotation.x = glm::mod(obj->transform.rotation.x + 0.0005f, glm::two_pi<float>());
+  for (auto &[fst, snd] : actors) {
+    auto& actor = snd;
+    auto textureDescriptorSet = actor->GetDescriptorSet();
+
+    vkCmdBindDescriptorSets(
+      frameInfo.commandBuffer,
+      VK_PIPELINE_BIND_POINT_GRAPHICS,
+      m_pipelineLayout,
+      1, 1,
+      &textureDescriptorSet,
+      0, nullptr
+    );
+
+    actor->transform.rotation.y = glm::mod(actor->transform.rotation.y + 0.001f, glm::two_pi<float>());
+    actor->transform.rotation.x = glm::mod(actor->transform.rotation.x + 0.0005f, glm::two_pi<float>());
 
     SimplePushConstantData push{};
-    push.color = obj->tintColor;
-    push.transform = obj->transform.mat4();
+    push.color = actor->tintColor;
+    push.transform = actor->transform.mat4();
 
     vkCmdPushConstants(
       frameInfo.commandBuffer,
@@ -81,11 +92,8 @@ void SimpleRenderSystem::RenderObjects(render::FrameInfo& frameInfo, ActorMap ac
       &push
     );
 
-    // // TODO: I should wrap all vulkan calls on DescriptorSet class
-    // vkCmdBindDescriptorSets(commandBuffer, VK_PIPELINE_BIND_POINT_GRAPHICS, m_pipelineLayout, 0, 0, nullptr, 0, nullptr);
-
-    obj->model->Bind(frameInfo.commandBuffer);
-    obj->model->Draw(frameInfo.commandBuffer);
+    actor->model->Bind(frameInfo.commandBuffer);
+    actor->model->Draw(frameInfo.commandBuffer);
   }
 }
 

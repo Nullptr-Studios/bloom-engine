@@ -23,13 +23,13 @@ public:
   SimpleRenderSystem(const SimpleRenderSystem&) = delete;
   SimpleRenderSystem& operator=(const SimpleRenderSystem&) = delete;
 
-  void Begin(VkRenderPass renderPass, VkDescriptorSetLayout globalSetLayout);
+  void Begin(VkRenderPass renderPass, VkDescriptorSetLayout globalSetLayout, VkDescriptorSetLayout materialSetLayout);
   void RenderObjects(render::FrameInfo& frameInfo, ActorMap actors);
 
   constexpr static unsigned int MAX_OBJECTS = 1024;
 
 protected:
-  void CreatePipelineLayout(VkDescriptorSetLayout globalSetLayout);
+  void CreatePipelineLayout(VkDescriptorSetLayout globalSetLayout, VkDescriptorSetLayout materialSetLayout);
   void CreatePipeline(VkRenderPass renderPass);
 
   render::Devices* m_devices = nullptr;
