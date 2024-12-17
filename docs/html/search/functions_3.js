@@ -1,19 +1,9 @@
 var searchData=
 [
-  ['gamerenderevent_0',['GameRenderEvent',['../classbloom_1_1_game_render_event.html#a8dbd4ef6fb6078c9eaa4efcb60ac226b',1,'bloom::GameRenderEvent']]],
-  ['gametickevent_1',['GameTickEvent',['../classbloom_1_1_game_tick_event.html#af13d24161400130457cec680a88b04f2',1,'bloom::GameTickEvent']]],
-  ['getbloomlogger_2',['GetBloomLogger',['../classbloom_1_1_log.html#aad38d3784727402356dcb4110857960b',1,'bloom::Log']]],
-  ['getcategoryflags_3',['GetCategoryFlags',['../classbloom_1_1_event.html#aae34b363173e9c057ac00f6fe78bcf9a',1,'bloom::Event']]],
-  ['geteventtype_4',['GetEventType',['../classbloom_1_1_event.html#afb0cc62325b1fbd939fafe1096c6c624',1,'bloom::Event']]],
-  ['getgamelogger_5',['GetGameLogger',['../classbloom_1_1_log.html#ae0d90b09e56830d02412deb0d1f87d0c',1,'bloom::Log']]],
-  ['getheight_6',['GetHeight',['../classbloom_1_1_window_resize_event.html#a51f355e92154fc6f793bc4a71a84e077',1,'bloom::WindowResizeEvent']]],
-  ['getkeycode_7',['GetKeyCode',['../classbloom_1_1_key_event.html#a72ff8f3941a9d575f4b3f9275fe93fde',1,'bloom::KeyEvent']]],
-  ['getmousebutton_8',['GetMouseButton',['../classbloom_1_1_mouse_button_event.html#a9dea15429e61a352874dc5e30d6be390',1,'bloom::MouseButtonEvent']]],
-  ['getname_9',['GetName',['../classbloom_1_1_event.html#ab5bb7f0fc80e71886658e3acb181fd16',1,'bloom::Event']]],
-  ['getrepeatcount_10',['GetRepeatCount',['../classbloom_1_1_key_pressed_event.html#aa63c9e2b1fff13036f4d4d764366a360',1,'bloom::KeyPressedEvent']]],
-  ['getwidth_11',['GetWidth',['../classbloom_1_1_window_resize_event.html#a8d105a1607236ebd51d3f9e03f716614',1,'bloom::WindowResizeEvent']]],
-  ['getx_12',['GetX',['../classbloom_1_1_mouse_moved_event.html#ad28f935f38fce52e7da84a0372d899c7',1,'bloom::MouseMovedEvent']]],
-  ['getxoffset_13',['GetXOffset',['../classbloom_1_1_mouse_scrolled_event.html#aead7e4e6330487821e1bcf45ff015784',1,'bloom::MouseScrolledEvent']]],
-  ['gety_14',['GetY',['../classbloom_1_1_mouse_moved_event.html#a9e33c893017fa4307c12e831f9a2238b',1,'bloom::MouseMovedEvent']]],
-  ['getyoffset_15',['GetYOffset',['../classbloom_1_1_mouse_scrolled_event.html#a15cd2694bc0201e3fccef873d4b0aaf6',1,'bloom::MouseScrolledEvent']]]
+  ['descriptorinfo_0',['DescriptorInfo',['../classbloom_1_1render_1_1_buffer.html#a27c3f8d3cd0783a898bf5c9182c0af2e',1,'bloom::render::Buffer']]],
+  ['descriptorinfoforindex_1',['DescriptorInfoForIndex',['../classbloom_1_1render_1_1_buffer.html#a0fc49b289e38255664a5e4f923153a9c',1,'bloom::render::Buffer']]],
+  ['descriptorpool_2',['DescriptorPool',['../classbloom_1_1render_1_1_descriptor_pool.html#a6cfa6275d5cea895002f664cc7bac59a',1,'bloom::render::DescriptorPool']]],
+  ['descriptorsetlayout_3',['DescriptorSetLayout',['../classbloom_1_1render_1_1_descriptor_set_layout.html#a71a0cbeb39c72331c26bd3a312573078',1,'bloom::render::DescriptorSetLayout']]],
+  ['descriptorwriter_4',['DescriptorWriter',['../classbloom_1_1render_1_1_descriptor_writer.html#a2af09573444bd3c79b8c706c5b91794c',1,'bloom::render::DescriptorWriter']]],
+  ['dispatch_5',['Dispatch',['../classbloom_1_1_event_dispatcher.html#aa0c2418e5ca113ee8c648be770d8e225',1,'bloom::EventDispatcher']]]
 ];

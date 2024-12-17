@@ -19,13 +19,13 @@ Inheritance diagram for bloom\+::Engine\+:\begin{figure}[H]
 void {\bfseries Begin} ()
 \item 
 \Hypertarget{classbloom_1_1_engine_a14a73b59a5c71909ed7419bd385fd1c1}\label{classbloom_1_1_engine_a14a73b59a5c71909ed7419bd385fd1c1} 
-void {\bfseries Tick} ()
+virtual void {\bfseries Tick} ()
 \item 
 \Hypertarget{classbloom_1_1_engine_ad255ccd51c12fec57ce713ff879d4775}\label{classbloom_1_1_engine_ad255ccd51c12fec57ce713ff879d4775} 
 void {\bfseries Render} ()
 \item 
 \Hypertarget{classbloom_1_1_engine_a56743ef3554bf57bc79ce5dc00fa234b}\label{classbloom_1_1_engine_a56743ef3554bf57bc79ce5dc00fa234b} 
-void {\bfseries End} () const
+virtual void {\bfseries End} () const
 \item 
 \Hypertarget{classbloom_1_1_engine_aacbe3434463b409ea1d93f9db8ad37bc}\label{classbloom_1_1_engine_aacbe3434463b409ea1d93f9db8ad37bc} 
 bool {\bfseries Should\+Close} () const
@@ -42,8 +42,8 @@ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1_factory}{Factory}} $>$
 \doxysubsubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classbloom_1_1_engine_ad4b7e975f524d6a6d2398052f0a81037}\label{classbloom_1_1_engine_ad4b7e975f524d6a6d2398052f0a81037} 
-void {\bfseries Load\+Objects} ()
+\Hypertarget{classbloom_1_1_engine_ab641a25e2842bf6c423117f3c2ca69e7}\label{classbloom_1_1_engine_ab641a25e2842bf6c423117f3c2ca69e7} 
+virtual void {\bfseries On\+Begin} ()
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
@@ -60,17 +60,14 @@ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1render_1_1_renderer}{re
 \Hypertarget{classbloom_1_1_engine_a1e1f9560eea6c443b54afcf6fe49d913}\label{classbloom_1_1_engine_a1e1f9560eea6c443b54afcf6fe49d913} 
 \mbox{\hyperlink{classbloom_1_1_simple_render_system}{Simple\+Render\+System}} \texorpdfstring{$\ast$}{*} {\bfseries m\+\_\+simple\+Render\+System} = nullptr
 \item 
-\Hypertarget{classbloom_1_1_engine_a755180bb2c0c676ed9fbb66ea7b3c8b3}\label{classbloom_1_1_engine_a755180bb2c0c676ed9fbb66ea7b3c8b3} 
-std\+::vector$<$ \mbox{\hyperlink{classbloom_1_1_object}{Object}} $>$ {\bfseries game\+Objects}
+\Hypertarget{classbloom_1_1_engine_a6652663ab06bfa57afb408ebceed42a8}\label{classbloom_1_1_engine_a6652663ab06bfa57afb408ebceed42a8} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1_camera}{Camera}} $>$ {\bfseries m\+\_\+active\+Camera}
 \item 
-\Hypertarget{classbloom_1_1_engine_a65137d25d0964216567130207b3c3322}\label{classbloom_1_1_engine_a65137d25d0964216567130207b3c3322} 
-\mbox{\hyperlink{classbloom_1_1_camera}{Camera}} {\bfseries m\+\_\+camera}
+\Hypertarget{classbloom_1_1_engine_a128425c9b6152891450060d898e0c6e0}\label{classbloom_1_1_engine_a128425c9b6152891450060d898e0c6e0} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_set_layout}{render\+::\+Descriptor\+Set\+Layout}} $>$ {\bfseries m\+\_\+material\+Set\+Layout}
 \item 
-\Hypertarget{classbloom_1_1_engine_a15c91423cb127ff1a8aebaa4119d7659}\label{classbloom_1_1_engine_a15c91423cb127ff1a8aebaa4119d7659} 
-double {\bfseries m\+\_\+delta\+Time}
-\item 
-\Hypertarget{classbloom_1_1_engine_acac7f77a6e1eef0333ba3762100709d4}\label{classbloom_1_1_engine_acac7f77a6e1eef0333ba3762100709d4} 
-float {\bfseries m\+\_\+rotation}
+\Hypertarget{classbloom_1_1_engine_af37376d08f33c7ed0e1133ff69df4567}\label{classbloom_1_1_engine_af37376d08f33c7ed0e1133ff69df4567} 
+float {\bfseries m\+\_\+delta\+Time}
 \end{DoxyCompactItemize}
 
 

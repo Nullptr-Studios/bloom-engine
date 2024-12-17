@@ -31,19 +31,19 @@ public:
    * @param height The new height of the window.
    */
   WindowResizeEvent(unsigned int width, unsigned int height)
-      : _width(width), _height(height) {}
+      : m_width(width), m_height(height) {}
 
   /**
    * @brief Retrieves the width of the window after resizing.
    * @return The width of the window.
    */
-  unsigned int GetWidth() const { return _width; }
+  unsigned int GetWidth() const { return m_width; }
 
   /**
    * @brief Retrieves the height of the window after resizing.
    * @return The height of the window.
    */
-  unsigned int GetHeight() const { return _height; }
+  unsigned int GetHeight() const { return m_height; }
 
   /**
    * @brief Overrides the `ToString` function to provide a detailed string representation of the event.
@@ -51,7 +51,7 @@ public:
    */
   std::string ToString() const override {
     std::stringstream ss;
-    ss << "WindowResizeEvent: " << _width << ", " << _height;
+    ss << "WindowResizeEvent: " << m_width << ", " << m_height;
     return ss.str();
   }
 
@@ -59,8 +59,8 @@ public:
   EVENT_CLASS_CATEGORY(EventCategoryGame)
 
 private:
-  unsigned int _width;  ///< The new width of the window.
-  unsigned int _height; ///< The new height of the window.
+  unsigned int m_width;  ///< The new width of the window.
+  unsigned int m_height; ///< The new height of the window.
 };
 
 /**
@@ -74,7 +74,7 @@ public:
   /**
    * @brief Constructs a `WindowCloseEvent`.
    */
-  WindowCloseEvent() {}
+  WindowCloseEvent() = default;
 
   EVENT_CLASS_TYPE(WindowClose)
   EVENT_CLASS_CATEGORY(EventCategoryGame)
@@ -92,7 +92,7 @@ public:
   /**
    * @brief Constructs a `GameTickEvent`.
    */
-  GameTickEvent() {}
+  GameTickEvent() = default;
 
   EVENT_CLASS_TYPE(GameTick)
   EVENT_CLASS_CATEGORY(EventCategoryGame)
@@ -110,7 +110,7 @@ public:
   /**
    * @brief Constructs a `GameRenderEvent`.
    */
-  GameRenderEvent() {}
+  GameRenderEvent() = default;
 
   EVENT_CLASS_TYPE(GameRender)
   EVENT_CLASS_CATEGORY(EventCategoryGame)

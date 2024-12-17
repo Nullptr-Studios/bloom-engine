@@ -89,24 +89,112 @@ $(function(){ initResizable(false); });
 <div id="doc-content">
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="classbloom_1_1render_1_1_descriptor_set_layout-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">bloom::render::DescriptorSetLayout Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Defines the layout of descriptors in a shader.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="descriptors_8hpp_source.html">descriptors.hpp</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbloom_1_1render_1_1_descriptor_set_layout_1_1_builder.html">Builder</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper class to build DescriptorSetLayouts.  <a href="classbloom_1_1render_1_1_descriptor_set_layout_1_1_builder.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a324a66ca07b93d455764ee36cfd616c5" id="r_a324a66ca07b93d455764ee36cfd616c5"><td class="memItemLeft" align="right" valign="top"><a id="a324a66ca07b93d455764ee36cfd616c5" name="a324a66ca07b93d455764ee36cfd616c5"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>DescriptorSetLayout</b> (<a class="el" href="classbloom_1_1render_1_1_devices.html">Devices</a> *devices, const std::vector&lt; VkDescriptorSetLayoutBinding &gt; &amp;bindings)</td></tr>
-<tr class="separator:a324a66ca07b93d455764ee36cfd616c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd2bfbf9e80181fad8942ccbb03baed8" id="r_acd2bfbf9e80181fad8942ccbb03baed8"><td class="memItemLeft" align="right" valign="top"><a id="acd2bfbf9e80181fad8942ccbb03baed8" name="acd2bfbf9e80181fad8942ccbb03baed8"></a>
-VkDescriptorSetLayout&#160;</td><td class="memItemRight" valign="bottom"><b>getDescriptorSetLayout</b> () const</td></tr>
-<tr class="separator:acd2bfbf9e80181fad8942ccbb03baed8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71a0cbeb39c72331c26bd3a312573078" id="r_a71a0cbeb39c72331c26bd3a312573078"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a71a0cbeb39c72331c26bd3a312573078">DescriptorSetLayout</a> (<a class="el" href="classbloom_1_1render_1_1_devices.html">Devices</a> &amp;device, const std::unordered_map&lt; uint32_t, VkDescriptorSetLayoutBinding &gt; &amp;bindings)</td></tr>
+<tr class="memdesc:a71a0cbeb39c72331c26bd3a312573078"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="classbloom_1_1render_1_1_descriptor_set_layout.html" title="Defines the layout of descriptors in a shader.">DescriptorSetLayout</a> object.  <br /></td></tr>
+<tr class="separator:a71a0cbeb39c72331c26bd3a312573078"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a827c74f2d62ecb3b1149e00b973758ce" id="r_a827c74f2d62ecb3b1149e00b973758ce"><td class="memItemLeft" align="right" valign="top"><a id="a827c74f2d62ecb3b1149e00b973758ce" name="a827c74f2d62ecb3b1149e00b973758ce"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>DescriptorSetLayout</b> (const <a class="el" href="classbloom_1_1render_1_1_descriptor_set_layout.html">DescriptorSetLayout</a> &amp;)=delete</td></tr>
+<tr class="separator:a827c74f2d62ecb3b1149e00b973758ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fc273b00d2c196bf46edcad9f4d446a" id="r_a3fc273b00d2c196bf46edcad9f4d446a"><td class="memItemLeft" align="right" valign="top"><a id="a3fc273b00d2c196bf46edcad9f4d446a" name="a3fc273b00d2c196bf46edcad9f4d446a"></a>
+<a class="el" href="classbloom_1_1render_1_1_descriptor_set_layout.html">DescriptorSetLayout</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classbloom_1_1render_1_1_descriptor_set_layout.html">DescriptorSetLayout</a> &amp;)=delete</td></tr>
+<tr class="separator:a3fc273b00d2c196bf46edcad9f4d446a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9764f78208e7ae1c80d2898c0b4fda82" id="r_a9764f78208e7ae1c80d2898c0b4fda82"><td class="memItemLeft" align="right" valign="top">VkDescriptorSetLayout&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9764f78208e7ae1c80d2898c0b4fda82">GetDescriptorSetLayout</a> () const</td></tr>
+<tr class="memdesc:a9764f78208e7ae1c80d2898c0b4fda82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the underlying Vulkan descriptor set layout handle.  <br /></td></tr>
+<tr class="separator:a9764f78208e7ae1c80d2898c0b4fda82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a8f96614370479c2656720dba13f85244" id="r_a8f96614370479c2656720dba13f85244"><td class="memItemLeft" align="right" valign="top"><a id="a8f96614370479c2656720dba13f85244" name="a8f96614370479c2656720dba13f85244"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>DescriptorWriter</b></td></tr>
+<tr class="separator:a8f96614370479c2656720dba13f85244"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Defines the layout of descriptors in a shader. </p>
+<p>This class represents a Vulkan descriptor set layout, which serves as a blueprint for creating descriptor sets. It specifies the types and bindings of descriptors that can be accessed by a shader. For example, it defines whether a descriptor is a uniform buffer, a sampled image, or another type, and at which binding point in the shader it's accessible. Multiple descriptor sets can be created from the same layout, ensuring consistency between the shader and the data it uses. This layout is crucial for binding resources like buffers and images to the shader pipeline. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a71a0cbeb39c72331c26bd3a312573078" name="a71a0cbeb39c72331c26bd3a312573078"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71a0cbeb39c72331c26bd3a312573078">&#9670;&#160;</a></span>DescriptorSetLayout()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bloom::render::DescriptorSetLayout::DescriptorSetLayout </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classbloom_1_1render_1_1_devices.html">Devices</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>device</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::unordered_map&lt; uint32_t, VkDescriptorSetLayoutBinding &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>bindings</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs a <a class="el" href="classbloom_1_1render_1_1_descriptor_set_layout.html" title="Defines the layout of descriptors in a shader.">DescriptorSetLayout</a> object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">device</td><td>Reference to the <a class="el" href="classbloom_1_1render_1_1_devices.html">Devices</a> object. </td></tr>
+    <tr><td class="paramname">bindings</td><td>The descriptor bindings for the layout. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a9764f78208e7ae1c80d2898c0b4fda82" name="a9764f78208e7ae1c80d2898c0b4fda82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9764f78208e7ae1c80d2898c0b4fda82">&#9670;&#160;</a></span>GetDescriptorSetLayout()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">VkDescriptorSetLayout bloom::render::DescriptorSetLayout::GetDescriptorSetLayout </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the underlying Vulkan descriptor set layout handle. </p>
+<dl class="section return"><dt>Returns</dt><dd>The VkDescriptorSetLayout handle. </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Users/xgoni/bloom/bloom/src/render/<a class="el" href="descriptor__set__layout_8hpp_source.html">descriptor_set_layout.hpp</a></li>
-<li>C:/Users/xgoni/bloom/bloom/src/render/<b>descriptor_set_layout.cpp</b></li>
+<li>C:/Users/xgoni/bloom/bloom/src/render/<a class="el" href="descriptors_8hpp_source.html">descriptors.hpp</a></li>
+<li>C:/Users/xgoni/bloom/bloom/src/render/<b>descriptors.cpp</b></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -112,13 +112,13 @@ Additional Inherited Members</h2></td></tr>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>Begin</b> ()</td></tr>
 <tr class="separator:a88a1aae163129e74c7486ac57d310035 inherit pub_methods_classbloom_1_1_engine"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a14a73b59a5c71909ed7419bd385fd1c1 inherit pub_methods_classbloom_1_1_engine" id="r_a14a73b59a5c71909ed7419bd385fd1c1"><td class="memItemLeft" align="right" valign="top">
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Tick</b> ()</td></tr>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>Tick</b> ()</td></tr>
 <tr class="separator:a14a73b59a5c71909ed7419bd385fd1c1 inherit pub_methods_classbloom_1_1_engine"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad255ccd51c12fec57ce713ff879d4775 inherit pub_methods_classbloom_1_1_engine" id="r_ad255ccd51c12fec57ce713ff879d4775"><td class="memItemLeft" align="right" valign="top">
 void&#160;</td><td class="memItemRight" valign="bottom"><b>Render</b> ()</td></tr>
 <tr class="separator:ad255ccd51c12fec57ce713ff879d4775 inherit pub_methods_classbloom_1_1_engine"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a56743ef3554bf57bc79ce5dc00fa234b inherit pub_methods_classbloom_1_1_engine" id="r_a56743ef3554bf57bc79ce5dc00fa234b"><td class="memItemLeft" align="right" valign="top">
-void&#160;</td><td class="memItemRight" valign="bottom"><b>End</b> () const</td></tr>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>End</b> () const</td></tr>
 <tr class="separator:a56743ef3554bf57bc79ce5dc00fa234b inherit pub_methods_classbloom_1_1_engine"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aacbe3434463b409ea1d93f9db8ad37bc inherit pub_methods_classbloom_1_1_engine" id="r_aacbe3434463b409ea1d93f9db8ad37bc"><td class="memItemLeft" align="right" valign="top">
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>ShouldClose</b> () const</td></tr>
@@ -131,9 +131,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>OnEvent</b> (const <a
 std::unique_ptr&lt; <a class="el" href="classbloom_1_1_factory.html">Factory</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>factory</b> = nullptr</td></tr>
 <tr class="separator:ab6d184cb4b143c4bbcbfeb8906298adb inherit pub_attribs_classbloom_1_1_engine"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classbloom_1_1_engine"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_classbloom_1_1_engine')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classbloom_1_1_engine.html">bloom::Engine</a></td></tr>
-<tr class="memitem:ad4b7e975f524d6a6d2398052f0a81037 inherit pro_methods_classbloom_1_1_engine" id="r_ad4b7e975f524d6a6d2398052f0a81037"><td class="memItemLeft" align="right" valign="top">
-void&#160;</td><td class="memItemRight" valign="bottom"><b>LoadObjects</b> ()</td></tr>
-<tr class="separator:ad4b7e975f524d6a6d2398052f0a81037 inherit pro_methods_classbloom_1_1_engine"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab641a25e2842bf6c423117f3c2ca69e7 inherit pro_methods_classbloom_1_1_engine" id="r_ab641a25e2842bf6c423117f3c2ca69e7"><td class="memItemLeft" align="right" valign="top">
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>OnBegin</b> ()</td></tr>
+<tr class="separator:ab641a25e2842bf6c423117f3c2ca69e7 inherit pro_methods_classbloom_1_1_engine"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classbloom_1_1_engine"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_classbloom_1_1_engine')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classbloom_1_1_engine.html">bloom::Engine</a></td></tr>
 <tr class="memitem:acc77f05b53f50af915b1872dcc057367 inherit pro_attribs_classbloom_1_1_engine" id="r_acc77f05b53f50af915b1872dcc057367"><td class="memItemLeft" align="right" valign="top">
 <a class="el" href="classbloom_1_1_window.html">Window</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>m_window</b> = nullptr</td></tr>
@@ -147,23 +147,20 @@ std::unique_ptr&lt; <a class="el" href="classbloom_1_1render_1_1_renderer.html">
 <tr class="memitem:a1e1f9560eea6c443b54afcf6fe49d913 inherit pro_attribs_classbloom_1_1_engine" id="r_a1e1f9560eea6c443b54afcf6fe49d913"><td class="memItemLeft" align="right" valign="top">
 <a class="el" href="classbloom_1_1_simple_render_system.html">SimpleRenderSystem</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>m_simpleRenderSystem</b> = nullptr</td></tr>
 <tr class="separator:a1e1f9560eea6c443b54afcf6fe49d913 inherit pro_attribs_classbloom_1_1_engine"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a755180bb2c0c676ed9fbb66ea7b3c8b3 inherit pro_attribs_classbloom_1_1_engine" id="r_a755180bb2c0c676ed9fbb66ea7b3c8b3"><td class="memItemLeft" align="right" valign="top">
-std::vector&lt; <a class="el" href="classbloom_1_1_object.html">Object</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>gameObjects</b></td></tr>
-<tr class="separator:a755180bb2c0c676ed9fbb66ea7b3c8b3 inherit pro_attribs_classbloom_1_1_engine"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65137d25d0964216567130207b3c3322 inherit pro_attribs_classbloom_1_1_engine" id="r_a65137d25d0964216567130207b3c3322"><td class="memItemLeft" align="right" valign="top">
-<a class="el" href="classbloom_1_1_camera.html">Camera</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_camera</b></td></tr>
-<tr class="separator:a65137d25d0964216567130207b3c3322 inherit pro_attribs_classbloom_1_1_engine"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a15c91423cb127ff1a8aebaa4119d7659 inherit pro_attribs_classbloom_1_1_engine" id="r_a15c91423cb127ff1a8aebaa4119d7659"><td class="memItemLeft" align="right" valign="top">
-double&#160;</td><td class="memItemRight" valign="bottom"><b>m_deltaTime</b></td></tr>
-<tr class="separator:a15c91423cb127ff1a8aebaa4119d7659 inherit pro_attribs_classbloom_1_1_engine"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acac7f77a6e1eef0333ba3762100709d4 inherit pro_attribs_classbloom_1_1_engine" id="r_acac7f77a6e1eef0333ba3762100709d4"><td class="memItemLeft" align="right" valign="top">
-float&#160;</td><td class="memItemRight" valign="bottom"><b>m_rotation</b></td></tr>
-<tr class="separator:acac7f77a6e1eef0333ba3762100709d4 inherit pro_attribs_classbloom_1_1_engine"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6652663ab06bfa57afb408ebceed42a8 inherit pro_attribs_classbloom_1_1_engine" id="r_a6652663ab06bfa57afb408ebceed42a8"><td class="memItemLeft" align="right" valign="top">
+std::shared_ptr&lt; <a class="el" href="classbloom_1_1_camera.html">Camera</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>m_activeCamera</b></td></tr>
+<tr class="separator:a6652663ab06bfa57afb408ebceed42a8 inherit pro_attribs_classbloom_1_1_engine"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a128425c9b6152891450060d898e0c6e0 inherit pro_attribs_classbloom_1_1_engine" id="r_a128425c9b6152891450060d898e0c6e0"><td class="memItemLeft" align="right" valign="top">
+std::unique_ptr&lt; <a class="el" href="classbloom_1_1render_1_1_descriptor_set_layout.html">render::DescriptorSetLayout</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>m_materialSetLayout</b></td></tr>
+<tr class="separator:a128425c9b6152891450060d898e0c6e0 inherit pro_attribs_classbloom_1_1_engine"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af37376d08f33c7ed0e1133ff69df4567 inherit pro_attribs_classbloom_1_1_engine" id="r_af37376d08f33c7ed0e1133ff69df4567"><td class="memItemLeft" align="right" valign="top">
+float&#160;</td><td class="memItemRight" valign="bottom"><b>m_deltaTime</b></td></tr>
+<tr class="separator:af37376d08f33c7ed0e1133ff69df4567 inherit pro_attribs_classbloom_1_1_engine"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Main class for the game </p>
 </div><hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/xgoni/bloom/sandbox/<a class="el" href="sandbox_2main_8cpp.html">main.cpp</a></li>
+<li>C:/Users/xgoni/bloom/sandbox/<a class="el" href="main_8cpp.html">main.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

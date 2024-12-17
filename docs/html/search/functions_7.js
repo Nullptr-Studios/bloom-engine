@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['tostring_0',['ToString',['../classbloom_1_1_event.html#a1e826d312aa922abd9401a02ee33ab3d',1,'bloom::Event::ToString()'],['../classbloom_1_1_window_resize_event.html#a8be8cba1d6436bd544894ba38426f556',1,'bloom::WindowResizeEvent::ToString()'],['../classbloom_1_1_key_pressed_event.html#afc9dca82c85f300cca5f94f09e632448',1,'bloom::KeyPressedEvent::ToString()'],['../classbloom_1_1_key_released_event.html#a220adca8205466c1677d898e21763d90',1,'bloom::KeyReleasedEvent::ToString()'],['../classbloom_1_1_mouse_moved_event.html#a66e03c370f8df2b5d8889926ed68b6d9',1,'bloom::MouseMovedEvent::ToString()'],['../classbloom_1_1_mouse_scrolled_event.html#ae373067be63601a16d7b7749059ff8df',1,'bloom::MouseScrolledEvent::ToString()'],['../classbloom_1_1_mouse_button_pressed_event.html#a127ef183371b8fef1b35977e5d2b5505',1,'bloom::MouseButtonPressedEvent::ToString()'],['../classbloom_1_1_mouse_button_released_event.html#a694f5d138b6082a7c47ab4315cde5ed5',1,'bloom::MouseButtonReleasedEvent::ToString()']]]
+  ['init_0',['Init',['../classbloom_1_1_log.html#a9b14d69152140370e565749b0fee499e',1,'bloom::Log']]],
+  ['invalidate_1',['Invalidate',['../classbloom_1_1render_1_1_buffer.html#a36e803348215c1e9f77b19904d972782',1,'bloom::render::Buffer']]],
+  ['invalidateindex_2',['InvalidateIndex',['../classbloom_1_1render_1_1_buffer.html#a51d8262ba644571121418537321c9975',1,'bloom::render::Buffer']]],
+  ['isincategory_3',['IsInCategory',['../classbloom_1_1_event.html#ad407353c8d035d38f9bc21eedd0b8c69',1,'bloom::Event']]]
 ];

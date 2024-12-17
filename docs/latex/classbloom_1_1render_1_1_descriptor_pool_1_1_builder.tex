@@ -1,0 +1,125 @@
+\doxysection{bloom\+::render\+::Descriptor\+Pool\+::Builder Class Reference}
+\hypertarget{classbloom_1_1render_1_1_descriptor_pool_1_1_builder}{}\label{classbloom_1_1render_1_1_descriptor_pool_1_1_builder}\index{bloom::render::DescriptorPool::Builder@{bloom::render::DescriptorPool::Builder}}
+
+
+Helper class to build \doxylink{classbloom_1_1render_1_1_descriptor_pool}{Descriptor\+Pool} objects.  
+
+
+
+
+{\ttfamily \#include $<$descriptors.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_pool_1_1_builder_ae274dd0feaadea291ee57ecb422de1c3}{Builder}} (\mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}} \&device)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classbloom_1_1render_1_1_descriptor_pool_1_1_builder}{Builder} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_pool_1_1_builder}{Builder}} \& \mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_pool_1_1_builder_a49dd7f85816d0d83ed079b5939bb9c53}{Add\+Pool\+Size}} (Vk\+Descriptor\+Type descriptor\+Type, uint32\+\_\+t count)
+\begin{DoxyCompactList}\small\item\em Adds a descriptor pool size specification. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_pool_1_1_builder}{Builder}} \& \mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_pool_1_1_builder_aa88dbf8fef7250b0ada62e43a83754bc}{Set\+Pool\+Flags}} (Vk\+Descriptor\+Pool\+Create\+Flags flags)
+\begin{DoxyCompactList}\small\item\em Sets flags for descriptor pool creation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_pool_1_1_builder}{Builder}} \& \mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_pool_1_1_builder_a96b3a49ea4607ae530758dfbb5bf839f}{Set\+Max\+Sets}} (uint32\+\_\+t count)
+\begin{DoxyCompactList}\small\item\em Sets the maximum number of descriptor sets allocatable from the pool. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_pool}{Descriptor\+Pool}} $>$ \mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_pool_1_1_builder_ab4e6d88c85320558c4f5fdb304900a37}{Build}} () const
+\begin{DoxyCompactList}\small\item\em Builds the \doxylink{classbloom_1_1render_1_1_descriptor_pool}{Descriptor\+Pool} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Helper class to build \doxylink{classbloom_1_1render_1_1_descriptor_pool}{Descriptor\+Pool} objects. 
+
+Simplifies the creation of \doxylink{classbloom_1_1render_1_1_descriptor_pool}{Descriptor\+Pool} objects by allowing you to specify pool sizes, flags, and the maximum number of sets using a fluent interface. This builder handles the details of setting up the Vk\+Descriptor\+Pool\+Create\+Info struct. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classbloom_1_1render_1_1_descriptor_pool_1_1_builder_ae274dd0feaadea291ee57ecb422de1c3}\index{bloom::render::DescriptorPool::Builder@{bloom::render::DescriptorPool::Builder}!Builder@{Builder}}
+\index{Builder@{Builder}!bloom::render::DescriptorPool::Builder@{bloom::render::DescriptorPool::Builder}}
+\doxysubsubsection{\texorpdfstring{Builder()}{Builder()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_descriptor_pool_1_1_builder_ae274dd0feaadea291ee57ecb422de1c3} 
+bloom\+::render\+::\+Descriptor\+Pool\+::\+Builder\+::\+Builder (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}} \&}]{device}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Constructs a \doxylink{classbloom_1_1render_1_1_descriptor_pool_1_1_builder}{Builder} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em device} & Reference to the \doxylink{classbloom_1_1render_1_1_devices}{Devices} object. Needed for Vulkan device access. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classbloom_1_1render_1_1_descriptor_pool_1_1_builder_a49dd7f85816d0d83ed079b5939bb9c53}\index{bloom::render::DescriptorPool::Builder@{bloom::render::DescriptorPool::Builder}!AddPoolSize@{AddPoolSize}}
+\index{AddPoolSize@{AddPoolSize}!bloom::render::DescriptorPool::Builder@{bloom::render::DescriptorPool::Builder}}
+\doxysubsubsection{\texorpdfstring{AddPoolSize()}{AddPoolSize()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_descriptor_pool_1_1_builder_a49dd7f85816d0d83ed079b5939bb9c53} 
+\mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_pool_1_1_builder}{Descriptor\+Pool\+::\+Builder}} \& bloom\+::render\+::\+Descriptor\+Pool\+::\+Builder\+::\+Add\+Pool\+Size (\begin{DoxyParamCaption}\item[{Vk\+Descriptor\+Type}]{descriptor\+Type}{, }\item[{uint32\+\_\+t}]{count}{}\end{DoxyParamCaption})}
+
+
+
+Adds a descriptor pool size specification. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em descriptor\+Type} & The type of descriptor (e.\+g., VK\+\_\+\+DESCRIPTOR\+\_\+\+TYPE\+\_\+\+UNIFORM\+\_\+\+BUFFER). \\
+\hline
+{\em count} & The number of descriptors of this type to allocate in the pool. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the builder for method chaining.
+\end{DoxyReturn}
+Specifies the number of descriptors of a particular type to allocate within the pool. Multiple calls to this function can be made to add different descriptor types to the pool. \Hypertarget{classbloom_1_1render_1_1_descriptor_pool_1_1_builder_ab4e6d88c85320558c4f5fdb304900a37}\index{bloom::render::DescriptorPool::Builder@{bloom::render::DescriptorPool::Builder}!Build@{Build}}
+\index{Build@{Build}!bloom::render::DescriptorPool::Builder@{bloom::render::DescriptorPool::Builder}}
+\doxysubsubsection{\texorpdfstring{Build()}{Build()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_descriptor_pool_1_1_builder_ab4e6d88c85320558c4f5fdb304900a37} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_pool}{Descriptor\+Pool}} $>$ bloom\+::render\+::\+Descriptor\+Pool\+::\+Builder\+::\+Build (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Builds the \doxylink{classbloom_1_1render_1_1_descriptor_pool}{Descriptor\+Pool} object. 
+
+\begin{DoxyReturn}{Returns}
+A unique pointer to the newly created \doxylink{classbloom_1_1render_1_1_descriptor_pool}{Descriptor\+Pool}.
+\end{DoxyReturn}
+Consumes the builder and creates the \doxylink{classbloom_1_1render_1_1_descriptor_pool}{Descriptor\+Pool} object based on the specified parameters. \Hypertarget{classbloom_1_1render_1_1_descriptor_pool_1_1_builder_a96b3a49ea4607ae530758dfbb5bf839f}\index{bloom::render::DescriptorPool::Builder@{bloom::render::DescriptorPool::Builder}!SetMaxSets@{SetMaxSets}}
+\index{SetMaxSets@{SetMaxSets}!bloom::render::DescriptorPool::Builder@{bloom::render::DescriptorPool::Builder}}
+\doxysubsubsection{\texorpdfstring{SetMaxSets()}{SetMaxSets()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_descriptor_pool_1_1_builder_a96b3a49ea4607ae530758dfbb5bf839f} 
+\mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_pool_1_1_builder}{Descriptor\+Pool\+::\+Builder}} \& bloom\+::render\+::\+Descriptor\+Pool\+::\+Builder\+::\+Set\+Max\+Sets (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{count}{}\end{DoxyParamCaption})}
+
+
+
+Sets the maximum number of descriptor sets allocatable from the pool. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em count} & The maximum number of sets. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the builder for method chaining.
+\end{DoxyReturn}
+Defines the upper limit on the number of descriptor sets that can be allocated from this pool. \Hypertarget{classbloom_1_1render_1_1_descriptor_pool_1_1_builder_aa88dbf8fef7250b0ada62e43a83754bc}\index{bloom::render::DescriptorPool::Builder@{bloom::render::DescriptorPool::Builder}!SetPoolFlags@{SetPoolFlags}}
+\index{SetPoolFlags@{SetPoolFlags}!bloom::render::DescriptorPool::Builder@{bloom::render::DescriptorPool::Builder}}
+\doxysubsubsection{\texorpdfstring{SetPoolFlags()}{SetPoolFlags()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_descriptor_pool_1_1_builder_aa88dbf8fef7250b0ada62e43a83754bc} 
+\mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_pool_1_1_builder}{Descriptor\+Pool\+::\+Builder}} \& bloom\+::render\+::\+Descriptor\+Pool\+::\+Builder\+::\+Set\+Pool\+Flags (\begin{DoxyParamCaption}\item[{Vk\+Descriptor\+Pool\+Create\+Flags}]{flags}{}\end{DoxyParamCaption})}
+
+
+
+Sets flags for descriptor pool creation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flags} & Vulkan descriptor pool create flags (e.\+g., VK\+\_\+\+DESCRIPTOR\+\_\+\+POOL\+\_\+\+CREATE\+\_\+\+FREE\+\_\+\+DESCRIPTOR\+\_\+\+SET\+\_\+\+BIT). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the builder for method chaining.
+\end{DoxyReturn}
+Allows setting specific flags that control the behavior of the descriptor pool. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/xgoni/bloom/bloom/src/render/\mbox{\hyperlink{descriptors_8hpp}{descriptors.\+hpp}}\item 
+C\+:/\+Users/xgoni/bloom/bloom/src/render/descriptors.\+cpp\end{DoxyCompactItemize}

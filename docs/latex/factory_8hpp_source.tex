@@ -4,31 +4,51 @@
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ }
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\#pragma\ once}}
-\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{engine_8hpp}{engine.hpp}}"{}}}
-\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{object_8hpp}{object.hpp}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{actor_8hpp}{objects/actor.hpp}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{object_8hpp}{objects/object.hpp}}"{}}}
 \DoxyCodeLine{00012\ }
 \DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }bloom\ \{}
 \DoxyCodeLine{00014\ }
-\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }Object;}
-\DoxyCodeLine{00016\ }
-\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }BLOOM\_API\ \mbox{\hyperlink{classbloom_1_1_factory}{Factory}}\ \{}
-\DoxyCodeLine{00018\ }
-\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00026\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ =\ std::enable\_if\_t<std::is\_base\_of\_v<Object,\ T>>>}
-\DoxyCodeLine{00027\ \ \ T\ CreateObject();}
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }BLOOM\_API\ \mbox{\hyperlink{classbloom_1_1_factory}{Factory}}\ \{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ =\ std::enable\_if\_t<std::is\_base\_of\_v<Object,\ T>>>}
+\DoxyCodeLine{00024\ \ \ std::shared\_ptr<T>\ CreateObject();}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \mbox{\hyperlink{object_8hpp_ac65b651055bbc2100bc99fb9bd34ac17}{ObjectMap}}\ GetObjects()\ \{\ \textcolor{keywordflow}{return}\ m\_objects;\ \}}
+\DoxyCodeLine{00027\ \ \ \mbox{\hyperlink{actor_8hpp_a0a6a92f666ce85e7aaa009b4a2af96ee}{ActorMap}}\ GetRenderables()\ \{\ \textcolor{keywordflow}{return}\ m\_renderables;\ \}}
 \DoxyCodeLine{00028\ }
-\DoxyCodeLine{00029\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00030\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ n\_currentID\ =\ 0;}
-\DoxyCodeLine{00031\ \ \ \ \ }
-\DoxyCodeLine{00032\ \};}
-\DoxyCodeLine{00033\ }
-\DoxyCodeLine{00034\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}>}
-\DoxyCodeLine{00035\ T\ \mbox{\hyperlink{classbloom_1_1_factory_a10c277ff8d3e61c1f8475580acd046fd}{Factory::CreateObject}}()\ \{}
-\DoxyCodeLine{00036\ \ \ \textcolor{keyword}{auto}\ \_obj\ =\ T(n\_currentID);}
-\DoxyCodeLine{00037\ \ \ n\_currentID++;}
-\DoxyCodeLine{00038\ \ \ \textcolor{keywordflow}{return}\ \_obj;}
-\DoxyCodeLine{00039\ \}}
-\DoxyCodeLine{00040\ }
-\DoxyCodeLine{00041\ \}}
+\DoxyCodeLine{00029\ \ \ \textcolor{keywordtype}{void}\ SetDevice(\mbox{\hyperlink{classbloom_1_1render_1_1_devices}{render::Devices}}*\ device)\ \{\ m\_devices\ =\ device;\ \}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00035\ \ \ id\_t\ m\_currentID\ =\ 0;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \mbox{\hyperlink{object_8hpp_ac65b651055bbc2100bc99fb9bd34ac17}{ObjectMap}}\ m\_objects;}
+\DoxyCodeLine{00038\ \ \ \mbox{\hyperlink{actor_8hpp_a0a6a92f666ce85e7aaa009b4a2af96ee}{ActorMap}}\ m\_renderables;}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_devices}{render::Devices}}*\ m\_devices;}
+\DoxyCodeLine{00041\ \};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}>}
+\DoxyCodeLine{00044\ std::shared\_ptr<T>\ \mbox{\hyperlink{classbloom_1_1_factory_a7ae2cf735666641480f3adc879dc15d5}{Factory::CreateObject}}()\ \{}
+\DoxyCodeLine{00045\ \ \ std::shared\_ptr<T>\ obj\ =\ std::make\_shared<T>(m\_currentID,\ m\_devices);}
+\DoxyCodeLine{00046\ \ \ m\_currentID++;}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \textcolor{comment}{//\ This\ crashes\ the\ program,\ it\ will\ work\ for\ now\ -\/x}}
+\DoxyCodeLine{00049\ \ \ \textcolor{keywordflow}{if}\ (m\_currentID\ ==\ 0)\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{log_8hpp_af6ca84c4d0058fec875875ed0cdf9f41}{BLOOM\_CRITICAL}}(\textcolor{stringliteral}{"{}Reached\ maximum\ number\ of\ objects"{}});}
+\DoxyCodeLine{00051\ \ \ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ m\_objects.emplace(obj-\/>GetID(),\ std::static\_pointer\_cast<Object>(obj));}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \textcolor{comment}{//\ Adding\ to\ the\ renderable\ list\ if\ it's\ an\ Actor}}
+\DoxyCodeLine{00056\ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_base\_of\_v<Actor,\ T>)\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ m\_renderables.emplace(obj-\/>GetID(),\ std::static\_pointer\_cast<Actor>(obj));}
+\DoxyCodeLine{00058\ \ \ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \mbox{\hyperlink{log_8hpp_ac5b86dacb08981467781745537e91c30}{BLOOM\_INFO}}(\textcolor{stringliteral}{"{}Created\ object\ with\ ID:\ \{0\}"{}},\ obj-\/>GetID());}
+\DoxyCodeLine{00061\ \ \ \textcolor{keywordflow}{return}\ obj;}
+\DoxyCodeLine{00062\ \}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \}}
 
 \end{DoxyCode}

@@ -11,46 +11,46 @@
 \DoxyCodeLine{00018\ }
 \DoxyCodeLine{00027\ \textcolor{keyword}{class\ }BLOOM\_API\ \mbox{\hyperlink{classbloom_1_1_key_event}{KeyEvent}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classbloom_1_1_event}{Event}}\ \{}
 \DoxyCodeLine{00028\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00033\ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classbloom_1_1_key_event_a72ff8f3941a9d575f4b3f9275fe93fde}{GetKeyCode}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_keyCode;\ \}}
+\DoxyCodeLine{00033\ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classbloom_1_1_key_event_a72ff8f3941a9d575f4b3f9275fe93fde}{GetKeyCode}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_keyCode;\ \}}
 \DoxyCodeLine{00034\ }
 \DoxyCodeLine{00035\ \ \ \mbox{\hyperlink{event_8hpp_abd52deea587a36ef619e596a0c691839}{EVENT\_CLASS\_CATEGORY}}(EventCategoryKeyboard\ |\ EventCategoryInput)}
 \DoxyCodeLine{00036\ }
 \DoxyCodeLine{00037\ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00042\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classbloom_1_1_key_event_a2e8b75fd3fa39db1f1873f22766eaeb1}{KeyEvent}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ keycode)\ :\ \_keyCode(keycode)\ \{\}}
+\DoxyCodeLine{00042\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classbloom_1_1_key_event_a2e8b75fd3fa39db1f1873f22766eaeb1}{KeyEvent}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ keycode)\ :\ m\_keyCode(keycode)\ \{\}}
 \DoxyCodeLine{00043\ }
-\DoxyCodeLine{00044\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classbloom_1_1_key_event_a57ba914731e07b227d0e5bcefcacc5c8}{\_keyCode}};\ \ }
+\DoxyCodeLine{00044\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classbloom_1_1_key_event_a34a7db091ec956bfddfb7e725815b614}{m\_keyCode}};\ \ }
 \DoxyCodeLine{00045\ \};}
 \DoxyCodeLine{00046\ }
 \DoxyCodeLine{00054\ \textcolor{keyword}{class\ }BLOOM\_API\ \mbox{\hyperlink{classbloom_1_1_key_pressed_event}{KeyPressedEvent}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classbloom_1_1_key_event}{KeyEvent}}\ \{}
 \DoxyCodeLine{00055\ \textcolor{keyword}{public}:}
 \DoxyCodeLine{00061\ \ \ \mbox{\hyperlink{classbloom_1_1_key_pressed_event_a57f5d51298133165100ff316a32decf2}{KeyPressedEvent}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ keycode,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ repeatCount)}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ :\ \mbox{\hyperlink{classbloom_1_1_key_event}{KeyEvent}}(keycode),\ \_repeatCount(repeatCount)\ \{\}}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ :\ \mbox{\hyperlink{classbloom_1_1_key_event}{KeyEvent}}(keycode),\ m\_repeatCount(repeatCount)\ \{\}}
 \DoxyCodeLine{00063\ }
-\DoxyCodeLine{00068\ \ \ [[nodiscard]]\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classbloom_1_1_key_pressed_event_aa63c9e2b1fff13036f4d4d764366a360}{GetRepeatCount}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_repeatCount;\ \}}
+\DoxyCodeLine{00068\ \ \ [[nodiscard]]\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classbloom_1_1_key_pressed_event_aa63c9e2b1fff13036f4d4d764366a360}{GetRepeatCount}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_repeatCount;\ \}}
 \DoxyCodeLine{00069\ }
 \DoxyCodeLine{00070\ \ \ \mbox{\hyperlink{event_8hpp_a80d534fc4d69a68eefd1573fd0ac2f44}{EVENT\_CLASS\_TYPE}}(KeyPressed)}
 \DoxyCodeLine{00071\ }
 \DoxyCodeLine{00072\ \ \ }
 \DoxyCodeLine{00076\ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classbloom_1_1_key_pressed_event_afc9dca82c85f300cca5f94f09e632448}{ToString}}()\textcolor{keyword}{\ const\ override\ }\{}
 \DoxyCodeLine{00077\ \ \ \ \ std::stringstream\ ss;}
-\DoxyCodeLine{00078\ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}KeyPressedEvent:\ "{}}\ <<\ \_keyCode\ <<\ \textcolor{stringliteral}{"{}\ ("{}}\ <<\ \_repeatCount\ <<\ \textcolor{stringliteral}{"{}\ repeats)"{}};}
+\DoxyCodeLine{00078\ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}KeyPressedEvent:\ "{}}\ <<\ m\_keyCode\ <<\ \textcolor{stringliteral}{"{}\ ("{}}\ <<\ m\_repeatCount\ <<\ \textcolor{stringliteral}{"{}\ repeats)"{}};}
 \DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordflow}{return}\ ss.str();}
 \DoxyCodeLine{00080\ \ \ \}}
 \DoxyCodeLine{00081\ }
 \DoxyCodeLine{00082\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00083\ \ \ \textcolor{keywordtype}{int}\ \_repeatCount;\ \ }
+\DoxyCodeLine{00083\ \ \ \textcolor{keywordtype}{int}\ m\_repeatCount;\ \ }
 \DoxyCodeLine{00084\ \};}
 \DoxyCodeLine{00085\ }
 \DoxyCodeLine{00091\ \textcolor{keyword}{class\ }BLOOM\_API\ \mbox{\hyperlink{classbloom_1_1_key_released_event}{KeyReleasedEvent}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classbloom_1_1_key_event}{KeyEvent}}\ \{}
 \DoxyCodeLine{00092\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00097\ \ \ \mbox{\hyperlink{classbloom_1_1_key_released_event_aa10652e5abeff85e42406b862319883a}{KeyReleasedEvent}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ keycode)\ :\ \mbox{\hyperlink{classbloom_1_1_key_event}{KeyEvent}}(keycode)\ \{\}}
+\DoxyCodeLine{00097\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classbloom_1_1_key_released_event_aa10652e5abeff85e42406b862319883a}{KeyReleasedEvent}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ keycode)\ :\ \mbox{\hyperlink{classbloom_1_1_key_event}{KeyEvent}}(keycode)\ \{\}}
 \DoxyCodeLine{00098\ }
 \DoxyCodeLine{00099\ \ \ \mbox{\hyperlink{event_8hpp_a80d534fc4d69a68eefd1573fd0ac2f44}{EVENT\_CLASS\_TYPE}}(KeyReleased)}
 \DoxyCodeLine{00100\ }
 \DoxyCodeLine{00101\ \ \ }
 \DoxyCodeLine{00105\ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classbloom_1_1_key_released_event_a220adca8205466c1677d898e21763d90}{ToString}}()\textcolor{keyword}{\ const\ override\ }\{}
 \DoxyCodeLine{00106\ \ \ \ \ std::stringstream\ ss;}
-\DoxyCodeLine{00107\ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}KeyReleasedEvent:\ "{}}\ <<\ \_keyCode;}
+\DoxyCodeLine{00107\ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}KeyReleasedEvent:\ "{}}\ <<\ m\_keyCode;}
 \DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordflow}{return}\ ss.str();}
 \DoxyCodeLine{00109\ \ \ \}}
 \DoxyCodeLine{00110\ \};}

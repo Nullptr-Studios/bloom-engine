@@ -552,4 +552,4 @@ void Devices::createImageWithInfo(
   }
 }
 
-}  // namespace lve
+}

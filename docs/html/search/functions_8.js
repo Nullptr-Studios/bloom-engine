@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['windowcloseevent_0',['WindowCloseEvent',['../classbloom_1_1_window_close_event.html#a7474baa50c66dbd5a7f7f6a690975107',1,'bloom::WindowCloseEvent']]],
-  ['windowresizeevent_1',['WindowResizeEvent',['../classbloom_1_1_window_resize_event.html#a4bf1fd9a7f951664327c589ef95bc8d6',1,'bloom::WindowResizeEvent']]]
+  ['keyevent_0',['KeyEvent',['../classbloom_1_1_key_event.html#a2e8b75fd3fa39db1f1873f22766eaeb1',1,'bloom::KeyEvent']]],
+  ['keypressedevent_1',['KeyPressedEvent',['../classbloom_1_1_key_pressed_event.html#a57f5d51298133165100ff316a32decf2',1,'bloom::KeyPressedEvent']]],
+  ['keyreleasedevent_2',['KeyReleasedEvent',['../classbloom_1_1_key_released_event.html#aa10652e5abeff85e42406b862319883a',1,'bloom::KeyReleasedEvent']]]
 ];

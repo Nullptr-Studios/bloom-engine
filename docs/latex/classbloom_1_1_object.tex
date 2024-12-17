@@ -1,11 +1,25 @@
 \doxysection{bloom\+::Object Class Reference}
 \hypertarget{classbloom_1_1_object}{}\label{classbloom_1_1_object}\index{bloom::Object@{bloom::Object}}
+
+
+Base class for all objects in the game world.  
+
+
+
+
+{\ttfamily \#include $<$object.\+hpp$>$}
+
+Inheritance diagram for bloom\+::Object\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classbloom_1_1_object}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classbloom_1_1_object_a2d5d96df2b3a38ca832fafb1831ba60a}\label{classbloom_1_1_object_a2d5d96df2b3a38ca832fafb1831ba60a} 
-{\bfseries Object} (const id\+\_\+t id)
-\item 
+\mbox{\hyperlink{classbloom_1_1_object_ae1d557ffa7496298977cfbfdae1d4daf}{Object}} (const id\+\_\+t id, \mbox{\hyperlink{classbloom_1_1render_1_1_devices}{render\+::\+Devices}} \texorpdfstring{$\ast$}{*}devices)
+\begin{DoxyCompactList}\small\item\em Constructs a new \doxylink{classbloom_1_1_object}{Object}. \end{DoxyCompactList}\item 
 \Hypertarget{classbloom_1_1_object_a5d2aef5263bdfa726167a7465d5e9ec6}\label{classbloom_1_1_object_a5d2aef5263bdfa726167a7465d5e9ec6} 
 {\bfseries Object} (const \mbox{\hyperlink{classbloom_1_1_object}{Object}} \&)=delete
 \item 
@@ -18,26 +32,116 @@
 \Hypertarget{classbloom_1_1_object_a3bba1530790a31a41e0493794890cc72}\label{classbloom_1_1_object_a3bba1530790a31a41e0493794890cc72} 
 \mbox{\hyperlink{classbloom_1_1_object}{Object}} \& {\bfseries operator=} (\mbox{\hyperlink{classbloom_1_1_object}{Object}} \&\&)=default
 \item 
-\Hypertarget{classbloom_1_1_object_ab83ebdaed718b62ace71bd6877eeca8a}\label{classbloom_1_1_object_ab83ebdaed718b62ace71bd6877eeca8a} 
-id\+\_\+t {\bfseries Get\+ID} () const
-\end{DoxyCompactItemize}
+virtual void \mbox{\hyperlink{classbloom_1_1_object_a18d5a73479f99ed1fbb47b8b8b11acbc}{Begin}} ()
+\begin{DoxyCompactList}\small\item\em Called at the beginning of the scene. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classbloom_1_1_object_a010ab8fafcd25b7260ac0005d9d43091}{Tick}} (float delta\+Time)
+\begin{DoxyCompactList}\small\item\em Called every frame to update the object\textquotesingle{}s state. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classbloom_1_1_object_a7a7cc6230ab4a3ee158126469cf04352}{End}} ()
+\begin{DoxyCompactList}\small\item\em Called at the end of the scene. \end{DoxyCompactList}\item 
+id\+\_\+t \mbox{\hyperlink{classbloom_1_1_object_ab83ebdaed718b62ace71bd6877eeca8a}{Get\+ID}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the object\textquotesingle{}s unique ID. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{classbloom_1_1_object_a10805aae05e9965d0232e319cc43d9eb}\label{classbloom_1_1_object_a10805aae05e9965d0232e319cc43d9eb} 
 \mbox{\hyperlink{structbloom_1_1_transform}{Transform}} {\bfseries transform}
+\begin{DoxyCompactList}\small\item\em The object\textquotesingle{}s transform, representing its position, rotation, and scale. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classbloom_1_1_object_a94c1ad21f8d80a59965ad96c25b7cc6e}\label{classbloom_1_1_object_a94c1ad21f8d80a59965ad96c25b7cc6e} 
-std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1render_1_1_model}{render\+::\+Model}} $>$ {\bfseries model}
-\item 
-\Hypertarget{classbloom_1_1_object_a2819987ef859ce9b617b09c44fb7d2ea}\label{classbloom_1_1_object_a2819987ef859ce9b617b09c44fb7d2ea} 
-glm\+::vec3 {\bfseries color}
-\item 
-\Hypertarget{classbloom_1_1_object_a5f2ae94da1b0bf534f69a34fa608c72a}\label{classbloom_1_1_object_a5f2ae94da1b0bf534f69a34fa608c72a} 
-\mbox{\hyperlink{classbloom_1_1render_1_1_texture}{render\+::\+Texture}} \texorpdfstring{$\ast$}{*} {\bfseries texture}
-\end{DoxyCompactItemize}
+\Hypertarget{classbloom_1_1_object_ae999a5538f3bdac566d964013dde8b7d}\label{classbloom_1_1_object_ae999a5538f3bdac566d964013dde8b7d} 
+\mbox{\hyperlink{classbloom_1_1render_1_1_devices}{render\+::\+Devices}} \texorpdfstring{$\ast$}{*} {\bfseries m\+\_\+devices} = nullptr
+\begin{DoxyCompactList}\small\item\em Pointer to the Vulkan device management object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for all objects in the game world. 
+
+The \doxylink{classbloom_1_1_object}{Object} class provides a common interface and basic functionality for all objects in the game. It manages the object\textquotesingle{}s ID and provides virtual methods for the game loop stages\+: {\ttfamily Begin}, {\ttfamily Tick}, and {\ttfamily End}. Derived classes can override these methods to implement their specific behavior. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classbloom_1_1_object_ae1d557ffa7496298977cfbfdae1d4daf}\index{bloom::Object@{bloom::Object}!Object@{Object}}
+\index{Object@{Object}!bloom::Object@{bloom::Object}}
+\doxysubsubsection{\texorpdfstring{Object()}{Object()}}
+{\footnotesize\ttfamily \label{classbloom_1_1_object_ae1d557ffa7496298977cfbfdae1d4daf} 
+bloom\+::\+Object\+::\+Object (\begin{DoxyParamCaption}\item[{const id\+\_\+t}]{id}{, }\item[{\mbox{\hyperlink{classbloom_1_1render_1_1_devices}{render\+::\+Devices}} \texorpdfstring{$\ast$}{*}}]{devices}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Constructs a new \doxylink{classbloom_1_1_object}{Object}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The unique identifier for this object. \\
+\hline
+{\em devices} & A pointer to the Vulkan device management object. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classbloom_1_1_object_a18d5a73479f99ed1fbb47b8b8b11acbc}\index{bloom::Object@{bloom::Object}!Begin@{Begin}}
+\index{Begin@{Begin}!bloom::Object@{bloom::Object}}
+\doxysubsubsection{\texorpdfstring{Begin()}{Begin()}}
+{\footnotesize\ttfamily \label{classbloom_1_1_object_a18d5a73479f99ed1fbb47b8b8b11acbc} 
+virtual void bloom\+::\+Object\+::\+Begin (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Called at the beginning of the scene. 
+
+
+
+Reimplemented in \mbox{\hyperlink{classbloom_1_1_actor_abb09ecd4a3722ba2dbf298ce115514ec}{bloom\+::\+Actor}}, and \mbox{\hyperlink{classbloom_1_1_camera_a2d8223c7b3e813dd4730cdfb65c09ad5}{bloom\+::\+Camera}}.
+
+\Hypertarget{classbloom_1_1_object_a7a7cc6230ab4a3ee158126469cf04352}\index{bloom::Object@{bloom::Object}!End@{End}}
+\index{End@{End}!bloom::Object@{bloom::Object}}
+\doxysubsubsection{\texorpdfstring{End()}{End()}}
+{\footnotesize\ttfamily \label{classbloom_1_1_object_a7a7cc6230ab4a3ee158126469cf04352} 
+virtual void bloom\+::\+Object\+::\+End (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Called at the end of the scene. 
+
+
+
+Reimplemented in \mbox{\hyperlink{classbloom_1_1_actor_a2f6ebc7bb27c7ac2c72895fc4f5558bd}{bloom\+::\+Actor}}, and \mbox{\hyperlink{classbloom_1_1_camera_adc3b77f1fdc18380c9f4dbb564903f74}{bloom\+::\+Camera}}.
+
+\Hypertarget{classbloom_1_1_object_ab83ebdaed718b62ace71bd6877eeca8a}\index{bloom::Object@{bloom::Object}!GetID@{GetID}}
+\index{GetID@{GetID}!bloom::Object@{bloom::Object}}
+\doxysubsubsection{\texorpdfstring{GetID()}{GetID()}}
+{\footnotesize\ttfamily \label{classbloom_1_1_object_ab83ebdaed718b62ace71bd6877eeca8a} 
+id\+\_\+t bloom\+::\+Object\+::\+Get\+ID (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the object\textquotesingle{}s unique ID. 
+
+\begin{DoxyReturn}{Returns}
+The object\textquotesingle{}s ID. 
+\end{DoxyReturn}
+\Hypertarget{classbloom_1_1_object_a010ab8fafcd25b7260ac0005d9d43091}\index{bloom::Object@{bloom::Object}!Tick@{Tick}}
+\index{Tick@{Tick}!bloom::Object@{bloom::Object}}
+\doxysubsubsection{\texorpdfstring{Tick()}{Tick()}}
+{\footnotesize\ttfamily \label{classbloom_1_1_object_a010ab8fafcd25b7260ac0005d9d43091} 
+virtual void bloom\+::\+Object\+::\+Tick (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Called every frame to update the object\textquotesingle{}s state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & The time elapsed since the last frame. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classbloom_1_1_actor_a68a9c1ea7cbe1ce76783d334ce377e01}{bloom\+::\+Actor}}, \mbox{\hyperlink{classbloom_1_1_camera_a3bdd365fbd68115e04871bbecba7b7e6}{bloom\+::\+Camera}}, and \mbox{\hyperlink{classwanderer_1_1_editor_camera_a24a2839b7ce2cc98000a94f7bcd41b5f}{wanderer\+::\+Editor\+Camera}}.
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/xgoni/bloom/bloom/src/\mbox{\hyperlink{object_8hpp}{object.\+hpp}}\end{DoxyCompactItemize}
+C\+:/\+Users/xgoni/bloom/bloom/src/objects/\mbox{\hyperlink{object_8hpp}{object.\+hpp}}\end{DoxyCompactItemize}

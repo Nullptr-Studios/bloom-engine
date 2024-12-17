@@ -28,9 +28,9 @@ void Engine::Begin() {
 
   // TODO: I probably want to move all this elsewhere
   m_globalPool = render::DescriptorPool::Builder(*m_devices)
-    .setMaxSets(render::SwapChain::MAX_FRAMES_IN_FLIGHT)
-    .addPoolSize(VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, render::SwapChain::MAX_FRAMES_IN_FLIGHT)
-  .build();
+    .SetMaxSets(render::SwapChain::MAX_FRAMES_IN_FLIGHT)
+    .AddPoolSize(VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, render::SwapChain::MAX_FRAMES_IN_FLIGHT)
+  .Build();
 
   m_UBOBuffers.resize(render::SwapChain::MAX_FRAMES_IN_FLIGHT);
   for (int i = 0; i < m_UBOBuffers.size(); i++) {
@@ -41,33 +41,33 @@ void Engine::Begin() {
       VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT,
       VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT
     );
-    m_UBOBuffers[i]->map();
+    m_UBOBuffers[i]->Map();
   }
 
   // GLOBAL DESCRIPTOR SET ------------------------------------------
   auto globalSetLayout = render::DescriptorSetLayout::Builder(*m_devices)
-    .addBinding(0, VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VK_SHADER_STAGE_ALL_GRAPHICS)
-  .build();
+    .AddBinding(0, VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VK_SHADER_STAGE_ALL_GRAPHICS)
+  .Build();
 
   // MATERIAL DESCRIPTOR SET ----------------------------------------
   m_materialSetLayout = render::DescriptorSetLayout::Builder(*m_devices)
-    .addBinding(0, VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VK_SHADER_STAGE_FRAGMENT_BIT) // albedo
-    .addBinding(1, VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VK_SHADER_STAGE_FRAGMENT_BIT) // RMO
-    .addBinding(2, VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VK_SHADER_STAGE_FRAGMENT_BIT) // normal
-    .addBinding(3, VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VK_SHADER_STAGE_FRAGMENT_BIT) // emission
-  .build();
+    .AddBinding(0, VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VK_SHADER_STAGE_FRAGMENT_BIT) // albedo
+    .AddBinding(1, VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VK_SHADER_STAGE_FRAGMENT_BIT) // RMO
+    .AddBinding(2, VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VK_SHADER_STAGE_FRAGMENT_BIT) // normal
+    .AddBinding(3, VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VK_SHADER_STAGE_FRAGMENT_BIT) // emission
+  .Build();
 
   m_globalDescriptorSets.resize(render::SwapChain::MAX_FRAMES_IN_FLIGHT);
   for (int i = 0; i < m_globalDescriptorSets.size(); i++) {
-    auto bufferInfo = m_UBOBuffers[i]->descriptorInfo();
+    auto bufferInfo = m_UBOBuffers[i]->DescriptorInfo();
     render::DescriptorWriter(*globalSetLayout, *m_globalPool)
-      .writeBuffer(0, &bufferInfo)
-    .build(m_globalDescriptorSets[i]);
+      .WriteBuffer(0, &bufferInfo)
+    .Build(m_globalDescriptorSets[i]);
   }
 
   m_renderer = std::make_unique<render::Renderer>(m_window, m_devices.get());
   m_simpleRenderSystem = new SimpleRenderSystem(m_devices.get());
-  m_simpleRenderSystem->Begin(m_renderer->GetRenderPass(), globalSetLayout->getDescriptorSetLayout(), m_materialSetLayout->getDescriptorSetLayout());
+  m_simpleRenderSystem->Begin(m_renderer->GetRenderPass(), globalSetLayout->GetDescriptorSetLayout(), m_materialSetLayout->GetDescriptorSetLayout());
 
   OnBegin();
 
@@ -103,8 +103,8 @@ void Engine::Render() {
     GlobalUBO UBO{};
     UBO.projectionMatrix = m_activeCamera->GetProjection() * m_activeCamera->GetView();
     //UBO.colorUniform = glm::vec4(1.0f, 0.0f, 1.0f, 1.0f);
-    m_UBOBuffers[frameIndex]->writeToIndex(&UBO, 0);
-    m_UBOBuffers[frameIndex]->flush();
+    m_UBOBuffers[frameIndex]->WriteToIndex(&UBO, 0);
+    m_UBOBuffers[frameIndex]->Flush();
 
     // render
     m_renderer->BeginRenderPass(commandBuffer);

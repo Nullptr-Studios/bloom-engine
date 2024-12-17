@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['wanderer_0',['Wanderer',['../class_wanderer.html',1,'']]],
-  ['window_1',['Window',['../classbloom_1_1_window.html',1,'bloom']]],
-  ['windowcloseevent_2',['WindowCloseEvent',['../classbloom_1_1_window_close_event.html',1,'bloom']]],
-  ['windowresizeevent_3',['WindowResizeEvent',['../classbloom_1_1_window_resize_event.html',1,'bloom']]]
+  ['texture_0',['Texture',['../classbloom_1_1render_1_1_texture.html',1,'bloom::render']]],
+  ['transform_1',['Transform',['../structbloom_1_1_transform.html',1,'bloom']]]
 ];

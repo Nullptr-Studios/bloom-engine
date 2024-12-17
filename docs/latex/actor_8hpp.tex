@@ -1,0 +1,76 @@
+\doxysection{C\+:/\+Users/xgoni/bloom/bloom/src/objects/actor.hpp File Reference}
+\hypertarget{actor_8hpp}{}\label{actor_8hpp}\index{C:/Users/xgoni/bloom/bloom/src/objects/actor.hpp@{C:/Users/xgoni/bloom/bloom/src/objects/actor.hpp}}
+
+
+This file contains the declaration of the actor class.  
+
+
+{\ttfamily \#include "{}object.\+hpp"{}}\newline
+{\ttfamily \#include "{}src/render/descriptors.\+hpp"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classbloom_1_1_actor}{bloom\+::\+Actor}}
+\begin{DoxyCompactList}\small\item\em Represents a renderable and potentially interactive object within the game world. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{actor_8hpp_accc82e6365c270ab6e94c6c3c79dfcde}\label{actor_8hpp_accc82e6365c270ab6e94c6c3c79dfcde} 
+\#define {\bfseries ALBEDO\+\_\+\+PLACEHOLDER}~"{}resources/textures/T\+\_\+\+Default.\+tga"{}
+\begin{DoxyCompactList}\small\item\em Filepath for a purple checked missing texture in the Source Engine fashion. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{actor_8hpp_acfc88eeb0e56fd3961b1f9ed8436efc4}{RMO\+\_\+\+PLACEHOLDER}}~"{}resources/textures/T\+\_\+\+Default\+\_\+\+RMO.\+tga"{}
+\begin{DoxyCompactList}\small\item\em Filepath for a simple RMO texture that is used as fallback if no texture is sent. \end{DoxyCompactList}\item 
+\Hypertarget{actor_8hpp_ae3eb5cbfbb9784797ab53c06dccbd59e}\label{actor_8hpp_ae3eb5cbfbb9784797ab53c06dccbd59e} 
+\#define {\bfseries NORMAL\+\_\+\+PLACEHOLDER}~"{}resources/textures/T\+\_\+\+Default\+\_\+\+N.\+tga"{}
+\begin{DoxyCompactList}\small\item\em Filepath for a fallback normal texture. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{actor_8hpp_a6ae911d6602ee94ee39578ab8520052a}{EMISSION\+\_\+\+PLACEHOLDER}}~"{}resources/textures/T\+\_\+\+Default\+\_\+\+E.\+tga"{}
+\begin{DoxyCompactList}\small\item\em Filepath for a fallback emission texture. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::unordered\+\_\+map$<$ id\+\_\+t, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1_actor}{Actor}} $>$ $>$ \mbox{\hyperlink{actor_8hpp_a0a6a92f666ce85e7aaa009b4a2af96ee}{bloom\+::\+Actor\+Map}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains the declaration of the actor class. 
+
+\begin{DoxyAuthor}{Author}
+Xein \href{mailto:xgonip@gmail.com}{\texttt{ xgonip@gmail.\+com}} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+15/12/2024 
+\end{DoxyDate}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{actor_8hpp_a6ae911d6602ee94ee39578ab8520052a}\index{actor.hpp@{actor.hpp}!EMISSION\_PLACEHOLDER@{EMISSION\_PLACEHOLDER}}
+\index{EMISSION\_PLACEHOLDER@{EMISSION\_PLACEHOLDER}!actor.hpp@{actor.hpp}}
+\doxysubsubsection{\texorpdfstring{EMISSION\_PLACEHOLDER}{EMISSION\_PLACEHOLDER}}
+{\footnotesize\ttfamily \label{actor_8hpp_a6ae911d6602ee94ee39578ab8520052a} 
+\#define EMISSION\+\_\+\+PLACEHOLDER~"{}resources/textures/T\+\_\+\+Default\+\_\+\+E.\+tga"{}}
+
+
+
+Filepath for a fallback emission texture. 
+
+This is a completely black image, meaning no emission by default \Hypertarget{actor_8hpp_acfc88eeb0e56fd3961b1f9ed8436efc4}\index{actor.hpp@{actor.hpp}!RMO\_PLACEHOLDER@{RMO\_PLACEHOLDER}}
+\index{RMO\_PLACEHOLDER@{RMO\_PLACEHOLDER}!actor.hpp@{actor.hpp}}
+\doxysubsubsection{\texorpdfstring{RMO\_PLACEHOLDER}{RMO\_PLACEHOLDER}}
+{\footnotesize\ttfamily \label{actor_8hpp_acfc88eeb0e56fd3961b1f9ed8436efc4} 
+\#define RMO\+\_\+\+PLACEHOLDER~"{}resources/textures/T\+\_\+\+Default\+\_\+\+RMO.\+tga"{}}
+
+
+
+Filepath for a simple RMO texture that is used as fallback if no texture is sent. 
+
+This texture has a roughness of 0.\+5f, a metalic of 0.\+0f and an Ambient Occlusion of 1.\+0f This will be the default PBR settings for every material 
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{actor_8hpp_a0a6a92f666ce85e7aaa009b4a2af96ee}\index{actor.hpp@{actor.hpp}!ActorMap@{ActorMap}}
+\index{ActorMap@{ActorMap}!actor.hpp@{actor.hpp}}
+\doxysubsubsection{\texorpdfstring{ActorMap}{ActorMap}}
+{\footnotesize\ttfamily \label{actor_8hpp_a0a6a92f666ce85e7aaa009b4a2af96ee} 
+typedef std\+::unordered\+\_\+map$<$id\+\_\+t,std\+::shared\+\_\+ptr$<$Actor$>$ $>$ \mbox{\hyperlink{actor_8hpp_a0a6a92f666ce85e7aaa009b4a2af96ee}{bloom\+::\+Actor\+Map}}}
+
+A map of Actor IDs to shared pointers of Actors. This map is used to store and manage all active actors in the game world. The ID is used as the key for efficient lookup and retrieval of individual actors. 

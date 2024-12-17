@@ -100,11 +100,11 @@ $(function(){ initResizable(false); });
 <div class="textblock"><code>#include &quot;<a class="el" href="core_8hpp_source.html">core.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="window_8hpp_source.html">window.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="factory_8hpp_source.html">factory.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="object_8hpp_source.html">object.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="devices_8hpp_source.html">render/devices.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="renderer_8hpp_source.html">render/renderer.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="simple__render__system_8hpp_source.html">simple_render_system.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="camera_8hpp_source.html">camera.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="camera_8hpp_source.html">objects/camera.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="descriptors_8hpp_source.html">render/descriptors.hpp</a>&quot;</code><br />
 <code>#include &lt;<a class="el" href="bloom__header_8hpp_source.html">bloom_header.hpp</a>&gt;</code><br />
 </div>
 <p><a href="engine_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -143,7 +143,7 @@ Functions</h2></td></tr>
 <p>Creates an entry point for the Bloom engine. </p>
 <p>This function serves as the primary entry point for the engine, allowing it to handle the main execution flow instead of the game directly. By abstracting the <code>main</code> function, the engine can take full control over initialization, execution, and shutdown processes.</p>
 <dl class="section note"><dt>Note</dt><dd>For future Xein: This design is intentional to ensure that the engine manages the <code>main</code> function rather than the game project. Any game-specific logic should integrate with this entry point.</dd></dl>
-<p>While this function is declared here, its implementation resides in main.cpp within the game project. This separation ensures modularity between the engine and game layers.</p>
+<p>While this function is declared here, its implementation resides in <a class="el" href="main_8cpp.html" title="[Brief description of the file&#39;s purpose]">main.cpp</a> within the game project. This separation ensures modularity between the engine and game layers.</p>
 <dl class="section return"><dt>Returns</dt><dd>A pointer to the <code>Engine</code> class instance, which is used to manage the engine's lifecycle. </dd></dl>
 
 </div>

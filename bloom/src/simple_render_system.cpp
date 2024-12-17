@@ -81,7 +81,7 @@ void SimpleRenderSystem::RenderObjects(render::FrameInfo& frameInfo, ActorMap ac
 
     SimplePushConstantData push{};
     push.color = actor->tintColor;
-    push.transform = actor->transform.mat4();
+    push.transform = actor->transform.Matrix();
 
     vkCmdPushConstants(
       frameInfo.commandBuffer,

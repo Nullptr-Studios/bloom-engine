@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['createengine_0',['CreateEngine',['../engine_8hpp.html#a8a68fb9b4e5dc5c0eb680b3f32781872',1,'bloom']]],
-  ['createobject_1',['CreateObject',['../classbloom_1_1_factory.html#a10c277ff8d3e61c1f8475580acd046fd',1,'bloom::Factory']]]
+  ['actor_0',['Actor',['../classbloom_1_1_actor.html#a48c5292c424235db32b6a4ffd57789f6',1,'bloom::Actor']]],
+  ['addbinding_1',['AddBinding',['../classbloom_1_1render_1_1_descriptor_set_layout_1_1_builder.html#adeb29f4dde4cad9bbd6fcd42bab03260',1,'bloom::render::DescriptorSetLayout::Builder']]],
+  ['addpoolsize_2',['AddPoolSize',['../classbloom_1_1render_1_1_descriptor_pool_1_1_builder.html#a49dd7f85816d0d83ed079b5939bb9c53',1,'bloom::render::DescriptorPool::Builder']]],
+  ['allocatedescriptor_3',['AllocateDescriptor',['../classbloom_1_1render_1_1_descriptor_pool.html#a19d33fdb25a5815ea41c1a3caa970842',1,'bloom::render::DescriptorPool']]]
 ];

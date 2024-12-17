@@ -91,16 +91,33 @@ $(function(){ initResizable(false); });
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classbloom_1_1_object-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">bloom::Object Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Base class for all objects in the game world.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="object_8hpp_source.html">object.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for bloom::Object:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classbloom_1_1_object.png" usemap="#bloom::Object_map" alt=""/>
+  <map id="bloom::Object_map" name="bloom::Object_map">
+<area href="classbloom_1_1_actor.html" title="Represents a renderable and potentially interactive object within the game world." alt="bloom::Actor" shape="rect" coords="0,56,149,80"/>
+<area href="classbloom_1_1_camera.html" title="Represents a camera within the game world, providing a view and projection for rendering." alt="bloom::Camera" shape="rect" coords="159,56,308,80"/>
+<area href="classwanderer_1_1_editor_camera.html" alt="wanderer::EditorCamera" shape="rect" coords="159,112,308,136"/>
+  </map>
+</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2d5d96df2b3a38ca832fafb1831ba60a" id="r_a2d5d96df2b3a38ca832fafb1831ba60a"><td class="memItemLeft" align="right" valign="top"><a id="a2d5d96df2b3a38ca832fafb1831ba60a" name="a2d5d96df2b3a38ca832fafb1831ba60a"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Object</b> (const id_t id)</td></tr>
-<tr class="separator:a2d5d96df2b3a38ca832fafb1831ba60a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1d557ffa7496298977cfbfdae1d4daf" id="r_ae1d557ffa7496298977cfbfdae1d4daf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae1d557ffa7496298977cfbfdae1d4daf">Object</a> (const id_t id, <a class="el" href="classbloom_1_1render_1_1_devices.html">render::Devices</a> *devices)</td></tr>
+<tr class="memdesc:ae1d557ffa7496298977cfbfdae1d4daf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new <a class="el" href="classbloom_1_1_object.html" title="Base class for all objects in the game world.">Object</a>.  <br /></td></tr>
+<tr class="separator:ae1d557ffa7496298977cfbfdae1d4daf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d2aef5263bdfa726167a7465d5e9ec6" id="r_a5d2aef5263bdfa726167a7465d5e9ec6"><td class="memItemLeft" align="right" valign="top"><a id="a5d2aef5263bdfa726167a7465d5e9ec6" name="a5d2aef5263bdfa726167a7465d5e9ec6"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Object</b> (const <a class="el" href="classbloom_1_1_object.html">Object</a> &amp;)=delete</td></tr>
 <tr class="separator:a5d2aef5263bdfa726167a7465d5e9ec6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -113,27 +130,199 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3bba1530790a31a41e0493794890cc72" id="r_a3bba1530790a31a41e0493794890cc72"><td class="memItemLeft" align="right" valign="top"><a id="a3bba1530790a31a41e0493794890cc72" name="a3bba1530790a31a41e0493794890cc72"></a>
 <a class="el" href="classbloom_1_1_object.html">Object</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="classbloom_1_1_object.html">Object</a> &amp;&amp;)=default</td></tr>
 <tr class="separator:a3bba1530790a31a41e0493794890cc72"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab83ebdaed718b62ace71bd6877eeca8a" id="r_ab83ebdaed718b62ace71bd6877eeca8a"><td class="memItemLeft" align="right" valign="top"><a id="ab83ebdaed718b62ace71bd6877eeca8a" name="ab83ebdaed718b62ace71bd6877eeca8a"></a>
-id_t&#160;</td><td class="memItemRight" valign="bottom"><b>GetID</b> () const</td></tr>
+<tr class="memitem:a18d5a73479f99ed1fbb47b8b8b11acbc" id="r_a18d5a73479f99ed1fbb47b8b8b11acbc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a18d5a73479f99ed1fbb47b8b8b11acbc">Begin</a> ()</td></tr>
+<tr class="memdesc:a18d5a73479f99ed1fbb47b8b8b11acbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called at the beginning of the scene.  <br /></td></tr>
+<tr class="separator:a18d5a73479f99ed1fbb47b8b8b11acbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a010ab8fafcd25b7260ac0005d9d43091" id="r_a010ab8fafcd25b7260ac0005d9d43091"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a010ab8fafcd25b7260ac0005d9d43091">Tick</a> (float deltaTime)</td></tr>
+<tr class="memdesc:a010ab8fafcd25b7260ac0005d9d43091"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called every frame to update the object's state.  <br /></td></tr>
+<tr class="separator:a010ab8fafcd25b7260ac0005d9d43091"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a7cc6230ab4a3ee158126469cf04352" id="r_a7a7cc6230ab4a3ee158126469cf04352"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7a7cc6230ab4a3ee158126469cf04352">End</a> ()</td></tr>
+<tr class="memdesc:a7a7cc6230ab4a3ee158126469cf04352"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called at the end of the scene.  <br /></td></tr>
+<tr class="separator:a7a7cc6230ab4a3ee158126469cf04352"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab83ebdaed718b62ace71bd6877eeca8a" id="r_ab83ebdaed718b62ace71bd6877eeca8a"><td class="memItemLeft" align="right" valign="top">id_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab83ebdaed718b62ace71bd6877eeca8a">GetID</a> () const</td></tr>
+<tr class="memdesc:ab83ebdaed718b62ace71bd6877eeca8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the object's unique ID.  <br /></td></tr>
 <tr class="separator:ab83ebdaed718b62ace71bd6877eeca8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a10805aae05e9965d0232e319cc43d9eb" id="r_a10805aae05e9965d0232e319cc43d9eb"><td class="memItemLeft" align="right" valign="top"><a id="a10805aae05e9965d0232e319cc43d9eb" name="a10805aae05e9965d0232e319cc43d9eb"></a>
 <a class="el" href="structbloom_1_1_transform.html">Transform</a>&#160;</td><td class="memItemRight" valign="bottom"><b>transform</b></td></tr>
+<tr class="memdesc:a10805aae05e9965d0232e319cc43d9eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">The object's transform, representing its position, rotation, and scale. <br /></td></tr>
 <tr class="separator:a10805aae05e9965d0232e319cc43d9eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94c1ad21f8d80a59965ad96c25b7cc6e" id="r_a94c1ad21f8d80a59965ad96c25b7cc6e"><td class="memItemLeft" align="right" valign="top"><a id="a94c1ad21f8d80a59965ad96c25b7cc6e" name="a94c1ad21f8d80a59965ad96c25b7cc6e"></a>
-std::shared_ptr&lt; <a class="el" href="classbloom_1_1render_1_1_model.html">render::Model</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>model</b></td></tr>
-<tr class="separator:a94c1ad21f8d80a59965ad96c25b7cc6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2819987ef859ce9b617b09c44fb7d2ea" id="r_a2819987ef859ce9b617b09c44fb7d2ea"><td class="memItemLeft" align="right" valign="top"><a id="a2819987ef859ce9b617b09c44fb7d2ea" name="a2819987ef859ce9b617b09c44fb7d2ea"></a>
-glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><b>color</b></td></tr>
-<tr class="separator:a2819987ef859ce9b617b09c44fb7d2ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f2ae94da1b0bf534f69a34fa608c72a" id="r_a5f2ae94da1b0bf534f69a34fa608c72a"><td class="memItemLeft" align="right" valign="top"><a id="a5f2ae94da1b0bf534f69a34fa608c72a" name="a5f2ae94da1b0bf534f69a34fa608c72a"></a>
-<a class="el" href="classbloom_1_1render_1_1_texture.html">render::Texture</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>texture</b></td></tr>
-<tr class="separator:a5f2ae94da1b0bf534f69a34fa608c72a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:ae999a5538f3bdac566d964013dde8b7d" id="r_ae999a5538f3bdac566d964013dde8b7d"><td class="memItemLeft" align="right" valign="top"><a id="ae999a5538f3bdac566d964013dde8b7d" name="ae999a5538f3bdac566d964013dde8b7d"></a>
+<a class="el" href="classbloom_1_1render_1_1_devices.html">render::Devices</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>m_devices</b> = nullptr</td></tr>
+<tr class="memdesc:ae999a5538f3bdac566d964013dde8b7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the Vulkan device management object. <br /></td></tr>
+<tr class="separator:ae999a5538f3bdac566d964013dde8b7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Base class for all objects in the game world. </p>
+<p>The <a class="el" href="classbloom_1_1_object.html" title="Base class for all objects in the game world.">Object</a> class provides a common interface and basic functionality for all objects in the game. It manages the object's ID and provides virtual methods for the game loop stages: <code>Begin</code>, <code>Tick</code>, and <code>End</code>. Derived classes can override these methods to implement their specific behavior. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ae1d557ffa7496298977cfbfdae1d4daf" name="ae1d557ffa7496298977cfbfdae1d4daf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1d557ffa7496298977cfbfdae1d4daf">&#9670;&#160;</a></span>Object()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bloom::Object::Object </td>
+          <td>(</td>
+          <td class="paramtype">const id_t</td>          <td class="paramname"><span class="paramname"><em>id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classbloom_1_1render_1_1_devices.html">render::Devices</a> *</td>          <td class="paramname"><span class="paramname"><em>devices</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructs a new <a class="el" href="classbloom_1_1_object.html" title="Base class for all objects in the game world.">Object</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>The unique identifier for this object. </td></tr>
+    <tr><td class="paramname">devices</td><td>A pointer to the Vulkan device management object. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a18d5a73479f99ed1fbb47b8b8b11acbc" name="a18d5a73479f99ed1fbb47b8b8b11acbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18d5a73479f99ed1fbb47b8b8b11acbc">&#9670;&#160;</a></span>Begin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void bloom::Object::Begin </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Called at the beginning of the scene. </p>
+
+<p>Reimplemented in <a class="el" href="classbloom_1_1_actor.html#abb09ecd4a3722ba2dbf298ce115514ec">bloom::Actor</a>, and <a class="el" href="classbloom_1_1_camera.html#a2d8223c7b3e813dd4730cdfb65c09ad5">bloom::Camera</a>.</p>
+
+</div>
+</div>
+<a id="a7a7cc6230ab4a3ee158126469cf04352" name="a7a7cc6230ab4a3ee158126469cf04352"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a7cc6230ab4a3ee158126469cf04352">&#9670;&#160;</a></span>End()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void bloom::Object::End </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Called at the end of the scene. </p>
+
+<p>Reimplemented in <a class="el" href="classbloom_1_1_actor.html#a2f6ebc7bb27c7ac2c72895fc4f5558bd">bloom::Actor</a>, and <a class="el" href="classbloom_1_1_camera.html#adc3b77f1fdc18380c9f4dbb564903f74">bloom::Camera</a>.</p>
+
+</div>
+</div>
+<a id="ab83ebdaed718b62ace71bd6877eeca8a" name="ab83ebdaed718b62ace71bd6877eeca8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab83ebdaed718b62ace71bd6877eeca8a">&#9670;&#160;</a></span>GetID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">id_t bloom::Object::GetID </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieves the object's unique ID. </p>
+<dl class="section return"><dt>Returns</dt><dd>The object's ID. </dd></dl>
+
+</div>
+</div>
+<a id="a010ab8fafcd25b7260ac0005d9d43091" name="a010ab8fafcd25b7260ac0005d9d43091"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a010ab8fafcd25b7260ac0005d9d43091">&#9670;&#160;</a></span>Tick()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void bloom::Object::Tick </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>deltaTime</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Called every frame to update the object's state. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">deltaTime</td><td>The time elapsed since the last frame. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented in <a class="el" href="classbloom_1_1_actor.html#a68a9c1ea7cbe1ce76783d334ce377e01">bloom::Actor</a>, <a class="el" href="classbloom_1_1_camera.html#a3bdd365fbd68115e04871bbecba7b7e6">bloom::Camera</a>, and <a class="el" href="classwanderer_1_1_editor_camera.html#a24a2839b7ce2cc98000a94f7bcd41b5f">wanderer::EditorCamera</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/xgoni/bloom/bloom/src/<a class="el" href="object_8hpp_source.html">object.hpp</a></li>
+<li>C:/Users/xgoni/bloom/bloom/src/objects/<a class="el" href="object_8hpp_source.html">object.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
