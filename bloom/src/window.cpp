@@ -6,57 +6,51 @@
 
 namespace bloom {
 
-Window::Window(int width, int height, std::string title)
-  : m_width(width), m_height(height), m_title(title) { }
+Window::Window(int width, int height, const std::string& title) {
+  m_data.width = width;
+  m_data.height = height;
+  m_data.title = title;
+}
 
 Window::~Window() {
-  glfwDestroyWindow(_window);
+  glfwDestroyWindow(m_window);
   glfwTerminate();
 }
 
-void Window::OnInit() {
-  m_data.title = m_title;
-  m_data.width = m_width;
-  m_data.height = m_height;
-  SetVSync(true);
+void Window::OnBegin() {
+  glfwSetErrorCallback(GlfwErrorCallback);
 
-  glfwSetErrorCallback(GLFWErrorCallback);
-
-  BLOOM_LOG("Creating window {0} ({1}, {2})", m_title, m_width, m_height);
-
+  BLOOM_LOG("Creating window {0} ({1}, {2})", m_data.title, m_data.width, m_data.height);
   glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
   glfwWindowHint(GLFW_RESIZABLE, GLFW_TRUE);
-  _window = glfwCreateWindow(m_width, m_height, m_title.c_str(), nullptr, nullptr);
-  glfwSetWindowUserPointer(_window, this);
-  glfwSetFramebufferSizeCallback(_window, FramebufferResizedCallback);
+  m_window = glfwCreateWindow(m_data.width, m_data.height, m_data.title.c_str(), nullptr, nullptr);
+  glfwSetWindowUserPointer(m_window, this);
+  glfwSetFramebufferSizeCallback(m_window, FramebufferResizedCallback);
 
-  if(_window == nullptr) {
+  if(m_window == nullptr) {
     BLOOM_CRITICAL("Failed to create GLFW window");
   }
 
-  // TODO: This is OpenGL specific
-  //glfwMakeContextCurrent(_window);
-  glfwSetWindowUserPointer(_window, &m_data);
+  glfwSetWindowUserPointer(m_window, &m_data);
   BLOOM_INFO("Window created");
 
-  #pragma region callbacks
-
-  glfwSetWindowSizeCallback(_window, [](GLFWwindow* window, int width, int height) {
-    WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+  // region Callbacks
+  glfwSetWindowSizeCallback(m_window, [](GLFWwindow* window, int width, int height) {
+    WindowData& data = *static_cast<WindowData*>(glfwGetWindowUserPointer(window));
     data.width = width;
     data.height = height;
     WindowResizeEvent event(width, height);
     data.callback(event);
   });
 
-  glfwSetWindowCloseCallback(_window, [](GLFWwindow* window) {
-    WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+  glfwSetWindowCloseCallback(m_window, [](GLFWwindow* window) {
+    WindowData& data = *static_cast<WindowData*>(glfwGetWindowUserPointer(window));
     WindowCloseEvent event;
     data.callback(event);
   });
 
-  glfwSetKeyCallback(_window, [](GLFWwindow* window, int key, int scancode, int action, int mods) {
-    WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+  glfwSetKeyCallback(m_window, [](GLFWwindow* window, int key, int scancode, int action, int mods) {
+    WindowData& data = *static_cast<WindowData*>(glfwGetWindowUserPointer(window));
     switch(action) {
       case GLFW_PRESS: {
         KeyPressedEvent event(key,0);
@@ -73,11 +67,13 @@ void Window::OnInit() {
         data.callback(event);
         break;
       }
+      default:
+        break;
     }
   });
 
-  glfwSetMouseButtonCallback(_window, [](GLFWwindow* window, int button, int action, int mods) {
-    WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+  glfwSetMouseButtonCallback(m_window, [](GLFWwindow* window, int button, int action, int mods) {
+    WindowData& data = *static_cast<WindowData *>(glfwGetWindowUserPointer(window));
     switch(action) {
       case GLFW_PRESS: {
         MouseButtonPressedEvent event(button);
@@ -89,36 +85,29 @@ void Window::OnInit() {
         data.callback(event);
         break;
       }
+      default:
+        break;
     }
   });
 
-  glfwSetScrollCallback(_window, [](GLFWwindow* window, double xOffset, double yOffset) {
-    WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
-    MouseScrolledEvent event((float)xOffset, (float)yOffset);
+  glfwSetScrollCallback(m_window, [](GLFWwindow* window, double xOffset, double yOffset) {
+    WindowData& data = *static_cast<WindowData *>(glfwGetWindowUserPointer(window));
+    MouseScrolledEvent event(static_cast<float>(xOffset), static_cast<float>(yOffset));
     data.callback(event);
   });
 
-  glfwSetCursorPosCallback(_window, [](GLFWwindow* window, double xPos, double yPos) {
-    WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
-    MouseMovedEvent event((float)xPos, (float)yPos);
+  glfwSetCursorPosCallback(m_window, [](GLFWwindow* window, double xPos, double yPos) {
+    WindowData& data = *static_cast<WindowData *>(glfwGetWindowUserPointer(window));
+    MouseMovedEvent event(static_cast<float>(xPos), static_cast<float>(yPos));
     data.callback(event);
   });
-
-#pragma endregion
 }
 
+// region Tick
 void Window::OnTick() {
   glfwPollEvents();
   // TODO: This is OpenGL specific
   //glfwSwapBuffers(_window);
-}
-
-void Window::SetVSync(bool enabled) {
-  // This is OpenGL specific
-  /* if(enabled) glfwSwapInterval(1);
-  else glfwSwapInterval(0);
-
-  _data.vsync = enabled;*/
 }
 
 double Window::GetDeltaTime() {
@@ -127,31 +116,27 @@ double Window::GetDeltaTime() {
   return currentFrame;
 }
 
-void Window::CreateWindowSurface(VkInstance instance, VkSurfaceKHR *surface) {
-  if(glfwCreateWindowSurface(instance, _window, nullptr, surface) != VK_SUCCESS) {
+void Window::CreateWindowSurface(VkInstance instance, VkSurfaceKHR *surface) const {
+  if(glfwCreateWindowSurface(instance, m_window, nullptr, surface) != VK_SUCCESS) {
     BLOOM_CRITICAL("Failed to create window surface");
   }
 }
 
 void Window::FramebufferResizedCallback(GLFWwindow *window, int width, int height) {
-  auto wd = reinterpret_cast<Window*>(glfwGetWindowUserPointer(window));
+  const auto wd = static_cast<Window*>(glfwGetWindowUserPointer(window));
   wd->m_framebufferResized = true;
   wd->SetDimensions(width, height);
 }
 
-void Window::SetDimensions(int width, int height) {
-  m_width = width;
-  m_height = height;
+void Window::SetDimensions(const int width, const int height) {
   m_data.width = width;
   m_data.height = height;
 }
 
-void Window::GLFWErrorCallback(int error, const char *description) {
-  //BLOOM_ERROR("GLFW error ({0}): {1}", error, description);
+void Window::GlfwErrorCallback(int error, const char *description) {
+  BLOOM_ERROR("GLFW error ({0}): {1}", error, description);
 }
 
-void Window::CloseWindow() {
-  glfwSetWindowShouldClose(_window, GLFW_TRUE);
-}
+void Window::OnCloseWindow() const { glfwSetWindowShouldClose(m_window, GLFW_TRUE); }
 
 }

@@ -1,24 +1,25 @@
 #include "pipeline.hpp"
+#include "model.hpp"
 #include <fstream>
 
 namespace bloom::render {
 
 Pipeline::Pipeline(Devices &device, const std::string &vertPath, const std::string &fragPath,
-    const PipelineConfiguration &config) : _device(device) {
+    const PipelineConfiguration &config) : m_device(device) {
   CreatePipeline(vertPath, fragPath, config);
 }
 
 Pipeline::~Pipeline() {
-  vkDestroyShaderModule(_device.device(), _vertShaderModule, nullptr);
-  vkDestroyShaderModule(_device.device(), _fragShaderModule, nullptr);
-  vkDestroyPipeline(_device.device(), _graphicsPipeline, nullptr);
+  vkDestroyShaderModule(m_device.Device(), m_vertShaderModule, nullptr);
+  vkDestroyShaderModule(m_device.Device(), m_fragShaderModule, nullptr);
+  vkDestroyPipeline(m_device.Device(), m_graphicsPipeline, nullptr);
 }
 
 void Pipeline::Bind(VkCommandBuffer commandBuffer) {
-  vkCmdBindPipeline(commandBuffer, VK_PIPELINE_BIND_POINT_GRAPHICS, _graphicsPipeline);
+  vkCmdBindPipeline(commandBuffer, VK_PIPELINE_BIND_POINT_GRAPHICS, m_graphicsPipeline);
 }
 
-void Pipeline::defaultPipelineConfig(PipelineConfiguration& config) {
+void Pipeline::DefaultPipelineConfig(PipelineConfiguration& config) {
   config.inputAssemblyInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_INPUT_ASSEMBLY_STATE_CREATE_INFO;
   config.inputAssemblyInfo.topology = VK_PRIMITIVE_TOPOLOGY_TRIANGLE_LIST;
   config.inputAssemblyInfo.primitiveRestartEnable = VK_FALSE;
@@ -114,19 +115,19 @@ void Pipeline::CreatePipeline(const std::string &vertPath, const std::string &fr
   auto vertShader = ReadFile(vertPath);
   auto fragShader = ReadFile(fragPath);
 
-  CreateShaderModule(vertShader, &_vertShaderModule);
-  CreateShaderModule(fragShader, &_fragShaderModule);
+  CreateShaderModule(vertShader, &m_vertShaderModule);
+  CreateShaderModule(fragShader, &m_fragShaderModule);
   VkPipelineShaderStageCreateInfo shaderStages[2];
   shaderStages[0].sType = VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO;
   shaderStages[0].stage = VK_SHADER_STAGE_VERTEX_BIT;
-  shaderStages[0].module = _vertShaderModule;
+  shaderStages[0].module = m_vertShaderModule;
   shaderStages[0].pName = "main";
   shaderStages[0].flags = 0;
   shaderStages[0].pNext = nullptr;
   shaderStages[0].pSpecializationInfo = nullptr;
   shaderStages[1].sType = VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO;
   shaderStages[1].stage = VK_SHADER_STAGE_FRAGMENT_BIT;
-  shaderStages[1].module = _fragShaderModule;
+  shaderStages[1].module = m_fragShaderModule;
   shaderStages[1].pName = "main";
   shaderStages[1].flags = 0;
   shaderStages[1].pNext = nullptr;
@@ -162,7 +163,7 @@ void Pipeline::CreatePipeline(const std::string &vertPath, const std::string &fr
   pipelineInfo.basePipelineIndex = -1;
   pipelineInfo.basePipelineHandle = VK_NULL_HANDLE;
 
-  VkResult result = vkCreateGraphicsPipelines(_device.device(), VK_NULL_HANDLE, 1, &pipelineInfo, nullptr, &_graphicsPipeline);
+  VkResult result = vkCreateGraphicsPipelines(m_device.Device(), VK_NULL_HANDLE, 1, &pipelineInfo, nullptr, &m_graphicsPipeline);
   if (result != VK_SUCCESS) {
     BLOOM_CRITICAL("Failed to create graphics pipeline");
   }
@@ -174,7 +175,7 @@ void Pipeline::CreateShaderModule(const std::vector<char> &code, VkShaderModule*
   createInfo.codeSize = code.size();
   createInfo.pCode = reinterpret_cast<const uint32_t*>(code.data());
 
-  if (vkCreateShaderModule(_device.device(), &createInfo, nullptr, shaderModule) != VK_SUCCESS) {
+  if (vkCreateShaderModule(m_device.Device(), &createInfo, nullptr, shaderModule) != VK_SUCCESS) {
     BLOOM_ERROR("Failed to create shader module");
   }
 }

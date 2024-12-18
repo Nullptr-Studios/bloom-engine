@@ -58,10 +58,11 @@ void Renderer::EndFrame() {
   }
 
   m_frameStarted = false;
+  // TODO: This should be a char
   m_currentFrameIndex = (m_currentFrameIndex + 1) % SwapChain::MAX_FRAMES_IN_FLIGHT;
 }
 
-void Renderer::BeginRenderPass(VkCommandBuffer commandBuffer) {
+void Renderer::BeginRenderPass(VkCommandBuffer commandBuffer) const {
   if (!m_frameStarted) {
     BLOOM_WARN("Can't call BeginRenderPass if frame is not in progress");
     return;
@@ -98,7 +99,7 @@ void Renderer::BeginRenderPass(VkCommandBuffer commandBuffer) {
   vkCmdSetScissor(commandBuffer, 0, 1, &scissor);
 }
 
-void Renderer::EndRenderPass(VkCommandBuffer commandBuffer) {
+void Renderer::EndRenderPass(VkCommandBuffer commandBuffer) const {
   if (!m_frameStarted) {
     BLOOM_WARN("Can't call EndRenderPass if frame is not in progress");
     return;
@@ -116,9 +117,9 @@ void Renderer::CreateCommandBuffers() {
   VkCommandBufferAllocateInfo allocInfo{};
   allocInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_ALLOCATE_INFO;
   allocInfo.level = VK_COMMAND_BUFFER_LEVEL_PRIMARY;
-  allocInfo.commandPool = m_devices->getCommandPool();
+  allocInfo.commandPool = m_devices->GetCommandPool();
   allocInfo.commandBufferCount = static_cast<uint32_t>(m_commandBuffers.size());
-  auto allocResult = vkAllocateCommandBuffers(m_devices->device(), &allocInfo, m_commandBuffers.data());
+  auto allocResult = vkAllocateCommandBuffers(m_devices->Device(), &allocInfo, m_commandBuffers.data());
 
   if (allocResult != VK_SUCCESS) {
     BLOOM_CRITICAL("Failed to allocate command buffers");
@@ -127,8 +128,8 @@ void Renderer::CreateCommandBuffers() {
 
 void Renderer::FreeCommandBuffers() {
   vkFreeCommandBuffers(
-    m_devices->device(),
-    m_devices->getCommandPool(),
+    m_devices->Device(),
+    m_devices->GetCommandPool(),
     static_cast<unsigned int>(m_commandBuffers.size()),
     m_commandBuffers.data());
   m_commandBuffers.clear();
@@ -141,15 +142,15 @@ void Renderer::RecreateSwapChain() {
     extent = m_window->GetExtent();
     glfwWaitEvents();
   }
-  vkDeviceWaitIdle(m_devices->device());
+  vkDeviceWaitIdle(m_devices->Device());
 
-  if (m_swapChain == nullptr) {
+  if (m_swapChain == nullptr)
     m_swapChain = std::make_unique<render::SwapChain>(*m_devices, extent);
-  } else {
+  else {
     std::shared_ptr<SwapChain> oldSwapChain = std::move(m_swapChain);
     m_swapChain = std::make_unique<render::SwapChain>(*m_devices, extent, oldSwapChain);
 
-    if (!oldSwapChain->compareSwapFormats(*m_swapChain.get())) {
+    if (!oldSwapChain->CompareSwapFormats(*m_swapChain.get())) {
       BLOOM_WARN("Swap chain image format or depth format changed, recreating command buffers");
       FreeCommandBuffers();
       CreateCommandBuffers();
@@ -158,4 +159,4 @@ void Renderer::RecreateSwapChain() {
   // CreatePipeline();
 }
 
-} // namespace bloom
+}

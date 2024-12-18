@@ -90,7 +90,7 @@ $(function(){ initResizable(false); });
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
-<a href="#enum-members">Enumerations</a>  </div>
+<a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle"><div class="title">core.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -104,30 +104,14 @@ $(function(){ initResizable(false); });
 Macros</h2></td></tr>
 <tr class="memitem:ad27cc17b25bb93134368d5eb21126eae" id="r_ad27cc17b25bb93134368d5eb21126eae"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad27cc17b25bb93134368d5eb21126eae">BIT</a>(x)</td></tr>
 <tr class="separator:ad27cc17b25bb93134368d5eb21126eae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb4e5b3602145f9e0c024a1b05c260a8" id="r_adb4e5b3602145f9e0c024a1b05c260a8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adb4e5b3602145f9e0c024a1b05c260a8">DELETE_COPY_CONSTRUCTOR</a>(classname)</td></tr>
+<tr class="separator:adb4e5b3602145f9e0c024a1b05c260a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:aa4c95a4acc48b3bf4a7513709572e4e4" id="r_aa4c95a4acc48b3bf4a7513709572e4e4"><td class="memItemLeft" align="right" valign="top"><a id="aa4c95a4acc48b3bf4a7513709572e4e4" name="aa4c95a4acc48b3bf4a7513709572e4e4"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>megabool</b> { <br />
-&#160;&#160;<b>FALSE</b>
-, <b>TRUE</b>
-, <b>NEITHER</b>
-, <b>BOTH</b>
-, <br />
-&#160;&#160;<b>MAYBE</b>
-, <b>TRUEISH</b>
-, <b>FALSEISH</b>
-, <b>IT_DEPENDS</b>
-, <br />
-&#160;&#160;<b>OSCILLATING</b>
-, <b>ITS_COMPLICATED</b>
-, <b>DOUBLE_FALSE</b>
-, <b>DOUBLE_TRUE</b>
-, <br />
-&#160;&#160;<b>UNKNOWN</b>
-, <b>UNDEFINED</b>
-<br />
- }</td></tr>
-<tr class="separator:aa4c95a4acc48b3bf4a7513709572e4e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:abaf665e52c9979a5f6eb9ecfce756efc" id="r_abaf665e52c9979a5f6eb9ecfce756efc"><td class="memItemLeft" align="right" valign="top"><a id="abaf665e52c9979a5f6eb9ecfce756efc" name="abaf665e52c9979a5f6eb9ecfce756efc"></a>
+typedef unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>id_t</b></td></tr>
+<tr class="separator:abaf665e52c9979a5f6eb9ecfce756efc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Macro definitions for Bloom. </p>
@@ -149,6 +133,27 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">(1 &lt;&lt; x)</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="adb4e5b3602145f9e0c024a1b05c260a8" name="adb4e5b3602145f9e0c024a1b05c260a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb4e5b3602145f9e0c024a1b05c260a8">&#9670;&#160;</a></span>DELETE_COPY_CONSTRUCTOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DELETE_COPY_CONSTRUCTOR</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>classname</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">  classname(<span class="keyword">const</span> classname&amp;) = <span class="keyword">delete</span>; \</div>
+<div class="line">  classname&amp; operator=(<span class="keyword">const</span> classname&amp;) = <span class="keyword">delete</span>; \</div>
+<div class="line">  classname(classname&amp;&amp;) = <span class="keywordflow">default</span>; \</div>
+<div class="line">  classname&amp; operator=(classname&amp;&amp;) = <span class="keywordflow">default</span></div>
 </div><!-- fragment -->
 </div>
 </div>

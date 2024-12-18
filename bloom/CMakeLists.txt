@@ -9,6 +9,8 @@ set(VULKAN_SDK "C:/VulkanSDK/1.3.296.0")
 add_library(bloom-engine SHARED
         bloom.hpp
         bloom_header.hpp
+        src/render/descriptors.cpp
+        src/render/descriptors.hpp
         src/engine.hpp
         src/engine.cpp
         src/core.hpp
@@ -31,18 +33,19 @@ add_library(bloom-engine SHARED
         src/render/model.cpp
         src/render/renderer.hpp
         src/render/renderer.cpp
-        src/object.hpp
+        src/objects/object.hpp
         src/factory.hpp
         src/simple_render_system.cpp
         src/simple_render_system.hpp
         src/render/texture.cpp
         src/render/texture.hpp
-        src/render/descriptor_set_layout.cpp
-        src/render/descriptor_set_layout.hpp
-        src/render/descriptor_pool.cpp
-        src/render/descriptor_pool.hpp
-        src/camera.cpp
-        src/camera.hpp
+        src/objects/camera.cpp
+        src/objects/camera.hpp
+        src/objects/actor.cpp
+        src/objects/actor.hpp
+        src/render/buffer.cpp
+        src/render/buffer.hpp
+        src/render/frame_info.hpp
 )
 
 target_precompile_headers(bloom-engine PRIVATE bloom_header.hpp)

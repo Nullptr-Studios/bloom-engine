@@ -13,53 +13,61 @@
 
 namespace bloom {
 
+/**
+ * \class Window
+ * \brief Manages the window and its events.
+ *
+ * The Window class is responsible for creating and managing the window, handling events,
+ * and providing various window-related functionalities such as VSync and window resizing
+ */
 class BLOOM_API Window {
 
 public:
-  using EventCalbackFn = std::function<void(Event&)>;
+  using EventCallbackFn = std::function<void(Event&)>; ///< Type alias for the event callback function
 
-  Window(int width, int height, std::string title);
+  Window(int width, int height, const std::string &title);
   ~Window();
 
-  // Functions
-  void OnInit();
+  void OnBegin();
   void OnTick();
-  void CloseWindow();
+  void OnCloseWindow() const;
 
-  inline void SetEventCallback(const EventCalbackFn& callback) { m_data.callback = callback; };
-  void SetVSync(bool enabled);
-  inline bool IsVSync() const { return m_data.vsync; };
-  inline bool ShouldClose() const { return glfwWindowShouldClose(_window); };
-  VkExtent2D GetExtent() { return {static_cast<uint32_t>(m_width), static_cast<uint32_t>(m_height)}; }
+  void SetEventCallback(const EventCallbackFn& callback) { m_data.callback = callback; };
+  bool GetCloseEvent() const { return glfwWindowShouldClose(m_window); };
+  VkExtent2D GetExtent() const { return {m_data.width, m_data.height}; }
+  bool GetWindowResized() const { return m_framebufferResized; }
   double GetDeltaTime();
 
-  void CreateWindowSurface(VkInstance instance, VkSurfaceKHR* surface);
-
-  bool GetWindowResized() { return m_framebufferResized; }
+  /**
+   * \brief Creates a Vulkan window surface.
+   * \param instance The Vulkan instance.
+   * \param surface The Vulkan surface to create.
+   */
+  void CreateWindowSurface(VkInstance instance, VkSurfaceKHR* surface) const;
+  /**
+   * \brief Creates a Vulkan window surface.
+   * \param instance The Vulkan instance.
+   * \param surface The Vulkan surface to create.
+   */
   void ResetWindowResized() { m_framebufferResized = false; }
 
-
-  // Variables
-
-
 private:
-  GLFWwindow* _window;
+  GLFWwindow* m_window = nullptr;
   static void FramebufferResizedCallback(GLFWwindow* window, int width, int height);
+  static void GlfwErrorCallback(int error, const char* description);
   void SetDimensions(int width, int height);
 
-  int m_width;
-  int m_height;
   bool m_framebufferResized = false;
-  std::string m_title;
 
+  /**
+   * \struct WindowData
+   * \brief Holds data related to the window.
+   */
   struct WindowData {
-    std::string title;
-    int width, height;
-    bool vsync;
-    EventCalbackFn callback;
+    std::string title;          ///< The window title
+    unsigned int width, height; ///< The window dimensions
+    EventCallbackFn callback;   ///< The event callback function
   }m_data;
-
-  static void GLFWErrorCallback(int error, const char* description);
 };
 
 }

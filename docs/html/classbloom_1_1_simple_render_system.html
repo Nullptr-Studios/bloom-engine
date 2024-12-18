@@ -89,7 +89,6 @@ $(function(){ initResizable(false); });
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
@@ -99,11 +98,6 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structbloom_1_1_simple_render_system_1_1_descriptor_set_pool_sizes.html">DescriptorSetPoolSizes</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a14e11219295516840d5aa8a024111105" id="r_a14e11219295516840d5aa8a024111105"><td class="memItemLeft" align="right" valign="top"><a id="a14e11219295516840d5aa8a024111105" name="a14e11219295516840d5aa8a024111105"></a>
@@ -115,12 +109,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:acd92b23512bf4867312fc96d5a978500" id="r_acd92b23512bf4867312fc96d5a978500"><td class="memItemLeft" align="right" valign="top"><a id="acd92b23512bf4867312fc96d5a978500" name="acd92b23512bf4867312fc96d5a978500"></a>
 <a class="el" href="classbloom_1_1_simple_render_system.html">SimpleRenderSystem</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classbloom_1_1_simple_render_system.html">SimpleRenderSystem</a> &amp;)=delete</td></tr>
 <tr class="separator:acd92b23512bf4867312fc96d5a978500"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa72d9ea0ba1176aaafb51d1b27460314" id="r_aa72d9ea0ba1176aaafb51d1b27460314"><td class="memItemLeft" align="right" valign="top"><a id="aa72d9ea0ba1176aaafb51d1b27460314" name="aa72d9ea0ba1176aaafb51d1b27460314"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Begin</b> (VkRenderPass renderPass)</td></tr>
-<tr class="separator:aa72d9ea0ba1176aaafb51d1b27460314"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a623024024143cfec472d826942a7f022" id="r_a623024024143cfec472d826942a7f022"><td class="memItemLeft" align="right" valign="top"><a id="a623024024143cfec472d826942a7f022" name="a623024024143cfec472d826942a7f022"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>RenderObjects</b> (VkCommandBuffer commandBuffer, std::vector&lt; <a class="el" href="classbloom_1_1_object.html">Object</a> &gt; &amp;objects, const <a class="el" href="classbloom_1_1_camera.html">Camera</a> &amp;camera)</td></tr>
-<tr class="separator:a623024024143cfec472d826942a7f022"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af30abea897d46a95ce27a3963252980c" id="r_af30abea897d46a95ce27a3963252980c"><td class="memItemLeft" align="right" valign="top"><a id="af30abea897d46a95ce27a3963252980c" name="af30abea897d46a95ce27a3963252980c"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>Begin</b> (VkRenderPass renderPass, VkDescriptorSetLayout globalSetLayout, VkDescriptorSetLayout materialSetLayout)</td></tr>
+<tr class="separator:af30abea897d46a95ce27a3963252980c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad25866347485b862083281237eefd2f" id="r_aad25866347485b862083281237eefd2f"><td class="memItemLeft" align="right" valign="top"><a id="aad25866347485b862083281237eefd2f" name="aad25866347485b862083281237eefd2f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>RenderObjects</b> (<a class="el" href="structbloom_1_1render_1_1_frame_info.html">render::FrameInfo</a> &amp;frameInfo, <a class="el" href="actor_8hpp.html#a0a6a92f666ce85e7aaa009b4a2af96ee">ActorMap</a> actors)</td></tr>
+<tr class="separator:aad25866347485b862083281237eefd2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -130,9 +124,9 @@ static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a771d2883e195f815e4450fbf69c5e3c2" id="r_a771d2883e195f815e4450fbf69c5e3c2"><td class="memItemLeft" align="right" valign="top"><a id="a771d2883e195f815e4450fbf69c5e3c2" name="a771d2883e195f815e4450fbf69c5e3c2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>CreatePipelineLayout</b> ()</td></tr>
-<tr class="separator:a771d2883e195f815e4450fbf69c5e3c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8d9b2e2f878ecd4cd8a648ec450811d" id="r_ab8d9b2e2f878ecd4cd8a648ec450811d"><td class="memItemLeft" align="right" valign="top"><a id="ab8d9b2e2f878ecd4cd8a648ec450811d" name="ab8d9b2e2f878ecd4cd8a648ec450811d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>CreatePipelineLayout</b> (VkDescriptorSetLayout globalSetLayout, VkDescriptorSetLayout materialSetLayout)</td></tr>
+<tr class="separator:ab8d9b2e2f878ecd4cd8a648ec450811d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1bcddbe2f8f250de0f6d41cf4f1fd10" id="r_aa1bcddbe2f8f250de0f6d41cf4f1fd10"><td class="memItemLeft" align="right" valign="top"><a id="aa1bcddbe2f8f250de0f6d41cf4f1fd10" name="aa1bcddbe2f8f250de0f6d41cf4f1fd10"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>CreatePipeline</b> (VkRenderPass renderPass)</td></tr>
 <tr class="separator:aa1bcddbe2f8f250de0f6d41cf4f1fd10"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -142,9 +136,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>CreateDescriptorPool<
 <tr class="memitem:a26a77f040b076f391c12e79ec410e157" id="r_a26a77f040b076f391c12e79ec410e157"><td class="memItemLeft" align="right" valign="top"><a id="a26a77f040b076f391c12e79ec410e157" name="a26a77f040b076f391c12e79ec410e157"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>CreateDescriptorSets</b> ()</td></tr>
 <tr class="separator:a26a77f040b076f391c12e79ec410e157"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff232e3a33e49e43b647984c9f07152f" id="r_aff232e3a33e49e43b647984c9f07152f"><td class="memItemLeft" align="right" valign="top"><a id="aff232e3a33e49e43b647984c9f07152f" name="aff232e3a33e49e43b647984c9f07152f"></a>
-VkDescriptorSet&#160;</td><td class="memItemRight" valign="bottom"><b>AllocateDescriptorSet</b> (VkDescriptorSetLayout layout)</td></tr>
-<tr class="separator:aff232e3a33e49e43b647984c9f07152f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -157,18 +148,6 @@ std::unique_ptr&lt; <a class="el" href="classbloom_1_1render_1_1_pipeline.html">
 <tr class="memitem:aac626f240a2e741986965f12592a02bb" id="r_aac626f240a2e741986965f12592a02bb"><td class="memItemLeft" align="right" valign="top"><a id="aac626f240a2e741986965f12592a02bb" name="aac626f240a2e741986965f12592a02bb"></a>
 VkPipelineLayout&#160;</td><td class="memItemRight" valign="bottom"><b>m_pipelineLayout</b></td></tr>
 <tr class="separator:aac626f240a2e741986965f12592a02bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a049702d8bd812ac5a401cfd134382b0a" id="r_a049702d8bd812ac5a401cfd134382b0a"><td class="memItemLeft" align="right" valign="top"><a id="a049702d8bd812ac5a401cfd134382b0a" name="a049702d8bd812ac5a401cfd134382b0a"></a>
-std::unique_ptr&lt; <a class="el" href="classbloom_1_1render_1_1_descriptor_set_layout.html">render::DescriptorSetLayout</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>m_textureLayout</b></td></tr>
-<tr class="separator:a049702d8bd812ac5a401cfd134382b0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a754b2927de74303ca1a6cd42b87bfc37" id="r_a754b2927de74303ca1a6cd42b87bfc37"><td class="memItemLeft" align="right" valign="top"><a id="a754b2927de74303ca1a6cd42b87bfc37" name="a754b2927de74303ca1a6cd42b87bfc37"></a>
-<a class="el" href="structbloom_1_1_simple_render_system_1_1_descriptor_set_pool_sizes.html">DescriptorSetPoolSizes</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_poolSizes</b></td></tr>
-<tr class="separator:a754b2927de74303ca1a6cd42b87bfc37"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2fbffce6b372520218c4f2df0189f655" id="r_a2fbffce6b372520218c4f2df0189f655"><td class="memItemLeft" align="right" valign="top"><a id="a2fbffce6b372520218c4f2df0189f655" name="a2fbffce6b372520218c4f2df0189f655"></a>
-std::unique_ptr&lt; <a class="el" href="classbloom_1_1render_1_1_descriptor_pool.html">render::DescriptorPool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>m_globalPool</b> = nullptr</td></tr>
-<tr class="separator:a2fbffce6b372520218c4f2df0189f655"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad85f291a493a5745efe69c9dfe6247f0" id="r_ad85f291a493a5745efe69c9dfe6247f0"><td class="memItemLeft" align="right" valign="top"><a id="ad85f291a493a5745efe69c9dfe6247f0" name="ad85f291a493a5745efe69c9dfe6247f0"></a>
-std::vector&lt; VkDescriptorSet &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>m_globalDescriptorSets</b></td></tr>
-<tr class="separator:ad85f291a493a5745efe69c9dfe6247f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>C:/Users/xgoni/bloom/bloom/src/<a class="el" href="simple__render__system_8hpp_source.html">simple_render_system.hpp</a></li>

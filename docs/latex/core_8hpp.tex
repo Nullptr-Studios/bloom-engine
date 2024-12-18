@@ -9,30 +9,14 @@ Macro definitions for Bloom.
 \begin{DoxyCompactItemize}
 \item 
 \#define \mbox{\hyperlink{core_8hpp_ad27cc17b25bb93134368d5eb21126eae}{BIT}}(x)
+\item 
+\#define \mbox{\hyperlink{core_8hpp_adb4e5b3602145f9e0c024a1b05c260a8}{DELETE\+\_\+\+COPY\+\_\+\+CONSTRUCTOR}}(classname)
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Enumerations}
+\doxysubsubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{core_8hpp_aa4c95a4acc48b3bf4a7513709572e4e4}\label{core_8hpp_aa4c95a4acc48b3bf4a7513709572e4e4} 
-enum {\bfseries megabool} \{ \newline
-{\bfseries FALSE}
-, {\bfseries TRUE}
-, {\bfseries NEITHER}
-, {\bfseries BOTH}
-, \newline
-{\bfseries MAYBE}
-, {\bfseries TRUEISH}
-, {\bfseries FALSEISH}
-, {\bfseries IT\+\_\+\+DEPENDS}
-, \newline
-{\bfseries OSCILLATING}
-, {\bfseries ITS\+\_\+\+COMPLICATED}
-, {\bfseries DOUBLE\+\_\+\+FALSE}
-, {\bfseries DOUBLE\+\_\+\+TRUE}
-, \newline
-{\bfseries UNKNOWN}
-, {\bfseries UNDEFINED}
- \}
+\Hypertarget{core_8hpp_abaf665e52c9979a5f6eb9ecfce756efc}\label{core_8hpp_abaf665e52c9979a5f6eb9ecfce756efc} 
+typedef unsigned short {\bfseries id\+\_\+t}
 \end{DoxyCompactItemize}
 
 
@@ -57,5 +41,19 @@ Xein \href{mailto:xgonip@gmail.com}{\texttt{ xgonip@gmail.\+com}}
 {\bfseries Value\+:}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{(1\ <<\ x)}
+
+\end{DoxyCode}
+\Hypertarget{core_8hpp_adb4e5b3602145f9e0c024a1b05c260a8}\index{core.hpp@{core.hpp}!DELETE\_COPY\_CONSTRUCTOR@{DELETE\_COPY\_CONSTRUCTOR}}
+\index{DELETE\_COPY\_CONSTRUCTOR@{DELETE\_COPY\_CONSTRUCTOR}!core.hpp@{core.hpp}}
+\doxysubsubsection{\texorpdfstring{DELETE\_COPY\_CONSTRUCTOR}{DELETE\_COPY\_CONSTRUCTOR}}
+{\footnotesize\ttfamily \label{core_8hpp_adb4e5b3602145f9e0c024a1b05c260a8} 
+\#define DELETE\+\_\+\+COPY\+\_\+\+CONSTRUCTOR(\begin{DoxyParamCaption}\item[{}]{classname}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ classname(\textcolor{keyword}{const}\ classname\&)\ =\ \textcolor{keyword}{delete};\ \(\backslash\)}
+\DoxyCodeLine{\ \ classname\&\ operator=(\textcolor{keyword}{const}\ classname\&)\ =\ \textcolor{keyword}{delete};\ \(\backslash\)}
+\DoxyCodeLine{\ \ classname(classname\&\&)\ =\ \textcolor{keywordflow}{default};\ \(\backslash\)}
+\DoxyCodeLine{\ \ classname\&\ operator=(classname\&\&)\ =\ \textcolor{keywordflow}{default}}
 
 \end{DoxyCode}

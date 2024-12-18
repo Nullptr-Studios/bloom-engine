@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['descriptorpool_0',['DescriptorPool',['../classbloom_1_1render_1_1_descriptor_pool.html',1,'bloom::render']]],
-  ['descriptorsetlayout_1',['DescriptorSetLayout',['../classbloom_1_1render_1_1_descriptor_set_layout.html',1,'bloom::render']]],
-  ['descriptorsetpoolsizes_2',['DescriptorSetPoolSizes',['../structbloom_1_1_simple_render_system_1_1_descriptor_set_pool_sizes.html',1,'bloom::SimpleRenderSystem']]],
-  ['devices_3',['Devices',['../classbloom_1_1render_1_1_devices.html',1,'bloom::render']]]
+  ['buffer_0',['Buffer',['../classbloom_1_1render_1_1_buffer.html',1,'bloom::render']]],
+  ['builder_1',['Builder',['../classbloom_1_1render_1_1_descriptor_pool_1_1_builder.html',1,'bloom::render::DescriptorPool::Builder'],['../classbloom_1_1render_1_1_descriptor_set_layout_1_1_builder.html',1,'bloom::render::DescriptorSetLayout::Builder'],['../structbloom_1_1render_1_1_model_1_1_builder.html',1,'bloom::render::Model::Builder']]]
 ];

@@ -1,25 +1,30 @@
-\doxysection{C\+:/\+Users/xgoni/bloom/bloom/src/object.hpp File Reference}
-\hypertarget{object_8hpp}{}\label{object_8hpp}\index{C:/Users/xgoni/bloom/bloom/src/object.hpp@{C:/Users/xgoni/bloom/bloom/src/object.hpp}}
+\doxysection{C\+:/\+Users/xgoni/bloom/bloom/src/objects/object.hpp File Reference}
+\hypertarget{object_8hpp}{}\label{object_8hpp}\index{C:/Users/xgoni/bloom/bloom/src/objects/object.hpp@{C:/Users/xgoni/bloom/bloom/src/objects/object.hpp}}
 
 
-\mbox{[}Brief description of the file\textquotesingle{}s purpose\mbox{]}  
+This file defines the base Object class and the Transform struct.  
 
 
-{\ttfamily \#include "{}render/model.\+hpp"{}}\newline
-{\ttfamily \#include "{}render/texture.\+hpp"{}}\newline
-{\ttfamily \#include "{}glm/gtc/matrix\+\_\+transform.\+hpp"{}}\newline
+{\ttfamily \#include "{}src/render/devices.\+hpp"{}}\newline
 {\ttfamily \#include $<$bloom\+\_\+header.\+hpp$>$}\newline
+{\ttfamily \#include $<$glm/gtx/euler\+\_\+angles.\+hpp$>$}\newline
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{structbloom_1_1_transform}{bloom\+::\+Transform}}
-\item 
+\begin{DoxyCompactList}\small\item\em Represents the position, rotation, and scale of an object in 3D space. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classbloom_1_1_object}{bloom\+::\+Object}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Base class for all objects in the game world. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{object_8hpp_ac65b651055bbc2100bc99fb9bd34ac17}\label{object_8hpp_ac65b651055bbc2100bc99fb9bd34ac17} 
+typedef std\+::unordered\+\_\+map$<$ id\+\_\+t, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1_object}{Object}} $>$ $>$ {\bfseries bloom\+::\+Object\+Map}
+\begin{DoxyCompactList}\small\item\em A map of object IDs to shared pointers of Objects. Used for managing and accessing objects in the game world. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-\mbox{[}Brief description of the file\textquotesingle{}s purpose\mbox{]} 
+This file defines the base Object class and the Transform struct. 
 
 \begin{DoxyAuthor}{Author}
 Xein \href{mailto:xgonip@gmail.com}{\texttt{ xgonip@gmail.\+com}} 

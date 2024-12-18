@@ -4,50 +4,40 @@
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ }
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\#pragma\ once}}
-\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{object_8hpp}{object.hpp}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{actor_8hpp}{objects/actor.hpp}}"{}}}
 \DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{devices_8hpp}{render/devices.hpp}}"{}}}
 \DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pipeline_8hpp}{render/pipeline.hpp}}"{}}}
-\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{descriptor__set__layout_8hpp}{render/descriptor\_set\_layout.hpp}}"{}}}
-\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{descriptor__pool_8hpp}{render/descriptor\_pool.hpp}}"{}}}
-\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{camera_8hpp}{camera.hpp}}"{}}}
-\DoxyCodeLine{00016\ }
-\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }bloom\ \{}
-\DoxyCodeLine{00018\ }
-\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }BLOOM\_API\ \mbox{\hyperlink{classbloom_1_1_simple_render_system}{SimpleRenderSystem}}\ \{}
-\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00021\ \ \ \mbox{\hyperlink{classbloom_1_1_simple_render_system}{SimpleRenderSystem}}(\mbox{\hyperlink{classbloom_1_1render_1_1_devices}{render::Devices}}*\ devices);}
-\DoxyCodeLine{00022\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classbloom_1_1_simple_render_system}{\string~SimpleRenderSystem}}();}
-\DoxyCodeLine{00023\ }
-\DoxyCodeLine{00024\ \ \ \mbox{\hyperlink{classbloom_1_1_simple_render_system}{SimpleRenderSystem}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classbloom_1_1_simple_render_system}{SimpleRenderSystem}}\&)\ =\ \textcolor{keyword}{delete};}
-\DoxyCodeLine{00025\ \ \ \mbox{\hyperlink{classbloom_1_1_simple_render_system}{SimpleRenderSystem}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classbloom_1_1_simple_render_system}{SimpleRenderSystem}}\&)\ =\ \textcolor{keyword}{delete};}
-\DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ \ \ \textcolor{keywordtype}{void}\ Begin(VkRenderPass\ renderPass);}
-\DoxyCodeLine{00028\ \ \ \textcolor{keywordtype}{void}\ RenderObjects(VkCommandBuffer\ commandBuffer,\ std::vector<Object>\ \&objects,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classbloom_1_1_camera}{Camera}}\ \&camera);}
-\DoxyCodeLine{00029\ }
-\DoxyCodeLine{00030\ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ MAX\_OBJECTS\ =\ 1024;}
-\DoxyCodeLine{00031\ }
-\DoxyCodeLine{00032\ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00033\ \ \ \textcolor{keywordtype}{void}\ CreatePipelineLayout();}
-\DoxyCodeLine{00034\ \ \ \textcolor{keywordtype}{void}\ CreatePipeline(VkRenderPass\ renderPass);}
-\DoxyCodeLine{00035\ }
-\DoxyCodeLine{00036\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_devices}{render::Devices}}*\ m\_devices\ =\ \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{00037\ \ \ std::unique\_ptr<render::Pipeline>\ m\_pipeline\ =\ \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{00038\ \ \ VkPipelineLayout\ m\_pipelineLayout;}
-\DoxyCodeLine{00039\ }
-\DoxyCodeLine{00040\ \ \ std::unique\_ptr<render::DescriptorSetLayout>\ m\_textureLayout;}
-\DoxyCodeLine{00041\ }
-\DoxyCodeLine{00042\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structbloom_1_1_simple_render_system_1_1_descriptor_set_pool_sizes}{DescriptorSetPoolSizes}}\ \{}
-\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ imageSampler\{MAX\_OBJECTS\};}
-\DoxyCodeLine{00044\ \ \ \};}
-\DoxyCodeLine{00045\ \ \ \mbox{\hyperlink{structbloom_1_1_simple_render_system_1_1_descriptor_set_pool_sizes}{DescriptorSetPoolSizes}}\ m\_poolSizes;}
-\DoxyCodeLine{00046\ \ \ std::unique\_ptr<render::DescriptorPool>\ m\_globalPool\ =\ \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{00047\ \ \ std::vector<VkDescriptorSet>\ m\_globalDescriptorSets;}
-\DoxyCodeLine{00048\ }
-\DoxyCodeLine{00049\ \ \ \textcolor{keywordtype}{void}\ CreateDescriptorPool();}
-\DoxyCodeLine{00050\ \ \ \textcolor{keywordtype}{void}\ CreateDescriptorSets();}
-\DoxyCodeLine{00051\ \ \ VkDescriptorSet\ AllocateDescriptorSet(VkDescriptorSetLayout\ layout);}
-\DoxyCodeLine{00052\ \};}
-\DoxyCodeLine{00053\ }
-\DoxyCodeLine{00054\ \}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{camera_8hpp}{objects/camera.hpp}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{frame__info_8hpp}{render/frame\_info.hpp}}"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{namespace\ }bloom\ \{}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }BLOOM\_API\ \mbox{\hyperlink{classbloom_1_1_simple_render_system}{SimpleRenderSystem}}\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \mbox{\hyperlink{classbloom_1_1_simple_render_system}{SimpleRenderSystem}}(\mbox{\hyperlink{classbloom_1_1render_1_1_devices}{render::Devices}}*\ devices);}
+\DoxyCodeLine{00021\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classbloom_1_1_simple_render_system}{\string~SimpleRenderSystem}}();}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \mbox{\hyperlink{classbloom_1_1_simple_render_system}{SimpleRenderSystem}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classbloom_1_1_simple_render_system}{SimpleRenderSystem}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00024\ \ \ \mbox{\hyperlink{classbloom_1_1_simple_render_system}{SimpleRenderSystem}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classbloom_1_1_simple_render_system}{SimpleRenderSystem}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \textcolor{keywordtype}{void}\ Begin(VkRenderPass\ renderPass,\ VkDescriptorSetLayout\ globalSetLayout,\ VkDescriptorSetLayout\ materialSetLayout);}
+\DoxyCodeLine{00027\ \ \ \textcolor{keywordtype}{void}\ RenderObjects(\mbox{\hyperlink{structbloom_1_1render_1_1_frame_info}{render::FrameInfo}}\&\ frameInfo,\ \mbox{\hyperlink{actor_8hpp_a0a6a92f666ce85e7aaa009b4a2af96ee}{ActorMap}}\ actors);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ MAX\_OBJECTS\ =\ 1024;}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00032\ \ \ \textcolor{keywordtype}{void}\ CreatePipelineLayout(VkDescriptorSetLayout\ globalSetLayout,\ VkDescriptorSetLayout\ materialSetLayout);}
+\DoxyCodeLine{00033\ \ \ \textcolor{keywordtype}{void}\ CreatePipeline(VkRenderPass\ renderPass);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_devices}{render::Devices}}*\ m\_devices\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00036\ \ \ std::unique\_ptr<render::Pipeline>\ m\_pipeline\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00037\ \ \ VkPipelineLayout\ m\_pipelineLayout;}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \textcolor{keywordtype}{void}\ CreateDescriptorPool();}
+\DoxyCodeLine{00040\ \ \ \textcolor{keywordtype}{void}\ CreateDescriptorSets();}
+\DoxyCodeLine{00041\ \ \ \textcolor{comment}{//\ VkDescriptorSet\ AllocateDescriptorSet(VkDescriptorSetLayout\ layout);}}
+\DoxyCodeLine{00042\ \};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \}}
 
 \end{DoxyCode}

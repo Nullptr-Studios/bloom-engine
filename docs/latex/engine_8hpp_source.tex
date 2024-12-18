@@ -4,57 +4,58 @@
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ }
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\#pragma\ once}}
-\DoxyCodeLine{00010\ }
-\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{core_8hpp}{core.hpp}}"{}}}
-\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{window_8hpp}{window.hpp}}"{}}}
-\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{factory_8hpp}{factory.hpp}}"{}}}
-\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{object_8hpp}{object.hpp}}"{}}}
-\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{devices_8hpp}{render/devices.hpp}}"{}}}
-\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{renderer_8hpp}{render/renderer.hpp}}"{}}}
-\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{simple__render__system_8hpp}{simple\_render\_system.hpp}}"{}}}
-\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{camera_8hpp}{camera.hpp}}"{}}}
-\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{bloom__header_8hpp}{bloom\_header.hpp}}>}}
-\DoxyCodeLine{00020\ }
-\DoxyCodeLine{00021\ \textcolor{keyword}{namespace\ }bloom\ \{}
-\DoxyCodeLine{00022\ }
-\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }Factory;}
-\DoxyCodeLine{00024\ }
-\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }BLOOM\_API\ \mbox{\hyperlink{classbloom_1_1_engine}{Engine}}\ \{}
-\DoxyCodeLine{00026\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00027\ \ \ \mbox{\hyperlink{classbloom_1_1_engine}{Engine}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{core_8hpp}{core.hpp}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{window_8hpp}{window.hpp}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{factory_8hpp}{factory.hpp}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{devices_8hpp}{render/devices.hpp}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{renderer_8hpp}{render/renderer.hpp}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{simple__render__system_8hpp}{simple\_render\_system.hpp}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{camera_8hpp}{objects/camera.hpp}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{descriptors_8hpp}{render/descriptors.hpp}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{bloom__header_8hpp}{bloom\_header.hpp}}>}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{namespace\ }bloom\ \{}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }BLOOM\_API\ \mbox{\hyperlink{classbloom_1_1_engine}{Engine}}\ \{}
+\DoxyCodeLine{00023\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \mbox{\hyperlink{classbloom_1_1_engine}{Engine}}();}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \mbox{\hyperlink{classbloom_1_1_engine}{Engine}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classbloom_1_1_engine}{Engine}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00027\ \ \ \mbox{\hyperlink{classbloom_1_1_engine}{Engine}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classbloom_1_1_engine}{Engine}}\&)\ =\ \textcolor{keyword}{delete};}
 \DoxyCodeLine{00028\ }
-\DoxyCodeLine{00029\ \ \ \mbox{\hyperlink{classbloom_1_1_engine}{Engine}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classbloom_1_1_engine}{Engine}}\&)\ =\ \textcolor{keyword}{delete};}
-\DoxyCodeLine{00030\ \ \ \mbox{\hyperlink{classbloom_1_1_engine}{Engine}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classbloom_1_1_engine}{Engine}}\&)\ =\ \textcolor{keyword}{delete};}
-\DoxyCodeLine{00031\ }
-\DoxyCodeLine{00032\ \ \ \textcolor{comment}{//\ Game\ loop}}
-\DoxyCodeLine{00033\ \ \ \textcolor{keywordtype}{void}\ Begin();}
-\DoxyCodeLine{00034\ \ \ \textcolor{keywordtype}{void}\ Tick();}
-\DoxyCodeLine{00035\ \ \ \textcolor{keywordtype}{void}\ Render();}
-\DoxyCodeLine{00036\ \ \ \textcolor{keywordtype}{void}\ End()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00029\ \ \ \textcolor{comment}{//\ Game\ loop}}
+\DoxyCodeLine{00030\ \ \ \textcolor{keywordtype}{void}\ Begin();}
+\DoxyCodeLine{00031\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Tick();}
+\DoxyCodeLine{00032\ \ \ \textcolor{keywordtype}{void}\ Render();}
+\DoxyCodeLine{00033\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ End()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \textcolor{keywordtype}{bool}\ ShouldClose()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_window-\/>ShouldClose();\ \}}
+\DoxyCodeLine{00036\ \ \ \textcolor{keywordtype}{void}\ OnEvent(\textcolor{keyword}{const}\ \mbox{\hyperlink{classbloom_1_1_event}{Event}}\ \&\ e)\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00037\ }
-\DoxyCodeLine{00038\ \ \ \textcolor{keywordtype}{bool}\ ShouldClose()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_window-\/>ShouldClose();\ \}}
-\DoxyCodeLine{00039\ \ \ \textcolor{keywordtype}{void}\ OnEvent(\textcolor{keyword}{const}\ \mbox{\hyperlink{classbloom_1_1_event}{Event}}\ \&\ e)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00040\ }
-\DoxyCodeLine{00041\ \ \ std::unique\_ptr<Factory>\ factory\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00038\ \ \ std::unique\_ptr<Factory>\ factory\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00041\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ OnBegin();}
 \DoxyCodeLine{00042\ }
-\DoxyCodeLine{00043\ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00044\ \ \ \textcolor{keywordtype}{void}\ LoadObjects();}
-\DoxyCodeLine{00045\ }
-\DoxyCodeLine{00046\ \ \ \mbox{\hyperlink{classbloom_1_1_window}{Window}}*\ m\_window\ =\ \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{00047\ \ \ std::unique\_ptr<render::Devices>\ m\_devices\ =\ \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{00048\ \ \ std::unique\_ptr<render::Renderer>\ m\_renderer\ =\ \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{00049\ \ \ \mbox{\hyperlink{classbloom_1_1_simple_render_system}{SimpleRenderSystem}}*\ m\_simpleRenderSystem\ =\ \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{00050\ }
-\DoxyCodeLine{00051\ \ \ std::vector<Object>\ gameObjects;}
-\DoxyCodeLine{00052\ }
-\DoxyCodeLine{00053\ \ \ \mbox{\hyperlink{classbloom_1_1_camera}{Camera}}\ m\_camera;}
-\DoxyCodeLine{00054\ }
-\DoxyCodeLine{00055\ \ \ \textcolor{keywordtype}{double}\ m\_deltaTime;}
-\DoxyCodeLine{00056\ \ \ \textcolor{keywordtype}{float}\ m\_rotation;}
-\DoxyCodeLine{00057\ \};}
-\DoxyCodeLine{00058\ }
-\DoxyCodeLine{00076\ std::unique\_ptr<bloom::Engine>\ \mbox{\hyperlink{engine_8hpp_a8a68fb9b4e5dc5c0eb680b3f32781872}{CreateEngine}}();}
-\DoxyCodeLine{00077\ }
-\DoxyCodeLine{00078\ \}}
+\DoxyCodeLine{00043\ \ \ \mbox{\hyperlink{classbloom_1_1_window}{Window}}*\ m\_window\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00044\ \ \ std::unique\_ptr<render::Devices>\ m\_devices\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00045\ \ \ std::unique\_ptr<render::Renderer>\ m\_renderer\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00046\ \ \ \mbox{\hyperlink{classbloom_1_1_simple_render_system}{SimpleRenderSystem}}*\ m\_simpleRenderSystem\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ std::shared\_ptr<Camera>\ m\_activeCamera;}
+\DoxyCodeLine{00049\ \ \ std::unique\_ptr<render::DescriptorSetLayout>\ m\_materialSetLayout;}
+\DoxyCodeLine{00050\ \ \ \textcolor{keywordtype}{float}\ m\_deltaTime;}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00053\ \ \ std::unique\_ptr<render::DescriptorPool>\ m\_globalPool;}
+\DoxyCodeLine{00054\ \ \ std::unique\_ptr<render::DescriptorPool>\ m\_materialPool;}
+\DoxyCodeLine{00055\ \ \ std::vector<VkDescriptorSet>\ m\_globalDescriptorSets;}
+\DoxyCodeLine{00056\ \ \ std::vector<VkDescriptorSet>\ m\_materialDescriptorSets;}
+\DoxyCodeLine{00057\ \ \ std::vector<render::Buffer*>\ m\_UBOBuffers;}
+\DoxyCodeLine{00058\ \};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00077\ std::unique\_ptr<bloom::Engine>\ \mbox{\hyperlink{engine_8hpp_a8a68fb9b4e5dc5c0eb680b3f32781872}{CreateEngine}}();}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \}}
 
 \end{DoxyCode}

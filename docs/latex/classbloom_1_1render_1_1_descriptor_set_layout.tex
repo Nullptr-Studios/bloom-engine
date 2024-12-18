@@ -1,17 +1,82 @@
 \doxysection{bloom\+::render\+::Descriptor\+Set\+Layout Class Reference}
 \hypertarget{classbloom_1_1render_1_1_descriptor_set_layout}{}\label{classbloom_1_1render_1_1_descriptor_set_layout}\index{bloom::render::DescriptorSetLayout@{bloom::render::DescriptorSetLayout}}
+
+
+Defines the layout of descriptors in a shader.  
+
+
+
+
+{\ttfamily \#include $<$descriptors.\+hpp$>$}
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_set_layout_1_1_builder}{Builder}}
+\begin{DoxyCompactList}\small\item\em Helper class to build Descriptor\+Set\+Layouts. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classbloom_1_1render_1_1_descriptor_set_layout_a324a66ca07b93d455764ee36cfd616c5}\label{classbloom_1_1render_1_1_descriptor_set_layout_a324a66ca07b93d455764ee36cfd616c5} 
-{\bfseries Descriptor\+Set\+Layout} (\mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}} \texorpdfstring{$\ast$}{*}devices, const std\+::vector$<$ Vk\+Descriptor\+Set\+Layout\+Binding $>$ \&bindings)
+\mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_set_layout_a71a0cbeb39c72331c26bd3a312573078}{Descriptor\+Set\+Layout}} (\mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}} \&device, const std\+::unordered\+\_\+map$<$ uint32\+\_\+t, Vk\+Descriptor\+Set\+Layout\+Binding $>$ \&bindings)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classbloom_1_1render_1_1_descriptor_set_layout}{Descriptor\+Set\+Layout} object. \end{DoxyCompactList}\item 
+\Hypertarget{classbloom_1_1render_1_1_descriptor_set_layout_a827c74f2d62ecb3b1149e00b973758ce}\label{classbloom_1_1render_1_1_descriptor_set_layout_a827c74f2d62ecb3b1149e00b973758ce} 
+{\bfseries Descriptor\+Set\+Layout} (const \mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_set_layout}{Descriptor\+Set\+Layout}} \&)=delete
 \item 
-\Hypertarget{classbloom_1_1render_1_1_descriptor_set_layout_acd2bfbf9e80181fad8942ccbb03baed8}\label{classbloom_1_1render_1_1_descriptor_set_layout_acd2bfbf9e80181fad8942ccbb03baed8} 
-Vk\+Descriptor\+Set\+Layout {\bfseries get\+Descriptor\+Set\+Layout} () const
+\Hypertarget{classbloom_1_1render_1_1_descriptor_set_layout_a3fc273b00d2c196bf46edcad9f4d446a}\label{classbloom_1_1render_1_1_descriptor_set_layout_a3fc273b00d2c196bf46edcad9f4d446a} 
+\mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_set_layout}{Descriptor\+Set\+Layout}} \& {\bfseries operator=} (const \mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_set_layout}{Descriptor\+Set\+Layout}} \&)=delete
+\item 
+Vk\+Descriptor\+Set\+Layout \mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_set_layout_a9764f78208e7ae1c80d2898c0b4fda82}{Get\+Descriptor\+Set\+Layout}} () const
+\begin{DoxyCompactList}\small\item\em Gets the underlying Vulkan descriptor set layout handle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classbloom_1_1render_1_1_descriptor_set_layout_a8f96614370479c2656720dba13f85244}\label{classbloom_1_1render_1_1_descriptor_set_layout_a8f96614370479c2656720dba13f85244} 
+class {\bfseries Descriptor\+Writer}
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines the layout of descriptors in a shader. 
+
+This class represents a Vulkan descriptor set layout, which serves as a blueprint for creating descriptor sets. It specifies the types and bindings of descriptors that can be accessed by a shader. For example, it defines whether a descriptor is a uniform buffer, a sampled image, or another type, and at which binding point in the shader it\textquotesingle{}s accessible. Multiple descriptor sets can be created from the same layout, ensuring consistency between the shader and the data it uses. This layout is crucial for binding resources like buffers and images to the shader pipeline. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classbloom_1_1render_1_1_descriptor_set_layout_a71a0cbeb39c72331c26bd3a312573078}\index{bloom::render::DescriptorSetLayout@{bloom::render::DescriptorSetLayout}!DescriptorSetLayout@{DescriptorSetLayout}}
+\index{DescriptorSetLayout@{DescriptorSetLayout}!bloom::render::DescriptorSetLayout@{bloom::render::DescriptorSetLayout}}
+\doxysubsubsection{\texorpdfstring{DescriptorSetLayout()}{DescriptorSetLayout()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_descriptor_set_layout_a71a0cbeb39c72331c26bd3a312573078} 
+bloom\+::render\+::\+Descriptor\+Set\+Layout\+::\+Descriptor\+Set\+Layout (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}} \&}]{device}{, }\item[{const std\+::unordered\+\_\+map$<$ uint32\+\_\+t, Vk\+Descriptor\+Set\+Layout\+Binding $>$ \&}]{bindings}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{classbloom_1_1render_1_1_descriptor_set_layout}{Descriptor\+Set\+Layout} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em device} & Reference to the \doxylink{classbloom_1_1render_1_1_devices}{Devices} object. \\
+\hline
+{\em bindings} & The descriptor bindings for the layout. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classbloom_1_1render_1_1_descriptor_set_layout_a9764f78208e7ae1c80d2898c0b4fda82}\index{bloom::render::DescriptorSetLayout@{bloom::render::DescriptorSetLayout}!GetDescriptorSetLayout@{GetDescriptorSetLayout}}
+\index{GetDescriptorSetLayout@{GetDescriptorSetLayout}!bloom::render::DescriptorSetLayout@{bloom::render::DescriptorSetLayout}}
+\doxysubsubsection{\texorpdfstring{GetDescriptorSetLayout()}{GetDescriptorSetLayout()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_descriptor_set_layout_a9764f78208e7ae1c80d2898c0b4fda82} 
+Vk\+Descriptor\+Set\+Layout bloom\+::render\+::\+Descriptor\+Set\+Layout\+::\+Get\+Descriptor\+Set\+Layout (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the underlying Vulkan descriptor set layout handle. 
+
+\begin{DoxyReturn}{Returns}
+The Vk\+Descriptor\+Set\+Layout handle. 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/xgoni/bloom/bloom/src/render/\mbox{\hyperlink{descriptor__set__layout_8hpp}{descriptor\+\_\+set\+\_\+layout.\+hpp}}\item 
-C\+:/\+Users/xgoni/bloom/bloom/src/render/descriptor\+\_\+set\+\_\+layout.\+cpp\end{DoxyCompactItemize}
+C\+:/\+Users/xgoni/bloom/bloom/src/render/\mbox{\hyperlink{descriptors_8hpp}{descriptors.\+hpp}}\item 
+C\+:/\+Users/xgoni/bloom/bloom/src/render/descriptors.\+cpp\end{DoxyCompactItemize}

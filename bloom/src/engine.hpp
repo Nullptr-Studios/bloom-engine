@@ -7,53 +7,100 @@
  */
 
 #pragma once
-
 #include "core.hpp"
 #include "window.hpp"
 #include "factory.hpp"
-#include "object.hpp"
 #include "render/devices.hpp"
 #include "render/renderer.hpp"
-#include "simple_render_system.hpp"
-#include "camera.hpp"
+#include "render/descriptors.hpp"
+#include "objects/camera.hpp"
 #include <bloom_header.hpp>
 
+/**
+ * @namespace bloom
+ * @brief Contains the core classes and functions for the bloom engine.
+ *
+ * The @c bloom namespace encapsulates the main components and utilities required for the bloom engine.
+ * This includes the main engine class, window management, factory for object creation, and core utilities.
+ *
+ * @details
+ * The @c bloom namespace is designed to provide a comprehensive set of tools for managing the game loop,
+ * rendering, and event handling. It includes classes for initializing and managing various subsystems
+ * such as the window, renderer, and input handling. The namespace is structured to facilitate the creation,
+ * management, and execution of a game using the bloom engine.
+ *
+ * Key Classes:
+ * - @b Engine: Manages the main game loop, rendering, and event handling.
+ * - @b Window: Manages the window and its events.
+ * - @b Factory: Handles the creation and management of game objects.
+ *
+ * Example Usage:
+ * @code
+ * // Create a class that inherits from the Engine class (sandbox.hpp)
+ * class Sandbox : public bloom::Engine {
+ * public:
+ *   Sandbox() = default;
+ *
+ *   void OnBegin() override;
+ *   void Tick() override;
+ *   void End() const override;
+ * };
+ *
+ * // And then create an instance of the engine (sandbox.cpp) using the CreateEngine function
+ * using namespace bloom;
+ * std::unique_ptr<bloom::Engine> bloom::CreateEngine() { return std::make_unique<sandbox::Sandbox>(); }
+ * @endcode
+ */
 namespace bloom {
+class SimpleRenderSystem;
 
-class Factory;
-
+/**
+* @class Engine
+* @brief Main class for the bloom engine.
+*
+* The Engine class manages the main game loop, rendering, and event handling. It initializes
+* and manages various subsystems such as the window, renderer, and input handling.
+*/
 class BLOOM_API Engine {
 public:
-  Engine() = default;
+  Engine();
+  virtual ~Engine() = default;
 
   Engine(const Engine&) = delete;
   Engine& operator=(const Engine&) = delete;
 
   // Game loop
-  void Begin();
-  void Tick();
-  void Render();
-  void End() const;
+  /**
+   *  @brief Handles the initialization of the engine
+   *  @note Do not access this in other classes
+   */
+  void Init();
+  virtual void OnBegin();   ///< Called before starting game loop
+  virtual void OnTick();    ///< Called every frame
+  virtual void OnRender();  ///< Called every frame after the @c Tick
+  virtual void OnClose();   ///< Called before ending the game loop
 
-  bool ShouldClose() const { return m_window->ShouldClose(); }
   void OnEvent(const Event & e) const;
+  bool ShouldClose() const { return m_window->GetCloseEvent(); }
 
   std::unique_ptr<Factory> factory = nullptr;
 
 protected:
-  void LoadObjects();
-
   Window* m_window = nullptr;
   std::unique_ptr<render::Devices> m_devices = nullptr;
   std::unique_ptr<render::Renderer> m_renderer = nullptr;
   SimpleRenderSystem* m_simpleRenderSystem = nullptr;
 
-  std::vector<Object> gameObjects;
+  std::shared_ptr<Camera> m_activeCamera;
+  std::unique_ptr<render::DescriptorSetLayout> m_materialSetLayout;
+  float m_deltaTime = 0.016f;
 
-  Camera m_camera;
-
-  double m_deltaTime;
-  float m_rotation;
+private:
+  std::unique_ptr<render::DescriptorPool> m_globalPool;
+  std::unique_ptr<render::DescriptorPool> m_materialPool;
+  std::vector<VkDescriptorSet> m_globalDescriptorSets;
+  std::vector<VkDescriptorSet> m_materialDescriptorSets;
+  std::vector<render::Buffer*> m_UBOBuffers;
 };
 
 /**

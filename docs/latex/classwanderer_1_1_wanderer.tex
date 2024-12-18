@@ -1,0 +1,95 @@
+\doxysection{wanderer\+::Wanderer Class Reference}
+\hypertarget{classwanderer_1_1_wanderer}{}\label{classwanderer_1_1_wanderer}\index{wanderer::Wanderer@{wanderer::Wanderer}}
+Inheritance diagram for wanderer\+::Wanderer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classwanderer_1_1_wanderer}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classwanderer_1_1_wanderer_adff28e303080ba7cb51fa8981d110fc5}{On\+Begin}} () override
+\item 
+void \mbox{\hyperlink{classwanderer_1_1_wanderer_aa6fa45ccd7d8a3d691a9e5dcc9466ddd}{Tick}} () override
+\item 
+void \mbox{\hyperlink{classwanderer_1_1_wanderer_aaf8906580816c28e3969737d7f2eea00}{End}} () const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classbloom_1_1_engine}{bloom\+::\+Engine}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Engine} (const \mbox{\hyperlink{classbloom_1_1_engine}{Engine}} \&)=delete
+\item 
+\mbox{\hyperlink{classbloom_1_1_engine}{Engine}} \& {\bfseries operator=} (const \mbox{\hyperlink{classbloom_1_1_engine}{Engine}} \&)=delete
+\item 
+void {\bfseries Begin} ()
+\item 
+void {\bfseries Render} ()
+\item 
+bool {\bfseries Should\+Close} () const
+\item 
+void {\bfseries On\+Event} (const \mbox{\hyperlink{classbloom_1_1_event}{Event}} \&e) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classbloom_1_1_engine}{bloom\+::\+Engine}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1_factory}{Factory}} $>$ {\bfseries factory} = nullptr
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classbloom_1_1_engine}{bloom\+::\+Engine}}}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classbloom_1_1_engine}{bloom\+::\+Engine}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbloom_1_1_window}{Window}} \texorpdfstring{$\ast$}{*} {\bfseries m\+\_\+window} = nullptr
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1render_1_1_devices}{render\+::\+Devices}} $>$ {\bfseries m\+\_\+devices} = nullptr
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1render_1_1_renderer}{render\+::\+Renderer}} $>$ {\bfseries m\+\_\+renderer} = nullptr
+\item 
+\mbox{\hyperlink{classbloom_1_1_simple_render_system}{Simple\+Render\+System}} \texorpdfstring{$\ast$}{*} {\bfseries m\+\_\+simple\+Render\+System} = nullptr
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1_camera}{Camera}} $>$ {\bfseries m\+\_\+active\+Camera}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_set_layout}{render\+::\+Descriptor\+Set\+Layout}} $>$ {\bfseries m\+\_\+material\+Set\+Layout}
+\item 
+float {\bfseries m\+\_\+delta\+Time}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classwanderer_1_1_wanderer_aaf8906580816c28e3969737d7f2eea00}\index{wanderer::Wanderer@{wanderer::Wanderer}!End@{End}}
+\index{End@{End}!wanderer::Wanderer@{wanderer::Wanderer}}
+\doxysubsubsection{\texorpdfstring{End()}{End()}}
+{\footnotesize\ttfamily \label{classwanderer_1_1_wanderer_aaf8906580816c28e3969737d7f2eea00} 
+void wanderer\+::\+Wanderer\+::\+End (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classbloom_1_1_engine}{bloom\+::\+Engine}}.
+
+\Hypertarget{classwanderer_1_1_wanderer_adff28e303080ba7cb51fa8981d110fc5}\index{wanderer::Wanderer@{wanderer::Wanderer}!OnBegin@{OnBegin}}
+\index{OnBegin@{OnBegin}!wanderer::Wanderer@{wanderer::Wanderer}}
+\doxysubsubsection{\texorpdfstring{OnBegin()}{OnBegin()}}
+{\footnotesize\ttfamily \label{classwanderer_1_1_wanderer_adff28e303080ba7cb51fa8981d110fc5} 
+void wanderer\+::\+Wanderer\+::\+On\+Begin (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classbloom_1_1_engine}{bloom\+::\+Engine}}.
+
+\Hypertarget{classwanderer_1_1_wanderer_aa6fa45ccd7d8a3d691a9e5dcc9466ddd}\index{wanderer::Wanderer@{wanderer::Wanderer}!Tick@{Tick}}
+\index{Tick@{Tick}!wanderer::Wanderer@{wanderer::Wanderer}}
+\doxysubsubsection{\texorpdfstring{Tick()}{Tick()}}
+{\footnotesize\ttfamily \label{classwanderer_1_1_wanderer_aa6fa45ccd7d8a3d691a9e5dcc9466ddd} 
+void wanderer\+::\+Wanderer\+::\+Tick (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classbloom_1_1_engine}{bloom\+::\+Engine}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/xgoni/bloom/wanderer/\mbox{\hyperlink{wanderer_8hpp}{wanderer.\+hpp}}\item 
+C\+:/\+Users/xgoni/bloom/wanderer/wanderer.\+cpp\end{DoxyCompactItemize}

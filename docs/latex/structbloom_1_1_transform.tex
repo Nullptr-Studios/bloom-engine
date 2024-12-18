@@ -1,25 +1,56 @@
 \doxysection{bloom\+::Transform Struct Reference}
 \hypertarget{structbloom_1_1_transform}{}\label{structbloom_1_1_transform}\index{bloom::Transform@{bloom::Transform}}
+
+
+Represents the position, rotation, and scale of an object in 3D space.  
+
+
+
+
+{\ttfamily \#include $<$object.\+hpp$>$}
+
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{structbloom_1_1_transform_a24035d8abbaab09f1a4a619f4b9f7016}\label{structbloom_1_1_transform_a24035d8abbaab09f1a4a619f4b9f7016} 
-glm\+::mat4 {\bfseries mat4} ()
-\end{DoxyCompactItemize}
+glm\+::mat4 \mbox{\hyperlink{structbloom_1_1_transform_acabdaf75834ef11b0e3d7ddc91bec11f}{Matrix}} () const
+\begin{DoxyCompactList}\small\item\em Calculates and returns the 4x4 transformation matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{structbloom_1_1_transform_a65e009050da9526c60739ff858c3ed1c}\label{structbloom_1_1_transform_a65e009050da9526c60739ff858c3ed1c} 
 glm\+::vec3 {\bfseries position} = \{\}
-\item 
+\begin{DoxyCompactList}\small\item\em The position of the object in world space. \end{DoxyCompactList}\item 
 \Hypertarget{structbloom_1_1_transform_ae2da39dae20de6c860cb9c8b541092b9}\label{structbloom_1_1_transform_ae2da39dae20de6c860cb9c8b541092b9} 
 glm\+::vec3 {\bfseries scale} = \{1.\+0f, 1.\+0f, 1.\+0f\}
-\item 
+\begin{DoxyCompactList}\small\item\em The scale of the object in each axis. \end{DoxyCompactList}\item 
 \Hypertarget{structbloom_1_1_transform_a74ff5ce7a3e2c963a80fb829c77957f0}\label{structbloom_1_1_transform_a74ff5ce7a3e2c963a80fb829c77957f0} 
 glm\+::vec3 {\bfseries rotation} = \{\}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The rotation of the object as Euler angles (yaw, pitch, roll) in radians. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents the position, rotation, and scale of an object in 3D space. 
+
+The \doxylink{structbloom_1_1_transform}{Transform} struct provides a convenient way to store and manipulate the transformation properties of an object. It contains the object\textquotesingle{}s {\bfseries{position}} as a 3D vector, its {\bfseries{scale}} as a 3D vector, and its {\bfseries{rotation}} as Euler angles (yaw, pitch, and roll). The {\ttfamily \doxylink{structbloom_1_1_transform_acabdaf75834ef11b0e3d7ddc91bec11f}{Matrix()}} method calculates the combined transformation matrix based on these properties. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structbloom_1_1_transform_acabdaf75834ef11b0e3d7ddc91bec11f}\index{bloom::Transform@{bloom::Transform}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!bloom::Transform@{bloom::Transform}}
+\doxysubsubsection{\texorpdfstring{Matrix()}{Matrix()}}
+{\footnotesize\ttfamily \label{structbloom_1_1_transform_acabdaf75834ef11b0e3d7ddc91bec11f} 
+glm\+::mat4 bloom\+::\+Transform\+::\+Matrix (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Calculates and returns the 4x4 transformation matrix. 
+
+This method combines the position, rotation, and scale properties into a single homogeneous matrix that can be used to transform the object\textquotesingle{}s vertices. The transformation order is scale, then rotation, then translation.
+
+\begin{DoxyReturn}{Returns}
+The combined transformation matrix. 
+\end{DoxyReturn}
 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/xgoni/bloom/bloom/src/\mbox{\hyperlink{object_8hpp}{object.\+hpp}}\end{DoxyCompactItemize}
+C\+:/\+Users/xgoni/bloom/bloom/src/objects/\mbox{\hyperlink{object_8hpp}{object.\+hpp}}\end{DoxyCompactItemize}

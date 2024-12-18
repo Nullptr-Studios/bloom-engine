@@ -7,15 +7,20 @@
  */
 
 #pragma once
-#include "engine.hpp"
-#include "object.hpp"
+#include "objects/actor.hpp"
+#include "objects/object.hpp"
 
 namespace bloom {
 
-class Object;
-
+/**
+ * @class Factory
+ * @brief Manages the creation of game objects
+ *
+ * The Factory class is responsible for creating game objects, assigning unique IDs to them,
+ * and maintaining maps of all created objects and renderable actors. It also provides methods to retrieve
+ * these maps and set the rendering device.
+ */
 class BLOOM_API Factory {
-
 public:
   /**
    * Creates an Entity and does all the set-up processes that need to happen
@@ -24,18 +29,41 @@ public:
    * @return Created entity
    */
   template <typename T, typename = std::enable_if_t<std::is_base_of_v<Object, T>>>
-  T CreateObject();
+  std::shared_ptr<T> CreateObject();
+
+  ObjectMap GetObjects() { return m_objects; }
+  ActorMap GetRenderables() { return m_renderables; }
+
+  void SetDevice(render::Devices* device) { m_devices = device; }
+  // TODO: This should have a GetInstance
 
 private:
-  unsigned int n_currentID = 0;
-    
+  id_t m_currentID = 0;   ///< Keeps track of the current ID
+  ObjectMap m_objects;    ///< Map of all objects
+  ActorMap m_renderables; ///< Map of all actors
+
+  render::Devices* m_devices = nullptr;
 };
 
 template<typename T, typename>
-T Factory::CreateObject() {
-  auto _obj = T(n_currentID);
-  n_currentID++;
-  return _obj;
+std::shared_ptr<T> Factory::CreateObject() {
+  std::shared_ptr<T> obj = std::make_shared<T>(m_currentID, m_devices);
+  m_currentID++;
+
+  // This crashes the program, it will work for now -x
+  if (m_currentID == 0) {
+    BLOOM_CRITICAL("Reached maximum number of objects");
+  }
+
+  m_objects.emplace(obj->GetID(), std::static_pointer_cast<Object>(obj));
+
+  // Adding to the renderable list if it's an Actor
+  if constexpr (std::is_base_of_v<Actor, T>) {
+    m_renderables.emplace(obj->GetID(), std::static_pointer_cast<Actor>(obj));
+  }
+
+  BLOOM_INFO("Created object with ID: {0}", obj->GetID());
+  return obj;
 }
 
 }

@@ -1,0 +1,104 @@
+\doxysection{descriptors.\+hpp}
+\hypertarget{descriptors_8hpp_source}{}\label{descriptors_8hpp_source}\index{C:/Users/xgoni/bloom/bloom/src/render/descriptors.hpp@{C:/Users/xgoni/bloom/bloom/src/render/descriptors.hpp}}
+\mbox{\hyperlink{descriptors_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{devices_8hpp}{devices.hpp}}"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }bloom::render\ \{}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{class\ }BLOOM\_API\ \mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_set_layout}{DescriptorSetLayout}}\ \{}
+\DoxyCodeLine{00027\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00037\ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_set_layout_1_1_builder}{Builder}}\ \{}
+\DoxyCodeLine{00038\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_set_layout_1_1_builder_a2c7702eb58ae4e0a6724bfe251a6cc0f}{Builder}}(\mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}}\ \&device)\ :\ m\_device\{device\}\ \{\}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_set_layout_1_1_builder}{Builder}}\ \&AddBinding(}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ uint32\_t\ binding,}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ VkDescriptorType\ descriptorType,}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ VkShaderStageFlags\ stageFlags,}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ uint32\_t\ count\ =\ 1);}
+\DoxyCodeLine{00067\ \ \ \ \ std::unique\_ptr<DescriptorSetLayout>\ Build()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}}\ \&m\_device;}
+\DoxyCodeLine{00071\ \ \ \ \ std::unordered\_map<uint32\_t,\ VkDescriptorSetLayoutBinding>\ m\_bindings\{\};}
+\DoxyCodeLine{00072\ \ \ \};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00079\ \ \ DescriptorSetLayout(}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ Devices\ \&device,\ \textcolor{keyword}{const}\ std::unordered\_map<uint32\_t,\ VkDescriptorSetLayoutBinding>\ \&bindings);}
+\DoxyCodeLine{00081\ \ \ \string~DescriptorSetLayout();}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \textcolor{comment}{//\ Copy\ constructors}}
+\DoxyCodeLine{00084\ \ \ DescriptorSetLayout(\textcolor{keyword}{const}\ DescriptorSetLayout\ \&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00085\ \ \ DescriptorSetLayout\ \&operator=(\textcolor{keyword}{const}\ DescriptorSetLayout\ \&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00091\ \ \ VkDescriptorSetLayout\ \mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_set_layout_a9764f78208e7ae1c80d2898c0b4fda82}{GetDescriptorSetLayout}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_descriptorSetLayout;\ \}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00094\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}}\ \&m\_device;}
+\DoxyCodeLine{00095\ \ \ VkDescriptorSetLayout\ m\_descriptorSetLayout;}
+\DoxyCodeLine{00096\ \ \ std::unordered\_map<uint32\_t,\ VkDescriptorSetLayoutBinding>\ m\_bindings;}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_writer}{DescriptorWriter}};}
+\DoxyCodeLine{00099\ \};}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00110\ \textcolor{keyword}{class\ }BLOOM\_API\ \mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_pool}{DescriptorPool}}\ \{}
+\DoxyCodeLine{00111\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00120\ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_pool_1_1_builder}{Builder}}\ \{}
+\DoxyCodeLine{00121\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_pool_1_1_builder_ae274dd0feaadea291ee57ecb422de1c3}{Builder}}(\mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}}\ \&device)\ :\ m\_device\{device\}\ \{\}}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00137\ \ \ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_pool_1_1_builder}{Builder}}\ \&AddPoolSize(VkDescriptorType\ descriptorType,\ uint32\_t\ count);}
+\DoxyCodeLine{00145\ \ \ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_pool_1_1_builder}{Builder}}\ \&SetPoolFlags(VkDescriptorPoolCreateFlags\ flags);}
+\DoxyCodeLine{00153\ \ \ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_pool_1_1_builder}{Builder}}\ \&SetMaxSets(uint32\_t\ count);}
+\DoxyCodeLine{00160\ \ \ \ \ std::unique\_ptr<DescriptorPool>\ Build()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00163\ \ \ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}}\ \&m\_device;}
+\DoxyCodeLine{00164\ \ \ \ \ std::vector<VkDescriptorPoolSize>\ m\_poolSizes\{\};}
+\DoxyCodeLine{00165\ \ \ \ \ uint32\_t\ m\_maxSets\ =\ 1000;}
+\DoxyCodeLine{00166\ \ \ \ \ VkDescriptorPoolCreateFlags\ m\_poolFlags\ =\ 0;}
+\DoxyCodeLine{00167\ \ \ \};}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00176\ \ \ DescriptorPool(}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ Devices\ \&device,}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ uint32\_t\ maxSets,}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ VkDescriptorPoolCreateFlags\ poolFlags,}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<VkDescriptorPoolSize>\ \&poolSizes);}
+\DoxyCodeLine{00181\ \ \ \string~DescriptorPool();}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \ \ \textcolor{comment}{//\ Copy\ constructors}}
+\DoxyCodeLine{00184\ \ \ DescriptorPool(\textcolor{keyword}{const}\ DescriptorPool\ \&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00185\ \ \ DescriptorPool\ \&operator=(\textcolor{keyword}{const}\ DescriptorPool\ \&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00196\ \ \ \textcolor{keywordtype}{bool}\ AllocateDescriptor(VkDescriptorSetLayout\ descriptorSetLayout,\ VkDescriptorSet\ \&descriptor)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00203\ \ \ \textcolor{keywordtype}{void}\ FreeDescriptors(\textcolor{keyword}{const}\ std::vector<VkDescriptorSet>\ \&descriptors)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00210\ \ \ \textcolor{keywordtype}{void}\ ResetPool()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00212\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00213\ \ \ Devices\ \&m\_device;}
+\DoxyCodeLine{00214\ \ \ VkDescriptorPool\ m\_descriptorPool;}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00216\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }DescriptorWriter;}
+\DoxyCodeLine{00217\ \};}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00228\ \textcolor{keyword}{class\ }BLOOM\_API\ \mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_writer}{DescriptorWriter}}\ \{}
+\DoxyCodeLine{00229\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00235\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_writer}{DescriptorWriter}}(\mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_set_layout}{DescriptorSetLayout}}\ \&setLayout,\ \mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_pool}{DescriptorPool}}\ \&pool);}
+\DoxyCodeLine{00236\ }
+\DoxyCodeLine{00246\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_writer}{DescriptorWriter}}\ \&WriteBuffer(uint32\_t\ binding,\ \textcolor{keyword}{const}\ VkDescriptorBufferInfo\ *bufferInfo);}
+\DoxyCodeLine{00256\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_writer}{DescriptorWriter}}\ \&WriteImage(uint32\_t\ binding,\ \textcolor{keyword}{const}\ VkDescriptorImageInfo\ *imageInfo);}
+\DoxyCodeLine{00265\ \ \ \textcolor{keywordtype}{bool}\ Build(VkDescriptorSet\ \&set);}
+\DoxyCodeLine{00273\ \ \ \textcolor{keywordtype}{void}\ Overwrite(\textcolor{keyword}{const}\ VkDescriptorSet\ \&set);}
+\DoxyCodeLine{00274\ }
+\DoxyCodeLine{00275\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00276\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_set_layout}{DescriptorSetLayout}}\ \&m\_setLayout;}
+\DoxyCodeLine{00277\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_pool}{DescriptorPool}}\ \&m\_pool;}
+\DoxyCodeLine{00278\ \ \ std::vector<VkWriteDescriptorSet>\ m\_writes;}
+\DoxyCodeLine{00279\ \};}
+\DoxyCodeLine{00280\ }
+\DoxyCodeLine{00281\ \}}
+
+\end{DoxyCode}

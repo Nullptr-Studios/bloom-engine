@@ -103,8 +103,8 @@ Inheritance diagram for bloom::Engine:</div>
  <div class="center">
   <img src="classbloom_1_1_engine.png" usemap="#bloom::Engine_map" alt=""/>
   <map id="bloom::Engine_map" name="bloom::Engine_map">
-<area href="class_sandbox.html" alt="Sandbox" shape="rect" coords="0,56,90,80"/>
-<area href="class_wanderer.html" alt="Wanderer" shape="rect" coords="100,56,190,80"/>
+<area href="class_sandbox.html" alt="Sandbox" shape="rect" coords="0,56,128,80"/>
+<area href="classwanderer_1_1_wanderer.html" alt="wanderer::Wanderer" shape="rect" coords="138,56,266,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -120,13 +120,13 @@ Public Member Functions</h2></td></tr>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>Begin</b> ()</td></tr>
 <tr class="separator:a88a1aae163129e74c7486ac57d310035"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a14a73b59a5c71909ed7419bd385fd1c1" id="r_a14a73b59a5c71909ed7419bd385fd1c1"><td class="memItemLeft" align="right" valign="top"><a id="a14a73b59a5c71909ed7419bd385fd1c1" name="a14a73b59a5c71909ed7419bd385fd1c1"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Tick</b> ()</td></tr>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>Tick</b> ()</td></tr>
 <tr class="separator:a14a73b59a5c71909ed7419bd385fd1c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad255ccd51c12fec57ce713ff879d4775" id="r_ad255ccd51c12fec57ce713ff879d4775"><td class="memItemLeft" align="right" valign="top"><a id="ad255ccd51c12fec57ce713ff879d4775" name="ad255ccd51c12fec57ce713ff879d4775"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>Render</b> ()</td></tr>
 <tr class="separator:ad255ccd51c12fec57ce713ff879d4775"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a56743ef3554bf57bc79ce5dc00fa234b" id="r_a56743ef3554bf57bc79ce5dc00fa234b"><td class="memItemLeft" align="right" valign="top"><a id="a56743ef3554bf57bc79ce5dc00fa234b" name="a56743ef3554bf57bc79ce5dc00fa234b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>End</b> () const</td></tr>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>End</b> () const</td></tr>
 <tr class="separator:a56743ef3554bf57bc79ce5dc00fa234b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aacbe3434463b409ea1d93f9db8ad37bc" id="r_aacbe3434463b409ea1d93f9db8ad37bc"><td class="memItemLeft" align="right" valign="top"><a id="aacbe3434463b409ea1d93f9db8ad37bc" name="aacbe3434463b409ea1d93f9db8ad37bc"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>ShouldClose</b> () const</td></tr>
@@ -143,9 +143,9 @@ std::unique_ptr&lt; <a class="el" href="classbloom_1_1_factory.html">Factory</a>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:ad4b7e975f524d6a6d2398052f0a81037" id="r_ad4b7e975f524d6a6d2398052f0a81037"><td class="memItemLeft" align="right" valign="top"><a id="ad4b7e975f524d6a6d2398052f0a81037" name="ad4b7e975f524d6a6d2398052f0a81037"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>LoadObjects</b> ()</td></tr>
-<tr class="separator:ad4b7e975f524d6a6d2398052f0a81037"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab641a25e2842bf6c423117f3c2ca69e7" id="r_ab641a25e2842bf6c423117f3c2ca69e7"><td class="memItemLeft" align="right" valign="top"><a id="ab641a25e2842bf6c423117f3c2ca69e7" name="ab641a25e2842bf6c423117f3c2ca69e7"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>OnBegin</b> ()</td></tr>
+<tr class="separator:ab641a25e2842bf6c423117f3c2ca69e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -161,18 +161,15 @@ std::unique_ptr&lt; <a class="el" href="classbloom_1_1render_1_1_renderer.html">
 <tr class="memitem:a1e1f9560eea6c443b54afcf6fe49d913" id="r_a1e1f9560eea6c443b54afcf6fe49d913"><td class="memItemLeft" align="right" valign="top"><a id="a1e1f9560eea6c443b54afcf6fe49d913" name="a1e1f9560eea6c443b54afcf6fe49d913"></a>
 <a class="el" href="classbloom_1_1_simple_render_system.html">SimpleRenderSystem</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>m_simpleRenderSystem</b> = nullptr</td></tr>
 <tr class="separator:a1e1f9560eea6c443b54afcf6fe49d913"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a755180bb2c0c676ed9fbb66ea7b3c8b3" id="r_a755180bb2c0c676ed9fbb66ea7b3c8b3"><td class="memItemLeft" align="right" valign="top"><a id="a755180bb2c0c676ed9fbb66ea7b3c8b3" name="a755180bb2c0c676ed9fbb66ea7b3c8b3"></a>
-std::vector&lt; <a class="el" href="classbloom_1_1_object.html">Object</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>gameObjects</b></td></tr>
-<tr class="separator:a755180bb2c0c676ed9fbb66ea7b3c8b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65137d25d0964216567130207b3c3322" id="r_a65137d25d0964216567130207b3c3322"><td class="memItemLeft" align="right" valign="top"><a id="a65137d25d0964216567130207b3c3322" name="a65137d25d0964216567130207b3c3322"></a>
-<a class="el" href="classbloom_1_1_camera.html">Camera</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_camera</b></td></tr>
-<tr class="separator:a65137d25d0964216567130207b3c3322"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a15c91423cb127ff1a8aebaa4119d7659" id="r_a15c91423cb127ff1a8aebaa4119d7659"><td class="memItemLeft" align="right" valign="top"><a id="a15c91423cb127ff1a8aebaa4119d7659" name="a15c91423cb127ff1a8aebaa4119d7659"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>m_deltaTime</b></td></tr>
-<tr class="separator:a15c91423cb127ff1a8aebaa4119d7659"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acac7f77a6e1eef0333ba3762100709d4" id="r_acac7f77a6e1eef0333ba3762100709d4"><td class="memItemLeft" align="right" valign="top"><a id="acac7f77a6e1eef0333ba3762100709d4" name="acac7f77a6e1eef0333ba3762100709d4"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>m_rotation</b></td></tr>
-<tr class="separator:acac7f77a6e1eef0333ba3762100709d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6652663ab06bfa57afb408ebceed42a8" id="r_a6652663ab06bfa57afb408ebceed42a8"><td class="memItemLeft" align="right" valign="top"><a id="a6652663ab06bfa57afb408ebceed42a8" name="a6652663ab06bfa57afb408ebceed42a8"></a>
+std::shared_ptr&lt; <a class="el" href="classbloom_1_1_camera.html">Camera</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>m_activeCamera</b></td></tr>
+<tr class="separator:a6652663ab06bfa57afb408ebceed42a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a128425c9b6152891450060d898e0c6e0" id="r_a128425c9b6152891450060d898e0c6e0"><td class="memItemLeft" align="right" valign="top"><a id="a128425c9b6152891450060d898e0c6e0" name="a128425c9b6152891450060d898e0c6e0"></a>
+std::unique_ptr&lt; <a class="el" href="classbloom_1_1render_1_1_descriptor_set_layout.html">render::DescriptorSetLayout</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>m_materialSetLayout</b></td></tr>
+<tr class="separator:a128425c9b6152891450060d898e0c6e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af37376d08f33c7ed0e1133ff69df4567" id="r_af37376d08f33c7ed0e1133ff69df4567"><td class="memItemLeft" align="right" valign="top"><a id="af37376d08f33c7ed0e1133ff69df4567" name="af37376d08f33c7ed0e1133ff69df4567"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>m_deltaTime</b></td></tr>
+<tr class="separator:af37376d08f33c7ed0e1133ff69df4567"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>C:/Users/xgoni/bloom/bloom/src/<a class="el" href="engine_8hpp_source.html">engine.hpp</a></li>

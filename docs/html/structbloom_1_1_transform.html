@@ -95,27 +95,68 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">bloom::Transform Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Represents the position, rotation, and scale of an object in 3D space.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="object_8hpp_source.html">object.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a24035d8abbaab09f1a4a619f4b9f7016" id="r_a24035d8abbaab09f1a4a619f4b9f7016"><td class="memItemLeft" align="right" valign="top"><a id="a24035d8abbaab09f1a4a619f4b9f7016" name="a24035d8abbaab09f1a4a619f4b9f7016"></a>
-glm::mat4&#160;</td><td class="memItemRight" valign="bottom"><b>mat4</b> ()</td></tr>
-<tr class="separator:a24035d8abbaab09f1a4a619f4b9f7016"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acabdaf75834ef11b0e3d7ddc91bec11f" id="r_acabdaf75834ef11b0e3d7ddc91bec11f"><td class="memItemLeft" align="right" valign="top">glm::mat4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acabdaf75834ef11b0e3d7ddc91bec11f">Matrix</a> () const</td></tr>
+<tr class="memdesc:acabdaf75834ef11b0e3d7ddc91bec11f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates and returns the 4x4 transformation matrix.  <br /></td></tr>
+<tr class="separator:acabdaf75834ef11b0e3d7ddc91bec11f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a65e009050da9526c60739ff858c3ed1c" id="r_a65e009050da9526c60739ff858c3ed1c"><td class="memItemLeft" align="right" valign="top"><a id="a65e009050da9526c60739ff858c3ed1c" name="a65e009050da9526c60739ff858c3ed1c"></a>
 glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><b>position</b> = {}</td></tr>
+<tr class="memdesc:a65e009050da9526c60739ff858c3ed1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The position of the object in world space. <br /></td></tr>
 <tr class="separator:a65e009050da9526c60739ff858c3ed1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae2da39dae20de6c860cb9c8b541092b9" id="r_ae2da39dae20de6c860cb9c8b541092b9"><td class="memItemLeft" align="right" valign="top"><a id="ae2da39dae20de6c860cb9c8b541092b9" name="ae2da39dae20de6c860cb9c8b541092b9"></a>
 glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><b>scale</b> = {1.0f, 1.0f, 1.0f}</td></tr>
+<tr class="memdesc:ae2da39dae20de6c860cb9c8b541092b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The scale of the object in each axis. <br /></td></tr>
 <tr class="separator:ae2da39dae20de6c860cb9c8b541092b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a74ff5ce7a3e2c963a80fb829c77957f0" id="r_a74ff5ce7a3e2c963a80fb829c77957f0"><td class="memItemLeft" align="right" valign="top"><a id="a74ff5ce7a3e2c963a80fb829c77957f0" name="a74ff5ce7a3e2c963a80fb829c77957f0"></a>
 glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><b>rotation</b> = {}</td></tr>
+<tr class="memdesc:a74ff5ce7a3e2c963a80fb829c77957f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The rotation of the object as Euler angles (yaw, pitch, roll) in radians. <br /></td></tr>
 <tr class="separator:a74ff5ce7a3e2c963a80fb829c77957f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Represents the position, rotation, and scale of an object in 3D space. </p>
+<p>The <a class="el" href="structbloom_1_1_transform.html" title="Represents the position, rotation, and scale of an object in 3D space.">Transform</a> struct provides a convenient way to store and manipulate the transformation properties of an object. It contains the object's <b>position</b> as a 3D vector, its <b>scale</b> as a 3D vector, and its <b>rotation</b> as Euler angles (yaw, pitch, and roll). The <code><a class="el" href="#acabdaf75834ef11b0e3d7ddc91bec11f" title="Calculates and returns the 4x4 transformation matrix.">Matrix()</a></code> method calculates the combined transformation matrix based on these properties. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="acabdaf75834ef11b0e3d7ddc91bec11f" name="acabdaf75834ef11b0e3d7ddc91bec11f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acabdaf75834ef11b0e3d7ddc91bec11f">&#9670;&#160;</a></span>Matrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::mat4 bloom::Transform::Matrix </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calculates and returns the 4x4 transformation matrix. </p>
+<p>This method combines the position, rotation, and scale properties into a single homogeneous matrix that can be used to transform the object's vertices. The transformation order is scale, then rotation, then translation.</p>
+<dl class="section return"><dt>Returns</dt><dd>The combined transformation matrix. </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>C:/Users/xgoni/bloom/bloom/src/<a class="el" href="object_8hpp_source.html">object.hpp</a></li>
+<li>C:/Users/xgoni/bloom/bloom/src/objects/<a class="el" href="object_8hpp_source.html">object.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
