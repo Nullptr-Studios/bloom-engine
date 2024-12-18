@@ -1,5 +1,5 @@
 #include "engine.hpp"
-#include "render/model.hpp"
+#include "simple_render_system.hpp"
 #include "render/buffer.hpp"
 
 namespace bloom {
@@ -9,17 +9,16 @@ struct GlobalUBO {
   alignas(16) glm::vec4 colorUniform = {1.0f, 0.0f, 1.0f, 1.0f};
 };
 
-#pragma region Game Loop
-
 Engine::Engine() { }
 
-void Engine::Begin() {
+// region Begin
+void Engine::Init() {
   glfwInit();
-	Log::Init();
+  Log::Init();
 
   m_window = new Window(800, 800, "Bloom");
-  m_window->SetEventCallback([this]<typename T0>(T0 && PH1) { OnEvent(std::forward<T0>(PH1)); });
-  m_window->OnInit();
+  m_window->SetEventCallback([this]<typename T0>(T0 && ph1) { OnEvent(std::forward<T0>(ph1)); });
+  m_window->OnBegin();
 
   factory = std::make_unique<Factory>();
 
@@ -71,22 +70,22 @@ void Engine::Begin() {
 
   OnBegin();
 
-  for (auto& object : factory->GetObjects()) {
-    object.second->Begin();
-  }
+  for (auto& object : factory->GetObjects())
+    object.second->OnBegin();
 }
 
-void Engine::Tick() {
+// region Tick
+void Engine::OnTick() {
   m_deltaTime = static_cast<float>(m_window->GetDeltaTime());
   m_window->OnTick();
 
   // Objects game loop
-  for (auto& object : factory->GetObjects()) {
-    object.second->Tick(m_deltaTime);
-  }
+  for (auto& object : factory->GetObjects())
+    object.second->OnTick(m_deltaTime);
 }
 
-void Engine::Render() {
+// region Render
+void Engine::OnRender() {
   if (auto commandBuffer = m_renderer->BeginFrame()) {
     char frameIndex = static_cast<char>(m_renderer->GetFrameIndex());
     render::FrameInfo frameInfo{
@@ -114,25 +113,24 @@ void Engine::Render() {
   }
 }
 
-void Engine::End() const {
-  vkDeviceWaitIdle(m_devices->device());
-  for (auto& buffer : m_UBOBuffers) {
-    // I got an error with the std::unique_ptr so i changed it to a raw pointer -x
+// region End
+void Engine::OnClose() {
+  vkDeviceWaitIdle(m_devices->Device());
+  for (auto& buffer : m_UBOBuffers)
+    // I got an error with the std::unique_ptr, so I changed it to a raw pointer -x
     delete buffer;
-  }
   delete m_window;
 }
 
-#pragma endregion // -------------------------------------------------------------------------------------------------
-
+// region Events
 void Engine::OnEvent(const Event &e) const {
   // BLOOM_INFO("{0}", e.ToString());
 
-  if (e.GetEventType() == EventType::WindowClose) {
-    m_window->CloseWindow();
-  }
+  if (e.GetEventType() == EventType::WindowClose)
+    m_window->OnCloseWindow();
 }
 
+// TODO: Avoid having to create this shit
 void Engine::OnBegin() { }
 
 }

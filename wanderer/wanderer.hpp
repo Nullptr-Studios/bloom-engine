@@ -17,8 +17,8 @@ public:
   Wanderer() = default;
 
   void OnBegin() override;
-  void Tick() override;
-  void End() const override;
+  void OnTick() override;
+  void OnClose() override;
 private:
   std::shared_ptr<EditorCamera> m_camera;
 };

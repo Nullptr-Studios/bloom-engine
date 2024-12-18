@@ -12,6 +12,14 @@
 
 namespace bloom {
 
+/**
+ * @class Factory
+ * @brief Manages the creation of game objects
+ *
+ * The Factory class is responsible for creating game objects, assigning unique IDs to them,
+ * and maintaining maps of all created objects and renderable actors. It also provides methods to retrieve
+ * these maps and set the rendering device.
+ */
 class BLOOM_API Factory {
 public:
   /**
@@ -27,17 +35,14 @@ public:
   ActorMap GetRenderables() { return m_renderables; }
 
   void SetDevice(render::Devices* device) { m_devices = device; }
+  // TODO: This should have a GetInstance
 
 private:
-  /**
-   * This variable keeps track of the current object ID
-   */
-  id_t m_currentID = 0;
+  id_t m_currentID = 0;   ///< Keeps track of the current ID
+  ObjectMap m_objects;    ///< Map of all objects
+  ActorMap m_renderables; ///< Map of all actors
 
-  ObjectMap m_objects;
-  ActorMap m_renderables;
-
-  render::Devices* m_devices;
+  render::Devices* m_devices = nullptr;
 };
 
 template<typename T, typename>

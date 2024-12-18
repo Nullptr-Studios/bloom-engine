@@ -4,17 +4,17 @@
 
 namespace bloom {
 
-void Camera::Begin() {
+void Camera::OnBegin() {
   transform.position = glm::vec3(0.0f);
   UpdateView();
 }
 
-void Camera::Tick(float deltaTime) {
+void Camera::OnTick(float deltaTime) {
   SetPerspectiveProjection(glm::radians(50.0f), m_aspect, 0.1f, 100.0f);
   UpdateView();
 }
 
-void Camera::End() { }
+void Camera::OnClose() { }
 
 void Camera::SetOrthographicProjection(const float left, const float right,
     const float bottom, const float top, const float near, const float far) {

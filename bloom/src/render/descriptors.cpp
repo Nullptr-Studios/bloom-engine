@@ -39,7 +39,7 @@ DescriptorSetLayout::DescriptorSetLayout(
   descriptorSetLayoutInfo.pBindings = setLayoutBindings.data();
  
   if (vkCreateDescriptorSetLayout(
-          m_device.device(),
+          m_device.Device(),
           &descriptorSetLayoutInfo,
           nullptr,
           &m_descriptorSetLayout) != VK_SUCCESS) {
@@ -48,7 +48,7 @@ DescriptorSetLayout::DescriptorSetLayout(
 }
  
 DescriptorSetLayout::~DescriptorSetLayout() {
-  vkDestroyDescriptorSetLayout(m_device.device(), m_descriptorSetLayout, nullptr);
+  vkDestroyDescriptorSetLayout(m_device.Device(), m_descriptorSetLayout, nullptr);
 }
  
 // region Descriptor Pool Builder
@@ -87,14 +87,14 @@ DescriptorPool::DescriptorPool(
   descriptorPoolInfo.maxSets = maxSets;
   descriptorPoolInfo.flags = poolFlags;
  
-  if (vkCreateDescriptorPool(m_device.device(), &descriptorPoolInfo, nullptr, &m_descriptorPool) !=
+  if (vkCreateDescriptorPool(m_device.Device(), &descriptorPoolInfo, nullptr, &m_descriptorPool) !=
       VK_SUCCESS) {
     BLOOM_CRITICAL("Failed to create descriptor pool!");
   }
 }
  
 DescriptorPool::~DescriptorPool() {
-  vkDestroyDescriptorPool(m_device.device(), m_descriptorPool, nullptr);
+  vkDestroyDescriptorPool(m_device.Device(), m_descriptorPool, nullptr);
 }
  
 bool DescriptorPool::AllocateDescriptor(
@@ -107,21 +107,21 @@ bool DescriptorPool::AllocateDescriptor(
  
   // Might want to create a "DescriptorPoolManager" class that handles this case, and builds
   // a new pool whenever an old pool fills up -x
-  if (vkAllocateDescriptorSets(m_device.device(), &allocInfo, &descriptor) != VK_SUCCESS)
+  if (vkAllocateDescriptorSets(m_device.Device(), &allocInfo, &descriptor) != VK_SUCCESS)
     return false;
   return true;
 }
  
 void DescriptorPool::FreeDescriptors(const std::vector<VkDescriptorSet> &descriptors) const {
   vkFreeDescriptorSets(
-      m_device.device(),
+      m_device.Device(),
       m_descriptorPool,
       static_cast<uint32_t>(descriptors.size()),
       descriptors.data());
 }
  
 void DescriptorPool::ResetPool() const {
-  vkResetDescriptorPool(m_device.device(), m_descriptorPool, 0);
+  vkResetDescriptorPool(m_device.Device(), m_descriptorPool, 0);
 }
  
 // region Descriptor Writer
@@ -184,7 +184,7 @@ bool DescriptorWriter::Build(VkDescriptorSet &set) {
 void DescriptorWriter::Overwrite(const VkDescriptorSet &set) {
   for (auto &write : m_writes)
     write.dstSet = set;
-  vkUpdateDescriptorSets(m_pool.m_device.device(), m_writes.size(), m_writes.data(), 0, nullptr);
+  vkUpdateDescriptorSets(m_pool.m_device.Device(), m_writes.size(), m_writes.data(), 0, nullptr);
 }
 
 }

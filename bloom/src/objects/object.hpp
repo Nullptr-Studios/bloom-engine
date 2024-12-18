@@ -75,16 +75,16 @@ public:
   /**
    *  @brief Called at the beginning of the scene.
    */
-  virtual void Begin() {}
+  virtual void OnBegin() {}
   /**
    *  @brief Called every frame to update the object's state.
    *  @param deltaTime The time elapsed since the last frame.
    */
-  virtual void Tick(float deltaTime) {}
+  virtual void OnTick(float deltaTime) {}
   /**
    *  @brief Called at the end of the scene.
    */
-  virtual void End() {}
+  virtual void OnClose() {}
 
   Transform transform; ///< @brief The object's transform, representing its position, rotation, and scale.
 

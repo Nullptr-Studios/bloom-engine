@@ -11,8 +11,30 @@
 
 namespace bloom::render {
 
+/**
+ *  @class Buffer
+ *  @brief Represents a Vulkan buffer object.
+ *
+ *  This class encapsulates a Vulkan buffer and its associated memory, providing
+ *  methods for data manipulation and interaction with the Vulkan API.  It supports
+ *  storing multiple instances of data within a single buffer, and provides
+ *  convenience methods for accessing individual instances.
+ */
 class Buffer {
 public:
+  /**
+   *  @brief Constructs a new Buffer object.
+   *
+   *  Creates a new Vulkan buffer with the specified parameters.
+   *
+   *  @param device Reference to the `Devices` object.
+   *  @param instanceSize The size of a single instance in the buffer (in bytes).
+   *  @param instanceCount The number of instances to allocate in the buffer.
+   *  @param usageFlags Vulkan buffer usage flags (e.g., VK_BUFFER_USAGE_VERTEX_BUFFER_BIT).
+   *  @param memoryPropertyFlags Vulkan memory property flags (e.g., VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT).
+   *  @param minOffsetAlignment Minimum required alignment for buffer offsets.  This parameter
+   *                            is crucial when using buffers with descriptors that have offset restrictions.
+   */
   Buffer(
     Devices& device,
     VkDeviceSize instanceSize,

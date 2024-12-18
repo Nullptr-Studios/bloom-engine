@@ -20,14 +20,14 @@ int main() {
   const auto m_engine = bloom::CreateEngine();
 
   glfwInit();
-  m_engine->Begin();
+  m_engine->Init();
 
   while (!m_engine->ShouldClose()) {
-    m_engine->Tick();
-    m_engine->Render();
+    m_engine->OnTick();
+    m_engine->OnRender();
   }
 
-  m_engine->End();
+  m_engine->OnClose();
 }
 
 #endif

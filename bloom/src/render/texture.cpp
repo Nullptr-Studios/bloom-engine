@@ -5,19 +5,20 @@
 
 namespace bloom::render {
 
+  // region Texture creation
   Texture::Texture(Devices *device, const std::string &path) : m_device(device) {
     m_data = stbi_load(path.c_str(), &m_dimensions.width, &m_dimensions.height, &m_dimensions.pixelSize, STBI_rgb_alpha);
 
     VkBuffer stagingBuffer;
     VkDeviceMemory stagingBufferMemory;
-    m_device->createBuffer(m_dimensions.width * m_dimensions.height * 4, VK_BUFFER_USAGE_TRANSFER_SRC_BIT,
+    m_device->CreateBuffer(m_dimensions.width * m_dimensions.height * 4, VK_BUFFER_USAGE_TRANSFER_SRC_BIT,
                            VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT,
                            stagingBuffer, stagingBufferMemory);
 
     void* data;
-    vkMapMemory(m_device->device(), stagingBufferMemory, 0, m_dimensions.width * m_dimensions.height * 4, 0, &data);
+    vkMapMemory(m_device->Device(), stagingBufferMemory, 0, m_dimensions.width * m_dimensions.height * 4, 0, &data);
     memcpy(data, m_data, m_dimensions.width * m_dimensions.height * 4);
-    vkUnmapMemory(m_device->device(), stagingBufferMemory);
+    vkUnmapMemory(m_device->Device(), stagingBufferMemory);
 
     m_imageFormat = VK_FORMAT_R8G8B8A8_SRGB;
 
@@ -35,13 +36,14 @@ namespace bloom::render {
     imageInfo.usage = VK_IMAGE_USAGE_TRANSFER_DST_BIT | VK_IMAGE_USAGE_SAMPLED_BIT;
     m_imageLayout = imageInfo.initialLayout;
 
-    m_device->createImageWithInfo(imageInfo, VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT, m_image, m_imageMemory);
+    m_device->CreateImageWithInfo(imageInfo, VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT, m_image, m_imageMemory);
 
     TransitionImageLayout(VK_IMAGE_LAYOUT_UNDEFINED, VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL);
-    m_device->copyBufferToImage(stagingBuffer, m_image, static_cast<unsigned int>(m_dimensions.width),
+    m_device->CopyBufferToImage(stagingBuffer, m_image, static_cast<unsigned int>(m_dimensions.width),
                                 static_cast<unsigned int>(m_dimensions.height), 1);
     TransitionImageLayout(VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL, VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL);
 
+    // region Sampler creation
     VkSamplerCreateInfo samplerInfo{};
     samplerInfo.sType = VK_STRUCTURE_TYPE_SAMPLER_CREATE_INFO;
     samplerInfo.magFilter = VK_FILTER_LINEAR;
@@ -57,7 +59,7 @@ namespace bloom::render {
     samplerInfo.maxAnisotropy = 1.0f;
     samplerInfo.anisotropyEnable = VK_FALSE;
     samplerInfo.borderColor = VK_BORDER_COLOR_FLOAT_OPAQUE_BLACK;
-    vkCreateSampler(m_device->device(), &samplerInfo, nullptr, &m_sampler);
+    vkCreateSampler(m_device->Device(), &samplerInfo, nullptr, &m_sampler);
 
     VkImageViewCreateInfo viewInfo{};
     viewInfo.sType = VK_STRUCTURE_TYPE_IMAGE_VIEW_CREATE_INFO;
@@ -70,20 +72,21 @@ namespace bloom::render {
     viewInfo.subresourceRange.levelCount = 1;
     viewInfo.subresourceRange.layerCount = 1;
     viewInfo.image = m_image;
-    vkCreateImageView(m_device->device(), &viewInfo, nullptr, &m_imageView);
+    vkCreateImageView(m_device->Device(), &viewInfo, nullptr, &m_imageView);
 
     stbi_image_free(m_data);
   }
 
   Texture::~Texture() {
-    vkDestroyImage(m_device->device(), m_image, nullptr);
-    vkFreeMemory(m_device->device(), m_imageMemory, nullptr);
-    vkDestroyImageView(m_device->device(), m_imageView, nullptr);
-    vkDestroySampler(m_device->device(), m_sampler, nullptr);
+    vkDestroyImage(m_device->Device(), m_image, nullptr);
+    vkFreeMemory(m_device->Device(), m_imageMemory, nullptr);
+    vkDestroyImageView(m_device->Device(), m_imageView, nullptr);
+    vkDestroySampler(m_device->Device(), m_sampler, nullptr);
   }
 
+  // region Transition layout
   void Texture::TransitionImageLayout(VkImageLayout oldLayout, VkImageLayout newLayout) {
-    VkCommandBuffer commandBuffer = m_device->beginSingleTimeCommands();
+    VkCommandBuffer commandBuffer = m_device->BeginSingleTimeCommands();
 
     VkImageMemoryBarrier barrier{};
     barrier.sType = VK_STRUCTURE_TYPE_IMAGE_MEMORY_BARRIER;
@@ -118,8 +121,8 @@ namespace bloom::render {
     }
 
     vkCmdPipelineBarrier(commandBuffer, sourceStage, destinationStage, 0, 0, nullptr, 0, nullptr, 1, &barrier);
-    m_device->endSingleTimeCommands(commandBuffer);
+    m_device->EndSingleTimeCommands(commandBuffer);
     m_imageLayout = newLayout;
   }
 
-} // namespace bloom::render
+}

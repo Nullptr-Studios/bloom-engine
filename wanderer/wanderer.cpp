@@ -77,12 +77,12 @@ void Wanderer::OnBegin() {
   cube2->LoadTextures(m_materialSetLayout.get(), "resources/textures/bloom.png");
 }
 
-void Wanderer::Tick() {
-  Engine::Tick();
+void Wanderer::OnTick() {
+  Engine::OnTick();
 }
 
-void Wanderer::End() const {
-  Engine::End();
+void Wanderer::OnClose() {
+  Engine::OnClose();
 }
 
 }

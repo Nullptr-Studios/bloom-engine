@@ -3,8 +3,8 @@
 
 namespace wanderer {
 
-  void EditorCamera::Tick(float deltaTime) {
-    Camera::Tick(deltaTime);
+  void EditorCamera::OnTick(float deltaTime) {
+    Camera::OnTick(deltaTime);
 
     transform.position += glm::vec3(m_movement.x, 0.0f, -m_movement.y) * speed * deltaTime;
   }

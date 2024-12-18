@@ -22,23 +22,23 @@ Buffer::Buffer(
       m_memoryPropertyFlags{memoryPropertyFlags} {
   m_alignmentSize = GetAlignment(instanceSize, minOffsetAlignment);
   m_bufferSize = m_alignmentSize * instanceCount;
-  device.createBuffer(m_bufferSize, usageFlags, memoryPropertyFlags, m_buffer, m_memory);
+  device.CreateBuffer(m_bufferSize, usageFlags, memoryPropertyFlags, m_buffer, m_memory);
 }
  
 Buffer::~Buffer() {
   Unmap();
-  vkDestroyBuffer(m_devices.device(), m_buffer, nullptr);
-  vkFreeMemory(m_devices.device(), m_memory, nullptr);
+  vkDestroyBuffer(m_devices.Device(), m_buffer, nullptr);
+  vkFreeMemory(m_devices.Device(), m_memory, nullptr);
 }
 
 VkResult Buffer::Map(VkDeviceSize size, VkDeviceSize offset) {
   assert(m_buffer && m_memory && "Called map on buffer before create");
-  return vkMapMemory(m_devices.device(), m_memory, offset, size, 0, &m_mapped);
+  return vkMapMemory(m_devices.Device(), m_memory, offset, size, 0, &m_mapped);
 }
 
 void Buffer::Unmap() {
   if (m_mapped) {
-    vkUnmapMemory(m_devices.device(), m_memory);
+    vkUnmapMemory(m_devices.Device(), m_memory);
     m_mapped = nullptr;
   }
 }
@@ -61,7 +61,7 @@ VkResult Buffer::Flush(VkDeviceSize size, VkDeviceSize offset) const {
   mappedRange.memory = m_memory;
   mappedRange.offset = offset;
   mappedRange.size = size;
-  return vkFlushMappedMemoryRanges(m_devices.device(), 1, &mappedRange);
+  return vkFlushMappedMemoryRanges(m_devices.Device(), 1, &mappedRange);
 }
 
 VkResult Buffer::Invalidate(VkDeviceSize size, VkDeviceSize offset) const {
@@ -70,7 +70,7 @@ VkResult Buffer::Invalidate(VkDeviceSize size, VkDeviceSize offset) const {
   mappedRange.memory = m_memory;
   mappedRange.offset = offset;
   mappedRange.size = size;
-  return vkInvalidateMappedMemoryRanges(m_devices.device(), 1, &mappedRange);
+  return vkInvalidateMappedMemoryRanges(m_devices.Device(), 1, &mappedRange);
 }
 
 VkDescriptorBufferInfo Buffer::DescriptorInfo(VkDeviceSize size, VkDeviceSize offset) const {

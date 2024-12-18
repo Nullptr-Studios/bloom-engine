@@ -73,12 +73,6 @@ public:
   Actor(Actor&&) = default;
   Actor& operator=(Actor&&) = default;
 
-  // Game loop
-  // TODO: Do we need to put the Object::Begin() if it's empty? -x
-  void Begin() override { Object::Begin(); }
-  void Tick(float deltaTime) override { Object::Tick(deltaTime); }
-  void End() override { Object::End(); }
-
   /**
    * Loads textures for the actor's visual representation.
    *

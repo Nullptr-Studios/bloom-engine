@@ -41,9 +41,9 @@ public:
   explicit Camera(const id_t id, render::Devices* devices) : Object(id, devices) {};
 
   // Game loop
-  void Begin() override;
-  void Tick(float deltaTime) override;
-  void End() override;
+  void OnBegin() override;
+  void OnTick(float deltaTime) override;
+  void OnClose() override;
 
   /**
    *  @brief Sets an orthographic projection for the camera.
