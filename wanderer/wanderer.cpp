@@ -56,7 +56,7 @@ std::unique_ptr<bloom::render::Model> createCubeModel(bloom::render::Devices* de
 
 // TODO: This needs a different name
 void Wanderer::OnBegin() {
-  m_camera = factory->CreateObject<EditorCamera>();
+  m_camera = factory->CreateObject<EditorCamera>("Camera");
   m_activeCamera = m_camera;
   m_window->SetEventCallback([this](const Event& event) {
     m_camera->OnEvent(event);
@@ -64,13 +64,13 @@ void Wanderer::OnBegin() {
 
   std::shared_ptr<render::Model> model = createCubeModel(m_devices.get(), {0.0f, 0.0f, 0.0f});
 
-  auto cube = factory->CreateObject<Actor>();
+  auto cube = factory->CreateObject<Actor>("Cube 1");
   cube->model = model;
   cube->transform.position = {-0.5f, 0.0f, -2.5f};
   cube->transform.scale = {0.5f, 0.5f, 0.5f};
   cube->LoadTextures(m_materialSetLayout.get(), "resources/textures/cat.png");
 
-  auto cube2 = factory->CreateObject<Actor>();
+  auto cube2 = factory->CreateObject<Actor>("Cube 2");
   cube2->model = model;
   cube2->transform.position = {0.5f, 0.0f, -2.5f};
   cube2->transform.scale = {0.5f, 0.5f, 0.5f};

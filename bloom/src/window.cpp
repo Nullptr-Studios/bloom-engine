@@ -106,8 +106,6 @@ void Window::OnBegin() {
 // region Tick
 void Window::OnTick() {
   glfwPollEvents();
-  // TODO: This is OpenGL specific
-  //glfwSwapBuffers(_window);
 }
 
 double Window::GetDeltaTime() {

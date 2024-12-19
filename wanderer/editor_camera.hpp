@@ -13,7 +13,7 @@ namespace wanderer {
 
 class EditorCamera : public bloom::Camera {
 public:
-  EditorCamera(const id_t id, bloom::render::Devices* devices) : Camera(id, devices) {}
+  explicit EditorCamera(const id_t id) : Camera(id) {}
   void OnTick(float deltaTime) override;
 
   void OnEvent(const bloom::Event &e);

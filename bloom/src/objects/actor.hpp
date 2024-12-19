@@ -61,10 +61,8 @@ public:
    *
    * @param id The unique identifier for this actor. This ID should be unique within
    *           the game world to avoid conflicts.
-   * @param devices A pointer to the Vulkan device management object. This provides
-   *                access to the Vulkan API and resources required for rendering.
    */
-  explicit Actor(id_t id, render::Devices *devices);
+  explicit Actor(id_t id);
   ~Actor() override = default;
 
   // Copy destructors

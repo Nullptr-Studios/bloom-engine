@@ -3,8 +3,8 @@
 
 namespace bloom {
 
-Actor::Actor(id_t id, render::Devices* devices) : Object(id, devices) {
-  m_materialPool = render::DescriptorPool::Builder(*m_devices)
+Actor::Actor(id_t id) : Object(id) {
+  m_materialPool = render::DescriptorPool::Builder(*render::Devices::GetInstance())
     .SetMaxSets(render::SwapChain::MAX_FRAMES_IN_FLIGHT)
     .AddPoolSize(VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, render::SwapChain::MAX_FRAMES_IN_FLIGHT * 4)
   .Build();
@@ -16,10 +16,10 @@ void Actor::LoadTextures(
     const std::string &rmo,
     const std::string &normal,
     const std::string &emission) {
-  m_textures[0] = std::make_unique<render::Texture>(m_devices, albedo);
-  m_textures[1] = std::make_unique<render::Texture>(m_devices, rmo);
-  m_textures[2] = std::make_unique<render::Texture>(m_devices, normal);
-  m_textures[3] = std::make_unique<render::Texture>(m_devices, emission);
+  m_textures[0] = std::make_unique<render::Texture>(render::Devices::GetInstance(), albedo);
+  m_textures[1] = std::make_unique<render::Texture>(render::Devices::GetInstance(), rmo);
+  m_textures[2] = std::make_unique<render::Texture>(render::Devices::GetInstance(), normal);
+  m_textures[3] = std::make_unique<render::Texture>(render::Devices::GetInstance(), emission);
 
   std::array<VkDescriptorImageInfo, 4> imageInfos{};
   for (int i = 0; i < 4; i++) {

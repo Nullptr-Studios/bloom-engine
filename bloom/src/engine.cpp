@@ -23,7 +23,6 @@ void Engine::Init() {
   factory = std::make_unique<Factory>();
 
   m_devices = std::make_unique<render::Devices>(*m_window);
-  factory->SetDevice(m_devices.get());
 
   // TODO: I probably want to move all this elsewhere
   m_globalPool = render::DescriptorPool::Builder(*m_devices)

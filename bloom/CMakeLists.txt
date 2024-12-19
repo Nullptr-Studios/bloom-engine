@@ -46,6 +46,13 @@ add_library(bloom-engine SHARED
         src/render/buffer.cpp
         src/render/buffer.hpp
         src/render/frame_info.hpp
+        src/layer.cpp
+        src/layer.hpp
+        src/layer_stack.cpp
+        src/layer_stack.hpp
+        src/layer_stack.cpp
+        src/layer_stack.hpp
+        src/factory.cpp
 )
 
 target_precompile_headers(bloom-engine PRIVATE bloom_header.hpp)

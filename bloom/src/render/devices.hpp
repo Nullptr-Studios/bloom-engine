@@ -54,7 +54,7 @@ struct QueueFamilyIndices {
  * buffer and image operations. It serves as the central point of interaction
  * with the Vulkan API.
  */
-class Devices {
+class BLOOM_API Devices {
 public:
 // Validation layers check
 #ifdef NDEBUG
@@ -125,6 +125,17 @@ public:
    */
   VkFormat FindSupportedFormat(
       const std::vector<VkFormat> &candidates, VkImageTiling tiling, VkFormatFeatureFlags features);
+  /**
+   * @brief Gets the physical device.
+   * @return The physical device handle. Represents the GPU.
+   */
+  static Devices* GetInstance() {
+    if (!m_instance) {
+      BLOOM_ERROR("Tried to access Devices but it has not been created yet");
+      return nullptr;
+    }
+    return m_instance;
+  }
 
   // region Helper Functions
   /**
@@ -201,7 +212,8 @@ private:
   bool CheckDeviceExtensionSupport(VkPhysicalDevice device);
   SwapChainSupportDetails QuerySwapChainSupport(VkPhysicalDevice device);
 
-  VkInstance m_instance;
+  static Devices* m_instance;
+  VkInstance m_vkInstance;
   VkDebugUtilsMessengerEXT m_debugMessenger;
   VkPhysicalDevice m_physicalDevice = VK_NULL_HANDLE;
   Window &m_window;

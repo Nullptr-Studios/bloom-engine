@@ -32,13 +32,7 @@ namespace bloom {
  */
 class BLOOM_API Camera : public Object {
 public:
-  /**
-   *  @brief Constructs a new Camera object.
-   *
-   *  @param id The unique identifier for this camera.
-   *  @param devices A pointer to the Vulkan device management object.
-   */
-  explicit Camera(const id_t id, render::Devices* devices) : Object(id, devices) {};
+  explicit Camera(id_t id) : Object(id) {}
 
   // Game loop
   void OnBegin() override;
