@@ -1,9 +1,12 @@
 /**
  * @file game_layer.hpp
- * @author Xein <xgonip@gmail.com>
  * @date 20/12/2024
  *
- * @brief [Brief description of the file's purpose]
+ * @brief Vulkan layer for the game
+ *
+ * This file contains the @c GameLayer class, which represents a Vulkan layer used to render 3D game elements.
+ * The @c GameLayer class is responsible for managing the lifecycle of the layer, including attaching, beginning,
+ * ticking, rendering, detaching, and handling events.
  */
 
 #pragma once
@@ -14,6 +17,13 @@
 
 namespace bloom::render {
 
+/**
+ * @class GameLayer
+ * @brief Represents a Vulkan layer for rendering 3D game elements.
+ *
+ * The @c GameLayer class  inherits from the `Layer` class. It provides the functionality for the 3D rendering and
+ * handling of game elements
+ */
 class GameLayer final : public Layer {
 
 public:
@@ -23,12 +33,11 @@ public:
   void OnTick(float deltaTime) override;
   void OnRender(FrameInfo frameInfo) override;
   void OnDetach() override;
-
   void OnEvent(const Event& e) override;
-    
+
 private:
-  std::unique_ptr<Factory> m_factory = nullptr;
-  SimpleRenderSystem* m_simpleRenderSystem = nullptr;
+  std::unique_ptr<Factory> m_factory = nullptr;       ///< Factory for creating game objects.
+  SimpleRenderSystem* m_simpleRenderSystem = nullptr; ///< Rendering system
 
   std::unique_ptr<DescriptorPool> m_globalPool;
   std::unique_ptr<DescriptorPool> m_materialPool;
@@ -36,7 +45,6 @@ private:
   std::vector<VkDescriptorSet> m_materialDescriptorSets;
   std::unique_ptr<DescriptorSetLayout> m_globalSetLayout;
   std::unique_ptr<DescriptorSetLayout> m_materialSetLayout;
-  // ReSharper disable once CppInconsistentNaming
   std::vector<Buffer*> m_UBOBuffers;
 };
 

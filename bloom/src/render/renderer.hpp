@@ -108,6 +108,10 @@ public:
     }
     return m_currentFrameIndex;
   }
+  /**
+   * @brief Gets the renderer instance
+   * @return Pointer to the renderer instance
+   */
   static Renderer* GetInstance() {
     if (m_instance == nullptr) {
       BLOOM_ERROR("Trying to get renderer but it has not been created yet");

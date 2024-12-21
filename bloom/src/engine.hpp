@@ -85,8 +85,20 @@ public:
   void OnEvent(const Event & e);
   bool ShouldClose() const { return m_window->GetCloseEvent(); }
 
+  /**
+   * @brief Gets the DescriptorLayouts struct
+   * @return The DescriptorLayouts struct
+   */
   static render::DescriptorLayouts GetDescriptorLayouts() { return m_descriptorLayouts; }
+  /**
+   * @brief Sets the global descriptor set layout
+   * @param layout The descriptor set layout
+   */
   static void SetUBOLayout(render::DescriptorSetLayout* layout) { m_descriptorLayouts.globalLayout = layout; }
+  /**
+   * @brief Sets the material descriptor set layout
+   * @param layout The descriptor set layout
+   */
   static void SetMaterialLayout(render::DescriptorSetLayout* layout) { m_descriptorLayouts.materialLayout = layout; }
 
 protected:
