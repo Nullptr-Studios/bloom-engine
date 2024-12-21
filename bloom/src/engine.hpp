@@ -7,14 +7,14 @@
  */
 
 #pragma once
+#include <bloom_header.hpp>
 #include "core.hpp"
-#include "window.hpp"
-#include "factory.hpp"
+#include "objects/camera.hpp"
+#include "render/descriptor_layouts.hpp"
+#include "layers/layer_stack.hpp"
 #include "render/devices.hpp"
 #include "render/renderer.hpp"
-#include "render/descriptors.hpp"
-#include "objects/camera.hpp"
-#include <bloom_header.hpp>
+#include "window.hpp"
 
 /**
  * @namespace bloom
@@ -52,7 +52,9 @@
  * @endcode
  */
 namespace bloom {
-class SimpleRenderSystem;
+namespace render {
+  class SimpleRenderSystem;
+}
 
 /**
 * @class Engine
@@ -75,32 +77,32 @@ public:
    *  @note Do not access this in other classes
    */
   void Init();
-  virtual void OnBegin();   ///< Called before starting game loop
+  virtual void OnBegin() {} ///< Called before starting game loop
   virtual void OnTick();    ///< Called every frame
   virtual void OnRender();  ///< Called every frame after the @c Tick
   virtual void OnClose();   ///< Called before ending the game loop
 
-  void OnEvent(const Event & e) const;
+  void OnEvent(const Event & e);
   bool ShouldClose() const { return m_window->GetCloseEvent(); }
 
-  std::unique_ptr<Factory> factory = nullptr;
+  static render::DescriptorLayouts GetDescriptorLayouts() { return m_descriptorLayouts; }
+  static void SetUBOLayout(render::DescriptorSetLayout* layout) { m_descriptorLayouts.globalLayout = layout; }
+  static void SetMaterialLayout(render::DescriptorSetLayout* layout) { m_descriptorLayouts.materialLayout = layout; }
 
 protected:
   Window* m_window = nullptr;
   std::unique_ptr<render::Devices> m_devices = nullptr;
   std::unique_ptr<render::Renderer> m_renderer = nullptr;
-  SimpleRenderSystem* m_simpleRenderSystem = nullptr;
 
-  std::shared_ptr<Camera> m_activeCamera;
-  std::unique_ptr<render::DescriptorSetLayout> m_materialSetLayout;
+  std::shared_ptr<Camera> m_activeCamera = nullptr;
+
   float m_deltaTime = 0.016f;
+  void PushLayer(Layer *layer);
+  void PushOverlay(Layer *overlay);
 
 private:
-  std::unique_ptr<render::DescriptorPool> m_globalPool;
-  std::unique_ptr<render::DescriptorPool> m_materialPool;
-  std::vector<VkDescriptorSet> m_globalDescriptorSets;
-  std::vector<VkDescriptorSet> m_materialDescriptorSets;
-  std::vector<render::Buffer*> m_UBOBuffers;
+  LayerStack m_layerStack;
+  static render::DescriptorLayouts m_descriptorLayouts;
 };
 
 /**

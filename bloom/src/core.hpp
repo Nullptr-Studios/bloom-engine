@@ -44,3 +44,7 @@ typedef unsigned short id_t;
   classname& operator=(const classname&) = delete; \
   classname(classname&&) = default; \
   classname& operator=(classname&&) = default
+
+#define BLOOM_FACTORY Factory::GetInstance()
+#define BLOOM_RENDERER render::Renderer::GetInstance()
+#define BLOOM_DEVICES render::Devices::GetInstance()

@@ -37,19 +37,6 @@
 namespace bloom::render {
 
 /**
- * @struct SimplePushConstantData
- * @brief Represents the push constant data used in the renderer.
- *
- * This struct contains transformation, offset, and color data that are passed to the shaders
- * as push constants.
- */
-struct SimplePushConstantData {
-  glm::mat2 transform = glm::mat2(1.0f);
-  glm::vec2 offset;
-  alignas(16) glm::vec3 color;
-};
-
-/**
  * @class Renderer
  * @brief Manages the rendering process in the bloom engine.
  *
@@ -121,6 +108,13 @@ public:
     }
     return m_currentFrameIndex;
   }
+  static Renderer* GetInstance() {
+    if (m_instance == nullptr) {
+      BLOOM_ERROR("Trying to get renderer but it has not been created yet");
+      return nullptr;
+    }
+    return m_instance;
+  }
 
 protected:
   void CreateCommandBuffers();
@@ -135,6 +129,9 @@ protected:
   unsigned int m_currentImageIndex = 0;
   int m_currentFrameIndex = 0;
   bool m_frameStarted = false;
+
+private:
+  static Renderer* m_instance;
 };
 
 }

@@ -10,6 +10,8 @@ Window::Window(int width, int height, const std::string& title) {
   m_data.width = width;
   m_data.height = height;
   m_data.title = title;
+
+  glfwInit();
 }
 
 Window::~Window() {

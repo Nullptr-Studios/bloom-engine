@@ -18,7 +18,6 @@
 
 int main() {
   const auto m_engine = bloom::CreateEngine();
-
   m_engine->Init();
 
   while (!m_engine->ShouldClose()) {

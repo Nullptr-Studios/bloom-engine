@@ -2,7 +2,10 @@
 
 namespace bloom::render {
 
+Renderer* Renderer::m_instance = nullptr;
+
 Renderer::Renderer(Window* window, Devices* devices) : m_window(window), m_devices(devices) {
+  m_instance = this;
   RecreateSwapChain();
   CreateCommandBuffers();
 }

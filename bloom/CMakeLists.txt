@@ -35,8 +35,8 @@ add_library(bloom-engine SHARED
         src/render/renderer.cpp
         src/objects/object.hpp
         src/factory.hpp
-        src/simple_render_system.cpp
-        src/simple_render_system.hpp
+        src/render/systems/simple_render_system.cpp
+        src/render/systems/simple_render_system.hpp
         src/render/texture.cpp
         src/render/texture.hpp
         src/objects/camera.cpp
@@ -46,13 +46,16 @@ add_library(bloom-engine SHARED
         src/render/buffer.cpp
         src/render/buffer.hpp
         src/render/frame_info.hpp
-        src/layer.cpp
-        src/layer.hpp
-        src/layer_stack.cpp
-        src/layer_stack.hpp
-        src/layer_stack.cpp
-        src/layer_stack.hpp
+        src/layers/layer.cpp
+        src/layers/layer.hpp
+        src/layers/layer_stack.cpp
+        src/layers/layer_stack.hpp
+        src/layers/layer_stack.cpp
+        src/layers/layer_stack.hpp
         src/factory.cpp
+        src/layers/game_layer.cpp
+        src/layers/game_layer.hpp
+        src/render/descriptor_layouts.hpp
 )
 
 target_precompile_headers(bloom-engine PRIVATE bloom_header.hpp)

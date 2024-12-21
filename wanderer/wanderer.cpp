@@ -1,9 +1,13 @@
 #include "wanderer.hpp"
 #include "editor_camera.hpp"
+#include "src/factory.hpp"
+#include "src/layers/game_layer.hpp"
+#include "src/render/model.hpp"
 
 using namespace bloom;
 namespace wanderer {
 
+// TODO: Need to make a glTF loader instead of this
 std::unique_ptr<bloom::render::Model> createCubeModel(bloom::render::Devices* device, glm::vec3 offset) {
   render::Model::Builder builder;
   builder.vertices = {
@@ -56,7 +60,7 @@ std::unique_ptr<bloom::render::Model> createCubeModel(bloom::render::Devices* de
 
 // TODO: This needs a different name
 void Wanderer::OnBegin() {
-  m_camera = factory->CreateObject<EditorCamera>("Camera");
+  m_camera = BLOOM_FACTORY->CreateObject<EditorCamera>("Camera");
   m_activeCamera = m_camera;
   m_window->SetEventCallback([this](const Event& event) {
     m_camera->OnEvent(event);
@@ -64,17 +68,18 @@ void Wanderer::OnBegin() {
 
   std::shared_ptr<render::Model> model = createCubeModel(m_devices.get(), {0.0f, 0.0f, 0.0f});
 
-  auto cube = factory->CreateObject<Actor>("Cube 1");
+  auto cube = BLOOM_FACTORY->CreateObject<Actor>("Cube 1");
   cube->model = model;
   cube->transform.position = {-0.5f, 0.0f, -2.5f};
   cube->transform.scale = {0.5f, 0.5f, 0.5f};
-  cube->LoadTextures(m_materialSetLayout.get(), "resources/textures/cat.png");
+  // TODO: This hack should be done in a better way, probably on the actor class
+  cube->LoadTextures(GetDescriptorLayouts().materialLayout, "resources/textures/cat.png");
 
-  auto cube2 = factory->CreateObject<Actor>("Cube 2");
+  auto cube2 = BLOOM_FACTORY->CreateObject<Actor>("Cube 2");
   cube2->model = model;
   cube2->transform.position = {0.5f, 0.0f, -2.5f};
   cube2->transform.scale = {0.5f, 0.5f, 0.5f};
-  cube2->LoadTextures(m_materialSetLayout.get(), "resources/textures/bloom.png");
+  cube2->LoadTextures(GetDescriptorLayouts().materialLayout, "resources/textures/bloom.png");
 }
 
 void Wanderer::OnTick() {

@@ -19,7 +19,7 @@ namespace bloom {
  * The @c LayerStack class is responsible for maintaining a stack of layers and overlays,
  * providing methods to push and pop layers and overlays, and iterating over the stack.
  */
-class LayerStack {
+class BLOOM_API LayerStack {
 public:
   LayerStack();
   ~LayerStack();

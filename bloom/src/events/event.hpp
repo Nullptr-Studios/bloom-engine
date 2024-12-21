@@ -139,6 +139,17 @@ public:
    */
   [[nodiscard]] bool IsInCategory(const EventCategory category) const { return GetCategoryFlags() & category; }
 
+  /**
+   * @brief Indicates whether the event has been handled.
+   *
+   * This function returns a boolean value indicating whether the event has been handled.
+   * If the event has been handled, it should not be processed further.
+   *
+   * @return @c true if the event has been handled; otherwise, @c false.
+   */
+  [[nodiscard]]
+  bool IsHandled() const { return m_handled; }
+
 protected:
   bool m_handled = false; /**< Indicates whether the event has been handled. */
 };
