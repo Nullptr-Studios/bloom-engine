@@ -4,13 +4,22 @@
 namespace bloom {
 
 Actor::Actor(id_t id) : Object(id) {
-  m_materialPool = render::DescriptorPool::Builder(*render::Devices::GetInstance())
-    .SetMaxSets(render::SwapChain::MAX_FRAMES_IN_FLIGHT)
-    .AddPoolSize(VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, render::SwapChain::MAX_FRAMES_IN_FLIGHT * 4)
-  .Build();
+    m_materialPool =
+        render::DescriptorPool::Builder(*render::Devices::GetInstance())
+            .SetMaxSets(render::SwapChain::MAX_FRAMES_IN_FLIGHT)
+            .AddPoolSize(VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, render::SwapChain::MAX_FRAMES_IN_FLIGHT * 4)
+            .Build();
+  }
+
+void Actor::PropertiesPanel() {
+  Object::PropertiesPanel();
+
+  if (ImGui::CollapsingHeader("Actor")) {
+    ImGui::ColorEdit3("Tint Color", &tintColor.x);
+  }
 }
 
-void Actor::LoadTextures(
+  void Actor::LoadTextures(
     render::DescriptorSetLayout* descriptorSetLayout,
     const std::string &albedo,
     const std::string &rmo,

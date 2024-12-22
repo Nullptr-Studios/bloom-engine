@@ -8,6 +8,7 @@
 
 #pragma once
 #include "src/objects/camera.hpp"
+#include <imgui.h>
 
 namespace wanderer {
 

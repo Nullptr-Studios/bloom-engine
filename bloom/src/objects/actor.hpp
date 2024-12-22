@@ -71,6 +71,8 @@ public:
   Actor(Actor&&) = default;
   Actor& operator=(Actor&&) = default;
 
+  void PropertiesPanel() override;
+
   /**
    * Loads textures for the actor's visual representation.
    *

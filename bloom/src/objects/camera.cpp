@@ -14,7 +14,14 @@ void Camera::OnTick(float deltaTime) {
   UpdateView();
 }
 
-void Camera::OnClose() { }
+void Camera::OnClose() {}
+void Camera::PropertiesPanel() {
+  Object::PropertiesPanel();
+  if (ImGui::CollapsingHeader("Camera")) {
+    ImGui::DragFloat("FOV", &m_fov, 0.1f);
+    ImGui::DragFloat("Aspect", &m_aspect, 0.1f);
+  }
+}
 
 void Camera::SetOrthographicProjection(const float left, const float right,
     const float bottom, const float top, const float near, const float far) {
@@ -22,7 +29,7 @@ void Camera::SetOrthographicProjection(const float left, const float right,
 }
 
 void Camera::SetPerspectiveProjection(const float fov, const float aspect, const float near, const float far) {
-  m_projectionMatrix = glm::perspective(fov, aspect, near, far);
+  m_projectionMatrix = glm::perspective(m_fov, m_aspect, near, far);
 }
 
 void Camera::UpdateView() {

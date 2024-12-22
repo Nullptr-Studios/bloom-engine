@@ -1,8 +1,10 @@
 #include "ui_layer.hpp"
-#include "src/render/renderer.hpp"
 #include <imgui.h>
 #include <imgui_impl_glfw.h>
 #include <imgui_impl_vulkan.h>
+#include "src/render/renderer.hpp"
+
+#include "src/factory.hpp"
 
 namespace bloom::ui {
 
@@ -54,13 +56,19 @@ void UILayer::OnTick(float deltaTime) {
   ImGui_ImplGlfw_NewFrame();
   ImGui::NewFrame();
 
-  ImGui::ShowDemoWindow();
+  // TODO: This is a hack
+  for (auto &[id, obj] : Factory::GetInstance()->GetObjects()) {
+    ImGui::Begin(("Object " + std::to_string(id) + ": " + obj->GetName()).c_str());
+    obj->PropertiesPanel();
+    ImGui::End();
+  }
 }
 
 void UILayer::OnRender(render::FrameInfo frameInfo) {
   ImGui::Render();
-  ImDrawData* draw_data = ImGui::GetDrawData();
-  ImGui_ImplVulkan_RenderDrawData(draw_data, frameInfo.commandBuffer);
+  ImDrawData* drawData = ImGui::GetDrawData();
+  // TODO: Maybe we should make our own render system for UI
+  ImGui_ImplVulkan_RenderDrawData(drawData, frameInfo.commandBuffer);
 }
 
 void UILayer::OnDetach() {

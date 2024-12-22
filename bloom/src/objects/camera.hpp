@@ -39,6 +39,8 @@ public:
   void OnTick(float deltaTime) override;
   void OnClose() override;
 
+  void PropertiesPanel() override;
+
   /**
    *  @brief Sets an orthographic projection for the camera.
    *
@@ -92,6 +94,7 @@ private:
   glm::mat4 m_viewMatrix = glm::mat4(1.0f); ///< @brief The camera's view matrix.
   // TODO: Implement this with event window resize
   float m_aspect = 1.0f; // Width / Height
+  float m_fov = glm::radians(50.0f); // Field of view in radians
 };
 
 }

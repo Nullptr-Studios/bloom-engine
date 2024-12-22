@@ -8,9 +8,10 @@
 
 #pragma once
 #define GLM_ENABLE_EXPERIMENTAL
-#include "src/render/devices.hpp"
 #include <bloom_header.hpp>
 #include <glm/gtx/euler_angles.hpp>
+#include <imgui.h>
+#include "src/render/devices.hpp"
 
 namespace bloom {
 
@@ -84,6 +85,14 @@ public:
    *  @brief Called at the end of the scene.
    */
   virtual void OnClose() {}
+
+  virtual void PropertiesPanel() {
+    if (ImGui::CollapsingHeader("transform")) {
+      ImGui::DragFloat3("Position", &transform.position.x, 0.1f);
+      ImGui::DragFloat3("Rotation", &transform.rotation.x, 0.1f);
+      ImGui::DragFloat3("Scale", &transform.scale.x, 0.1f);
+    }
+  }
 
   Transform transform; ///< @brief The object's transform, representing its position, rotation, and scale.
 
