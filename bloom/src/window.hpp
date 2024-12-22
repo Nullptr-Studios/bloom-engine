@@ -36,6 +36,8 @@ public:
   bool GetCloseEvent() const { return glfwWindowShouldClose(m_window); };
   VkExtent2D GetExtent() const { return {m_data.width, m_data.height}; }
   bool GetWindowResized() const { return m_framebufferResized; }
+  static Window* GetInstance() { return m_instance; }
+  GLFWwindow* GetWindow() const { return m_window; }
   double GetDeltaTime();
 
   /**
@@ -52,6 +54,7 @@ public:
   void ResetWindowResized() { m_framebufferResized = false; }
 
 private:
+  static Window* m_instance;
   GLFWwindow* m_window = nullptr;
   static void FramebufferResizedCallback(GLFWwindow* window, int width, int height);
   static void GlfwErrorCallback(int error, const char* description);

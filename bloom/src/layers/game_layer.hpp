@@ -27,6 +27,8 @@ namespace bloom::render {
 class GameLayer final : public Layer {
 
 public:
+  explicit GameLayer(const std::string& name = "Game") : Layer(name) {}
+
   // Game loop
   void OnAttach() override;
   void OnBegin() override;

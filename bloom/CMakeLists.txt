@@ -46,7 +46,6 @@ add_library(bloom-engine SHARED
         src/render/buffer.cpp
         src/render/buffer.hpp
         src/render/frame_info.hpp
-        src/layers/layer.cpp
         src/layers/layer.hpp
         src/layers/layer_stack.cpp
         src/layers/layer_stack.hpp
@@ -56,6 +55,8 @@ add_library(bloom-engine SHARED
         src/layers/game_layer.cpp
         src/layers/game_layer.hpp
         src/render/descriptor_layouts.hpp
+        src/layers/ui_layer.cpp
+        src/layers/ui_layer.hpp
 )
 
 target_precompile_headers(bloom-engine PRIVATE bloom_header.hpp)
@@ -86,6 +87,22 @@ find_package(Vulkan REQUIRED)
 target_link_libraries(bloom-engine Vulkan::Vulkan)
 
 target_include_directories(bloom-engine PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+
+# IMGUI INCLUDE
+set(IMGUI_DIR "lib/imgui")
+target_include_directories(bloom-engine PUBLIC
+        ${IMGUI_DIR}
+        ${IMGUI_DIR}/backends
+)
+target_sources(bloom-engine PUBLIC
+        ${IMGUI_DIR}/imgui.cpp
+        ${IMGUI_DIR}/imgui_demo.cpp
+        ${IMGUI_DIR}/imgui_draw.cpp
+        ${IMGUI_DIR}/imgui_tables.cpp
+        ${IMGUI_DIR}/imgui_widgets.cpp
+        ${IMGUI_DIR}/backends/imgui_impl_glfw.cpp
+        ${IMGUI_DIR}/backends/imgui_impl_vulkan.cpp
+)
 
 # Define the output directory for the DLL
 set(SANDBOX_DIR "${CMAKE_BINARY_DIR}/sandbox")

@@ -84,6 +84,11 @@ public:
    */
   VkDevice Device() const { return m_device; }
   /**
+   * @brief Gets the physical device.
+   * @return The physical device handle. Represents the GPU.
+   */
+  VkPhysicalDevice PhysicalDevice() const { return m_physicalDevice; }
+  /**
    * @brief Gets the Vulkan surface.
    * @return The surface handle. Represents the connection between the window and Vulkan.
    */
@@ -136,6 +141,11 @@ public:
     }
     return m_instance;
   }
+  /**
+   * @brief Gets the Vulkan instance.
+   * @return The Vulkan instance handle. Represents the connection between the application and the Vulkan library.
+   */
+  VkInstance GetVkInstance() const { return m_vkInstance; }
 
   // region Helper Functions
   /**

@@ -1,6 +1,7 @@
 #include "engine.hpp"
 
 #include "layers/game_layer.hpp"
+#include "layers/ui_layer.hpp"
 #include "render/systems/simple_render_system.hpp"
 
 namespace bloom {
@@ -19,12 +20,17 @@ void Engine::Init() {
 
   m_devices = std::make_unique<render::Devices>(*m_window);
   m_renderer = std::make_unique<render::Renderer>(m_window, m_devices.get());
-  PushLayer(new render::GameLayer());
+  PushLayer(new render::GameLayer("Game Layer"));
+  PushLayer(new ui::UILayer("UI Layer"));
 
   OnBegin();
 
-  for (auto &layer : m_layerStack)
+  int layerIndex = 0;
+  for (auto &layer : m_layerStack) {
     layer->OnBegin();
+    BLOOM_LOG("{0}: {1}", layerIndex, layer->GetName());
+    layerIndex++;
+  }
 }
 
 // region Tick
@@ -70,7 +76,7 @@ void Engine::OnClose() {
 
 // region Events
 void Engine::OnEvent(const Event &e) {
-  // BLOOM_INFO("{0}", e.ToString());
+  BLOOM_INFO("{0}", e.ToString());
 
   if (e.GetEventType() == EventType::WindowClose)
     m_window->OnCloseWindow();

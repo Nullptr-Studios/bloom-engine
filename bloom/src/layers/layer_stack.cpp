@@ -13,6 +13,7 @@ namespace bloom {
 
   void LayerStack::PushLayer(Layer *layer) {
     m_layerInsert = m_layers.emplace(m_layerInsert, layer);
+    ++m_layerInsert;
     layer->OnAttach();
   }
 

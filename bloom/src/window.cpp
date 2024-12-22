@@ -6,10 +6,13 @@
 
 namespace bloom {
 
+Window* Window::m_instance = nullptr;
+
 Window::Window(int width, int height, const std::string& title) {
   m_data.width = width;
   m_data.height = height;
   m_data.title = title;
+  m_instance = this;
 
   glfwInit();
 }
