@@ -22,7 +22,7 @@ public:
   virtual void OnTick(float deltaTime) = 0; ///< @brief Called every frame
   virtual void OnRender(render::FrameInfo frameInfo) = 0;              ///< @brief Called every frame after the @c Tick
   virtual void OnDetach() = 0;              ///< @brief Called before ending the game loop
-  virtual void OnEvent(const Event& e) = 0; ///< @brief Called when an event is triggered
+  virtual void OnEvent(Event& e) = 0; ///< @brief Called when an event is triggered
 
   const std::string& GetName() const { return m_debugName; }
 

@@ -82,8 +82,8 @@ public:
   virtual void OnRender();  ///< Called every frame after the @c Tick
   virtual void OnClose();   ///< Called before ending the game loop
 
-  void OnEvent(const Event & e);
-  bool ShouldClose() const { return m_window->GetCloseEvent(); }
+  void OnEvent(Event & e);
+  bool ShouldClose() const { return m_shouldClose; }
 
   /**
    * @brief Gets the DescriptorLayouts struct
@@ -113,6 +113,9 @@ protected:
   void PushOverlay(Layer *overlay);
 
 private:
+  bool ExitEngine(Event& e);
+  bool m_shouldClose = false;
+
   LayerStack m_layerStack;
   static render::DescriptorLayouts m_descriptorLayouts;
 };

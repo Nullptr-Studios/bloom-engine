@@ -25,7 +25,7 @@ void GameLayer::OnAttach() {
   .Build();
 
   m_UBOBuffers.resize(SwapChain::MAX_FRAMES_IN_FLIGHT);
-  for (int i = 0; i < m_UBOBuffers.size(); i++) {
+  for (int i = 0; i < (int)m_UBOBuffers.size(); i++) {
     m_UBOBuffers[i] = new Buffer(*Devices::GetInstance(), sizeof(GlobalUBO),
       1, // this will change later on -x
       VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT, VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT);
@@ -40,7 +40,7 @@ void GameLayer::OnAttach() {
   Engine::SetUBOLayout(m_globalSetLayout.get());
 
   m_globalDescriptorSets.resize(SwapChain::MAX_FRAMES_IN_FLIGHT);
-  for (int i = 0; i < m_globalDescriptorSets.size(); i++) {
+  for (int i = 0; i < (int)m_globalDescriptorSets.size(); i++) {
     auto bufferInfo = m_UBOBuffers[i]->DescriptorInfo();
     DescriptorWriter(*m_globalSetLayout, *m_globalPool)
       .WriteBuffer(0, &bufferInfo)
@@ -98,6 +98,9 @@ void GameLayer::OnDetach() {
 }
 
 // region OnEvent
-void GameLayer::OnEvent(const Event& e) {}
+void GameLayer::OnEvent(Event& e) {
+  for (auto& [fst, snd] : m_factory->GetObjects())
+    snd->OnEvent(e);
+}
 
 }

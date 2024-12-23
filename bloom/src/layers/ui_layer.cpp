@@ -13,6 +13,7 @@ void UILayer::OnAttach() {
 
   m_imguiPool = render::DescriptorPool::Builder(*m_device)
     .SetMaxSets(1000)
+    .SetPoolFlags(VK_DESCRIPTOR_POOL_CREATE_FREE_DESCRIPTOR_SET_BIT)
     .AddPoolSize(VK_DESCRIPTOR_TYPE_SAMPLER, 1)
     .AddPoolSize(VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, 1000)
     .AddPoolSize(VK_DESCRIPTOR_TYPE_SAMPLED_IMAGE, 1000)
@@ -28,7 +29,7 @@ void UILayer::OnAttach() {
 
   ImGui::CreateContext();
   ImGuiIO& io = ImGui::GetIO(); (void)io;
-  ImGui_ImplGlfw_InitForVulkan(Window::GetInstance()->GetWindow(), true);
+  ImGui_ImplGlfw_InitForVulkan(Window::GetInstance()->GetWindow(), false);
   ImGui_ImplVulkan_InitInfo initInfo = {};
   initInfo.Instance = m_device->GetVkInstance();
   initInfo.PhysicalDevice = m_device->PhysicalDevice();
@@ -77,8 +78,63 @@ void UILayer::OnDetach() {
   ImGui::DestroyContext();
 }
 
-void UILayer::OnEvent(const Event &e) {
+void UILayer::OnEvent(Event &e) {
+  EventDispatcher dispatcher(e);
+  dispatcher.Dispatch<MouseButtonPressedEvent>(EVENT_BIND(UILayer::OnMouseButtonPressed));
+  dispatcher.Dispatch<MouseButtonReleasedEvent>(EVENT_BIND(UILayer::OnMouseButtonReleased));
+  dispatcher.Dispatch<MouseMovedEvent>(EVENT_BIND(UILayer::OnMouseMoved));
+  dispatcher.Dispatch<MouseScrolledEvent>(EVENT_BIND(UILayer::OnMouseScrolled));
+  dispatcher.Dispatch<KeyPressedEvent>(EVENT_BIND(UILayer::OnKeyPressed));
+  dispatcher.Dispatch<KeyReleasedEvent>(EVENT_BIND(UILayer::OnKeyReleased));
+  dispatcher.Dispatch<WindowResizeEvent>(EVENT_BIND(UILayer::OnWindowResized));
+}
 
+// Right now, all functions return false, we should work on this so events don't propagate down -x
+bool UILayer::OnMouseButtonPressed(MouseButtonPressedEvent &e) {
+  ImGuiIO& io = ImGui::GetIO();
+  io.MouseDown[e.GetMouseButton()] = true;
+
+  return false;
+}
+
+bool UILayer::OnMouseButtonReleased(MouseButtonReleasedEvent &e) {
+  ImGuiIO& io = ImGui::GetIO();
+  io.MouseDown[e.GetMouseButton()] = false;
+
+  return false;
+}
+
+bool UILayer::OnMouseMoved(MouseMovedEvent &e) {
+  ImGuiIO& io = ImGui::GetIO();
+  io.MousePos = ImVec2(e.GetX(), e.GetY());
+
+  return false;
+}
+
+bool UILayer::OnMouseScrolled(MouseScrolledEvent &e) {
+  ImGuiIO& io = ImGui::GetIO();
+  io.MouseWheel = e.GetYOffset();
+  io.MouseWheelH = e.GetXOffset();
+
+  return false;
+}
+
+bool UILayer::OnKeyPressed(KeyPressedEvent &e) {
+
+
+  return false;
+}
+
+bool UILayer::OnKeyReleased(KeyReleasedEvent &e) {
+
+
+  return false;
+}
+
+bool UILayer::OnWindowResized(WindowResizeEvent &e) {
+
+
+  return false;
 }
 
 }

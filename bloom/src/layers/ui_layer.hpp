@@ -8,6 +8,9 @@
 
 #pragma once
 #include "layer.hpp"
+#include "src/events/game_event.hpp"
+#include "src/events/key_event.hpp"
+#include "src/events/mouse_event.hpp"
 #include "src/render/descriptors.hpp"
 
 namespace bloom::ui {
@@ -22,9 +25,18 @@ public:
   void OnTick(float deltaTime) override;
   void OnRender(render::FrameInfo frameInfo) override;
   void OnDetach() override;
-  void OnEvent(const Event& e) override;
+  void OnEvent(Event& e) override;
 
 private:
+  bool OnMouseButtonPressed(MouseButtonPressedEvent& e);
+  bool OnMouseButtonReleased(MouseButtonReleasedEvent& e);
+  bool OnMouseMoved(MouseMovedEvent& e);
+  bool OnMouseScrolled(MouseScrolledEvent& e);
+  bool OnKeyPressed(KeyPressedEvent& e);
+  bool OnKeyReleased(KeyReleasedEvent& e);
+  // bool OnKeyTyped(KeyTypedEvent& e);
+  bool OnWindowResized(WindowResizeEvent& e);
+
   render::Devices* m_device = nullptr;
   std::unique_ptr<render::DescriptorPool> m_imguiPool;
 };

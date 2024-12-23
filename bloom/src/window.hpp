@@ -30,10 +30,8 @@ public:
 
   void OnBegin();
   void OnTick();
-  void OnCloseWindow() const;
 
   void SetEventCallback(const EventCallbackFn& callback) { m_data.callback = callback; };
-  bool GetCloseEvent() const { return glfwWindowShouldClose(m_window); };
   VkExtent2D GetExtent() const { return {m_data.width, m_data.height}; }
   bool GetWindowResized() const { return m_framebufferResized; }
   static Window* GetInstance() { return m_instance; }

@@ -15,7 +15,7 @@ void Engine::Init() {
   Log::Init();
 
   m_window = new Window(800, 800, "Bloom");
-  m_window->SetEventCallback([this]<typename T0>(T0 && ph1) { OnEvent(std::forward<T0>(ph1)); });
+  m_window->SetEventCallback(EVENT_BIND(Engine::OnEvent));
   m_window->OnBegin();
 
   m_devices = std::make_unique<render::Devices>(*m_window);
@@ -75,11 +75,12 @@ void Engine::OnClose() {
 }
 
 // region Events
-void Engine::OnEvent(const Event &e) {
+void Engine::OnEvent(Event &e) {
   BLOOM_INFO("{0}", e.ToString());
 
-  if (e.GetEventType() == EventType::WindowClose)
-    m_window->OnCloseWindow();
+  EventDispatcher dispatcher(e);
+  dispatcher.Dispatch<WindowCloseEvent>(EVENT_BIND(Engine::ExitEngine));
+  if (e.IsHandled()) return;
 
   for (auto i = m_layerStack.end(); i != m_layerStack.begin();) {
     (*--i)->OnEvent(e);
@@ -88,6 +89,12 @@ void Engine::OnEvent(const Event &e) {
   }
 }
 
+bool Engine::ExitEngine(Event& e) {
+  m_shouldClose = true;
+  return true;
+}
+
+// region Layer Management
 void Engine::PushLayer(Layer *layer) {
   m_layerStack.PushLayer(layer);
 }

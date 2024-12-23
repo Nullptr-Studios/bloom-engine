@@ -48,3 +48,10 @@ typedef unsigned short id_t;
 #define BLOOM_FACTORY Factory::GetInstance()
 #define BLOOM_RENDERER render::Renderer::GetInstance()
 #define BLOOM_DEVICES render::Devices::GetInstance()
+
+/**
+ * @def EVENT_BIND(fn)
+ * Binds a function to an event
+ * @param fn Function to bind
+ */
+#define EVENT_BIND(fn) std::bind(&fn, this, std::placeholders::_1)

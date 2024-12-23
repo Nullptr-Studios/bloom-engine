@@ -17,7 +17,7 @@ public:
   explicit EditorCamera(const id_t id) : Camera(id) {}
   void OnTick(float deltaTime) override;
 
-  void OnEvent(const bloom::Event &e);
+  void OnEvent(bloom::Event &e) override;
 private:
   glm::vec2 m_movement = glm::vec2(0.0f);
   float speed = 1.0f;

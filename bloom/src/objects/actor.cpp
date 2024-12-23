@@ -11,7 +11,9 @@ Actor::Actor(id_t id) : Object(id) {
             .Build();
   }
 
-void Actor::PropertiesPanel() {
+Actor::~Actor() { }
+
+  void Actor::PropertiesPanel() {
   Object::PropertiesPanel();
 
   if (ImGui::CollapsingHeader("Actor")) {

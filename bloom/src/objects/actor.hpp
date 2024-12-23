@@ -63,7 +63,7 @@ public:
    *           the game world to avoid conflicts.
    */
   explicit Actor(id_t id);
-  ~Actor() override = default;
+  ~Actor() override;
 
   // Copy destructors
   Actor(const Actor&) = delete;

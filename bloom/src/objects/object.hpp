@@ -85,6 +85,11 @@ public:
    *  @brief Called at the end of the scene.
    */
   virtual void OnClose() {}
+  /**
+   *  @brief Called when an event is received.
+   *  @param e The event to handle.
+   */
+  virtual void OnEvent(Event& e) {}
 
   virtual void PropertiesPanel() {
     if (ImGui::CollapsingHeader("transform")) {

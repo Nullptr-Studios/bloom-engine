@@ -35,7 +35,7 @@ public:
   void OnTick(float deltaTime) override;
   void OnRender(FrameInfo frameInfo) override;
   void OnDetach() override;
-  void OnEvent(const Event& e) override;
+  void OnEvent(Event& e) override;
 
 private:
   std::unique_ptr<Factory> m_factory = nullptr;       ///< Factory for creating game objects.

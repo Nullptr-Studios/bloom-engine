@@ -140,6 +140,4 @@ void Window::GlfwErrorCallback(int error, const char *description) {
   BLOOM_ERROR("GLFW error ({0}): {1}", error, description);
 }
 
-void Window::OnCloseWindow() const { glfwSetWindowShouldClose(m_window, GLFW_TRUE); }
-
 }
