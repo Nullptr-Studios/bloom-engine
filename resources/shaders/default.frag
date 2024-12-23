@@ -15,5 +15,5 @@ layout(push_constant) uniform Push {
 } push;
 
 void main() {
-	outColor = texture(albedo, fragTexCoord);
+	outColor = texture(albedo, fragTexCoord) * vec4(push.tint, 1.0f);
 }
