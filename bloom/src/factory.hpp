@@ -22,7 +22,7 @@ namespace bloom {
 class BLOOM_API Factory {
 public:
   Factory() { m_instance = this; }
-  ~Factory() { delete m_instance; }
+  ~Factory() { m_instance = nullptr; }
 
   // Copy constructor
   Factory &operator=(const Factory &) = delete;
@@ -58,7 +58,18 @@ public:
     }
     return m_instance;
   }
-
+  /**
+   * @brief Destroys all objects
+   * Calls the OnClose method of all objects and clears the @c Objects and @c Renderables maps
+   */
+  void DestroyAllObjects() {
+    for (auto &[id, object] : m_objects) {
+      object->OnClose();
+      object.reset();
+    }
+    m_objects.clear();
+    m_renderables.clear();
+  }
 private:
   id_t m_currentID = 0;   ///< Keeps track of the current ID
   ObjectMap m_objects;    ///< Map of all objects

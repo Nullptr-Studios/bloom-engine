@@ -42,6 +42,8 @@ namespace bloom::render {
     m_device->CopyBufferToImage(stagingBuffer, m_image, static_cast<unsigned int>(m_dimensions.width),
                                 static_cast<unsigned int>(m_dimensions.height), 1);
     TransitionImageLayout(VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL, VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL);
+    vkFreeMemory(m_device->Device(), stagingBufferMemory, nullptr);
+    vkDestroyBuffer(m_device->Device(), stagingBuffer, nullptr);
 
     // region Sampler creation
     VkSamplerCreateInfo samplerInfo{};

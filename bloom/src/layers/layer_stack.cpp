@@ -25,6 +25,7 @@ namespace bloom {
   void LayerStack::PopLayer(Layer *layer) {
     layer->OnDetach();
     auto i = std::find(m_layers.begin(), m_layers.end(), layer);
+    delete layer;
     if (i != m_layers.end()) {
       m_layers.erase(i);
       --m_layerInsert;

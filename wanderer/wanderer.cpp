@@ -62,9 +62,6 @@ std::unique_ptr<bloom::render::Model> createCubeModel(bloom::render::Devices* de
 void Wanderer::OnBegin() {
   m_camera = BLOOM_FACTORY->CreateObject<EditorCamera>("Camera");
   m_activeCamera = m_camera;
-  // m_window->SetEventCallback([this](const Event& event) {
-  //   m_camera->OnEvent(event);
-  // });
 
   std::shared_ptr<render::Model> model = createCubeModel(m_devices.get(), {0.0f, 0.0f, 0.0f});
 

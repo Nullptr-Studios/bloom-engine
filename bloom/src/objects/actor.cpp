@@ -13,7 +13,7 @@ Actor::Actor(id_t id) : Object(id) {
 
 Actor::~Actor() { }
 
-  void Actor::PropertiesPanel() {
+void Actor::PropertiesPanel() {
   Object::PropertiesPanel();
 
   if (ImGui::CollapsingHeader("Actor")) {
@@ -21,7 +21,7 @@ Actor::~Actor() { }
   }
 }
 
-  void Actor::LoadTextures(
+void Actor::LoadTextures(
     render::DescriptorSetLayout* descriptorSetLayout,
     const std::string &albedo,
     const std::string &rmo,

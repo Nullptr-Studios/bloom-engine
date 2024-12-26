@@ -56,7 +56,7 @@ void GameLayer::OnAttach() {
         .AddBinding(3, VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VK_SHADER_STAGE_FRAGMENT_BIT) // emission
       .Build();
   Engine::SetMaterialLayout(m_materialSetLayout.get());
-  
+
   m_simpleRenderSystem = new SimpleRenderSystem(Devices::GetInstance());
   m_simpleRenderSystem->Begin(Renderer::GetInstance()->GetRenderPass(), m_globalSetLayout->GetDescriptorSetLayout(),
                               m_materialSetLayout->GetDescriptorSetLayout());
@@ -95,6 +95,14 @@ void GameLayer::OnDetach() {
   for (auto& buffer : m_UBOBuffers)
     // I got an error with the std::unique_ptr, so I changed it to a raw pointer -x
       delete buffer;
+  Factory::GetInstance()->DestroyAllObjects();
+
+  Engine::SetMaterialLayout(nullptr);
+  m_materialSetLayout.reset();
+  Engine::SetUBOLayout(nullptr);
+  m_globalSetLayout.reset();
+
+  delete m_simpleRenderSystem;
 }
 
 // region OnEvent
