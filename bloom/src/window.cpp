@@ -77,6 +77,12 @@ void Window::OnBegin() {
     }
   });
 
+  glfwSetCharCallback(m_window, [](GLFWwindow* window, unsigned int keycode) {
+    WindowData& data = *static_cast<WindowData*>(glfwGetWindowUserPointer(window));
+    KeyTypedEvent event(static_cast<int>(keycode));
+    data.callback(event);
+  });
+
   glfwSetMouseButtonCallback(m_window, [](GLFWwindow* window, int button, int action, int mods) {
     WindowData& data = *static_cast<WindowData *>(glfwGetWindowUserPointer(window));
     switch(action) {

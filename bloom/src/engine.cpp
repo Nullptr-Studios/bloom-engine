@@ -76,7 +76,8 @@ void Engine::OnClose() {
 
 // region Events
 void Engine::OnEvent(Event &e) {
-  BLOOM_INFO("{0}", e.ToString());
+  if (e.GetEventType() == EventType::KeyTyped)
+    BLOOM_INFO("{0}", e.ToString());
 
   EventDispatcher dispatcher(e);
   dispatcher.Dispatch<WindowCloseEvent>(EVENT_BIND(Engine::ExitEngine));

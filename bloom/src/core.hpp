@@ -55,3 +55,5 @@ typedef unsigned short id_t;
  * @param fn Function to bind
  */
 #define EVENT_BIND(fn) std::bind(&fn, this, std::placeholders::_1)
+
+#define DRAG_SPEED(speed) auto io = ImgUi::GetIO(); return speed / io.KeyAlt ? 1.0f : 10.0f;

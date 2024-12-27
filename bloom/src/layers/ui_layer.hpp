@@ -34,8 +34,15 @@ private:
   bool OnMouseScrolled(MouseScrolledEvent& e);
   bool OnKeyPressed(KeyPressedEvent& e);
   bool OnKeyReleased(KeyReleasedEvent& e);
-  // bool OnKeyTyped(KeyTypedEvent& e);
+  bool OnKeyTyped(KeyTypedEvent& e);
   bool OnWindowResized(WindowResizeEvent& e);
+
+  /**
+   * @brief Translates a Bloom key code to an ImGui key code.
+   * @param keycode The Bloom key code to translate.
+   * @return The ImGui key code.
+   */
+  ImGuiKey TranslateToImGui(int keycode);
 
   render::Devices* m_device = nullptr;
   std::unique_ptr<render::DescriptorPool> m_imguiPool;
