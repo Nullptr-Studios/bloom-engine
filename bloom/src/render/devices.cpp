@@ -8,6 +8,8 @@
 
 namespace bloom::render {
 
+Devices* Devices::m_instance = nullptr;
+
 // local callback functions
 static VKAPI_ATTR VkBool32 VKAPI_CALL DebugCallback(
     VkDebugUtilsMessageSeverityFlagBitsEXT messageSeverity,
@@ -63,6 +65,7 @@ void DestroyDebugUtilsMessengerExt(
 
 // class member functions
 Devices::Devices(Window &window) : m_window{window} {
+  m_instance = this;
   CreateInstance();
   SetupDebugMessenger();
   CreateSurface();
@@ -72,14 +75,16 @@ Devices::Devices(Window &window) : m_window{window} {
 }
 
 Devices::~Devices() {
+  m_instance = nullptr;
+
   vkDestroyCommandPool(m_device, m_commandPool, nullptr);
   vkDestroyDevice(m_device, nullptr);
 
   if (enableValidationLayers)
-    DestroyDebugUtilsMessengerExt(m_instance, m_debugMessenger, nullptr);
+    DestroyDebugUtilsMessengerExt(m_vkInstance, m_debugMessenger, nullptr);
 
-  vkDestroySurfaceKHR(m_instance, m_surface, nullptr);
-  vkDestroyInstance(m_instance, nullptr);
+  vkDestroySurfaceKHR(m_vkInstance, m_surface, nullptr);
+  vkDestroyInstance(m_vkInstance, nullptr);
 }
 
 void Devices::CreateInstance() {
@@ -114,7 +119,7 @@ void Devices::CreateInstance() {
     createInfo.pNext = nullptr;
   }
 
-  if (vkCreateInstance(&createInfo, nullptr, &m_instance) != VK_SUCCESS)
+  if (vkCreateInstance(&createInfo, nullptr, &m_vkInstance) != VK_SUCCESS)
     throw std::runtime_error("failed to create instance!");
 
   HasGflwRequiredInstanceExtensions();
@@ -122,12 +127,12 @@ void Devices::CreateInstance() {
 
 void Devices::PickPhysicalDevice() {
   uint32_t deviceCount = 0;
-  vkEnumeratePhysicalDevices(m_instance, &deviceCount, nullptr);
+  vkEnumeratePhysicalDevices(m_vkInstance, &deviceCount, nullptr);
   if (deviceCount == 0)
     throw std::runtime_error("failed to find GPUs with Vulkan support!");
   BLOOM_LOG("Device count: {0}", deviceCount);
   std::vector<VkPhysicalDevice> devices(deviceCount);
-  vkEnumeratePhysicalDevices(m_instance, &deviceCount, devices.data());
+  vkEnumeratePhysicalDevices(m_vkInstance, &deviceCount, devices.data());
 
   for (const auto &device : devices) {
     if (IsDeviceSuitable(device)) {
@@ -204,7 +209,7 @@ void Devices::CreateCommandPool() {
   }
 }
 
-void Devices::CreateSurface() { m_window.CreateWindowSurface(m_instance, &m_surface); }
+void Devices::CreateSurface() { m_window.CreateWindowSurface(m_vkInstance, &m_surface); }
 
 bool Devices::IsDeviceSuitable(VkPhysicalDevice device) {
   QueueFamilyIndices indices = FindQueueFamilies(device);
@@ -243,7 +248,7 @@ void Devices::SetupDebugMessenger() {
   if (!enableValidationLayers) return;
   VkDebugUtilsMessengerCreateInfoEXT createInfo;
   PopulateDebugMessengerCreateInfo(createInfo);
-  if (CreateDebugUtilsMessengerExt(m_instance, &createInfo, nullptr, &m_debugMessenger) != VK_SUCCESS) {
+  if (CreateDebugUtilsMessengerExt(m_vkInstance, &createInfo, nullptr, &m_debugMessenger) != VK_SUCCESS) {
     throw std::runtime_error("failed to set up debug messenger!");
   }
 }

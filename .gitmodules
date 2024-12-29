@@ -10,3 +10,6 @@
 [submodule "bloom/lib/stb"]
 	path = bloom/lib/stb
 	url = https://git.xein.es/xein/stb.git
+[submodule "bloom/lib/imgui"]
+	path = bloom/lib/imgui
+	url = https://github.com/ocornut/imgui.git

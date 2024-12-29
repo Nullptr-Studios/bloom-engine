@@ -8,9 +8,10 @@
 
 #pragma once
 #define GLM_ENABLE_EXPERIMENTAL
-#include "src/render/devices.hpp"
 #include <bloom_header.hpp>
 #include <glm/gtx/euler_angles.hpp>
+#include <imgui.h>
+#include "src/render/devices.hpp"
 
 namespace bloom {
 
@@ -55,16 +56,15 @@ struct BLOOM_API Transform {
  *  implement their specific behavior.
  */
 class BLOOM_API Object {
-public:
+protected:
   /**
    *  @brief Constructs a new Object.
-   *
    *  @param id The unique identifier for this object.
-   *  @param devices A pointer to the Vulkan device management object.
    */
-  explicit Object(const id_t id, render::Devices* devices) : m_devices(devices), m_id(id) {};
+  explicit Object(const id_t id) : m_id(id) {}
   virtual ~Object() = default;
 
+public:
   // Copy constructors
   Object(const Object&) = delete; 
   Object& operator=(const Object&) = delete; 
@@ -85,6 +85,19 @@ public:
    *  @brief Called at the end of the scene.
    */
   virtual void OnClose() {}
+  /**
+   *  @brief Called when an event is received.
+   *  @param e The event to handle.
+   */
+  virtual void OnEvent(Event& e) {}
+
+  virtual void PropertiesPanel() {
+    if (ImGui::CollapsingHeader("transform")) {
+      ImGui::DragFloat3("Position", &transform.position.x, 0.1f);
+      ImGui::DragFloat3("Rotation", &transform.rotation.x, 0.1f);
+      ImGui::DragFloat3("Scale", &transform.scale.x, 0.1f);
+    }
+  }
 
   Transform transform; ///< @brief The object's transform, representing its position, rotation, and scale.
 
@@ -92,14 +105,23 @@ public:
   // ReSharper disable once CppInconsistentNaming
   /**
    *  @brief Retrieves the object's unique ID.
-   *
    *  @return The object's ID.
    */
   id_t GetID() const { return m_id; }
-protected:
-  render::Devices* m_devices = nullptr; ///< @brief Pointer to the Vulkan device management object.
+  /**
+   *  @brief Retrieves the object's name.
+   *  @return The object's name.
+   */
+  std::string GetName() const { return m_name; }
+  /**
+   *  @brief Sets the object's name.
+   *  @param name The new name for the object.
+   */
+  void SetName(const std::string& name) { BLOOM_LOG("Changed {0}'s name to {1}", m_name, name); m_name = name; }
+
 private:
   id_t m_id; ///< @brief The unique identifier for this object.
+  std::string m_name; ///< @brief The name of the object.
 };
 
 /**

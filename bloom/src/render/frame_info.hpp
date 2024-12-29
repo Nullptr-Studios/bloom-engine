@@ -7,7 +7,6 @@
  */
 
 #pragma once
-#include "src/engine.hpp"
 #include "src/objects/camera.hpp"
 
 namespace bloom::render {

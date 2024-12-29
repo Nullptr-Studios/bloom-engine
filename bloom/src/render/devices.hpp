@@ -54,7 +54,7 @@ struct QueueFamilyIndices {
  * buffer and image operations. It serves as the central point of interaction
  * with the Vulkan API.
  */
-class Devices {
+class BLOOM_API Devices {
 public:
 // Validation layers check
 #ifdef NDEBUG
@@ -83,6 +83,11 @@ public:
    * @return The logical device handle. The interface to the physical device.
    */
   VkDevice Device() const { return m_device; }
+  /**
+   * @brief Gets the physical device.
+   * @return The physical device handle. Represents the GPU.
+   */
+  VkPhysicalDevice PhysicalDevice() const { return m_physicalDevice; }
   /**
    * @brief Gets the Vulkan surface.
    * @return The surface handle. Represents the connection between the window and Vulkan.
@@ -125,6 +130,22 @@ public:
    */
   VkFormat FindSupportedFormat(
       const std::vector<VkFormat> &candidates, VkImageTiling tiling, VkFormatFeatureFlags features);
+  /**
+   * @brief Gets the physical device.
+   * @return The physical device handle. Represents the GPU.
+   */
+  static Devices* GetInstance() {
+    if (!m_instance) {
+      BLOOM_ERROR("Tried to access Devices but it has not been created yet");
+      return nullptr;
+    }
+    return m_instance;
+  }
+  /**
+   * @brief Gets the Vulkan instance.
+   * @return The Vulkan instance handle. Represents the connection between the application and the Vulkan library.
+   */
+  VkInstance GetVkInstance() const { return m_vkInstance; }
 
   // region Helper Functions
   /**
@@ -201,7 +222,8 @@ private:
   bool CheckDeviceExtensionSupport(VkPhysicalDevice device);
   SwapChainSupportDetails QuerySwapChainSupport(VkPhysicalDevice device);
 
-  VkInstance m_instance;
+  static Devices* m_instance;
+  VkInstance m_vkInstance;
   VkDebugUtilsMessengerEXT m_debugMessenger;
   VkPhysicalDevice m_physicalDevice = VK_NULL_HANDLE;
   Window &m_window;

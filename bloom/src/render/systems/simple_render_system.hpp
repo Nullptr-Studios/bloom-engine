@@ -11,12 +11,12 @@
  */
 
 #pragma once
-#include "objects/actor.hpp"
-#include "render/devices.hpp"
-#include "render/pipeline.hpp"
-#include "render/frame_info.hpp"
+#include "src/objects/actor.hpp"
+#include "../devices.hpp"
+#include "../pipeline.hpp"
+#include "../frame_info.hpp"
 
-namespace bloom {
+namespace bloom::render {
 
 /**
  * @class SimpleRenderSystem
@@ -28,7 +28,7 @@ namespace bloom {
  */
 class BLOOM_API SimpleRenderSystem {
 public:
-  SimpleRenderSystem(render::Devices* devices);
+  SimpleRenderSystem(Devices* devices);
   virtual ~SimpleRenderSystem();
 
   // Delete copy constructor and copy assignment operator
@@ -47,7 +47,7 @@ public:
    * @param frameInfo Information about the current frame.
    * @param actors Map of actors to render.
    */
-  void RenderObjects(render::FrameInfo& frameInfo, ActorMap actors);
+  void RenderObjects(FrameInfo& frameInfo, ActorMap actors);
   constexpr static unsigned int MAX_OBJECTS = 1024; ///< Maximum number of objects that can be rendered.
 
 protected:
@@ -63,8 +63,8 @@ protected:
    */
   void CreatePipeline(VkRenderPass renderPass);
 
-  render::Devices* m_devices = nullptr;
-  std::unique_ptr<render::Pipeline> m_pipeline = nullptr;
+  Devices* m_devices = nullptr;
+  std::unique_ptr<Pipeline> m_pipeline = nullptr;
   VkPipelineLayout m_pipelineLayout;
 };
 

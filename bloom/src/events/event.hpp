@@ -30,7 +30,7 @@ enum class EventType {
   None = 0,
   WindowClose, WindowResize, WindowFocus, WindowLostFocus, WindowMoved,
   GameTick, GameUpdate, GameRender,
-  KeyPressed, KeyReleased,
+  KeyPressed, KeyReleased, KeyTyped,
   MouseButtonPressed, MouseButtonReleased, MouseMoved, MouseScrolled
 };
 
@@ -138,6 +138,17 @@ public:
    * @return @c true if the event belongs to the specified category; otherwise, @c false.
    */
   [[nodiscard]] bool IsInCategory(const EventCategory category) const { return GetCategoryFlags() & category; }
+
+  /**
+   * @brief Indicates whether the event has been handled.
+   *
+   * This function returns a boolean value indicating whether the event has been handled.
+   * If the event has been handled, it should not be processed further.
+   *
+   * @return @c true if the event has been handled; otherwise, @c false.
+   */
+  [[nodiscard]]
+  bool IsHandled() const { return m_handled; }
 
 protected:
   bool m_handled = false; /**< Indicates whether the event has been handled. */

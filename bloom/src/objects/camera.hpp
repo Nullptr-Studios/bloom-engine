@@ -32,18 +32,14 @@ namespace bloom {
  */
 class BLOOM_API Camera : public Object {
 public:
-  /**
-   *  @brief Constructs a new Camera object.
-   *
-   *  @param id The unique identifier for this camera.
-   *  @param devices A pointer to the Vulkan device management object.
-   */
-  explicit Camera(const id_t id, render::Devices* devices) : Object(id, devices) {};
+  explicit Camera(id_t id) : Object(id) {}
 
   // Game loop
   void OnBegin() override;
   void OnTick(float deltaTime) override;
   void OnClose() override;
+
+  void PropertiesPanel() override;
 
   /**
    *  @brief Sets an orthographic projection for the camera.
@@ -98,6 +94,7 @@ private:
   glm::mat4 m_viewMatrix = glm::mat4(1.0f); ///< @brief The camera's view matrix.
   // TODO: Implement this with event window resize
   float m_aspect = 1.0f; // Width / Height
+  float m_fov = glm::radians(50.0f); // Field of view in radians
 };
 
 }

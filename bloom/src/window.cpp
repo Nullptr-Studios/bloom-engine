@@ -6,10 +6,15 @@
 
 namespace bloom {
 
+Window* Window::m_instance = nullptr;
+
 Window::Window(int width, int height, const std::string& title) {
   m_data.width = width;
   m_data.height = height;
   m_data.title = title;
+  m_instance = this;
+
+  glfwInit();
 }
 
 Window::~Window() {
@@ -72,6 +77,12 @@ void Window::OnBegin() {
     }
   });
 
+  glfwSetCharCallback(m_window, [](GLFWwindow* window, unsigned int keycode) {
+    WindowData& data = *static_cast<WindowData*>(glfwGetWindowUserPointer(window));
+    KeyTypedEvent event(static_cast<int>(keycode));
+    data.callback(event);
+  });
+
   glfwSetMouseButtonCallback(m_window, [](GLFWwindow* window, int button, int action, int mods) {
     WindowData& data = *static_cast<WindowData *>(glfwGetWindowUserPointer(window));
     switch(action) {
@@ -106,8 +117,6 @@ void Window::OnBegin() {
 // region Tick
 void Window::OnTick() {
   glfwPollEvents();
-  // TODO: This is OpenGL specific
-  //glfwSwapBuffers(_window);
 }
 
 double Window::GetDeltaTime() {
@@ -136,7 +145,5 @@ void Window::SetDimensions(const int width, const int height) {
 void Window::GlfwErrorCallback(int error, const char *description) {
   BLOOM_ERROR("GLFW error ({0}): {1}", error, description);
 }
-
-void Window::OnCloseWindow() const { glfwSetWindowShouldClose(m_window, GLFW_TRUE); }
 
 }

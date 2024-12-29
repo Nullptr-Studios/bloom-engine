@@ -13,3 +13,5 @@
 // --------------------------------
 
 #include "src/core.hpp"
+#include "src/layers/layer.hpp"
+#include "src/render/descriptor_layouts.hpp"

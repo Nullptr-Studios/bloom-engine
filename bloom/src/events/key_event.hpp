@@ -109,4 +109,33 @@ public:
   }
 };
 
+/**
+ * @class KeyTypedEvent
+ * @brief Represents an event triggered when a printable key is typed.
+ *
+ * The `KeyTypedEvent` class provides information about when a key that can be typed
+ * (e.g., a character or number key) is pressed. This event is used to handle text input.
+ */
+class BLOOM_API KeyTypedEvent : public KeyEvent {
+public:
+  /**
+   * @brief Constructs a `KeyTypedEvent`.
+   * @param keycode The key code associated with the event.
+   */
+  explicit KeyTypedEvent(const int keycode)
+      : KeyEvent(keycode) {}
+
+  EVENT_CLASS_TYPE(KeyTyped)
+
+  /**
+   * @brief Provides a string representation of the `KeyTypedEvent`.
+   * @return A string containing the event details.
+   */
+  [[nodiscard]] std::string ToString() const override {
+    std::stringstream ss;
+    ss << "KeyPressedEvent: " << m_keyCode;
+    return ss.str();
+  }
+};
+
 }

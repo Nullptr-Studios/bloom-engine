@@ -208,6 +208,7 @@ public:
    * for reusing the pool instead of creating a new one.
    */
   void ResetPool() const;
+  VkDescriptorPool GetVkDescriptorPool() const { return m_descriptorPool; }
 
 private:
   Devices &m_device;
