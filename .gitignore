@@ -8,3 +8,6 @@ bin/
 
 # Obsidian shit
 .obsidian
+
+# Compiled shaders
+.spv
