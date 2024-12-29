@@ -7,6 +7,8 @@ add_compile_definitions(BLOOM_BUILD_DLL)
 add_library(bloom-engine SHARED
         bloom.hpp
         bloom_header.hpp
+        src/render/descriptors.cpp
+        src/render/descriptors.hpp
         src/engine.hpp
         src/engine.cpp
         src/core.hpp
@@ -31,8 +33,8 @@ add_library(bloom-engine SHARED
         src/render/renderer.cpp
         src/objects/object.hpp
         src/factory.hpp
-        src/simple_render_system.cpp
-        src/simple_render_system.hpp
+        src/render/systems/simple_render_system.cpp
+        src/render/systems/simple_render_system.hpp
         src/render/texture.cpp
         src/render/texture.hpp
         src/objects/camera.cpp
@@ -41,6 +43,18 @@ add_library(bloom-engine SHARED
         src/objects/actor.hpp
         src/render/buffer.cpp
         src/render/buffer.hpp
+        src/render/frame_info.hpp
+        src/layers/layer.hpp
+        src/layers/layer_stack.cpp
+        src/layers/layer_stack.hpp
+        src/layers/layer_stack.cpp
+        src/layers/layer_stack.hpp
+        src/factory.cpp
+        src/layers/game_layer.cpp
+        src/layers/game_layer.hpp
+        src/render/descriptor_layouts.hpp
+        src/layers/ui_layer.cpp
+        src/layers/ui_layer.hpp
 )
 
 target_precompile_headers(bloom-engine PRIVATE bloom_header.hpp)
@@ -71,6 +85,22 @@ message(STATUS "Found Vulkan: $ENV{VULKAN_SDK}")
 target_link_libraries(bloom-engine Vulkan::Vulkan)
 
 target_include_directories(bloom-engine PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+
+# IMGUI INCLUDE
+set(IMGUI_DIR "lib/imgui")
+target_include_directories(bloom-engine PUBLIC
+        ${IMGUI_DIR}
+        ${IMGUI_DIR}/backends
+)
+target_sources(bloom-engine PUBLIC
+        ${IMGUI_DIR}/imgui.cpp
+        ${IMGUI_DIR}/imgui_demo.cpp
+        ${IMGUI_DIR}/imgui_draw.cpp
+        ${IMGUI_DIR}/imgui_tables.cpp
+        ${IMGUI_DIR}/imgui_widgets.cpp
+        ${IMGUI_DIR}/backends/imgui_impl_glfw.cpp
+        ${IMGUI_DIR}/backends/imgui_impl_vulkan.cpp
+)
 
 # Define the output directory for the DLL
 set(SANDBOX_DIR "${CMAKE_BINARY_DIR}/sandbox")

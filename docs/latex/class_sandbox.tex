@@ -16,11 +16,11 @@ Inheritance diagram for Sandbox\+:\begin{figure}[H]
 \item 
 void {\bfseries Begin} ()
 \item 
-void {\bfseries Tick} ()
+virtual void {\bfseries Tick} ()
 \item 
 void {\bfseries Render} ()
 \item 
-void {\bfseries End} () const
+virtual void {\bfseries End} () const
 \item 
 bool {\bfseries Should\+Close} () const
 \item 
@@ -34,7 +34,7 @@ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1_factory}{Factory}} $>$
 \doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classbloom_1_1_engine}{bloom\+::\+Engine}}}
 \begin{DoxyCompactItemize}
 \item 
-void {\bfseries Load\+Objects} ()
+virtual void {\bfseries On\+Begin} ()
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classbloom_1_1_engine}{bloom\+::\+Engine}}}
 \begin{DoxyCompactItemize}
@@ -47,13 +47,11 @@ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1render_1_1_renderer}{re
 \item 
 \mbox{\hyperlink{classbloom_1_1_simple_render_system}{Simple\+Render\+System}} \texorpdfstring{$\ast$}{*} {\bfseries m\+\_\+simple\+Render\+System} = nullptr
 \item 
-std\+::vector$<$ \mbox{\hyperlink{classbloom_1_1_object}{Object}} $>$ {\bfseries game\+Objects}
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1_camera}{Camera}} $>$ {\bfseries m\+\_\+active\+Camera}
 \item 
-\mbox{\hyperlink{classbloom_1_1_camera}{Camera}} {\bfseries m\+\_\+camera}
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_set_layout}{render\+::\+Descriptor\+Set\+Layout}} $>$ {\bfseries m\+\_\+material\+Set\+Layout}
 \item 
-double {\bfseries m\+\_\+delta\+Time}
-\item 
-float {\bfseries m\+\_\+rotation}
+float {\bfseries m\+\_\+delta\+Time}
 \end{DoxyCompactItemize}
 
 
@@ -62,4 +60,4 @@ Main class for the game
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/xgoni/bloom/sandbox/\mbox{\hyperlink{sandbox_2main_8cpp}{main.\+cpp}}\end{DoxyCompactItemize}
+C\+:/\+Users/xgoni/bloom/sandbox/\mbox{\hyperlink{main_8cpp}{main.\+cpp}}\end{DoxyCompactItemize}

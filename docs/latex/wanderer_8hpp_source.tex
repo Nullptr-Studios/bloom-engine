@@ -1,0 +1,25 @@
+\doxysection{wanderer.\+hpp}
+\hypertarget{wanderer_8hpp_source}{}\label{wanderer_8hpp_source}\index{C:/Users/xgoni/bloom/wanderer/wanderer.hpp@{C:/Users/xgoni/bloom/wanderer/wanderer.hpp}}
+\mbox{\hyperlink{wanderer_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{bloom_8hpp}{bloom.hpp}}>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{editor__camera_8hpp}{editor\_camera.hpp}}"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }wanderer\ \{}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classwanderer_1_1_wanderer}{Wanderer}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classbloom_1_1_engine}{bloom::Engine}}\ \{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \mbox{\hyperlink{classwanderer_1_1_wanderer}{Wanderer}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \textcolor{keywordtype}{void}\ OnBegin()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00020\ \ \ \textcolor{keywordtype}{void}\ Tick()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00021\ \ \ \textcolor{keywordtype}{void}\ End()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00022\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00023\ \ \ std::shared\_ptr<EditorCamera>\ m\_camera;}
+\DoxyCodeLine{00024\ \};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \}}
+
+\end{DoxyCode}

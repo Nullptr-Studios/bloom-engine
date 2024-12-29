@@ -1,17 +1,122 @@
 \doxysection{bloom\+::render\+::Descriptor\+Pool Class Reference}
 \hypertarget{classbloom_1_1render_1_1_descriptor_pool}{}\label{classbloom_1_1render_1_1_descriptor_pool}\index{bloom::render::DescriptorPool@{bloom::render::DescriptorPool}}
+
+
+Manages a pool of descriptor sets.  
+
+
+
+
+{\ttfamily \#include $<$descriptors.\+hpp$>$}
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_pool_1_1_builder}{Builder}}
+\begin{DoxyCompactList}\small\item\em Helper class to build \doxylink{classbloom_1_1render_1_1_descriptor_pool}{Descriptor\+Pool} objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classbloom_1_1render_1_1_descriptor_pool_a14931d538023aa5740e9b610bb706b7a}\label{classbloom_1_1render_1_1_descriptor_pool_a14931d538023aa5740e9b610bb706b7a} 
-{\bfseries Descriptor\+Pool} (\mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}} \texorpdfstring{$\ast$}{*}devices, uint32\+\_\+t max\+Sets)
+\mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_pool_a6cfa6275d5cea895002f664cc7bac59a}{Descriptor\+Pool}} (\mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}} \&device, uint32\+\_\+t max\+Sets, Vk\+Descriptor\+Pool\+Create\+Flags pool\+Flags, const std\+::vector$<$ Vk\+Descriptor\+Pool\+Size $>$ \&pool\+Sizes)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classbloom_1_1render_1_1_descriptor_pool}{Descriptor\+Pool} object. \end{DoxyCompactList}\item 
+\Hypertarget{classbloom_1_1render_1_1_descriptor_pool_af16e51a23192ebea5547a8d12172a144}\label{classbloom_1_1render_1_1_descriptor_pool_af16e51a23192ebea5547a8d12172a144} 
+{\bfseries Descriptor\+Pool} (const \mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_pool}{Descriptor\+Pool}} \&)=delete
 \item 
-\Hypertarget{classbloom_1_1render_1_1_descriptor_pool_a27986e66203a515e2739395d96679a1f}\label{classbloom_1_1render_1_1_descriptor_pool_a27986e66203a515e2739395d96679a1f} 
-Vk\+Descriptor\+Pool {\bfseries get\+Descriptor\+Pool} () const
+\Hypertarget{classbloom_1_1render_1_1_descriptor_pool_ae405db2420c29556dd2cd2397460e6be}\label{classbloom_1_1render_1_1_descriptor_pool_ae405db2420c29556dd2cd2397460e6be} 
+\mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_pool}{Descriptor\+Pool}} \& {\bfseries operator=} (const \mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_pool}{Descriptor\+Pool}} \&)=delete
+\item 
+bool \mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_pool_a19d33fdb25a5815ea41c1a3caa970842}{Allocate\+Descriptor}} (Vk\+Descriptor\+Set\+Layout descriptor\+Set\+Layout, Vk\+Descriptor\+Set \&descriptor) const
+\begin{DoxyCompactList}\small\item\em Allocates a descriptor set from the pool. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_pool_a23c2c1a69fd250eb8d75d967dc319430}{Free\+Descriptors}} (const std\+::vector$<$ Vk\+Descriptor\+Set $>$ \&descriptors) const
+\begin{DoxyCompactList}\small\item\em Frees allocated descriptor sets. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_pool_ac0e9cfc07011dddd6d0170b66f5f650b}{Reset\+Pool}} () const
+\begin{DoxyCompactList}\small\item\em Resets the descriptor pool. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classbloom_1_1render_1_1_descriptor_pool_a8f96614370479c2656720dba13f85244}\label{classbloom_1_1render_1_1_descriptor_pool_a8f96614370479c2656720dba13f85244} 
+class {\bfseries Descriptor\+Writer}
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+Manages a pool of descriptor sets. 
+
+This class represents a Vulkan descriptor pool, which is responsible for allocating descriptor sets. Descriptor pools are used to allocate a collection of descriptor sets with specific descriptor types and counts. Using a pool is more efficient than allocating individual descriptor sets. This class provides methods for allocating and freeing descriptor sets, as well as resetting the pool. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classbloom_1_1render_1_1_descriptor_pool_a6cfa6275d5cea895002f664cc7bac59a}\index{bloom::render::DescriptorPool@{bloom::render::DescriptorPool}!DescriptorPool@{DescriptorPool}}
+\index{DescriptorPool@{DescriptorPool}!bloom::render::DescriptorPool@{bloom::render::DescriptorPool}}
+\doxysubsubsection{\texorpdfstring{DescriptorPool()}{DescriptorPool()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_descriptor_pool_a6cfa6275d5cea895002f664cc7bac59a} 
+bloom\+::render\+::\+Descriptor\+Pool\+::\+Descriptor\+Pool (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}} \&}]{device}{, }\item[{uint32\+\_\+t}]{max\+Sets}{, }\item[{Vk\+Descriptor\+Pool\+Create\+Flags}]{pool\+Flags}{, }\item[{const std\+::vector$<$ Vk\+Descriptor\+Pool\+Size $>$ \&}]{pool\+Sizes}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{classbloom_1_1render_1_1_descriptor_pool}{Descriptor\+Pool} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em device} & Reference to the \doxylink{classbloom_1_1render_1_1_devices}{Devices} object. \\
+\hline
+{\em max\+Sets} & Maximum number of descriptor sets allocatable from this pool. \\
+\hline
+{\em pool\+Flags} & Vulkan descriptor pool create flags. \\
+\hline
+{\em pool\+Sizes} & Vector of Vk\+Descriptor\+Pool\+Size structs defining the descriptor types and counts. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classbloom_1_1render_1_1_descriptor_pool_a19d33fdb25a5815ea41c1a3caa970842}\index{bloom::render::DescriptorPool@{bloom::render::DescriptorPool}!AllocateDescriptor@{AllocateDescriptor}}
+\index{AllocateDescriptor@{AllocateDescriptor}!bloom::render::DescriptorPool@{bloom::render::DescriptorPool}}
+\doxysubsubsection{\texorpdfstring{AllocateDescriptor()}{AllocateDescriptor()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_descriptor_pool_a19d33fdb25a5815ea41c1a3caa970842} 
+bool bloom\+::render\+::\+Descriptor\+Pool\+::\+Allocate\+Descriptor (\begin{DoxyParamCaption}\item[{Vk\+Descriptor\+Set\+Layout}]{descriptor\+Set\+Layout}{, }\item[{Vk\+Descriptor\+Set \&}]{descriptor}{}\end{DoxyParamCaption}) const}
+
+
+
+Allocates a descriptor set from the pool. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em descriptor\+Set\+Layout} & The layout of the descriptor set to allocate. \\
+\hline
+{\em descriptor} & Output parameter for the allocated descriptor set handle. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the allocation was successful, false otherwise.
+\end{DoxyReturn}
+Allocates a single descriptor set from the pool based on the provided layout. Returns false if the pool is full or if there are other allocation errors. \Hypertarget{classbloom_1_1render_1_1_descriptor_pool_a23c2c1a69fd250eb8d75d967dc319430}\index{bloom::render::DescriptorPool@{bloom::render::DescriptorPool}!FreeDescriptors@{FreeDescriptors}}
+\index{FreeDescriptors@{FreeDescriptors}!bloom::render::DescriptorPool@{bloom::render::DescriptorPool}}
+\doxysubsubsection{\texorpdfstring{FreeDescriptors()}{FreeDescriptors()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_descriptor_pool_a23c2c1a69fd250eb8d75d967dc319430} 
+void bloom\+::render\+::\+Descriptor\+Pool\+::\+Free\+Descriptors (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ Vk\+Descriptor\+Set $>$ \&}]{descriptors}{}\end{DoxyParamCaption}) const}
+
+
+
+Frees allocated descriptor sets. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em descriptors} & Vector of descriptor set handles to free.\\
+\hline
+\end{DoxyParams}
+Returns the given descriptor sets to the pool, making them available for reuse. \Hypertarget{classbloom_1_1render_1_1_descriptor_pool_ac0e9cfc07011dddd6d0170b66f5f650b}\index{bloom::render::DescriptorPool@{bloom::render::DescriptorPool}!ResetPool@{ResetPool}}
+\index{ResetPool@{ResetPool}!bloom::render::DescriptorPool@{bloom::render::DescriptorPool}}
+\doxysubsubsection{\texorpdfstring{ResetPool()}{ResetPool()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_descriptor_pool_ac0e9cfc07011dddd6d0170b66f5f650b} 
+void bloom\+::render\+::\+Descriptor\+Pool\+::\+Reset\+Pool (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Resets the descriptor pool. 
+
+Resets the descriptor pool, freeing all allocated descriptor sets. This is useful for reusing the pool instead of creating a new one. 
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/xgoni/bloom/bloom/src/render/\mbox{\hyperlink{descriptor__pool_8hpp}{descriptor\+\_\+pool.\+hpp}}\item 
-C\+:/\+Users/xgoni/bloom/bloom/src/render/descriptor\+\_\+pool.\+cpp\end{DoxyCompactItemize}
+C\+:/\+Users/xgoni/bloom/bloom/src/render/\mbox{\hyperlink{descriptors_8hpp}{descriptors.\+hpp}}\item 
+C\+:/\+Users/xgoni/bloom/bloom/src/render/descriptors.\+cpp\end{DoxyCompactItemize}

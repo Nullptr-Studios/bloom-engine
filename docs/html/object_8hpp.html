@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Bloom Engine: C:/Users/xgoni/bloom/bloom/src/object.hpp File Reference</title>
+<title>Bloom Engine: C:/Users/xgoni/bloom/bloom/src/objects/object.hpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -83,35 +83,44 @@ $(function(){ initResizable(false); });
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_a911f0a37fba255b134e89c76f6a8ad1.html">bloom</a></li><li class="navelem"><a class="el" href="dir_3662e0c0bd99ea31956716836e8592aa.html">src</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_a911f0a37fba255b134e89c76f6a8ad1.html">bloom</a></li><li class="navelem"><a class="el" href="dir_3662e0c0bd99ea31956716836e8592aa.html">src</a></li><li class="navelem"><a class="el" href="dir_8415a604f2e59bc7f4e10ccd1ef6a5bf.html">objects</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle"><div class="title">object.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>[Brief description of the file's purpose]  
+<p>This file defines the base Object class and the Transform struct.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="model_8hpp_source.html">render/model.hpp</a>&quot;</code><br />
-<code>#include &quot;render/texture.hpp&quot;</code><br />
-<code>#include &quot;glm/gtc/matrix_transform.hpp&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="devices_8hpp_source.html">src/render/devices.hpp</a>&quot;</code><br />
 <code>#include &lt;<a class="el" href="bloom__header_8hpp_source.html">bloom_header.hpp</a>&gt;</code><br />
+<code>#include &lt;glm/gtx/euler_angles.hpp&gt;</code><br />
 </div>
 <p><a href="object_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structbloom_1_1_transform.html">bloom::Transform</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the position, rotation, and scale of an object in 3D space.  <a href="structbloom_1_1_transform.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbloom_1_1_object.html">bloom::Object</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class for all objects in the game world.  <a href="classbloom_1_1_object.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ac65b651055bbc2100bc99fb9bd34ac17" id="r_ac65b651055bbc2100bc99fb9bd34ac17"><td class="memItemLeft" align="right" valign="top"><a id="ac65b651055bbc2100bc99fb9bd34ac17" name="ac65b651055bbc2100bc99fb9bd34ac17"></a>
+typedef std::unordered_map&lt; id_t, std::shared_ptr&lt; <a class="el" href="classbloom_1_1_object.html">Object</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>bloom::ObjectMap</b></td></tr>
+<tr class="memdesc:ac65b651055bbc2100bc99fb9bd34ac17"><td class="mdescLeft">&#160;</td><td class="mdescRight">A map of object IDs to shared pointers of Objects. Used for managing and accessing objects in the game world. <br /></td></tr>
+<tr class="separator:ac65b651055bbc2100bc99fb9bd34ac17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>[Brief description of the file's purpose] </p>
+<div class="textblock"><p>This file defines the base Object class and the Transform struct. </p>
 <dl class="section author"><dt>Author</dt><dd>Xein <a href="#" onclick="location.href='mai'+'lto:'+'xgo'+'ni'+'p@g'+'ma'+'il.'+'co'+'m'; return false;">xgoni<span class="obfuscator">.nosp@m.</span>p@gm<span class="obfuscator">.nosp@m.</span>ail.c<span class="obfuscator">.nosp@m.</span>om</a> </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>10/12/2024 </dd></dl>
 </div></div><!-- contents -->

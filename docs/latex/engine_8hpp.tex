@@ -8,11 +8,11 @@ Main engine class.
 {\ttfamily \#include "{}core.\+hpp"{}}\newline
 {\ttfamily \#include "{}window.\+hpp"{}}\newline
 {\ttfamily \#include "{}factory.\+hpp"{}}\newline
-{\ttfamily \#include "{}object.\+hpp"{}}\newline
 {\ttfamily \#include "{}render/devices.\+hpp"{}}\newline
 {\ttfamily \#include "{}render/renderer.\+hpp"{}}\newline
 {\ttfamily \#include "{}simple\+\_\+render\+\_\+system.\+hpp"{}}\newline
-{\ttfamily \#include "{}camera.\+hpp"{}}\newline
+{\ttfamily \#include "{}objects/camera.\+hpp"{}}\newline
+{\ttfamily \#include "{}render/descriptors.\+hpp"{}}\newline
 {\ttfamily \#include $<$bloom\+\_\+header.\+hpp$>$}\newline
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
@@ -53,7 +53,7 @@ This function serves as the primary entry point for the engine, allowing it to h
 \begin{DoxyNote}{Note}
 For future Xein\+: This design is intentional to ensure that the engine manages the {\ttfamily main} function rather than the game project. Any game-\/specific logic should integrate with this entry point.
 \end{DoxyNote}
-While this function is declared here, its implementation resides in main.\+cpp within the game project. This separation ensures modularity between the engine and game layers.
+While this function is declared here, its implementation resides in \doxylink{main_8cpp}{main.\+cpp} within the game project. This separation ensures modularity between the engine and game layers.
 
 \begin{DoxyReturn}{Returns}
 A pointer to the {\ttfamily Engine} class instance, which is used to manage the engine\textquotesingle{}s lifecycle. 

@@ -1,66 +1,106 @@
 #include "engine.hpp"
-#include "render/model.hpp"
+
+#include "layers/game_layer.hpp"
+#include "layers/ui_layer.hpp"
+#include "render/systems/simple_render_system.hpp"
 
 namespace bloom {
 
-#pragma region Game Loop
+render::DescriptorLayouts Engine::m_descriptorLayouts;
 
-void Engine::Begin() {
-  glfwInit();
-	Log::Init();
+Engine::Engine() { }
+
+// region Begin
+void Engine::Init() {
+  Log::Init();
 
   m_window = new Window(800, 800, "Bloom");
-  m_window->SetEventCallback(std::bind(&Engine::OnEvent, this, std::placeholders::_1));
-  m_window->OnInit();
-
-  factory = std::make_unique<Factory>();
+  m_window->SetEventCallback(EVENT_BIND(Engine::OnEvent));
+  m_window->OnBegin();
 
   m_devices = std::make_unique<render::Devices>(*m_window);
   m_renderer = std::make_unique<render::Renderer>(m_window, m_devices.get());
-  m_simpleRenderSystem = new SimpleRenderSystem(m_devices.get());
-  m_simpleRenderSystem->Begin(m_renderer->GetRenderPass());
+  PushLayer(new render::GameLayer("Game Layer"));
+  PushLayer(new ui::UILayer("UI Layer"));
 
   OnBegin();
 
-  for (auto& object : factory->GetObjects()) {
-    object.second->Begin();
+  int layerIndex = 0;
+  for (auto &layer : m_layerStack) {
+    layer->OnBegin();
+    BLOOM_LOG("{0}: {1}", layerIndex, layer->GetName());
+    layerIndex++;
   }
 }
 
-void Engine::Tick() {
-  m_deltaTime = m_window->GetDeltaTime();
+// region Tick
+void Engine::OnTick() {
+  m_deltaTime = static_cast<float>(m_window->GetDeltaTime());
   m_window->OnTick();
 
-  // Objects game loop
-  for (auto& object : factory->GetObjects()) {
-    object.second->Tick(m_deltaTime);
-  }
+  for (auto &layer : m_layerStack)
+    layer->OnTick(m_deltaTime);
 }
 
-void Engine::Render() {
+// region Render
+void Engine::OnRender() {
   if (auto commandBuffer = m_renderer->BeginFrame()) {
+    char frameIndex = static_cast<char>(m_renderer->GetFrameIndex());
+    render::FrameInfo frameInfo{
+      frameIndex,
+      m_deltaTime,
+      commandBuffer,
+      // TODO: better camera management than this
+      // Look for how cinemachine handles the camera used for the brain -x
+      m_activeCamera.get(),
+    };
+
+    // render
     m_renderer->BeginRenderPass(commandBuffer);
-    m_simpleRenderSystem->RenderObjects(commandBuffer, factory->GetRenderables(), m_activeCamera.get());
+
+    for (auto &layer : m_layerStack)
+      layer->OnRender(frameInfo);
+
     m_renderer->EndRenderPass(commandBuffer);
     m_renderer->EndFrame();
   }
 }
 
-void Engine::End() const {
-  vkDeviceWaitIdle(m_devices->device());
+// region End
+void Engine::OnClose() {
+  vkDeviceWaitIdle(m_devices->Device());
+  for (auto &layer : m_layerStack)
+    m_layerStack.PopLayer(layer);
   delete m_window;
 }
 
-#pragma endregion // -------------------------------------------------------------------------------------------------
+// region Events
+void Engine::OnEvent(Event &e) {
+  if (e.GetEventType() == EventType::KeyTyped)
+    BLOOM_INFO("{0}", e.ToString());
 
-void Engine::OnEvent(const Event &e) const {
-  // BLOOM_INFO("{0}", e.ToString());
+  EventDispatcher dispatcher(e);
+  dispatcher.Dispatch<WindowCloseEvent>(EVENT_BIND(Engine::ExitEngine));
+  if (e.IsHandled()) return;
 
-  if (e.GetEventType() == EventType::WindowClose) {
-    m_window->CloseWindow();
+  for (auto i = m_layerStack.end(); i != m_layerStack.begin();) {
+    (*--i)->OnEvent(e);
+    if (e.IsHandled())
+      break;
   }
 }
 
-void Engine::OnBegin() { }
-
+bool Engine::ExitEngine(Event& e) {
+  m_shouldClose = true;
+  return true;
 }
+
+// region Layer Management
+void Engine::PushLayer(Layer *layer) {
+  m_layerStack.PushLayer(layer);
+}
+void Engine::PushOverlay(Layer *overlay) {
+  m_layerStack.PushOverlay(overlay);
+}
+
+} // namespace bloom

@@ -29,19 +29,19 @@ public:
    * @param x The new X-coordinate of the mouse cursor.
    * @param y The new Y-coordinate of the mouse cursor.
    */
-  MouseMovedEvent(const float x, const float y) : _mouseX(x), _mouseY(y) {}
+  MouseMovedEvent(const float x, const float y) : m_mouseX(x), m_mouseY(y) {}
 
   /**
    * @brief Retrieves the X-coordinate of the mouse cursor.
    * @return The X-coordinate as a float.
    */
-  [[nodiscard]] float GetX() const { return _mouseX; }
+  [[nodiscard]] float GetX() const { return m_mouseX; }
 
   /**
    * @brief Retrieves the Y-coordinate of the mouse cursor.
    * @return The Y-coordinate as a float.
    */
-  [[nodiscard]] float GetY() const { return _mouseY; }
+  [[nodiscard]] float GetY() const { return m_mouseY; }
 
   EVENT_CLASS_TYPE(MouseMoved)
   EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)
@@ -52,12 +52,12 @@ public:
    */
   [[nodiscard]] std::string ToString() const override {
     std::stringstream ss;
-    ss << "MouseMovedEvent: " << _mouseX << ", " << _mouseY;
+    ss << "MouseMovedEvent: " << m_mouseX << ", " << m_mouseY;
     return ss.str();
   }
 
 private:
-  float _mouseX, _mouseY;  ///< The X and Y coordinates of the mouse cursor.
+  float m_mouseX, m_mouseY;  ///< The X and Y coordinates of the mouse cursor.
 };
 
 /**
@@ -74,19 +74,19 @@ public:
    * @param yOffset The vertical scroll offset.
    */
   MouseScrolledEvent(const float xOffset, const float yOffset)
-      : _mouseXOffset(xOffset), _mouseYOffset(yOffset) {}
+      : m_mouseXOffset(xOffset), m_mouseYOffset(yOffset) {}
 
   /**
    * @brief Retrieves the horizontal scroll offset.
    * @return The X-offset as a float.
    */
-  [[nodiscard]] float GetXOffset() const { return _mouseXOffset; }
+  [[nodiscard]] float GetXOffset() const { return m_mouseXOffset; }
 
   /**
    * @brief Retrieves the vertical scroll offset.
    * @return The Y-offset as a float.
    */
-  [[nodiscard]] float GetYOffset() const { return _mouseYOffset; }
+  [[nodiscard]] float GetYOffset() const { return m_mouseYOffset; }
 
   EVENT_CLASS_TYPE(MouseScrolled)  ///< Declares the event type as `MouseScrolled`.
   EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)
@@ -97,12 +97,12 @@ public:
    */
   [[nodiscard]] std::string ToString() const override {
     std::stringstream ss;
-    ss << "MouseScrolledEvent: " << _mouseXOffset << ", " << _mouseYOffset;
+    ss << "MouseScrolledEvent: " << m_mouseXOffset << ", " << m_mouseYOffset;
     return ss.str();
   }
 
 private:
-  float _mouseXOffset, _mouseYOffset;  ///< The horizontal and vertical scroll offsets.
+  float m_mouseXOffset, m_mouseYOffset;  ///< The horizontal and vertical scroll offsets.
 };
 
 /**
@@ -119,7 +119,7 @@ public:
    * @brief Retrieves the mouse button involved in the event.
    * @return The button as an integer.
    */
-  [[nodiscard]] int GetMouseButton() const { return _button; }
+  [[nodiscard]] int GetMouseButton() const { return m_button; }
 
   EVENT_CLASS_CATEGORY(EventCategoryMouseButton | EventCategoryMouse | EventCategoryInput)
 
@@ -128,9 +128,9 @@ protected:
    * @brief Constructs a `MouseButtonEvent`.
    * @param button The button involved in the event.
    */
-  explicit MouseButtonEvent(int button) : _button(button) {}
+  explicit MouseButtonEvent(int button) : m_button(button) {}
 
-  int _button;  ///< The mouse button involved in the event.
+  int m_button;  ///< The mouse button involved in the event.
 };
 
 /**
@@ -143,7 +143,7 @@ public:
    * @brief Constructs a `MouseButtonPressedEvent`.
    * @param button The button that was pressed.
    */
-  MouseButtonPressedEvent(const int button) : MouseButtonEvent(button) {}
+  explicit MouseButtonPressedEvent(const int button) : MouseButtonEvent(button) {}
 
   EVENT_CLASS_TYPE(MouseButtonPressed)
 
@@ -153,7 +153,7 @@ public:
    */
   std::string ToString() const override {
     std::stringstream ss;
-    ss << "MouseButtonPressedEvent: " << _button;
+    ss << "MouseButtonPressedEvent: " << m_button;
     return ss.str();
   }
 };
@@ -168,7 +168,7 @@ public:
    * @brief Constructs a `MouseButtonReleasedEvent`.
    * @param button The button that was released.
    */
-  MouseButtonReleasedEvent(const int button) : MouseButtonEvent(button) {}
+  explicit MouseButtonReleasedEvent(const int button) : MouseButtonEvent(button) {}
 
   EVENT_CLASS_TYPE(MouseButtonReleased)
 
@@ -178,7 +178,7 @@ public:
    */
   std::string ToString() const override {
     std::stringstream ss;
-    ss << "MouseButtonReleasedEvent: " << _button;
+    ss << "MouseButtonReleasedEvent: " << m_button;
     return ss.str();
   }
 };

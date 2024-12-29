@@ -1,0 +1,67 @@
+\doxysection{buffer.\+hpp}
+\hypertarget{buffer_8hpp_source}{}\label{buffer_8hpp_source}\index{C:/Users/xgoni/bloom/bloom/src/render/buffer.hpp@{C:/Users/xgoni/bloom/bloom/src/render/buffer.hpp}}
+\mbox{\hyperlink{buffer_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{devices_8hpp}{devices.hpp}}"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }bloom::render\ \{}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classbloom_1_1render_1_1_buffer}{Buffer}}\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_buffer}{Buffer}}(}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}}\&\ device,}
+\DoxyCodeLine{00018\ \ \ \ \ VkDeviceSize\ instanceSize,}
+\DoxyCodeLine{00019\ \ \ \ \ uint32\_t\ instanceCount,}
+\DoxyCodeLine{00020\ \ \ \ \ VkBufferUsageFlags\ usageFlags,}
+\DoxyCodeLine{00021\ \ \ \ \ VkMemoryPropertyFlags\ memoryPropertyFlags,}
+\DoxyCodeLine{00022\ \ \ \ \ VkDeviceSize\ minOffsetAlignment\ =\ 1}
+\DoxyCodeLine{00023\ \ \ );}
+\DoxyCodeLine{00024\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_buffer}{\string~Buffer}}();}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \textcolor{comment}{//\ Copy\ constructors}}
+\DoxyCodeLine{00027\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_buffer}{Buffer}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classbloom_1_1render_1_1_buffer}{Buffer}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00028\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_buffer}{Buffer}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classbloom_1_1render_1_1_buffer}{Buffer}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00039\ \ \ VkResult\ \mbox{\hyperlink{classbloom_1_1render_1_1_buffer_a7ae53712d6cecefcab4a6a6cef15f479}{Map}}(VkDeviceSize\ size\ =\ VK\_WHOLE\_SIZE,\ VkDeviceSize\ offset\ =\ 0);}
+\DoxyCodeLine{00045\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classbloom_1_1render_1_1_buffer_ad879b72fed8b6ec31817c131d77a3d59}{Unmap}}();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00056\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classbloom_1_1render_1_1_buffer_a0cf9a4f4601e1b9ad3ce7088389ab280}{WriteToBuffer}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *\ data,\ VkDeviceSize\ size\ =\ VK\_WHOLE\_SIZE,\ VkDeviceSize\ offset\ =\ 0)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00068\ \ \ VkResult\ \mbox{\hyperlink{classbloom_1_1render_1_1_buffer_ad26ff9c30a4af9e282f656c6e43bc079}{Flush}}(VkDeviceSize\ size\ =\ VK\_WHOLE\_SIZE,\ VkDeviceSize\ offset\ =\ 0)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00077\ \ \ VkDescriptorBufferInfo\ \mbox{\hyperlink{classbloom_1_1render_1_1_buffer_a27c3f8d3cd0783a898bf5c9182c0af2e}{DescriptorInfo}}(VkDeviceSize\ size\ =\ VK\_WHOLE\_SIZE,\ VkDeviceSize\ offset\ =\ 0)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00089\ \ \ VkResult\ \mbox{\hyperlink{classbloom_1_1render_1_1_buffer_a36e803348215c1e9f77b19904d972782}{Invalidate}}(VkDeviceSize\ size\ =\ VK\_WHOLE\_SIZE,\ VkDeviceSize\ offset\ =\ 0)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00098\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classbloom_1_1render_1_1_buffer_a483f6d1116280335c393c3b9279cbf84}{WriteToIndex}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *\ data,\ \textcolor{keywordtype}{int}\ index)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00105\ \ \ VkResult\ \mbox{\hyperlink{classbloom_1_1render_1_1_buffer_ad71290962a21cff1f52297b7d36d513b}{FlushIndex}}(\textcolor{keywordtype}{int}\ index)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00113\ \ \ VkDescriptorBufferInfo\ \mbox{\hyperlink{classbloom_1_1render_1_1_buffer_a0fc49b289e38255664a5e4f923153a9c}{DescriptorInfoForIndex}}(\textcolor{keywordtype}{int}\ index)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00123\ \ \ VkResult\ \mbox{\hyperlink{classbloom_1_1render_1_1_buffer_a51d8262ba644571121418537321c9975}{InvalidateIndex}}(\textcolor{keywordtype}{int}\ index)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00124\ \ }
+\DoxyCodeLine{00134\ VkBuffer\ \mbox{\hyperlink{classbloom_1_1render_1_1_buffer_a73341ea81eed91349d5834c84706dc4f}{GetBuffer}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_buffer;\ \}}
+\DoxyCodeLine{00144\ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{classbloom_1_1render_1_1_buffer_a01db35c212166c5248c1a0fbab50464a}{GetMappedMemory}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_mapped;\ \}}
+\DoxyCodeLine{00154\ uint32\_t\ \mbox{\hyperlink{classbloom_1_1render_1_1_buffer_a383200e76caefc2418af37a68aa5baf3}{GetInstanceCount}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_instanceCount;\ \}}
+\DoxyCodeLine{00162\ VkDeviceSize\ \mbox{\hyperlink{classbloom_1_1render_1_1_buffer_a483aab638696775a174276d0ce0c74d5}{GetInstanceSize}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_instanceSize;\ \}}
+\DoxyCodeLine{00174\ VkDeviceSize\ \mbox{\hyperlink{classbloom_1_1render_1_1_buffer_a9a8f1a63feb3a35cde70b2bd276ca71a}{GetAlignmentSize}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_instanceSize;\ \}\ \textcolor{comment}{//\ Consider\ using\ a\ dedicated\ m\_alignmentSize\ member\ if\ alignment\ differs\ from\ instance\ size.}}
+\DoxyCodeLine{00183\ VkBufferUsageFlags\ \mbox{\hyperlink{classbloom_1_1render_1_1_buffer_a63f4efce69629ee0f5e256cc97abb737}{GetUsageFlags}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_usageFlags;\ \}}
+\DoxyCodeLine{00192\ VkMemoryPropertyFlags\ \mbox{\hyperlink{classbloom_1_1render_1_1_buffer_adce436cf0c7200a4aacd4b43e4d586e0}{GetMemoryPropertyFlags}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_memoryPropertyFlags;\ \}}
+\DoxyCodeLine{00200\ VkDeviceSize\ \mbox{\hyperlink{classbloom_1_1render_1_1_buffer_a1d7fa44111d719d7df9fad4cc5d5eb84}{GetBufferSize}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_bufferSize;\ \}}
+\DoxyCodeLine{00201\ \ }
+\DoxyCodeLine{00202\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00212\ \ \ \textcolor{keyword}{static}\ VkDeviceSize\ GetAlignment(VkDeviceSize\ instanceSize,\ VkDeviceSize\ minOffsetAlignment);}
+\DoxyCodeLine{00213\ \ }
+\DoxyCodeLine{00214\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}}\&\ m\_devices;}
+\DoxyCodeLine{00215\ \ \ \textcolor{keywordtype}{void}*\ m\_mapped\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00216\ \ \ VkBuffer\ m\_buffer\ =\ VK\_NULL\_HANDLE;}
+\DoxyCodeLine{00217\ \ \ VkDeviceMemory\ m\_memory\ =\ VK\_NULL\_HANDLE;}
+\DoxyCodeLine{00218\ \ }
+\DoxyCodeLine{00219\ \ \ VkDeviceSize\ m\_bufferSize;}
+\DoxyCodeLine{00220\ \ \ uint32\_t\ m\_instanceCount;}
+\DoxyCodeLine{00221\ \ \ VkDeviceSize\ m\_instanceSize;}
+\DoxyCodeLine{00222\ \ \ VkDeviceSize\ m\_alignmentSize;}
+\DoxyCodeLine{00223\ \ \ VkBufferUsageFlags\ m\_usageFlags;}
+\DoxyCodeLine{00224\ \ \ VkMemoryPropertyFlags\ m\_memoryPropertyFlags;}
+\DoxyCodeLine{00225\ \};}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00227\ \}}
+
+\end{DoxyCode}

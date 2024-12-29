@@ -1,10 +1,5 @@
 \doxysection{bloom\+::Simple\+Render\+System Class Reference}
 \hypertarget{classbloom_1_1_simple_render_system}{}\label{classbloom_1_1_simple_render_system}\index{bloom::SimpleRenderSystem@{bloom::SimpleRenderSystem}}
-\doxysubsubsection*{Classes}
-\begin{DoxyCompactItemize}
-\item 
-struct \mbox{\hyperlink{structbloom_1_1_simple_render_system_1_1_descriptor_set_pool_sizes}{Descriptor\+Set\+Pool\+Sizes}}
-\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -17,11 +12,11 @@ struct \mbox{\hyperlink{structbloom_1_1_simple_render_system_1_1_descriptor_set_
 \Hypertarget{classbloom_1_1_simple_render_system_acd92b23512bf4867312fc96d5a978500}\label{classbloom_1_1_simple_render_system_acd92b23512bf4867312fc96d5a978500} 
 \mbox{\hyperlink{classbloom_1_1_simple_render_system}{Simple\+Render\+System}} \& {\bfseries operator=} (const \mbox{\hyperlink{classbloom_1_1_simple_render_system}{Simple\+Render\+System}} \&)=delete
 \item 
-\Hypertarget{classbloom_1_1_simple_render_system_aa72d9ea0ba1176aaafb51d1b27460314}\label{classbloom_1_1_simple_render_system_aa72d9ea0ba1176aaafb51d1b27460314} 
-void {\bfseries Begin} (Vk\+Render\+Pass render\+Pass)
+\Hypertarget{classbloom_1_1_simple_render_system_af30abea897d46a95ce27a3963252980c}\label{classbloom_1_1_simple_render_system_af30abea897d46a95ce27a3963252980c} 
+void {\bfseries Begin} (Vk\+Render\+Pass render\+Pass, Vk\+Descriptor\+Set\+Layout global\+Set\+Layout, Vk\+Descriptor\+Set\+Layout material\+Set\+Layout)
 \item 
-\Hypertarget{classbloom_1_1_simple_render_system_a623024024143cfec472d826942a7f022}\label{classbloom_1_1_simple_render_system_a623024024143cfec472d826942a7f022} 
-void {\bfseries Render\+Objects} (Vk\+Command\+Buffer command\+Buffer, std\+::vector$<$ \mbox{\hyperlink{classbloom_1_1_object}{Object}} $>$ \&objects, const \mbox{\hyperlink{classbloom_1_1_camera}{Camera}} \&camera)
+\Hypertarget{classbloom_1_1_simple_render_system_aad25866347485b862083281237eefd2f}\label{classbloom_1_1_simple_render_system_aad25866347485b862083281237eefd2f} 
+void {\bfseries Render\+Objects} (\mbox{\hyperlink{structbloom_1_1render_1_1_frame_info}{render\+::\+Frame\+Info}} \&frame\+Info, \mbox{\hyperlink{actor_8hpp_a0a6a92f666ce85e7aaa009b4a2af96ee}{Actor\+Map}} actors)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
@@ -32,8 +27,8 @@ static constexpr unsigned int {\bfseries MAX\+\_\+\+OBJECTS} = 1024
 \doxysubsubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classbloom_1_1_simple_render_system_a771d2883e195f815e4450fbf69c5e3c2}\label{classbloom_1_1_simple_render_system_a771d2883e195f815e4450fbf69c5e3c2} 
-void {\bfseries Create\+Pipeline\+Layout} ()
+\Hypertarget{classbloom_1_1_simple_render_system_ab8d9b2e2f878ecd4cd8a648ec450811d}\label{classbloom_1_1_simple_render_system_ab8d9b2e2f878ecd4cd8a648ec450811d} 
+void {\bfseries Create\+Pipeline\+Layout} (Vk\+Descriptor\+Set\+Layout global\+Set\+Layout, Vk\+Descriptor\+Set\+Layout material\+Set\+Layout)
 \item 
 \Hypertarget{classbloom_1_1_simple_render_system_aa1bcddbe2f8f250de0f6d41cf4f1fd10}\label{classbloom_1_1_simple_render_system_aa1bcddbe2f8f250de0f6d41cf4f1fd10} 
 void {\bfseries Create\+Pipeline} (Vk\+Render\+Pass render\+Pass)
@@ -43,9 +38,6 @@ void {\bfseries Create\+Descriptor\+Pool} ()
 \item 
 \Hypertarget{classbloom_1_1_simple_render_system_a26a77f040b076f391c12e79ec410e157}\label{classbloom_1_1_simple_render_system_a26a77f040b076f391c12e79ec410e157} 
 void {\bfseries Create\+Descriptor\+Sets} ()
-\item 
-\Hypertarget{classbloom_1_1_simple_render_system_aff232e3a33e49e43b647984c9f07152f}\label{classbloom_1_1_simple_render_system_aff232e3a33e49e43b647984c9f07152f} 
-Vk\+Descriptor\+Set {\bfseries Allocate\+Descriptor\+Set} (Vk\+Descriptor\+Set\+Layout layout)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
@@ -58,18 +50,6 @@ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1render_1_1_pipeline}{re
 \item 
 \Hypertarget{classbloom_1_1_simple_render_system_aac626f240a2e741986965f12592a02bb}\label{classbloom_1_1_simple_render_system_aac626f240a2e741986965f12592a02bb} 
 Vk\+Pipeline\+Layout {\bfseries m\+\_\+pipeline\+Layout}
-\item 
-\Hypertarget{classbloom_1_1_simple_render_system_a049702d8bd812ac5a401cfd134382b0a}\label{classbloom_1_1_simple_render_system_a049702d8bd812ac5a401cfd134382b0a} 
-std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_set_layout}{render\+::\+Descriptor\+Set\+Layout}} $>$ {\bfseries m\+\_\+texture\+Layout}
-\item 
-\Hypertarget{classbloom_1_1_simple_render_system_a754b2927de74303ca1a6cd42b87bfc37}\label{classbloom_1_1_simple_render_system_a754b2927de74303ca1a6cd42b87bfc37} 
-\mbox{\hyperlink{structbloom_1_1_simple_render_system_1_1_descriptor_set_pool_sizes}{Descriptor\+Set\+Pool\+Sizes}} {\bfseries m\+\_\+pool\+Sizes}
-\item 
-\Hypertarget{classbloom_1_1_simple_render_system_a2fbffce6b372520218c4f2df0189f655}\label{classbloom_1_1_simple_render_system_a2fbffce6b372520218c4f2df0189f655} 
-std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_pool}{render\+::\+Descriptor\+Pool}} $>$ {\bfseries m\+\_\+global\+Pool} = nullptr
-\item 
-\Hypertarget{classbloom_1_1_simple_render_system_ad85f291a493a5745efe69c9dfe6247f0}\label{classbloom_1_1_simple_render_system_ad85f291a493a5745efe69c9dfe6247f0} 
-std\+::vector$<$ Vk\+Descriptor\+Set $>$ {\bfseries m\+\_\+global\+Descriptor\+Sets}
 \end{DoxyCompactItemize}
 
 

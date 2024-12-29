@@ -3,72 +3,134 @@
  * @author Xein <xgonip@gmail.com>
  * @date 10/12/2024
  *
- * @brief [Brief description of the file's purpose]
+ * @brief This file defines the base Object class and the Transform struct
  */
 
 #pragma once
-#include "src/render/model.hpp"
-#include "src/render/texture.hpp"
-#include "glm/gtc/matrix_transform.hpp"
+#define GLM_ENABLE_EXPERIMENTAL
 #include <bloom_header.hpp>
+#include <glm/gtx/euler_angles.hpp>
+#include <imgui.h>
+#include "src/render/devices.hpp"
 
 namespace bloom {
 
+/**
+ *  @struct Transform
+ *  @brief Represents the position, rotation, and scale of an object in 3D space.
+ *
+ *  The Transform struct provides a convenient way to store and manipulate the transformation
+ *  properties of an object. It contains the object's @b position as a 3D vector, its @b scale
+ *  as a 3D vector, and its @b rotation as Euler angles (yaw, pitch, and roll). The @c Matrix()
+ *  method calculates the combined transformation matrix based on these properties.
+ */
 struct BLOOM_API Transform {
-  glm::vec3 position = {};
-  glm::vec3 scale = {1.0f, 1.0f, 1.0f};
-  glm::vec3 rotation = {};
+  glm::vec3 position = {}; ///< @brief The position of the object in world space.
+  glm::vec3 scale = {1.0f, 1.0f, 1.0f}; ///< @brief The scale of the object in each axis.
+  glm::vec3 rotation = {}; ///< @brief The rotation of the object as Euler angles (yaw, pitch, roll) in radians.
 
-  glm::mat4 mat4() {
-    const float c3 = glm::cos(rotation.z);
-    const float s3 = glm::sin(rotation.z);
-    const float c2 = glm::cos(rotation.x);
-    const float s2 = glm::sin(rotation.x);
-    const float c1 = glm::cos(rotation.y);
-    const float s1 = glm::sin(rotation.y);
-    return glm::mat4{
-    {
-      scale.x * (c1 * c3 + s1 * s2 * s3),
-      scale.x * (c2 * s3),
-      scale.x * (c1 * s2 * s3 - c3 * s1),
-      0.0f,
-    },
-    {
-      scale.y * (c3 * s1 * s2 - c1 * s3),
-      scale.y * (c2 * c3),
-      scale.y * (c1 * c3 * s2 + s1 * s3),
-      0.0f,
-    },
-    {
-      scale.z * (c2 * s1),
-      scale.z * (-s2),
-      scale.z * (c1 * c2),
-      0.0f,
-    },
-    {position.x, position.y, position.z, 1.0f}};
+  /**
+   *  @brief Calculates and returns the 4x4 transformation matrix.
+   *
+   *  This method combines the position, rotation, and scale properties into a single
+   *  homogeneous matrix that can be used to transform the object's vertices.
+   *  The transformation order is scale, then rotation, then translation.
+   *
+   *  @return The combined transformation matrix.
+   */
+  glm::mat4 Matrix() const {
+    const glm::mat4 rotationMatrix = glm::yawPitchRoll(rotation.y, rotation.x, rotation.z);
+    const glm::mat4 scaleMatrix = glm::scale(glm::mat4(1.0f), scale);
+    const glm::mat4 translationMatrix = glm::translate(glm::mat4(1.0f), position);
+    return translationMatrix * rotationMatrix * scaleMatrix;
   }
 };
 
+/**
+ *  @class Object
+ *  @brief Base class for all objects in the game world.
+ *
+ *  The Object class provides a common interface and basic functionality for all objects
+ *  in the game. It manages the object's ID and provides virtual methods for the game loop
+ *  stages: @c Begin, @c Tick, and @c End. Derived classes can override these methods to
+ *  implement their specific behavior.
+ */
 class BLOOM_API Object {
-public:
-  Object(const id_t id) : m_id(id) {};
+protected:
+  /**
+   *  @brief Constructs a new Object.
+   *  @param id The unique identifier for this object.
+   */
+  explicit Object(const id_t id) : m_id(id) {}
   virtual ~Object() = default;
+
+public:
+  // Copy constructors
   Object(const Object&) = delete; 
   Object& operator=(const Object&) = delete; 
   Object(Object&&) = default; 
   Object& operator=(Object&&) = default;
 
-  virtual void Begin() {}
-  virtual void Tick(float deltaTime) {}
-  virtual void End() {}
+  // Game loop
+  /**
+   *  @brief Called at the beginning of the scene.
+   */
+  virtual void OnBegin() {}
+  /**
+   *  @brief Called every frame to update the object's state.
+   *  @param deltaTime The time elapsed since the last frame.
+   */
+  virtual void OnTick(float deltaTime) {}
+  /**
+   *  @brief Called at the end of the scene.
+   */
+  virtual void OnClose() {}
+  /**
+   *  @brief Called when an event is received.
+   *  @param e The event to handle.
+   */
+  virtual void OnEvent(Event& e) {}
 
-  Transform transform;
+  virtual void PropertiesPanel() {
+    if (ImGui::CollapsingHeader("transform")) {
+      ImGui::DragFloat3("Position", &transform.position.x, 0.1f);
+      ImGui::DragFloat3("Rotation", &transform.rotation.x, 0.1f);
+      ImGui::DragFloat3("Scale", &transform.scale.x, 0.1f);
+    }
+  }
 
+  Transform transform; ///< @brief The object's transform, representing its position, rotation, and scale.
+
+  // Getters - Setters
+  // ReSharper disable once CppInconsistentNaming
+  /**
+   *  @brief Retrieves the object's unique ID.
+   *  @return The object's ID.
+   */
   id_t GetID() const { return m_id; }
+  /**
+   *  @brief Retrieves the object's name.
+   *  @return The object's name.
+   */
+  std::string GetName() const { return m_name; }
+  /**
+   *  @brief Sets the object's name.
+   *  @param name The new name for the object.
+   */
+  void SetName(const std::string& name) { BLOOM_LOG("Changed {0}'s name to {1}", m_name, name); m_name = name; }
+
 private:
-  id_t m_id;
+  id_t m_id; ///< @brief The unique identifier for this object.
+  std::string m_name; ///< @brief The name of the object.
 };
 
+/**
+ *  @typedef ObjectMap
+ *  @brief A map of object IDs to shared pointers of Objects. Used for managing
+ *         and accessing objects in the game world.
+ */
 typedef std::unordered_map<id_t,std::shared_ptr<Object>> ObjectMap;
 
 }
+
+#undef GLM_ENABLE_EXPERIMENTAL

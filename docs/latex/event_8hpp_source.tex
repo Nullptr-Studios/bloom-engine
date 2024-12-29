@@ -35,39 +35,42 @@
 \DoxyCodeLine{00085\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classbloom_1_1_event_dispatcher}{EventDispatcher}};}
 \DoxyCodeLine{00086\ }
 \DoxyCodeLine{00087\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00096\ \ \ [[nodiscard]]\ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{event_8hpp_a62777e271a1f3f6e4a8ba9055c2e4df9}{EventType}}\ \mbox{\hyperlink{classbloom_1_1_event_afb0cc62325b1fbd939fafe1096c6c624}{GetEventType}}()\ \textcolor{keyword}{const}\ =\ 0;}
-\DoxyCodeLine{00097\ }
-\DoxyCodeLine{00106\ \ \ [[nodiscard]]\ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classbloom_1_1_event_ab5bb7f0fc80e71886658e3acb181fd16}{GetName}}()\ \textcolor{keyword}{const}\ =\ 0;}
-\DoxyCodeLine{00107\ }
-\DoxyCodeLine{00116\ \ \ [[nodiscard]]\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classbloom_1_1_event_aae34b363173e9c057ac00f6fe78bcf9a}{GetCategoryFlags}}()\ \textcolor{keyword}{const}\ =\ 0;}
-\DoxyCodeLine{00117\ }
-\DoxyCodeLine{00126\ \ \ [[nodiscard]]\ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classbloom_1_1_event_a1e826d312aa922abd9401a02ee33ab3d}{ToString}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ GetName();\ \}}
-\DoxyCodeLine{00127\ }
-\DoxyCodeLine{00137\ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classbloom_1_1_event_ad407353c8d035d38f9bc21eedd0b8c69}{IsInCategory}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{event_8hpp_a85f0d8c71d473ca68946d8c5bcdab3f5}{EventCategory}}\ category)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ GetCategoryFlags()\ \&\ category;\ \}}
-\DoxyCodeLine{00138\ }
-\DoxyCodeLine{00139\ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00140\ \ \ \textcolor{keywordtype}{bool}\ \_handled\ =\ \textcolor{keyword}{false};\ }
-\DoxyCodeLine{00141\ \};}
-\DoxyCodeLine{00142\ }
-\DoxyCodeLine{00151\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classbloom_1_1_event_dispatcher}{EventDispatcher}}\ \{}
-\DoxyCodeLine{00152\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00153\ \ \ \textcolor{keyword}{using\ }EventFn\ =\ std::function<bool(T\&)>;\ }
-\DoxyCodeLine{00155\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00161\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classbloom_1_1_event_dispatcher_a5d6252c544ee2fbed1ca112e09baa407}{EventDispatcher}}(\mbox{\hyperlink{classbloom_1_1_event}{Event}}\&\ event)\ :\ \_event(event)\ \{\}}
-\DoxyCodeLine{00162\ }
-\DoxyCodeLine{00173\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00174\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classbloom_1_1_event_dispatcher_aa0c2418e5ca113ee8c648be770d8e225}{Dispatch}}(EventFn<T>\ func)\ \{}
-\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keywordflow}{if}\ (\_event.\mbox{\hyperlink{classbloom_1_1_event_afb0cc62325b1fbd939fafe1096c6c624}{GetEventType}}()\ ==\ T::GetStaticType())\ \{}
-\DoxyCodeLine{00176\ \ \ \ \ \ \ \_event.\mbox{\hyperlink{classbloom_1_1_event_abc466e96deb4ed6616be51c35a35e796}{\_handled}}\ =\ func(*\textcolor{keyword}{static\_cast<}T*\textcolor{keyword}{>}(\&\_event));}
-\DoxyCodeLine{00177\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00178\ \ \ \ \ \}}
-\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00180\ \ \ \}}
-\DoxyCodeLine{00181\ }
-\DoxyCodeLine{00182\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00183\ \ \ \mbox{\hyperlink{classbloom_1_1_event}{Event}}\&\ \_event;}
-\DoxyCodeLine{00184\ \};}
-\DoxyCodeLine{00185\ }
-\DoxyCodeLine{00186\ \}}
+\DoxyCodeLine{00088\ \ \ \mbox{\hyperlink{classbloom_1_1_event}{Event}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00089\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classbloom_1_1_event}{\string~Event}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00099\ \ \ [[nodiscard]]\ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{event_8hpp_a62777e271a1f3f6e4a8ba9055c2e4df9}{EventType}}\ \mbox{\hyperlink{classbloom_1_1_event_afb0cc62325b1fbd939fafe1096c6c624}{GetEventType}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00109\ \ \ [[nodiscard]]\ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classbloom_1_1_event_ab5bb7f0fc80e71886658e3acb181fd16}{GetName}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00119\ \ \ [[nodiscard]]\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classbloom_1_1_event_aae34b363173e9c057ac00f6fe78bcf9a}{GetCategoryFlags}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00129\ \ \ [[nodiscard]]\ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classbloom_1_1_event_a1e826d312aa922abd9401a02ee33ab3d}{ToString}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ GetName();\ \}}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00140\ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classbloom_1_1_event_ad407353c8d035d38f9bc21eedd0b8c69}{IsInCategory}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{event_8hpp_a85f0d8c71d473ca68946d8c5bcdab3f5}{EventCategory}}\ category)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ GetCategoryFlags()\ \&\ category;\ \}}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00143\ \ \ \textcolor{keywordtype}{bool}\ m\_handled\ =\ \textcolor{keyword}{false};\ }
+\DoxyCodeLine{00144\ \};}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00154\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classbloom_1_1_event_dispatcher}{EventDispatcher}}\ \{}
+\DoxyCodeLine{00155\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00156\ \ \ \textcolor{keyword}{using\ }EventFn\ =\ std::function<bool(T\&)>;\ }
+\DoxyCodeLine{00158\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00164\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classbloom_1_1_event_dispatcher_a5d6252c544ee2fbed1ca112e09baa407}{EventDispatcher}}(\mbox{\hyperlink{classbloom_1_1_event}{Event}}\&\ event)\ :\ m\_event(event)\ \{\}}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00176\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00177\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classbloom_1_1_event_dispatcher_aa0c2418e5ca113ee8c648be770d8e225}{Dispatch}}(EventFn<T>\ func)\ \{}
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_event.\mbox{\hyperlink{classbloom_1_1_event_afb0cc62325b1fbd939fafe1096c6c624}{GetEventType}}()\ ==\ T::GetStaticType())\ \{}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ m\_event.\mbox{\hyperlink{classbloom_1_1_event_a6891c44071438095e77ed94b176a244a}{m\_handled}}\ =\ func(*\textcolor{keyword}{static\_cast<}T*\textcolor{keyword}{>}(\&m\_event));}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00181\ \ \ \ \ \}}
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00183\ \ \ \}}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00186\ \ \ \mbox{\hyperlink{classbloom_1_1_event}{Event}}\&\ m\_event;}
+\DoxyCodeLine{00187\ \};}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \}}
 
 \end{DoxyCode}

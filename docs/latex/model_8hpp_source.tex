@@ -5,39 +5,54 @@
 \DoxyCodeLine{00001\ }
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\#pragma\ once}}
 \DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{devices_8hpp}{devices.hpp}}"{}}}
-\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{bloom__header_8hpp}{bloom\_header.hpp}}>}}
-\DoxyCodeLine{00012\ }
-\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }bloom::render\ \{}
-\DoxyCodeLine{00014\ }
-\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }BLOOM\_API\ \mbox{\hyperlink{classbloom_1_1render_1_1_model}{Model}}\ \{}
-\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00017\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structbloom_1_1render_1_1_model_1_1_vertex}{Vertex}}\ \{}
-\DoxyCodeLine{00018\ \ \ \ \ glm::vec3\ position;}
-\DoxyCodeLine{00019\ \ \ \ \ glm::vec2\ texCoord;}
-\DoxyCodeLine{00020\ \ \ \ \ glm::vec4\ color;}
-\DoxyCodeLine{00021\ }
-\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{static}\ std::vector<VkVertexInputBindingDescription>\ GetBindingDescriptions();}
-\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{static}\ std::vector<VkVertexInputAttributeDescription>\ GetAttributeDescriptions();}
-\DoxyCodeLine{00024\ \ \ \};}
-\DoxyCodeLine{00025\ }
-\DoxyCodeLine{00026\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_model}{Model}}(\mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}}*\ device,\ \textcolor{keyword}{const}\ std::vector<Vertex>\ \&vertices);}
-\DoxyCodeLine{00027\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_model}{\string~Model}}();}
-\DoxyCodeLine{00028\ }
-\DoxyCodeLine{00029\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_model}{Model}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classbloom_1_1render_1_1_model}{Model}}\&)\ =\ \textcolor{keyword}{delete};}
-\DoxyCodeLine{00030\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_model}{Model}}\ \&operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classbloom_1_1render_1_1_model}{Model}}\&)\ =\ \textcolor{keyword}{delete};}
-\DoxyCodeLine{00031\ }
-\DoxyCodeLine{00032\ \ \ \textcolor{keywordtype}{void}\ Bind(VkCommandBuffer\ commandBuffer);}
-\DoxyCodeLine{00033\ \ \ \textcolor{keywordtype}{void}\ Draw(VkCommandBuffer\ commandBuffer);}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{buffer_8hpp}{buffer.hpp}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{bloom__header_8hpp}{bloom\_header.hpp}}>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }bloom::render\ \{}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }BLOOM\_API\ \mbox{\hyperlink{classbloom_1_1render_1_1_model}{Model}}\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structbloom_1_1render_1_1_model_1_1_vertex}{Vertex}}\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ glm::vec3\ position;}
+\DoxyCodeLine{00020\ \ \ \ \ glm::vec2\ texCoord;}
+\DoxyCodeLine{00021\ \ \ \ \ glm::vec4\ color;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{static}\ std::vector<VkVertexInputBindingDescription>\ GetBindingDescriptions();}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{static}\ std::vector<VkVertexInputAttributeDescription>\ GetAttributeDescriptions();}
+\DoxyCodeLine{00025\ \ \ \};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structbloom_1_1render_1_1_model_1_1_builder}{Builder}}\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ std::vector<Vertex>\ vertices;}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{comment}{//\ unsigned\ short\ will\ limit\ the\ number\ of\ vertices\ to\ 65,535\ -\/x}}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{comment}{//\ unsigned\ int\ will\ limit\ the\ number\ of\ vertices\ to\ 4,294,967,295\ -\/x}}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{comment}{//\ Remember\ to\ update\ the\ bind\ function\ -\/x}}
+\DoxyCodeLine{00032\ \ \ \ \ std::vector<unsigned\ short>\ indices;}
+\DoxyCodeLine{00033\ \ \ \};}
 \DoxyCodeLine{00034\ }
-\DoxyCodeLine{00035\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00036\ \ \ \textcolor{keywordtype}{void}\ CreateVBO(\textcolor{keyword}{const}\ std::vector<Vertex>\ \&vertices);}
+\DoxyCodeLine{00035\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_model}{Model}}(\mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}}*\ device,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structbloom_1_1render_1_1_model_1_1_builder}{Builder}}\&\ builder);}
+\DoxyCodeLine{00036\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_model}{\string~Model}}();}
 \DoxyCodeLine{00037\ }
-\DoxyCodeLine{00038\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}}*\ m\_device;}
-\DoxyCodeLine{00039\ \ \ VkBuffer\ m\_VBO;}
-\DoxyCodeLine{00040\ \ \ VkDeviceMemory\ m\_VBOMemory;}
-\DoxyCodeLine{00041\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ m\_vertexCount;}
-\DoxyCodeLine{00042\ \};}
+\DoxyCodeLine{00038\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_model}{Model}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classbloom_1_1render_1_1_model}{Model}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00039\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_model}{Model}}\ \&operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classbloom_1_1render_1_1_model}{Model}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \textcolor{keywordtype}{void}\ Bind(VkCommandBuffer\ commandBuffer);}
+\DoxyCodeLine{00042\ \ \ \textcolor{keywordtype}{void}\ Draw(VkCommandBuffer\ commandBuffer);}
 \DoxyCodeLine{00043\ }
-\DoxyCodeLine{00044\ \}}
+\DoxyCodeLine{00044\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00045\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}}*\ m\_device;}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \textcolor{comment}{//\ VBO\ stuff}}
+\DoxyCodeLine{00048\ \ \ \textcolor{keywordtype}{void}\ CreateVBO(\textcolor{keyword}{const}\ std::vector<Vertex>\ \&vertices);}
+\DoxyCodeLine{00049\ \ \ std::unique\_ptr<Buffer>\ m\_VBO;}
+\DoxyCodeLine{00050\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ m\_vertexCount;}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \textcolor{comment}{//\ EBO\ stuff}}
+\DoxyCodeLine{00053\ \ \ \textcolor{keywordtype}{void}\ CreateEBO(\textcolor{keyword}{const}\ std::vector<unsigned\ short>\ \&indices);}
+\DoxyCodeLine{00054\ \ \ \textcolor{keywordtype}{bool}\ m\_hasIndices;}
+\DoxyCodeLine{00055\ \ \ std::unique\_ptr<Buffer>\ m\_EBO;}
+\DoxyCodeLine{00056\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ m\_indexCount;}
+\DoxyCodeLine{00057\ \};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \}}
 
 \end{DoxyCode}

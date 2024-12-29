@@ -89,24 +89,180 @@ $(function(){ initResizable(false); });
 <div id="doc-content">
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="classbloom_1_1render_1_1_descriptor_pool-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">bloom::render::DescriptorPool Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Manages a pool of descriptor sets.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="descriptors_8hpp_source.html">descriptors.hpp</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbloom_1_1render_1_1_descriptor_pool_1_1_builder.html">Builder</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper class to build <a class="el" href="classbloom_1_1render_1_1_descriptor_pool.html" title="Manages a pool of descriptor sets.">DescriptorPool</a> objects.  <a href="classbloom_1_1render_1_1_descriptor_pool_1_1_builder.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a14931d538023aa5740e9b610bb706b7a" id="r_a14931d538023aa5740e9b610bb706b7a"><td class="memItemLeft" align="right" valign="top"><a id="a14931d538023aa5740e9b610bb706b7a" name="a14931d538023aa5740e9b610bb706b7a"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>DescriptorPool</b> (<a class="el" href="classbloom_1_1render_1_1_devices.html">Devices</a> *devices, uint32_t maxSets)</td></tr>
-<tr class="separator:a14931d538023aa5740e9b610bb706b7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a27986e66203a515e2739395d96679a1f" id="r_a27986e66203a515e2739395d96679a1f"><td class="memItemLeft" align="right" valign="top"><a id="a27986e66203a515e2739395d96679a1f" name="a27986e66203a515e2739395d96679a1f"></a>
-VkDescriptorPool&#160;</td><td class="memItemRight" valign="bottom"><b>getDescriptorPool</b> () const</td></tr>
-<tr class="separator:a27986e66203a515e2739395d96679a1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cfa6275d5cea895002f664cc7bac59a" id="r_a6cfa6275d5cea895002f664cc7bac59a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6cfa6275d5cea895002f664cc7bac59a">DescriptorPool</a> (<a class="el" href="classbloom_1_1render_1_1_devices.html">Devices</a> &amp;device, uint32_t maxSets, VkDescriptorPoolCreateFlags poolFlags, const std::vector&lt; VkDescriptorPoolSize &gt; &amp;poolSizes)</td></tr>
+<tr class="memdesc:a6cfa6275d5cea895002f664cc7bac59a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="classbloom_1_1render_1_1_descriptor_pool.html" title="Manages a pool of descriptor sets.">DescriptorPool</a> object.  <br /></td></tr>
+<tr class="separator:a6cfa6275d5cea895002f664cc7bac59a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af16e51a23192ebea5547a8d12172a144" id="r_af16e51a23192ebea5547a8d12172a144"><td class="memItemLeft" align="right" valign="top"><a id="af16e51a23192ebea5547a8d12172a144" name="af16e51a23192ebea5547a8d12172a144"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>DescriptorPool</b> (const <a class="el" href="classbloom_1_1render_1_1_descriptor_pool.html">DescriptorPool</a> &amp;)=delete</td></tr>
+<tr class="separator:af16e51a23192ebea5547a8d12172a144"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae405db2420c29556dd2cd2397460e6be" id="r_ae405db2420c29556dd2cd2397460e6be"><td class="memItemLeft" align="right" valign="top"><a id="ae405db2420c29556dd2cd2397460e6be" name="ae405db2420c29556dd2cd2397460e6be"></a>
+<a class="el" href="classbloom_1_1render_1_1_descriptor_pool.html">DescriptorPool</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classbloom_1_1render_1_1_descriptor_pool.html">DescriptorPool</a> &amp;)=delete</td></tr>
+<tr class="separator:ae405db2420c29556dd2cd2397460e6be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19d33fdb25a5815ea41c1a3caa970842" id="r_a19d33fdb25a5815ea41c1a3caa970842"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a19d33fdb25a5815ea41c1a3caa970842">AllocateDescriptor</a> (VkDescriptorSetLayout descriptorSetLayout, VkDescriptorSet &amp;descriptor) const</td></tr>
+<tr class="memdesc:a19d33fdb25a5815ea41c1a3caa970842"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates a descriptor set from the pool.  <br /></td></tr>
+<tr class="separator:a19d33fdb25a5815ea41c1a3caa970842"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23c2c1a69fd250eb8d75d967dc319430" id="r_a23c2c1a69fd250eb8d75d967dc319430"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a23c2c1a69fd250eb8d75d967dc319430">FreeDescriptors</a> (const std::vector&lt; VkDescriptorSet &gt; &amp;descriptors) const</td></tr>
+<tr class="memdesc:a23c2c1a69fd250eb8d75d967dc319430"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees allocated descriptor sets.  <br /></td></tr>
+<tr class="separator:a23c2c1a69fd250eb8d75d967dc319430"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0e9cfc07011dddd6d0170b66f5f650b" id="r_ac0e9cfc07011dddd6d0170b66f5f650b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac0e9cfc07011dddd6d0170b66f5f650b">ResetPool</a> () const</td></tr>
+<tr class="memdesc:ac0e9cfc07011dddd6d0170b66f5f650b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the descriptor pool.  <br /></td></tr>
+<tr class="separator:ac0e9cfc07011dddd6d0170b66f5f650b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a8f96614370479c2656720dba13f85244" id="r_a8f96614370479c2656720dba13f85244"><td class="memItemLeft" align="right" valign="top"><a id="a8f96614370479c2656720dba13f85244" name="a8f96614370479c2656720dba13f85244"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>DescriptorWriter</b></td></tr>
+<tr class="separator:a8f96614370479c2656720dba13f85244"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Manages a pool of descriptor sets. </p>
+<p>This class represents a Vulkan descriptor pool, which is responsible for allocating descriptor sets. Descriptor pools are used to allocate a collection of descriptor sets with specific descriptor types and counts. Using a pool is more efficient than allocating individual descriptor sets. This class provides methods for allocating and freeing descriptor sets, as well as resetting the pool. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a6cfa6275d5cea895002f664cc7bac59a" name="a6cfa6275d5cea895002f664cc7bac59a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cfa6275d5cea895002f664cc7bac59a">&#9670;&#160;</a></span>DescriptorPool()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bloom::render::DescriptorPool::DescriptorPool </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classbloom_1_1render_1_1_devices.html">Devices</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>device</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>maxSets</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">VkDescriptorPoolCreateFlags</td>          <td class="paramname"><span class="paramname"><em>poolFlags</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; VkDescriptorPoolSize &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>poolSizes</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs a <a class="el" href="classbloom_1_1render_1_1_descriptor_pool.html" title="Manages a pool of descriptor sets.">DescriptorPool</a> object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">device</td><td>Reference to the <a class="el" href="classbloom_1_1render_1_1_devices.html">Devices</a> object. </td></tr>
+    <tr><td class="paramname">maxSets</td><td>Maximum number of descriptor sets allocatable from this pool. </td></tr>
+    <tr><td class="paramname">poolFlags</td><td>Vulkan descriptor pool create flags. </td></tr>
+    <tr><td class="paramname">poolSizes</td><td>Vector of VkDescriptorPoolSize structs defining the descriptor types and counts. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a19d33fdb25a5815ea41c1a3caa970842" name="a19d33fdb25a5815ea41c1a3caa970842"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19d33fdb25a5815ea41c1a3caa970842">&#9670;&#160;</a></span>AllocateDescriptor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool bloom::render::DescriptorPool::AllocateDescriptor </td>
+          <td>(</td>
+          <td class="paramtype">VkDescriptorSetLayout</td>          <td class="paramname"><span class="paramname"><em>descriptorSetLayout</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">VkDescriptorSet &amp;</td>          <td class="paramname"><span class="paramname"><em>descriptor</em></span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Allocates a descriptor set from the pool. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">descriptorSetLayout</td><td>The layout of the descriptor set to allocate. </td></tr>
+    <tr><td class="paramname">descriptor</td><td>Output parameter for the allocated descriptor set handle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the allocation was successful, false otherwise.</dd></dl>
+<p>Allocates a single descriptor set from the pool based on the provided layout. Returns false if the pool is full or if there are other allocation errors. </p>
+
+</div>
+</div>
+<a id="a23c2c1a69fd250eb8d75d967dc319430" name="a23c2c1a69fd250eb8d75d967dc319430"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23c2c1a69fd250eb8d75d967dc319430">&#9670;&#160;</a></span>FreeDescriptors()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bloom::render::DescriptorPool::FreeDescriptors </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; VkDescriptorSet &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>descriptors</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Frees allocated descriptor sets. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">descriptors</td><td>Vector of descriptor set handles to free.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Returns the given descriptor sets to the pool, making them available for reuse. </p>
+
+</div>
+</div>
+<a id="ac0e9cfc07011dddd6d0170b66f5f650b" name="ac0e9cfc07011dddd6d0170b66f5f650b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0e9cfc07011dddd6d0170b66f5f650b">&#9670;&#160;</a></span>ResetPool()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bloom::render::DescriptorPool::ResetPool </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Resets the descriptor pool. </p>
+<p>Resets the descriptor pool, freeing all allocated descriptor sets. This is useful for reusing the pool instead of creating a new one. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Users/xgoni/bloom/bloom/src/render/<a class="el" href="descriptor__pool_8hpp_source.html">descriptor_pool.hpp</a></li>
-<li>C:/Users/xgoni/bloom/bloom/src/render/<b>descriptor_pool.cpp</b></li>
+<li>C:/Users/xgoni/bloom/bloom/src/render/<a class="el" href="descriptors_8hpp_source.html">descriptors.hpp</a></li>
+<li>C:/Users/xgoni/bloom/bloom/src/render/<b>descriptors.cpp</b></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

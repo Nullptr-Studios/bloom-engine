@@ -30,7 +30,7 @@ enum class EventType {
   None = 0,
   WindowClose, WindowResize, WindowFocus, WindowLostFocus, WindowMoved,
   GameTick, GameUpdate, GameRender,
-  KeyPressed, KeyReleased,
+  KeyPressed, KeyReleased, KeyTyped,
   MouseButtonPressed, MouseButtonReleased, MouseMoved, MouseScrolled
 };
 
@@ -85,6 +85,9 @@ class BLOOM_API Event {
   friend class EventDispatcher;
 
 public:
+  Event() = default;
+  virtual ~Event() = default;
+
   /**
    * @brief Gets the type of the event.
    *
@@ -136,8 +139,19 @@ public:
    */
   [[nodiscard]] bool IsInCategory(const EventCategory category) const { return GetCategoryFlags() & category; }
 
+  /**
+   * @brief Indicates whether the event has been handled.
+   *
+   * This function returns a boolean value indicating whether the event has been handled.
+   * If the event has been handled, it should not be processed further.
+   *
+   * @return @c true if the event has been handled; otherwise, @c false.
+   */
+  [[nodiscard]]
+  bool IsHandled() const { return m_handled; }
+
 protected:
-  bool _handled = false; /**< Indicates whether the event has been handled. */
+  bool m_handled = false; /**< Indicates whether the event has been handled. */
 };
 
 /**
@@ -158,7 +172,7 @@ public:
    *
    * @param event The `Event` to be dispatched.
    */
-  explicit EventDispatcher(Event& event) : _event(event) {}
+  explicit EventDispatcher(Event& event) : m_event(event) {}
 
   /**
    * @brief Dispatches the event to a handler function if the types match.
@@ -172,15 +186,15 @@ public:
    */
   template<typename T>
   bool Dispatch(EventFn<T> func) {
-    if (_event.GetEventType() == T::GetStaticType()) {
-      _event._handled = func(*static_cast<T*>(&_event));
+    if (m_event.GetEventType() == T::GetStaticType()) {
+      m_event.m_handled = func(*static_cast<T*>(&m_event));
       return true;
     }
     return false;
   }
 
 private:
-  Event& _event;
+  Event& m_event;
 };
 
 }

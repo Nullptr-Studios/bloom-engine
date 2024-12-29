@@ -1,0 +1,198 @@
+\doxysection{bloom\+::Actor Class Reference}
+\hypertarget{classbloom_1_1_actor}{}\label{classbloom_1_1_actor}\index{bloom::Actor@{bloom::Actor}}
+
+
+Represents a renderable and potentially interactive object within the game world.  
+
+
+
+
+{\ttfamily \#include $<$actor.\+hpp$>$}
+
+Inheritance diagram for bloom\+::Actor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classbloom_1_1_actor}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbloom_1_1_actor_a48c5292c424235db32b6a4ffd57789f6}{Actor}} (id\+\_\+t id, \mbox{\hyperlink{classbloom_1_1render_1_1_devices}{render\+::\+Devices}} \texorpdfstring{$\ast$}{*}devices)
+\begin{DoxyCompactList}\small\item\em Constructs a new \doxylink{classbloom_1_1_actor}{Actor} object. \end{DoxyCompactList}\item 
+\Hypertarget{classbloom_1_1_actor_a838a8712e215cec1b23fc19b98f320af}\label{classbloom_1_1_actor_a838a8712e215cec1b23fc19b98f320af} 
+{\bfseries Actor} (const \mbox{\hyperlink{classbloom_1_1_actor}{Actor}} \&)=delete
+\item 
+\Hypertarget{classbloom_1_1_actor_a7934f5827e3dc59f07a66a27429a4020}\label{classbloom_1_1_actor_a7934f5827e3dc59f07a66a27429a4020} 
+\mbox{\hyperlink{classbloom_1_1_actor}{Actor}} \& {\bfseries operator=} (const \mbox{\hyperlink{classbloom_1_1_actor}{Actor}} \&)=delete
+\item 
+\Hypertarget{classbloom_1_1_actor_a9e352f86088d3b6f1ba497f7674e1795}\label{classbloom_1_1_actor_a9e352f86088d3b6f1ba497f7674e1795} 
+{\bfseries Actor} (\mbox{\hyperlink{classbloom_1_1_actor}{Actor}} \&\&)=default
+\item 
+\Hypertarget{classbloom_1_1_actor_a68b475ef5dec17d735b79165f165b406}\label{classbloom_1_1_actor_a68b475ef5dec17d735b79165f165b406} 
+\mbox{\hyperlink{classbloom_1_1_actor}{Actor}} \& {\bfseries operator=} (\mbox{\hyperlink{classbloom_1_1_actor}{Actor}} \&\&)=default
+\item 
+void \mbox{\hyperlink{classbloom_1_1_actor_abb09ecd4a3722ba2dbf298ce115514ec}{Begin}} () override
+\begin{DoxyCompactList}\small\item\em Called at the beginning of the scene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbloom_1_1_actor_a68a9c1ea7cbe1ce76783d334ce377e01}{Tick}} (float delta\+Time) override
+\begin{DoxyCompactList}\small\item\em Called every frame to update the object\textquotesingle{}s state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbloom_1_1_actor_a2f6ebc7bb27c7ac2c72895fc4f5558bd}{End}} () override
+\begin{DoxyCompactList}\small\item\em Called at the end of the scene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbloom_1_1_actor_af1b7bdfb04767523cc214ed44099a0f1}{Load\+Textures}} (\mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_set_layout}{render\+::\+Descriptor\+Set\+Layout}} \texorpdfstring{$\ast$}{*}descriptor\+Set\+Layout, const std\+::string \&albedo=\mbox{\hyperlink{actor_8hpp_accc82e6365c270ab6e94c6c3c79dfcde}{ALBEDO\+\_\+\+PLACEHOLDER}}, const std\+::string \&rmo=\mbox{\hyperlink{actor_8hpp_acfc88eeb0e56fd3961b1f9ed8436efc4}{RMO\+\_\+\+PLACEHOLDER}}, const std\+::string \&normal=\mbox{\hyperlink{actor_8hpp_ae3eb5cbfbb9784797ab53c06dccbd59e}{NORMAL\+\_\+\+PLACEHOLDER}}, const std\+::string \&emission=\mbox{\hyperlink{actor_8hpp_a6ae911d6602ee94ee39578ab8520052a}{EMISSION\+\_\+\+PLACEHOLDER}})
+\item 
+Vk\+Descriptor\+Set \mbox{\hyperlink{classbloom_1_1_actor_a74c1630af2eaa25f9a09c5ac854beedd}{Get\+Descriptor\+Set}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classbloom_1_1_object}{bloom\+::\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbloom_1_1_object_ae1d557ffa7496298977cfbfdae1d4daf}{Object}} (const id\+\_\+t id, \mbox{\hyperlink{classbloom_1_1render_1_1_devices}{render\+::\+Devices}} \texorpdfstring{$\ast$}{*}devices)
+\begin{DoxyCompactList}\small\item\em Constructs a new \doxylink{classbloom_1_1_object}{Object}. \end{DoxyCompactList}\item 
+{\bfseries Object} (const \mbox{\hyperlink{classbloom_1_1_object}{Object}} \&)=delete
+\item 
+\mbox{\hyperlink{classbloom_1_1_object}{Object}} \& {\bfseries operator=} (const \mbox{\hyperlink{classbloom_1_1_object}{Object}} \&)=delete
+\item 
+{\bfseries Object} (\mbox{\hyperlink{classbloom_1_1_object}{Object}} \&\&)=default
+\item 
+\mbox{\hyperlink{classbloom_1_1_object}{Object}} \& {\bfseries operator=} (\mbox{\hyperlink{classbloom_1_1_object}{Object}} \&\&)=default
+\item 
+id\+\_\+t \mbox{\hyperlink{classbloom_1_1_object_ab83ebdaed718b62ace71bd6877eeca8a}{Get\+ID}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the object\textquotesingle{}s unique ID. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classbloom_1_1_actor_ad72a712be4ad20f76d7c397840a0f5e6}\label{classbloom_1_1_actor_ad72a712be4ad20f76d7c397840a0f5e6} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1render_1_1_model}{render\+::\+Model}} $>$ {\bfseries model}
+\begin{DoxyCompactList}\small\item\em The 3D model used to render the actor. This model defines the shape and geometry of the actor. \end{DoxyCompactList}\item 
+\Hypertarget{classbloom_1_1_actor_a53e1e62651508fd8882adcfdccd5e96e}\label{classbloom_1_1_actor_a53e1e62651508fd8882adcfdccd5e96e} 
+glm\+::vec3 {\bfseries tint\+Color} = glm\+::vec3(1.\+0f)
+\begin{DoxyCompactList}\small\item\em A color tint applied to the actor\textquotesingle{}s overall appearance. This color is passed on the push constant rather than on an UBO. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classbloom_1_1_object}{bloom\+::\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structbloom_1_1_transform}{Transform}} {\bfseries transform}
+\begin{DoxyCompactList}\small\item\em The object\textquotesingle{}s transform, representing its position, rotation, and scale. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classbloom_1_1_object}{bloom\+::\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbloom_1_1render_1_1_devices}{render\+::\+Devices}} \texorpdfstring{$\ast$}{*} {\bfseries m\+\_\+devices} = nullptr
+\begin{DoxyCompactList}\small\item\em Pointer to the Vulkan device management object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a renderable and potentially interactive object within the game world. 
+
+The \doxylink{classbloom_1_1_actor}{Actor} class extends the \doxylink{classbloom_1_1_object}{Object} class, adding rendering capabilities. It serves as the base class for any object in the game that needs to be visually represented in the world. Actors manage their own textures, materials, and rendering properties. They participate in the game\textquotesingle{}s update loop through the {\ttfamily Begin}, {\ttfamily Tick}, and {\ttfamily End} methods, allowing for dynamic behavior and animation. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classbloom_1_1_actor_a48c5292c424235db32b6a4ffd57789f6}\index{bloom::Actor@{bloom::Actor}!Actor@{Actor}}
+\index{Actor@{Actor}!bloom::Actor@{bloom::Actor}}
+\doxysubsubsection{\texorpdfstring{Actor()}{Actor()}}
+{\footnotesize\ttfamily \label{classbloom_1_1_actor_a48c5292c424235db32b6a4ffd57789f6} 
+bloom\+::\+Actor\+::\+Actor (\begin{DoxyParamCaption}\item[{id\+\_\+t}]{id}{, }\item[{\mbox{\hyperlink{classbloom_1_1render_1_1_devices}{render\+::\+Devices}} \texorpdfstring{$\ast$}{*}}]{devices}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructs a new \doxylink{classbloom_1_1_actor}{Actor} object. 
+
+This constructor initializes a new \doxylink{classbloom_1_1_actor}{Actor} instance with a unique identifier and a reference to the Vulkan rendering devices. It sets up the necessary resources for managing textures and materials.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The unique identifier for this actor. This ID should be unique within the game world to avoid conflicts. \\
+\hline
+{\em devices} & A pointer to the Vulkan device management object. This provides access to the Vulkan API and resources required for rendering. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classbloom_1_1_actor_abb09ecd4a3722ba2dbf298ce115514ec}\index{bloom::Actor@{bloom::Actor}!Begin@{Begin}}
+\index{Begin@{Begin}!bloom::Actor@{bloom::Actor}}
+\doxysubsubsection{\texorpdfstring{Begin()}{Begin()}}
+{\footnotesize\ttfamily \label{classbloom_1_1_actor_abb09ecd4a3722ba2dbf298ce115514ec} 
+void bloom\+::\+Actor\+::\+Begin (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called at the beginning of the scene. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classbloom_1_1_object_a18d5a73479f99ed1fbb47b8b8b11acbc}{bloom\+::\+Object}}.
+
+\Hypertarget{classbloom_1_1_actor_a2f6ebc7bb27c7ac2c72895fc4f5558bd}\index{bloom::Actor@{bloom::Actor}!End@{End}}
+\index{End@{End}!bloom::Actor@{bloom::Actor}}
+\doxysubsubsection{\texorpdfstring{End()}{End()}}
+{\footnotesize\ttfamily \label{classbloom_1_1_actor_a2f6ebc7bb27c7ac2c72895fc4f5558bd} 
+void bloom\+::\+Actor\+::\+End (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called at the end of the scene. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classbloom_1_1_object_a7a7cc6230ab4a3ee158126469cf04352}{bloom\+::\+Object}}.
+
+\Hypertarget{classbloom_1_1_actor_a74c1630af2eaa25f9a09c5ac854beedd}\index{bloom::Actor@{bloom::Actor}!GetDescriptorSet@{GetDescriptorSet}}
+\index{GetDescriptorSet@{GetDescriptorSet}!bloom::Actor@{bloom::Actor}}
+\doxysubsubsection{\texorpdfstring{GetDescriptorSet()}{GetDescriptorSet()}}
+{\footnotesize\ttfamily \label{classbloom_1_1_actor_a74c1630af2eaa25f9a09c5ac854beedd} 
+Vk\+Descriptor\+Set bloom\+::\+Actor\+::\+Get\+Descriptor\+Set (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Retrieves the descriptor set for the actor\textquotesingle{}s textures.
+
+The descriptor set is a Vulkan object that contains information about the textures used by the actor. This information is used by the shaders to access the texture data during rendering.
+
+\begin{DoxyReturn}{Returns}
+The Vulkan descriptor set for the actor\textquotesingle{}s textures. 
+\end{DoxyReturn}
+\Hypertarget{classbloom_1_1_actor_af1b7bdfb04767523cc214ed44099a0f1}\index{bloom::Actor@{bloom::Actor}!LoadTextures@{LoadTextures}}
+\index{LoadTextures@{LoadTextures}!bloom::Actor@{bloom::Actor}}
+\doxysubsubsection{\texorpdfstring{LoadTextures()}{LoadTextures()}}
+{\footnotesize\ttfamily \label{classbloom_1_1_actor_af1b7bdfb04767523cc214ed44099a0f1} 
+void bloom\+::\+Actor\+::\+Load\+Textures (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_set_layout}{render\+::\+Descriptor\+Set\+Layout}} \texorpdfstring{$\ast$}{*}}]{descriptor\+Set\+Layout}{, }\item[{const std\+::string \&}]{albedo}{ = {\ttfamily \mbox{\hyperlink{actor_8hpp_accc82e6365c270ab6e94c6c3c79dfcde}{ALBEDO\+\_\+\+PLACEHOLDER}}}, }\item[{const std\+::string \&}]{rmo}{ = {\ttfamily \mbox{\hyperlink{actor_8hpp_acfc88eeb0e56fd3961b1f9ed8436efc4}{RMO\+\_\+\+PLACEHOLDER}}}, }\item[{const std\+::string \&}]{normal}{ = {\ttfamily \mbox{\hyperlink{actor_8hpp_ae3eb5cbfbb9784797ab53c06dccbd59e}{NORMAL\+\_\+\+PLACEHOLDER}}}, }\item[{const std\+::string \&}]{emission}{ = {\ttfamily \mbox{\hyperlink{actor_8hpp_a6ae911d6602ee94ee39578ab8520052a}{EMISSION\+\_\+\+PLACEHOLDER}}}}\end{DoxyParamCaption})}
+
+Loads textures for the actor\textquotesingle{}s visual representation.
+
+This method loads the textures used to render the actor. It supports loading albedo, roughness-\/metallic-\/occlusion (RMO), normal, and emission textures. If no paths are provided for the textures, placeholder textures will be used instead.
+
+
+\begin{DoxyParams}{Parameters}
+{\em descriptor\+Set\+Layout} & The descriptor set layout for the textures. This layout defines how the texture data will be accessed by the shaders. \\
+\hline
+{\em albedo} & The path to the albedo texture file. The albedo texture defines the base color of the actor\textquotesingle{}s surface. \\
+\hline
+{\em rmo} & The path to the roughness-\/metallic-\/occlusion (RMO) texture file. This texture controls the surface properties of the actor, including how rough or smooth it appears and how metallic it is. \\
+\hline
+{\em normal} & The path to the normal map texture file. The normal map modifies the perceived surface normals of the actor, adding detail and depth without increasing the polygon count. \\
+\hline
+{\em emission} & The path to the emission texture file. The emission texture defines areas of the actor that emit light, creating a glowing effect. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classbloom_1_1_actor_a68a9c1ea7cbe1ce76783d334ce377e01}\index{bloom::Actor@{bloom::Actor}!Tick@{Tick}}
+\index{Tick@{Tick}!bloom::Actor@{bloom::Actor}}
+\doxysubsubsection{\texorpdfstring{Tick()}{Tick()}}
+{\footnotesize\ttfamily \label{classbloom_1_1_actor_a68a9c1ea7cbe1ce76783d334ce377e01} 
+void bloom\+::\+Actor\+::\+Tick (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called every frame to update the object\textquotesingle{}s state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & The time elapsed since the last frame. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classbloom_1_1_object_a010ab8fafcd25b7260ac0005d9d43091}{bloom\+::\+Object}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/xgoni/bloom/bloom/src/objects/\mbox{\hyperlink{actor_8hpp}{actor.\+hpp}}\item 
+C\+:/\+Users/xgoni/bloom/bloom/src/objects/actor.\+cpp\end{DoxyCompactItemize}

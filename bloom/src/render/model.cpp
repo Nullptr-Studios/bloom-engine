@@ -34,22 +34,20 @@ Model::Model(Devices* device, const Builder& builder) : m_device(device) {
 
 Model::~Model() { }
 
-void Model::Bind(VkCommandBuffer commandBuffer) {
-  VkBuffer buffers[] = {m_VBO->getBuffer()};
+void Model::Bind(VkCommandBuffer commandBuffer) const {
+  VkBuffer buffers[] = {m_VBO->GetBuffer()};
   VkDeviceSize offsets[] = {0};
   vkCmdBindVertexBuffers(commandBuffer, 0, 1, buffers, offsets);
 
-  if (m_hasIndices) {
-    vkCmdBindIndexBuffer(commandBuffer, m_EBO->getBuffer(), 0, VK_INDEX_TYPE_UINT16);
-  }
+  if (m_hasIndices)
+    vkCmdBindIndexBuffer(commandBuffer, m_EBO->GetBuffer(), 0, VK_INDEX_TYPE_UINT16);
 }
 
-void Model::Draw(VkCommandBuffer commandBuffer) {
-  if (m_hasIndices) {
+void Model::Draw(VkCommandBuffer commandBuffer) const {
+  if (m_hasIndices)
     vkCmdDrawIndexed(commandBuffer, m_indexCount, 1, 0, 0, 0);
-  } else {
+  else
     vkCmdDraw(commandBuffer, m_vertexCount, 1, 0, 0);
-  }
 }
 
 void Model::CreateVBO(const std::vector<Vertex> &vertices) {
@@ -71,8 +69,8 @@ void Model::CreateVBO(const std::vector<Vertex> &vertices) {
     VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT
   );
 
-  stagingBuffer.map();
-  stagingBuffer.writeToBuffer((void*)vertices.data());
+  stagingBuffer.Map();
+  stagingBuffer.WriteToBuffer((void*)vertices.data());
 
   m_VBO = std::make_unique<Buffer>(
     *m_device,
@@ -82,7 +80,7 @@ void Model::CreateVBO(const std::vector<Vertex> &vertices) {
     VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT
   );
 
-  m_device->copyBuffer(stagingBuffer.getBuffer(), m_VBO->getBuffer(), bufferSize);
+  m_device->CopyBuffer(stagingBuffer.GetBuffer(), m_VBO->GetBuffer(), bufferSize);
 }
 
 void Model::CreateEBO(const std::vector<unsigned short>& indices) {
@@ -100,8 +98,8 @@ void Model::CreateEBO(const std::vector<unsigned short>& indices) {
     VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT
   );
 
-  stagingBuffer.map();
-  stagingBuffer.writeToBuffer((void*)indices.data());
+  stagingBuffer.Map();
+  stagingBuffer.WriteToBuffer((void*)indices.data());
 
   m_EBO = std::make_unique<Buffer>(
     *m_device,
@@ -110,7 +108,7 @@ void Model::CreateEBO(const std::vector<unsigned short>& indices) {
     VK_BUFFER_USAGE_INDEX_BUFFER_BIT | VK_BUFFER_USAGE_TRANSFER_DST_BIT,
     VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT
   );
-  m_device->copyBuffer(stagingBuffer.getBuffer(), m_EBO->getBuffer(), bufferSize);
+  m_device->CopyBuffer(stagingBuffer.GetBuffer(), m_EBO->GetBuffer(), bufferSize);
 }
 
 }

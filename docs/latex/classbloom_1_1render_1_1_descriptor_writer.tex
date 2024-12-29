@@ -1,0 +1,131 @@
+\doxysection{bloom\+::render\+::Descriptor\+Writer Class Reference}
+\hypertarget{classbloom_1_1render_1_1_descriptor_writer}{}\label{classbloom_1_1render_1_1_descriptor_writer}\index{bloom::render::DescriptorWriter@{bloom::render::DescriptorWriter}}
+
+
+Helper class to write data to descriptor sets.  
+
+
+
+
+{\ttfamily \#include $<$descriptors.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_writer_a2af09573444bd3c79b8c706c5b91794c}{Descriptor\+Writer}} (\mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_set_layout}{Descriptor\+Set\+Layout}} \&set\+Layout, \mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_pool}{Descriptor\+Pool}} \&pool)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classbloom_1_1render_1_1_descriptor_writer}{Descriptor\+Writer}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_writer}{Descriptor\+Writer}} \& \mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_writer_a39f89a9715d209b369b95fd75ccc6eff}{Write\+Buffer}} (uint32\+\_\+t binding, const Vk\+Descriptor\+Buffer\+Info \texorpdfstring{$\ast$}{*}buffer\+Info)
+\begin{DoxyCompactList}\small\item\em Writes buffer data to a descriptor set. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_writer}{Descriptor\+Writer}} \& \mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_writer_a7397b0b7e8d48df3334db9570ce4a20c}{Write\+Image}} (uint32\+\_\+t binding, const Vk\+Descriptor\+Image\+Info \texorpdfstring{$\ast$}{*}image\+Info)
+\begin{DoxyCompactList}\small\item\em Writes image data to a descriptor set. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_writer_abbc66340c4014ba6b498549b1ddfc268}{Build}} (Vk\+Descriptor\+Set \&set)
+\begin{DoxyCompactList}\small\item\em Allocates a descriptor set and writes the staged descriptor data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_writer_a4536d489703fdd4d6e0e2953df0ccd6a}{Overwrite}} (const Vk\+Descriptor\+Set \&set)
+\begin{DoxyCompactList}\small\item\em Writes the staged descriptor data to an existing descriptor set. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Helper class to write data to descriptor sets. 
+
+This class simplifies the process of updating descriptor sets with buffer and image information. It provides methods for writing buffer and image data to specific binding points in a descriptor set. The \doxylink{classbloom_1_1render_1_1_descriptor_writer}{Descriptor\+Writer} works in conjunction with a \doxylink{classbloom_1_1render_1_1_descriptor_set_layout}{Descriptor\+Set\+Layout} and a \doxylink{classbloom_1_1render_1_1_descriptor_pool}{Descriptor\+Pool} to manage the descriptor update process. It allows batched updates using vk\+Update\+Descriptor\+Sets for efficiency. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classbloom_1_1render_1_1_descriptor_writer_a2af09573444bd3c79b8c706c5b91794c}\index{bloom::render::DescriptorWriter@{bloom::render::DescriptorWriter}!DescriptorWriter@{DescriptorWriter}}
+\index{DescriptorWriter@{DescriptorWriter}!bloom::render::DescriptorWriter@{bloom::render::DescriptorWriter}}
+\doxysubsubsection{\texorpdfstring{DescriptorWriter()}{DescriptorWriter()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_descriptor_writer_a2af09573444bd3c79b8c706c5b91794c} 
+bloom\+::render\+::\+Descriptor\+Writer\+::\+Descriptor\+Writer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_set_layout}{Descriptor\+Set\+Layout}} \&}]{set\+Layout}{, }\item[{\mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_pool}{Descriptor\+Pool}} \&}]{pool}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{classbloom_1_1render_1_1_descriptor_writer}{Descriptor\+Writer}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em set\+Layout} & The descriptor set layout. \\
+\hline
+{\em pool} & The descriptor pool. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classbloom_1_1render_1_1_descriptor_writer_abbc66340c4014ba6b498549b1ddfc268}\index{bloom::render::DescriptorWriter@{bloom::render::DescriptorWriter}!Build@{Build}}
+\index{Build@{Build}!bloom::render::DescriptorWriter@{bloom::render::DescriptorWriter}}
+\doxysubsubsection{\texorpdfstring{Build()}{Build()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_descriptor_writer_abbc66340c4014ba6b498549b1ddfc268} 
+bool bloom\+::render\+::\+Descriptor\+Writer\+::\+Build (\begin{DoxyParamCaption}\item[{Vk\+Descriptor\+Set \&}]{set}{}\end{DoxyParamCaption})}
+
+
+
+Allocates a descriptor set and writes the staged descriptor data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em set} & Output parameter to receive the allocated and updated descriptor set. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if successful, false otherwise (e.\+g., allocation failure).
+\end{DoxyReturn}
+Allocates a descriptor set from the associated \doxylink{classbloom_1_1render_1_1_descriptor_pool}{Descriptor\+Pool} and populates it with the data previously staged using \doxylink{classbloom_1_1render_1_1_descriptor_writer_a39f89a9715d209b369b95fd75ccc6eff}{Write\+Buffer()} and \doxylink{classbloom_1_1render_1_1_descriptor_writer_a7397b0b7e8d48df3334db9570ce4a20c}{Write\+Image()}. \Hypertarget{classbloom_1_1render_1_1_descriptor_writer_a4536d489703fdd4d6e0e2953df0ccd6a}\index{bloom::render::DescriptorWriter@{bloom::render::DescriptorWriter}!Overwrite@{Overwrite}}
+\index{Overwrite@{Overwrite}!bloom::render::DescriptorWriter@{bloom::render::DescriptorWriter}}
+\doxysubsubsection{\texorpdfstring{Overwrite()}{Overwrite()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_descriptor_writer_a4536d489703fdd4d6e0e2953df0ccd6a} 
+void bloom\+::render\+::\+Descriptor\+Writer\+::\+Overwrite (\begin{DoxyParamCaption}\item[{const Vk\+Descriptor\+Set \&}]{set}{}\end{DoxyParamCaption})}
+
+
+
+Writes the staged descriptor data to an existing descriptor set. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em set} & The descriptor set to update.\\
+\hline
+\end{DoxyParams}
+Updates an existing descriptor set with the data previously staged using \doxylink{classbloom_1_1render_1_1_descriptor_writer_a39f89a9715d209b369b95fd75ccc6eff}{Write\+Buffer()} and \doxylink{classbloom_1_1render_1_1_descriptor_writer_a7397b0b7e8d48df3334db9570ce4a20c}{Write\+Image()}. Does not allocate a new descriptor set. \Hypertarget{classbloom_1_1render_1_1_descriptor_writer_a39f89a9715d209b369b95fd75ccc6eff}\index{bloom::render::DescriptorWriter@{bloom::render::DescriptorWriter}!WriteBuffer@{WriteBuffer}}
+\index{WriteBuffer@{WriteBuffer}!bloom::render::DescriptorWriter@{bloom::render::DescriptorWriter}}
+\doxysubsubsection{\texorpdfstring{WriteBuffer()}{WriteBuffer()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_descriptor_writer_a39f89a9715d209b369b95fd75ccc6eff} 
+\mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_writer}{Descriptor\+Writer}} \& bloom\+::render\+::\+Descriptor\+Writer\+::\+Write\+Buffer (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{binding}{, }\item[{const Vk\+Descriptor\+Buffer\+Info \texorpdfstring{$\ast$}{*}}]{buffer\+Info}{}\end{DoxyParamCaption})}
+
+
+
+Writes buffer data to a descriptor set. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em binding} & The binding point in the shader. \\
+\hline
+{\em buffer\+Info} & Pointer to the Vk\+Descriptor\+Buffer\+Info containing the buffer data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the writer for chaining.
+\end{DoxyReturn}
+Stages a write operation for buffer data to the specified binding point. The actual write occurs when \doxylink{classbloom_1_1render_1_1_descriptor_writer_abbc66340c4014ba6b498549b1ddfc268}{Build()} or \doxylink{classbloom_1_1render_1_1_descriptor_writer_a4536d489703fdd4d6e0e2953df0ccd6a}{Overwrite()} is called. \Hypertarget{classbloom_1_1render_1_1_descriptor_writer_a7397b0b7e8d48df3334db9570ce4a20c}\index{bloom::render::DescriptorWriter@{bloom::render::DescriptorWriter}!WriteImage@{WriteImage}}
+\index{WriteImage@{WriteImage}!bloom::render::DescriptorWriter@{bloom::render::DescriptorWriter}}
+\doxysubsubsection{\texorpdfstring{WriteImage()}{WriteImage()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_descriptor_writer_a7397b0b7e8d48df3334db9570ce4a20c} 
+\mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_writer}{Descriptor\+Writer}} \& bloom\+::render\+::\+Descriptor\+Writer\+::\+Write\+Image (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{binding}{, }\item[{const Vk\+Descriptor\+Image\+Info \texorpdfstring{$\ast$}{*}}]{image\+Info}{}\end{DoxyParamCaption})}
+
+
+
+Writes image data to a descriptor set. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em binding} & The binding point in the shader. \\
+\hline
+{\em image\+Info} & Pointer to the Vk\+Descriptor\+Image\+Info containing the image data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the writer for chaining.
+\end{DoxyReturn}
+Stages a write operation for image data to the specified binding point. The actual write occurs when \doxylink{classbloom_1_1render_1_1_descriptor_writer_abbc66340c4014ba6b498549b1ddfc268}{Build()} or \doxylink{classbloom_1_1render_1_1_descriptor_writer_a4536d489703fdd4d6e0e2953df0ccd6a}{Overwrite()} is called. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/xgoni/bloom/bloom/src/render/\mbox{\hyperlink{descriptors_8hpp}{descriptors.\+hpp}}\item 
+C\+:/\+Users/xgoni/bloom/bloom/src/render/descriptors.\+cpp\end{DoxyCompactItemize}

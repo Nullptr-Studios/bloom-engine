@@ -1,0 +1,86 @@
+\doxysection{bloom\+::render\+::Descriptor\+Set\+Layout\+::Builder Class Reference}
+\hypertarget{classbloom_1_1render_1_1_descriptor_set_layout_1_1_builder}{}\label{classbloom_1_1render_1_1_descriptor_set_layout_1_1_builder}\index{bloom::render::DescriptorSetLayout::Builder@{bloom::render::DescriptorSetLayout::Builder}}
+
+
+Helper class to build Descriptor\+Set\+Layouts.  
+
+
+
+
+{\ttfamily \#include $<$descriptors.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_set_layout_1_1_builder_a2c7702eb58ae4e0a6724bfe251a6cc0f}{Builder}} (\mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}} \&device)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classbloom_1_1render_1_1_descriptor_set_layout_1_1_builder}{Builder} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_set_layout_1_1_builder}{Builder}} \& \mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_set_layout_1_1_builder_adeb29f4dde4cad9bbd6fcd42bab03260}{Add\+Binding}} (uint32\+\_\+t binding, Vk\+Descriptor\+Type descriptor\+Type, Vk\+Shader\+Stage\+Flags stage\+Flags, uint32\+\_\+t count=1)
+\begin{DoxyCompactList}\small\item\em Adds a descriptor binding to the layout. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_set_layout}{Descriptor\+Set\+Layout}} $>$ \mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_set_layout_1_1_builder_a5c63d0087773ee4d3f1cbcc7627ef4bf}{Build}} () const
+\begin{DoxyCompactList}\small\item\em Builds the \doxylink{classbloom_1_1render_1_1_descriptor_set_layout}{Descriptor\+Set\+Layout} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Helper class to build Descriptor\+Set\+Layouts. 
+
+The \doxylink{classbloom_1_1render_1_1_descriptor_set_layout_1_1_builder}{Builder} class provides a fluent interface for constructing \doxylink{classbloom_1_1render_1_1_descriptor_set_layout}{Descriptor\+Set\+Layout} objects. This approach simplifies the creation process by allowing chained calls to the Add\+Binding function. It also improves code readability and maintainability by encapsulating the layout creation logic. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classbloom_1_1render_1_1_descriptor_set_layout_1_1_builder_a2c7702eb58ae4e0a6724bfe251a6cc0f}\index{bloom::render::DescriptorSetLayout::Builder@{bloom::render::DescriptorSetLayout::Builder}!Builder@{Builder}}
+\index{Builder@{Builder}!bloom::render::DescriptorSetLayout::Builder@{bloom::render::DescriptorSetLayout::Builder}}
+\doxysubsubsection{\texorpdfstring{Builder()}{Builder()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_descriptor_set_layout_1_1_builder_a2c7702eb58ae4e0a6724bfe251a6cc0f} 
+bloom\+::render\+::\+Descriptor\+Set\+Layout\+::\+Builder\+::\+Builder (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}} \&}]{device}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Constructs a \doxylink{classbloom_1_1render_1_1_descriptor_set_layout_1_1_builder}{Builder} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em device} & A reference to the \doxylink{classbloom_1_1render_1_1_devices}{Devices} object, providing access to the Vulkan device. This is necessary for creating the descriptor set layout. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classbloom_1_1render_1_1_descriptor_set_layout_1_1_builder_adeb29f4dde4cad9bbd6fcd42bab03260}\index{bloom::render::DescriptorSetLayout::Builder@{bloom::render::DescriptorSetLayout::Builder}!AddBinding@{AddBinding}}
+\index{AddBinding@{AddBinding}!bloom::render::DescriptorSetLayout::Builder@{bloom::render::DescriptorSetLayout::Builder}}
+\doxysubsubsection{\texorpdfstring{AddBinding()}{AddBinding()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_descriptor_set_layout_1_1_builder_adeb29f4dde4cad9bbd6fcd42bab03260} 
+\mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_set_layout_1_1_builder}{Descriptor\+Set\+Layout\+::\+Builder}} \& bloom\+::render\+::\+Descriptor\+Set\+Layout\+::\+Builder\+::\+Add\+Binding (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{binding}{, }\item[{Vk\+Descriptor\+Type}]{descriptor\+Type}{, }\item[{Vk\+Shader\+Stage\+Flags}]{stage\+Flags}{, }\item[{uint32\+\_\+t}]{count}{ = {\ttfamily 1}}\end{DoxyParamCaption})}
+
+
+
+Adds a descriptor binding to the layout. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em binding} & The binding point in the shader. \\
+\hline
+{\em descriptor\+Type} & The type of the descriptor (e.\+g., uniform buffer, combined image sampler). \\
+\hline
+{\em stage\+Flags} & The shader stages that will access this descriptor. \\
+\hline
+{\em count} & The number of descriptors in the array. Defaults to 1. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classbloom_1_1render_1_1_descriptor_set_layout_1_1_builder_a5c63d0087773ee4d3f1cbcc7627ef4bf}\index{bloom::render::DescriptorSetLayout::Builder@{bloom::render::DescriptorSetLayout::Builder}!Build@{Build}}
+\index{Build@{Build}!bloom::render::DescriptorSetLayout::Builder@{bloom::render::DescriptorSetLayout::Builder}}
+\doxysubsubsection{\texorpdfstring{Build()}{Build()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_descriptor_set_layout_1_1_builder_a5c63d0087773ee4d3f1cbcc7627ef4bf} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_set_layout}{Descriptor\+Set\+Layout}} $>$ bloom\+::render\+::\+Descriptor\+Set\+Layout\+::\+Builder\+::\+Build (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Builds the \doxylink{classbloom_1_1render_1_1_descriptor_set_layout}{Descriptor\+Set\+Layout} object. 
+
+\begin{DoxyReturn}{Returns}
+A unique pointer to the newly created \doxylink{classbloom_1_1render_1_1_descriptor_set_layout}{Descriptor\+Set\+Layout}.
+\end{DoxyReturn}
+This function finalizes the layout construction and creates a \doxylink{classbloom_1_1render_1_1_descriptor_set_layout}{Descriptor\+Set\+Layout} object. It consumes the builder and returns a unique pointer to the newly created layout. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/xgoni/bloom/bloom/src/render/\mbox{\hyperlink{descriptors_8hpp}{descriptors.\+hpp}}\item 
+C\+:/\+Users/xgoni/bloom/bloom/src/render/descriptors.\+cpp\end{DoxyCompactItemize}

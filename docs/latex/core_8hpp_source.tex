@@ -18,13 +18,12 @@
 \DoxyCodeLine{00021\ }
 \DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ BIT(x)\ (1\ <<\ x)}}
 \DoxyCodeLine{00023\ }
-\DoxyCodeLine{00024\ \textcolor{keyword}{enum}\ megabool\ \{}
-\DoxyCodeLine{00025\ \ \ FALSE,\ TRUE,\ NEITHER,\ BOTH,}
-\DoxyCodeLine{00026\ \ \ MAYBE,\ TRUEISH,\ FALSEISH,}
-\DoxyCodeLine{00027\ \ \ IT\_DEPENDS,\ OSCILLATING,}
-\DoxyCodeLine{00028\ \ \ ITS\_COMPLICATED,}
-\DoxyCodeLine{00029\ \ \ DOUBLE\_FALSE,\ DOUBLE\_TRUE,}
-\DoxyCodeLine{00030\ \ \ UNKNOWN,\ UNDEFINED}
-\DoxyCodeLine{00031\ \};}
+\DoxyCodeLine{00024\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ id\_t;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ DELETE\_COPY\_CONSTRUCTOR(classname)\ \(\backslash\)}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\ \ classname(const\ classname\&)\ =\ delete;\ \(\backslash\)}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\ \ classname\&\ operator=(const\ classname\&)\ =\ delete;\ \(\backslash\)}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\ \ classname(classname\&\&)\ =\ default;\ \(\backslash\)}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\ \ classname\&\ operator=(classname\&\&)\ =\ default}}
 
 \end{DoxyCode}
