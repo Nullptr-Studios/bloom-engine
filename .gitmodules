@@ -13,3 +13,6 @@
 [submodule "bloom/lib/imgui"]
 	path = bloom/lib/imgui
 	url = https://github.com/ocornut/imgui.git
+[submodule "bloom/lib/json"]
+	path = bloom/lib/json
+	url = https://github.com/nlohmann/json.git

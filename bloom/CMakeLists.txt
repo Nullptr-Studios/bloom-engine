@@ -64,7 +64,11 @@ endif()
 
 target_include_directories(bloom-engine PUBLIC
         lib/spdlog/include
+        lib/json/include
 )
+
+# JSON INCLUDE
+add_subdirectory(lib/json)
 
 # GLM INCLUDE
 add_subdirectory(lib/glm)
@@ -78,7 +82,10 @@ set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
 set(GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
 set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
 add_subdirectory(lib/glfw)
-target_link_libraries(bloom-engine glfw)
+target_link_libraries(bloom-engine
+        glfw
+        nlohmann_json::nlohmann_json
+)
 
 find_package(Vulkan REQUIRED)
 message(STATUS "Found Vulkan: $ENV{VULKAN_SDK}")
