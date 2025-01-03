@@ -107,6 +107,7 @@ protected:
   std::unique_ptr<render::Renderer> m_renderer = nullptr;
 
   std::shared_ptr<Camera> m_activeCamera = nullptr;
+  std::shared_ptr<DirectionalLight> m_directionalLight = nullptr;
 
   float m_deltaTime = 0.016f;
   void PushLayer(Layer *layer);

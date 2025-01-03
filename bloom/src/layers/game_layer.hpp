@@ -48,6 +48,8 @@ private:
   std::unique_ptr<DescriptorSetLayout> m_globalSetLayout;
   std::unique_ptr<DescriptorSetLayout> m_materialSetLayout;
   std::vector<Buffer*> m_UBOBuffers;
+
+  bool m_directionalLightWarningShown = false;
 };
 
 }

@@ -70,7 +70,7 @@ public:
   Model(const Model&) = delete;
   Model &operator=(const Model&) = delete;
 
-  static std::unique_ptr<Model> LoadObj(const std::string& path);
+  static std::unique_ptr<Model> LoadOBJ(const std::string& path);
 
   /**
    * @brief Binds the model's vertex and index buffers to the command buffer.

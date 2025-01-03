@@ -11,15 +11,16 @@ namespace wanderer {
 void Wanderer::OnBegin() {
   m_camera = BLOOM_FACTORY->CreateObject<EditorCamera>("Camera");
   m_activeCamera = m_camera;
+  m_directionalLight = BLOOM_FACTORY->CreateObject<DirectionalLight>("Sun");
 
   auto teapot = BLOOM_FACTORY->CreateObject<Actor>("Teapot");
-  teapot->model = render::Model::LoadObj("resources/models/teapot_smooth.obj");;
+  teapot->model = render::Model::LoadOBJ("resources/models/teapot_smooth.obj");;
   teapot->transform.position = {1.0f, 0.0f, -4.0f};
   teapot->transform.scale = {1.0f, -1.0f, 1.0f};
   teapot->LoadTextures(GetDescriptorLayouts().materialLayout, "resources/textures/cat.png");
 
   auto hardteapot = BLOOM_FACTORY->CreateObject<Actor>("HardTeapot");
-  hardteapot->model = render::Model::LoadObj("resources/models/teapot.obj");
+  hardteapot->model = render::Model::LoadOBJ("resources/models/teapot.obj");
   hardteapot->transform.position = {-1.0f, 0.0f, -4.0f};
   hardteapot->transform.scale = {1.0f, -1.0f, 1.0f};
   hardteapot->LoadTextures(GetDescriptorLayouts().materialLayout, "resources/textures/bloom.png");

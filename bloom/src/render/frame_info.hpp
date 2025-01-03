@@ -8,6 +8,7 @@
 
 #pragma once
 #include "src/objects/camera.hpp"
+#include "src/objects/directional_light.hpp"
 
 namespace bloom::render {
 
@@ -23,6 +24,7 @@ struct FrameInfo {
   float frameTime;                     ///< Time elapsed since the last frame in seconds
   VkCommandBuffer commandBuffer;       ///< The command buffer for the current frame
   Camera* activeCamera;                ///< Pointer to the currently active camera
+  DirectionalLight* directionalLight;  ///< Pointer to the directional light
   VkDescriptorSet globalDescriptorSet; ///< Global descriptor set for the current frame
 };
 

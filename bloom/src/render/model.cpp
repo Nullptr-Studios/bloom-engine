@@ -172,7 +172,7 @@ Model::Model(const Builder &builder) {
 
 Model::~Model() {}
 
-std::unique_ptr<Model> Model::LoadObj(const std::string &path) {
+std::unique_ptr<Model> Model::LoadOBJ(const std::string &path) {
   Builder builder;
   builder.LoadModel(path);
   BLOOM_INFO("Model {0} loaded correctly with {1} vertices", path, builder.vertices.size());
