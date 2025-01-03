@@ -60,7 +60,7 @@ void UILayer::OnTick(float deltaTime) {
 
   // TODO: This is a hack
   for (auto &[id, obj] : Factory::GetInstance()->GetObjects()) {
-    ImGui::Begin(("Object " + std::to_string(id) + ": " + obj->GetName()).c_str());
+    ImGui::Begin((std::to_string(id) + ": " + obj->GetName()).c_str());
     obj->PropertiesPanel();
     ImGui::End();
   }

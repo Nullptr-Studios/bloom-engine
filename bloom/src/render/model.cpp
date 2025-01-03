@@ -4,6 +4,19 @@
 
 #define TINYOBJLOADER_IMPLEMENTATION
 #include <tiny_obj_loader.h>
+#define GLM_ENABLE_EXPERIMENTAL
+#include <glm/gtx/hash.hpp>
+
+namespace std {
+template<>
+struct hash<bloom::render::Model::Vertex> {
+  size_t operator()(bloom::render::Model::Vertex const& vertex) const {
+    size_t seed = 0;
+    bloom::HashCombine(seed, vertex.position, vertex.normal, vertex.texCoord);
+    return seed;
+  }
+};
+}
 
 namespace bloom::render {
 
@@ -46,6 +59,8 @@ void Model::Builder::LoadModel(const std::string &path) {
   vertices.clear();
   indices.clear();
 
+  std::unordered_map<Vertex, unsigned short> uniqueVertices;
+
   for (const auto &shape : shapes) {
     for (const auto &index : shape.mesh.indices) {
       Vertex vertex{};
@@ -73,8 +88,11 @@ void Model::Builder::LoadModel(const std::string &path) {
         };
       }
 
-      vertices.push_back(vertex);
-      indices.push_back(static_cast<unsigned short>(indices.size()));
+      if (uniqueVertices.count(vertex) == 0) {
+        uniqueVertices[vertex] = static_cast<unsigned short>(vertices.size());
+        vertices.push_back(vertex);
+      }
+      indices.push_back(uniqueVertices[vertex]);
     }
   }
 }
@@ -154,7 +172,7 @@ Model::Model(const Builder &builder) {
 
 Model::~Model() {}
 
-std::unique_ptr<Model> Model::CreateModel(const std::string &path) {
+std::unique_ptr<Model> Model::LoadObj(const std::string &path) {
   Builder builder;
   builder.LoadModel(path);
   BLOOM_INFO("Model {0} loaded correctly with {1} vertices", path, builder.vertices.size());

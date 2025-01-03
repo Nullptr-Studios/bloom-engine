@@ -16,10 +16,16 @@ void Camera::OnTick(float deltaTime) {
 }
 
 void Camera::OnClose() {}
+void Camera::OnEvent(Event &e) {
+  Object::OnEvent(e);
+  EventDispatcher dispatcher(e);
+  dispatcher.Dispatch<WindowResizeEvent>(EVENT_BIND(Camera::SetAspectRatio));
+}
+
 void Camera::PropertiesPanel() {
   Object::PropertiesPanel();
   if (ImGui::CollapsingHeader("Camera")) {
-    ImGui::DragFloat("FOV", &m_fov, 0.1f);
+    ImGui::DragFloat("FOV", &m_fov, 1.0f, 30.0f, 170.0f);
     ImGui::DragFloat("Aspect", &m_aspect, 0.1f);
     ImGui::DragFloat("Near Clip", &m_near, 0.1f);
     ImGui::DragFloat("Far Clip", &m_far, 0.1f);
@@ -32,7 +38,7 @@ void Camera::SetOrthographicProjection(const float left, const float right,
 }
 
 void Camera::SetPerspectiveProjection() {
-  m_projectionMatrix = glm::perspective(m_fov, m_aspect, m_near, m_far);
+  m_projectionMatrix = glm::perspective(glm::radians(m_fov), m_aspect, m_near, m_far);
 }
 
 void Camera::UpdateView() {
@@ -43,4 +49,9 @@ void Camera::UpdateView() {
   m_viewMatrix = rotationMatrix * translationMatrix;
 }
 
+bool Camera::SetAspectRatio(WindowResizeEvent e) {
+  m_aspect = static_cast<float>(e.GetWidth()) / static_cast<float>(e.GetHeight());
+  return false;
 }
+
+} // namespace bloom

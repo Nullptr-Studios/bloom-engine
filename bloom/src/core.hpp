@@ -57,3 +57,26 @@ typedef unsigned short id_t;
 #define EVENT_BIND(fn) std::bind(&fn, this, std::placeholders::_1)
 
 #define DRAG_SPEED(speed) auto io = ImgUi::GetIO(); return speed / io.KeyAlt ? 1.0f : 10.0f;
+
+namespace bloom {
+
+/**
+ * @brief Combines hash values for multiple arguments into a single hash value.
+ *
+ * This function uses variadic templates to accept a variable number of arguments
+ * and recursively combines their hash values into the @c seed parameter.
+ * It is useful for creating composite hash values from multiple inputs.
+ *
+ * @tparam T The type of the first argument.
+ * @tparam Rest The types of the remaining arguments.
+ * @param seed The initial hash value that will be combined with the hash values of the arguments.
+ * @param v The first argument whose hash value will be combined.
+ * @param rest The remaining arguments whose hash values will be combined.
+ */
+template <typename T, typename... Rest>
+void HashCombine(std::size_t& seed, const T& v, Rest... rest) {
+  seed ^= std::hash<T>{}(v) + 0x9e3779b9 + (seed << 6) + (seed >> 2);
+  (HashCombine(seed, rest), ...);
+}
+
+}

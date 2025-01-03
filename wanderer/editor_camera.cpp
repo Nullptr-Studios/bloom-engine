@@ -14,6 +14,8 @@ void EditorCamera::OnTick(float deltaTime) {
 }
 
 void EditorCamera::OnEvent(bloom::Event &e) {
+  Camera::OnEvent(e);
+
   if (e.GetEventType() == bloom::EventType::KeyPressed) {
     const auto& keyEvent = static_cast<const bloom::KeyPressedEvent&>(e);
     if (keyEvent.GetKeyCode() == 0x57) {

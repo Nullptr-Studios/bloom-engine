@@ -12,14 +12,17 @@ void Wanderer::OnBegin() {
   m_camera = BLOOM_FACTORY->CreateObject<EditorCamera>("Camera");
   m_activeCamera = m_camera;
 
-  std::shared_ptr<render::Model> model = render::Model::CreateModel("resources/models/teapot_smooth.obj");
+  auto teapot = BLOOM_FACTORY->CreateObject<Actor>("Teapot");
+  teapot->model = render::Model::LoadObj("resources/models/teapot_smooth.obj");;
+  teapot->transform.position = {1.0f, 0.0f, -4.0f};
+  teapot->transform.scale = {1.0f, -1.0f, 1.0f};
+  teapot->LoadTextures(GetDescriptorLayouts().materialLayout, "resources/textures/cat.png");
 
-  auto cube = BLOOM_FACTORY->CreateObject<Actor>("Teapot 1");
-  cube->model = model;
-  cube->transform.position = {0.0f, 0.0f, -4.0f};
-  cube->transform.scale = {1.0f, 1.0f, 1.0f};
-  // TODO: This hack should be done in a better way, probably on the actor class
-  cube->LoadTextures(GetDescriptorLayouts().materialLayout, "resources/textures/cat.png");
+  auto hardteapot = BLOOM_FACTORY->CreateObject<Actor>("HardTeapot");
+  hardteapot->model = render::Model::LoadObj("resources/models/teapot.obj");
+  hardteapot->transform.position = {-1.0f, 0.0f, -4.0f};
+  hardteapot->transform.scale = {1.0f, -1.0f, 1.0f};
+  hardteapot->LoadTextures(GetDescriptorLayouts().materialLayout, "resources/textures/bloom.png");
 }
 
 void Wanderer::OnTick() {
