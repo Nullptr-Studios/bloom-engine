@@ -1,0 +1,126 @@
+\doxysection{bloom\+::Layer\+Stack Class Reference}
+\hypertarget{classbloom_1_1_layer_stack}{}\label{classbloom_1_1_layer_stack}\index{bloom::LayerStack@{bloom::LayerStack}}
+
+
+Manages a stack of layers and overlays.  
+
+
+
+
+{\ttfamily \#include $<$layer\+\_\+stack.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classbloom_1_1_layer_stack_acd75ca3e0803931c695121565af59ad0}{Push\+Layer}} (\mbox{\hyperlink{classbloom_1_1_layer}{Layer}} \texorpdfstring{$\ast$}{*}layer)
+\begin{DoxyCompactList}\small\item\em Pushes a layer onto the stack. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbloom_1_1_layer_stack_a99f8bc63c4ea8a1834bc3880d66675f9}{Push\+Overlay}} (\mbox{\hyperlink{classbloom_1_1_layer}{Layer}} \texorpdfstring{$\ast$}{*}overlay)
+\begin{DoxyCompactList}\small\item\em Pushes an overlay onto the stack. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbloom_1_1_layer_stack_ab3b7cf586655dec11be1e12cf42b0b55}{Pop\+Layer}} (\mbox{\hyperlink{classbloom_1_1_layer}{Layer}} \texorpdfstring{$\ast$}{*}layer)
+\begin{DoxyCompactList}\small\item\em Pops a layer from the stack. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbloom_1_1_layer_stack_a35d140f06b205482dbd07eee770d1a63}{Pop\+Overlay}} (\mbox{\hyperlink{classbloom_1_1_layer}{Layer}} \texorpdfstring{$\ast$}{*}overlay)
+\begin{DoxyCompactList}\small\item\em Pops an overlay from the stack. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classbloom_1_1_layer}{Layer}} \texorpdfstring{$\ast$}{*} $>$\+::iterator \mbox{\hyperlink{classbloom_1_1_layer_stack_a87d556b38d936931180bf1d212c2044d}{begin}} ()
+\begin{DoxyCompactList}\small\item\em Returns an iterator to the beginning of the layer stack. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classbloom_1_1_layer}{Layer}} \texorpdfstring{$\ast$}{*} $>$\+::iterator \mbox{\hyperlink{classbloom_1_1_layer_stack_ac61805f33512233aa6b66ceeb0b69cab}{end}} ()
+\begin{DoxyCompactList}\small\item\em Returns an iterator to the end of the layer stack. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages a stack of layers and overlays. 
+
+The {\ttfamily \doxylink{classbloom_1_1_layer_stack}{Layer\+Stack}} class is responsible for maintaining a stack of layers and overlays, providing methods to push and pop layers and overlays, and iterating over the stack. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classbloom_1_1_layer_stack_a87d556b38d936931180bf1d212c2044d}\index{bloom::LayerStack@{bloom::LayerStack}!begin@{begin}}
+\index{begin@{begin}!bloom::LayerStack@{bloom::LayerStack}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily \label{classbloom_1_1_layer_stack_a87d556b38d936931180bf1d212c2044d} 
+std\+::vector$<$ \mbox{\hyperlink{classbloom_1_1_layer}{Layer}} \texorpdfstring{$\ast$}{*} $>$\+::iterator bloom\+::\+Layer\+Stack\+::begin (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns an iterator to the beginning of the layer stack. 
+
+\begin{DoxyReturn}{Returns}
+Iterator to the beginning of the layer stack 
+\end{DoxyReturn}
+\Hypertarget{classbloom_1_1_layer_stack_ac61805f33512233aa6b66ceeb0b69cab}\index{bloom::LayerStack@{bloom::LayerStack}!end@{end}}
+\index{end@{end}!bloom::LayerStack@{bloom::LayerStack}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily \label{classbloom_1_1_layer_stack_ac61805f33512233aa6b66ceeb0b69cab} 
+std\+::vector$<$ \mbox{\hyperlink{classbloom_1_1_layer}{Layer}} \texorpdfstring{$\ast$}{*} $>$\+::iterator bloom\+::\+Layer\+Stack\+::end (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns an iterator to the end of the layer stack. 
+
+\begin{DoxyReturn}{Returns}
+Iterator to the end of the layer stack 
+\end{DoxyReturn}
+\Hypertarget{classbloom_1_1_layer_stack_ab3b7cf586655dec11be1e12cf42b0b55}\index{bloom::LayerStack@{bloom::LayerStack}!PopLayer@{PopLayer}}
+\index{PopLayer@{PopLayer}!bloom::LayerStack@{bloom::LayerStack}}
+\doxysubsubsection{\texorpdfstring{PopLayer()}{PopLayer()}}
+{\footnotesize\ttfamily \label{classbloom_1_1_layer_stack_ab3b7cf586655dec11be1e12cf42b0b55} 
+void bloom\+::\+Layer\+Stack\+::\+Pop\+Layer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbloom_1_1_layer}{Layer}} \texorpdfstring{$\ast$}{*}}]{layer}{}\end{DoxyParamCaption})}
+
+
+
+Pops a layer from the stack. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em layer} & Pointer to the layer to be popped \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classbloom_1_1_layer_stack_a35d140f06b205482dbd07eee770d1a63}\index{bloom::LayerStack@{bloom::LayerStack}!PopOverlay@{PopOverlay}}
+\index{PopOverlay@{PopOverlay}!bloom::LayerStack@{bloom::LayerStack}}
+\doxysubsubsection{\texorpdfstring{PopOverlay()}{PopOverlay()}}
+{\footnotesize\ttfamily \label{classbloom_1_1_layer_stack_a35d140f06b205482dbd07eee770d1a63} 
+void bloom\+::\+Layer\+Stack\+::\+Pop\+Overlay (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbloom_1_1_layer}{Layer}} \texorpdfstring{$\ast$}{*}}]{overlay}{}\end{DoxyParamCaption})}
+
+
+
+Pops an overlay from the stack. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em overlay} & Pointer to the overlay to be popped \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classbloom_1_1_layer_stack_acd75ca3e0803931c695121565af59ad0}\index{bloom::LayerStack@{bloom::LayerStack}!PushLayer@{PushLayer}}
+\index{PushLayer@{PushLayer}!bloom::LayerStack@{bloom::LayerStack}}
+\doxysubsubsection{\texorpdfstring{PushLayer()}{PushLayer()}}
+{\footnotesize\ttfamily \label{classbloom_1_1_layer_stack_acd75ca3e0803931c695121565af59ad0} 
+void bloom\+::\+Layer\+Stack\+::\+Push\+Layer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbloom_1_1_layer}{Layer}} \texorpdfstring{$\ast$}{*}}]{layer}{}\end{DoxyParamCaption})}
+
+
+
+Pushes a layer onto the stack. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em layer} & Pointer to the layer to be pushed \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classbloom_1_1_layer_stack_a99f8bc63c4ea8a1834bc3880d66675f9}\index{bloom::LayerStack@{bloom::LayerStack}!PushOverlay@{PushOverlay}}
+\index{PushOverlay@{PushOverlay}!bloom::LayerStack@{bloom::LayerStack}}
+\doxysubsubsection{\texorpdfstring{PushOverlay()}{PushOverlay()}}
+{\footnotesize\ttfamily \label{classbloom_1_1_layer_stack_a99f8bc63c4ea8a1834bc3880d66675f9} 
+void bloom\+::\+Layer\+Stack\+::\+Push\+Overlay (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbloom_1_1_layer}{Layer}} \texorpdfstring{$\ast$}{*}}]{overlay}{}\end{DoxyParamCaption})}
+
+
+
+Pushes an overlay onto the stack. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em overlay} & Pointer to the overlay to be pushed \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/xgoni/bloom/bloom/src/layers/\mbox{\hyperlink{layer__stack_8hpp}{layer\+\_\+stack.\+hpp}}\item 
+C\+:/\+Users/xgoni/bloom/bloom/src/layers/layer\+\_\+stack.\+cpp\end{DoxyCompactItemize}

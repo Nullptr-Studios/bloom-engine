@@ -13,6 +13,11 @@ class \mbox{\hyperlink{classbloom_1_1_event}{bloom\+::\+Event}}
 \begin{DoxyCompactList}\small\item\em Abstract base class for all events in the Bloom \doxylink{classbloom_1_1_engine}{Engine}. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classbloom_1_1_event_dispatcher}{bloom\+::\+Event\+Dispatcher}}
 \begin{DoxyCompactList}\small\item\em A utility class for dispatching events to appropriate handlers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacebloom}{bloom}}
+\begin{DoxyCompactList}\small\item\em Contains the core classes and functions for the bloom engine. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
@@ -23,7 +28,7 @@ class \mbox{\hyperlink{classbloom_1_1_event_dispatcher}{bloom\+::\+Event\+Dispat
 \doxysubsubsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
-enum class \mbox{\hyperlink{event_8hpp_a62777e271a1f3f6e4a8ba9055c2e4df9}{bloom\+::\+Event\+Type}} \{ \newline
+enum class \mbox{\hyperlink{namespacebloom_a62777e271a1f3f6e4a8ba9055c2e4df9}{bloom\+::\+Event\+Type}} \{ \newline
 {\bfseries None} = 0
 , {\bfseries Window\+Close}
 , {\bfseries Window\+Resize}
@@ -37,14 +42,15 @@ enum class \mbox{\hyperlink{event_8hpp_a62777e271a1f3f6e4a8ba9055c2e4df9}{bloom\
 {\bfseries Game\+Render}
 , {\bfseries Key\+Pressed}
 , {\bfseries Key\+Released}
-, {\bfseries Mouse\+Button\+Pressed}
+, {\bfseries Key\+Typed}
 , \newline
-{\bfseries Mouse\+Button\+Released}
+{\bfseries Mouse\+Button\+Pressed}
+, {\bfseries Mouse\+Button\+Released}
 , {\bfseries Mouse\+Moved}
 , {\bfseries Mouse\+Scrolled}
  \}
 \begin{DoxyCompactList}\small\item\em Represents the various types of events supported by the Bloom Engine. \end{DoxyCompactList}\item 
-enum \mbox{\hyperlink{event_8hpp_a85f0d8c71d473ca68946d8c5bcdab3f5}{bloom\+::\+Event\+Category}} \{ \newline
+enum \mbox{\hyperlink{namespacebloom_a85f0d8c71d473ca68946d8c5bcdab3f5}{bloom\+::\+Event\+Category}} \{ \newline
 {\bfseries None} = 0
 , {\bfseries Event\+Category\+Game} = BIT(0)
 , {\bfseries Event\+Category\+Input} = BIT(1)
@@ -116,27 +122,3 @@ This macro simplifies the definition of the static and dynamic type system for e
 {\em type} & The event type to associate with the class. \\
 \hline
 \end{DoxyParams}
-
-
-\doxysubsection{Enumeration Type Documentation}
-\Hypertarget{event_8hpp_a85f0d8c71d473ca68946d8c5bcdab3f5}\index{event.hpp@{event.hpp}!EventCategory@{EventCategory}}
-\index{EventCategory@{EventCategory}!event.hpp@{event.hpp}}
-\doxysubsubsection{\texorpdfstring{EventCategory}{EventCategory}}
-{\footnotesize\ttfamily \label{event_8hpp_a85f0d8c71d473ca68946d8c5bcdab3f5} 
-enum \mbox{\hyperlink{event_8hpp_a85f0d8c71d473ca68946d8c5bcdab3f5}{bloom\+::\+Event\+Category}}}
-
-
-
-Represents categories of events, allowing for logical grouping of event types. 
-
-Events are grouped into categories to facilitate efficient filtering and handling. Each category is represented by a single bit flag, enabling bitwise operations to determine if an event belongs to one or more categories. \Hypertarget{event_8hpp_a62777e271a1f3f6e4a8ba9055c2e4df9}\index{event.hpp@{event.hpp}!EventType@{EventType}}
-\index{EventType@{EventType}!event.hpp@{event.hpp}}
-\doxysubsubsection{\texorpdfstring{EventType}{EventType}}
-{\footnotesize\ttfamily \label{event_8hpp_a62777e271a1f3f6e4a8ba9055c2e4df9} 
-enum class \mbox{\hyperlink{event_8hpp_a62777e271a1f3f6e4a8ba9055c2e4df9}{bloom\+::\+Event\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
-
-
-
-Represents the various types of events supported by the Bloom Engine. 
-
-Each value in the enum corresponds to a specific type of event that can occur during the execution of the application. This enum is used to identify and differentiate between event types, allowing for specific handling logic to be applied. 

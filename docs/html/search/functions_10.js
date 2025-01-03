@@ -1,9 +1,4 @@
 var searchData=
 [
-  ['windowcloseevent_0',['WindowCloseEvent',['../classbloom_1_1_window_close_event.html#aa51bd04f0a11f5245f3fe3a656e346e6',1,'bloom::WindowCloseEvent']]],
-  ['windowresizeevent_1',['WindowResizeEvent',['../classbloom_1_1_window_resize_event.html#a4bf1fd9a7f951664327c589ef95bc8d6',1,'bloom::WindowResizeEvent']]],
-  ['writebuffer_2',['WriteBuffer',['../classbloom_1_1render_1_1_descriptor_writer.html#a39f89a9715d209b369b95fd75ccc6eff',1,'bloom::render::DescriptorWriter']]],
-  ['writeimage_3',['WriteImage',['../classbloom_1_1render_1_1_descriptor_writer.html#a7397b0b7e8d48df3334db9570ce4a20c',1,'bloom::render::DescriptorWriter']]],
-  ['writetobuffer_4',['WriteToBuffer',['../classbloom_1_1render_1_1_buffer.html#a0cf9a4f4601e1b9ad3ce7088389ab280',1,'bloom::render::Buffer']]],
-  ['writetoindex_5',['WriteToIndex',['../classbloom_1_1render_1_1_buffer.html#a483f6d1116280335c393c3b9279cbf84',1,'bloom::render::Buffer']]]
+  ['tostring_0',['ToString',['../classbloom_1_1_event.html#a1e826d312aa922abd9401a02ee33ab3d',1,'bloom::Event::ToString()'],['../classbloom_1_1_window_resize_event.html#a8be8cba1d6436bd544894ba38426f556',1,'bloom::WindowResizeEvent::ToString()'],['../classbloom_1_1_key_pressed_event.html#afc9dca82c85f300cca5f94f09e632448',1,'bloom::KeyPressedEvent::ToString()'],['../classbloom_1_1_key_released_event.html#a220adca8205466c1677d898e21763d90',1,'bloom::KeyReleasedEvent::ToString()'],['../classbloom_1_1_key_typed_event.html#a8c30f8628823dbc14fcc45ee3b4b9556',1,'bloom::KeyTypedEvent::ToString()'],['../classbloom_1_1_mouse_moved_event.html#a66e03c370f8df2b5d8889926ed68b6d9',1,'bloom::MouseMovedEvent::ToString()'],['../classbloom_1_1_mouse_scrolled_event.html#ae373067be63601a16d7b7749059ff8df',1,'bloom::MouseScrolledEvent::ToString()'],['../classbloom_1_1_mouse_button_pressed_event.html#a127ef183371b8fef1b35977e5d2b5505',1,'bloom::MouseButtonPressedEvent::ToString()'],['../classbloom_1_1_mouse_button_released_event.html#a694f5d138b6082a7c47ab4315cde5ed5',1,'bloom::MouseButtonReleasedEvent::ToString()']]]
 ];

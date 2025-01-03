@@ -1,26 +1,94 @@
 \doxysection{bloom\+::render\+::Pipeline Class Reference}
 \hypertarget{classbloom_1_1render_1_1_pipeline}{}\label{classbloom_1_1render_1_1_pipeline}\index{bloom::render::Pipeline@{bloom::render::Pipeline}}
+
+
+Manages a Vulkan graphics pipeline.  
+
+
+
+
+{\ttfamily \#include $<$pipeline.\+hpp$>$}
+
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classbloom_1_1render_1_1_pipeline_a580698bec6166ee1ef70864307ab4f59}\label{classbloom_1_1render_1_1_pipeline_a580698bec6166ee1ef70864307ab4f59} 
-{\bfseries Pipeline} (\mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}} \&device, const std\+::string \&vert\+Path, const std\+::string \&frag\+Path, const \mbox{\hyperlink{structbloom_1_1render_1_1_pipeline_configuration}{Pipeline\+Configuration}} \&config)
-\item 
+\mbox{\hyperlink{classbloom_1_1render_1_1_pipeline_a580698bec6166ee1ef70864307ab4f59}{Pipeline}} (\mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}} \&device, const std\+::string \&vert\+Path, const std\+::string \&frag\+Path, const \mbox{\hyperlink{structbloom_1_1render_1_1_pipeline_configuration}{Pipeline\+Configuration}} \&config)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classbloom_1_1render_1_1_pipeline}{Pipeline} instance. \end{DoxyCompactList}\item 
 \Hypertarget{classbloom_1_1render_1_1_pipeline_ac74eadb137e91082c748ef4e203e6bc2}\label{classbloom_1_1render_1_1_pipeline_ac74eadb137e91082c748ef4e203e6bc2} 
 {\bfseries Pipeline} (const \mbox{\hyperlink{classbloom_1_1render_1_1_pipeline}{Pipeline}} \&)=delete
 \item 
 \Hypertarget{classbloom_1_1render_1_1_pipeline_a1e1d9fb9c3a178c9c8e5c7127a9f2002}\label{classbloom_1_1render_1_1_pipeline_a1e1d9fb9c3a178c9c8e5c7127a9f2002} 
 \mbox{\hyperlink{classbloom_1_1render_1_1_pipeline}{Pipeline}} \& {\bfseries operator=} (const \mbox{\hyperlink{classbloom_1_1render_1_1_pipeline}{Pipeline}} \&)=delete
 \item 
-\Hypertarget{classbloom_1_1render_1_1_pipeline_ac28ed442b38284589db791cee2274eda}\label{classbloom_1_1render_1_1_pipeline_ac28ed442b38284589db791cee2274eda} 
-void {\bfseries Bind} (Vk\+Command\+Buffer command\+Buffer)
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{classbloom_1_1render_1_1_pipeline_ac28ed442b38284589db791cee2274eda}{Bind}} (Vk\+Command\+Buffer command\+Buffer)
+\begin{DoxyCompactList}\small\item\em Binds the pipeline to the command buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classbloom_1_1render_1_1_pipeline_a93ef0970da5c5859f99f01d83493fff6}\label{classbloom_1_1render_1_1_pipeline_a93ef0970da5c5859f99f01d83493fff6} 
-static void {\bfseries default\+Pipeline\+Config} (\mbox{\hyperlink{structbloom_1_1render_1_1_pipeline_configuration}{Pipeline\+Configuration}} \&config)
-\end{DoxyCompactItemize}
+static void \mbox{\hyperlink{classbloom_1_1render_1_1_pipeline_ab52f079dd4e7050f95a86bb45dacec89}{Default\+Pipeline\+Config}} (\mbox{\hyperlink{structbloom_1_1render_1_1_pipeline_configuration}{Pipeline\+Configuration}} \&config)
+\begin{DoxyCompactList}\small\item\em Sets the default pipeline configuration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages a Vulkan graphics pipeline. 
+
+The \doxylink{classbloom_1_1render_1_1_pipeline}{Pipeline} class encapsulates the creation, management, and binding of a Vulkan graphics pipeline. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classbloom_1_1render_1_1_pipeline_a580698bec6166ee1ef70864307ab4f59}\index{bloom::render::Pipeline@{bloom::render::Pipeline}!Pipeline@{Pipeline}}
+\index{Pipeline@{Pipeline}!bloom::render::Pipeline@{bloom::render::Pipeline}}
+\doxysubsubsection{\texorpdfstring{Pipeline()}{Pipeline()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_pipeline_a580698bec6166ee1ef70864307ab4f59} 
+bloom\+::render\+::\+Pipeline\+::\+Pipeline (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}} \&}]{device}{, }\item[{const std\+::string \&}]{vert\+Path}{, }\item[{const std\+::string \&}]{frag\+Path}{, }\item[{const \mbox{\hyperlink{structbloom_1_1render_1_1_pipeline_configuration}{Pipeline\+Configuration}} \&}]{config}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{classbloom_1_1render_1_1_pipeline}{Pipeline} instance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em device} & Reference to the \doxylink{classbloom_1_1render_1_1_devices}{Devices} instance. \\
+\hline
+{\em vert\+Path} & Path to the vertex shader file. \\
+\hline
+{\em frag\+Path} & Path to the fragment shader file. \\
+\hline
+{\em config} & Reference to the \doxylink{structbloom_1_1render_1_1_pipeline_configuration}{Pipeline\+Configuration} struct. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classbloom_1_1render_1_1_pipeline_ac28ed442b38284589db791cee2274eda}\index{bloom::render::Pipeline@{bloom::render::Pipeline}!Bind@{Bind}}
+\index{Bind@{Bind}!bloom::render::Pipeline@{bloom::render::Pipeline}}
+\doxysubsubsection{\texorpdfstring{Bind()}{Bind()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_pipeline_ac28ed442b38284589db791cee2274eda} 
+void bloom\+::render\+::\+Pipeline\+::\+Bind (\begin{DoxyParamCaption}\item[{Vk\+Command\+Buffer}]{command\+Buffer}{}\end{DoxyParamCaption})}
+
+
+
+Binds the pipeline to the command buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command\+Buffer} & The Vulkan command buffer to bind the pipeline to. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classbloom_1_1render_1_1_pipeline_ab52f079dd4e7050f95a86bb45dacec89}\index{bloom::render::Pipeline@{bloom::render::Pipeline}!DefaultPipelineConfig@{DefaultPipelineConfig}}
+\index{DefaultPipelineConfig@{DefaultPipelineConfig}!bloom::render::Pipeline@{bloom::render::Pipeline}}
+\doxysubsubsection{\texorpdfstring{DefaultPipelineConfig()}{DefaultPipelineConfig()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_pipeline_ab52f079dd4e7050f95a86bb45dacec89} 
+void bloom\+::render\+::\+Pipeline\+::\+Default\+Pipeline\+Config (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbloom_1_1render_1_1_pipeline_configuration}{Pipeline\+Configuration}} \&}]{config}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Sets the default pipeline configuration. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em config} & Reference to the \doxylink{structbloom_1_1render_1_1_pipeline_configuration}{Pipeline\+Configuration} struct to set defaults for. \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

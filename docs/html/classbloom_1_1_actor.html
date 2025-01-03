@@ -83,7 +83,7 @@ $(function(){ initResizable(false); });
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>bloom</b></li><li class="navelem"><a class="el" href="classbloom_1_1_actor.html">Actor</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacebloom.html">bloom</a></li><li class="navelem"><a class="el" href="classbloom_1_1_actor.html">Actor</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div id="doc-content">
@@ -112,9 +112,9 @@ Inheritance diagram for bloom::Actor:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a48c5292c424235db32b6a4ffd57789f6" id="r_a48c5292c424235db32b6a4ffd57789f6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a48c5292c424235db32b6a4ffd57789f6">Actor</a> (id_t id, <a class="el" href="classbloom_1_1render_1_1_devices.html">render::Devices</a> *devices)</td></tr>
-<tr class="memdesc:a48c5292c424235db32b6a4ffd57789f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new <a class="el" href="classbloom_1_1_actor.html" title="Represents a renderable and potentially interactive object within the game world.">Actor</a> object.  <br /></td></tr>
-<tr class="separator:a48c5292c424235db32b6a4ffd57789f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefb10d782b8506934e6a8914590a526b" id="r_aefb10d782b8506934e6a8914590a526b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aefb10d782b8506934e6a8914590a526b">Actor</a> (<a class="el" href="core_8hpp.html#abaf665e52c9979a5f6eb9ecfce756efc">id_t</a> id)</td></tr>
+<tr class="memdesc:aefb10d782b8506934e6a8914590a526b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new <a class="el" href="classbloom_1_1_actor.html" title="Represents a renderable and potentially interactive object within the game world.">Actor</a> object.  <br /></td></tr>
+<tr class="separator:aefb10d782b8506934e6a8914590a526b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a838a8712e215cec1b23fc19b98f320af" id="r_a838a8712e215cec1b23fc19b98f320af"><td class="memItemLeft" align="right" valign="top"><a id="a838a8712e215cec1b23fc19b98f320af" name="a838a8712e215cec1b23fc19b98f320af"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Actor</b> (const <a class="el" href="classbloom_1_1_actor.html">Actor</a> &amp;)=delete</td></tr>
 <tr class="separator:a838a8712e215cec1b23fc19b98f320af"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -127,23 +127,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a68b475ef5dec17d735b79165f165b406" id="r_a68b475ef5dec17d735b79165f165b406"><td class="memItemLeft" align="right" valign="top"><a id="a68b475ef5dec17d735b79165f165b406" name="a68b475ef5dec17d735b79165f165b406"></a>
 <a class="el" href="classbloom_1_1_actor.html">Actor</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="classbloom_1_1_actor.html">Actor</a> &amp;&amp;)=default</td></tr>
 <tr class="separator:a68b475ef5dec17d735b79165f165b406"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb09ecd4a3722ba2dbf298ce115514ec" id="r_abb09ecd4a3722ba2dbf298ce115514ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abb09ecd4a3722ba2dbf298ce115514ec">Begin</a> () override</td></tr>
-<tr class="memdesc:abb09ecd4a3722ba2dbf298ce115514ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called at the beginning of the scene.  <br /></td></tr>
-<tr class="separator:abb09ecd4a3722ba2dbf298ce115514ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68a9c1ea7cbe1ce76783d334ce377e01" id="r_a68a9c1ea7cbe1ce76783d334ce377e01"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a68a9c1ea7cbe1ce76783d334ce377e01">Tick</a> (float deltaTime) override</td></tr>
-<tr class="memdesc:a68a9c1ea7cbe1ce76783d334ce377e01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called every frame to update the object's state.  <br /></td></tr>
-<tr class="separator:a68a9c1ea7cbe1ce76783d334ce377e01"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f6ebc7bb27c7ac2c72895fc4f5558bd" id="r_a2f6ebc7bb27c7ac2c72895fc4f5558bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2f6ebc7bb27c7ac2c72895fc4f5558bd">End</a> () override</td></tr>
-<tr class="memdesc:a2f6ebc7bb27c7ac2c72895fc4f5558bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called at the end of the scene.  <br /></td></tr>
-<tr class="separator:a2f6ebc7bb27c7ac2c72895fc4f5558bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad216419e6ce4199d37541785740fb481" id="r_ad216419e6ce4199d37541785740fb481"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad216419e6ce4199d37541785740fb481">PropertiesPanel</a> () override</td></tr>
+<tr class="separator:ad216419e6ce4199d37541785740fb481"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af1b7bdfb04767523cc214ed44099a0f1" id="r_af1b7bdfb04767523cc214ed44099a0f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af1b7bdfb04767523cc214ed44099a0f1">LoadTextures</a> (<a class="el" href="classbloom_1_1render_1_1_descriptor_set_layout.html">render::DescriptorSetLayout</a> *descriptorSetLayout, const std::string &amp;albedo=<a class="el" href="actor_8hpp.html#accc82e6365c270ab6e94c6c3c79dfcde">ALBEDO_PLACEHOLDER</a>, const std::string &amp;rmo=<a class="el" href="actor_8hpp.html#acfc88eeb0e56fd3961b1f9ed8436efc4">RMO_PLACEHOLDER</a>, const std::string &amp;normal=<a class="el" href="actor_8hpp.html#ae3eb5cbfbb9784797ab53c06dccbd59e">NORMAL_PLACEHOLDER</a>, const std::string &amp;emission=<a class="el" href="actor_8hpp.html#a6ae911d6602ee94ee39578ab8520052a">EMISSION_PLACEHOLDER</a>)</td></tr>
 <tr class="separator:af1b7bdfb04767523cc214ed44099a0f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a74c1630af2eaa25f9a09c5ac854beedd" id="r_a74c1630af2eaa25f9a09c5ac854beedd"><td class="memItemLeft" align="right" valign="top">VkDescriptorSet&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a74c1630af2eaa25f9a09c5ac854beedd">GetDescriptorSet</a> () const</td></tr>
 <tr class="separator:a74c1630af2eaa25f9a09c5ac854beedd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classbloom_1_1_object"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classbloom_1_1_object')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classbloom_1_1_object.html">bloom::Object</a></td></tr>
-<tr class="memitem:ae1d557ffa7496298977cfbfdae1d4daf inherit pub_methods_classbloom_1_1_object" id="r_ae1d557ffa7496298977cfbfdae1d4daf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbloom_1_1_object.html#ae1d557ffa7496298977cfbfdae1d4daf">Object</a> (const id_t id, <a class="el" href="classbloom_1_1render_1_1_devices.html">render::Devices</a> *devices)</td></tr>
-<tr class="memdesc:ae1d557ffa7496298977cfbfdae1d4daf inherit pub_methods_classbloom_1_1_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new <a class="el" href="classbloom_1_1_object.html" title="Base class for all objects in the game world.">Object</a>.  <br /></td></tr>
-<tr class="separator:ae1d557ffa7496298977cfbfdae1d4daf inherit pub_methods_classbloom_1_1_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d2aef5263bdfa726167a7465d5e9ec6 inherit pub_methods_classbloom_1_1_object" id="r_a5d2aef5263bdfa726167a7465d5e9ec6"><td class="memItemLeft" align="right" valign="top">
 &#160;</td><td class="memItemRight" valign="bottom"><b>Object</b> (const <a class="el" href="classbloom_1_1_object.html">Object</a> &amp;)=delete</td></tr>
 <tr class="separator:a5d2aef5263bdfa726167a7465d5e9ec6 inherit pub_methods_classbloom_1_1_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -156,9 +146,27 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3bba1530790a31a41e0493794890cc72 inherit pub_methods_classbloom_1_1_object" id="r_a3bba1530790a31a41e0493794890cc72"><td class="memItemLeft" align="right" valign="top">
 <a class="el" href="classbloom_1_1_object.html">Object</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="classbloom_1_1_object.html">Object</a> &amp;&amp;)=default</td></tr>
 <tr class="separator:a3bba1530790a31a41e0493794890cc72 inherit pub_methods_classbloom_1_1_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab83ebdaed718b62ace71bd6877eeca8a inherit pub_methods_classbloom_1_1_object" id="r_ab83ebdaed718b62ace71bd6877eeca8a"><td class="memItemLeft" align="right" valign="top">id_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbloom_1_1_object.html#ab83ebdaed718b62ace71bd6877eeca8a">GetID</a> () const</td></tr>
+<tr class="memitem:ad983db52ab1348200a8708d5caa0f884 inherit pub_methods_classbloom_1_1_object" id="r_ad983db52ab1348200a8708d5caa0f884"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbloom_1_1_object.html#ad983db52ab1348200a8708d5caa0f884">OnBegin</a> ()</td></tr>
+<tr class="memdesc:ad983db52ab1348200a8708d5caa0f884 inherit pub_methods_classbloom_1_1_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called at the beginning of the scene.  <br /></td></tr>
+<tr class="separator:ad983db52ab1348200a8708d5caa0f884 inherit pub_methods_classbloom_1_1_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6c21b3f5ba2014560a499d71820b23b inherit pub_methods_classbloom_1_1_object" id="r_ab6c21b3f5ba2014560a499d71820b23b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbloom_1_1_object.html#ab6c21b3f5ba2014560a499d71820b23b">OnTick</a> (float deltaTime)</td></tr>
+<tr class="memdesc:ab6c21b3f5ba2014560a499d71820b23b inherit pub_methods_classbloom_1_1_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called every frame to update the object's state.  <br /></td></tr>
+<tr class="separator:ab6c21b3f5ba2014560a499d71820b23b inherit pub_methods_classbloom_1_1_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a659545be34faab060113df793d069071 inherit pub_methods_classbloom_1_1_object" id="r_a659545be34faab060113df793d069071"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbloom_1_1_object.html#a659545be34faab060113df793d069071">OnClose</a> ()</td></tr>
+<tr class="memdesc:a659545be34faab060113df793d069071 inherit pub_methods_classbloom_1_1_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called at the end of the scene.  <br /></td></tr>
+<tr class="separator:a659545be34faab060113df793d069071 inherit pub_methods_classbloom_1_1_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22f8f39d529a0bdb7b3091513e43afde inherit pub_methods_classbloom_1_1_object" id="r_a22f8f39d529a0bdb7b3091513e43afde"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbloom_1_1_object.html#a22f8f39d529a0bdb7b3091513e43afde">OnEvent</a> (<a class="el" href="classbloom_1_1_event.html">Event</a> &amp;e)</td></tr>
+<tr class="memdesc:a22f8f39d529a0bdb7b3091513e43afde inherit pub_methods_classbloom_1_1_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when an event is received.  <br /></td></tr>
+<tr class="separator:a22f8f39d529a0bdb7b3091513e43afde inherit pub_methods_classbloom_1_1_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab83ebdaed718b62ace71bd6877eeca8a inherit pub_methods_classbloom_1_1_object" id="r_ab83ebdaed718b62ace71bd6877eeca8a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8hpp.html#abaf665e52c9979a5f6eb9ecfce756efc">id_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbloom_1_1_object.html#ab83ebdaed718b62ace71bd6877eeca8a">GetID</a> () const</td></tr>
 <tr class="memdesc:ab83ebdaed718b62ace71bd6877eeca8a inherit pub_methods_classbloom_1_1_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the object's unique ID.  <br /></td></tr>
 <tr class="separator:ab83ebdaed718b62ace71bd6877eeca8a inherit pub_methods_classbloom_1_1_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3727fd5bab7f16866b1f5bf90d92330f inherit pub_methods_classbloom_1_1_object" id="r_a3727fd5bab7f16866b1f5bf90d92330f"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbloom_1_1_object.html#a3727fd5bab7f16866b1f5bf90d92330f">GetName</a> () const</td></tr>
+<tr class="memdesc:a3727fd5bab7f16866b1f5bf90d92330f inherit pub_methods_classbloom_1_1_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the object's name.  <br /></td></tr>
+<tr class="separator:a3727fd5bab7f16866b1f5bf90d92330f inherit pub_methods_classbloom_1_1_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad024fee23e84df72b3a028dd19bfba9 inherit pub_methods_classbloom_1_1_object" id="r_aad024fee23e84df72b3a028dd19bfba9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbloom_1_1_object.html#aad024fee23e84df72b3a028dd19bfba9">SetName</a> (const std::string &amp;name)</td></tr>
+<tr class="memdesc:aad024fee23e84df72b3a028dd19bfba9 inherit pub_methods_classbloom_1_1_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the object's name.  <br /></td></tr>
+<tr class="separator:aad024fee23e84df72b3a028dd19bfba9 inherit pub_methods_classbloom_1_1_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -178,18 +186,17 @@ glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><b>tintColor</b> = 
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pro_attribs_classbloom_1_1_object"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_classbloom_1_1_object')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classbloom_1_1_object.html">bloom::Object</a></td></tr>
-<tr class="memitem:ae999a5538f3bdac566d964013dde8b7d inherit pro_attribs_classbloom_1_1_object" id="r_ae999a5538f3bdac566d964013dde8b7d"><td class="memItemLeft" align="right" valign="top">
-<a class="el" href="classbloom_1_1render_1_1_devices.html">render::Devices</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>m_devices</b> = nullptr</td></tr>
-<tr class="memdesc:ae999a5538f3bdac566d964013dde8b7d inherit pro_attribs_classbloom_1_1_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the Vulkan device management object. <br /></td></tr>
-<tr class="separator:ae999a5538f3bdac566d964013dde8b7d inherit pro_attribs_classbloom_1_1_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classbloom_1_1_object"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_classbloom_1_1_object')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classbloom_1_1_object.html">bloom::Object</a></td></tr>
+<tr class="memitem:a2d5d96df2b3a38ca832fafb1831ba60a inherit pro_methods_classbloom_1_1_object" id="r_a2d5d96df2b3a38ca832fafb1831ba60a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbloom_1_1_object.html#a2d5d96df2b3a38ca832fafb1831ba60a">Object</a> (const <a class="el" href="core_8hpp.html#abaf665e52c9979a5f6eb9ecfce756efc">id_t</a> id)</td></tr>
+<tr class="memdesc:a2d5d96df2b3a38ca832fafb1831ba60a inherit pro_methods_classbloom_1_1_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new <a class="el" href="classbloom_1_1_object.html" title="Base class for all objects in the game world.">Object</a>.  <br /></td></tr>
+<tr class="separator:a2d5d96df2b3a38ca832fafb1831ba60a inherit pro_methods_classbloom_1_1_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents a renderable and potentially interactive object within the game world. </p>
 <p>The <a class="el" href="classbloom_1_1_actor.html" title="Represents a renderable and potentially interactive object within the game world.">Actor</a> class extends the <a class="el" href="classbloom_1_1_object.html" title="Base class for all objects in the game world.">Object</a> class, adding rendering capabilities. It serves as the base class for any object in the game that needs to be visually represented in the world. Actors manage their own textures, materials, and rendering properties. They participate in the game's update loop through the <code>Begin</code>, <code>Tick</code>, and <code>End</code> methods, allowing for dynamic behavior and animation. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a48c5292c424235db32b6a4ffd57789f6" name="a48c5292c424235db32b6a4ffd57789f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a48c5292c424235db32b6a4ffd57789f6">&#9670;&#160;</a></span>Actor()</h2>
+<a id="aefb10d782b8506934e6a8914590a526b" name="aefb10d782b8506934e6a8914590a526b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aefb10d782b8506934e6a8914590a526b">&#9670;&#160;</a></span>Actor()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -200,12 +207,8 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">bloom::Actor::Actor </td>
           <td>(</td>
-          <td class="paramtype">id_t</td>          <td class="paramname"><span class="paramname"><em>id</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype"><a class="el" href="core_8hpp.html#abaf665e52c9979a5f6eb9ecfce756efc">id_t</a></td>          <td class="paramname"><span class="paramname"><em>id</em></span></td><td>)</td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classbloom_1_1render_1_1_devices.html">render::Devices</a> *</td>          <td class="paramname"><span class="paramname"><em>devices</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -220,7 +223,6 @@ Additional Inherited Members</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">id</td><td>The unique identifier for this actor. This ID should be unique within the game world to avoid conflicts. </td></tr>
-    <tr><td class="paramname">devices</td><td>A pointer to the Vulkan device management object. This provides access to the Vulkan API and resources required for rendering. </td></tr>
   </table>
   </dd>
 </dl>
@@ -228,64 +230,6 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="abb09ecd4a3722ba2dbf298ce115514ec" name="abb09ecd4a3722ba2dbf298ce115514ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abb09ecd4a3722ba2dbf298ce115514ec">&#9670;&#160;</a></span>Begin()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void bloom::Actor::Begin </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Called at the beginning of the scene. </p>
-
-<p>Reimplemented from <a class="el" href="classbloom_1_1_object.html#a18d5a73479f99ed1fbb47b8b8b11acbc">bloom::Object</a>.</p>
-
-</div>
-</div>
-<a id="a2f6ebc7bb27c7ac2c72895fc4f5558bd" name="a2f6ebc7bb27c7ac2c72895fc4f5558bd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2f6ebc7bb27c7ac2c72895fc4f5558bd">&#9670;&#160;</a></span>End()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void bloom::Actor::End </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Called at the end of the scene. </p>
-
-<p>Reimplemented from <a class="el" href="classbloom_1_1_object.html#a7a7cc6230ab4a3ee158126469cf04352">bloom::Object</a>.</p>
-
-</div>
-</div>
 <a id="a74c1630af2eaa25f9a09c5ac854beedd" name="a74c1630af2eaa25f9a09c5ac854beedd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a74c1630af2eaa25f9a09c5ac854beedd">&#9670;&#160;</a></span>GetDescriptorSet()</h2>
 
@@ -362,8 +306,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a68a9c1ea7cbe1ce76783d334ce377e01" name="a68a9c1ea7cbe1ce76783d334ce377e01"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a68a9c1ea7cbe1ce76783d334ce377e01">&#9670;&#160;</a></span>Tick()</h2>
+<a id="ad216419e6ce4199d37541785740fb481" name="ad216419e6ce4199d37541785740fb481"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad216419e6ce4199d37541785740fb481">&#9670;&#160;</a></span>PropertiesPanel()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -372,28 +316,20 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void bloom::Actor::Tick </td>
+          <td class="memname">void bloom::Actor::PropertiesPanel </td>
           <td>(</td>
-          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>deltaTime</em></span></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Called every frame to update the object's state. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">deltaTime</td><td>The time elapsed since the last frame. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Reimplemented from <a class="el" href="classbloom_1_1_object.html#a010ab8fafcd25b7260ac0005d9d43091">bloom::Object</a>.</p>
+<p>Reimplemented from <a class="el" href="classbloom_1_1_object.html">bloom::Object</a>.</p>
 
 </div>
 </div>

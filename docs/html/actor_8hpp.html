@@ -90,6 +90,7 @@ $(function(){ initResizable(false); });
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#namespaces">Namespaces</a> &#124;
 <a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle"><div class="title">actor.hpp File Reference</div></div>
@@ -100,6 +101,8 @@ $(function(){ initResizable(false); });
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="object_8hpp_source.html">object.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="descriptors_8hpp_source.html">src/render/descriptors.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="model_8hpp_source.html">src/render/model.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="texture_8hpp_source.html">src/render/texture.hpp</a>&quot;</code><br />
 </div>
 <p><a href="actor_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -107,6 +110,12 @@ $(function(){ initResizable(false); });
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbloom_1_1_actor.html">bloom::Actor</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a renderable and potentially interactive object within the game world.  <a href="classbloom_1_1_actor.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebloom.html">bloom</a></td></tr>
+<tr class="memdesc:namespacebloom"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the core classes and functions for the bloom engine. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
@@ -128,7 +137,7 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a0a6a92f666ce85e7aaa009b4a2af96ee" id="r_a0a6a92f666ce85e7aaa009b4a2af96ee"><td class="memItemLeft" align="right" valign="top">typedef std::unordered_map&lt; id_t, std::shared_ptr&lt; <a class="el" href="classbloom_1_1_actor.html">Actor</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a6a92f666ce85e7aaa009b4a2af96ee">bloom::ActorMap</a></td></tr>
+<tr class="memitem:a0a6a92f666ce85e7aaa009b4a2af96ee" id="r_a0a6a92f666ce85e7aaa009b4a2af96ee"><td class="memItemLeft" align="right" valign="top">typedef std::unordered_map&lt; <a class="el" href="core_8hpp.html#abaf665e52c9979a5f6eb9ecfce756efc">id_t</a>, std::shared_ptr&lt; <a class="el" href="classbloom_1_1_actor.html">Actor</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebloom.html#a0a6a92f666ce85e7aaa009b4a2af96ee">bloom::ActorMap</a></td></tr>
 <tr class="separator:a0a6a92f666ce85e7aaa009b4a2af96ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -167,22 +176,6 @@ Typedefs</h2></td></tr>
 
 <p>Filepath for a simple RMO texture that is used as fallback if no texture is sent. </p>
 <p>This texture has a roughness of 0.5f, a metalic of 0.0f and an Ambient Occlusion of 1.0f This will be the default PBR settings for every material </p>
-
-</div>
-</div>
-<h2 class="groupheader">Typedef Documentation</h2>
-<a id="a0a6a92f666ce85e7aaa009b4a2af96ee" name="a0a6a92f666ce85e7aaa009b4a2af96ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0a6a92f666ce85e7aaa009b4a2af96ee">&#9670;&#160;</a></span>ActorMap</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef std::unordered_map&lt;id_t,std::shared_ptr&lt;Actor&gt; &gt; <a class="el" href="#a0a6a92f666ce85e7aaa009b4a2af96ee">bloom::ActorMap</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>A map of Actor IDs to shared pointers of Actors. This map is used to store and manage all active actors in the game world. The ID is used as the key for efficient lookup and retrieval of individual actors. </p>
 
 </div>
 </div>

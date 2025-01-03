@@ -97,90 +97,108 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="devices_8hpp.html">devices.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;<a class="code" href="bloom__header_8hpp.html">bloom_header.hpp</a>&gt;</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">namespace </span>bloom::render {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacebloom_1_1render.html">bloom::render</a> {</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="foldopen" id="foldopen00016" data-start="{" data-end="};">
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classbloom_1_1render_1_1_swap_chain.html">   16</a></span><span class="keyword">class </span><a class="code hl_class" href="classbloom_1_1render_1_1_swap_chain.html">SwapChain</a> {</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> MAX_FRAMES_IN_FLIGHT = 2;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <a class="code hl_class" href="classbloom_1_1render_1_1_swap_chain.html">SwapChain</a>(<a class="code hl_class" href="classbloom_1_1render_1_1_devices.html">Devices</a> &amp;deviceRef, VkExtent2D windowExtent);</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  <a class="code hl_class" href="classbloom_1_1render_1_1_swap_chain.html">SwapChain</a>(<a class="code hl_class" href="classbloom_1_1render_1_1_devices.html">Devices</a> &amp;deviceRef, VkExtent2D windowExtent, std::shared_ptr&lt;SwapChain&gt; previous);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  <a class="code hl_class" href="classbloom_1_1render_1_1_swap_chain.html">~SwapChain</a>();</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  <a class="code hl_class" href="classbloom_1_1render_1_1_swap_chain.html">SwapChain</a>(<span class="keyword">const</span> <a class="code hl_class" href="classbloom_1_1render_1_1_swap_chain.html">SwapChain</a> &amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <a class="code hl_class" href="classbloom_1_1render_1_1_swap_chain.html">SwapChain</a>&amp; operator=(<span class="keyword">const</span> <a class="code hl_class" href="classbloom_1_1render_1_1_swap_chain.html">SwapChain</a> &amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  VkFramebuffer GetFrameBuffer(<span class="keywordtype">int</span> index) { <span class="keywordflow">return</span> m_swapChainFramebuffers[index]; }</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  VkRenderPass GetRenderPass() { <span class="keywordflow">return</span> m_renderPass; }</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  VkImageView GetImageView(<span class="keywordtype">int</span> index) { <span class="keywordflow">return</span> m_swapChainImageViews[index]; }</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  <span class="keywordtype">size_t</span> ImageCount() { <span class="keywordflow">return</span> m_swapChainImages.size(); }</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  VkFormat GetSwapChainImageFormat() { <span class="keywordflow">return</span> m_swapChainImageFormat; }</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  VkExtent2D GetSwapChainExtent() { <span class="keywordflow">return</span> m_swapChainExtent; }</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  uint32_t width() { <span class="keywordflow">return</span> m_swapChainExtent.width; }</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  uint32_t height() { <span class="keywordflow">return</span> m_swapChainExtent.height; }</div>
+<div class="foldopen" id="foldopen00024" data-start="{" data-end="};">
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classbloom_1_1render_1_1_swap_chain.html">   24</a></span><span class="keyword">class </span><a class="code hl_class" href="classbloom_1_1render_1_1_swap_chain.html">SwapChain</a> {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="classbloom_1_1render_1_1_swap_chain.html#abc12f5bfbd308fc9fa4401dcd5129e2e">   26</a></span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="classbloom_1_1render_1_1_swap_chain.html#abc12f5bfbd308fc9fa4401dcd5129e2e">MAX_FRAMES_IN_FLIGHT</a> = 2; </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  <a class="code hl_class" href="classbloom_1_1render_1_1_swap_chain.html">SwapChain</a>(<a class="code hl_class" href="classbloom_1_1render_1_1_devices.html">Devices</a> &amp;deviceRef, VkExtent2D windowExtent);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  <a class="code hl_class" href="classbloom_1_1render_1_1_swap_chain.html">SwapChain</a>(<a class="code hl_class" href="classbloom_1_1render_1_1_devices.html">Devices</a> &amp;deviceRef, VkExtent2D windowExtent, std::shared_ptr&lt;SwapChain&gt; previous);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  <a class="code hl_class" href="classbloom_1_1render_1_1_swap_chain.html">~SwapChain</a>();</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  <span class="comment">// Copy constructors</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  <a class="code hl_class" href="classbloom_1_1render_1_1_swap_chain.html">SwapChain</a>(<span class="keyword">const</span> <a class="code hl_class" href="classbloom_1_1render_1_1_swap_chain.html">SwapChain</a> &amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <a class="code hl_class" href="classbloom_1_1render_1_1_swap_chain.html">SwapChain</a>&amp; operator=(<span class="keyword">const</span> <a class="code hl_class" href="classbloom_1_1render_1_1_swap_chain.html">SwapChain</a> &amp;) = <span class="keyword">delete</span>;</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <span class="keywordtype">float</span> ExtentAspectRatio() {</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(m_swapChainExtent.width) / <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(m_swapChainExtent.height);</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  }</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  VkFormat FindDepthFormat();</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  VkResult AcquireNextImage(uint32_t *imageIndex);</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  VkResult SubmitCommandBuffers(<span class="keyword">const</span> VkCommandBuffer *buffers, uint32_t *imageIndex);</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="keywordtype">bool</span> compareSwapFormats(<span class="keyword">const</span> <a class="code hl_class" href="classbloom_1_1render_1_1_swap_chain.html">SwapChain</a>&amp; swapChain)<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordflow">return</span> swapChain.m_swapChainDepthFormat == m_swapChainDepthFormat &amp;&amp;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>           swapChain.m_swapChainImageFormat == m_swapChainImageFormat;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  }</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <span class="keywordtype">void</span> Init();</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keywordtype">void</span> CreateSwapChain();</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="keywordtype">void</span> CreateImageViews();</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <span class="keywordtype">void</span> CreateDepthResources();</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <span class="keywordtype">void</span> CreateRenderPass();</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="keywordtype">void</span> CreateFramebuffers();</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="keywordtype">void</span> CreateSyncObjects();</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <span class="comment">// Helper functions</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  VkSurfaceFormatKHR ChooseSwapSurfaceFormat(</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>      <span class="keyword">const</span> std::vector&lt;VkSurfaceFormatKHR&gt; &amp;availableFormats);</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  VkPresentModeKHR ChooseSwapPresentMode(</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>      <span class="keyword">const</span> std::vector&lt;VkPresentModeKHR&gt; &amp;availablePresentModes);</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  VkExtent2D ChooseSwapExtent(<span class="keyword">const</span> VkSurfaceCapabilitiesKHR &amp;capabilities);</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  VkFormat m_swapChainImageFormat;</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  VkFormat m_swapChainDepthFormat;</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  VkExtent2D m_swapChainExtent;</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  std::vector&lt;VkFramebuffer&gt; m_swapChainFramebuffers;</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  VkRenderPass m_renderPass;</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  std::vector&lt;VkImage&gt; m_depthImages;</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  std::vector&lt;VkDeviceMemory&gt; m_depthImageMemories;</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  std::vector&lt;VkImageView&gt; m_depthImageViews;</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  std::vector&lt;VkImage&gt; m_swapChainImages;</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  std::vector&lt;VkImageView&gt; m_swapChainImageViews;</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  <a class="code hl_class" href="classbloom_1_1render_1_1_devices.html">Devices</a> &amp;m_device;</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  VkExtent2D m_windowExtent;</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  VkSwapchainKHR m_swapChain;</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  std::shared_ptr&lt;SwapChain&gt; m_oldSwapChain;</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  std::vector&lt;VkSemaphore&gt; m_imageAvailableSemaphores;</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  std::vector&lt;VkSemaphore&gt; m_renderFinishedSemaphores;</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  std::vector&lt;VkFence&gt; m_inFlightFences;</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  std::vector&lt;VkFence&gt; m_imagesInFlight;</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  <span class="keywordtype">size_t</span> m_currentFrame = 0;</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>};</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <span class="comment">// region Getters</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="classbloom_1_1render_1_1_swap_chain.html#a14c37544d58c948a6d4e2b9ae598870e">   42</a></span>  VkFramebuffer <a class="code hl_function" href="classbloom_1_1render_1_1_swap_chain.html#a14c37544d58c948a6d4e2b9ae598870e">GetFrameBuffer</a>(<span class="keywordtype">int</span> index)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_swapChainFramebuffers[index]; }</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classbloom_1_1render_1_1_swap_chain.html#a2a74e3ee6642535399b80dba56e1d0de">   47</a></span>  VkRenderPass <a class="code hl_function" href="classbloom_1_1render_1_1_swap_chain.html#a2a74e3ee6642535399b80dba56e1d0de">GetRenderPass</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_renderPass; }</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="classbloom_1_1render_1_1_swap_chain.html#ae38baccbbda4c1c41af0d8be66a1f61e">   53</a></span>  VkImageView <a class="code hl_function" href="classbloom_1_1render_1_1_swap_chain.html#ae38baccbbda4c1c41af0d8be66a1f61e">GetImageView</a>(<span class="keywordtype">int</span> index)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_swapChainImageViews[index]; }</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="classbloom_1_1render_1_1_swap_chain.html#a43888a3c73f0c21031f70c1e0302eddd">   58</a></span>  <span class="keywordtype">size_t</span> <a class="code hl_function" href="classbloom_1_1render_1_1_swap_chain.html#a43888a3c73f0c21031f70c1e0302eddd">ImageCount</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_swapChainImages.size(); }</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="classbloom_1_1render_1_1_swap_chain.html#a2ff148c8e1611fa7cd708496410f977b">   63</a></span>  VkFormat <a class="code hl_function" href="classbloom_1_1render_1_1_swap_chain.html#a2ff148c8e1611fa7cd708496410f977b">GetSwapChainImageFormat</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_swapChainImageFormat; }</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="classbloom_1_1render_1_1_swap_chain.html#a622ed834f1d2167efc39c45d09228915">   68</a></span>  VkExtent2D <a class="code hl_function" href="classbloom_1_1render_1_1_swap_chain.html#a622ed834f1d2167efc39c45d09228915">GetSwapChainExtent</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_swapChainExtent; }</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="classbloom_1_1render_1_1_swap_chain.html#a22d7d19a16ddebed3df17853c2ffd75f">   73</a></span>  uint32_t <a class="code hl_function" href="classbloom_1_1render_1_1_swap_chain.html#a22d7d19a16ddebed3df17853c2ffd75f">Width</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_swapChainExtent.width; }</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="classbloom_1_1render_1_1_swap_chain.html#a40bd5a1765776ac84f82f6b832d66c01">   78</a></span>  uint32_t <a class="code hl_function" href="classbloom_1_1render_1_1_swap_chain.html#a40bd5a1765776ac84f82f6b832d66c01">Height</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_swapChainExtent.height; }</div>
+<div class="foldopen" id="foldopen00083" data-start="{" data-end="}">
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="classbloom_1_1render_1_1_swap_chain.html#ad4d0e3ba566ffa010bc9fc5c38c8a947">   83</a></span>  <span class="keywordtype">float</span> <a class="code hl_function" href="classbloom_1_1render_1_1_swap_chain.html#ad4d0e3ba566ffa010bc9fc5c38c8a947">ExtentAspectRatio</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(m_swapChainExtent.width) / <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(m_swapChainExtent.height);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  }</div>
 </div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>}  <span class="comment">// namespace lve</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  <span class="comment">// region Functions</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  VkFormat <a class="code hl_function" href="classbloom_1_1render_1_1_swap_chain.html#a213590ce50f0174cda76b7a9cb44b3da">FindDepthFormat</a>();</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  VkResult <a class="code hl_function" href="classbloom_1_1render_1_1_swap_chain.html#a99b800b12957dee7fcbb01c7f028e9c1">AcquireNextImage</a>(uint32_t *imageIndex);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  VkResult <a class="code hl_function" href="classbloom_1_1render_1_1_swap_chain.html#a303dcef852589ac18f833189491729fc">SubmitCommandBuffers</a>(<span class="keyword">const</span> VkCommandBuffer *buffers, uint32_t *imageIndex);</div>
+<div class="foldopen" id="foldopen00111" data-start="{" data-end="}">
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="classbloom_1_1render_1_1_swap_chain.html#a262fa775ba52b1275034ef30951de928">  111</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classbloom_1_1render_1_1_swap_chain.html#a262fa775ba52b1275034ef30951de928">CompareSwapFormats</a>(<span class="keyword">const</span> <a class="code hl_class" href="classbloom_1_1render_1_1_swap_chain.html">SwapChain</a>&amp; swapChain)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="keywordflow">return</span> swapChain.m_swapChainDepthFormat == m_swapChainDepthFormat &amp;&amp;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>           swapChain.m_swapChainImageFormat == m_swapChainImageFormat;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  }</div>
+</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>  <span class="keywordtype">void</span> Init();</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>  <span class="keywordtype">void</span> CreateSwapChain();</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>  <span class="keywordtype">void</span> CreateImageViews();</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>  <span class="keywordtype">void</span> CreateDepthResources();</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>  <span class="keywordtype">void</span> CreateRenderPass();</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>  <span class="keywordtype">void</span> CreateFramebuffers();</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>  <span class="keywordtype">void</span> CreateSyncObjects();</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>  VkSurfaceFormatKHR ChooseSwapSurfaceFormat(</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>      <span class="keyword">const</span> std::vector&lt;VkSurfaceFormatKHR&gt; &amp;availableFormats);</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>  VkPresentModeKHR ChooseSwapPresentMode(</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>      <span class="keyword">const</span> std::vector&lt;VkPresentModeKHR&gt; &amp;availablePresentModes);</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>  VkExtent2D ChooseSwapExtent(<span class="keyword">const</span> VkSurfaceCapabilitiesKHR &amp;capabilities);</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>  VkFormat m_swapChainImageFormat;</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>  VkFormat m_swapChainDepthFormat;</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>  VkExtent2D m_swapChainExtent;</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>  std::vector&lt;VkFramebuffer&gt; m_swapChainFramebuffers;</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>  VkRenderPass m_renderPass;</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>  std::vector&lt;VkImage&gt; m_depthImages;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>  std::vector&lt;VkDeviceMemory&gt; m_depthImageMemories;</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>  std::vector&lt;VkImageView&gt; m_depthImageViews;</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>  std::vector&lt;VkImage&gt; m_swapChainImages;</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>  std::vector&lt;VkImageView&gt; m_swapChainImageViews;</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>  <a class="code hl_class" href="classbloom_1_1render_1_1_devices.html">Devices</a> &amp;m_device;</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>  VkExtent2D m_windowExtent;</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span> </div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>  VkSwapchainKHR m_swapChain;</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>  std::shared_ptr&lt;SwapChain&gt; m_oldSwapChain;</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span> </div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>  std::vector&lt;VkSemaphore&gt; m_imageAvailableSemaphores;</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>  std::vector&lt;VkSemaphore&gt; m_renderFinishedSemaphores;</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>  std::vector&lt;VkFence&gt; m_inFlightFences;</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>  std::vector&lt;VkFence&gt; m_imagesInFlight;</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>  <span class="keywordtype">size_t</span> m_currentFrame = 0;</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>};</div>
+</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>}</div>
 <div class="ttc" id="abloom__header_8hpp_html"><div class="ttname"><a href="bloom__header_8hpp.html">bloom_header.hpp</a></div><div class="ttdoc">Precompiled header.</div></div>
-<div class="ttc" id="aclassbloom_1_1render_1_1_devices_html"><div class="ttname"><a href="classbloom_1_1render_1_1_devices.html">bloom::render::Devices</a></div><div class="ttdef"><b>Definition</b> devices.hpp:30</div></div>
-<div class="ttc" id="aclassbloom_1_1render_1_1_swap_chain_html"><div class="ttname"><a href="classbloom_1_1render_1_1_swap_chain.html">bloom::render::SwapChain</a></div><div class="ttdef"><b>Definition</b> swap_chain.hpp:16</div></div>
+<div class="ttc" id="aclassbloom_1_1render_1_1_devices_html"><div class="ttname"><a href="classbloom_1_1render_1_1_devices.html">bloom::render::Devices</a></div><div class="ttdoc">Manages Vulkan devices and related resources.</div><div class="ttdef"><b>Definition</b> devices.hpp:57</div></div>
+<div class="ttc" id="aclassbloom_1_1render_1_1_swap_chain_html"><div class="ttname"><a href="classbloom_1_1render_1_1_swap_chain.html">bloom::render::SwapChain</a></div><div class="ttdoc">Manages the Vulkan swap chain and related resources.</div><div class="ttdef"><b>Definition</b> swap_chain.hpp:24</div></div>
+<div class="ttc" id="aclassbloom_1_1render_1_1_swap_chain_html_a14c37544d58c948a6d4e2b9ae598870e"><div class="ttname"><a href="classbloom_1_1render_1_1_swap_chain.html#a14c37544d58c948a6d4e2b9ae598870e">bloom::render::SwapChain::GetFrameBuffer</a></div><div class="ttdeci">VkFramebuffer GetFrameBuffer(int index) const</div><div class="ttdoc">Gets the framebuffer at the specified index.</div><div class="ttdef"><b>Definition</b> swap_chain.hpp:42</div></div>
+<div class="ttc" id="aclassbloom_1_1render_1_1_swap_chain_html_a213590ce50f0174cda76b7a9cb44b3da"><div class="ttname"><a href="classbloom_1_1render_1_1_swap_chain.html#a213590ce50f0174cda76b7a9cb44b3da">bloom::render::SwapChain::FindDepthFormat</a></div><div class="ttdeci">VkFormat FindDepthFormat()</div><div class="ttdoc">Finds the depth format for the swap chain.</div><div class="ttdef"><b>Definition</b> swap_chain.cpp:413</div></div>
+<div class="ttc" id="aclassbloom_1_1render_1_1_swap_chain_html_a22d7d19a16ddebed3df17853c2ffd75f"><div class="ttname"><a href="classbloom_1_1render_1_1_swap_chain.html#a22d7d19a16ddebed3df17853c2ffd75f">bloom::render::SwapChain::Width</a></div><div class="ttdeci">uint32_t Width() const</div><div class="ttdoc">Gets the width of the swap chain extent.</div><div class="ttdef"><b>Definition</b> swap_chain.hpp:73</div></div>
+<div class="ttc" id="aclassbloom_1_1render_1_1_swap_chain_html_a262fa775ba52b1275034ef30951de928"><div class="ttname"><a href="classbloom_1_1render_1_1_swap_chain.html#a262fa775ba52b1275034ef30951de928">bloom::render::SwapChain::CompareSwapFormats</a></div><div class="ttdeci">bool CompareSwapFormats(const SwapChain &amp;swapChain) const</div><div class="ttdoc">Compares the formats of two swap chains.</div><div class="ttdef"><b>Definition</b> swap_chain.hpp:111</div></div>
+<div class="ttc" id="aclassbloom_1_1render_1_1_swap_chain_html_a2a74e3ee6642535399b80dba56e1d0de"><div class="ttname"><a href="classbloom_1_1render_1_1_swap_chain.html#a2a74e3ee6642535399b80dba56e1d0de">bloom::render::SwapChain::GetRenderPass</a></div><div class="ttdeci">VkRenderPass GetRenderPass() const</div><div class="ttdoc">Gets the render pass.</div><div class="ttdef"><b>Definition</b> swap_chain.hpp:47</div></div>
+<div class="ttc" id="aclassbloom_1_1render_1_1_swap_chain_html_a2ff148c8e1611fa7cd708496410f977b"><div class="ttname"><a href="classbloom_1_1render_1_1_swap_chain.html#a2ff148c8e1611fa7cd708496410f977b">bloom::render::SwapChain::GetSwapChainImageFormat</a></div><div class="ttdeci">VkFormat GetSwapChainImageFormat() const</div><div class="ttdoc">Gets the format of the swap chain images.</div><div class="ttdef"><b>Definition</b> swap_chain.hpp:63</div></div>
+<div class="ttc" id="aclassbloom_1_1render_1_1_swap_chain_html_a303dcef852589ac18f833189491729fc"><div class="ttname"><a href="classbloom_1_1render_1_1_swap_chain.html#a303dcef852589ac18f833189491729fc">bloom::render::SwapChain::SubmitCommandBuffers</a></div><div class="ttdeci">VkResult SubmitCommandBuffers(const VkCommandBuffer *buffers, uint32_t *imageIndex)</div><div class="ttdoc">Submits the command buffers for rendering.</div><div class="ttdef"><b>Definition</b> swap_chain.cpp:74</div></div>
+<div class="ttc" id="aclassbloom_1_1render_1_1_swap_chain_html_a40bd5a1765776ac84f82f6b832d66c01"><div class="ttname"><a href="classbloom_1_1render_1_1_swap_chain.html#a40bd5a1765776ac84f82f6b832d66c01">bloom::render::SwapChain::Height</a></div><div class="ttdeci">uint32_t Height() const</div><div class="ttdoc">Gets the height of the swap chain extent.</div><div class="ttdef"><b>Definition</b> swap_chain.hpp:78</div></div>
+<div class="ttc" id="aclassbloom_1_1render_1_1_swap_chain_html_a43888a3c73f0c21031f70c1e0302eddd"><div class="ttname"><a href="classbloom_1_1render_1_1_swap_chain.html#a43888a3c73f0c21031f70c1e0302eddd">bloom::render::SwapChain::ImageCount</a></div><div class="ttdeci">size_t ImageCount() const</div><div class="ttdoc">Gets the number of images in the swap chain.</div><div class="ttdef"><b>Definition</b> swap_chain.hpp:58</div></div>
+<div class="ttc" id="aclassbloom_1_1render_1_1_swap_chain_html_a622ed834f1d2167efc39c45d09228915"><div class="ttname"><a href="classbloom_1_1render_1_1_swap_chain.html#a622ed834f1d2167efc39c45d09228915">bloom::render::SwapChain::GetSwapChainExtent</a></div><div class="ttdeci">VkExtent2D GetSwapChainExtent() const</div><div class="ttdoc">Gets the extent of the swap chain.</div><div class="ttdef"><b>Definition</b> swap_chain.hpp:68</div></div>
+<div class="ttc" id="aclassbloom_1_1render_1_1_swap_chain_html_a99b800b12957dee7fcbb01c7f028e9c1"><div class="ttname"><a href="classbloom_1_1render_1_1_swap_chain.html#a99b800b12957dee7fcbb01c7f028e9c1">bloom::render::SwapChain::AcquireNextImage</a></div><div class="ttdeci">VkResult AcquireNextImage(uint32_t *imageIndex)</div><div class="ttdoc">Acquires the next image in the swap chain.</div><div class="ttdef"><b>Definition</b> swap_chain.cpp:55</div></div>
+<div class="ttc" id="aclassbloom_1_1render_1_1_swap_chain_html_abc12f5bfbd308fc9fa4401dcd5129e2e"><div class="ttname"><a href="classbloom_1_1render_1_1_swap_chain.html#abc12f5bfbd308fc9fa4401dcd5129e2e">bloom::render::SwapChain::MAX_FRAMES_IN_FLIGHT</a></div><div class="ttdeci">static constexpr int MAX_FRAMES_IN_FLIGHT</div><div class="ttdoc">Maximum number of chains.</div><div class="ttdef"><b>Definition</b> swap_chain.hpp:26</div></div>
+<div class="ttc" id="aclassbloom_1_1render_1_1_swap_chain_html_ad4d0e3ba566ffa010bc9fc5c38c8a947"><div class="ttname"><a href="classbloom_1_1render_1_1_swap_chain.html#ad4d0e3ba566ffa010bc9fc5c38c8a947">bloom::render::SwapChain::ExtentAspectRatio</a></div><div class="ttdeci">float ExtentAspectRatio() const</div><div class="ttdoc">Gets the aspect ratio of the swap chain extent.</div><div class="ttdef"><b>Definition</b> swap_chain.hpp:83</div></div>
+<div class="ttc" id="aclassbloom_1_1render_1_1_swap_chain_html_ae38baccbbda4c1c41af0d8be66a1f61e"><div class="ttname"><a href="classbloom_1_1render_1_1_swap_chain.html#ae38baccbbda4c1c41af0d8be66a1f61e">bloom::render::SwapChain::GetImageView</a></div><div class="ttdeci">VkImageView GetImageView(int index) const</div><div class="ttdoc">Gets the image view at the specified index.</div><div class="ttdef"><b>Definition</b> swap_chain.hpp:53</div></div>
 <div class="ttc" id="adevices_8hpp_html"><div class="ttname"><a href="devices_8hpp.html">devices.hpp</a></div><div class="ttdoc">Vulkan Validation Layers file.</div></div>
+<div class="ttc" id="anamespacebloom_1_1render_html"><div class="ttname"><a href="namespacebloom_1_1render.html">bloom::render</a></div><div class="ttdoc">Contains classes and functions related to rendering in the bloom engine.</div><div class="ttdef"><b>Definition</b> engine.hpp:55</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

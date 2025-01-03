@@ -1,0 +1,32 @@
+\doxysection{layer.\+hpp}
+\hypertarget{layer_8hpp_source}{}\label{layer_8hpp_source}\index{C:/Users/xgoni/bloom/bloom/src/layers/layer.hpp@{C:/Users/xgoni/bloom/bloom/src/layers/layer.hpp}}
+\mbox{\hyperlink{layer_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{frame__info_8hpp}{src/render/frame\_info.hpp}}"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacebloom}{bloom}}\ \{}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }BLOOM\_API\ \mbox{\hyperlink{classbloom_1_1_layer}{Layer}}\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00016\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classbloom_1_1_layer}{Layer}}(\textcolor{keyword}{const}\ std::string\&\ name\ =\ \textcolor{stringliteral}{"{}Unnamed\ Layer"{}})\ :\ m\_debugName(name)\ \{\}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classbloom_1_1_layer}{\string~Layer}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00020\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classbloom_1_1_layer_a3c942f0996f3e391a2864e7714926969}{OnAttach}}()\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00021\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classbloom_1_1_layer_aa88a4df7e0c94444d4ed1a8eaf9b2072}{OnBegin}}()\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00022\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classbloom_1_1_layer_a1b2941d7a20120de4b1a6f7a9b48af61}{OnTick}}(\textcolor{keywordtype}{float}\ deltaTime)\ =\ 0;\ }
+\DoxyCodeLine{00023\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classbloom_1_1_layer_ac518d4fe56b7a72190caf022f16676ee}{OnRender}}(\mbox{\hyperlink{structbloom_1_1render_1_1_frame_info}{render::FrameInfo}}\ frameInfo)\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00024\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classbloom_1_1_layer_aa65fe0ffcdf4f8baf22a17f1c5f2b56d}{OnDetach}}()\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00025\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classbloom_1_1_layer_a5b88eef8d51b5eeaa234e0eb20fbd307}{OnEvent}}(\mbox{\hyperlink{classbloom_1_1_event}{Event}}\&\ e)\ =\ 0;\ }
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \textcolor{keyword}{const}\ std::string\&\ GetName()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_debugName;\ \}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00030\ \ \ std::string\ m\_debugName;}
+\DoxyCodeLine{00031\ \};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \}}
+
+\end{DoxyCode}

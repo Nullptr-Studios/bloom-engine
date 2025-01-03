@@ -94,30 +94,33 @@ $(function(){ initResizable(false); });
 <a href="editor__camera_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="camera_8hpp.html">src/objects/camera.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">namespace </span>wanderer {</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="foldopen" id="foldopen00014" data-start="{" data-end="};">
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="classwanderer_1_1_editor_camera.html">   14</a></span><span class="keyword">class </span><a class="code hl_class" href="classwanderer_1_1_editor_camera.html">EditorCamera</a> : <span class="keyword">public</span> <a class="code hl_class" href="classbloom_1_1_camera.html">bloom::Camera</a> {</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  <a class="code hl_class" href="classwanderer_1_1_editor_camera.html">EditorCamera</a>(<span class="keyword">const</span> id_t <span class="keywordtype">id</span>, <a class="code hl_class" href="classbloom_1_1render_1_1_devices.html">bloom::render::Devices</a>* devices) : <a class="code hl_function" href="classbloom_1_1_camera.html#a55653f8b0847d95366a26c57e4309a78">Camera</a>(<span class="keywordtype">id</span>, devices) {}</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classwanderer_1_1_editor_camera.html#a24a2839b7ce2cc98000a94f7bcd41b5f">Tick</a>(<span class="keywordtype">float</span> deltaTime) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  <span class="keywordtype">void</span> OnEvent(<span class="keyword">const</span> <a class="code hl_class" href="classbloom_1_1_event.html">bloom::Event</a> &amp;e);</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  glm::vec2 m_movement = glm::vec2(0.0f);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  <span class="keywordtype">float</span> speed = 1.0f;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>};</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;imgui.h&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace </span>wanderer {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="};">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="classwanderer_1_1_editor_camera.html">   15</a></span><span class="keyword">class </span><a class="code hl_class" href="classwanderer_1_1_editor_camera.html">EditorCamera</a> : <span class="keyword">public</span> <a class="code hl_class" href="classbloom_1_1_camera.html">bloom::Camera</a> {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <span class="keyword">explicit</span> <a class="code hl_class" href="classwanderer_1_1_editor_camera.html">EditorCamera</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="core_8hpp.html#abaf665e52c9979a5f6eb9ecfce756efc">id_t</a> <span class="keywordtype">id</span>) : Camera(<span class="keywordtype">id</span>) {}</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classwanderer_1_1_editor_camera.html#aa46d543424aa7d0214c8e1ab7c92bd28">OnBegin</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classwanderer_1_1_editor_camera.html#a968d3e1aede5413abeb562b77d16b7aa">OnTick</a>(<span class="keywordtype">float</span> deltaTime) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classwanderer_1_1_editor_camera.html#a52c6b3da873fb3b94eae8f23a1baf64b">OnEvent</a>(<a class="code hl_class" href="classbloom_1_1_event.html">bloom::Event</a> &amp;e) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  glm::vec2 m_movement = glm::vec2(0.0f);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  <span class="keywordtype">float</span> speed = 1.0f;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>};</div>
 </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>}</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>}</div>
 <div class="ttc" id="acamera_8hpp_html"><div class="ttname"><a href="camera_8hpp.html">camera.hpp</a></div><div class="ttdoc">This file contains the declaration for the Base Camera class.</div></div>
 <div class="ttc" id="aclassbloom_1_1_camera_html"><div class="ttname"><a href="classbloom_1_1_camera.html">bloom::Camera</a></div><div class="ttdoc">Represents a camera within the game world, providing a view and projection for rendering.</div><div class="ttdef"><b>Definition</b> camera.hpp:33</div></div>
-<div class="ttc" id="aclassbloom_1_1_camera_html_a55653f8b0847d95366a26c57e4309a78"><div class="ttname"><a href="classbloom_1_1_camera.html#a55653f8b0847d95366a26c57e4309a78">bloom::Camera::Camera</a></div><div class="ttdeci">Camera(const id_t id, render::Devices *devices)</div><div class="ttdoc">Constructs a new Camera object.</div><div class="ttdef"><b>Definition</b> camera.hpp:41</div></div>
 <div class="ttc" id="aclassbloom_1_1_event_html"><div class="ttname"><a href="classbloom_1_1_event.html">bloom::Event</a></div><div class="ttdoc">Abstract base class for all events in the Bloom Engine.</div><div class="ttdef"><b>Definition</b> event.hpp:84</div></div>
-<div class="ttc" id="aclassbloom_1_1render_1_1_devices_html"><div class="ttname"><a href="classbloom_1_1render_1_1_devices.html">bloom::render::Devices</a></div><div class="ttdef"><b>Definition</b> devices.hpp:30</div></div>
-<div class="ttc" id="aclasswanderer_1_1_editor_camera_html"><div class="ttname"><a href="classwanderer_1_1_editor_camera.html">wanderer::EditorCamera</a></div><div class="ttdef"><b>Definition</b> editor_camera.hpp:14</div></div>
-<div class="ttc" id="aclasswanderer_1_1_editor_camera_html_a24a2839b7ce2cc98000a94f7bcd41b5f"><div class="ttname"><a href="classwanderer_1_1_editor_camera.html#a24a2839b7ce2cc98000a94f7bcd41b5f">wanderer::EditorCamera::Tick</a></div><div class="ttdeci">void Tick(float deltaTime) override</div><div class="ttdoc">Called every frame to update the object's state.</div><div class="ttdef"><b>Definition</b> editor_camera.cpp:6</div></div>
+<div class="ttc" id="aclasswanderer_1_1_editor_camera_html"><div class="ttname"><a href="classwanderer_1_1_editor_camera.html">wanderer::EditorCamera</a></div><div class="ttdef"><b>Definition</b> editor_camera.hpp:15</div></div>
+<div class="ttc" id="aclasswanderer_1_1_editor_camera_html_a52c6b3da873fb3b94eae8f23a1baf64b"><div class="ttname"><a href="classwanderer_1_1_editor_camera.html#a52c6b3da873fb3b94eae8f23a1baf64b">wanderer::EditorCamera::OnEvent</a></div><div class="ttdeci">void OnEvent(bloom::Event &amp;e) override</div><div class="ttdoc">Called when an event is received.</div><div class="ttdef"><b>Definition</b> editor_camera.cpp:16</div></div>
+<div class="ttc" id="aclasswanderer_1_1_editor_camera_html_a968d3e1aede5413abeb562b77d16b7aa"><div class="ttname"><a href="classwanderer_1_1_editor_camera.html#a968d3e1aede5413abeb562b77d16b7aa">wanderer::EditorCamera::OnTick</a></div><div class="ttdeci">void OnTick(float deltaTime) override</div><div class="ttdoc">Called every frame to update the object's state.</div><div class="ttdef"><b>Definition</b> editor_camera.cpp:10</div></div>
+<div class="ttc" id="aclasswanderer_1_1_editor_camera_html_aa46d543424aa7d0214c8e1ab7c92bd28"><div class="ttname"><a href="classwanderer_1_1_editor_camera.html#aa46d543424aa7d0214c8e1ab7c92bd28">wanderer::EditorCamera::OnBegin</a></div><div class="ttdeci">void OnBegin() override</div><div class="ttdoc">Called at the beginning of the scene.</div><div class="ttdef"><b>Definition</b> editor_camera.cpp:6</div></div>
+<div class="ttc" id="acore_8hpp_html_abaf665e52c9979a5f6eb9ecfce756efc"><div class="ttname"><a href="core_8hpp.html#abaf665e52c9979a5f6eb9ecfce756efc">id_t</a></div><div class="ttdeci">unsigned short id_t</div><div class="ttdoc">Typedef for object IDs.</div><div class="ttdef"><b>Definition</b> core.hpp:35</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

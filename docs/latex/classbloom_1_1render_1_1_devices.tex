@@ -1,5 +1,14 @@
 \doxysection{bloom\+::render\+::Devices Class Reference}
 \hypertarget{classbloom_1_1render_1_1_devices}{}\label{classbloom_1_1render_1_1_devices}\index{bloom::render::Devices@{bloom::render::Devices}}
+
+
+Manages Vulkan devices and related resources.  
+
+
+
+
+{\ttfamily \#include $<$devices.\+hpp$>$}
+
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -18,51 +27,45 @@
 \Hypertarget{classbloom_1_1render_1_1_devices_aa8fa43f313aa2fd7790854d771a02233}\label{classbloom_1_1render_1_1_devices_aa8fa43f313aa2fd7790854d771a02233} 
 \mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}} \& {\bfseries operator=} (\mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}} \&\&)=delete
 \item 
-\Hypertarget{classbloom_1_1render_1_1_devices_a4aba06e179cb539b59a144e024357fcd}\label{classbloom_1_1render_1_1_devices_a4aba06e179cb539b59a144e024357fcd} 
-Vk\+Command\+Pool {\bfseries get\+Command\+Pool} ()
+Vk\+Command\+Pool \mbox{\hyperlink{classbloom_1_1render_1_1_devices_ad7f4c23b8ab7cb7d4d83c87387316dc5}{Get\+Command\+Pool}} () const
+\begin{DoxyCompactList}\small\item\em Gets the command pool. \end{DoxyCompactList}\item 
+Vk\+Device \mbox{\hyperlink{classbloom_1_1render_1_1_devices_a660db584247059c4430857a1405d7196}{Device}} () const
+\begin{DoxyCompactList}\small\item\em Gets the logical device. \end{DoxyCompactList}\item 
+Vk\+Physical\+Device \mbox{\hyperlink{classbloom_1_1render_1_1_devices_a4c3539ba444cbd55c5ce487aa7acb7e2}{Physical\+Device}} () const
+\begin{DoxyCompactList}\small\item\em Gets the physical device. \end{DoxyCompactList}\item 
+Vk\+Surface\+KHR \mbox{\hyperlink{classbloom_1_1render_1_1_devices_a0ce5fc1678a1a335d706cd6e4e8506dd}{Surface}} () const
+\begin{DoxyCompactList}\small\item\em Gets the Vulkan surface. \end{DoxyCompactList}\item 
+Vk\+Queue \mbox{\hyperlink{classbloom_1_1render_1_1_devices_a1182b834c5fedc318ddcbaca084e6ee9}{Graphics\+Queue}} () const
+\begin{DoxyCompactList}\small\item\em Gets the graphics queue. \end{DoxyCompactList}\item 
+Vk\+Queue \mbox{\hyperlink{classbloom_1_1render_1_1_devices_af09e61e7f14964d04e47b467312483d4}{Present\+Queue}} () const
+\begin{DoxyCompactList}\small\item\em Gets the present queue. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structbloom_1_1render_1_1_swap_chain_support_details}{Swap\+Chain\+Support\+Details}} \mbox{\hyperlink{classbloom_1_1render_1_1_devices_a88b46a97b7979913085a6f5064d63bb9}{Get\+Swap\+Chain\+Support}} ()
+\begin{DoxyCompactList}\small\item\em Gets swap chain support details. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{classbloom_1_1render_1_1_devices_aa889a531062e54842ba58f562c16e8b8}{Find\+Memory\+Type}} (uint32\+\_\+t type\+Filter, Vk\+Memory\+Property\+Flags properties)
+\begin{DoxyCompactList}\small\item\em Finds a suitable memory type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structbloom_1_1render_1_1_queue_family_indices}{Queue\+Family\+Indices}} \mbox{\hyperlink{classbloom_1_1render_1_1_devices_a331cf28ab37c67a55876a36ed3b8ef3c}{Find\+Physical\+Queue\+Families}} ()
+\begin{DoxyCompactList}\small\item\em Finds suitable queue families. \end{DoxyCompactList}\item 
+Vk\+Format \mbox{\hyperlink{classbloom_1_1render_1_1_devices_a4406f7c8b59dacc8132e5fcfa787d500}{Find\+Supported\+Format}} (const std\+::vector$<$ Vk\+Format $>$ \&candidates, Vk\+Image\+Tiling tiling, Vk\+Format\+Feature\+Flags features)
+\begin{DoxyCompactList}\small\item\em Finds a supported format. \end{DoxyCompactList}\item 
+Vk\+Instance \mbox{\hyperlink{classbloom_1_1render_1_1_devices_aea2cb61078fcf769a8177e48116b7e5b}{Get\+Vk\+Instance}} () const
+\begin{DoxyCompactList}\small\item\em Gets the Vulkan instance. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbloom_1_1render_1_1_devices_a90f7214588c1859fb3f182eb93860e86}{Create\+Buffer}} (Vk\+Device\+Size size, Vk\+Buffer\+Usage\+Flags usage, Vk\+Memory\+Property\+Flags properties, Vk\+Buffer \&buffer, Vk\+Device\+Memory \&buffer\+Memory)
+\begin{DoxyCompactList}\small\item\em Creates a Vulkan buffer. \end{DoxyCompactList}\item 
+Vk\+Command\+Buffer \mbox{\hyperlink{classbloom_1_1render_1_1_devices_ae96d2288f297ae6932d7f19d24229332}{Begin\+Single\+Time\+Commands}} ()
+\begin{DoxyCompactList}\small\item\em Begins single-\/time commands. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbloom_1_1render_1_1_devices_ad7ae8ae456d8901de524ce0c21dba016}{End\+Single\+Time\+Commands}} (Vk\+Command\+Buffer command\+Buffer)
+\begin{DoxyCompactList}\small\item\em Ends and submits single-\/time commands. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbloom_1_1render_1_1_devices_ad3c0bd167fdb9925755acfd89593221b}{Copy\+Buffer}} (Vk\+Buffer src\+Buffer, Vk\+Buffer dst\+Buffer, Vk\+Device\+Size size)
+\begin{DoxyCompactList}\small\item\em Copies data between buffers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbloom_1_1render_1_1_devices_a707963ee28ac762129d7fe1c320f05c1}{Copy\+Buffer\+To\+Image}} (Vk\+Buffer buffer, Vk\+Image image, uint32\+\_\+t width, uint32\+\_\+t height, uint32\+\_\+t layer\+Count)
+\begin{DoxyCompactList}\small\item\em Copies data from buffer to image. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbloom_1_1render_1_1_devices_ab2b6b5c37be76f58a4a012fb4da175be}{Create\+Image\+With\+Info}} (const Vk\+Image\+Create\+Info \&image\+Info, Vk\+Memory\+Property\+Flags properties, Vk\+Image \&image, Vk\+Device\+Memory \&image\+Memory)
+\begin{DoxyCompactList}\small\item\em Creates a Vulkan image. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classbloom_1_1render_1_1_devices_a919c8667de135c316a8af7be233a168b}\label{classbloom_1_1render_1_1_devices_a919c8667de135c316a8af7be233a168b} 
-Vk\+Device {\bfseries device} ()
-\item 
-\Hypertarget{classbloom_1_1render_1_1_devices_aa8e259681a8197ad08cf6199e97ee804}\label{classbloom_1_1render_1_1_devices_aa8e259681a8197ad08cf6199e97ee804} 
-Vk\+Surface\+KHR {\bfseries surface} ()
-\item 
-\Hypertarget{classbloom_1_1render_1_1_devices_a7a56b73d25e5b161a4314a3e1657cc1c}\label{classbloom_1_1render_1_1_devices_a7a56b73d25e5b161a4314a3e1657cc1c} 
-Vk\+Queue {\bfseries graphics\+Queue} ()
-\item 
-\Hypertarget{classbloom_1_1render_1_1_devices_afd47331fe9a94abfedec083f501fe73e}\label{classbloom_1_1render_1_1_devices_afd47331fe9a94abfedec083f501fe73e} 
-Vk\+Queue {\bfseries present\+Queue} ()
-\item 
-\Hypertarget{classbloom_1_1render_1_1_devices_a9d187fa8196704810fbce6bb5a13d78d}\label{classbloom_1_1render_1_1_devices_a9d187fa8196704810fbce6bb5a13d78d} 
-\mbox{\hyperlink{structbloom_1_1render_1_1_swap_chain_support_details}{Swap\+Chain\+Support\+Details}} {\bfseries get\+Swap\+Chain\+Support} ()
-\item 
-\Hypertarget{classbloom_1_1render_1_1_devices_a49debed98bee5ba6c8b0b5d3b0b94cc5}\label{classbloom_1_1render_1_1_devices_a49debed98bee5ba6c8b0b5d3b0b94cc5} 
-uint32\+\_\+t {\bfseries find\+Memory\+Type} (uint32\+\_\+t type\+Filter, Vk\+Memory\+Property\+Flags properties)
-\item 
-\Hypertarget{classbloom_1_1render_1_1_devices_abe7c9f34a2489ce7377ad259c75a638f}\label{classbloom_1_1render_1_1_devices_abe7c9f34a2489ce7377ad259c75a638f} 
-\mbox{\hyperlink{structbloom_1_1render_1_1_queue_family_indices}{Queue\+Family\+Indices}} {\bfseries find\+Physical\+Queue\+Families} ()
-\item 
-\Hypertarget{classbloom_1_1render_1_1_devices_a08ddad4e612bb7f09f45a14e821ea341}\label{classbloom_1_1render_1_1_devices_a08ddad4e612bb7f09f45a14e821ea341} 
-Vk\+Format {\bfseries find\+Supported\+Format} (const std\+::vector$<$ Vk\+Format $>$ \&candidates, Vk\+Image\+Tiling tiling, Vk\+Format\+Feature\+Flags features)
-\item 
-\Hypertarget{classbloom_1_1render_1_1_devices_a4d9417462cebbc48e659099056786a79}\label{classbloom_1_1render_1_1_devices_a4d9417462cebbc48e659099056786a79} 
-void {\bfseries create\+Buffer} (Vk\+Device\+Size size, Vk\+Buffer\+Usage\+Flags usage, Vk\+Memory\+Property\+Flags properties, Vk\+Buffer \&buffer, Vk\+Device\+Memory \&buffer\+Memory)
-\item 
-\Hypertarget{classbloom_1_1render_1_1_devices_aaad5b3f1ed3018736182a8eaff2a5718}\label{classbloom_1_1render_1_1_devices_aaad5b3f1ed3018736182a8eaff2a5718} 
-Vk\+Command\+Buffer {\bfseries begin\+Single\+Time\+Commands} ()
-\item 
-\Hypertarget{classbloom_1_1render_1_1_devices_aed7864948282268cc58beaa07a7a85d9}\label{classbloom_1_1render_1_1_devices_aed7864948282268cc58beaa07a7a85d9} 
-void {\bfseries end\+Single\+Time\+Commands} (Vk\+Command\+Buffer command\+Buffer)
-\item 
-\Hypertarget{classbloom_1_1render_1_1_devices_ab28526d95692aaacb2cd6831267fc13c}\label{classbloom_1_1render_1_1_devices_ab28526d95692aaacb2cd6831267fc13c} 
-void {\bfseries copy\+Buffer} (Vk\+Buffer src\+Buffer, Vk\+Buffer dst\+Buffer, Vk\+Device\+Size size)
-\item 
-\Hypertarget{classbloom_1_1render_1_1_devices_a1029a7356dc3afe07c215ac11999623b}\label{classbloom_1_1render_1_1_devices_a1029a7356dc3afe07c215ac11999623b} 
-void {\bfseries copy\+Buffer\+To\+Image} (Vk\+Buffer buffer, Vk\+Image image, uint32\+\_\+t width, uint32\+\_\+t height, uint32\+\_\+t layer\+Count)
-\item 
-\Hypertarget{classbloom_1_1render_1_1_devices_a43fc532c675f3473449d20fa339d2d70}\label{classbloom_1_1render_1_1_devices_a43fc532c675f3473449d20fa339d2d70} 
-void {\bfseries create\+Image\+With\+Info} (const Vk\+Image\+Create\+Info \&image\+Info, Vk\+Memory\+Property\+Flags properties, Vk\+Image \&image, Vk\+Device\+Memory \&image\+Memory)
-\end{DoxyCompactItemize}
+static \mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classbloom_1_1render_1_1_devices_a0bad1be07ee998e82795b084d74f2dcb}{Get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Gets the physical device. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -72,6 +75,300 @@ const bool {\bfseries enable\+Validation\+Layers} = true
 \Hypertarget{classbloom_1_1render_1_1_devices_ae924c6ce72359e0725706de861120030}\label{classbloom_1_1render_1_1_devices_ae924c6ce72359e0725706de861120030} 
 Vk\+Physical\+Device\+Properties {\bfseries properties}
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages Vulkan devices and related resources. 
+
+This class encapsulates the initialization and management of Vulkan devices, instances, surfaces, and other related resources. It provides methods for creating and configuring these resources, as well as helper functions for buffer and image operations. It serves as the central point of interaction with the Vulkan API. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classbloom_1_1render_1_1_devices_ae96d2288f297ae6932d7f19d24229332}\index{bloom::render::Devices@{bloom::render::Devices}!BeginSingleTimeCommands@{BeginSingleTimeCommands}}
+\index{BeginSingleTimeCommands@{BeginSingleTimeCommands}!bloom::render::Devices@{bloom::render::Devices}}
+\doxysubsubsection{\texorpdfstring{BeginSingleTimeCommands()}{BeginSingleTimeCommands()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_devices_ae96d2288f297ae6932d7f19d24229332} 
+Vk\+Command\+Buffer bloom\+::render\+::\+Devices\+::\+Begin\+Single\+Time\+Commands (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Begins single-\/time commands. 
+
+\begin{DoxyReturn}{Returns}
+A command buffer for recording single-\/time use commands. This is typically used for operations like transferring data between buffers and images. 
+\end{DoxyReturn}
+\Hypertarget{classbloom_1_1render_1_1_devices_ad3c0bd167fdb9925755acfd89593221b}\index{bloom::render::Devices@{bloom::render::Devices}!CopyBuffer@{CopyBuffer}}
+\index{CopyBuffer@{CopyBuffer}!bloom::render::Devices@{bloom::render::Devices}}
+\doxysubsubsection{\texorpdfstring{CopyBuffer()}{CopyBuffer()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_devices_ad3c0bd167fdb9925755acfd89593221b} 
+void bloom\+::render\+::\+Devices\+::\+Copy\+Buffer (\begin{DoxyParamCaption}\item[{Vk\+Buffer}]{src\+Buffer}{, }\item[{Vk\+Buffer}]{dst\+Buffer}{, }\item[{Vk\+Device\+Size}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Copies data between buffers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src\+Buffer} & The source buffer. \\
+\hline
+{\em dst\+Buffer} & The destination buffer. \\
+\hline
+{\em size} & The size of the data to copy in bytes. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classbloom_1_1render_1_1_devices_a707963ee28ac762129d7fe1c320f05c1}\index{bloom::render::Devices@{bloom::render::Devices}!CopyBufferToImage@{CopyBufferToImage}}
+\index{CopyBufferToImage@{CopyBufferToImage}!bloom::render::Devices@{bloom::render::Devices}}
+\doxysubsubsection{\texorpdfstring{CopyBufferToImage()}{CopyBufferToImage()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_devices_a707963ee28ac762129d7fe1c320f05c1} 
+void bloom\+::render\+::\+Devices\+::\+Copy\+Buffer\+To\+Image (\begin{DoxyParamCaption}\item[{Vk\+Buffer}]{buffer}{, }\item[{Vk\+Image}]{image}{, }\item[{uint32\+\_\+t}]{width}{, }\item[{uint32\+\_\+t}]{height}{, }\item[{uint32\+\_\+t}]{layer\+Count}{}\end{DoxyParamCaption})}
+
+
+
+Copies data from buffer to image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & The source buffer. \\
+\hline
+{\em image} & The destination image. \\
+\hline
+{\em width} & The width of the image. \\
+\hline
+{\em height} & The height of the image. \\
+\hline
+{\em layer\+Count} & The number of layers in the image. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classbloom_1_1render_1_1_devices_a90f7214588c1859fb3f182eb93860e86}\index{bloom::render::Devices@{bloom::render::Devices}!CreateBuffer@{CreateBuffer}}
+\index{CreateBuffer@{CreateBuffer}!bloom::render::Devices@{bloom::render::Devices}}
+\doxysubsubsection{\texorpdfstring{CreateBuffer()}{CreateBuffer()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_devices_a90f7214588c1859fb3f182eb93860e86} 
+void bloom\+::render\+::\+Devices\+::\+Create\+Buffer (\begin{DoxyParamCaption}\item[{Vk\+Device\+Size}]{size}{, }\item[{Vk\+Buffer\+Usage\+Flags}]{usage}{, }\item[{Vk\+Memory\+Property\+Flags}]{properties}{, }\item[{Vk\+Buffer \&}]{buffer}{, }\item[{Vk\+Device\+Memory \&}]{buffer\+Memory}{}\end{DoxyParamCaption})}
+
+
+
+Creates a Vulkan buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & The size of the buffer in bytes. \\
+\hline
+{\em usage} & The intended usage of the buffer. \\
+\hline
+{\em properties} & The desired memory properties for the buffer. \\
+\hline
+{\em buffer} & Output parameter for the created buffer handle. \\
+\hline
+{\em buffer\+Memory} & Output parameter for the allocated buffer memory handle. The memory associated with the buffer. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classbloom_1_1render_1_1_devices_ab2b6b5c37be76f58a4a012fb4da175be}\index{bloom::render::Devices@{bloom::render::Devices}!CreateImageWithInfo@{CreateImageWithInfo}}
+\index{CreateImageWithInfo@{CreateImageWithInfo}!bloom::render::Devices@{bloom::render::Devices}}
+\doxysubsubsection{\texorpdfstring{CreateImageWithInfo()}{CreateImageWithInfo()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_devices_ab2b6b5c37be76f58a4a012fb4da175be} 
+void bloom\+::render\+::\+Devices\+::\+Create\+Image\+With\+Info (\begin{DoxyParamCaption}\item[{const Vk\+Image\+Create\+Info \&}]{image\+Info}{, }\item[{Vk\+Memory\+Property\+Flags}]{properties}{, }\item[{Vk\+Image \&}]{image}{, }\item[{Vk\+Device\+Memory \&}]{image\+Memory}{}\end{DoxyParamCaption})}
+
+
+
+Creates a Vulkan image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image\+Info} & The image create info structure. Describes the parameters of the image to be created. \\
+\hline
+{\em properties} & The desired memory properties for the image. \\
+\hline
+{\em image} & Output parameter for the created image handle. \\
+\hline
+{\em image\+Memory} & Output parameter for the allocated image memory handle. The memory associated with the image. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classbloom_1_1render_1_1_devices_a660db584247059c4430857a1405d7196}\index{bloom::render::Devices@{bloom::render::Devices}!Device@{Device}}
+\index{Device@{Device}!bloom::render::Devices@{bloom::render::Devices}}
+\doxysubsubsection{\texorpdfstring{Device()}{Device()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_devices_a660db584247059c4430857a1405d7196} 
+Vk\+Device bloom\+::render\+::\+Devices\+::\+Device (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the logical device. 
+
+\begin{DoxyReturn}{Returns}
+The logical device handle. The interface to the physical device. 
+\end{DoxyReturn}
+\Hypertarget{classbloom_1_1render_1_1_devices_ad7ae8ae456d8901de524ce0c21dba016}\index{bloom::render::Devices@{bloom::render::Devices}!EndSingleTimeCommands@{EndSingleTimeCommands}}
+\index{EndSingleTimeCommands@{EndSingleTimeCommands}!bloom::render::Devices@{bloom::render::Devices}}
+\doxysubsubsection{\texorpdfstring{EndSingleTimeCommands()}{EndSingleTimeCommands()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_devices_ad7ae8ae456d8901de524ce0c21dba016} 
+void bloom\+::render\+::\+Devices\+::\+End\+Single\+Time\+Commands (\begin{DoxyParamCaption}\item[{Vk\+Command\+Buffer}]{command\+Buffer}{}\end{DoxyParamCaption})}
+
+
+
+Ends and submits single-\/time commands. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command\+Buffer} & The command buffer to end and submit. Executes the recorded commands. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classbloom_1_1render_1_1_devices_aa889a531062e54842ba58f562c16e8b8}\index{bloom::render::Devices@{bloom::render::Devices}!FindMemoryType@{FindMemoryType}}
+\index{FindMemoryType@{FindMemoryType}!bloom::render::Devices@{bloom::render::Devices}}
+\doxysubsubsection{\texorpdfstring{FindMemoryType()}{FindMemoryType()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_devices_aa889a531062e54842ba58f562c16e8b8} 
+uint32\+\_\+t bloom\+::render\+::\+Devices\+::\+Find\+Memory\+Type (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{type\+Filter}{, }\item[{Vk\+Memory\+Property\+Flags}]{properties}{}\end{DoxyParamCaption})}
+
+
+
+Finds a suitable memory type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type\+Filter} & Bitmask of memory types to filter. \\
+\hline
+{\em properties} & Desired memory properties. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Index of a suitable memory type that matches the filter and properties. 
+\end{DoxyReturn}
+\Hypertarget{classbloom_1_1render_1_1_devices_a331cf28ab37c67a55876a36ed3b8ef3c}\index{bloom::render::Devices@{bloom::render::Devices}!FindPhysicalQueueFamilies@{FindPhysicalQueueFamilies}}
+\index{FindPhysicalQueueFamilies@{FindPhysicalQueueFamilies}!bloom::render::Devices@{bloom::render::Devices}}
+\doxysubsubsection{\texorpdfstring{FindPhysicalQueueFamilies()}{FindPhysicalQueueFamilies()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_devices_a331cf28ab37c67a55876a36ed3b8ef3c} 
+\mbox{\hyperlink{structbloom_1_1render_1_1_queue_family_indices}{Queue\+Family\+Indices}} bloom\+::render\+::\+Devices\+::\+Find\+Physical\+Queue\+Families (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Finds suitable queue families. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{structbloom_1_1render_1_1_queue_family_indices}{Queue\+Family\+Indices} containing the found graphics and present queue family indices. 
+\end{DoxyReturn}
+\Hypertarget{classbloom_1_1render_1_1_devices_a4406f7c8b59dacc8132e5fcfa787d500}\index{bloom::render::Devices@{bloom::render::Devices}!FindSupportedFormat@{FindSupportedFormat}}
+\index{FindSupportedFormat@{FindSupportedFormat}!bloom::render::Devices@{bloom::render::Devices}}
+\doxysubsubsection{\texorpdfstring{FindSupportedFormat()}{FindSupportedFormat()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_devices_a4406f7c8b59dacc8132e5fcfa787d500} 
+Vk\+Format bloom\+::render\+::\+Devices\+::\+Find\+Supported\+Format (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ Vk\+Format $>$ \&}]{candidates}{, }\item[{Vk\+Image\+Tiling}]{tiling}{, }\item[{Vk\+Format\+Feature\+Flags}]{features}{}\end{DoxyParamCaption})}
+
+
+
+Finds a supported format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em candidates} & List of candidate formats. \\
+\hline
+{\em tiling} & Image tiling mode. \\
+\hline
+{\em features} & Desired format features. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The first supported format found, or VK\+\_\+\+FORMAT\+\_\+\+UNDEFINED if none are supported. 
+\end{DoxyReturn}
+\Hypertarget{classbloom_1_1render_1_1_devices_ad7f4c23b8ab7cb7d4d83c87387316dc5}\index{bloom::render::Devices@{bloom::render::Devices}!GetCommandPool@{GetCommandPool}}
+\index{GetCommandPool@{GetCommandPool}!bloom::render::Devices@{bloom::render::Devices}}
+\doxysubsubsection{\texorpdfstring{GetCommandPool()}{GetCommandPool()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_devices_ad7f4c23b8ab7cb7d4d83c87387316dc5} 
+Vk\+Command\+Pool bloom\+::render\+::\+Devices\+::\+Get\+Command\+Pool (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the command pool. 
+
+\begin{DoxyReturn}{Returns}
+The command pool handle. Used for allocating command buffers. 
+\end{DoxyReturn}
+\Hypertarget{classbloom_1_1render_1_1_devices_a0bad1be07ee998e82795b084d74f2dcb}\index{bloom::render::Devices@{bloom::render::Devices}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!bloom::render::Devices@{bloom::render::Devices}}
+\doxysubsubsection{\texorpdfstring{GetInstance()}{GetInstance()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_devices_a0bad1be07ee998e82795b084d74f2dcb} 
+static \mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}} \texorpdfstring{$\ast$}{*} bloom\+::render\+::\+Devices\+::\+Get\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Gets the physical device. 
+
+\begin{DoxyReturn}{Returns}
+The physical device handle. Represents the GPU. 
+\end{DoxyReturn}
+\Hypertarget{classbloom_1_1render_1_1_devices_a88b46a97b7979913085a6f5064d63bb9}\index{bloom::render::Devices@{bloom::render::Devices}!GetSwapChainSupport@{GetSwapChainSupport}}
+\index{GetSwapChainSupport@{GetSwapChainSupport}!bloom::render::Devices@{bloom::render::Devices}}
+\doxysubsubsection{\texorpdfstring{GetSwapChainSupport()}{GetSwapChainSupport()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_devices_a88b46a97b7979913085a6f5064d63bb9} 
+\mbox{\hyperlink{structbloom_1_1render_1_1_swap_chain_support_details}{Swap\+Chain\+Support\+Details}} bloom\+::render\+::\+Devices\+::\+Get\+Swap\+Chain\+Support (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets swap chain support details. 
+
+\begin{DoxyReturn}{Returns}
+The swap chain support details for the physical device. Provides information about supported capabilities, formats, and present modes. 
+\end{DoxyReturn}
+\Hypertarget{classbloom_1_1render_1_1_devices_aea2cb61078fcf769a8177e48116b7e5b}\index{bloom::render::Devices@{bloom::render::Devices}!GetVkInstance@{GetVkInstance}}
+\index{GetVkInstance@{GetVkInstance}!bloom::render::Devices@{bloom::render::Devices}}
+\doxysubsubsection{\texorpdfstring{GetVkInstance()}{GetVkInstance()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_devices_aea2cb61078fcf769a8177e48116b7e5b} 
+Vk\+Instance bloom\+::render\+::\+Devices\+::\+Get\+Vk\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the Vulkan instance. 
+
+\begin{DoxyReturn}{Returns}
+The Vulkan instance handle. Represents the connection between the application and the Vulkan library. 
+\end{DoxyReturn}
+\Hypertarget{classbloom_1_1render_1_1_devices_a1182b834c5fedc318ddcbaca084e6ee9}\index{bloom::render::Devices@{bloom::render::Devices}!GraphicsQueue@{GraphicsQueue}}
+\index{GraphicsQueue@{GraphicsQueue}!bloom::render::Devices@{bloom::render::Devices}}
+\doxysubsubsection{\texorpdfstring{GraphicsQueue()}{GraphicsQueue()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_devices_a1182b834c5fedc318ddcbaca084e6ee9} 
+Vk\+Queue bloom\+::render\+::\+Devices\+::\+Graphics\+Queue (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the graphics queue. 
+
+\begin{DoxyReturn}{Returns}
+The graphics queue handle. Used for submitting graphics commands. 
+\end{DoxyReturn}
+\Hypertarget{classbloom_1_1render_1_1_devices_a4c3539ba444cbd55c5ce487aa7acb7e2}\index{bloom::render::Devices@{bloom::render::Devices}!PhysicalDevice@{PhysicalDevice}}
+\index{PhysicalDevice@{PhysicalDevice}!bloom::render::Devices@{bloom::render::Devices}}
+\doxysubsubsection{\texorpdfstring{PhysicalDevice()}{PhysicalDevice()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_devices_a4c3539ba444cbd55c5ce487aa7acb7e2} 
+Vk\+Physical\+Device bloom\+::render\+::\+Devices\+::\+Physical\+Device (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the physical device. 
+
+\begin{DoxyReturn}{Returns}
+The physical device handle. Represents the GPU. 
+\end{DoxyReturn}
+\Hypertarget{classbloom_1_1render_1_1_devices_af09e61e7f14964d04e47b467312483d4}\index{bloom::render::Devices@{bloom::render::Devices}!PresentQueue@{PresentQueue}}
+\index{PresentQueue@{PresentQueue}!bloom::render::Devices@{bloom::render::Devices}}
+\doxysubsubsection{\texorpdfstring{PresentQueue()}{PresentQueue()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_devices_af09e61e7f14964d04e47b467312483d4} 
+Vk\+Queue bloom\+::render\+::\+Devices\+::\+Present\+Queue (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the present queue. 
+
+\begin{DoxyReturn}{Returns}
+The present queue handle. Used for presenting images to the surface. 
+\end{DoxyReturn}
+\Hypertarget{classbloom_1_1render_1_1_devices_a0ce5fc1678a1a335d706cd6e4e8506dd}\index{bloom::render::Devices@{bloom::render::Devices}!Surface@{Surface}}
+\index{Surface@{Surface}!bloom::render::Devices@{bloom::render::Devices}}
+\doxysubsubsection{\texorpdfstring{Surface()}{Surface()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_devices_a0ce5fc1678a1a335d706cd6e4e8506dd} 
+Vk\+Surface\+KHR bloom\+::render\+::\+Devices\+::\+Surface (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the Vulkan surface. 
+
+\begin{DoxyReturn}{Returns}
+The surface handle. Represents the connection between the window and Vulkan. 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

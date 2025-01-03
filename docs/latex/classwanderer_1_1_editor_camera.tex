@@ -9,26 +9,27 @@ Inheritance diagram for wanderer\+::Editor\+Camera\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classwanderer_1_1_editor_camera_aca1b80c8e7b4add3e19d9233e77536a5}\label{classwanderer_1_1_editor_camera_aca1b80c8e7b4add3e19d9233e77536a5} 
-{\bfseries Editor\+Camera} (const id\+\_\+t id, \mbox{\hyperlink{classbloom_1_1render_1_1_devices}{bloom\+::render\+::\+Devices}} \texorpdfstring{$\ast$}{*}devices)
+\Hypertarget{classwanderer_1_1_editor_camera_a6cfcab1d85673c199064809c2ff0b62c}\label{classwanderer_1_1_editor_camera_a6cfcab1d85673c199064809c2ff0b62c} 
+{\bfseries Editor\+Camera} (const \mbox{\hyperlink{core_8hpp_abaf665e52c9979a5f6eb9ecfce756efc}{id\+\_\+t}} id)
 \item 
-void \mbox{\hyperlink{classwanderer_1_1_editor_camera_a24a2839b7ce2cc98000a94f7bcd41b5f}{Tick}} (float delta\+Time) override
+void \mbox{\hyperlink{classwanderer_1_1_editor_camera_aa46d543424aa7d0214c8e1ab7c92bd28}{On\+Begin}} () override
+\begin{DoxyCompactList}\small\item\em Called at the beginning of the scene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classwanderer_1_1_editor_camera_a968d3e1aede5413abeb562b77d16b7aa}{On\+Tick}} (float delta\+Time) override
 \begin{DoxyCompactList}\small\item\em Called every frame to update the object\textquotesingle{}s state. \end{DoxyCompactList}\item 
-\Hypertarget{classwanderer_1_1_editor_camera_a98118f3afc103cd1b97997c6aa325873}\label{classwanderer_1_1_editor_camera_a98118f3afc103cd1b97997c6aa325873} 
-void {\bfseries On\+Event} (const \mbox{\hyperlink{classbloom_1_1_event}{bloom\+::\+Event}} \&e)
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{classwanderer_1_1_editor_camera_a52c6b3da873fb3b94eae8f23a1baf64b}{On\+Event}} (\mbox{\hyperlink{classbloom_1_1_event}{bloom\+::\+Event}} \&e) override
+\begin{DoxyCompactList}\small\item\em Called when an event is received. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classbloom_1_1_camera}{bloom\+::\+Camera}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classbloom_1_1_camera_a55653f8b0847d95366a26c57e4309a78}{Camera}} (const id\+\_\+t id, \mbox{\hyperlink{classbloom_1_1render_1_1_devices}{render\+::\+Devices}} \texorpdfstring{$\ast$}{*}devices)
-\begin{DoxyCompactList}\small\item\em Constructs a new \doxylink{classbloom_1_1_camera}{Camera} object. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classbloom_1_1_camera_a2d8223c7b3e813dd4730cdfb65c09ad5}{Begin}} () override
-\begin{DoxyCompactList}\small\item\em Called at the beginning of the scene. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classbloom_1_1_camera_adc3b77f1fdc18380c9f4dbb564903f74}{End}} () override
+{\bfseries Camera} (\mbox{\hyperlink{core_8hpp_abaf665e52c9979a5f6eb9ecfce756efc}{id\+\_\+t}} id)
+\item 
+void \mbox{\hyperlink{classbloom_1_1_camera_a9fb663c023116859ec684a92ed4ae356}{On\+Close}} () override
 \begin{DoxyCompactList}\small\item\em Called at the end of the scene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbloom_1_1_camera_aa50ddaf67c3abbbd6e6bce571ad3d705}{Properties\+Panel}} () override
+\item 
 void \mbox{\hyperlink{classbloom_1_1_camera_a9060e4a12a62abb802ac2ccc717b0e4e}{Set\+Orthographic\+Projection}} (float left, float right, float bottom, float top, float near, float far)
 \begin{DoxyCompactList}\small\item\em Sets an orthographic projection for the camera. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classbloom_1_1_camera_ab244f78e1064991ed0060becbe9bfed0}{Set\+Perspective\+Projection}} (float fov, float aspect, float near, float far)
+void \mbox{\hyperlink{classbloom_1_1_camera_a7f0c9dbe518ffc0242421dc1415c9ef4}{Set\+Perspective\+Projection}} ()
 \begin{DoxyCompactList}\small\item\em Sets a perspective projection for the camera. \end{DoxyCompactList}\item 
 const glm\+::mat4 \& \mbox{\hyperlink{classbloom_1_1_camera_adb9c42029c76df21dc2044f94029ed51}{Get\+Projection}} () const
 \begin{DoxyCompactList}\small\item\em Retrieves the camera\textquotesingle{}s projection matrix. \end{DoxyCompactList}\item 
@@ -37,8 +38,6 @@ const glm\+::mat4 \& \mbox{\hyperlink{classbloom_1_1_camera_a923af3ee3654a19bc3a
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classbloom_1_1_object}{bloom\+::\+Object}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classbloom_1_1_object_ae1d557ffa7496298977cfbfdae1d4daf}{Object}} (const id\+\_\+t id, \mbox{\hyperlink{classbloom_1_1render_1_1_devices}{render\+::\+Devices}} \texorpdfstring{$\ast$}{*}devices)
-\begin{DoxyCompactList}\small\item\em Constructs a new \doxylink{classbloom_1_1_object}{Object}. \end{DoxyCompactList}\item 
 {\bfseries Object} (const \mbox{\hyperlink{classbloom_1_1_object}{Object}} \&)=delete
 \item 
 \mbox{\hyperlink{classbloom_1_1_object}{Object}} \& {\bfseries operator=} (const \mbox{\hyperlink{classbloom_1_1_object}{Object}} \&)=delete
@@ -47,27 +46,64 @@ const glm\+::mat4 \& \mbox{\hyperlink{classbloom_1_1_camera_a923af3ee3654a19bc3a
 \item 
 \mbox{\hyperlink{classbloom_1_1_object}{Object}} \& {\bfseries operator=} (\mbox{\hyperlink{classbloom_1_1_object}{Object}} \&\&)=default
 \item 
-id\+\_\+t \mbox{\hyperlink{classbloom_1_1_object_ab83ebdaed718b62ace71bd6877eeca8a}{Get\+ID}} () const
-\begin{DoxyCompactList}\small\item\em Retrieves the object\textquotesingle{}s unique ID. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\hyperlink{core_8hpp_abaf665e52c9979a5f6eb9ecfce756efc}{id\+\_\+t}} \mbox{\hyperlink{classbloom_1_1_object_ab83ebdaed718b62ace71bd6877eeca8a}{Get\+ID}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the object\textquotesingle{}s unique ID. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classbloom_1_1_object_a3727fd5bab7f16866b1f5bf90d92330f}{Get\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the object\textquotesingle{}s name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbloom_1_1_object_aad024fee23e84df72b3a028dd19bfba9}{Set\+Name}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Sets the object\textquotesingle{}s name. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
 \doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classbloom_1_1_object}{bloom\+::\+Object}}}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{structbloom_1_1_transform}{Transform}} {\bfseries transform}
 \begin{DoxyCompactList}\small\item\em The object\textquotesingle{}s transform, representing its position, rotation, and scale. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classbloom_1_1_object}{bloom\+::\+Object}}}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classbloom_1_1_object}{bloom\+::\+Object}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classbloom_1_1render_1_1_devices}{render\+::\+Devices}} \texorpdfstring{$\ast$}{*} {\bfseries m\+\_\+devices} = nullptr
-\begin{DoxyCompactList}\small\item\em Pointer to the Vulkan device management object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\hyperlink{classbloom_1_1_object_a2d5d96df2b3a38ca832fafb1831ba60a}{Object}} (const \mbox{\hyperlink{core_8hpp_abaf665e52c9979a5f6eb9ecfce756efc}{id\+\_\+t}} id)
+\begin{DoxyCompactList}\small\item\em Constructs a new \doxylink{classbloom_1_1_object}{Object}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{classwanderer_1_1_editor_camera_a24a2839b7ce2cc98000a94f7bcd41b5f}\index{wanderer::EditorCamera@{wanderer::EditorCamera}!Tick@{Tick}}
-\index{Tick@{Tick}!wanderer::EditorCamera@{wanderer::EditorCamera}}
-\doxysubsubsection{\texorpdfstring{Tick()}{Tick()}}
-{\footnotesize\ttfamily \label{classwanderer_1_1_editor_camera_a24a2839b7ce2cc98000a94f7bcd41b5f} 
-void wanderer\+::\+Editor\+Camera\+::\+Tick (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+\Hypertarget{classwanderer_1_1_editor_camera_aa46d543424aa7d0214c8e1ab7c92bd28}\index{wanderer::EditorCamera@{wanderer::EditorCamera}!OnBegin@{OnBegin}}
+\index{OnBegin@{OnBegin}!wanderer::EditorCamera@{wanderer::EditorCamera}}
+\doxysubsubsection{\texorpdfstring{OnBegin()}{OnBegin()}}
+{\footnotesize\ttfamily \label{classwanderer_1_1_editor_camera_aa46d543424aa7d0214c8e1ab7c92bd28} 
+void wanderer\+::\+Editor\+Camera\+::\+On\+Begin (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called at the beginning of the scene. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classbloom_1_1_camera_a4edcf10ceaedccad2b778ef7c5617902}{bloom\+::\+Camera}}.
+
+\Hypertarget{classwanderer_1_1_editor_camera_a52c6b3da873fb3b94eae8f23a1baf64b}\index{wanderer::EditorCamera@{wanderer::EditorCamera}!OnEvent@{OnEvent}}
+\index{OnEvent@{OnEvent}!wanderer::EditorCamera@{wanderer::EditorCamera}}
+\doxysubsubsection{\texorpdfstring{OnEvent()}{OnEvent()}}
+{\footnotesize\ttfamily \label{classwanderer_1_1_editor_camera_a52c6b3da873fb3b94eae8f23a1baf64b} 
+void wanderer\+::\+Editor\+Camera\+::\+On\+Event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbloom_1_1_event}{bloom\+::\+Event}} \&}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called when an event is received. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & The event to handle. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classbloom_1_1_object_a22f8f39d529a0bdb7b3091513e43afde}{bloom\+::\+Object}}.
+
+\Hypertarget{classwanderer_1_1_editor_camera_a968d3e1aede5413abeb562b77d16b7aa}\index{wanderer::EditorCamera@{wanderer::EditorCamera}!OnTick@{OnTick}}
+\index{OnTick@{OnTick}!wanderer::EditorCamera@{wanderer::EditorCamera}}
+\doxysubsubsection{\texorpdfstring{OnTick()}{OnTick()}}
+{\footnotesize\ttfamily \label{classwanderer_1_1_editor_camera_a968d3e1aede5413abeb562b77d16b7aa} 
+void wanderer\+::\+Editor\+Camera\+::\+On\+Tick (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
@@ -80,7 +116,7 @@ Called every frame to update the object\textquotesingle{}s state.
 \end{DoxyParams}
 
 
-Reimplemented from \mbox{\hyperlink{classbloom_1_1_camera_a3bdd365fbd68115e04871bbecba7b7e6}{bloom\+::\+Camera}}.
+Reimplemented from \mbox{\hyperlink{classbloom_1_1_camera_ae88be94208c3ad0506c17de3378a9984}{bloom\+::\+Camera}}.
 
 
 

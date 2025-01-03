@@ -14,27 +14,35 @@ Inheritance diagram for Sandbox\+:\begin{figure}[H]
 \item 
 \mbox{\hyperlink{classbloom_1_1_engine}{Engine}} \& {\bfseries operator=} (const \mbox{\hyperlink{classbloom_1_1_engine}{Engine}} \&)=delete
 \item 
-void {\bfseries Begin} ()
-\item 
-virtual void {\bfseries Tick} ()
-\item 
-void {\bfseries Render} ()
-\item 
-virtual void {\bfseries End} () const
+void \mbox{\hyperlink{classbloom_1_1_engine_aabae09bc72008aab7dad4a42ef714cf4}{Init}} ()
+\begin{DoxyCompactList}\small\item\em Handles the initialization of the engine. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classbloom_1_1_engine_ab2a15af9ead50c72c9953c5233cda115}{On\+Begin}} ()
+\begin{DoxyCompactList}\small\item\em Called before starting game loop. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classbloom_1_1_engine_a5f447cd38d38a127592dbc26d4193b13}{On\+Tick}} ()
+\begin{DoxyCompactList}\small\item\em Called every frame. \end{DoxyCompactList}\item 
+virtual void {\bfseries On\+Render} ()
+\begin{DoxyCompactList}\small\item\em Called every frame after the {\ttfamily Tick}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classbloom_1_1_engine_a036ac1451ce02a56b34e7039c51cf8c5}{On\+Close}} ()
+\begin{DoxyCompactList}\small\item\em Called before ending the game loop. \end{DoxyCompactList}\item 
+void {\bfseries On\+Event} (\mbox{\hyperlink{classbloom_1_1_event}{Event}} \&e)
 \item 
 bool {\bfseries Should\+Close} () const
-\item 
-void {\bfseries On\+Event} (const \mbox{\hyperlink{classbloom_1_1_event}{Event}} \&e) const
 \end{DoxyCompactItemize}
-\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classbloom_1_1_engine}{bloom\+::\+Engine}}}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classbloom_1_1_engine}{bloom\+::\+Engine}}}
 \begin{DoxyCompactItemize}
 \item 
-std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1_factory}{Factory}} $>$ {\bfseries factory} = nullptr
-\end{DoxyCompactItemize}
+static \mbox{\hyperlink{structbloom_1_1render_1_1_descriptor_layouts}{render\+::\+Descriptor\+Layouts}} \mbox{\hyperlink{classbloom_1_1_engine_abe3d70c9d705bc71974323c178dab032}{Get\+Descriptor\+Layouts}} ()
+\begin{DoxyCompactList}\small\item\em Gets the Descriptor\+Layouts struct. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classbloom_1_1_engine_a960b4402be47ab7336696e4bdb9486ce}{Set\+UBOLayout}} (\mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_set_layout}{render\+::\+Descriptor\+Set\+Layout}} \texorpdfstring{$\ast$}{*}layout)
+\begin{DoxyCompactList}\small\item\em Sets the global descriptor set layout. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classbloom_1_1_engine_a816b16349da5bcac4df11e0a8fb9c256}{Set\+Material\+Layout}} (\mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_set_layout}{render\+::\+Descriptor\+Set\+Layout}} \texorpdfstring{$\ast$}{*}layout)
+\begin{DoxyCompactList}\small\item\em Sets the material descriptor set layout. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classbloom_1_1_engine}{bloom\+::\+Engine}}}
 \begin{DoxyCompactItemize}
 \item 
-virtual void {\bfseries On\+Begin} ()
+void {\bfseries Push\+Layer} (\mbox{\hyperlink{classbloom_1_1_layer}{Layer}} \texorpdfstring{$\ast$}{*}layer)
+\item 
+void {\bfseries Push\+Overlay} (\mbox{\hyperlink{classbloom_1_1_layer}{Layer}} \texorpdfstring{$\ast$}{*}overlay)
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classbloom_1_1_engine}{bloom\+::\+Engine}}}
 \begin{DoxyCompactItemize}
@@ -45,13 +53,9 @@ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1render_1_1_devices}{ren
 \item 
 std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1render_1_1_renderer}{render\+::\+Renderer}} $>$ {\bfseries m\+\_\+renderer} = nullptr
 \item 
-\mbox{\hyperlink{classbloom_1_1_simple_render_system}{Simple\+Render\+System}} \texorpdfstring{$\ast$}{*} {\bfseries m\+\_\+simple\+Render\+System} = nullptr
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1_camera}{Camera}} $>$ {\bfseries m\+\_\+active\+Camera} = nullptr
 \item 
-std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1_camera}{Camera}} $>$ {\bfseries m\+\_\+active\+Camera}
-\item 
-std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_set_layout}{render\+::\+Descriptor\+Set\+Layout}} $>$ {\bfseries m\+\_\+material\+Set\+Layout}
-\item 
-float {\bfseries m\+\_\+delta\+Time}
+float {\bfseries m\+\_\+delta\+Time} = 0.\+016f
 \end{DoxyCompactItemize}
 
 

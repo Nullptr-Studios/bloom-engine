@@ -1,17 +1,26 @@
 \doxysection{bloom\+::render\+::Model Class Reference}
 \hypertarget{classbloom_1_1render_1_1_model}{}\label{classbloom_1_1render_1_1_model}\index{bloom::render::Model@{bloom::render::Model}}
+
+
+Represents a 3D model in the bloom rendering engine.  
+
+
+
+
+{\ttfamily \#include $<$model.\+hpp$>$}
+
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{structbloom_1_1render_1_1_model_1_1_builder}{Builder}}
-\item 
+\begin{DoxyCompactList}\small\item\em Helper struct to build a \doxylink{classbloom_1_1render_1_1_model}{Model} instance. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structbloom_1_1render_1_1_model_1_1_vertex}{Vertex}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Represents a single vertex in the model. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classbloom_1_1render_1_1_model_aaf7e5c1470dfecd295e15e2c285c3cb5}\label{classbloom_1_1render_1_1_model_aaf7e5c1470dfecd295e15e2c285c3cb5} 
-{\bfseries Model} (\mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}} \texorpdfstring{$\ast$}{*}device, const \mbox{\hyperlink{structbloom_1_1render_1_1_model_1_1_builder}{Builder}} \&builder)
+\Hypertarget{classbloom_1_1render_1_1_model_a8b94c1d74c2c7f295bd54a04cbf50ec9}\label{classbloom_1_1render_1_1_model_a8b94c1d74c2c7f295bd54a04cbf50ec9} 
+{\bfseries Model} (const \mbox{\hyperlink{structbloom_1_1render_1_1_model_1_1_builder}{Builder}} \&builder)
 \item 
 \Hypertarget{classbloom_1_1render_1_1_model_a31fda9ba10dfa1d4ba0b4d0eac905ee9}\label{classbloom_1_1render_1_1_model_a31fda9ba10dfa1d4ba0b4d0eac905ee9} 
 {\bfseries Model} (const \mbox{\hyperlink{classbloom_1_1render_1_1_model}{Model}} \&)=delete
@@ -19,12 +28,54 @@ struct \mbox{\hyperlink{structbloom_1_1render_1_1_model_1_1_vertex}{Vertex}}
 \Hypertarget{classbloom_1_1render_1_1_model_a44b59ec6c31886f3f08d469dd2842c9f}\label{classbloom_1_1render_1_1_model_a44b59ec6c31886f3f08d469dd2842c9f} 
 \mbox{\hyperlink{classbloom_1_1render_1_1_model}{Model}} \& {\bfseries operator=} (const \mbox{\hyperlink{classbloom_1_1render_1_1_model}{Model}} \&)=delete
 \item 
-\Hypertarget{classbloom_1_1render_1_1_model_af4e4057c7d643ad59ea427ef7d7f62d0}\label{classbloom_1_1render_1_1_model_af4e4057c7d643ad59ea427ef7d7f62d0} 
-void {\bfseries Bind} (Vk\+Command\+Buffer command\+Buffer)
+void \mbox{\hyperlink{classbloom_1_1render_1_1_model_a5b83d8dccbfcac112f21b6e64543c3a6}{Bind}} (Vk\+Command\+Buffer command\+Buffer) const
+\begin{DoxyCompactList}\small\item\em Binds the model\textquotesingle{}s vertex and index buffers to the command buffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbloom_1_1render_1_1_model_ac6fbf26241e997b7f0cd780f06ea8c69}{Draw}} (Vk\+Command\+Buffer command\+Buffer) const
+\begin{DoxyCompactList}\small\item\em Draws the model using the bound buffers and command buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classbloom_1_1render_1_1_model_a75142902b3161674b4f4877d60e2960a}\label{classbloom_1_1render_1_1_model_a75142902b3161674b4f4877d60e2960a} 
-void {\bfseries Draw} (Vk\+Command\+Buffer command\+Buffer)
+\Hypertarget{classbloom_1_1render_1_1_model_a64a8e57362d0f4aa6548a97a37f64a08}\label{classbloom_1_1render_1_1_model_a64a8e57362d0f4aa6548a97a37f64a08} 
+static std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1render_1_1_model}{Model}} $>$ {\bfseries Create\+Model} (const std\+::string \&path)
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a 3D model in the bloom rendering engine. 
+
+The \doxylink{classbloom_1_1render_1_1_model}{Model} class encapsulates the vertex and index buffers, and provides methods to bind and draw the model using Vulkan command buffers. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classbloom_1_1render_1_1_model_a5b83d8dccbfcac112f21b6e64543c3a6}\index{bloom::render::Model@{bloom::render::Model}!Bind@{Bind}}
+\index{Bind@{Bind}!bloom::render::Model@{bloom::render::Model}}
+\doxysubsubsection{\texorpdfstring{Bind()}{Bind()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_model_a5b83d8dccbfcac112f21b6e64543c3a6} 
+void bloom\+::render\+::\+Model\+::\+Bind (\begin{DoxyParamCaption}\item[{Vk\+Command\+Buffer}]{command\+Buffer}{}\end{DoxyParamCaption}) const}
+
+
+
+Binds the model\textquotesingle{}s vertex and index buffers to the command buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command\+Buffer} & The command buffer to bind the buffers to. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classbloom_1_1render_1_1_model_ac6fbf26241e997b7f0cd780f06ea8c69}\index{bloom::render::Model@{bloom::render::Model}!Draw@{Draw}}
+\index{Draw@{Draw}!bloom::render::Model@{bloom::render::Model}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_model_ac6fbf26241e997b7f0cd780f06ea8c69} 
+void bloom\+::render\+::\+Model\+::\+Draw (\begin{DoxyParamCaption}\item[{Vk\+Command\+Buffer}]{command\+Buffer}{}\end{DoxyParamCaption}) const}
+
+
+
+Draws the model using the bound buffers and command buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command\+Buffer} & The command buffer to record the draw command to. \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

@@ -1,28 +1,51 @@
 \doxysection{bloom\+::Factory Class Reference}
 \hypertarget{classbloom_1_1_factory}{}\label{classbloom_1_1_factory}\index{bloom::Factory@{bloom::Factory}}
+
+
+Manages the creation of game objects.  
+
+
+
+
+{\ttfamily \#include $<$factory.\+hpp$>$}
+
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename T , typename  = std\+::enable\+\_\+if\+\_\+t$<$std\+::is\+\_\+base\+\_\+of\+\_\+v$<$\+Object, T$>$$>$$>$ }\\std\+::shared\+\_\+ptr$<$ T $>$ \mbox{\hyperlink{classbloom_1_1_factory_a7ae2cf735666641480f3adc879dc15d5}{Create\+Object}} ()
+\Hypertarget{classbloom_1_1_factory_a7d8367198d92a526f18df16c8f0d6c4d}\label{classbloom_1_1_factory_a7d8367198d92a526f18df16c8f0d6c4d} 
+\mbox{\hyperlink{classbloom_1_1_factory}{Factory}} \& {\bfseries operator=} (const \mbox{\hyperlink{classbloom_1_1_factory}{Factory}} \&)=delete
 \item 
-\Hypertarget{classbloom_1_1_factory_a71867caa8196a0bb2c5585c87e503eb4}\label{classbloom_1_1_factory_a71867caa8196a0bb2c5585c87e503eb4} 
-\mbox{\hyperlink{object_8hpp_ac65b651055bbc2100bc99fb9bd34ac17}{Object\+Map}} {\bfseries Get\+Objects} ()
+\Hypertarget{classbloom_1_1_factory_a89267859f7cef24e591ac3d702a92edc}\label{classbloom_1_1_factory_a89267859f7cef24e591ac3d702a92edc} 
+{\bfseries Factory} (const \mbox{\hyperlink{classbloom_1_1_factory}{Factory}} \&)=delete
 \item 
-\Hypertarget{classbloom_1_1_factory_a95d6a115fd1defdaae6501cad2a692e5}\label{classbloom_1_1_factory_a95d6a115fd1defdaae6501cad2a692e5} 
-\mbox{\hyperlink{actor_8hpp_a0a6a92f666ce85e7aaa009b4a2af96ee}{Actor\+Map}} {\bfseries Get\+Renderables} ()
+{\footnotesize template$<$typename T , typename  = std\+::enable\+\_\+if\+\_\+t$<$std\+::is\+\_\+base\+\_\+of\+\_\+v$<$\+Object, T$>$$>$$>$ }\\std\+::shared\+\_\+ptr$<$ T $>$ \mbox{\hyperlink{classbloom_1_1_factory_af514408c2042144df3700f690554bc6e}{Create\+Object}} (const std\+::string \&name="{}Unnamed Object"{})
 \item 
-\Hypertarget{classbloom_1_1_factory_a5621f8d22f8fdfb2d19a2b39c5559c9b}\label{classbloom_1_1_factory_a5621f8d22f8fdfb2d19a2b39c5559c9b} 
-void {\bfseries Set\+Device} (\mbox{\hyperlink{classbloom_1_1render_1_1_devices}{render\+::\+Devices}} \texorpdfstring{$\ast$}{*}device)
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{namespacebloom_ac65b651055bbc2100bc99fb9bd34ac17}{Object\+Map}} \mbox{\hyperlink{classbloom_1_1_factory_a71867caa8196a0bb2c5585c87e503eb4}{Get\+Objects}} ()
+\begin{DoxyCompactList}\small\item\em Gets all objects. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacebloom_a0a6a92f666ce85e7aaa009b4a2af96ee}{Actor\+Map}} \mbox{\hyperlink{classbloom_1_1_factory_a95d6a115fd1defdaae6501cad2a692e5}{Get\+Renderables}} ()
+\begin{DoxyCompactList}\small\item\em Gets all renderable objects ({\ttfamily \doxylink{classbloom_1_1_actor}{Actor}} class) \end{DoxyCompactList}\item 
+\Hypertarget{classbloom_1_1_factory_aaef96a35c8a521bdfd63fdc223190882}\label{classbloom_1_1_factory_aaef96a35c8a521bdfd63fdc223190882} 
+void {\bfseries Destroy\+All\+Objects} ()
+\begin{DoxyCompactList}\small\item\em Destroys all objects Calls the On\+Close method of all objects and clears the {\ttfamily Objects} and {\ttfamily Renderables} maps. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classbloom_1_1_factory}{Factory}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classbloom_1_1_factory_abd79523c7412ce560106616ccdc6ab1a}{Get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Gets the instance of the \doxylink{classbloom_1_1_factory}{Factory}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Manages the creation of game objects. 
+
+The \doxylink{classbloom_1_1_factory}{Factory} class is responsible for creating game objects, assigning unique IDs to them, and maintaining maps of all created objects and renderable actors. 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{classbloom_1_1_factory_a7ae2cf735666641480f3adc879dc15d5}\index{bloom::Factory@{bloom::Factory}!CreateObject@{CreateObject}}
+\Hypertarget{classbloom_1_1_factory_af514408c2042144df3700f690554bc6e}\index{bloom::Factory@{bloom::Factory}!CreateObject@{CreateObject}}
 \index{CreateObject@{CreateObject}!bloom::Factory@{bloom::Factory}}
 \doxysubsubsection{\texorpdfstring{CreateObject()}{CreateObject()}}
-{\footnotesize\ttfamily \label{classbloom_1_1_factory_a7ae2cf735666641480f3adc879dc15d5} 
+{\footnotesize\ttfamily \label{classbloom_1_1_factory_af514408c2042144df3700f690554bc6e} 
 template$<$typename T , typename $>$ \\
-std\+::shared\+\_\+ptr$<$ T $>$ bloom\+::\+Factory\+::\+Create\+Object (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+std\+::shared\+\_\+ptr$<$ T $>$ bloom\+::\+Factory\+::\+Create\+Object (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{ = {\ttfamily "{}Unnamed~Object"{}}}\end{DoxyParamCaption})}
 
 Creates an Entity and does all the set-\/up processes that need to happen
 
@@ -34,8 +57,48 @@ Creates an Entity and does all the set-\/up processes that need to happen
 \begin{DoxyReturn}{Returns}
 Created entity 
 \end{DoxyReturn}
+\Hypertarget{classbloom_1_1_factory_abd79523c7412ce560106616ccdc6ab1a}\index{bloom::Factory@{bloom::Factory}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!bloom::Factory@{bloom::Factory}}
+\doxysubsubsection{\texorpdfstring{GetInstance()}{GetInstance()}}
+{\footnotesize\ttfamily \label{classbloom_1_1_factory_abd79523c7412ce560106616ccdc6ab1a} 
+static \mbox{\hyperlink{classbloom_1_1_factory}{Factory}} \texorpdfstring{$\ast$}{*} bloom\+::\+Factory\+::\+Get\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+
+Gets the instance of the \doxylink{classbloom_1_1_factory}{Factory}. 
+
+\begin{DoxyReturn}{Returns}
+The instance of the \doxylink{classbloom_1_1_factory}{Factory} 
+\end{DoxyReturn}
+\Hypertarget{classbloom_1_1_factory_a71867caa8196a0bb2c5585c87e503eb4}\index{bloom::Factory@{bloom::Factory}!GetObjects@{GetObjects}}
+\index{GetObjects@{GetObjects}!bloom::Factory@{bloom::Factory}}
+\doxysubsubsection{\texorpdfstring{GetObjects()}{GetObjects()}}
+{\footnotesize\ttfamily \label{classbloom_1_1_factory_a71867caa8196a0bb2c5585c87e503eb4} 
+\mbox{\hyperlink{namespacebloom_ac65b651055bbc2100bc99fb9bd34ac17}{Object\+Map}} bloom\+::\+Factory\+::\+Get\+Objects (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets all objects. 
+
+\begin{DoxyReturn}{Returns}
+Map of all objects 
+\end{DoxyReturn}
+\Hypertarget{classbloom_1_1_factory_a95d6a115fd1defdaae6501cad2a692e5}\index{bloom::Factory@{bloom::Factory}!GetRenderables@{GetRenderables}}
+\index{GetRenderables@{GetRenderables}!bloom::Factory@{bloom::Factory}}
+\doxysubsubsection{\texorpdfstring{GetRenderables()}{GetRenderables()}}
+{\footnotesize\ttfamily \label{classbloom_1_1_factory_a95d6a115fd1defdaae6501cad2a692e5} 
+\mbox{\hyperlink{namespacebloom_a0a6a92f666ce85e7aaa009b4a2af96ee}{Actor\+Map}} bloom\+::\+Factory\+::\+Get\+Renderables (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets all renderable objects ({\ttfamily \doxylink{classbloom_1_1_actor}{Actor}} class) 
+
+\begin{DoxyReturn}{Returns}
+Map of all actors 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/xgoni/bloom/bloom/src/\mbox{\hyperlink{factory_8hpp}{factory.\+hpp}}\end{DoxyCompactItemize}
+C\+:/\+Users/xgoni/bloom/bloom/src/\mbox{\hyperlink{factory_8hpp}{factory.\+hpp}}\item 
+C\+:/\+Users/xgoni/bloom/bloom/src/factory.\+cpp\end{DoxyCompactItemize}

@@ -7,11 +7,18 @@ This file contains the declaration of the actor class.
 
 {\ttfamily \#include "{}object.\+hpp"{}}\newline
 {\ttfamily \#include "{}src/render/descriptors.\+hpp"{}}\newline
+{\ttfamily \#include "{}src/render/model.\+hpp"{}}\newline
+{\ttfamily \#include "{}src/render/texture.\+hpp"{}}\newline
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{classbloom_1_1_actor}{bloom\+::\+Actor}}
 \begin{DoxyCompactList}\small\item\em Represents a renderable and potentially interactive object within the game world. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacebloom}{bloom}}
+\begin{DoxyCompactList}\small\item\em Contains the core classes and functions for the bloom engine. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
@@ -28,7 +35,7 @@ class \mbox{\hyperlink{classbloom_1_1_actor}{bloom\+::\+Actor}}
 \doxysubsubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-typedef std\+::unordered\+\_\+map$<$ id\+\_\+t, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1_actor}{Actor}} $>$ $>$ \mbox{\hyperlink{actor_8hpp_a0a6a92f666ce85e7aaa009b4a2af96ee}{bloom\+::\+Actor\+Map}}
+typedef std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{core_8hpp_abaf665e52c9979a5f6eb9ecfce756efc}{id\+\_\+t}}, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1_actor}{Actor}} $>$ $>$ \mbox{\hyperlink{namespacebloom_a0a6a92f666ce85e7aaa009b4a2af96ee}{bloom\+::\+Actor\+Map}}
 \end{DoxyCompactItemize}
 
 
@@ -65,12 +72,3 @@ This is a completely black image, meaning no emission by default \Hypertarget{ac
 Filepath for a simple RMO texture that is used as fallback if no texture is sent. 
 
 This texture has a roughness of 0.\+5f, a metalic of 0.\+0f and an Ambient Occlusion of 1.\+0f This will be the default PBR settings for every material 
-
-\doxysubsection{Typedef Documentation}
-\Hypertarget{actor_8hpp_a0a6a92f666ce85e7aaa009b4a2af96ee}\index{actor.hpp@{actor.hpp}!ActorMap@{ActorMap}}
-\index{ActorMap@{ActorMap}!actor.hpp@{actor.hpp}}
-\doxysubsubsection{\texorpdfstring{ActorMap}{ActorMap}}
-{\footnotesize\ttfamily \label{actor_8hpp_a0a6a92f666ce85e7aaa009b4a2af96ee} 
-typedef std\+::unordered\+\_\+map$<$id\+\_\+t,std\+::shared\+\_\+ptr$<$Actor$>$ $>$ \mbox{\hyperlink{actor_8hpp_a0a6a92f666ce85e7aaa009b4a2af96ee}{bloom\+::\+Actor\+Map}}}
-
-A map of Actor IDs to shared pointers of Actors. This map is used to store and manage all active actors in the game world. The ID is used as the key for efficient lookup and retrieval of individual actors. 

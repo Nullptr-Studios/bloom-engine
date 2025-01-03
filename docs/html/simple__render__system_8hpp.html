@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Bloom Engine: C:/Users/xgoni/bloom/bloom/src/simple_render_system.hpp File Reference</title>
+<title>Bloom Engine: C:/Users/xgoni/bloom/bloom/src/render/systems/simple_render_system.hpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -83,36 +83,47 @@ $(function(){ initResizable(false); });
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_a911f0a37fba255b134e89c76f6a8ad1.html">bloom</a></li><li class="navelem"><a class="el" href="dir_3662e0c0bd99ea31956716836e8592aa.html">src</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_a911f0a37fba255b134e89c76f6a8ad1.html">bloom</a></li><li class="navelem"><a class="el" href="dir_3662e0c0bd99ea31956716836e8592aa.html">src</a></li><li class="navelem"><a class="el" href="dir_12558c5c22ddf08d3808d1caa85ac7d1.html">render</a></li><li class="navelem"><a class="el" href="dir_701c1bc2080a5c745c73eee9a73bbac9.html">systems</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle"><div class="title">simple_render_system.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>[Brief description of the file's purpose]  
+<p>Defines the SimpleRenderSystem class for rendering objects.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="actor_8hpp_source.html">objects/actor.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="devices_8hpp_source.html">render/devices.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="pipeline_8hpp_source.html">render/pipeline.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="camera_8hpp_source.html">objects/camera.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="frame__info_8hpp_source.html">render/frame_info.hpp</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="actor_8hpp_source.html">src/objects/actor.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="devices_8hpp_source.html">../devices.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="pipeline_8hpp_source.html">../pipeline.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="frame__info_8hpp_source.html">../frame_info.hpp</a>&quot;</code><br />
 </div>
 <p><a href="simple__render__system_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbloom_1_1_simple_render_system.html">bloom::SimpleRenderSystem</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbloom_1_1render_1_1_simple_render_system.html">bloom::render::SimpleRenderSystem</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manages the rendering of objects.  <a href="classbloom_1_1render_1_1_simple_render_system.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebloom.html">bloom</a></td></tr>
+<tr class="memdesc:namespacebloom"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the core classes and functions for the bloom engine. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebloom_1_1render.html">bloom::render</a></td></tr>
+<tr class="memdesc:namespacebloom_1_1render"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains classes and functions related to rendering in the bloom engine. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>[Brief description of the file's purpose] </p>
+<div class="textblock"><p>Defines the SimpleRenderSystem class for rendering objects. </p>
 <dl class="section author"><dt>Author</dt><dd>Xein <a href="#" onclick="location.href='mai'+'lto:'+'xgo'+'ni'+'p@g'+'ma'+'il.'+'co'+'m'; return false;">xgoni<span class="obfuscator">.nosp@m.</span>p@gm<span class="obfuscator">.nosp@m.</span>ail.c<span class="obfuscator">.nosp@m.</span>om</a> </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>11/12/2024 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>11/12/2024</dd></dl>
+<p>This file contains the declaration of the SimpleRenderSystem class, which is responsible for managing the rendering of objects in the bloom engine. It handles the creation of pipelines and the rendering process. </p>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

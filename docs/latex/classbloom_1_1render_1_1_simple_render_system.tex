@@ -1,0 +1,134 @@
+\doxysection{bloom\+::render\+::Simple\+Render\+System Class Reference}
+\hypertarget{classbloom_1_1render_1_1_simple_render_system}{}\label{classbloom_1_1render_1_1_simple_render_system}\index{bloom::render::SimpleRenderSystem@{bloom::render::SimpleRenderSystem}}
+
+
+Manages the rendering of objects.  
+
+
+
+
+{\ttfamily \#include $<$simple\+\_\+render\+\_\+system.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classbloom_1_1render_1_1_simple_render_system_a89b76a7f3c324a716bad744a3702a478}\label{classbloom_1_1render_1_1_simple_render_system_a89b76a7f3c324a716bad744a3702a478} 
+{\bfseries Simple\+Render\+System} (\mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}} \texorpdfstring{$\ast$}{*}devices)
+\item 
+\Hypertarget{classbloom_1_1render_1_1_simple_render_system_aaf19d8c61e0cc01125b532b10f067127}\label{classbloom_1_1render_1_1_simple_render_system_aaf19d8c61e0cc01125b532b10f067127} 
+{\bfseries Simple\+Render\+System} (const \mbox{\hyperlink{classbloom_1_1render_1_1_simple_render_system}{Simple\+Render\+System}} \&)=delete
+\item 
+\Hypertarget{classbloom_1_1render_1_1_simple_render_system_a99c42cb1f5e56d3150c500275ad06c2d}\label{classbloom_1_1render_1_1_simple_render_system_a99c42cb1f5e56d3150c500275ad06c2d} 
+\mbox{\hyperlink{classbloom_1_1render_1_1_simple_render_system}{Simple\+Render\+System}} \& {\bfseries operator=} (const \mbox{\hyperlink{classbloom_1_1render_1_1_simple_render_system}{Simple\+Render\+System}} \&)=delete
+\item 
+void \mbox{\hyperlink{classbloom_1_1render_1_1_simple_render_system_afd74eb736204390fce7b4fa2c4193e5d}{Begin}} (Vk\+Render\+Pass render\+Pass, Vk\+Descriptor\+Set\+Layout global\+Set\+Layout, Vk\+Descriptor\+Set\+Layout material\+Set\+Layout)
+\begin{DoxyCompactList}\small\item\em Begins the rendering process. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbloom_1_1render_1_1_simple_render_system_a74b71252e1c048c97b1d3c8052fe7f88}{Render\+Objects}} (\mbox{\hyperlink{structbloom_1_1render_1_1_frame_info}{Frame\+Info}} \&frame\+Info, \mbox{\hyperlink{namespacebloom_a0a6a92f666ce85e7aaa009b4a2af96ee}{Actor\+Map}} actors)
+\begin{DoxyCompactList}\small\item\em Renders the actors on the renderable map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classbloom_1_1render_1_1_simple_render_system_a6be1afe41e86bd9c629177b96e9797e7}\label{classbloom_1_1render_1_1_simple_render_system_a6be1afe41e86bd9c629177b96e9797e7} 
+static constexpr unsigned int {\bfseries MAX\+\_\+\+OBJECTS} = 1024
+\begin{DoxyCompactList}\small\item\em Maximum number of objects that can be rendered. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classbloom_1_1render_1_1_simple_render_system_ad391e27a28000881e9dd3e4b9630e690}{Create\+Pipeline\+Layout}} (Vk\+Descriptor\+Set\+Layout global\+Set\+Layout, Vk\+Descriptor\+Set\+Layout material\+Set\+Layout)
+\begin{DoxyCompactList}\small\item\em Creates the pipeline layout. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbloom_1_1render_1_1_simple_render_system_a906f1c9e75363ad376503b069a0578e4}{Create\+Pipeline}} (Vk\+Render\+Pass render\+Pass)
+\begin{DoxyCompactList}\small\item\em Creates the pipeline. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classbloom_1_1render_1_1_simple_render_system_af196d297f68e91cd8b2c8971d8c500fb}\label{classbloom_1_1render_1_1_simple_render_system_af196d297f68e91cd8b2c8971d8c500fb} 
+\mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}} \texorpdfstring{$\ast$}{*} {\bfseries m\+\_\+devices} = nullptr
+\item 
+\Hypertarget{classbloom_1_1render_1_1_simple_render_system_a68a8bfd547132c76845aa0d112832188}\label{classbloom_1_1render_1_1_simple_render_system_a68a8bfd547132c76845aa0d112832188} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1render_1_1_pipeline}{Pipeline}} $>$ {\bfseries m\+\_\+pipeline} = nullptr
+\item 
+\Hypertarget{classbloom_1_1render_1_1_simple_render_system_a6467848bd34cb1869604416df3c43465}\label{classbloom_1_1render_1_1_simple_render_system_a6467848bd34cb1869604416df3c43465} 
+Vk\+Pipeline\+Layout {\bfseries m\+\_\+pipeline\+Layout}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages the rendering of objects. 
+
+The \doxylink{classbloom_1_1render_1_1_simple_render_system}{Simple\+Render\+System} class is responsible for setting up the rendering pipeline and rendering objects in the bloom engine. It handles the creation of pipeline layouts and pipelines, and provides methods to begin the rendering process and render objects. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classbloom_1_1render_1_1_simple_render_system_afd74eb736204390fce7b4fa2c4193e5d}\index{bloom::render::SimpleRenderSystem@{bloom::render::SimpleRenderSystem}!Begin@{Begin}}
+\index{Begin@{Begin}!bloom::render::SimpleRenderSystem@{bloom::render::SimpleRenderSystem}}
+\doxysubsubsection{\texorpdfstring{Begin()}{Begin()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_simple_render_system_afd74eb736204390fce7b4fa2c4193e5d} 
+void bloom\+::render\+::\+Simple\+Render\+System\+::\+Begin (\begin{DoxyParamCaption}\item[{Vk\+Render\+Pass}]{render\+Pass}{, }\item[{Vk\+Descriptor\+Set\+Layout}]{global\+Set\+Layout}{, }\item[{Vk\+Descriptor\+Set\+Layout}]{material\+Set\+Layout}{}\end{DoxyParamCaption})}
+
+
+
+Begins the rendering process. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em render\+Pass} & The Vulkan render pass. \\
+\hline
+{\em global\+Set\+Layout} & The global descriptor set layout. \\
+\hline
+{\em material\+Set\+Layout} & The material descriptor set layout. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classbloom_1_1render_1_1_simple_render_system_a906f1c9e75363ad376503b069a0578e4}\index{bloom::render::SimpleRenderSystem@{bloom::render::SimpleRenderSystem}!CreatePipeline@{CreatePipeline}}
+\index{CreatePipeline@{CreatePipeline}!bloom::render::SimpleRenderSystem@{bloom::render::SimpleRenderSystem}}
+\doxysubsubsection{\texorpdfstring{CreatePipeline()}{CreatePipeline()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_simple_render_system_a906f1c9e75363ad376503b069a0578e4} 
+void bloom\+::render\+::\+Simple\+Render\+System\+::\+Create\+Pipeline (\begin{DoxyParamCaption}\item[{Vk\+Render\+Pass}]{render\+Pass}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Creates the pipeline. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em render\+Pass} & The Vulkan render pass. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classbloom_1_1render_1_1_simple_render_system_ad391e27a28000881e9dd3e4b9630e690}\index{bloom::render::SimpleRenderSystem@{bloom::render::SimpleRenderSystem}!CreatePipelineLayout@{CreatePipelineLayout}}
+\index{CreatePipelineLayout@{CreatePipelineLayout}!bloom::render::SimpleRenderSystem@{bloom::render::SimpleRenderSystem}}
+\doxysubsubsection{\texorpdfstring{CreatePipelineLayout()}{CreatePipelineLayout()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_simple_render_system_ad391e27a28000881e9dd3e4b9630e690} 
+void bloom\+::render\+::\+Simple\+Render\+System\+::\+Create\+Pipeline\+Layout (\begin{DoxyParamCaption}\item[{Vk\+Descriptor\+Set\+Layout}]{global\+Set\+Layout}{, }\item[{Vk\+Descriptor\+Set\+Layout}]{material\+Set\+Layout}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Creates the pipeline layout. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em global\+Set\+Layout} & The global descriptor set layout. \\
+\hline
+{\em material\+Set\+Layout} & The material descriptor set layout. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classbloom_1_1render_1_1_simple_render_system_a74b71252e1c048c97b1d3c8052fe7f88}\index{bloom::render::SimpleRenderSystem@{bloom::render::SimpleRenderSystem}!RenderObjects@{RenderObjects}}
+\index{RenderObjects@{RenderObjects}!bloom::render::SimpleRenderSystem@{bloom::render::SimpleRenderSystem}}
+\doxysubsubsection{\texorpdfstring{RenderObjects()}{RenderObjects()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_simple_render_system_a74b71252e1c048c97b1d3c8052fe7f88} 
+void bloom\+::render\+::\+Simple\+Render\+System\+::\+Render\+Objects (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbloom_1_1render_1_1_frame_info}{Frame\+Info}} \&}]{frame\+Info}{, }\item[{\mbox{\hyperlink{namespacebloom_a0a6a92f666ce85e7aaa009b4a2af96ee}{Actor\+Map}}}]{actors}{}\end{DoxyParamCaption})}
+
+
+
+Renders the actors on the renderable map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em frame\+Info} & Information about the current frame. \\
+\hline
+{\em actors} & Map of actors to render. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/xgoni/bloom/bloom/src/render/systems/\mbox{\hyperlink{simple__render__system_8hpp}{simple\+\_\+render\+\_\+system.\+hpp}}\item 
+C\+:/\+Users/xgoni/bloom/bloom/src/render/systems/simple\+\_\+render\+\_\+system.\+cpp\end{DoxyCompactItemize}

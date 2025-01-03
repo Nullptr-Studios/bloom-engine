@@ -83,7 +83,7 @@ $(function(){ initResizable(false); });
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>bloom</b></li><li class="navelem"><b>render</b></li><li class="navelem"><a class="el" href="classbloom_1_1render_1_1_model.html">Model</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacebloom.html">bloom</a></li><li class="navelem"><a class="el" href="namespacebloom_1_1render.html">render</a></li><li class="navelem"><a class="el" href="classbloom_1_1render_1_1_model.html">Model</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div id="doc-content">
@@ -91,36 +91,104 @@ $(function(){ initResizable(false); });
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="classbloom_1_1render_1_1_model-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">bloom::render::Model Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Represents a 3D model in the bloom rendering engine.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="model_8hpp_source.html">model.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structbloom_1_1render_1_1_model_1_1_builder.html">Builder</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper struct to build a <a class="el" href="classbloom_1_1render_1_1_model.html" title="Represents a 3D model in the bloom rendering engine.">Model</a> instance.  <a href="structbloom_1_1render_1_1_model_1_1_builder.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structbloom_1_1render_1_1_model_1_1_vertex.html">Vertex</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a single vertex in the model.  <a href="structbloom_1_1render_1_1_model_1_1_vertex.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aaf7e5c1470dfecd295e15e2c285c3cb5" id="r_aaf7e5c1470dfecd295e15e2c285c3cb5"><td class="memItemLeft" align="right" valign="top"><a id="aaf7e5c1470dfecd295e15e2c285c3cb5" name="aaf7e5c1470dfecd295e15e2c285c3cb5"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Model</b> (<a class="el" href="classbloom_1_1render_1_1_devices.html">Devices</a> *device, const <a class="el" href="structbloom_1_1render_1_1_model_1_1_builder.html">Builder</a> &amp;builder)</td></tr>
-<tr class="separator:aaf7e5c1470dfecd295e15e2c285c3cb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b94c1d74c2c7f295bd54a04cbf50ec9" id="r_a8b94c1d74c2c7f295bd54a04cbf50ec9"><td class="memItemLeft" align="right" valign="top"><a id="a8b94c1d74c2c7f295bd54a04cbf50ec9" name="a8b94c1d74c2c7f295bd54a04cbf50ec9"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Model</b> (const <a class="el" href="structbloom_1_1render_1_1_model_1_1_builder.html">Builder</a> &amp;builder)</td></tr>
+<tr class="separator:a8b94c1d74c2c7f295bd54a04cbf50ec9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31fda9ba10dfa1d4ba0b4d0eac905ee9" id="r_a31fda9ba10dfa1d4ba0b4d0eac905ee9"><td class="memItemLeft" align="right" valign="top"><a id="a31fda9ba10dfa1d4ba0b4d0eac905ee9" name="a31fda9ba10dfa1d4ba0b4d0eac905ee9"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Model</b> (const <a class="el" href="classbloom_1_1render_1_1_model.html">Model</a> &amp;)=delete</td></tr>
 <tr class="separator:a31fda9ba10dfa1d4ba0b4d0eac905ee9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a44b59ec6c31886f3f08d469dd2842c9f" id="r_a44b59ec6c31886f3f08d469dd2842c9f"><td class="memItemLeft" align="right" valign="top"><a id="a44b59ec6c31886f3f08d469dd2842c9f" name="a44b59ec6c31886f3f08d469dd2842c9f"></a>
 <a class="el" href="classbloom_1_1render_1_1_model.html">Model</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classbloom_1_1render_1_1_model.html">Model</a> &amp;)=delete</td></tr>
 <tr class="separator:a44b59ec6c31886f3f08d469dd2842c9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af4e4057c7d643ad59ea427ef7d7f62d0" id="r_af4e4057c7d643ad59ea427ef7d7f62d0"><td class="memItemLeft" align="right" valign="top"><a id="af4e4057c7d643ad59ea427ef7d7f62d0" name="af4e4057c7d643ad59ea427ef7d7f62d0"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Bind</b> (VkCommandBuffer commandBuffer)</td></tr>
-<tr class="separator:af4e4057c7d643ad59ea427ef7d7f62d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a75142902b3161674b4f4877d60e2960a" id="r_a75142902b3161674b4f4877d60e2960a"><td class="memItemLeft" align="right" valign="top"><a id="a75142902b3161674b4f4877d60e2960a" name="a75142902b3161674b4f4877d60e2960a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Draw</b> (VkCommandBuffer commandBuffer)</td></tr>
-<tr class="separator:a75142902b3161674b4f4877d60e2960a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b83d8dccbfcac112f21b6e64543c3a6" id="r_a5b83d8dccbfcac112f21b6e64543c3a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5b83d8dccbfcac112f21b6e64543c3a6">Bind</a> (VkCommandBuffer commandBuffer) const</td></tr>
+<tr class="memdesc:a5b83d8dccbfcac112f21b6e64543c3a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binds the model's vertex and index buffers to the command buffer.  <br /></td></tr>
+<tr class="separator:a5b83d8dccbfcac112f21b6e64543c3a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6fbf26241e997b7f0cd780f06ea8c69" id="r_ac6fbf26241e997b7f0cd780f06ea8c69"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac6fbf26241e997b7f0cd780f06ea8c69">Draw</a> (VkCommandBuffer commandBuffer) const</td></tr>
+<tr class="memdesc:ac6fbf26241e997b7f0cd780f06ea8c69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws the model using the bound buffers and command buffer.  <br /></td></tr>
+<tr class="separator:ac6fbf26241e997b7f0cd780f06ea8c69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a64a8e57362d0f4aa6548a97a37f64a08" id="r_a64a8e57362d0f4aa6548a97a37f64a08"><td class="memItemLeft" align="right" valign="top"><a id="a64a8e57362d0f4aa6548a97a37f64a08" name="a64a8e57362d0f4aa6548a97a37f64a08"></a>
+static std::unique_ptr&lt; <a class="el" href="classbloom_1_1render_1_1_model.html">Model</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>CreateModel</b> (const std::string &amp;path)</td></tr>
+<tr class="separator:a64a8e57362d0f4aa6548a97a37f64a08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Represents a 3D model in the bloom rendering engine. </p>
+<p>The <a class="el" href="classbloom_1_1render_1_1_model.html" title="Represents a 3D model in the bloom rendering engine.">Model</a> class encapsulates the vertex and index buffers, and provides methods to bind and draw the model using Vulkan command buffers. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a5b83d8dccbfcac112f21b6e64543c3a6" name="a5b83d8dccbfcac112f21b6e64543c3a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b83d8dccbfcac112f21b6e64543c3a6">&#9670;&#160;</a></span>Bind()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bloom::render::Model::Bind </td>
+          <td>(</td>
+          <td class="paramtype">VkCommandBuffer</td>          <td class="paramname"><span class="paramname"><em>commandBuffer</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Binds the model's vertex and index buffers to the command buffer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">commandBuffer</td><td>The command buffer to bind the buffers to. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac6fbf26241e997b7f0cd780f06ea8c69" name="ac6fbf26241e997b7f0cd780f06ea8c69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6fbf26241e997b7f0cd780f06ea8c69">&#9670;&#160;</a></span>Draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bloom::render::Model::Draw </td>
+          <td>(</td>
+          <td class="paramtype">VkCommandBuffer</td>          <td class="paramname"><span class="paramname"><em>commandBuffer</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Draws the model using the bound buffers and command buffer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">commandBuffer</td><td>The command buffer to record the draw command to. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>C:/Users/xgoni/bloom/bloom/src/render/<a class="el" href="model_8hpp_source.html">model.hpp</a></li>
 <li>C:/Users/xgoni/bloom/bloom/src/render/<b>model.cpp</b></li>

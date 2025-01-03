@@ -1,0 +1,124 @@
+\doxysection{bloom\+::Layer Class Reference}
+\hypertarget{classbloom_1_1_layer}{}\label{classbloom_1_1_layer}\index{bloom::Layer@{bloom::Layer}}
+Inheritance diagram for bloom\+::Layer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classbloom_1_1_layer}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classbloom_1_1_layer_a3c942f0996f3e391a2864e7714926969}{On\+Attach}} ()=0
+\begin{DoxyCompactList}\small\item\em Called when the layer is attached to the layer stack. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classbloom_1_1_layer_aa88a4df7e0c94444d4ed1a8eaf9b2072}{On\+Begin}} ()=0
+\begin{DoxyCompactList}\small\item\em Called before starting the game loop. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classbloom_1_1_layer_a1b2941d7a20120de4b1a6f7a9b48af61}{On\+Tick}} (float delta\+Time)=0
+\begin{DoxyCompactList}\small\item\em Called every frame. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classbloom_1_1_layer_ac518d4fe56b7a72190caf022f16676ee}{On\+Render}} (\mbox{\hyperlink{structbloom_1_1render_1_1_frame_info}{render\+::\+Frame\+Info}} frame\+Info)=0
+\begin{DoxyCompactList}\small\item\em Called every frame after the {\ttfamily Tick}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classbloom_1_1_layer_aa65fe0ffcdf4f8baf22a17f1c5f2b56d}{On\+Detach}} ()=0
+\begin{DoxyCompactList}\small\item\em Called before ending the game loop. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classbloom_1_1_layer_a5b88eef8d51b5eeaa234e0eb20fbd307}{On\+Event}} (\mbox{\hyperlink{classbloom_1_1_event}{Event}} \&e)=0
+\begin{DoxyCompactList}\small\item\em Called when an event is triggered. \end{DoxyCompactList}\item 
+\Hypertarget{classbloom_1_1_layer_a01e924cf35915263d8fdd159283bd8ce}\label{classbloom_1_1_layer_a01e924cf35915263d8fdd159283bd8ce} 
+const std\+::string \& {\bfseries Get\+Name} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classbloom_1_1_layer_ae8ff5e2b624a1bfb633d818eb2f60e27}\label{classbloom_1_1_layer_ae8ff5e2b624a1bfb633d818eb2f60e27} 
+{\bfseries Layer} (const std\+::string \&name="{}Unnamed Layer"{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classbloom_1_1_layer_a3c942f0996f3e391a2864e7714926969}\index{bloom::Layer@{bloom::Layer}!OnAttach@{OnAttach}}
+\index{OnAttach@{OnAttach}!bloom::Layer@{bloom::Layer}}
+\doxysubsubsection{\texorpdfstring{OnAttach()}{OnAttach()}}
+{\footnotesize\ttfamily \label{classbloom_1_1_layer_a3c942f0996f3e391a2864e7714926969} 
+virtual void bloom\+::\+Layer\+::\+On\+Attach (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Called when the layer is attached to the layer stack. 
+
+
+
+Implemented in \mbox{\hyperlink{classbloom_1_1render_1_1_game_layer_a3cb34b68c3d304be78b2b1a21bb7e587}{bloom\+::render\+::\+Game\+Layer}}, and \mbox{\hyperlink{classbloom_1_1ui_1_1_u_i_layer_a6e7fe904683ca5d27c8d8bd063c13550}{bloom\+::ui\+::\+UILayer}}.
+
+\Hypertarget{classbloom_1_1_layer_aa88a4df7e0c94444d4ed1a8eaf9b2072}\index{bloom::Layer@{bloom::Layer}!OnBegin@{OnBegin}}
+\index{OnBegin@{OnBegin}!bloom::Layer@{bloom::Layer}}
+\doxysubsubsection{\texorpdfstring{OnBegin()}{OnBegin()}}
+{\footnotesize\ttfamily \label{classbloom_1_1_layer_aa88a4df7e0c94444d4ed1a8eaf9b2072} 
+virtual void bloom\+::\+Layer\+::\+On\+Begin (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Called before starting the game loop. 
+
+
+
+Implemented in \mbox{\hyperlink{classbloom_1_1render_1_1_game_layer_a8ec0293a129976fd81160387a84fb70c}{bloom\+::render\+::\+Game\+Layer}}, and \mbox{\hyperlink{classbloom_1_1ui_1_1_u_i_layer_a9b050aaaf69c43586e8e4c1c50114c22}{bloom\+::ui\+::\+UILayer}}.
+
+\Hypertarget{classbloom_1_1_layer_aa65fe0ffcdf4f8baf22a17f1c5f2b56d}\index{bloom::Layer@{bloom::Layer}!OnDetach@{OnDetach}}
+\index{OnDetach@{OnDetach}!bloom::Layer@{bloom::Layer}}
+\doxysubsubsection{\texorpdfstring{OnDetach()}{OnDetach()}}
+{\footnotesize\ttfamily \label{classbloom_1_1_layer_aa65fe0ffcdf4f8baf22a17f1c5f2b56d} 
+virtual void bloom\+::\+Layer\+::\+On\+Detach (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Called before ending the game loop. 
+
+
+
+Implemented in \mbox{\hyperlink{classbloom_1_1render_1_1_game_layer_a5634350e3319c123c46961ded99c1db9}{bloom\+::render\+::\+Game\+Layer}}, and \mbox{\hyperlink{classbloom_1_1ui_1_1_u_i_layer_a5d4a4580959c19aabe63d105d4df0a55}{bloom\+::ui\+::\+UILayer}}.
+
+\Hypertarget{classbloom_1_1_layer_a5b88eef8d51b5eeaa234e0eb20fbd307}\index{bloom::Layer@{bloom::Layer}!OnEvent@{OnEvent}}
+\index{OnEvent@{OnEvent}!bloom::Layer@{bloom::Layer}}
+\doxysubsubsection{\texorpdfstring{OnEvent()}{OnEvent()}}
+{\footnotesize\ttfamily \label{classbloom_1_1_layer_a5b88eef8d51b5eeaa234e0eb20fbd307} 
+virtual void bloom\+::\+Layer\+::\+On\+Event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbloom_1_1_event}{Event}} \&}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Called when an event is triggered. 
+
+
+
+Implemented in \mbox{\hyperlink{classbloom_1_1render_1_1_game_layer_a035a0af42a39b77c1ad40a684e60c57a}{bloom\+::render\+::\+Game\+Layer}}, and \mbox{\hyperlink{classbloom_1_1ui_1_1_u_i_layer_a721a2dc01e0b20af32eff21eac9ca7d3}{bloom\+::ui\+::\+UILayer}}.
+
+\Hypertarget{classbloom_1_1_layer_ac518d4fe56b7a72190caf022f16676ee}\index{bloom::Layer@{bloom::Layer}!OnRender@{OnRender}}
+\index{OnRender@{OnRender}!bloom::Layer@{bloom::Layer}}
+\doxysubsubsection{\texorpdfstring{OnRender()}{OnRender()}}
+{\footnotesize\ttfamily \label{classbloom_1_1_layer_ac518d4fe56b7a72190caf022f16676ee} 
+virtual void bloom\+::\+Layer\+::\+On\+Render (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbloom_1_1render_1_1_frame_info}{render\+::\+Frame\+Info}}}]{frame\+Info}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Called every frame after the {\ttfamily Tick}. 
+
+
+
+Implemented in \mbox{\hyperlink{classbloom_1_1render_1_1_game_layer_ab173e1aeb4f3af663213e2c5db77343c}{bloom\+::render\+::\+Game\+Layer}}, and \mbox{\hyperlink{classbloom_1_1ui_1_1_u_i_layer_a2e5d30990db46c1098a49e020147421b}{bloom\+::ui\+::\+UILayer}}.
+
+\Hypertarget{classbloom_1_1_layer_a1b2941d7a20120de4b1a6f7a9b48af61}\index{bloom::Layer@{bloom::Layer}!OnTick@{OnTick}}
+\index{OnTick@{OnTick}!bloom::Layer@{bloom::Layer}}
+\doxysubsubsection{\texorpdfstring{OnTick()}{OnTick()}}
+{\footnotesize\ttfamily \label{classbloom_1_1_layer_a1b2941d7a20120de4b1a6f7a9b48af61} 
+virtual void bloom\+::\+Layer\+::\+On\+Tick (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Called every frame. 
+
+
+
+Implemented in \mbox{\hyperlink{classbloom_1_1render_1_1_game_layer_a8de251e21ad414273d63af245488029d}{bloom\+::render\+::\+Game\+Layer}}, and \mbox{\hyperlink{classbloom_1_1ui_1_1_u_i_layer_aa304796d5870184f596d07404136e9b3}{bloom\+::ui\+::\+UILayer}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/xgoni/bloom/bloom/src/layers/\mbox{\hyperlink{layer_8hpp}{layer.\+hpp}}\end{DoxyCompactItemize}

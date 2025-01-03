@@ -18,17 +18,20 @@ Inheritance diagram for bloom\+::Camera\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classbloom_1_1_camera_a55653f8b0847d95366a26c57e4309a78}{Camera}} (const id\+\_\+t id, \mbox{\hyperlink{classbloom_1_1render_1_1_devices}{render\+::\+Devices}} \texorpdfstring{$\ast$}{*}devices)
-\begin{DoxyCompactList}\small\item\em Constructs a new \doxylink{classbloom_1_1_camera}{Camera} object. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classbloom_1_1_camera_a2d8223c7b3e813dd4730cdfb65c09ad5}{Begin}} () override
+\Hypertarget{classbloom_1_1_camera_a606b6e9994710232c8967aa394333167}\label{classbloom_1_1_camera_a606b6e9994710232c8967aa394333167} 
+{\bfseries Camera} (\mbox{\hyperlink{core_8hpp_abaf665e52c9979a5f6eb9ecfce756efc}{id\+\_\+t}} id)
+\item 
+void \mbox{\hyperlink{classbloom_1_1_camera_a4edcf10ceaedccad2b778ef7c5617902}{On\+Begin}} () override
 \begin{DoxyCompactList}\small\item\em Called at the beginning of the scene. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classbloom_1_1_camera_a3bdd365fbd68115e04871bbecba7b7e6}{Tick}} (float delta\+Time) override
+void \mbox{\hyperlink{classbloom_1_1_camera_ae88be94208c3ad0506c17de3378a9984}{On\+Tick}} (float delta\+Time) override
 \begin{DoxyCompactList}\small\item\em Called every frame to update the object\textquotesingle{}s state. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classbloom_1_1_camera_adc3b77f1fdc18380c9f4dbb564903f74}{End}} () override
+void \mbox{\hyperlink{classbloom_1_1_camera_a9fb663c023116859ec684a92ed4ae356}{On\+Close}} () override
 \begin{DoxyCompactList}\small\item\em Called at the end of the scene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbloom_1_1_camera_aa50ddaf67c3abbbd6e6bce571ad3d705}{Properties\+Panel}} () override
+\item 
 void \mbox{\hyperlink{classbloom_1_1_camera_a9060e4a12a62abb802ac2ccc717b0e4e}{Set\+Orthographic\+Projection}} (float left, float right, float bottom, float top, float near, float far)
 \begin{DoxyCompactList}\small\item\em Sets an orthographic projection for the camera. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classbloom_1_1_camera_ab244f78e1064991ed0060becbe9bfed0}{Set\+Perspective\+Projection}} (float fov, float aspect, float near, float far)
+void \mbox{\hyperlink{classbloom_1_1_camera_a7f0c9dbe518ffc0242421dc1415c9ef4}{Set\+Perspective\+Projection}} ()
 \begin{DoxyCompactList}\small\item\em Sets a perspective projection for the camera. \end{DoxyCompactList}\item 
 const glm\+::mat4 \& \mbox{\hyperlink{classbloom_1_1_camera_adb9c42029c76df21dc2044f94029ed51}{Get\+Projection}} () const
 \begin{DoxyCompactList}\small\item\em Retrieves the camera\textquotesingle{}s projection matrix. \end{DoxyCompactList}\item 
@@ -37,8 +40,6 @@ const glm\+::mat4 \& \mbox{\hyperlink{classbloom_1_1_camera_a923af3ee3654a19bc3a
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classbloom_1_1_object}{bloom\+::\+Object}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classbloom_1_1_object_ae1d557ffa7496298977cfbfdae1d4daf}{Object}} (const id\+\_\+t id, \mbox{\hyperlink{classbloom_1_1render_1_1_devices}{render\+::\+Devices}} \texorpdfstring{$\ast$}{*}devices)
-\begin{DoxyCompactList}\small\item\em Constructs a new \doxylink{classbloom_1_1_object}{Object}. \end{DoxyCompactList}\item 
 {\bfseries Object} (const \mbox{\hyperlink{classbloom_1_1_object}{Object}} \&)=delete
 \item 
 \mbox{\hyperlink{classbloom_1_1_object}{Object}} \& {\bfseries operator=} (const \mbox{\hyperlink{classbloom_1_1_object}{Object}} \&)=delete
@@ -47,19 +48,25 @@ const glm\+::mat4 \& \mbox{\hyperlink{classbloom_1_1_camera_a923af3ee3654a19bc3a
 \item 
 \mbox{\hyperlink{classbloom_1_1_object}{Object}} \& {\bfseries operator=} (\mbox{\hyperlink{classbloom_1_1_object}{Object}} \&\&)=default
 \item 
-id\+\_\+t \mbox{\hyperlink{classbloom_1_1_object_ab83ebdaed718b62ace71bd6877eeca8a}{Get\+ID}} () const
-\begin{DoxyCompactList}\small\item\em Retrieves the object\textquotesingle{}s unique ID. \end{DoxyCompactList}\end{DoxyCompactItemize}
+virtual void \mbox{\hyperlink{classbloom_1_1_object_a22f8f39d529a0bdb7b3091513e43afde}{On\+Event}} (\mbox{\hyperlink{classbloom_1_1_event}{Event}} \&e)
+\begin{DoxyCompactList}\small\item\em Called when an event is received. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{core_8hpp_abaf665e52c9979a5f6eb9ecfce756efc}{id\+\_\+t}} \mbox{\hyperlink{classbloom_1_1_object_ab83ebdaed718b62ace71bd6877eeca8a}{Get\+ID}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the object\textquotesingle{}s unique ID. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classbloom_1_1_object_a3727fd5bab7f16866b1f5bf90d92330f}{Get\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the object\textquotesingle{}s name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbloom_1_1_object_aad024fee23e84df72b3a028dd19bfba9}{Set\+Name}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Sets the object\textquotesingle{}s name. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
 \doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classbloom_1_1_object}{bloom\+::\+Object}}}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{structbloom_1_1_transform}{Transform}} {\bfseries transform}
 \begin{DoxyCompactList}\small\item\em The object\textquotesingle{}s transform, representing its position, rotation, and scale. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classbloom_1_1_object}{bloom\+::\+Object}}}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classbloom_1_1_object}{bloom\+::\+Object}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classbloom_1_1render_1_1_devices}{render\+::\+Devices}} \texorpdfstring{$\ast$}{*} {\bfseries m\+\_\+devices} = nullptr
-\begin{DoxyCompactList}\small\item\em Pointer to the Vulkan device management object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\hyperlink{classbloom_1_1_object_a2d5d96df2b3a38ca832fafb1831ba60a}{Object}} (const \mbox{\hyperlink{core_8hpp_abaf665e52c9979a5f6eb9ecfce756efc}{id\+\_\+t}} id)
+\begin{DoxyCompactList}\small\item\em Constructs a new \doxylink{classbloom_1_1_object}{Object}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -72,55 +79,7 @@ Thanks Naiara for explaining this on MAT140
 \end{DoxyNote}
 
 
-\doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{classbloom_1_1_camera_a55653f8b0847d95366a26c57e4309a78}\index{bloom::Camera@{bloom::Camera}!Camera@{Camera}}
-\index{Camera@{Camera}!bloom::Camera@{bloom::Camera}}
-\doxysubsubsection{\texorpdfstring{Camera()}{Camera()}}
-{\footnotesize\ttfamily \label{classbloom_1_1_camera_a55653f8b0847d95366a26c57e4309a78} 
-bloom\+::\+Camera\+::\+Camera (\begin{DoxyParamCaption}\item[{const id\+\_\+t}]{id}{, }\item[{\mbox{\hyperlink{classbloom_1_1render_1_1_devices}{render\+::\+Devices}} \texorpdfstring{$\ast$}{*}}]{devices}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
-
-
-
-Constructs a new \doxylink{classbloom_1_1_camera}{Camera} object. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em id} & The unique identifier for this camera. \\
-\hline
-{\em devices} & A pointer to the Vulkan device management object. \\
-\hline
-\end{DoxyParams}
-
-
 \doxysubsection{Member Function Documentation}
-\Hypertarget{classbloom_1_1_camera_a2d8223c7b3e813dd4730cdfb65c09ad5}\index{bloom::Camera@{bloom::Camera}!Begin@{Begin}}
-\index{Begin@{Begin}!bloom::Camera@{bloom::Camera}}
-\doxysubsubsection{\texorpdfstring{Begin()}{Begin()}}
-{\footnotesize\ttfamily \label{classbloom_1_1_camera_a2d8223c7b3e813dd4730cdfb65c09ad5} 
-void bloom\+::\+Camera\+::\+Begin (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
-
-
-
-Called at the beginning of the scene. 
-
-
-
-Reimplemented from \mbox{\hyperlink{classbloom_1_1_object_a18d5a73479f99ed1fbb47b8b8b11acbc}{bloom\+::\+Object}}.
-
-\Hypertarget{classbloom_1_1_camera_adc3b77f1fdc18380c9f4dbb564903f74}\index{bloom::Camera@{bloom::Camera}!End@{End}}
-\index{End@{End}!bloom::Camera@{bloom::Camera}}
-\doxysubsubsection{\texorpdfstring{End()}{End()}}
-{\footnotesize\ttfamily \label{classbloom_1_1_camera_adc3b77f1fdc18380c9f4dbb564903f74} 
-void bloom\+::\+Camera\+::\+End (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
-
-
-
-Called at the end of the scene. 
-
-
-
-Reimplemented from \mbox{\hyperlink{classbloom_1_1_object_a7a7cc6230ab4a3ee158126469cf04352}{bloom\+::\+Object}}.
-
 \Hypertarget{classbloom_1_1_camera_adb9c42029c76df21dc2044f94029ed51}\index{bloom::Camera@{bloom::Camera}!GetProjection@{GetProjection}}
 \index{GetProjection@{GetProjection}!bloom::Camera@{bloom::Camera}}
 \doxysubsubsection{\texorpdfstring{GetProjection()}{GetProjection()}}
@@ -147,6 +106,71 @@ Retrieves the camera\textquotesingle{}s view matrix.
 \begin{DoxyReturn}{Returns}
 The view matrix. 
 \end{DoxyReturn}
+\Hypertarget{classbloom_1_1_camera_a4edcf10ceaedccad2b778ef7c5617902}\index{bloom::Camera@{bloom::Camera}!OnBegin@{OnBegin}}
+\index{OnBegin@{OnBegin}!bloom::Camera@{bloom::Camera}}
+\doxysubsubsection{\texorpdfstring{OnBegin()}{OnBegin()}}
+{\footnotesize\ttfamily \label{classbloom_1_1_camera_a4edcf10ceaedccad2b778ef7c5617902} 
+void bloom\+::\+Camera\+::\+On\+Begin (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called at the beginning of the scene. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classbloom_1_1_object_ad983db52ab1348200a8708d5caa0f884}{bloom\+::\+Object}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classwanderer_1_1_editor_camera_aa46d543424aa7d0214c8e1ab7c92bd28}{wanderer\+::\+Editor\+Camera}}.
+
+\Hypertarget{classbloom_1_1_camera_a9fb663c023116859ec684a92ed4ae356}\index{bloom::Camera@{bloom::Camera}!OnClose@{OnClose}}
+\index{OnClose@{OnClose}!bloom::Camera@{bloom::Camera}}
+\doxysubsubsection{\texorpdfstring{OnClose()}{OnClose()}}
+{\footnotesize\ttfamily \label{classbloom_1_1_camera_a9fb663c023116859ec684a92ed4ae356} 
+void bloom\+::\+Camera\+::\+On\+Close (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called at the end of the scene. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classbloom_1_1_object_a659545be34faab060113df793d069071}{bloom\+::\+Object}}.
+
+\Hypertarget{classbloom_1_1_camera_ae88be94208c3ad0506c17de3378a9984}\index{bloom::Camera@{bloom::Camera}!OnTick@{OnTick}}
+\index{OnTick@{OnTick}!bloom::Camera@{bloom::Camera}}
+\doxysubsubsection{\texorpdfstring{OnTick()}{OnTick()}}
+{\footnotesize\ttfamily \label{classbloom_1_1_camera_ae88be94208c3ad0506c17de3378a9984} 
+void bloom\+::\+Camera\+::\+On\+Tick (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called every frame to update the object\textquotesingle{}s state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & The time elapsed since the last frame. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classbloom_1_1_object_ab6c21b3f5ba2014560a499d71820b23b}{bloom\+::\+Object}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classwanderer_1_1_editor_camera_a968d3e1aede5413abeb562b77d16b7aa}{wanderer\+::\+Editor\+Camera}}.
+
+\Hypertarget{classbloom_1_1_camera_aa50ddaf67c3abbbd6e6bce571ad3d705}\index{bloom::Camera@{bloom::Camera}!PropertiesPanel@{PropertiesPanel}}
+\index{PropertiesPanel@{PropertiesPanel}!bloom::Camera@{bloom::Camera}}
+\doxysubsubsection{\texorpdfstring{PropertiesPanel()}{PropertiesPanel()}}
+{\footnotesize\ttfamily \label{classbloom_1_1_camera_aa50ddaf67c3abbbd6e6bce571ad3d705} 
+void bloom\+::\+Camera\+::\+Properties\+Panel (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classbloom_1_1_object}{bloom\+::\+Object}}.
+
 \Hypertarget{classbloom_1_1_camera_a9060e4a12a62abb802ac2ccc717b0e4e}\index{bloom::Camera@{bloom::Camera}!SetOrthographicProjection@{SetOrthographicProjection}}
 \index{SetOrthographicProjection@{SetOrthographicProjection}!bloom::Camera@{bloom::Camera}}
 \doxysubsubsection{\texorpdfstring{SetOrthographicProjection()}{SetOrthographicProjection()}}
@@ -174,53 +198,17 @@ An orthographic projection is a type of projection that does not simulate perspe
 {\em far} & The far clipping plane distance. \\
 \hline
 \end{DoxyParams}
-\Hypertarget{classbloom_1_1_camera_ab244f78e1064991ed0060becbe9bfed0}\index{bloom::Camera@{bloom::Camera}!SetPerspectiveProjection@{SetPerspectiveProjection}}
+\Hypertarget{classbloom_1_1_camera_a7f0c9dbe518ffc0242421dc1415c9ef4}\index{bloom::Camera@{bloom::Camera}!SetPerspectiveProjection@{SetPerspectiveProjection}}
 \index{SetPerspectiveProjection@{SetPerspectiveProjection}!bloom::Camera@{bloom::Camera}}
 \doxysubsubsection{\texorpdfstring{SetPerspectiveProjection()}{SetPerspectiveProjection()}}
-{\footnotesize\ttfamily \label{classbloom_1_1_camera_ab244f78e1064991ed0060becbe9bfed0} 
-void bloom\+::\+Camera\+::\+Set\+Perspective\+Projection (\begin{DoxyParamCaption}\item[{float}]{fov}{, }\item[{float}]{aspect}{, }\item[{float}]{near}{, }\item[{float}]{far}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{classbloom_1_1_camera_a7f0c9dbe518ffc0242421dc1415c9ef4} 
+void bloom\+::\+Camera\+::\+Set\+Perspective\+Projection (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
 Sets a perspective projection for the camera. 
 
-A perspective projection simulates how objects appear smaller as they get further away, creating a sense of depth.
-
-
-\begin{DoxyParams}{Parameters}
-{\em fov} & The vertical field of view in radians. \\
-\hline
-{\em aspect} & The aspect ratio of the projection (width / height). \\
-\hline
-{\em near} & The near clipping plane distance. \\
-\hline
-{\em far} & The far clipping plane distance. \\
-\hline
-\end{DoxyParams}
-\Hypertarget{classbloom_1_1_camera_a3bdd365fbd68115e04871bbecba7b7e6}\index{bloom::Camera@{bloom::Camera}!Tick@{Tick}}
-\index{Tick@{Tick}!bloom::Camera@{bloom::Camera}}
-\doxysubsubsection{\texorpdfstring{Tick()}{Tick()}}
-{\footnotesize\ttfamily \label{classbloom_1_1_camera_a3bdd365fbd68115e04871bbecba7b7e6} 
-void bloom\+::\+Camera\+::\+Tick (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
-
-
-
-Called every frame to update the object\textquotesingle{}s state. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em delta\+Time} & The time elapsed since the last frame. \\
-\hline
-\end{DoxyParams}
-
-
-Reimplemented from \mbox{\hyperlink{classbloom_1_1_object_a010ab8fafcd25b7260ac0005d9d43091}{bloom\+::\+Object}}.
-
-
-
-Reimplemented in \mbox{\hyperlink{classwanderer_1_1_editor_camera_a24a2839b7ce2cc98000a94f7bcd41b5f}{wanderer\+::\+Editor\+Camera}}.
-
-
+A perspective projection simulates how objects appear smaller as they get further away, creating a sense of depth. 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

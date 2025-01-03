@@ -5,24 +5,30 @@
 Main engine class.  
 
 
+{\ttfamily \#include $<$bloom\+\_\+header.\+hpp$>$}\newline
 {\ttfamily \#include "{}core.\+hpp"{}}\newline
-{\ttfamily \#include "{}window.\+hpp"{}}\newline
-{\ttfamily \#include "{}factory.\+hpp"{}}\newline
+{\ttfamily \#include "{}objects/camera.\+hpp"{}}\newline
+{\ttfamily \#include "{}render/descriptor\+\_\+layouts.\+hpp"{}}\newline
+{\ttfamily \#include "{}layers/layer\+\_\+stack.\+hpp"{}}\newline
 {\ttfamily \#include "{}render/devices.\+hpp"{}}\newline
 {\ttfamily \#include "{}render/renderer.\+hpp"{}}\newline
-{\ttfamily \#include "{}simple\+\_\+render\+\_\+system.\+hpp"{}}\newline
-{\ttfamily \#include "{}objects/camera.\+hpp"{}}\newline
-{\ttfamily \#include "{}render/descriptors.\+hpp"{}}\newline
-{\ttfamily \#include $<$bloom\+\_\+header.\+hpp$>$}\newline
+{\ttfamily \#include "{}window.\+hpp"{}}\newline
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{classbloom_1_1_engine}{bloom\+::\+Engine}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Main class for the bloom engine. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacebloom}{bloom}}
+\begin{DoxyCompactList}\small\item\em Contains the core classes and functions for the bloom engine. \end{DoxyCompactList}\item 
+namespace \mbox{\hyperlink{namespacebloom_1_1render}{bloom\+::render}}
+\begin{DoxyCompactList}\small\item\em Contains classes and functions related to rendering in the bloom engine. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1_engine}{bloom\+::\+Engine}} $>$ \mbox{\hyperlink{engine_8hpp_a8a68fb9b4e5dc5c0eb680b3f32781872}{bloom\+::\+Create\+Engine}} ()
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1_engine}{bloom\+::\+Engine}} $>$ \mbox{\hyperlink{namespacebloom_a8a68fb9b4e5dc5c0eb680b3f32781872}{bloom\+::\+Create\+Engine}} ()
 \begin{DoxyCompactList}\small\item\em Creates an entry point for the Bloom engine. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -35,26 +41,3 @@ Xein \href{mailto:xgonip@gmail.com}{\texttt{ xgonip@gmail.\+com}}
 \begin{DoxyDate}{Date}
 20/11/2024 
 \end{DoxyDate}
-
-
-\doxysubsection{Function Documentation}
-\Hypertarget{engine_8hpp_a8a68fb9b4e5dc5c0eb680b3f32781872}\index{engine.hpp@{engine.hpp}!CreateEngine@{CreateEngine}}
-\index{CreateEngine@{CreateEngine}!engine.hpp@{engine.hpp}}
-\doxysubsubsection{\texorpdfstring{CreateEngine()}{CreateEngine()}}
-{\footnotesize\ttfamily \label{engine_8hpp_a8a68fb9b4e5dc5c0eb680b3f32781872} 
-std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1_engine}{bloom\+::\+Engine}} $>$ bloom\+::\+Create\+Engine (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
-
-
-
-Creates an entry point for the Bloom engine. 
-
-This function serves as the primary entry point for the engine, allowing it to handle the main execution flow instead of the game directly. By abstracting the {\ttfamily main} function, the engine can take full control over initialization, execution, and shutdown processes.
-
-\begin{DoxyNote}{Note}
-For future Xein\+: This design is intentional to ensure that the engine manages the {\ttfamily main} function rather than the game project. Any game-\/specific logic should integrate with this entry point.
-\end{DoxyNote}
-While this function is declared here, its implementation resides in \doxylink{main_8cpp}{main.\+cpp} within the game project. This separation ensures modularity between the engine and game layers.
-
-\begin{DoxyReturn}{Returns}
-A pointer to the {\ttfamily Engine} class instance, which is used to manage the engine\textquotesingle{}s lifecycle. 
-\end{DoxyReturn}

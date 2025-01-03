@@ -1,11 +1,19 @@
 \doxysection{bloom\+::render\+::Buffer Class Reference}
 \hypertarget{classbloom_1_1render_1_1_buffer}{}\label{classbloom_1_1render_1_1_buffer}\index{bloom::render::Buffer@{bloom::render::Buffer}}
+
+
+Represents a Vulkan buffer object.  
+
+
+
+
+{\ttfamily \#include $<$buffer.\+hpp$>$}
+
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classbloom_1_1render_1_1_buffer_ab59a7b083b80bd4590d9544ea0881528}\label{classbloom_1_1render_1_1_buffer_ab59a7b083b80bd4590d9544ea0881528} 
-{\bfseries Buffer} (\mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}} \&device, Vk\+Device\+Size instance\+Size, uint32\+\_\+t instance\+Count, Vk\+Buffer\+Usage\+Flags usage\+Flags, Vk\+Memory\+Property\+Flags memory\+Property\+Flags, Vk\+Device\+Size min\+Offset\+Alignment=1)
-\item 
+\mbox{\hyperlink{classbloom_1_1render_1_1_buffer_ab59a7b083b80bd4590d9544ea0881528}{Buffer}} (\mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}} \&device, Vk\+Device\+Size instance\+Size, uint32\+\_\+t instance\+Count, Vk\+Buffer\+Usage\+Flags usage\+Flags, Vk\+Memory\+Property\+Flags memory\+Property\+Flags, Vk\+Device\+Size min\+Offset\+Alignment=1)
+\begin{DoxyCompactList}\small\item\em Constructs a new \doxylink{classbloom_1_1render_1_1_buffer}{Buffer} object. \end{DoxyCompactList}\item 
 \Hypertarget{classbloom_1_1render_1_1_buffer_a46e49658dd8b654763bbacdc503cf7b8}\label{classbloom_1_1render_1_1_buffer_a46e49658dd8b654763bbacdc503cf7b8} 
 {\bfseries Buffer} (const \mbox{\hyperlink{classbloom_1_1render_1_1_buffer}{Buffer}} \&)=delete
 \item 
@@ -48,6 +56,41 @@ Vk\+Memory\+Property\+Flags \mbox{\hyperlink{classbloom_1_1render_1_1_buffer_adc
 \begin{DoxyCompactList}\small\item\em Gets the memory property flags specified for the buffer. \end{DoxyCompactList}\item 
 Vk\+Device\+Size \mbox{\hyperlink{classbloom_1_1render_1_1_buffer_a1d7fa44111d719d7df9fad4cc5d5eb84}{Get\+Buffer\+Size}} () const
 \begin{DoxyCompactList}\small\item\em Gets the total size of the buffer in bytes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a Vulkan buffer object. 
+
+This class encapsulates a Vulkan buffer and its associated memory, providing methods for data manipulation and interaction with the Vulkan API. It supports storing multiple instances of data within a single buffer, and provides convenience methods for accessing individual instances. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classbloom_1_1render_1_1_buffer_ab59a7b083b80bd4590d9544ea0881528}\index{bloom::render::Buffer@{bloom::render::Buffer}!Buffer@{Buffer}}
+\index{Buffer@{Buffer}!bloom::render::Buffer@{bloom::render::Buffer}}
+\doxysubsubsection{\texorpdfstring{Buffer()}{Buffer()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_buffer_ab59a7b083b80bd4590d9544ea0881528} 
+bloom\+::render\+::\+Buffer\+::\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}} \&}]{device}{, }\item[{Vk\+Device\+Size}]{instance\+Size}{, }\item[{uint32\+\_\+t}]{instance\+Count}{, }\item[{Vk\+Buffer\+Usage\+Flags}]{usage\+Flags}{, }\item[{Vk\+Memory\+Property\+Flags}]{memory\+Property\+Flags}{, }\item[{Vk\+Device\+Size}]{min\+Offset\+Alignment}{ = {\ttfamily 1}}\end{DoxyParamCaption})}
+
+
+
+Constructs a new \doxylink{classbloom_1_1render_1_1_buffer}{Buffer} object. 
+
+Creates a new Vulkan buffer with the specified parameters.
+
+
+\begin{DoxyParams}{Parameters}
+{\em device} & Reference to the {\ttfamily \doxylink{classbloom_1_1render_1_1_devices}{Devices}} object. \\
+\hline
+{\em instance\+Size} & The size of a single instance in the buffer (in bytes). \\
+\hline
+{\em instance\+Count} & The number of instances to allocate in the buffer. \\
+\hline
+{\em usage\+Flags} & Vulkan buffer usage flags (e.\+g., VK\+\_\+\+BUFFER\+\_\+\+USAGE\+\_\+\+VERTEX\+\_\+\+BUFFER\+\_\+\+BIT). \\
+\hline
+{\em memory\+Property\+Flags} & Vulkan memory property flags (e.\+g., VK\+\_\+\+MEMORY\+\_\+\+PROPERTY\+\_\+\+HOST\+\_\+\+VISIBLE\+\_\+\+BIT). \\
+\hline
+{\em min\+Offset\+Alignment} & Minimum required alignment for buffer offsets. This parameter is crucial when using buffers with descriptors that have offset restrictions. \\
+\hline
+\end{DoxyParams}
 
 
 \doxysubsection{Member Function Documentation}

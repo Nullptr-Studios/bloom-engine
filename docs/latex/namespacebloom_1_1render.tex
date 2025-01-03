@@ -1,0 +1,74 @@
+\doxysection{bloom\+::render Namespace Reference}
+\hypertarget{namespacebloom_1_1render}{}\label{namespacebloom_1_1render}\index{bloom::render@{bloom::render}}
+
+
+Contains classes and functions related to rendering in the bloom engine.  
+
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classbloom_1_1render_1_1_buffer}{Buffer}}
+\begin{DoxyCompactList}\small\item\em Represents a Vulkan buffer object. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structbloom_1_1render_1_1_descriptor_layouts}{Descriptor\+Layouts}}
+\begin{DoxyCompactList}\small\item\em The {\ttfamily \doxylink{structbloom_1_1render_1_1_descriptor_layouts}{Descriptor\+Layouts}} struct contains the descriptor set layouts for the global and material descriptor sets. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_pool}{Descriptor\+Pool}}
+\begin{DoxyCompactList}\small\item\em Manages a pool of descriptor sets. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_set_layout}{Descriptor\+Set\+Layout}}
+\begin{DoxyCompactList}\small\item\em Defines the layout of descriptors in a shader. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_writer}{Descriptor\+Writer}}
+\begin{DoxyCompactList}\small\item\em Helper class to write data to descriptor sets. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}}
+\begin{DoxyCompactList}\small\item\em Manages Vulkan devices and related resources. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structbloom_1_1render_1_1_frame_info}{Frame\+Info}}
+\begin{DoxyCompactList}\small\item\em Per-\/frame information. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classbloom_1_1render_1_1_game_layer}{Game\+Layer}}
+\begin{DoxyCompactList}\small\item\em Represents a Vulkan layer for rendering 3D game elements. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structbloom_1_1render_1_1_global_u_b_o}{Global\+UBO}}
+\item 
+class \mbox{\hyperlink{classbloom_1_1render_1_1_model}{Model}}
+\begin{DoxyCompactList}\small\item\em Represents a 3D model in the bloom rendering engine. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classbloom_1_1render_1_1_pipeline}{Pipeline}}
+\begin{DoxyCompactList}\small\item\em Manages a Vulkan graphics pipeline. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structbloom_1_1render_1_1_pipeline_configuration}{Pipeline\+Configuration}}
+\begin{DoxyCompactList}\small\item\em Holds configuration settings for creating a Vulkan graphics pipeline. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structbloom_1_1render_1_1_queue_family_indices}{Queue\+Family\+Indices}}
+\begin{DoxyCompactList}\small\item\em Queue family indices. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classbloom_1_1render_1_1_renderer}{Renderer}}
+\begin{DoxyCompactList}\small\item\em Manages the rendering process in the bloom engine. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structbloom_1_1render_1_1_simple_push_constant_data}{Simple\+Push\+Constant\+Data}}
+\begin{DoxyCompactList}\small\item\em Represents the push constant data used in the renderer. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classbloom_1_1render_1_1_simple_render_system}{Simple\+Render\+System}}
+\begin{DoxyCompactList}\small\item\em Manages the rendering of objects. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classbloom_1_1render_1_1_swap_chain}{Swap\+Chain}}
+\begin{DoxyCompactList}\small\item\em Manages the Vulkan swap chain and related resources. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structbloom_1_1render_1_1_swap_chain_support_details}{Swap\+Chain\+Support\+Details}}
+\begin{DoxyCompactList}\small\item\em Swap chain support details. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classbloom_1_1render_1_1_texture}{Texture}}
+\begin{DoxyCompactList}\small\item\em Manages Vulkan textures. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{namespacebloom_1_1render_a1a6076673d46de8887ad723b337485e5}\label{namespacebloom_1_1render_a1a6076673d46de8887ad723b337485e5} 
+Vk\+Result {\bfseries Create\+Debug\+Utils\+Messenger\+Ext} (Vk\+Instance instance, const Vk\+Debug\+Utils\+Messenger\+Create\+Info\+EXT \texorpdfstring{$\ast$}{*}p\+Create\+Info, const Vk\+Allocation\+Callbacks \texorpdfstring{$\ast$}{*}p\+Allocator, Vk\+Debug\+Utils\+Messenger\+EXT \texorpdfstring{$\ast$}{*}p\+Debug\+Messenger)
+\item 
+\Hypertarget{namespacebloom_1_1render_a2b1a08a356e8cfcae12759225a6fbe05}\label{namespacebloom_1_1render_a2b1a08a356e8cfcae12759225a6fbe05} 
+void {\bfseries Destroy\+Debug\+Utils\+Messenger\+Ext} (Vk\+Instance instance, Vk\+Debug\+Utils\+Messenger\+EXT debug\+Messenger, const Vk\+Allocation\+Callbacks \texorpdfstring{$\ast$}{*}p\+Allocator)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains classes and functions related to rendering in the bloom engine. 
+
+The {\ttfamily \doxylink{namespacebloom_1_1render}{bloom\+::render}} namespace encapsulates all the components and utilities required for rendering graphics using Vulkan. This includes managing devices, pipelines, models, shaders, and other rendering-\/related resources.
+
+The {\ttfamily \doxylink{namespacebloom_1_1render}{bloom\+::render}} namespace is designed to provide a comprehensive set of tools for rendering 3D graphics. It includes classes for managing Vulkan devices, creating and managing graphics pipelines, handling models and their vertex/index buffers, and more. The namespace is structured to facilitate the creation, management, and rendering of 3D objects in a Vulkan-\/based rendering engine.
+
+Key Classes\+:
+\begin{DoxyItemize}
+\item {\bfseries{\doxylink{classbloom_1_1render_1_1_devices}{Devices}\+:}} Manages Vulkan devices and related resources.
+\item {\bfseries{\doxylink{classbloom_1_1render_1_1_pipeline}{Pipeline}\+:}} Manages Vulkan graphics pipelines.
+\item {\bfseries{\doxylink{classbloom_1_1render_1_1_model}{Model}\+:}} Represents a 3D model and manages its vertex and index buffers.
+\item {\bfseries{\doxylink{classbloom_1_1render_1_1_renderer}{Renderer}\+:}} Handles the rendering process, including command buffer management and swap chain recreation.
+\item {\bfseries{\doxylink{classbloom_1_1render_1_1_swap_chain}{Swap\+Chain}\+:}} Manages the Vulkan swap chain for rendering. 
+\end{DoxyItemize}

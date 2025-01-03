@@ -1,0 +1,144 @@
+\doxysection{bloom\+::render\+::Game\+Layer Class Reference}
+\hypertarget{classbloom_1_1render_1_1_game_layer}{}\label{classbloom_1_1render_1_1_game_layer}\index{bloom::render::GameLayer@{bloom::render::GameLayer}}
+
+
+Represents a Vulkan layer for rendering 3D game elements.  
+
+
+
+
+{\ttfamily \#include $<$game\+\_\+layer.\+hpp$>$}
+
+Inheritance diagram for bloom\+::render\+::Game\+Layer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classbloom_1_1render_1_1_game_layer}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classbloom_1_1render_1_1_game_layer_a3a2215e7c2ad11f211706f541ebc2ed0}\label{classbloom_1_1render_1_1_game_layer_a3a2215e7c2ad11f211706f541ebc2ed0} 
+{\bfseries Game\+Layer} (const std\+::string \&name="{}Game"{})
+\item 
+void \mbox{\hyperlink{classbloom_1_1render_1_1_game_layer_a3cb34b68c3d304be78b2b1a21bb7e587}{On\+Attach}} () override
+\begin{DoxyCompactList}\small\item\em Called when the layer is attached to the layer stack. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbloom_1_1render_1_1_game_layer_a8ec0293a129976fd81160387a84fb70c}{On\+Begin}} () override
+\begin{DoxyCompactList}\small\item\em Called before starting the game loop. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbloom_1_1render_1_1_game_layer_a8de251e21ad414273d63af245488029d}{On\+Tick}} (float delta\+Time) override
+\begin{DoxyCompactList}\small\item\em Called every frame. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbloom_1_1render_1_1_game_layer_ab173e1aeb4f3af663213e2c5db77343c}{On\+Render}} (\mbox{\hyperlink{structbloom_1_1render_1_1_frame_info}{Frame\+Info}} frame\+Info) override
+\begin{DoxyCompactList}\small\item\em Called every frame after the {\ttfamily Tick}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbloom_1_1render_1_1_game_layer_a5634350e3319c123c46961ded99c1db9}{On\+Detach}} () override
+\begin{DoxyCompactList}\small\item\em Called before ending the game loop. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbloom_1_1render_1_1_game_layer_a035a0af42a39b77c1ad40a684e60c57a}{On\+Event}} (\mbox{\hyperlink{classbloom_1_1_event}{Event}} \&e) override
+\begin{DoxyCompactList}\small\item\em Called when an event is triggered. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classbloom_1_1_layer}{bloom\+::\+Layer}}}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::string \& {\bfseries Get\+Name} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classbloom_1_1_layer}{bloom\+::\+Layer}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Layer} (const std\+::string \&name="{}Unnamed Layer"{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a Vulkan layer for rendering 3D game elements. 
+
+The {\ttfamily \doxylink{classbloom_1_1render_1_1_game_layer}{Game\+Layer}} class inherits from the {\ttfamily \doxylink{classbloom_1_1_layer}{Layer}} class. It provides the functionality for the 3D rendering and handling of game elements 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classbloom_1_1render_1_1_game_layer_a3cb34b68c3d304be78b2b1a21bb7e587}\index{bloom::render::GameLayer@{bloom::render::GameLayer}!OnAttach@{OnAttach}}
+\index{OnAttach@{OnAttach}!bloom::render::GameLayer@{bloom::render::GameLayer}}
+\doxysubsubsection{\texorpdfstring{OnAttach()}{OnAttach()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_game_layer_a3cb34b68c3d304be78b2b1a21bb7e587} 
+void bloom\+::render\+::\+Game\+Layer\+::\+On\+Attach (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called when the layer is attached to the layer stack. 
+
+
+
+Implements \mbox{\hyperlink{classbloom_1_1_layer_a3c942f0996f3e391a2864e7714926969}{bloom\+::\+Layer}}.
+
+\Hypertarget{classbloom_1_1render_1_1_game_layer_a8ec0293a129976fd81160387a84fb70c}\index{bloom::render::GameLayer@{bloom::render::GameLayer}!OnBegin@{OnBegin}}
+\index{OnBegin@{OnBegin}!bloom::render::GameLayer@{bloom::render::GameLayer}}
+\doxysubsubsection{\texorpdfstring{OnBegin()}{OnBegin()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_game_layer_a8ec0293a129976fd81160387a84fb70c} 
+void bloom\+::render\+::\+Game\+Layer\+::\+On\+Begin (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called before starting the game loop. 
+
+
+
+Implements \mbox{\hyperlink{classbloom_1_1_layer_aa88a4df7e0c94444d4ed1a8eaf9b2072}{bloom\+::\+Layer}}.
+
+\Hypertarget{classbloom_1_1render_1_1_game_layer_a5634350e3319c123c46961ded99c1db9}\index{bloom::render::GameLayer@{bloom::render::GameLayer}!OnDetach@{OnDetach}}
+\index{OnDetach@{OnDetach}!bloom::render::GameLayer@{bloom::render::GameLayer}}
+\doxysubsubsection{\texorpdfstring{OnDetach()}{OnDetach()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_game_layer_a5634350e3319c123c46961ded99c1db9} 
+void bloom\+::render\+::\+Game\+Layer\+::\+On\+Detach (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called before ending the game loop. 
+
+
+
+Implements \mbox{\hyperlink{classbloom_1_1_layer_aa65fe0ffcdf4f8baf22a17f1c5f2b56d}{bloom\+::\+Layer}}.
+
+\Hypertarget{classbloom_1_1render_1_1_game_layer_a035a0af42a39b77c1ad40a684e60c57a}\index{bloom::render::GameLayer@{bloom::render::GameLayer}!OnEvent@{OnEvent}}
+\index{OnEvent@{OnEvent}!bloom::render::GameLayer@{bloom::render::GameLayer}}
+\doxysubsubsection{\texorpdfstring{OnEvent()}{OnEvent()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_game_layer_a035a0af42a39b77c1ad40a684e60c57a} 
+void bloom\+::render\+::\+Game\+Layer\+::\+On\+Event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbloom_1_1_event}{Event}} \&}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called when an event is triggered. 
+
+
+
+Implements \mbox{\hyperlink{classbloom_1_1_layer_a5b88eef8d51b5eeaa234e0eb20fbd307}{bloom\+::\+Layer}}.
+
+\Hypertarget{classbloom_1_1render_1_1_game_layer_ab173e1aeb4f3af663213e2c5db77343c}\index{bloom::render::GameLayer@{bloom::render::GameLayer}!OnRender@{OnRender}}
+\index{OnRender@{OnRender}!bloom::render::GameLayer@{bloom::render::GameLayer}}
+\doxysubsubsection{\texorpdfstring{OnRender()}{OnRender()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_game_layer_ab173e1aeb4f3af663213e2c5db77343c} 
+void bloom\+::render\+::\+Game\+Layer\+::\+On\+Render (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbloom_1_1render_1_1_frame_info}{Frame\+Info}}}]{frame\+Info}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called every frame after the {\ttfamily Tick}. 
+
+
+
+Implements \mbox{\hyperlink{classbloom_1_1_layer_ac518d4fe56b7a72190caf022f16676ee}{bloom\+::\+Layer}}.
+
+\Hypertarget{classbloom_1_1render_1_1_game_layer_a8de251e21ad414273d63af245488029d}\index{bloom::render::GameLayer@{bloom::render::GameLayer}!OnTick@{OnTick}}
+\index{OnTick@{OnTick}!bloom::render::GameLayer@{bloom::render::GameLayer}}
+\doxysubsubsection{\texorpdfstring{OnTick()}{OnTick()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_game_layer_a8de251e21ad414273d63af245488029d} 
+void bloom\+::render\+::\+Game\+Layer\+::\+On\+Tick (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called every frame. 
+
+
+
+Implements \mbox{\hyperlink{classbloom_1_1_layer_a1b2941d7a20120de4b1a6f7a9b48af61}{bloom\+::\+Layer}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/xgoni/bloom/bloom/src/layers/\mbox{\hyperlink{game__layer_8hpp}{game\+\_\+layer.\+hpp}}\item 
+C\+:/\+Users/xgoni/bloom/bloom/src/layers/game\+\_\+layer.\+cpp\end{DoxyCompactItemize}

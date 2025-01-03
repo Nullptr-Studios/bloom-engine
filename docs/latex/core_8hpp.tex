@@ -9,15 +9,28 @@ Macro definitions for Bloom.
 \begin{DoxyCompactItemize}
 \item 
 \#define \mbox{\hyperlink{core_8hpp_ad27cc17b25bb93134368d5eb21126eae}{BIT}}(x)
-\item 
+\begin{DoxyCompactList}\small\item\em Bit shifter macro for multi enums. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{core_8hpp_adb4e5b3602145f9e0c024a1b05c260a8}{DELETE\+\_\+\+COPY\+\_\+\+CONSTRUCTOR}}(classname)
+\begin{DoxyCompactList}\small\item\em Macro to delete the copy constructor and assignment operator. \end{DoxyCompactList}\item 
+\Hypertarget{core_8hpp_ac011e263167131058fbde8f4d07c5758}\label{core_8hpp_ac011e263167131058fbde8f4d07c5758} 
+\#define {\bfseries BLOOM\+\_\+\+FACTORY}~Factory\+::\+Get\+Instance()
+\item 
+\Hypertarget{core_8hpp_a98f72491ebf03135694c1477c0127a27}\label{core_8hpp_a98f72491ebf03135694c1477c0127a27} 
+\#define {\bfseries BLOOM\+\_\+\+RENDERER}~render\+::\+Renderer\+::\+Get\+Instance()
+\item 
+\Hypertarget{core_8hpp_a5067667762fa180da1a947ba5c1aca33}\label{core_8hpp_a5067667762fa180da1a947ba5c1aca33} 
+\#define {\bfseries BLOOM\+\_\+\+DEVICES}~render\+::\+Devices\+::\+Get\+Instance()
+\item 
+\#define \mbox{\hyperlink{core_8hpp_a09275c64232294991c4c00b6c3e846ae}{EVENT\+\_\+\+BIND}}(fn)
+\item 
+\#define \mbox{\hyperlink{core_8hpp_a609501bc05586ff337da8e0986a44cd3}{DRAG\+\_\+\+SPEED}}(speed)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{core_8hpp_abaf665e52c9979a5f6eb9ecfce756efc}\label{core_8hpp_abaf665e52c9979a5f6eb9ecfce756efc} 
 typedef unsigned short {\bfseries id\+\_\+t}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Typedef for object IDs. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -43,6 +56,15 @@ Xein \href{mailto:xgonip@gmail.com}{\texttt{ xgonip@gmail.\+com}}
 \DoxyCodeLine{(1\ <<\ x)}
 
 \end{DoxyCode}
+
+
+Bit shifter macro for multi enums. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The bit to set \\
+\hline
+\end{DoxyParams}
 \Hypertarget{core_8hpp_adb4e5b3602145f9e0c024a1b05c260a8}\index{core.hpp@{core.hpp}!DELETE\_COPY\_CONSTRUCTOR@{DELETE\_COPY\_CONSTRUCTOR}}
 \index{DELETE\_COPY\_CONSTRUCTOR@{DELETE\_COPY\_CONSTRUCTOR}!core.hpp@{core.hpp}}
 \doxysubsubsection{\texorpdfstring{DELETE\_COPY\_CONSTRUCTOR}{DELETE\_COPY\_CONSTRUCTOR}}
@@ -57,3 +79,39 @@ Xein \href{mailto:xgonip@gmail.com}{\texttt{ xgonip@gmail.\+com}}
 \DoxyCodeLine{\ \ classname\&\ operator=(classname\&\&)\ =\ \textcolor{keywordflow}{default}}
 
 \end{DoxyCode}
+
+
+Macro to delete the copy constructor and assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em classname} & The name of the class \\
+\hline
+\end{DoxyParams}
+\Hypertarget{core_8hpp_a609501bc05586ff337da8e0986a44cd3}\index{core.hpp@{core.hpp}!DRAG\_SPEED@{DRAG\_SPEED}}
+\index{DRAG\_SPEED@{DRAG\_SPEED}!core.hpp@{core.hpp}}
+\doxysubsubsection{\texorpdfstring{DRAG\_SPEED}{DRAG\_SPEED}}
+{\footnotesize\ttfamily \label{core_8hpp_a609501bc05586ff337da8e0986a44cd3} 
+\#define DRAG\+\_\+\+SPEED(\begin{DoxyParamCaption}\item[{}]{speed}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{auto}\ io\ =\ ImgUi::GetIO();\ \textcolor{keywordflow}{return}\ speed\ /\ io.KeyAlt\ ?\ 1.0f\ :\ 10.0f;}
+
+\end{DoxyCode}
+\Hypertarget{core_8hpp_a09275c64232294991c4c00b6c3e846ae}\index{core.hpp@{core.hpp}!EVENT\_BIND@{EVENT\_BIND}}
+\index{EVENT\_BIND@{EVENT\_BIND}!core.hpp@{core.hpp}}
+\doxysubsubsection{\texorpdfstring{EVENT\_BIND}{EVENT\_BIND}}
+{\footnotesize\ttfamily \label{core_8hpp_a09275c64232294991c4c00b6c3e846ae} 
+\#define EVENT\+\_\+\+BIND(\begin{DoxyParamCaption}\item[{}]{fn}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{std::bind(\&fn,\ \textcolor{keyword}{this},\ std::placeholders::\_1)}
+
+\end{DoxyCode}
+Binds a function to an event 
+\begin{DoxyParams}{Parameters}
+{\em fn} & Function to bind \\
+\hline
+\end{DoxyParams}

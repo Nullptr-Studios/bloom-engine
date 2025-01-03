@@ -83,19 +83,25 @@ $(function(){ initResizable(false); });
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>bloom</b></li><li class="navelem"><b>render</b></li><li class="navelem"><a class="el" href="classbloom_1_1render_1_1_renderer.html">Renderer</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacebloom.html">bloom</a></li><li class="navelem"><a class="el" href="namespacebloom_1_1render.html">render</a></li><li class="navelem"><a class="el" href="classbloom_1_1render_1_1_renderer.html">Renderer</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div id="doc-content">
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classbloom_1_1render_1_1_renderer-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">bloom::render::Renderer Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Manages the rendering process in the bloom engine.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="renderer_8hpp_source.html">renderer.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -108,33 +114,40 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a23d1426c3940b22ba4f9d5b2914fb0aa" id="r_a23d1426c3940b22ba4f9d5b2914fb0aa"><td class="memItemLeft" align="right" valign="top"><a id="a23d1426c3940b22ba4f9d5b2914fb0aa" name="a23d1426c3940b22ba4f9d5b2914fb0aa"></a>
 <a class="el" href="classbloom_1_1render_1_1_renderer.html">Renderer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classbloom_1_1render_1_1_renderer.html">Renderer</a> &amp;)=delete</td></tr>
 <tr class="separator:a23d1426c3940b22ba4f9d5b2914fb0aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94da13e42d7b93417c6f0fe4b9deb4a2" id="r_a94da13e42d7b93417c6f0fe4b9deb4a2"><td class="memItemLeft" align="right" valign="top"><a id="a94da13e42d7b93417c6f0fe4b9deb4a2" name="a94da13e42d7b93417c6f0fe4b9deb4a2"></a>
-VkCommandBuffer&#160;</td><td class="memItemRight" valign="bottom"><b>BeginFrame</b> ()</td></tr>
+<tr class="memitem:a94da13e42d7b93417c6f0fe4b9deb4a2" id="r_a94da13e42d7b93417c6f0fe4b9deb4a2"><td class="memItemLeft" align="right" valign="top">VkCommandBuffer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a94da13e42d7b93417c6f0fe4b9deb4a2">BeginFrame</a> ()</td></tr>
+<tr class="memdesc:a94da13e42d7b93417c6f0fe4b9deb4a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins a new frame and returns the command buffer for the frame.  <br /></td></tr>
 <tr class="separator:a94da13e42d7b93417c6f0fe4b9deb4a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa6fc56f0251174818ec7d8a5a644a4f7" id="r_aa6fc56f0251174818ec7d8a5a644a4f7"><td class="memItemLeft" align="right" valign="top"><a id="aa6fc56f0251174818ec7d8a5a644a4f7" name="aa6fc56f0251174818ec7d8a5a644a4f7"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>EndFrame</b> ()</td></tr>
+<tr class="memdesc:aa6fc56f0251174818ec7d8a5a644a4f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ends the current frame. <br /></td></tr>
 <tr class="separator:aa6fc56f0251174818ec7d8a5a644a4f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a370097aa9bca53d021c25c820818e5a2" id="r_a370097aa9bca53d021c25c820818e5a2"><td class="memItemLeft" align="right" valign="top"><a id="a370097aa9bca53d021c25c820818e5a2" name="a370097aa9bca53d021c25c820818e5a2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>BeginRenderPass</b> (VkCommandBuffer commandBuffer)</td></tr>
-<tr class="separator:a370097aa9bca53d021c25c820818e5a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2543d4c79bf023022d16a3f406ae3149" id="r_a2543d4c79bf023022d16a3f406ae3149"><td class="memItemLeft" align="right" valign="top"><a id="a2543d4c79bf023022d16a3f406ae3149" name="a2543d4c79bf023022d16a3f406ae3149"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>EndRenderPass</b> (VkCommandBuffer commandBuffer)</td></tr>
-<tr class="separator:a2543d4c79bf023022d16a3f406ae3149"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e0df9f1c46ca8ddb8df4f435c5ab260" id="r_a3e0df9f1c46ca8ddb8df4f435c5ab260"><td class="memItemLeft" align="right" valign="top"><a id="a3e0df9f1c46ca8ddb8df4f435c5ab260" name="a3e0df9f1c46ca8ddb8df4f435c5ab260"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>GetFrameStarted</b> () const</td></tr>
+<tr class="memitem:a47b36995d661f62f57ce11f49b68826e" id="r_a47b36995d661f62f57ce11f49b68826e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a47b36995d661f62f57ce11f49b68826e">BeginRenderPass</a> (VkCommandBuffer commandBuffer) const</td></tr>
+<tr class="memdesc:a47b36995d661f62f57ce11f49b68826e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins the render pass for the current frame.  <br /></td></tr>
+<tr class="separator:a47b36995d661f62f57ce11f49b68826e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8c50e9e01ba6481e1b51f59561fdf8d" id="r_aa8c50e9e01ba6481e1b51f59561fdf8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa8c50e9e01ba6481e1b51f59561fdf8d">EndRenderPass</a> (VkCommandBuffer commandBuffer) const</td></tr>
+<tr class="memdesc:aa8c50e9e01ba6481e1b51f59561fdf8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ends the render pass for the current frame.  <br /></td></tr>
+<tr class="separator:aa8c50e9e01ba6481e1b51f59561fdf8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e0df9f1c46ca8ddb8df4f435c5ab260" id="r_a3e0df9f1c46ca8ddb8df4f435c5ab260"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3e0df9f1c46ca8ddb8df4f435c5ab260">GetFrameStarted</a> () const</td></tr>
+<tr class="memdesc:a3e0df9f1c46ca8ddb8df4f435c5ab260"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a frame has started.  <br /></td></tr>
 <tr class="separator:a3e0df9f1c46ca8ddb8df4f435c5ab260"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a47669e12b11c73d06a1a01db272c94aa" id="r_a47669e12b11c73d06a1a01db272c94aa"><td class="memItemLeft" align="right" valign="top"><a id="a47669e12b11c73d06a1a01db272c94aa" name="a47669e12b11c73d06a1a01db272c94aa"></a>
-VkCommandBuffer&#160;</td><td class="memItemRight" valign="bottom"><b>GetCurrentCommandBuffer</b> () const</td></tr>
+<tr class="memitem:a47669e12b11c73d06a1a01db272c94aa" id="r_a47669e12b11c73d06a1a01db272c94aa"><td class="memItemLeft" align="right" valign="top">VkCommandBuffer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a47669e12b11c73d06a1a01db272c94aa">GetCurrentCommandBuffer</a> () const</td></tr>
+<tr class="memdesc:a47669e12b11c73d06a1a01db272c94aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the command buffer for the current frame.  <br /></td></tr>
 <tr class="separator:a47669e12b11c73d06a1a01db272c94aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d9c51736de357a7ffe8b025d86fe092" id="r_a6d9c51736de357a7ffe8b025d86fe092"><td class="memItemLeft" align="right" valign="top"><a id="a6d9c51736de357a7ffe8b025d86fe092" name="a6d9c51736de357a7ffe8b025d86fe092"></a>
-VkRenderPass&#160;</td><td class="memItemRight" valign="bottom"><b>GetRenderPass</b> () const</td></tr>
+<tr class="memitem:a6d9c51736de357a7ffe8b025d86fe092" id="r_a6d9c51736de357a7ffe8b025d86fe092"><td class="memItemLeft" align="right" valign="top">VkRenderPass&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6d9c51736de357a7ffe8b025d86fe092">GetRenderPass</a> () const</td></tr>
+<tr class="memdesc:a6d9c51736de357a7ffe8b025d86fe092"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the render pass.  <br /></td></tr>
 <tr class="separator:a6d9c51736de357a7ffe8b025d86fe092"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0547050d3457fcb39a2b9ff0ee00ad02" id="r_a0547050d3457fcb39a2b9ff0ee00ad02"><td class="memItemLeft" align="right" valign="top"><a id="a0547050d3457fcb39a2b9ff0ee00ad02" name="a0547050d3457fcb39a2b9ff0ee00ad02"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>GetAspectRatio</b> () const</td></tr>
+<tr class="memitem:a0547050d3457fcb39a2b9ff0ee00ad02" id="r_a0547050d3457fcb39a2b9ff0ee00ad02"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0547050d3457fcb39a2b9ff0ee00ad02">GetAspectRatio</a> () const</td></tr>
+<tr class="memdesc:a0547050d3457fcb39a2b9ff0ee00ad02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the aspect ratio of the swap chain extent.  <br /></td></tr>
 <tr class="separator:a0547050d3457fcb39a2b9ff0ee00ad02"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa3f6c2d55817bcf09fe8eff8f9b585a9" id="r_aa3f6c2d55817bcf09fe8eff8f9b585a9"><td class="memItemLeft" align="right" valign="top"><a id="aa3f6c2d55817bcf09fe8eff8f9b585a9" name="aa3f6c2d55817bcf09fe8eff8f9b585a9"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>GetFrameIndex</b> () const</td></tr>
+<tr class="memitem:aa3f6c2d55817bcf09fe8eff8f9b585a9" id="r_aa3f6c2d55817bcf09fe8eff8f9b585a9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa3f6c2d55817bcf09fe8eff8f9b585a9">GetFrameIndex</a> () const</td></tr>
+<tr class="memdesc:aa3f6c2d55817bcf09fe8eff8f9b585a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the index of the current frame.  <br /></td></tr>
 <tr class="separator:aa3f6c2d55817bcf09fe8eff8f9b585a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:ada6528ed894f97de7edb254d1a44f571" id="r_ada6528ed894f97de7edb254d1a44f571"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbloom_1_1render_1_1_renderer.html">Renderer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ada6528ed894f97de7edb254d1a44f571">GetInstance</a> ()</td></tr>
+<tr class="memdesc:ada6528ed894f97de7edb254d1a44f571"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the renderer instance.  <br /></td></tr>
+<tr class="separator:ada6528ed894f97de7edb254d1a44f571"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -172,6 +185,248 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>m_currentFrameIndex</b
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_frameStarted</b> = false</td></tr>
 <tr class="separator:a1af023cd0139db4714e639f611a3b23a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Manages the rendering process in the bloom engine. </p>
+<p>The <a class="el" href="classbloom_1_1render_1_1_renderer.html" title="Manages the rendering process in the bloom engine.">Renderer</a> class handles the rendering process, including command buffer management, swap chain recreation, and rendering passes. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a94da13e42d7b93417c6f0fe4b9deb4a2" name="a94da13e42d7b93417c6f0fe4b9deb4a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94da13e42d7b93417c6f0fe4b9deb4a2">&#9670;&#160;</a></span>BeginFrame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VkCommandBuffer bloom::render::Renderer::BeginFrame </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Begins a new frame and returns the command buffer for the frame. </p>
+<dl class="section return"><dt>Returns</dt><dd>The Vulkan command buffer for the current frame. </dd></dl>
+
+</div>
+</div>
+<a id="a47b36995d661f62f57ce11f49b68826e" name="a47b36995d661f62f57ce11f49b68826e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47b36995d661f62f57ce11f49b68826e">&#9670;&#160;</a></span>BeginRenderPass()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bloom::render::Renderer::BeginRenderPass </td>
+          <td>(</td>
+          <td class="paramtype">VkCommandBuffer</td>          <td class="paramname"><span class="paramname"><em>commandBuffer</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Begins the render pass for the current frame. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">commandBuffer</td><td>The Vulkan command buffer to begin the render pass with. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa8c50e9e01ba6481e1b51f59561fdf8d" name="aa8c50e9e01ba6481e1b51f59561fdf8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8c50e9e01ba6481e1b51f59561fdf8d">&#9670;&#160;</a></span>EndRenderPass()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bloom::render::Renderer::EndRenderPass </td>
+          <td>(</td>
+          <td class="paramtype">VkCommandBuffer</td>          <td class="paramname"><span class="paramname"><em>commandBuffer</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ends the render pass for the current frame. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">commandBuffer</td><td>The Vulkan command buffer to end the render pass with. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0547050d3457fcb39a2b9ff0ee00ad02" name="a0547050d3457fcb39a2b9ff0ee00ad02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0547050d3457fcb39a2b9ff0ee00ad02">&#9670;&#160;</a></span>GetAspectRatio()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float bloom::render::Renderer::GetAspectRatio </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the aspect ratio of the swap chain extent. </p>
+<dl class="section return"><dt>Returns</dt><dd>The aspect ratio of the swap chain extent. </dd></dl>
+
+</div>
+</div>
+<a id="a47669e12b11c73d06a1a01db272c94aa" name="a47669e12b11c73d06a1a01db272c94aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47669e12b11c73d06a1a01db272c94aa">&#9670;&#160;</a></span>GetCurrentCommandBuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">VkCommandBuffer bloom::render::Renderer::GetCurrentCommandBuffer </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the command buffer for the current frame. </p>
+<dl class="section return"><dt>Returns</dt><dd>The Vulkan command buffer for the current frame. </dd></dl>
+
+</div>
+</div>
+<a id="aa3f6c2d55817bcf09fe8eff8f9b585a9" name="aa3f6c2d55817bcf09fe8eff8f9b585a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3f6c2d55817bcf09fe8eff8f9b585a9">&#9670;&#160;</a></span>GetFrameIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int bloom::render::Renderer::GetFrameIndex </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the index of the current frame. </p>
+<dl class="section return"><dt>Returns</dt><dd>The index of the current frame, or -1 if no frame is in progress. </dd></dl>
+
+</div>
+</div>
+<a id="a3e0df9f1c46ca8ddb8df4f435c5ab260" name="a3e0df9f1c46ca8ddb8df4f435c5ab260"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e0df9f1c46ca8ddb8df4f435c5ab260">&#9670;&#160;</a></span>GetFrameStarted()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool bloom::render::Renderer::GetFrameStarted </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks if a frame has started. </p>
+<dl class="section return"><dt>Returns</dt><dd>True if a frame has started, false otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="ada6528ed894f97de7edb254d1a44f571" name="ada6528ed894f97de7edb254d1a44f571"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada6528ed894f97de7edb254d1a44f571">&#9670;&#160;</a></span>GetInstance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classbloom_1_1render_1_1_renderer.html">Renderer</a> * bloom::render::Renderer::GetInstance </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the renderer instance. </p>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the renderer instance </dd></dl>
+
+</div>
+</div>
+<a id="a6d9c51736de357a7ffe8b025d86fe092" name="a6d9c51736de357a7ffe8b025d86fe092"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d9c51736de357a7ffe8b025d86fe092">&#9670;&#160;</a></span>GetRenderPass()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">VkRenderPass bloom::render::Renderer::GetRenderPass </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the render pass. </p>
+<dl class="section return"><dt>Returns</dt><dd>The Vulkan render pass. </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>C:/Users/xgoni/bloom/bloom/src/render/<a class="el" href="renderer_8hpp_source.html">renderer.hpp</a></li>
 <li>C:/Users/xgoni/bloom/bloom/src/render/<b>renderer.cpp</b></li>

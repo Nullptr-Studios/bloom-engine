@@ -1,5 +1,14 @@
 \doxysection{bloom\+::render\+::Renderer Class Reference}
 \hypertarget{classbloom_1_1render_1_1_renderer}{}\label{classbloom_1_1render_1_1_renderer}\index{bloom::render::Renderer@{bloom::render::Renderer}}
+
+
+Manages the rendering process in the bloom engine.  
+
+
+
+
+{\ttfamily \#include $<$renderer.\+hpp$>$}
+
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -12,33 +21,30 @@
 \Hypertarget{classbloom_1_1render_1_1_renderer_a23d1426c3940b22ba4f9d5b2914fb0aa}\label{classbloom_1_1render_1_1_renderer_a23d1426c3940b22ba4f9d5b2914fb0aa} 
 \mbox{\hyperlink{classbloom_1_1render_1_1_renderer}{Renderer}} \& {\bfseries operator=} (const \mbox{\hyperlink{classbloom_1_1render_1_1_renderer}{Renderer}} \&)=delete
 \item 
-\Hypertarget{classbloom_1_1render_1_1_renderer_a94da13e42d7b93417c6f0fe4b9deb4a2}\label{classbloom_1_1render_1_1_renderer_a94da13e42d7b93417c6f0fe4b9deb4a2} 
-Vk\+Command\+Buffer {\bfseries Begin\+Frame} ()
-\item 
+Vk\+Command\+Buffer \mbox{\hyperlink{classbloom_1_1render_1_1_renderer_a94da13e42d7b93417c6f0fe4b9deb4a2}{Begin\+Frame}} ()
+\begin{DoxyCompactList}\small\item\em Begins a new frame and returns the command buffer for the frame. \end{DoxyCompactList}\item 
 \Hypertarget{classbloom_1_1render_1_1_renderer_aa6fc56f0251174818ec7d8a5a644a4f7}\label{classbloom_1_1render_1_1_renderer_aa6fc56f0251174818ec7d8a5a644a4f7} 
 void {\bfseries End\+Frame} ()
+\begin{DoxyCompactList}\small\item\em Ends the current frame. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbloom_1_1render_1_1_renderer_a47b36995d661f62f57ce11f49b68826e}{Begin\+Render\+Pass}} (Vk\+Command\+Buffer command\+Buffer) const
+\begin{DoxyCompactList}\small\item\em Begins the render pass for the current frame. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbloom_1_1render_1_1_renderer_aa8c50e9e01ba6481e1b51f59561fdf8d}{End\+Render\+Pass}} (Vk\+Command\+Buffer command\+Buffer) const
+\begin{DoxyCompactList}\small\item\em Ends the render pass for the current frame. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classbloom_1_1render_1_1_renderer_a3e0df9f1c46ca8ddb8df4f435c5ab260}{Get\+Frame\+Started}} () const
+\begin{DoxyCompactList}\small\item\em Checks if a frame has started. \end{DoxyCompactList}\item 
+Vk\+Command\+Buffer \mbox{\hyperlink{classbloom_1_1render_1_1_renderer_a47669e12b11c73d06a1a01db272c94aa}{Get\+Current\+Command\+Buffer}} () const
+\begin{DoxyCompactList}\small\item\em Gets the command buffer for the current frame. \end{DoxyCompactList}\item 
+Vk\+Render\+Pass \mbox{\hyperlink{classbloom_1_1render_1_1_renderer_a6d9c51736de357a7ffe8b025d86fe092}{Get\+Render\+Pass}} () const
+\begin{DoxyCompactList}\small\item\em Gets the render pass. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classbloom_1_1render_1_1_renderer_a0547050d3457fcb39a2b9ff0ee00ad02}{Get\+Aspect\+Ratio}} () const
+\begin{DoxyCompactList}\small\item\em Gets the aspect ratio of the swap chain extent. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classbloom_1_1render_1_1_renderer_aa3f6c2d55817bcf09fe8eff8f9b585a9}{Get\+Frame\+Index}} () const
+\begin{DoxyCompactList}\small\item\em Gets the index of the current frame. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classbloom_1_1render_1_1_renderer_a370097aa9bca53d021c25c820818e5a2}\label{classbloom_1_1render_1_1_renderer_a370097aa9bca53d021c25c820818e5a2} 
-void {\bfseries Begin\+Render\+Pass} (Vk\+Command\+Buffer command\+Buffer)
-\item 
-\Hypertarget{classbloom_1_1render_1_1_renderer_a2543d4c79bf023022d16a3f406ae3149}\label{classbloom_1_1render_1_1_renderer_a2543d4c79bf023022d16a3f406ae3149} 
-void {\bfseries End\+Render\+Pass} (Vk\+Command\+Buffer command\+Buffer)
-\item 
-\Hypertarget{classbloom_1_1render_1_1_renderer_a3e0df9f1c46ca8ddb8df4f435c5ab260}\label{classbloom_1_1render_1_1_renderer_a3e0df9f1c46ca8ddb8df4f435c5ab260} 
-bool {\bfseries Get\+Frame\+Started} () const
-\item 
-\Hypertarget{classbloom_1_1render_1_1_renderer_a47669e12b11c73d06a1a01db272c94aa}\label{classbloom_1_1render_1_1_renderer_a47669e12b11c73d06a1a01db272c94aa} 
-Vk\+Command\+Buffer {\bfseries Get\+Current\+Command\+Buffer} () const
-\item 
-\Hypertarget{classbloom_1_1render_1_1_renderer_a6d9c51736de357a7ffe8b025d86fe092}\label{classbloom_1_1render_1_1_renderer_a6d9c51736de357a7ffe8b025d86fe092} 
-Vk\+Render\+Pass {\bfseries Get\+Render\+Pass} () const
-\item 
-\Hypertarget{classbloom_1_1render_1_1_renderer_a0547050d3457fcb39a2b9ff0ee00ad02}\label{classbloom_1_1render_1_1_renderer_a0547050d3457fcb39a2b9ff0ee00ad02} 
-float {\bfseries Get\+Aspect\+Ratio} () const
-\item 
-\Hypertarget{classbloom_1_1render_1_1_renderer_aa3f6c2d55817bcf09fe8eff8f9b585a9}\label{classbloom_1_1render_1_1_renderer_aa3f6c2d55817bcf09fe8eff8f9b585a9} 
-int {\bfseries Get\+Frame\+Index} () const
-\end{DoxyCompactItemize}
+static \mbox{\hyperlink{classbloom_1_1render_1_1_renderer}{Renderer}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classbloom_1_1render_1_1_renderer_ada6528ed894f97de7edb254d1a44f571}{Get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Gets the renderer instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -75,6 +81,135 @@ int {\bfseries m\+\_\+current\+Frame\+Index} = 0
 \Hypertarget{classbloom_1_1render_1_1_renderer_a1af023cd0139db4714e639f611a3b23a}\label{classbloom_1_1render_1_1_renderer_a1af023cd0139db4714e639f611a3b23a} 
 bool {\bfseries m\+\_\+frame\+Started} = false
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages the rendering process in the bloom engine. 
+
+The \doxylink{classbloom_1_1render_1_1_renderer}{Renderer} class handles the rendering process, including command buffer management, swap chain recreation, and rendering passes. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classbloom_1_1render_1_1_renderer_a94da13e42d7b93417c6f0fe4b9deb4a2}\index{bloom::render::Renderer@{bloom::render::Renderer}!BeginFrame@{BeginFrame}}
+\index{BeginFrame@{BeginFrame}!bloom::render::Renderer@{bloom::render::Renderer}}
+\doxysubsubsection{\texorpdfstring{BeginFrame()}{BeginFrame()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_renderer_a94da13e42d7b93417c6f0fe4b9deb4a2} 
+Vk\+Command\+Buffer bloom\+::render\+::\+Renderer\+::\+Begin\+Frame (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Begins a new frame and returns the command buffer for the frame. 
+
+\begin{DoxyReturn}{Returns}
+The Vulkan command buffer for the current frame. 
+\end{DoxyReturn}
+\Hypertarget{classbloom_1_1render_1_1_renderer_a47b36995d661f62f57ce11f49b68826e}\index{bloom::render::Renderer@{bloom::render::Renderer}!BeginRenderPass@{BeginRenderPass}}
+\index{BeginRenderPass@{BeginRenderPass}!bloom::render::Renderer@{bloom::render::Renderer}}
+\doxysubsubsection{\texorpdfstring{BeginRenderPass()}{BeginRenderPass()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_renderer_a47b36995d661f62f57ce11f49b68826e} 
+void bloom\+::render\+::\+Renderer\+::\+Begin\+Render\+Pass (\begin{DoxyParamCaption}\item[{Vk\+Command\+Buffer}]{command\+Buffer}{}\end{DoxyParamCaption}) const}
+
+
+
+Begins the render pass for the current frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command\+Buffer} & The Vulkan command buffer to begin the render pass with. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classbloom_1_1render_1_1_renderer_aa8c50e9e01ba6481e1b51f59561fdf8d}\index{bloom::render::Renderer@{bloom::render::Renderer}!EndRenderPass@{EndRenderPass}}
+\index{EndRenderPass@{EndRenderPass}!bloom::render::Renderer@{bloom::render::Renderer}}
+\doxysubsubsection{\texorpdfstring{EndRenderPass()}{EndRenderPass()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_renderer_aa8c50e9e01ba6481e1b51f59561fdf8d} 
+void bloom\+::render\+::\+Renderer\+::\+End\+Render\+Pass (\begin{DoxyParamCaption}\item[{Vk\+Command\+Buffer}]{command\+Buffer}{}\end{DoxyParamCaption}) const}
+
+
+
+Ends the render pass for the current frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command\+Buffer} & The Vulkan command buffer to end the render pass with. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classbloom_1_1render_1_1_renderer_a0547050d3457fcb39a2b9ff0ee00ad02}\index{bloom::render::Renderer@{bloom::render::Renderer}!GetAspectRatio@{GetAspectRatio}}
+\index{GetAspectRatio@{GetAspectRatio}!bloom::render::Renderer@{bloom::render::Renderer}}
+\doxysubsubsection{\texorpdfstring{GetAspectRatio()}{GetAspectRatio()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_renderer_a0547050d3457fcb39a2b9ff0ee00ad02} 
+float bloom\+::render\+::\+Renderer\+::\+Get\+Aspect\+Ratio (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the aspect ratio of the swap chain extent. 
+
+\begin{DoxyReturn}{Returns}
+The aspect ratio of the swap chain extent. 
+\end{DoxyReturn}
+\Hypertarget{classbloom_1_1render_1_1_renderer_a47669e12b11c73d06a1a01db272c94aa}\index{bloom::render::Renderer@{bloom::render::Renderer}!GetCurrentCommandBuffer@{GetCurrentCommandBuffer}}
+\index{GetCurrentCommandBuffer@{GetCurrentCommandBuffer}!bloom::render::Renderer@{bloom::render::Renderer}}
+\doxysubsubsection{\texorpdfstring{GetCurrentCommandBuffer()}{GetCurrentCommandBuffer()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_renderer_a47669e12b11c73d06a1a01db272c94aa} 
+Vk\+Command\+Buffer bloom\+::render\+::\+Renderer\+::\+Get\+Current\+Command\+Buffer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the command buffer for the current frame. 
+
+\begin{DoxyReturn}{Returns}
+The Vulkan command buffer for the current frame. 
+\end{DoxyReturn}
+\Hypertarget{classbloom_1_1render_1_1_renderer_aa3f6c2d55817bcf09fe8eff8f9b585a9}\index{bloom::render::Renderer@{bloom::render::Renderer}!GetFrameIndex@{GetFrameIndex}}
+\index{GetFrameIndex@{GetFrameIndex}!bloom::render::Renderer@{bloom::render::Renderer}}
+\doxysubsubsection{\texorpdfstring{GetFrameIndex()}{GetFrameIndex()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_renderer_aa3f6c2d55817bcf09fe8eff8f9b585a9} 
+int bloom\+::render\+::\+Renderer\+::\+Get\+Frame\+Index (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the index of the current frame. 
+
+\begin{DoxyReturn}{Returns}
+The index of the current frame, or -\/1 if no frame is in progress. 
+\end{DoxyReturn}
+\Hypertarget{classbloom_1_1render_1_1_renderer_a3e0df9f1c46ca8ddb8df4f435c5ab260}\index{bloom::render::Renderer@{bloom::render::Renderer}!GetFrameStarted@{GetFrameStarted}}
+\index{GetFrameStarted@{GetFrameStarted}!bloom::render::Renderer@{bloom::render::Renderer}}
+\doxysubsubsection{\texorpdfstring{GetFrameStarted()}{GetFrameStarted()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_renderer_a3e0df9f1c46ca8ddb8df4f435c5ab260} 
+bool bloom\+::render\+::\+Renderer\+::\+Get\+Frame\+Started (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if a frame has started. 
+
+\begin{DoxyReturn}{Returns}
+True if a frame has started, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classbloom_1_1render_1_1_renderer_ada6528ed894f97de7edb254d1a44f571}\index{bloom::render::Renderer@{bloom::render::Renderer}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!bloom::render::Renderer@{bloom::render::Renderer}}
+\doxysubsubsection{\texorpdfstring{GetInstance()}{GetInstance()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_renderer_ada6528ed894f97de7edb254d1a44f571} 
+static \mbox{\hyperlink{classbloom_1_1render_1_1_renderer}{Renderer}} \texorpdfstring{$\ast$}{*} bloom\+::render\+::\+Renderer\+::\+Get\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Gets the renderer instance. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the renderer instance 
+\end{DoxyReturn}
+\Hypertarget{classbloom_1_1render_1_1_renderer_a6d9c51736de357a7ffe8b025d86fe092}\index{bloom::render::Renderer@{bloom::render::Renderer}!GetRenderPass@{GetRenderPass}}
+\index{GetRenderPass@{GetRenderPass}!bloom::render::Renderer@{bloom::render::Renderer}}
+\doxysubsubsection{\texorpdfstring{GetRenderPass()}{GetRenderPass()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_renderer_a6d9c51736de357a7ffe8b025d86fe092} 
+Vk\+Render\+Pass bloom\+::render\+::\+Renderer\+::\+Get\+Render\+Pass (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the render pass. 
+
+\begin{DoxyReturn}{Returns}
+The Vulkan render pass. 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

@@ -61,13 +61,8 @@ public:
    *
    *  A perspective projection simulates how objects appear smaller as they get further away,
    *  creating a sense of depth.
-   *
-   *  @param fov The vertical field of view in radians.
-   *  @param aspect The aspect ratio of the projection (width / height).
-   *  @param near The near clipping plane distance.
-   *  @param far The far clipping plane distance.
    */
-  void SetPerspectiveProjection(float fov, float aspect, float near, float far);
+  void SetPerspectiveProjection();
 
   // Getters - Setters
   /**
@@ -95,6 +90,8 @@ private:
   // TODO: Implement this with event window resize
   float m_aspect = 1.0f; // Width / Height
   float m_fov = glm::radians(50.0f); // Field of view in radians
+  float m_near = 0.1f; // Near clipping plane
+  float m_far = 100.0f; // Far clipping plane
 };
 
 }

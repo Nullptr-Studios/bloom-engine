@@ -1,24 +1,38 @@
 \doxysection{bloom\+::render\+::Frame\+Info Struct Reference}
 \hypertarget{structbloom_1_1render_1_1_frame_info}{}\label{structbloom_1_1render_1_1_frame_info}\index{bloom::render::FrameInfo@{bloom::render::FrameInfo}}
+
+
+Per-\/frame information.  
+
+
+
+
+{\ttfamily \#include $<$frame\+\_\+info.\+hpp$>$}
+
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{structbloom_1_1render_1_1_frame_info_ae85edc74d9b49729a3fb26bddca27cfa}\label{structbloom_1_1render_1_1_frame_info_ae85edc74d9b49729a3fb26bddca27cfa} 
 char {\bfseries frame\+Index}
-\item 
+\begin{DoxyCompactList}\small\item\em Index of the current frame. \end{DoxyCompactList}\item 
 \Hypertarget{structbloom_1_1render_1_1_frame_info_acfb1b84db8532e5fa7e1a4741251fdb5}\label{structbloom_1_1render_1_1_frame_info_acfb1b84db8532e5fa7e1a4741251fdb5} 
 float {\bfseries frame\+Time}
-\item 
+\begin{DoxyCompactList}\small\item\em Time elapsed since the last frame in seconds. \end{DoxyCompactList}\item 
 \Hypertarget{structbloom_1_1render_1_1_frame_info_a73aae1fc356cdf5a22614bf04b5f7135}\label{structbloom_1_1render_1_1_frame_info_a73aae1fc356cdf5a22614bf04b5f7135} 
 Vk\+Command\+Buffer {\bfseries command\+Buffer}
-\item 
+\begin{DoxyCompactList}\small\item\em The command buffer for the current frame. \end{DoxyCompactList}\item 
 \Hypertarget{structbloom_1_1render_1_1_frame_info_aa8fab5df99f4c83ce224c9b2b0b6950b}\label{structbloom_1_1render_1_1_frame_info_aa8fab5df99f4c83ce224c9b2b0b6950b} 
 \mbox{\hyperlink{classbloom_1_1_camera}{Camera}} \texorpdfstring{$\ast$}{*} {\bfseries active\+Camera}
-\item 
+\begin{DoxyCompactList}\small\item\em Pointer to the currently active camera. \end{DoxyCompactList}\item 
 \Hypertarget{structbloom_1_1render_1_1_frame_info_a1296e95a98551af6daae7b232e1ffd95}\label{structbloom_1_1render_1_1_frame_info_a1296e95a98551af6daae7b232e1ffd95} 
 Vk\+Descriptor\+Set {\bfseries global\+Descriptor\+Set}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Global descriptor set for the current frame. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Per-\/frame information. 
+
+This structure holds various data related to a specific frame. This data facilitates efficient rendering and updates within each frame. 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

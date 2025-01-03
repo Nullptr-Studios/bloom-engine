@@ -1,5 +1,14 @@
 \doxysection{bloom\+::render\+::Swap\+Chain\+Support\+Details Struct Reference}
 \hypertarget{structbloom_1_1render_1_1_swap_chain_support_details}{}\label{structbloom_1_1render_1_1_swap_chain_support_details}\index{bloom::render::SwapChainSupportDetails@{bloom::render::SwapChainSupportDetails}}
+
+
+Swap chain support details.  
+
+
+
+
+{\ttfamily \#include $<$devices.\+hpp$>$}
+
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -11,8 +20,13 @@ std\+::vector$<$ Vk\+Surface\+Format\+KHR $>$ {\bfseries formats}
 \item 
 \Hypertarget{structbloom_1_1render_1_1_swap_chain_support_details_a05f175d265593cafc767c3fcc1af862c}\label{structbloom_1_1render_1_1_swap_chain_support_details_a05f175d265593cafc767c3fcc1af862c} 
 std\+::vector$<$ Vk\+Present\+Mode\+KHR $>$ {\bfseries present\+Modes}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Supported present modes. Defines the available presentation methods (e.\+g., FIFO, mailbox). \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Swap chain support details. 
+
+This structure holds details about the swap chain support for a given physical device. This includes the capabilities, supported surface formats, and available present modes. 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

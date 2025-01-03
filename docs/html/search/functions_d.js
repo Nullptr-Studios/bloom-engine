@@ -1,7 +1,10 @@
 var searchData=
 [
-  ['setmaxsets_0',['SetMaxSets',['../classbloom_1_1render_1_1_descriptor_pool_1_1_builder.html#a96b3a49ea4607ae530758dfbb5bf839f',1,'bloom::render::DescriptorPool::Builder']]],
-  ['setorthographicprojection_1',['SetOrthographicProjection',['../classbloom_1_1_camera.html#a9060e4a12a62abb802ac2ccc717b0e4e',1,'bloom::Camera']]],
-  ['setperspectiveprojection_2',['SetPerspectiveProjection',['../classbloom_1_1_camera.html#ab244f78e1064991ed0060becbe9bfed0',1,'bloom::Camera']]],
-  ['setpoolflags_3',['SetPoolFlags',['../classbloom_1_1render_1_1_descriptor_pool_1_1_builder.html#aa88dbf8fef7250b0ada62e43a83754bc',1,'bloom::render::DescriptorPool::Builder']]]
+  ['physicaldevice_0',['PhysicalDevice',['../classbloom_1_1render_1_1_devices.html#a4c3539ba444cbd55c5ce487aa7acb7e2',1,'bloom::render::Devices']]],
+  ['pipeline_1',['Pipeline',['../classbloom_1_1render_1_1_pipeline.html#a580698bec6166ee1ef70864307ab4f59',1,'bloom::render::Pipeline']]],
+  ['poplayer_2',['PopLayer',['../classbloom_1_1_layer_stack.html#ab3b7cf586655dec11be1e12cf42b0b55',1,'bloom::LayerStack']]],
+  ['popoverlay_3',['PopOverlay',['../classbloom_1_1_layer_stack.html#a35d140f06b205482dbd07eee770d1a63',1,'bloom::LayerStack']]],
+  ['presentqueue_4',['PresentQueue',['../classbloom_1_1render_1_1_devices.html#af09e61e7f14964d04e47b467312483d4',1,'bloom::render::Devices']]],
+  ['pushlayer_5',['PushLayer',['../classbloom_1_1_layer_stack.html#acd75ca3e0803931c695121565af59ad0',1,'bloom::LayerStack']]],
+  ['pushoverlay_6',['PushOverlay',['../classbloom_1_1_layer_stack.html#a99f8bc63c4ea8a1834bc3880d66675f9',1,'bloom::LayerStack']]]
 ];

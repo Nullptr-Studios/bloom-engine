@@ -8,83 +8,82 @@
 \DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{devices_8hpp}{devices.hpp}}"{}}}
 \DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{bloom__header_8hpp}{bloom\_header.hpp}}>}}
 \DoxyCodeLine{00013\ }
-\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }bloom::render\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacebloom_1_1render}{bloom::render}}\ \{}
 \DoxyCodeLine{00015\ }
-\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classbloom_1_1render_1_1_swap_chain}{SwapChain}}\ \{}
-\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00018\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ MAX\_FRAMES\_IN\_FLIGHT\ =\ 2;}
-\DoxyCodeLine{00019\ }
-\DoxyCodeLine{00020\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_swap_chain}{SwapChain}}(\mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}}\ \&deviceRef,\ VkExtent2D\ windowExtent);}
-\DoxyCodeLine{00021\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_swap_chain}{SwapChain}}(\mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}}\ \&deviceRef,\ VkExtent2D\ windowExtent,\ std::shared\_ptr<SwapChain>\ previous);}
-\DoxyCodeLine{00022\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_swap_chain}{\string~SwapChain}}();}
-\DoxyCodeLine{00023\ }
-\DoxyCodeLine{00024\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_swap_chain}{SwapChain}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classbloom_1_1render_1_1_swap_chain}{SwapChain}}\ \&)\ =\ \textcolor{keyword}{delete};}
-\DoxyCodeLine{00025\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_swap_chain}{SwapChain}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classbloom_1_1render_1_1_swap_chain}{SwapChain}}\ \&)\ =\ \textcolor{keyword}{delete};}
-\DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ \ \ VkFramebuffer\ GetFrameBuffer(\textcolor{keywordtype}{int}\ index)\ \{\ \textcolor{keywordflow}{return}\ m\_swapChainFramebuffers[index];\ \}}
-\DoxyCodeLine{00028\ \ \ VkRenderPass\ GetRenderPass()\ \{\ \textcolor{keywordflow}{return}\ m\_renderPass;\ \}}
-\DoxyCodeLine{00029\ \ \ VkImageView\ GetImageView(\textcolor{keywordtype}{int}\ index)\ \{\ \textcolor{keywordflow}{return}\ m\_swapChainImageViews[index];\ \}}
-\DoxyCodeLine{00030\ \ \ \textcolor{keywordtype}{size\_t}\ ImageCount()\ \{\ \textcolor{keywordflow}{return}\ m\_swapChainImages.size();\ \}}
-\DoxyCodeLine{00031\ \ \ VkFormat\ GetSwapChainImageFormat()\ \{\ \textcolor{keywordflow}{return}\ m\_swapChainImageFormat;\ \}}
-\DoxyCodeLine{00032\ \ \ VkExtent2D\ GetSwapChainExtent()\ \{\ \textcolor{keywordflow}{return}\ m\_swapChainExtent;\ \}}
-\DoxyCodeLine{00033\ \ \ uint32\_t\ width()\ \{\ \textcolor{keywordflow}{return}\ m\_swapChainExtent.width;\ \}}
-\DoxyCodeLine{00034\ \ \ uint32\_t\ height()\ \{\ \textcolor{keywordflow}{return}\ m\_swapChainExtent.height;\ \}}
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classbloom_1_1render_1_1_swap_chain}{SwapChain}}\ \{}
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classbloom_1_1render_1_1_swap_chain_abc12f5bfbd308fc9fa4401dcd5129e2e}{MAX\_FRAMES\_IN\_FLIGHT}}\ =\ 2;\ }
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_swap_chain}{SwapChain}}(\mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}}\ \&deviceRef,\ VkExtent2D\ windowExtent);}
+\DoxyCodeLine{00029\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_swap_chain}{SwapChain}}(\mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}}\ \&deviceRef,\ VkExtent2D\ windowExtent,\ std::shared\_ptr<SwapChain>\ previous);}
+\DoxyCodeLine{00030\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_swap_chain}{\string~SwapChain}}();}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \textcolor{comment}{//\ Copy\ constructors}}
+\DoxyCodeLine{00033\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_swap_chain}{SwapChain}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classbloom_1_1render_1_1_swap_chain}{SwapChain}}\ \&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00034\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_swap_chain}{SwapChain}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classbloom_1_1render_1_1_swap_chain}{SwapChain}}\ \&)\ =\ \textcolor{keyword}{delete};}
 \DoxyCodeLine{00035\ }
-\DoxyCodeLine{00036\ \ \ \textcolor{keywordtype}{float}\ ExtentAspectRatio()\ \{}
-\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(m\_swapChainExtent.width)\ /\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(m\_swapChainExtent.height);}
-\DoxyCodeLine{00038\ \ \ \}}
-\DoxyCodeLine{00039\ \ \ VkFormat\ FindDepthFormat();}
-\DoxyCodeLine{00040\ }
-\DoxyCodeLine{00041\ \ \ VkResult\ AcquireNextImage(uint32\_t\ *imageIndex);}
-\DoxyCodeLine{00042\ \ \ VkResult\ SubmitCommandBuffers(\textcolor{keyword}{const}\ VkCommandBuffer\ *buffers,\ uint32\_t\ *imageIndex);}
-\DoxyCodeLine{00043\ }
-\DoxyCodeLine{00044\ \ \ \textcolor{keywordtype}{bool}\ compareSwapFormats(\textcolor{keyword}{const}\ \mbox{\hyperlink{classbloom_1_1render_1_1_swap_chain}{SwapChain}}\&\ swapChain)\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordflow}{return}\ swapChain.m\_swapChainDepthFormat\ ==\ m\_swapChainDepthFormat\ \&\&}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ swapChain.m\_swapChainImageFormat\ ==\ m\_swapChainImageFormat;}
-\DoxyCodeLine{00047\ \ \ \}}
-\DoxyCodeLine{00048\ }
-\DoxyCodeLine{00049\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00050\ \ \ \textcolor{keywordtype}{void}\ Init();}
-\DoxyCodeLine{00051\ \ \ \textcolor{keywordtype}{void}\ CreateSwapChain();}
-\DoxyCodeLine{00052\ \ \ \textcolor{keywordtype}{void}\ CreateImageViews();}
-\DoxyCodeLine{00053\ \ \ \textcolor{keywordtype}{void}\ CreateDepthResources();}
-\DoxyCodeLine{00054\ \ \ \textcolor{keywordtype}{void}\ CreateRenderPass();}
-\DoxyCodeLine{00055\ \ \ \textcolor{keywordtype}{void}\ CreateFramebuffers();}
-\DoxyCodeLine{00056\ \ \ \textcolor{keywordtype}{void}\ CreateSyncObjects();}
-\DoxyCodeLine{00057\ }
-\DoxyCodeLine{00058\ \ \ \textcolor{comment}{//\ Helper\ functions}}
-\DoxyCodeLine{00059\ \ \ VkSurfaceFormatKHR\ ChooseSwapSurfaceFormat(}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<VkSurfaceFormatKHR>\ \&availableFormats);}
-\DoxyCodeLine{00061\ \ \ VkPresentModeKHR\ ChooseSwapPresentMode(}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<VkPresentModeKHR>\ \&availablePresentModes);}
-\DoxyCodeLine{00063\ \ \ VkExtent2D\ ChooseSwapExtent(\textcolor{keyword}{const}\ VkSurfaceCapabilitiesKHR\ \&capabilities);}
-\DoxyCodeLine{00064\ }
-\DoxyCodeLine{00065\ \ \ VkFormat\ m\_swapChainImageFormat;}
-\DoxyCodeLine{00066\ \ \ VkFormat\ m\_swapChainDepthFormat;}
-\DoxyCodeLine{00067\ \ \ VkExtent2D\ m\_swapChainExtent;}
-\DoxyCodeLine{00068\ }
-\DoxyCodeLine{00069\ \ \ std::vector<VkFramebuffer>\ m\_swapChainFramebuffers;}
-\DoxyCodeLine{00070\ \ \ VkRenderPass\ m\_renderPass;}
-\DoxyCodeLine{00071\ }
-\DoxyCodeLine{00072\ \ \ std::vector<VkImage>\ m\_depthImages;}
-\DoxyCodeLine{00073\ \ \ std::vector<VkDeviceMemory>\ m\_depthImageMemories;}
-\DoxyCodeLine{00074\ \ \ std::vector<VkImageView>\ m\_depthImageViews;}
-\DoxyCodeLine{00075\ \ \ std::vector<VkImage>\ m\_swapChainImages;}
-\DoxyCodeLine{00076\ \ \ std::vector<VkImageView>\ m\_swapChainImageViews;}
-\DoxyCodeLine{00077\ }
-\DoxyCodeLine{00078\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}}\ \&m\_device;}
-\DoxyCodeLine{00079\ \ \ VkExtent2D\ m\_windowExtent;}
-\DoxyCodeLine{00080\ }
-\DoxyCodeLine{00081\ \ \ VkSwapchainKHR\ m\_swapChain;}
-\DoxyCodeLine{00082\ \ \ std::shared\_ptr<SwapChain>\ m\_oldSwapChain;}
-\DoxyCodeLine{00083\ }
-\DoxyCodeLine{00084\ \ \ std::vector<VkSemaphore>\ m\_imageAvailableSemaphores;}
-\DoxyCodeLine{00085\ \ \ std::vector<VkSemaphore>\ m\_renderFinishedSemaphores;}
-\DoxyCodeLine{00086\ \ \ std::vector<VkFence>\ m\_inFlightFences;}
-\DoxyCodeLine{00087\ \ \ std::vector<VkFence>\ m\_imagesInFlight;}
-\DoxyCodeLine{00088\ \ \ \textcolor{keywordtype}{size\_t}\ m\_currentFrame\ =\ 0;}
-\DoxyCodeLine{00089\ \};}
-\DoxyCodeLine{00090\ }
-\DoxyCodeLine{00091\ \}\ \ \textcolor{comment}{//\ namespace\ lve}}
+\DoxyCodeLine{00036\ \ \ \textcolor{comment}{//\ region\ Getters}}
+\DoxyCodeLine{00042\ \ \ VkFramebuffer\ \mbox{\hyperlink{classbloom_1_1render_1_1_swap_chain_a14c37544d58c948a6d4e2b9ae598870e}{GetFrameBuffer}}(\textcolor{keywordtype}{int}\ index)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_swapChainFramebuffers[index];\ \}}
+\DoxyCodeLine{00047\ \ \ VkRenderPass\ \mbox{\hyperlink{classbloom_1_1render_1_1_swap_chain_a2a74e3ee6642535399b80dba56e1d0de}{GetRenderPass}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_renderPass;\ \}}
+\DoxyCodeLine{00053\ \ \ VkImageView\ \mbox{\hyperlink{classbloom_1_1render_1_1_swap_chain_ae38baccbbda4c1c41af0d8be66a1f61e}{GetImageView}}(\textcolor{keywordtype}{int}\ index)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_swapChainImageViews[index];\ \}}
+\DoxyCodeLine{00058\ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classbloom_1_1render_1_1_swap_chain_a43888a3c73f0c21031f70c1e0302eddd}{ImageCount}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_swapChainImages.size();\ \}}
+\DoxyCodeLine{00063\ \ \ VkFormat\ \mbox{\hyperlink{classbloom_1_1render_1_1_swap_chain_a2ff148c8e1611fa7cd708496410f977b}{GetSwapChainImageFormat}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_swapChainImageFormat;\ \}}
+\DoxyCodeLine{00068\ \ \ VkExtent2D\ \mbox{\hyperlink{classbloom_1_1render_1_1_swap_chain_a622ed834f1d2167efc39c45d09228915}{GetSwapChainExtent}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_swapChainExtent;\ \}}
+\DoxyCodeLine{00073\ \ \ uint32\_t\ \mbox{\hyperlink{classbloom_1_1render_1_1_swap_chain_a22d7d19a16ddebed3df17853c2ffd75f}{Width}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_swapChainExtent.width;\ \}}
+\DoxyCodeLine{00078\ \ \ uint32\_t\ \mbox{\hyperlink{classbloom_1_1render_1_1_swap_chain_a40bd5a1765776ac84f82f6b832d66c01}{Height}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_swapChainExtent.height;\ \}}
+\DoxyCodeLine{00083\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classbloom_1_1render_1_1_swap_chain_ad4d0e3ba566ffa010bc9fc5c38c8a947}{ExtentAspectRatio}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(m\_swapChainExtent.width)\ /\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(m\_swapChainExtent.height);}
+\DoxyCodeLine{00085\ \ \ \}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \textcolor{comment}{//\ region\ Functions}}
+\DoxyCodeLine{00092\ \ \ VkFormat\ \mbox{\hyperlink{classbloom_1_1render_1_1_swap_chain_a213590ce50f0174cda76b7a9cb44b3da}{FindDepthFormat}}();}
+\DoxyCodeLine{00098\ \ \ VkResult\ \mbox{\hyperlink{classbloom_1_1render_1_1_swap_chain_a99b800b12957dee7fcbb01c7f028e9c1}{AcquireNextImage}}(uint32\_t\ *imageIndex);}
+\DoxyCodeLine{00105\ \ \ VkResult\ \mbox{\hyperlink{classbloom_1_1render_1_1_swap_chain_a303dcef852589ac18f833189491729fc}{SubmitCommandBuffers}}(\textcolor{keyword}{const}\ VkCommandBuffer\ *buffers,\ uint32\_t\ *imageIndex);}
+\DoxyCodeLine{00111\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classbloom_1_1render_1_1_swap_chain_a262fa775ba52b1275034ef30951de928}{CompareSwapFormats}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classbloom_1_1render_1_1_swap_chain}{SwapChain}}\&\ swapChain)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordflow}{return}\ swapChain.m\_swapChainDepthFormat\ ==\ m\_swapChainDepthFormat\ \&\&}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ swapChain.m\_swapChainImageFormat\ ==\ m\_swapChainImageFormat;}
+\DoxyCodeLine{00114\ \ \ \}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00120\ \ \ \textcolor{keywordtype}{void}\ Init();}
+\DoxyCodeLine{00124\ \ \ \textcolor{keywordtype}{void}\ CreateSwapChain();}
+\DoxyCodeLine{00128\ \ \ \textcolor{keywordtype}{void}\ CreateImageViews();}
+\DoxyCodeLine{00132\ \ \ \textcolor{keywordtype}{void}\ CreateDepthResources();}
+\DoxyCodeLine{00136\ \ \ \textcolor{keywordtype}{void}\ CreateRenderPass();}
+\DoxyCodeLine{00140\ \ \ \textcolor{keywordtype}{void}\ CreateFramebuffers();}
+\DoxyCodeLine{00144\ \ \ \textcolor{keywordtype}{void}\ CreateSyncObjects();}
+\DoxyCodeLine{00150\ \ \ VkSurfaceFormatKHR\ ChooseSwapSurfaceFormat(}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<VkSurfaceFormatKHR>\ \&availableFormats);}
+\DoxyCodeLine{00157\ \ \ VkPresentModeKHR\ ChooseSwapPresentMode(}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<VkPresentModeKHR>\ \&availablePresentModes);}
+\DoxyCodeLine{00164\ \ \ VkExtent2D\ ChooseSwapExtent(\textcolor{keyword}{const}\ VkSurfaceCapabilitiesKHR\ \&capabilities);}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \ \ VkFormat\ m\_swapChainImageFormat;}
+\DoxyCodeLine{00167\ \ \ VkFormat\ m\_swapChainDepthFormat;}
+\DoxyCodeLine{00168\ \ \ VkExtent2D\ m\_swapChainExtent;}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \ \ std::vector<VkFramebuffer>\ m\_swapChainFramebuffers;}
+\DoxyCodeLine{00171\ \ \ VkRenderPass\ m\_renderPass;}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \ \ std::vector<VkImage>\ m\_depthImages;}
+\DoxyCodeLine{00174\ \ \ std::vector<VkDeviceMemory>\ m\_depthImageMemories;}
+\DoxyCodeLine{00175\ \ \ std::vector<VkImageView>\ m\_depthImageViews;}
+\DoxyCodeLine{00176\ \ \ std::vector<VkImage>\ m\_swapChainImages;}
+\DoxyCodeLine{00177\ \ \ std::vector<VkImageView>\ m\_swapChainImageViews;}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_devices}{Devices}}\ \&m\_device;}
+\DoxyCodeLine{00180\ \ \ VkExtent2D\ m\_windowExtent;}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ \ \ VkSwapchainKHR\ m\_swapChain;}
+\DoxyCodeLine{00183\ \ \ std::shared\_ptr<SwapChain>\ m\_oldSwapChain;}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \ \ std::vector<VkSemaphore>\ m\_imageAvailableSemaphores;}
+\DoxyCodeLine{00186\ \ \ std::vector<VkSemaphore>\ m\_renderFinishedSemaphores;}
+\DoxyCodeLine{00187\ \ \ std::vector<VkFence>\ m\_inFlightFences;}
+\DoxyCodeLine{00188\ \ \ std::vector<VkFence>\ m\_imagesInFlight;}
+\DoxyCodeLine{00189\ \ \ \textcolor{keywordtype}{size\_t}\ m\_currentFrame\ =\ 0;}
+\DoxyCodeLine{00190\ \};}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \}}
 
 \end{DoxyCode}

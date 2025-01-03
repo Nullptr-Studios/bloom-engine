@@ -103,23 +103,21 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#ifdef BLOOM_PLATFORM_WINDOWS</span></div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keywordtype">int</span> main() {</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <span class="keyword">const</span> <span class="keyword">auto</span> m_engine = <a class="code hl_function" href="engine_8hpp.html#a8a68fb9b4e5dc5c0eb680b3f32781872">bloom::CreateEngine</a>();</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  glfwInit();</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  m_engine-&gt;Begin();</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <span class="keywordflow">while</span> (!m_engine-&gt;ShouldClose()) {</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    m_engine-&gt;Tick();</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    m_engine-&gt;Render();</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  }</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  m_engine-&gt;End();</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>}</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <span class="keyword">const</span> <span class="keyword">auto</span> m_engine = <a class="code hl_function" href="namespacebloom.html#a8a68fb9b4e5dc5c0eb680b3f32781872">bloom::CreateEngine</a>();</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  m_engine-&gt;Init();</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  <span class="keywordflow">while</span> (!m_engine-&gt;ShouldClose()) {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    m_engine-&gt;OnTick();</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    m_engine-&gt;OnRender();</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  }</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  m_engine-&gt;OnClose();</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>}</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aengine_8hpp_html"><div class="ttname"><a href="engine_8hpp.html">engine.hpp</a></div><div class="ttdoc">Main engine class.</div></div>
-<div class="ttc" id="aengine_8hpp_html_a8a68fb9b4e5dc5c0eb680b3f32781872"><div class="ttname"><a href="engine_8hpp.html#a8a68fb9b4e5dc5c0eb680b3f32781872">bloom::CreateEngine</a></div><div class="ttdeci">std::unique_ptr&lt; bloom::Engine &gt; CreateEngine()</div><div class="ttdoc">Creates an entry point for the Bloom engine.</div><div class="ttdef"><b>Definition</b> main.cpp:19</div></div>
 <div class="ttc" id="alog_8hpp_html"><div class="ttname"><a href="log_8hpp.html">log.hpp</a></div><div class="ttdoc">Header file for the Log library class.</div></div>
+<div class="ttc" id="anamespacebloom_html_a8a68fb9b4e5dc5c0eb680b3f32781872"><div class="ttname"><a href="namespacebloom.html#a8a68fb9b4e5dc5c0eb680b3f32781872">bloom::CreateEngine</a></div><div class="ttdeci">std::unique_ptr&lt; bloom::Engine &gt; CreateEngine()</div><div class="ttdoc">Creates an entry point for the Bloom engine.</div><div class="ttdef"><b>Definition</b> main.cpp:19</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

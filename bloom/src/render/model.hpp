@@ -13,6 +13,9 @@
 #include "devices.hpp"
 #include "buffer.hpp"
 #include <bloom_header.hpp>
+#include <nlohmann/json.hpp>
+
+using json = nlohmann::json;
 
 namespace bloom::render {
 
@@ -33,8 +36,8 @@ public:
    */
   struct Vertex {
     glm::vec3 position;
+    glm::vec3 normal;
     glm::vec2 texCoord;
-    glm::vec4 color;
 
     static std::vector<VkVertexInputBindingDescription> GetBindingDescriptions();
     static std::vector<VkVertexInputAttributeDescription> GetAttributeDescriptions();
@@ -52,14 +55,18 @@ public:
     // unsigned int will limit the number of vertices to 4,294,967,295 -x
     // Remember to update the bind function -x
     std::vector<unsigned short> indices;
+
+    void LoadModel(const std::string& path);
   };
 
-  Model(Devices* device, const Builder& builder);
+  Model(const Builder& builder);
   ~Model();
 
   // Copy constructors
   Model(const Model&) = delete;
   Model &operator=(const Model&) = delete;
+
+  static std::unique_ptr<Model> CreateModel(const std::string& path);
 
   /**
    * @brief Binds the model's vertex and index buffers to the command buffer.
@@ -73,7 +80,12 @@ public:
   void Draw(VkCommandBuffer commandBuffer) const;
 
 private:
-  Devices* m_device;
+  const char* m_path;
+
+  // gltf loader stuff
+  // std::vector<unsigned char> GetData(json gltfJson);
+  // std::vector<std::vector<unsigned char>> GetBuffers(json gltfJson, std::vector<unsigned char> data);
+  // Builder BuildVertices(json gltfJson, std::vector<std::vector<unsigned char>> gltfBuffers);
 
   // region VBO stuff
   /**

@@ -83,36 +83,58 @@ $(function(){ initResizable(false); });
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>bloom</b></li><li class="navelem"><a class="el" href="classbloom_1_1_factory.html">Factory</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacebloom.html">bloom</a></li><li class="navelem"><a class="el" href="classbloom_1_1_factory.html">Factory</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div id="doc-content">
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="classbloom_1_1_factory-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">bloom::Factory Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Manages the creation of game objects.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="factory_8hpp_source.html">factory.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a7ae2cf735666641480f3adc879dc15d5" id="r_a7ae2cf735666641480f3adc879dc15d5"><td class="memTemplParams" colspan="2">template&lt;typename T , typename  = std::enable_if_t&lt;std::is_base_of_v&lt;Object, T&gt;&gt;&gt; </td></tr>
-<tr class="memitem:a7ae2cf735666641480f3adc879dc15d5"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a7ae2cf735666641480f3adc879dc15d5">CreateObject</a> ()</td></tr>
-<tr class="separator:a7ae2cf735666641480f3adc879dc15d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a71867caa8196a0bb2c5585c87e503eb4" id="r_a71867caa8196a0bb2c5585c87e503eb4"><td class="memItemLeft" align="right" valign="top"><a id="a71867caa8196a0bb2c5585c87e503eb4" name="a71867caa8196a0bb2c5585c87e503eb4"></a>
-<a class="el" href="object_8hpp.html#ac65b651055bbc2100bc99fb9bd34ac17">ObjectMap</a>&#160;</td><td class="memItemRight" valign="bottom"><b>GetObjects</b> ()</td></tr>
+<tr class="memitem:a7d8367198d92a526f18df16c8f0d6c4d" id="r_a7d8367198d92a526f18df16c8f0d6c4d"><td class="memItemLeft" align="right" valign="top"><a id="a7d8367198d92a526f18df16c8f0d6c4d" name="a7d8367198d92a526f18df16c8f0d6c4d"></a>
+<a class="el" href="classbloom_1_1_factory.html">Factory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classbloom_1_1_factory.html">Factory</a> &amp;)=delete</td></tr>
+<tr class="separator:a7d8367198d92a526f18df16c8f0d6c4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89267859f7cef24e591ac3d702a92edc" id="r_a89267859f7cef24e591ac3d702a92edc"><td class="memItemLeft" align="right" valign="top"><a id="a89267859f7cef24e591ac3d702a92edc" name="a89267859f7cef24e591ac3d702a92edc"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Factory</b> (const <a class="el" href="classbloom_1_1_factory.html">Factory</a> &amp;)=delete</td></tr>
+<tr class="separator:a89267859f7cef24e591ac3d702a92edc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af514408c2042144df3700f690554bc6e" id="r_af514408c2042144df3700f690554bc6e"><td class="memTemplParams" colspan="2">template&lt;typename T , typename  = std::enable_if_t&lt;std::is_base_of_v&lt;Object, T&gt;&gt;&gt; </td></tr>
+<tr class="memitem:af514408c2042144df3700f690554bc6e"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#af514408c2042144df3700f690554bc6e">CreateObject</a> (const std::string &amp;name=&quot;Unnamed Object&quot;)</td></tr>
+<tr class="separator:af514408c2042144df3700f690554bc6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71867caa8196a0bb2c5585c87e503eb4" id="r_a71867caa8196a0bb2c5585c87e503eb4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacebloom.html#ac65b651055bbc2100bc99fb9bd34ac17">ObjectMap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a71867caa8196a0bb2c5585c87e503eb4">GetObjects</a> ()</td></tr>
+<tr class="memdesc:a71867caa8196a0bb2c5585c87e503eb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets all objects.  <br /></td></tr>
 <tr class="separator:a71867caa8196a0bb2c5585c87e503eb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a95d6a115fd1defdaae6501cad2a692e5" id="r_a95d6a115fd1defdaae6501cad2a692e5"><td class="memItemLeft" align="right" valign="top"><a id="a95d6a115fd1defdaae6501cad2a692e5" name="a95d6a115fd1defdaae6501cad2a692e5"></a>
-<a class="el" href="actor_8hpp.html#a0a6a92f666ce85e7aaa009b4a2af96ee">ActorMap</a>&#160;</td><td class="memItemRight" valign="bottom"><b>GetRenderables</b> ()</td></tr>
+<tr class="memitem:a95d6a115fd1defdaae6501cad2a692e5" id="r_a95d6a115fd1defdaae6501cad2a692e5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacebloom.html#a0a6a92f666ce85e7aaa009b4a2af96ee">ActorMap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95d6a115fd1defdaae6501cad2a692e5">GetRenderables</a> ()</td></tr>
+<tr class="memdesc:a95d6a115fd1defdaae6501cad2a692e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets all renderable objects (<code><a class="el" href="classbloom_1_1_actor.html" title="Represents a renderable and potentially interactive object within the game world.">Actor</a></code> class)  <br /></td></tr>
 <tr class="separator:a95d6a115fd1defdaae6501cad2a692e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5621f8d22f8fdfb2d19a2b39c5559c9b" id="r_a5621f8d22f8fdfb2d19a2b39c5559c9b"><td class="memItemLeft" align="right" valign="top"><a id="a5621f8d22f8fdfb2d19a2b39c5559c9b" name="a5621f8d22f8fdfb2d19a2b39c5559c9b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetDevice</b> (<a class="el" href="classbloom_1_1render_1_1_devices.html">render::Devices</a> *device)</td></tr>
-<tr class="separator:a5621f8d22f8fdfb2d19a2b39c5559c9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaef96a35c8a521bdfd63fdc223190882" id="r_aaef96a35c8a521bdfd63fdc223190882"><td class="memItemLeft" align="right" valign="top"><a id="aaef96a35c8a521bdfd63fdc223190882" name="aaef96a35c8a521bdfd63fdc223190882"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>DestroyAllObjects</b> ()</td></tr>
+<tr class="memdesc:aaef96a35c8a521bdfd63fdc223190882"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys all objects Calls the OnClose method of all objects and clears the <code>Objects</code> and <code>Renderables</code> maps. <br /></td></tr>
+<tr class="separator:aaef96a35c8a521bdfd63fdc223190882"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:abd79523c7412ce560106616ccdc6ab1a" id="r_abd79523c7412ce560106616ccdc6ab1a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbloom_1_1_factory.html">Factory</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abd79523c7412ce560106616ccdc6ab1a">GetInstance</a> ()</td></tr>
+<tr class="memdesc:abd79523c7412ce560106616ccdc6ab1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the instance of the <a class="el" href="classbloom_1_1_factory.html" title="Manages the creation of game objects.">Factory</a>.  <br /></td></tr>
+<tr class="separator:abd79523c7412ce560106616ccdc6ab1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a7ae2cf735666641480f3adc879dc15d5" name="a7ae2cf735666641480f3adc879dc15d5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7ae2cf735666641480f3adc879dc15d5">&#9670;&#160;</a></span>CreateObject()</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Manages the creation of game objects. </p>
+<p>The <a class="el" href="classbloom_1_1_factory.html" title="Manages the creation of game objects.">Factory</a> class is responsible for creating game objects, assigning unique IDs to them, and maintaining maps of all created objects and renderable actors. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="af514408c2042144df3700f690554bc6e" name="af514408c2042144df3700f690554bc6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af514408c2042144df3700f690554bc6e">&#9670;&#160;</a></span>CreateObject()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -122,7 +144,7 @@ template&lt;typename T , typename &gt; </div>
         <tr>
           <td class="memname">std::shared_ptr&lt; T &gt; bloom::Factory::CreateObject </td>
           <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;Unnamed&#160;Object&quot;</span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -138,8 +160,93 @@ template&lt;typename T , typename &gt; </div>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<a id="abd79523c7412ce560106616ccdc6ab1a" name="abd79523c7412ce560106616ccdc6ab1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd79523c7412ce560106616ccdc6ab1a">&#9670;&#160;</a></span>GetInstance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classbloom_1_1_factory.html">Factory</a> * bloom::Factory::GetInstance </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the instance of the <a class="el" href="classbloom_1_1_factory.html" title="Manages the creation of game objects.">Factory</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>The instance of the <a class="el" href="classbloom_1_1_factory.html" title="Manages the creation of game objects.">Factory</a> </dd></dl>
+
+</div>
+</div>
+<a id="a71867caa8196a0bb2c5585c87e503eb4" name="a71867caa8196a0bb2c5585c87e503eb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71867caa8196a0bb2c5585c87e503eb4">&#9670;&#160;</a></span>GetObjects()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacebloom.html#ac65b651055bbc2100bc99fb9bd34ac17">ObjectMap</a> bloom::Factory::GetObjects </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets all objects. </p>
+<dl class="section return"><dt>Returns</dt><dd>Map of all objects </dd></dl>
+
+</div>
+</div>
+<a id="a95d6a115fd1defdaae6501cad2a692e5" name="a95d6a115fd1defdaae6501cad2a692e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95d6a115fd1defdaae6501cad2a692e5">&#9670;&#160;</a></span>GetRenderables()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacebloom.html#a0a6a92f666ce85e7aaa009b4a2af96ee">ActorMap</a> bloom::Factory::GetRenderables </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets all renderable objects (<code><a class="el" href="classbloom_1_1_actor.html" title="Represents a renderable and potentially interactive object within the game world.">Actor</a></code> class) </p>
+<dl class="section return"><dt>Returns</dt><dd>Map of all actors </dd></dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>C:/Users/xgoni/bloom/bloom/src/<a class="el" href="factory_8hpp_source.html">factory.hpp</a></li>
+<li>C:/Users/xgoni/bloom/bloom/src/<b>factory.cpp</b></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

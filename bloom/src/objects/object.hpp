@@ -92,7 +92,7 @@ public:
   virtual void OnEvent(Event& e) {}
 
   virtual void PropertiesPanel() {
-    if (ImGui::CollapsingHeader("transform")) {
+    if (ImGui::CollapsingHeader("Transform")) {
       ImGui::DragFloat3("Position", &transform.position.x, 0.1f);
       ImGui::DragFloat3("Rotation", &transform.rotation.x, 0.1f);
       ImGui::DragFloat3("Scale", &transform.scale.x, 0.1f);
@@ -117,7 +117,7 @@ public:
    *  @brief Sets the object's name.
    *  @param name The new name for the object.
    */
-  void SetName(const std::string& name) { BLOOM_LOG("Changed {0}'s name to {1}", m_name, name); m_name = name; }
+  void SetName(const std::string& name) { if (m_name != "") BLOOM_LOG("Changed {0}'s name to {1}", m_name, name); m_name = name; }
 
 private:
   id_t m_id; ///< @brief The unique identifier for this object.

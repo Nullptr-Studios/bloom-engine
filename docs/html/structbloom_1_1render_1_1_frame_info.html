@@ -83,7 +83,7 @@ $(function(){ initResizable(false); });
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>bloom</b></li><li class="navelem"><b>render</b></li><li class="navelem"><a class="el" href="structbloom_1_1render_1_1_frame_info.html">FrameInfo</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacebloom.html">bloom</a></li><li class="navelem"><a class="el" href="namespacebloom_1_1render.html">render</a></li><li class="navelem"><a class="el" href="structbloom_1_1render_1_1_frame_info.html">FrameInfo</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div id="doc-content">
@@ -94,26 +94,39 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">bloom::render::FrameInfo Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Per-frame information.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="frame__info_8hpp_source.html">frame_info.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:ae85edc74d9b49729a3fb26bddca27cfa" id="r_ae85edc74d9b49729a3fb26bddca27cfa"><td class="memItemLeft" align="right" valign="top"><a id="ae85edc74d9b49729a3fb26bddca27cfa" name="ae85edc74d9b49729a3fb26bddca27cfa"></a>
 char&#160;</td><td class="memItemRight" valign="bottom"><b>frameIndex</b></td></tr>
+<tr class="memdesc:ae85edc74d9b49729a3fb26bddca27cfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Index of the current frame. <br /></td></tr>
 <tr class="separator:ae85edc74d9b49729a3fb26bddca27cfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acfb1b84db8532e5fa7e1a4741251fdb5" id="r_acfb1b84db8532e5fa7e1a4741251fdb5"><td class="memItemLeft" align="right" valign="top"><a id="acfb1b84db8532e5fa7e1a4741251fdb5" name="acfb1b84db8532e5fa7e1a4741251fdb5"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>frameTime</b></td></tr>
+<tr class="memdesc:acfb1b84db8532e5fa7e1a4741251fdb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time elapsed since the last frame in seconds. <br /></td></tr>
 <tr class="separator:acfb1b84db8532e5fa7e1a4741251fdb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73aae1fc356cdf5a22614bf04b5f7135" id="r_a73aae1fc356cdf5a22614bf04b5f7135"><td class="memItemLeft" align="right" valign="top"><a id="a73aae1fc356cdf5a22614bf04b5f7135" name="a73aae1fc356cdf5a22614bf04b5f7135"></a>
 VkCommandBuffer&#160;</td><td class="memItemRight" valign="bottom"><b>commandBuffer</b></td></tr>
+<tr class="memdesc:a73aae1fc356cdf5a22614bf04b5f7135"><td class="mdescLeft">&#160;</td><td class="mdescRight">The command buffer for the current frame. <br /></td></tr>
 <tr class="separator:a73aae1fc356cdf5a22614bf04b5f7135"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8fab5df99f4c83ce224c9b2b0b6950b" id="r_aa8fab5df99f4c83ce224c9b2b0b6950b"><td class="memItemLeft" align="right" valign="top"><a id="aa8fab5df99f4c83ce224c9b2b0b6950b" name="aa8fab5df99f4c83ce224c9b2b0b6950b"></a>
 <a class="el" href="classbloom_1_1_camera.html">Camera</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>activeCamera</b></td></tr>
+<tr class="memdesc:aa8fab5df99f4c83ce224c9b2b0b6950b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the currently active camera. <br /></td></tr>
 <tr class="separator:aa8fab5df99f4c83ce224c9b2b0b6950b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1296e95a98551af6daae7b232e1ffd95" id="r_a1296e95a98551af6daae7b232e1ffd95"><td class="memItemLeft" align="right" valign="top"><a id="a1296e95a98551af6daae7b232e1ffd95" name="a1296e95a98551af6daae7b232e1ffd95"></a>
 VkDescriptorSet&#160;</td><td class="memItemRight" valign="bottom"><b>globalDescriptorSet</b></td></tr>
+<tr class="memdesc:a1296e95a98551af6daae7b232e1ffd95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global descriptor set for the current frame. <br /></td></tr>
 <tr class="separator:a1296e95a98551af6daae7b232e1ffd95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this struct was generated from the following file:<ul>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Per-frame information. </p>
+<p>This structure holds various data related to a specific frame. This data facilitates efficient rendering and updates within each frame. </p>
+</div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li>C:/Users/xgoni/bloom/bloom/src/render/<a class="el" href="frame__info_8hpp_source.html">frame_info.hpp</a></li>
 </ul>
 </div><!-- contents -->

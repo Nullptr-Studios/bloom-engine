@@ -103,14 +103,30 @@ $(function(){ initResizable(false); });
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:ad27cc17b25bb93134368d5eb21126eae" id="r_ad27cc17b25bb93134368d5eb21126eae"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad27cc17b25bb93134368d5eb21126eae">BIT</a>(x)</td></tr>
+<tr class="memdesc:ad27cc17b25bb93134368d5eb21126eae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit shifter macro for multi enums.  <br /></td></tr>
 <tr class="separator:ad27cc17b25bb93134368d5eb21126eae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb4e5b3602145f9e0c024a1b05c260a8" id="r_adb4e5b3602145f9e0c024a1b05c260a8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adb4e5b3602145f9e0c024a1b05c260a8">DELETE_COPY_CONSTRUCTOR</a>(classname)</td></tr>
+<tr class="memdesc:adb4e5b3602145f9e0c024a1b05c260a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro to delete the copy constructor and assignment operator.  <br /></td></tr>
 <tr class="separator:adb4e5b3602145f9e0c024a1b05c260a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac011e263167131058fbde8f4d07c5758" id="r_ac011e263167131058fbde8f4d07c5758"><td class="memItemLeft" align="right" valign="top"><a id="ac011e263167131058fbde8f4d07c5758" name="ac011e263167131058fbde8f4d07c5758"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BLOOM_FACTORY</b>&#160;&#160;&#160;Factory::GetInstance()</td></tr>
+<tr class="separator:ac011e263167131058fbde8f4d07c5758"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98f72491ebf03135694c1477c0127a27" id="r_a98f72491ebf03135694c1477c0127a27"><td class="memItemLeft" align="right" valign="top"><a id="a98f72491ebf03135694c1477c0127a27" name="a98f72491ebf03135694c1477c0127a27"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BLOOM_RENDERER</b>&#160;&#160;&#160;render::Renderer::GetInstance()</td></tr>
+<tr class="separator:a98f72491ebf03135694c1477c0127a27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5067667762fa180da1a947ba5c1aca33" id="r_a5067667762fa180da1a947ba5c1aca33"><td class="memItemLeft" align="right" valign="top"><a id="a5067667762fa180da1a947ba5c1aca33" name="a5067667762fa180da1a947ba5c1aca33"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BLOOM_DEVICES</b>&#160;&#160;&#160;render::Devices::GetInstance()</td></tr>
+<tr class="separator:a5067667762fa180da1a947ba5c1aca33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09275c64232294991c4c00b6c3e846ae" id="r_a09275c64232294991c4c00b6c3e846ae"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a09275c64232294991c4c00b6c3e846ae">EVENT_BIND</a>(fn)</td></tr>
+<tr class="separator:a09275c64232294991c4c00b6c3e846ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a609501bc05586ff337da8e0986a44cd3" id="r_a609501bc05586ff337da8e0986a44cd3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a609501bc05586ff337da8e0986a44cd3">DRAG_SPEED</a>(speed)</td></tr>
+<tr class="separator:a609501bc05586ff337da8e0986a44cd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:abaf665e52c9979a5f6eb9ecfce756efc" id="r_abaf665e52c9979a5f6eb9ecfce756efc"><td class="memItemLeft" align="right" valign="top"><a id="abaf665e52c9979a5f6eb9ecfce756efc" name="abaf665e52c9979a5f6eb9ecfce756efc"></a>
 typedef unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>id_t</b></td></tr>
+<tr class="memdesc:abaf665e52c9979a5f6eb9ecfce756efc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Typedef for object IDs. <br /></td></tr>
 <tr class="separator:abaf665e52c9979a5f6eb9ecfce756efc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -134,6 +150,14 @@ typedef unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>id_
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">(1 &lt;&lt; x)</div>
 </div><!-- fragment -->
+<p>Bit shifter macro for multi enums. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>The bit to set </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="adb4e5b3602145f9e0c024a1b05c260a8" name="adb4e5b3602145f9e0c024a1b05c260a8"></a>
@@ -155,6 +179,56 @@ typedef unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>id_
 <div class="line">  classname(classname&amp;&amp;) = <span class="keywordflow">default</span>; \</div>
 <div class="line">  classname&amp; operator=(classname&amp;&amp;) = <span class="keywordflow">default</span></div>
 </div><!-- fragment -->
+<p>Macro to delete the copy constructor and assignment operator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">classname</td><td>The name of the class </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a609501bc05586ff337da8e0986a44cd3" name="a609501bc05586ff337da8e0986a44cd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a609501bc05586ff337da8e0986a44cd3">&#9670;&#160;</a></span>DRAG_SPEED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DRAG_SPEED</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>speed</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="keyword">auto</span> io = ImgUi::GetIO(); <span class="keywordflow">return</span> speed / io.KeyAlt ? 1.0f : 10.0f;</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a09275c64232294991c4c00b6c3e846ae" name="a09275c64232294991c4c00b6c3e846ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09275c64232294991c4c00b6c3e846ae">&#9670;&#160;</a></span>EVENT_BIND</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EVENT_BIND</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>fn</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">std::bind(&amp;fn, <span class="keyword">this</span>, std::placeholders::_1)</div>
+</div><!-- fragment --><p>Binds a function to an event </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fn</td><td>Function to bind </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 </div><!-- contents -->

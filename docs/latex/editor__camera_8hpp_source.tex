@@ -5,20 +5,22 @@
 \DoxyCodeLine{00001\ }
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\#pragma\ once}}
 \DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{camera_8hpp}{src/objects/camera.hpp}}"{}}}
-\DoxyCodeLine{00011\ }
-\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }wanderer\ \{}
-\DoxyCodeLine{00013\ }
-\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classwanderer_1_1_editor_camera}{EditorCamera}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classbloom_1_1_camera}{bloom::Camera}}\ \{}
-\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00016\ \ \ \mbox{\hyperlink{classwanderer_1_1_editor_camera}{EditorCamera}}(\textcolor{keyword}{const}\ id\_t\ \textcolor{keywordtype}{id},\ \mbox{\hyperlink{classbloom_1_1render_1_1_devices}{bloom::render::Devices}}*\ devices)\ :\ \mbox{\hyperlink{classbloom_1_1_camera_a55653f8b0847d95366a26c57e4309a78}{Camera}}(\textcolor{keywordtype}{id},\ devices)\ \{\}}
-\DoxyCodeLine{00017\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classwanderer_1_1_editor_camera_a24a2839b7ce2cc98000a94f7bcd41b5f}{Tick}}(\textcolor{keywordtype}{float}\ deltaTime)\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00018\ }
-\DoxyCodeLine{00019\ \ \ \textcolor{keywordtype}{void}\ OnEvent(\textcolor{keyword}{const}\ \mbox{\hyperlink{classbloom_1_1_event}{bloom::Event}}\ \&e);}
-\DoxyCodeLine{00020\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00021\ \ \ glm::vec2\ m\_movement\ =\ glm::vec2(0.0f);}
-\DoxyCodeLine{00022\ \ \ \textcolor{keywordtype}{float}\ speed\ =\ 1.0f;}
-\DoxyCodeLine{00023\ \};}
-\DoxyCodeLine{00024\ }
-\DoxyCodeLine{00025\ \}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <imgui.h>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }wanderer\ \{}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classwanderer_1_1_editor_camera}{EditorCamera}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classbloom_1_1_camera}{bloom::Camera}}\ \{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classwanderer_1_1_editor_camera}{EditorCamera}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{core_8hpp_abaf665e52c9979a5f6eb9ecfce756efc}{id\_t}}\ \textcolor{keywordtype}{id})\ :\ Camera(\textcolor{keywordtype}{id})\ \{\}}
+\DoxyCodeLine{00018\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classwanderer_1_1_editor_camera_aa46d543424aa7d0214c8e1ab7c92bd28}{OnBegin}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00019\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classwanderer_1_1_editor_camera_a968d3e1aede5413abeb562b77d16b7aa}{OnTick}}(\textcolor{keywordtype}{float}\ deltaTime)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classwanderer_1_1_editor_camera_a52c6b3da873fb3b94eae8f23a1baf64b}{OnEvent}}(\mbox{\hyperlink{classbloom_1_1_event}{bloom::Event}}\ \&e)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00022\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00023\ \ \ glm::vec2\ m\_movement\ =\ glm::vec2(0.0f);}
+\DoxyCodeLine{00024\ \ \ \textcolor{keywordtype}{float}\ speed\ =\ 1.0f;}
+\DoxyCodeLine{00025\ \};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \}}
 
 \end{DoxyCode}

@@ -55,6 +55,8 @@ add_library(bloom-engine SHARED
         src/render/descriptor_layouts.hpp
         src/layers/ui_layer.cpp
         src/layers/ui_layer.hpp
+        src/resource_loader.cpp
+        src/resource_loader.hpp
 )
 
 target_precompile_headers(bloom-engine PRIVATE bloom_header.hpp)
@@ -65,6 +67,7 @@ endif()
 target_include_directories(bloom-engine PUBLIC
         lib/spdlog/include
         lib/json/include
+        lib/tinyobjloader
 )
 
 # JSON INCLUDE

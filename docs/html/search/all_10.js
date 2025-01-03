@@ -1,16 +1,12 @@
 var searchData=
 [
-  ['sandbox_0',['Sandbox',['../class_sandbox.html',1,'']]],
-  ['scale_1',['scale',['../structbloom_1_1_transform.html#ae2da39dae20de6c860cb9c8b541092b9',1,'bloom::Transform']]],
-  ['setmaxsets_2',['SetMaxSets',['../classbloom_1_1render_1_1_descriptor_pool_1_1_builder.html#a96b3a49ea4607ae530758dfbb5bf839f',1,'bloom::render::DescriptorPool::Builder']]],
-  ['setorthographicprojection_3',['SetOrthographicProjection',['../classbloom_1_1_camera.html#a9060e4a12a62abb802ac2ccc717b0e4e',1,'bloom::Camera']]],
-  ['setperspectiveprojection_4',['SetPerspectiveProjection',['../classbloom_1_1_camera.html#ab244f78e1064991ed0060becbe9bfed0',1,'bloom::Camera']]],
-  ['setpoolflags_5',['SetPoolFlags',['../classbloom_1_1render_1_1_descriptor_pool_1_1_builder.html#aa88dbf8fef7250b0ada62e43a83754bc',1,'bloom::render::DescriptorPool::Builder']]],
-  ['simple_5frender_5fsystem_2ehpp_6',['simple_render_system.hpp',['../simple__render__system_8hpp.html',1,'']]],
-  ['simplepushconstantdata_7',['SimplePushConstantData',['../structbloom_1_1render_1_1_simple_push_constant_data.html',1,'bloom::render::SimplePushConstantData'],['../structbloom_1_1_simple_push_constant_data.html',1,'bloom::SimplePushConstantData']]],
-  ['simplerendersystem_8',['SimpleRenderSystem',['../classbloom_1_1_simple_render_system.html',1,'bloom']]],
-  ['style_9',['Code style',['../index.html#autotoc_md3',1,'']]],
-  ['swap_5fchain_2ehpp_10',['swap_chain.hpp',['../swap__chain_8hpp.html',1,'']]],
-  ['swapchain_11',['SwapChain',['../classbloom_1_1render_1_1_swap_chain.html',1,'bloom::render']]],
-  ['swapchainsupportdetails_12',['SwapChainSupportDetails',['../structbloom_1_1render_1_1_swap_chain_support_details.html',1,'bloom::render']]]
+  ['renderer_0',['Renderer',['../classbloom_1_1render_1_1_renderer.html',1,'bloom::render']]],
+  ['renderer_2ehpp_1',['renderer.hpp',['../renderer_8hpp.html',1,'']]],
+  ['renderobjects_2',['RenderObjects',['../classbloom_1_1render_1_1_simple_render_system.html#a74b71252e1c048c97b1d3c8052fe7f88',1,'bloom::render::SimpleRenderSystem']]],
+  ['resetpool_3',['ResetPool',['../classbloom_1_1render_1_1_descriptor_pool.html#ac0e9cfc07011dddd6d0170b66f5f650b',1,'bloom::render::DescriptorPool']]],
+  ['resetwindowresized_4',['ResetWindowResized',['../classbloom_1_1_window.html#af3c61031a50660718dac55a1a6286744',1,'bloom::Window']]],
+  ['resource_5floader_2ehpp_5',['resource_loader.hpp',['../resource__loader_8hpp.html',1,'']]],
+  ['resourceloader_6',['ResourceLoader',['../classbloom_1_1_resource_loader.html',1,'bloom']]],
+  ['rmo_5fplaceholder_7',['RMO_PLACEHOLDER',['../actor_8hpp.html#acfc88eeb0e56fd3961b1f9ed8436efc4',1,'actor.hpp']]],
+  ['rotation_8',['rotation',['../structbloom_1_1_transform.html#a74ff5ce7a3e2c963a80fb829c77957f0',1,'bloom::Transform']]]
 ];

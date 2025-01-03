@@ -1,19 +1,26 @@
 \doxysection{bloom\+::render\+::Simple\+Push\+Constant\+Data Struct Reference}
 \hypertarget{structbloom_1_1render_1_1_simple_push_constant_data}{}\label{structbloom_1_1render_1_1_simple_push_constant_data}\index{bloom::render::SimplePushConstantData@{bloom::render::SimplePushConstantData}}
+
+
+Represents the push constant data used in the renderer.  
+
+
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{structbloom_1_1render_1_1_simple_push_constant_data_a2e714d486f4389ba97b40fb7b734f94f}\label{structbloom_1_1render_1_1_simple_push_constant_data_a2e714d486f4389ba97b40fb7b734f94f} 
-glm\+::mat2 {\bfseries transform} = glm\+::mat2(1.\+0f)
+\Hypertarget{structbloom_1_1render_1_1_simple_push_constant_data_a7d7691ae81205a7456a819322011b4bc}\label{structbloom_1_1render_1_1_simple_push_constant_data_a7d7691ae81205a7456a819322011b4bc} 
+glm\+::mat4 {\bfseries transform} = glm\+::mat4(1.\+0f)
 \item 
-\Hypertarget{structbloom_1_1render_1_1_simple_push_constant_data_a561f8c0ae6962e364da782e160452fdb}\label{structbloom_1_1render_1_1_simple_push_constant_data_a561f8c0ae6962e364da782e160452fdb} 
-glm\+::vec2 {\bfseries offset}
-\item 
-\Hypertarget{structbloom_1_1render_1_1_simple_push_constant_data_a2673fc076c9b882422eb16b6cf9f1466}\label{structbloom_1_1render_1_1_simple_push_constant_data_a2673fc076c9b882422eb16b6cf9f1466} 
-glm\+::vec3 {\bfseries color}
+\Hypertarget{structbloom_1_1render_1_1_simple_push_constant_data_ae70e4b95885c39696a189b228b9234ad}\label{structbloom_1_1render_1_1_simple_push_constant_data_ae70e4b95885c39696a189b228b9234ad} 
+glm\+::vec3 {\bfseries tint}
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+Represents the push constant data used in the renderer. 
+
+This struct contains transformation and color data that are passed to the shaders as push constants. 
+
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/xgoni/bloom/bloom/src/render/\mbox{\hyperlink{renderer_8hpp}{renderer.\+hpp}}\end{DoxyCompactItemize}
+C\+:/\+Users/xgoni/bloom/bloom/src/render/systems/simple\+\_\+render\+\_\+system.\+cpp\end{DoxyCompactItemize}

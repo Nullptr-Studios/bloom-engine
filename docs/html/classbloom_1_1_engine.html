@@ -83,20 +83,25 @@ $(function(){ initResizable(false); });
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>bloom</b></li><li class="navelem"><a class="el" href="classbloom_1_1_engine.html">Engine</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacebloom.html">bloom</a></li><li class="navelem"><a class="el" href="classbloom_1_1_engine.html">Engine</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div id="doc-content">
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classbloom_1_1_engine-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">bloom::Engine Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Main class for the bloom engine.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="engine_8hpp_source.html">engine.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for bloom::Engine:</div>
 <div class="dyncontent">
@@ -116,36 +121,49 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a541e2dd7ada86a9a25b9477bd60553c8" id="r_a541e2dd7ada86a9a25b9477bd60553c8"><td class="memItemLeft" align="right" valign="top"><a id="a541e2dd7ada86a9a25b9477bd60553c8" name="a541e2dd7ada86a9a25b9477bd60553c8"></a>
 <a class="el" href="classbloom_1_1_engine.html">Engine</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classbloom_1_1_engine.html">Engine</a> &amp;)=delete</td></tr>
 <tr class="separator:a541e2dd7ada86a9a25b9477bd60553c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88a1aae163129e74c7486ac57d310035" id="r_a88a1aae163129e74c7486ac57d310035"><td class="memItemLeft" align="right" valign="top"><a id="a88a1aae163129e74c7486ac57d310035" name="a88a1aae163129e74c7486ac57d310035"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Begin</b> ()</td></tr>
-<tr class="separator:a88a1aae163129e74c7486ac57d310035"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a14a73b59a5c71909ed7419bd385fd1c1" id="r_a14a73b59a5c71909ed7419bd385fd1c1"><td class="memItemLeft" align="right" valign="top"><a id="a14a73b59a5c71909ed7419bd385fd1c1" name="a14a73b59a5c71909ed7419bd385fd1c1"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>Tick</b> ()</td></tr>
-<tr class="separator:a14a73b59a5c71909ed7419bd385fd1c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad255ccd51c12fec57ce713ff879d4775" id="r_ad255ccd51c12fec57ce713ff879d4775"><td class="memItemLeft" align="right" valign="top"><a id="ad255ccd51c12fec57ce713ff879d4775" name="ad255ccd51c12fec57ce713ff879d4775"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Render</b> ()</td></tr>
-<tr class="separator:ad255ccd51c12fec57ce713ff879d4775"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a56743ef3554bf57bc79ce5dc00fa234b" id="r_a56743ef3554bf57bc79ce5dc00fa234b"><td class="memItemLeft" align="right" valign="top"><a id="a56743ef3554bf57bc79ce5dc00fa234b" name="a56743ef3554bf57bc79ce5dc00fa234b"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>End</b> () const</td></tr>
-<tr class="separator:a56743ef3554bf57bc79ce5dc00fa234b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabae09bc72008aab7dad4a42ef714cf4" id="r_aabae09bc72008aab7dad4a42ef714cf4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aabae09bc72008aab7dad4a42ef714cf4">Init</a> ()</td></tr>
+<tr class="memdesc:aabae09bc72008aab7dad4a42ef714cf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles the initialization of the engine.  <br /></td></tr>
+<tr class="separator:aabae09bc72008aab7dad4a42ef714cf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2a15af9ead50c72c9953c5233cda115" id="r_ab2a15af9ead50c72c9953c5233cda115"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab2a15af9ead50c72c9953c5233cda115">OnBegin</a> ()</td></tr>
+<tr class="memdesc:ab2a15af9ead50c72c9953c5233cda115"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called before starting game loop.  <br /></td></tr>
+<tr class="separator:ab2a15af9ead50c72c9953c5233cda115"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f447cd38d38a127592dbc26d4193b13" id="r_a5f447cd38d38a127592dbc26d4193b13"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5f447cd38d38a127592dbc26d4193b13">OnTick</a> ()</td></tr>
+<tr class="memdesc:a5f447cd38d38a127592dbc26d4193b13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called every frame.  <br /></td></tr>
+<tr class="separator:a5f447cd38d38a127592dbc26d4193b13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d017c0b8069e3fbbad47ab87b0a8495" id="r_a0d017c0b8069e3fbbad47ab87b0a8495"><td class="memItemLeft" align="right" valign="top"><a id="a0d017c0b8069e3fbbad47ab87b0a8495" name="a0d017c0b8069e3fbbad47ab87b0a8495"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>OnRender</b> ()</td></tr>
+<tr class="memdesc:a0d017c0b8069e3fbbad47ab87b0a8495"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called every frame after the <code>Tick</code>. <br /></td></tr>
+<tr class="separator:a0d017c0b8069e3fbbad47ab87b0a8495"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a036ac1451ce02a56b34e7039c51cf8c5" id="r_a036ac1451ce02a56b34e7039c51cf8c5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a036ac1451ce02a56b34e7039c51cf8c5">OnClose</a> ()</td></tr>
+<tr class="memdesc:a036ac1451ce02a56b34e7039c51cf8c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called before ending the game loop.  <br /></td></tr>
+<tr class="separator:a036ac1451ce02a56b34e7039c51cf8c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68ea3be34a9a1b70a42d3c1b1760965f" id="r_a68ea3be34a9a1b70a42d3c1b1760965f"><td class="memItemLeft" align="right" valign="top"><a id="a68ea3be34a9a1b70a42d3c1b1760965f" name="a68ea3be34a9a1b70a42d3c1b1760965f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>OnEvent</b> (<a class="el" href="classbloom_1_1_event.html">Event</a> &amp;e)</td></tr>
+<tr class="separator:a68ea3be34a9a1b70a42d3c1b1760965f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aacbe3434463b409ea1d93f9db8ad37bc" id="r_aacbe3434463b409ea1d93f9db8ad37bc"><td class="memItemLeft" align="right" valign="top"><a id="aacbe3434463b409ea1d93f9db8ad37bc" name="aacbe3434463b409ea1d93f9db8ad37bc"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>ShouldClose</b> () const</td></tr>
 <tr class="separator:aacbe3434463b409ea1d93f9db8ad37bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e9e685a0831e8b2dcacb12fc3e026fa" id="r_a0e9e685a0831e8b2dcacb12fc3e026fa"><td class="memItemLeft" align="right" valign="top"><a id="a0e9e685a0831e8b2dcacb12fc3e026fa" name="a0e9e685a0831e8b2dcacb12fc3e026fa"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>OnEvent</b> (const <a class="el" href="classbloom_1_1_event.html">Event</a> &amp;e) const</td></tr>
-<tr class="separator:a0e9e685a0831e8b2dcacb12fc3e026fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:ab6d184cb4b143c4bbcbfeb8906298adb" id="r_ab6d184cb4b143c4bbcbfeb8906298adb"><td class="memItemLeft" align="right" valign="top"><a id="ab6d184cb4b143c4bbcbfeb8906298adb" name="ab6d184cb4b143c4bbcbfeb8906298adb"></a>
-std::unique_ptr&lt; <a class="el" href="classbloom_1_1_factory.html">Factory</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>factory</b> = nullptr</td></tr>
-<tr class="separator:ab6d184cb4b143c4bbcbfeb8906298adb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:abe3d70c9d705bc71974323c178dab032" id="r_abe3d70c9d705bc71974323c178dab032"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structbloom_1_1render_1_1_descriptor_layouts.html">render::DescriptorLayouts</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abe3d70c9d705bc71974323c178dab032">GetDescriptorLayouts</a> ()</td></tr>
+<tr class="memdesc:abe3d70c9d705bc71974323c178dab032"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the DescriptorLayouts struct.  <br /></td></tr>
+<tr class="separator:abe3d70c9d705bc71974323c178dab032"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a960b4402be47ab7336696e4bdb9486ce" id="r_a960b4402be47ab7336696e4bdb9486ce"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a960b4402be47ab7336696e4bdb9486ce">SetUBOLayout</a> (<a class="el" href="classbloom_1_1render_1_1_descriptor_set_layout.html">render::DescriptorSetLayout</a> *layout)</td></tr>
+<tr class="memdesc:a960b4402be47ab7336696e4bdb9486ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the global descriptor set layout.  <br /></td></tr>
+<tr class="separator:a960b4402be47ab7336696e4bdb9486ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a816b16349da5bcac4df11e0a8fb9c256" id="r_a816b16349da5bcac4df11e0a8fb9c256"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a816b16349da5bcac4df11e0a8fb9c256">SetMaterialLayout</a> (<a class="el" href="classbloom_1_1render_1_1_descriptor_set_layout.html">render::DescriptorSetLayout</a> *layout)</td></tr>
+<tr class="memdesc:a816b16349da5bcac4df11e0a8fb9c256"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the material descriptor set layout.  <br /></td></tr>
+<tr class="separator:a816b16349da5bcac4df11e0a8fb9c256"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:ab641a25e2842bf6c423117f3c2ca69e7" id="r_ab641a25e2842bf6c423117f3c2ca69e7"><td class="memItemLeft" align="right" valign="top"><a id="ab641a25e2842bf6c423117f3c2ca69e7" name="ab641a25e2842bf6c423117f3c2ca69e7"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>OnBegin</b> ()</td></tr>
-<tr class="separator:ab641a25e2842bf6c423117f3c2ca69e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7f7d3623bf7c3fbb1be84190fa5bbfb" id="r_ac7f7d3623bf7c3fbb1be84190fa5bbfb"><td class="memItemLeft" align="right" valign="top"><a id="ac7f7d3623bf7c3fbb1be84190fa5bbfb" name="ac7f7d3623bf7c3fbb1be84190fa5bbfb"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>PushLayer</b> (<a class="el" href="classbloom_1_1_layer.html">Layer</a> *layer)</td></tr>
+<tr class="separator:ac7f7d3623bf7c3fbb1be84190fa5bbfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a378c23d22dad9a5538083126ed0818c6" id="r_a378c23d22dad9a5538083126ed0818c6"><td class="memItemLeft" align="right" valign="top"><a id="a378c23d22dad9a5538083126ed0818c6" name="a378c23d22dad9a5538083126ed0818c6"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>PushOverlay</b> (<a class="el" href="classbloom_1_1_layer.html">Layer</a> *overlay)</td></tr>
+<tr class="separator:a378c23d22dad9a5538083126ed0818c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -158,19 +176,218 @@ std::unique_ptr&lt; <a class="el" href="classbloom_1_1render_1_1_devices.html">r
 <tr class="memitem:a2cba17e0da5ccea5d481664aac9357e1" id="r_a2cba17e0da5ccea5d481664aac9357e1"><td class="memItemLeft" align="right" valign="top"><a id="a2cba17e0da5ccea5d481664aac9357e1" name="a2cba17e0da5ccea5d481664aac9357e1"></a>
 std::unique_ptr&lt; <a class="el" href="classbloom_1_1render_1_1_renderer.html">render::Renderer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>m_renderer</b> = nullptr</td></tr>
 <tr class="separator:a2cba17e0da5ccea5d481664aac9357e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e1f9560eea6c443b54afcf6fe49d913" id="r_a1e1f9560eea6c443b54afcf6fe49d913"><td class="memItemLeft" align="right" valign="top"><a id="a1e1f9560eea6c443b54afcf6fe49d913" name="a1e1f9560eea6c443b54afcf6fe49d913"></a>
-<a class="el" href="classbloom_1_1_simple_render_system.html">SimpleRenderSystem</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>m_simpleRenderSystem</b> = nullptr</td></tr>
-<tr class="separator:a1e1f9560eea6c443b54afcf6fe49d913"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6652663ab06bfa57afb408ebceed42a8" id="r_a6652663ab06bfa57afb408ebceed42a8"><td class="memItemLeft" align="right" valign="top"><a id="a6652663ab06bfa57afb408ebceed42a8" name="a6652663ab06bfa57afb408ebceed42a8"></a>
-std::shared_ptr&lt; <a class="el" href="classbloom_1_1_camera.html">Camera</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>m_activeCamera</b></td></tr>
+std::shared_ptr&lt; <a class="el" href="classbloom_1_1_camera.html">Camera</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>m_activeCamera</b> = nullptr</td></tr>
 <tr class="separator:a6652663ab06bfa57afb408ebceed42a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a128425c9b6152891450060d898e0c6e0" id="r_a128425c9b6152891450060d898e0c6e0"><td class="memItemLeft" align="right" valign="top"><a id="a128425c9b6152891450060d898e0c6e0" name="a128425c9b6152891450060d898e0c6e0"></a>
-std::unique_ptr&lt; <a class="el" href="classbloom_1_1render_1_1_descriptor_set_layout.html">render::DescriptorSetLayout</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>m_materialSetLayout</b></td></tr>
-<tr class="separator:a128425c9b6152891450060d898e0c6e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af37376d08f33c7ed0e1133ff69df4567" id="r_af37376d08f33c7ed0e1133ff69df4567"><td class="memItemLeft" align="right" valign="top"><a id="af37376d08f33c7ed0e1133ff69df4567" name="af37376d08f33c7ed0e1133ff69df4567"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>m_deltaTime</b></td></tr>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>m_deltaTime</b> = 0.016f</td></tr>
 <tr class="separator:af37376d08f33c7ed0e1133ff69df4567"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Main class for the bloom engine. </p>
+<p>The <a class="el" href="classbloom_1_1_engine.html" title="Main class for the bloom engine.">Engine</a> class manages the main game loop, rendering, and event handling. It initializes and manages various subsystems such as the window, renderer, and input handling. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="abe3d70c9d705bc71974323c178dab032" name="abe3d70c9d705bc71974323c178dab032"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe3d70c9d705bc71974323c178dab032">&#9670;&#160;</a></span>GetDescriptorLayouts()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="structbloom_1_1render_1_1_descriptor_layouts.html">render::DescriptorLayouts</a> bloom::Engine::GetDescriptorLayouts </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the DescriptorLayouts struct. </p>
+<dl class="section return"><dt>Returns</dt><dd>The DescriptorLayouts struct </dd></dl>
+
+</div>
+</div>
+<a id="aabae09bc72008aab7dad4a42ef714cf4" name="aabae09bc72008aab7dad4a42ef714cf4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabae09bc72008aab7dad4a42ef714cf4">&#9670;&#160;</a></span>Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bloom::Engine::Init </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Handles the initialization of the engine. </p>
+<dl class="section note"><dt>Note</dt><dd>Do not access this in other classes </dd></dl>
+
+</div>
+</div>
+<a id="ab2a15af9ead50c72c9953c5233cda115" name="ab2a15af9ead50c72c9953c5233cda115"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2a15af9ead50c72c9953c5233cda115">&#9670;&#160;</a></span>OnBegin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void bloom::Engine::OnBegin </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Called before starting game loop. </p>
+
+<p>Reimplemented in <a class="el" href="classwanderer_1_1_wanderer.html#adff28e303080ba7cb51fa8981d110fc5">wanderer::Wanderer</a>.</p>
+
+</div>
+</div>
+<a id="a036ac1451ce02a56b34e7039c51cf8c5" name="a036ac1451ce02a56b34e7039c51cf8c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a036ac1451ce02a56b34e7039c51cf8c5">&#9670;&#160;</a></span>OnClose()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bloom::Engine::OnClose </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Called before ending the game loop. </p>
+
+<p>Reimplemented in <a class="el" href="classwanderer_1_1_wanderer.html#a5c8cf3c3facf15636db400a0756af372">wanderer::Wanderer</a>.</p>
+
+</div>
+</div>
+<a id="a5f447cd38d38a127592dbc26d4193b13" name="a5f447cd38d38a127592dbc26d4193b13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f447cd38d38a127592dbc26d4193b13">&#9670;&#160;</a></span>OnTick()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bloom::Engine::OnTick </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Called every frame. </p>
+
+<p>Reimplemented in <a class="el" href="classwanderer_1_1_wanderer.html#a76a4f56cc7c32789d5d13e1cd17f2efe">wanderer::Wanderer</a>.</p>
+
+</div>
+</div>
+<a id="a816b16349da5bcac4df11e0a8fb9c256" name="a816b16349da5bcac4df11e0a8fb9c256"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a816b16349da5bcac4df11e0a8fb9c256">&#9670;&#160;</a></span>SetMaterialLayout()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void bloom::Engine::SetMaterialLayout </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classbloom_1_1render_1_1_descriptor_set_layout.html">render::DescriptorSetLayout</a> *</td>          <td class="paramname"><span class="paramname"><em>layout</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the material descriptor set layout. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">layout</td><td>The descriptor set layout </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a960b4402be47ab7336696e4bdb9486ce" name="a960b4402be47ab7336696e4bdb9486ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a960b4402be47ab7336696e4bdb9486ce">&#9670;&#160;</a></span>SetUBOLayout()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void bloom::Engine::SetUBOLayout </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classbloom_1_1render_1_1_descriptor_set_layout.html">render::DescriptorSetLayout</a> *</td>          <td class="paramname"><span class="paramname"><em>layout</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the global descriptor set layout. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">layout</td><td>The descriptor set layout </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>C:/Users/xgoni/bloom/bloom/src/<a class="el" href="engine_8hpp_source.html">engine.hpp</a></li>
 <li>C:/Users/xgoni/bloom/bloom/src/<b>engine.cpp</b></li>

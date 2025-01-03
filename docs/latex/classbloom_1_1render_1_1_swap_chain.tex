@@ -1,5 +1,14 @@
 \doxysection{bloom\+::render\+::Swap\+Chain Class Reference}
 \hypertarget{classbloom_1_1render_1_1_swap_chain}{}\label{classbloom_1_1render_1_1_swap_chain}\index{bloom::render::SwapChain@{bloom::render::SwapChain}}
+
+
+Manages the Vulkan swap chain and related resources.  
+
+
+
+
+{\ttfamily \#include $<$swap\+\_\+chain.\+hpp$>$}
+
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -15,51 +24,242 @@
 \Hypertarget{classbloom_1_1render_1_1_swap_chain_a26dc27196abbca87f04b9b7058597b8e}\label{classbloom_1_1render_1_1_swap_chain_a26dc27196abbca87f04b9b7058597b8e} 
 \mbox{\hyperlink{classbloom_1_1render_1_1_swap_chain}{Swap\+Chain}} \& {\bfseries operator=} (const \mbox{\hyperlink{classbloom_1_1render_1_1_swap_chain}{Swap\+Chain}} \&)=delete
 \item 
-\Hypertarget{classbloom_1_1render_1_1_swap_chain_af5fd1e2123f9c7b3586233a00163c2c8}\label{classbloom_1_1render_1_1_swap_chain_af5fd1e2123f9c7b3586233a00163c2c8} 
-Vk\+Framebuffer {\bfseries Get\+Frame\+Buffer} (int index)
-\item 
-\Hypertarget{classbloom_1_1render_1_1_swap_chain_aab5a3cb31a30d03c57785dfbcce8cf7a}\label{classbloom_1_1render_1_1_swap_chain_aab5a3cb31a30d03c57785dfbcce8cf7a} 
-Vk\+Render\+Pass {\bfseries Get\+Render\+Pass} ()
-\item 
-\Hypertarget{classbloom_1_1render_1_1_swap_chain_a5061641c8e527b504a542704272ce7ee}\label{classbloom_1_1render_1_1_swap_chain_a5061641c8e527b504a542704272ce7ee} 
-Vk\+Image\+View {\bfseries Get\+Image\+View} (int index)
-\item 
-\Hypertarget{classbloom_1_1render_1_1_swap_chain_a2c12f7523fee3900ce267185b1a1e5a0}\label{classbloom_1_1render_1_1_swap_chain_a2c12f7523fee3900ce267185b1a1e5a0} 
-size\+\_\+t {\bfseries Image\+Count} ()
-\item 
-\Hypertarget{classbloom_1_1render_1_1_swap_chain_add26f0e8078c1d307fbe12f035040a9b}\label{classbloom_1_1render_1_1_swap_chain_add26f0e8078c1d307fbe12f035040a9b} 
-Vk\+Format {\bfseries Get\+Swap\+Chain\+Image\+Format} ()
-\item 
-\Hypertarget{classbloom_1_1render_1_1_swap_chain_af71201ba73fc33864e659747a47878e4}\label{classbloom_1_1render_1_1_swap_chain_af71201ba73fc33864e659747a47878e4} 
-Vk\+Extent2D {\bfseries Get\+Swap\+Chain\+Extent} ()
-\item 
-\Hypertarget{classbloom_1_1render_1_1_swap_chain_ad2a85251188d1951574e4628e742c3c5}\label{classbloom_1_1render_1_1_swap_chain_ad2a85251188d1951574e4628e742c3c5} 
-uint32\+\_\+t {\bfseries width} ()
-\item 
-\Hypertarget{classbloom_1_1render_1_1_swap_chain_a8a7a2e777155e94cd71e5cf564569db7}\label{classbloom_1_1render_1_1_swap_chain_a8a7a2e777155e94cd71e5cf564569db7} 
-uint32\+\_\+t {\bfseries height} ()
-\item 
-\Hypertarget{classbloom_1_1render_1_1_swap_chain_a62c456af3361758b5e391b86f0253015}\label{classbloom_1_1render_1_1_swap_chain_a62c456af3361758b5e391b86f0253015} 
-float {\bfseries Extent\+Aspect\+Ratio} ()
-\item 
-\Hypertarget{classbloom_1_1render_1_1_swap_chain_a213590ce50f0174cda76b7a9cb44b3da}\label{classbloom_1_1render_1_1_swap_chain_a213590ce50f0174cda76b7a9cb44b3da} 
-Vk\+Format {\bfseries Find\+Depth\+Format} ()
-\item 
-\Hypertarget{classbloom_1_1render_1_1_swap_chain_a99b800b12957dee7fcbb01c7f028e9c1}\label{classbloom_1_1render_1_1_swap_chain_a99b800b12957dee7fcbb01c7f028e9c1} 
-Vk\+Result {\bfseries Acquire\+Next\+Image} (uint32\+\_\+t \texorpdfstring{$\ast$}{*}image\+Index)
-\item 
-\Hypertarget{classbloom_1_1render_1_1_swap_chain_a303dcef852589ac18f833189491729fc}\label{classbloom_1_1render_1_1_swap_chain_a303dcef852589ac18f833189491729fc} 
-Vk\+Result {\bfseries Submit\+Command\+Buffers} (const Vk\+Command\+Buffer \texorpdfstring{$\ast$}{*}buffers, uint32\+\_\+t \texorpdfstring{$\ast$}{*}image\+Index)
-\item 
-\Hypertarget{classbloom_1_1render_1_1_swap_chain_a52dbece54d8d5be298800ebca3c3f2e9}\label{classbloom_1_1render_1_1_swap_chain_a52dbece54d8d5be298800ebca3c3f2e9} 
-bool {\bfseries compare\+Swap\+Formats} (const \mbox{\hyperlink{classbloom_1_1render_1_1_swap_chain}{Swap\+Chain}} \&swap\+Chain) const
-\end{DoxyCompactItemize}
+Vk\+Framebuffer \mbox{\hyperlink{classbloom_1_1render_1_1_swap_chain_a14c37544d58c948a6d4e2b9ae598870e}{Get\+Frame\+Buffer}} (int index) const
+\begin{DoxyCompactList}\small\item\em Gets the framebuffer at the specified index. \end{DoxyCompactList}\item 
+Vk\+Render\+Pass \mbox{\hyperlink{classbloom_1_1render_1_1_swap_chain_a2a74e3ee6642535399b80dba56e1d0de}{Get\+Render\+Pass}} () const
+\begin{DoxyCompactList}\small\item\em Gets the render pass. \end{DoxyCompactList}\item 
+Vk\+Image\+View \mbox{\hyperlink{classbloom_1_1render_1_1_swap_chain_ae38baccbbda4c1c41af0d8be66a1f61e}{Get\+Image\+View}} (int index) const
+\begin{DoxyCompactList}\small\item\em Gets the image view at the specified index. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classbloom_1_1render_1_1_swap_chain_a43888a3c73f0c21031f70c1e0302eddd}{Image\+Count}} () const
+\begin{DoxyCompactList}\small\item\em Gets the number of images in the swap chain. \end{DoxyCompactList}\item 
+Vk\+Format \mbox{\hyperlink{classbloom_1_1render_1_1_swap_chain_a2ff148c8e1611fa7cd708496410f977b}{Get\+Swap\+Chain\+Image\+Format}} () const
+\begin{DoxyCompactList}\small\item\em Gets the format of the swap chain images. \end{DoxyCompactList}\item 
+Vk\+Extent2D \mbox{\hyperlink{classbloom_1_1render_1_1_swap_chain_a622ed834f1d2167efc39c45d09228915}{Get\+Swap\+Chain\+Extent}} () const
+\begin{DoxyCompactList}\small\item\em Gets the extent of the swap chain. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{classbloom_1_1render_1_1_swap_chain_a22d7d19a16ddebed3df17853c2ffd75f}{Width}} () const
+\begin{DoxyCompactList}\small\item\em Gets the width of the swap chain extent. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{classbloom_1_1render_1_1_swap_chain_a40bd5a1765776ac84f82f6b832d66c01}{Height}} () const
+\begin{DoxyCompactList}\small\item\em Gets the height of the swap chain extent. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classbloom_1_1render_1_1_swap_chain_ad4d0e3ba566ffa010bc9fc5c38c8a947}{Extent\+Aspect\+Ratio}} () const
+\begin{DoxyCompactList}\small\item\em Gets the aspect ratio of the swap chain extent. \end{DoxyCompactList}\item 
+Vk\+Format \mbox{\hyperlink{classbloom_1_1render_1_1_swap_chain_a213590ce50f0174cda76b7a9cb44b3da}{Find\+Depth\+Format}} ()
+\begin{DoxyCompactList}\small\item\em Finds the depth format for the swap chain. \end{DoxyCompactList}\item 
+Vk\+Result \mbox{\hyperlink{classbloom_1_1render_1_1_swap_chain_a99b800b12957dee7fcbb01c7f028e9c1}{Acquire\+Next\+Image}} (uint32\+\_\+t \texorpdfstring{$\ast$}{*}image\+Index)
+\begin{DoxyCompactList}\small\item\em Acquires the next image in the swap chain. \end{DoxyCompactList}\item 
+Vk\+Result \mbox{\hyperlink{classbloom_1_1render_1_1_swap_chain_a303dcef852589ac18f833189491729fc}{Submit\+Command\+Buffers}} (const Vk\+Command\+Buffer \texorpdfstring{$\ast$}{*}buffers, uint32\+\_\+t \texorpdfstring{$\ast$}{*}image\+Index)
+\begin{DoxyCompactList}\small\item\em Submits the command buffers for rendering. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classbloom_1_1render_1_1_swap_chain_a262fa775ba52b1275034ef30951de928}{Compare\+Swap\+Formats}} (const \mbox{\hyperlink{classbloom_1_1render_1_1_swap_chain}{Swap\+Chain}} \&swap\+Chain) const
+\begin{DoxyCompactList}\small\item\em Compares the formats of two swap chains. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{classbloom_1_1render_1_1_swap_chain_abc12f5bfbd308fc9fa4401dcd5129e2e}\label{classbloom_1_1render_1_1_swap_chain_abc12f5bfbd308fc9fa4401dcd5129e2e} 
 static constexpr int {\bfseries MAX\+\_\+\+FRAMES\+\_\+\+IN\+\_\+\+FLIGHT} = 2
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Maximum number of chains. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages the Vulkan swap chain and related resources. 
+
+The \doxylink{classbloom_1_1render_1_1_swap_chain}{Swap\+Chain} class handles the creation and management of the Vulkan swap chain, including image views, framebuffers, depth resources, and synchronization objects. It also provides methods for acquiring the next image and submitting command buffers. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classbloom_1_1render_1_1_swap_chain_a99b800b12957dee7fcbb01c7f028e9c1}\index{bloom::render::SwapChain@{bloom::render::SwapChain}!AcquireNextImage@{AcquireNextImage}}
+\index{AcquireNextImage@{AcquireNextImage}!bloom::render::SwapChain@{bloom::render::SwapChain}}
+\doxysubsubsection{\texorpdfstring{AcquireNextImage()}{AcquireNextImage()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_swap_chain_a99b800b12957dee7fcbb01c7f028e9c1} 
+Vk\+Result bloom\+::render\+::\+Swap\+Chain\+::\+Acquire\+Next\+Image (\begin{DoxyParamCaption}\item[{uint32\+\_\+t \texorpdfstring{$\ast$}{*}}]{image\+Index}{}\end{DoxyParamCaption})}
+
+
+
+Acquires the next image in the swap chain. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image\+Index} & Pointer to the index of the acquired image. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The Vulkan result of the acquisition. 
+\end{DoxyReturn}
+\Hypertarget{classbloom_1_1render_1_1_swap_chain_a262fa775ba52b1275034ef30951de928}\index{bloom::render::SwapChain@{bloom::render::SwapChain}!CompareSwapFormats@{CompareSwapFormats}}
+\index{CompareSwapFormats@{CompareSwapFormats}!bloom::render::SwapChain@{bloom::render::SwapChain}}
+\doxysubsubsection{\texorpdfstring{CompareSwapFormats()}{CompareSwapFormats()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_swap_chain_a262fa775ba52b1275034ef30951de928} 
+bool bloom\+::render\+::\+Swap\+Chain\+::\+Compare\+Swap\+Formats (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classbloom_1_1render_1_1_swap_chain}{Swap\+Chain}} \&}]{swap\+Chain}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Compares the formats of two swap chains. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em swap\+Chain} & Reference to the other \doxylink{classbloom_1_1render_1_1_swap_chain}{Swap\+Chain} instance. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the formats are the same, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classbloom_1_1render_1_1_swap_chain_ad4d0e3ba566ffa010bc9fc5c38c8a947}\index{bloom::render::SwapChain@{bloom::render::SwapChain}!ExtentAspectRatio@{ExtentAspectRatio}}
+\index{ExtentAspectRatio@{ExtentAspectRatio}!bloom::render::SwapChain@{bloom::render::SwapChain}}
+\doxysubsubsection{\texorpdfstring{ExtentAspectRatio()}{ExtentAspectRatio()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_swap_chain_ad4d0e3ba566ffa010bc9fc5c38c8a947} 
+float bloom\+::render\+::\+Swap\+Chain\+::\+Extent\+Aspect\+Ratio (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the aspect ratio of the swap chain extent. 
+
+\begin{DoxyReturn}{Returns}
+The aspect ratio. 
+\end{DoxyReturn}
+\Hypertarget{classbloom_1_1render_1_1_swap_chain_a213590ce50f0174cda76b7a9cb44b3da}\index{bloom::render::SwapChain@{bloom::render::SwapChain}!FindDepthFormat@{FindDepthFormat}}
+\index{FindDepthFormat@{FindDepthFormat}!bloom::render::SwapChain@{bloom::render::SwapChain}}
+\doxysubsubsection{\texorpdfstring{FindDepthFormat()}{FindDepthFormat()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_swap_chain_a213590ce50f0174cda76b7a9cb44b3da} 
+Vk\+Format bloom\+::render\+::\+Swap\+Chain\+::\+Find\+Depth\+Format (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Finds the depth format for the swap chain. 
+
+\begin{DoxyReturn}{Returns}
+The Vulkan format for depth. 
+\end{DoxyReturn}
+\Hypertarget{classbloom_1_1render_1_1_swap_chain_a14c37544d58c948a6d4e2b9ae598870e}\index{bloom::render::SwapChain@{bloom::render::SwapChain}!GetFrameBuffer@{GetFrameBuffer}}
+\index{GetFrameBuffer@{GetFrameBuffer}!bloom::render::SwapChain@{bloom::render::SwapChain}}
+\doxysubsubsection{\texorpdfstring{GetFrameBuffer()}{GetFrameBuffer()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_swap_chain_a14c37544d58c948a6d4e2b9ae598870e} 
+Vk\+Framebuffer bloom\+::render\+::\+Swap\+Chain\+::\+Get\+Frame\+Buffer (\begin{DoxyParamCaption}\item[{int}]{index}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the framebuffer at the specified index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of the framebuffer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The Vulkan framebuffer. 
+\end{DoxyReturn}
+\Hypertarget{classbloom_1_1render_1_1_swap_chain_ae38baccbbda4c1c41af0d8be66a1f61e}\index{bloom::render::SwapChain@{bloom::render::SwapChain}!GetImageView@{GetImageView}}
+\index{GetImageView@{GetImageView}!bloom::render::SwapChain@{bloom::render::SwapChain}}
+\doxysubsubsection{\texorpdfstring{GetImageView()}{GetImageView()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_swap_chain_ae38baccbbda4c1c41af0d8be66a1f61e} 
+Vk\+Image\+View bloom\+::render\+::\+Swap\+Chain\+::\+Get\+Image\+View (\begin{DoxyParamCaption}\item[{int}]{index}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the image view at the specified index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of the image view. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The Vulkan image view. 
+\end{DoxyReturn}
+\Hypertarget{classbloom_1_1render_1_1_swap_chain_a2a74e3ee6642535399b80dba56e1d0de}\index{bloom::render::SwapChain@{bloom::render::SwapChain}!GetRenderPass@{GetRenderPass}}
+\index{GetRenderPass@{GetRenderPass}!bloom::render::SwapChain@{bloom::render::SwapChain}}
+\doxysubsubsection{\texorpdfstring{GetRenderPass()}{GetRenderPass()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_swap_chain_a2a74e3ee6642535399b80dba56e1d0de} 
+Vk\+Render\+Pass bloom\+::render\+::\+Swap\+Chain\+::\+Get\+Render\+Pass (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the render pass. 
+
+\begin{DoxyReturn}{Returns}
+The Vulkan render pass. 
+\end{DoxyReturn}
+\Hypertarget{classbloom_1_1render_1_1_swap_chain_a622ed834f1d2167efc39c45d09228915}\index{bloom::render::SwapChain@{bloom::render::SwapChain}!GetSwapChainExtent@{GetSwapChainExtent}}
+\index{GetSwapChainExtent@{GetSwapChainExtent}!bloom::render::SwapChain@{bloom::render::SwapChain}}
+\doxysubsubsection{\texorpdfstring{GetSwapChainExtent()}{GetSwapChainExtent()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_swap_chain_a622ed834f1d2167efc39c45d09228915} 
+Vk\+Extent2D bloom\+::render\+::\+Swap\+Chain\+::\+Get\+Swap\+Chain\+Extent (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the extent of the swap chain. 
+
+\begin{DoxyReturn}{Returns}
+The Vulkan extent of the swap chain. 
+\end{DoxyReturn}
+\Hypertarget{classbloom_1_1render_1_1_swap_chain_a2ff148c8e1611fa7cd708496410f977b}\index{bloom::render::SwapChain@{bloom::render::SwapChain}!GetSwapChainImageFormat@{GetSwapChainImageFormat}}
+\index{GetSwapChainImageFormat@{GetSwapChainImageFormat}!bloom::render::SwapChain@{bloom::render::SwapChain}}
+\doxysubsubsection{\texorpdfstring{GetSwapChainImageFormat()}{GetSwapChainImageFormat()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_swap_chain_a2ff148c8e1611fa7cd708496410f977b} 
+Vk\+Format bloom\+::render\+::\+Swap\+Chain\+::\+Get\+Swap\+Chain\+Image\+Format (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the format of the swap chain images. 
+
+\begin{DoxyReturn}{Returns}
+The Vulkan format of the swap chain images. 
+\end{DoxyReturn}
+\Hypertarget{classbloom_1_1render_1_1_swap_chain_a40bd5a1765776ac84f82f6b832d66c01}\index{bloom::render::SwapChain@{bloom::render::SwapChain}!Height@{Height}}
+\index{Height@{Height}!bloom::render::SwapChain@{bloom::render::SwapChain}}
+\doxysubsubsection{\texorpdfstring{Height()}{Height()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_swap_chain_a40bd5a1765776ac84f82f6b832d66c01} 
+uint32\+\_\+t bloom\+::render\+::\+Swap\+Chain\+::\+Height (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the height of the swap chain extent. 
+
+\begin{DoxyReturn}{Returns}
+The height of the swap chain extent. 
+\end{DoxyReturn}
+\Hypertarget{classbloom_1_1render_1_1_swap_chain_a43888a3c73f0c21031f70c1e0302eddd}\index{bloom::render::SwapChain@{bloom::render::SwapChain}!ImageCount@{ImageCount}}
+\index{ImageCount@{ImageCount}!bloom::render::SwapChain@{bloom::render::SwapChain}}
+\doxysubsubsection{\texorpdfstring{ImageCount()}{ImageCount()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_swap_chain_a43888a3c73f0c21031f70c1e0302eddd} 
+size\+\_\+t bloom\+::render\+::\+Swap\+Chain\+::\+Image\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the number of images in the swap chain. 
+
+\begin{DoxyReturn}{Returns}
+The number of images. 
+\end{DoxyReturn}
+\Hypertarget{classbloom_1_1render_1_1_swap_chain_a303dcef852589ac18f833189491729fc}\index{bloom::render::SwapChain@{bloom::render::SwapChain}!SubmitCommandBuffers@{SubmitCommandBuffers}}
+\index{SubmitCommandBuffers@{SubmitCommandBuffers}!bloom::render::SwapChain@{bloom::render::SwapChain}}
+\doxysubsubsection{\texorpdfstring{SubmitCommandBuffers()}{SubmitCommandBuffers()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_swap_chain_a303dcef852589ac18f833189491729fc} 
+Vk\+Result bloom\+::render\+::\+Swap\+Chain\+::\+Submit\+Command\+Buffers (\begin{DoxyParamCaption}\item[{const Vk\+Command\+Buffer \texorpdfstring{$\ast$}{*}}]{buffers}{, }\item[{uint32\+\_\+t \texorpdfstring{$\ast$}{*}}]{image\+Index}{}\end{DoxyParamCaption})}
+
+
+
+Submits the command buffers for rendering. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffers} & Pointer to the command buffers. \\
+\hline
+{\em image\+Index} & Pointer to the index of the image to submit. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The Vulkan result of the submission. 
+\end{DoxyReturn}
+\Hypertarget{classbloom_1_1render_1_1_swap_chain_a22d7d19a16ddebed3df17853c2ffd75f}\index{bloom::render::SwapChain@{bloom::render::SwapChain}!Width@{Width}}
+\index{Width@{Width}!bloom::render::SwapChain@{bloom::render::SwapChain}}
+\doxysubsubsection{\texorpdfstring{Width()}{Width()}}
+{\footnotesize\ttfamily \label{classbloom_1_1render_1_1_swap_chain_a22d7d19a16ddebed3df17853c2ffd75f} 
+uint32\+\_\+t bloom\+::render\+::\+Swap\+Chain\+::\+Width (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the width of the swap chain extent. 
+
+\begin{DoxyReturn}{Returns}
+The width of the swap chain extent. 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

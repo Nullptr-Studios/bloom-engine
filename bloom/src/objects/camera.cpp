@@ -6,11 +6,12 @@ namespace bloom {
 
 void Camera::OnBegin() {
   transform.position = glm::vec3(0.0f);
+  SetPerspectiveProjection();
   UpdateView();
 }
 
 void Camera::OnTick(float deltaTime) {
-  SetPerspectiveProjection(glm::radians(50.0f), m_aspect, 0.1f, 100.0f);
+  SetPerspectiveProjection();
   UpdateView();
 }
 
@@ -20,6 +21,8 @@ void Camera::PropertiesPanel() {
   if (ImGui::CollapsingHeader("Camera")) {
     ImGui::DragFloat("FOV", &m_fov, 0.1f);
     ImGui::DragFloat("Aspect", &m_aspect, 0.1f);
+    ImGui::DragFloat("Near Clip", &m_near, 0.1f);
+    ImGui::DragFloat("Far Clip", &m_far, 0.1f);
   }
 }
 
@@ -28,8 +31,8 @@ void Camera::SetOrthographicProjection(const float left, const float right,
   m_projectionMatrix = glm::ortho(left, right, bottom, top, near, far);
 }
 
-void Camera::SetPerspectiveProjection(const float fov, const float aspect, const float near, const float far) {
-  m_projectionMatrix = glm::perspective(m_fov, m_aspect, near, far);
+void Camera::SetPerspectiveProjection() {
+  m_projectionMatrix = glm::perspective(m_fov, m_aspect, m_near, m_far);
 }
 
 void Camera::UpdateView() {

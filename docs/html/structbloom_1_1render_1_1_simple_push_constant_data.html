@@ -83,7 +83,7 @@ $(function(){ initResizable(false); });
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>bloom</b></li><li class="navelem"><b>render</b></li><li class="navelem"><a class="el" href="structbloom_1_1render_1_1_simple_push_constant_data.html">SimplePushConstantData</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacebloom.html">bloom</a></li><li class="navelem"><a class="el" href="namespacebloom_1_1render.html">render</a></li><li class="navelem"><a class="el" href="structbloom_1_1render_1_1_simple_push_constant_data.html">SimplePushConstantData</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div id="doc-content">
@@ -94,21 +94,24 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">bloom::render::SimplePushConstantData Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Represents the push constant data used in the renderer.  
+ <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a2e714d486f4389ba97b40fb7b734f94f" id="r_a2e714d486f4389ba97b40fb7b734f94f"><td class="memItemLeft" align="right" valign="top"><a id="a2e714d486f4389ba97b40fb7b734f94f" name="a2e714d486f4389ba97b40fb7b734f94f"></a>
-glm::mat2&#160;</td><td class="memItemRight" valign="bottom"><b>transform</b> = glm::mat2(1.0f)</td></tr>
-<tr class="separator:a2e714d486f4389ba97b40fb7b734f94f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a561f8c0ae6962e364da782e160452fdb" id="r_a561f8c0ae6962e364da782e160452fdb"><td class="memItemLeft" align="right" valign="top"><a id="a561f8c0ae6962e364da782e160452fdb" name="a561f8c0ae6962e364da782e160452fdb"></a>
-glm::vec2&#160;</td><td class="memItemRight" valign="bottom"><b>offset</b></td></tr>
-<tr class="separator:a561f8c0ae6962e364da782e160452fdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2673fc076c9b882422eb16b6cf9f1466" id="r_a2673fc076c9b882422eb16b6cf9f1466"><td class="memItemLeft" align="right" valign="top"><a id="a2673fc076c9b882422eb16b6cf9f1466" name="a2673fc076c9b882422eb16b6cf9f1466"></a>
-glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><b>color</b></td></tr>
-<tr class="separator:a2673fc076c9b882422eb16b6cf9f1466"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d7691ae81205a7456a819322011b4bc" id="r_a7d7691ae81205a7456a819322011b4bc"><td class="memItemLeft" align="right" valign="top"><a id="a7d7691ae81205a7456a819322011b4bc" name="a7d7691ae81205a7456a819322011b4bc"></a>
+glm::mat4&#160;</td><td class="memItemRight" valign="bottom"><b>transform</b> = glm::mat4(1.0f)</td></tr>
+<tr class="separator:a7d7691ae81205a7456a819322011b4bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae70e4b95885c39696a189b228b9234ad" id="r_ae70e4b95885c39696a189b228b9234ad"><td class="memItemLeft" align="right" valign="top"><a id="ae70e4b95885c39696a189b228b9234ad" name="ae70e4b95885c39696a189b228b9234ad"></a>
+glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><b>tint</b></td></tr>
+<tr class="separator:ae70e4b95885c39696a189b228b9234ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this struct was generated from the following file:<ul>
-<li>C:/Users/xgoni/bloom/bloom/src/render/<a class="el" href="renderer_8hpp_source.html">renderer.hpp</a></li>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Represents the push constant data used in the renderer. </p>
+<p>This struct contains transformation and color data that are passed to the shaders as push constants. </p>
+</div><hr/>The documentation for this struct was generated from the following file:<ul>
+<li>C:/Users/xgoni/bloom/bloom/src/render/systems/<b>simple_render_system.cpp</b></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

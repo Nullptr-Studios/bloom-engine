@@ -14,19 +14,17 @@
 \DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifdef\ BLOOM\_PLATFORM\_WINDOWS}}
 \DoxyCodeLine{00018\ }
 \DoxyCodeLine{00019\ \textcolor{keywordtype}{int}\ main()\ \{}
-\DoxyCodeLine{00020\ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ m\_engine\ =\ \mbox{\hyperlink{engine_8hpp_a8a68fb9b4e5dc5c0eb680b3f32781872}{bloom::CreateEngine}}();}
-\DoxyCodeLine{00021\ }
-\DoxyCodeLine{00022\ \ \ glfwInit();}
-\DoxyCodeLine{00023\ \ \ m\_engine-\/>Begin();}
-\DoxyCodeLine{00024\ }
-\DoxyCodeLine{00025\ \ \ \textcolor{keywordflow}{while}\ (!m\_engine-\/>ShouldClose())\ \{}
-\DoxyCodeLine{00026\ \ \ \ \ m\_engine-\/>Tick();}
-\DoxyCodeLine{00027\ \ \ \ \ m\_engine-\/>Render();}
-\DoxyCodeLine{00028\ \ \ \}}
-\DoxyCodeLine{00029\ }
-\DoxyCodeLine{00030\ \ \ m\_engine-\/>End();}
-\DoxyCodeLine{00031\ \}}
-\DoxyCodeLine{00032\ }
-\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00020\ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ m\_engine\ =\ \mbox{\hyperlink{namespacebloom_a8a68fb9b4e5dc5c0eb680b3f32781872}{bloom::CreateEngine}}();}
+\DoxyCodeLine{00021\ \ \ m\_engine-\/>Init();}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \textcolor{keywordflow}{while}\ (!m\_engine-\/>ShouldClose())\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ m\_engine-\/>OnTick();}
+\DoxyCodeLine{00025\ \ \ \ \ m\_engine-\/>OnRender();}
+\DoxyCodeLine{00026\ \ \ \}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ m\_engine-\/>OnClose();}
+\DoxyCodeLine{00029\ \}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

@@ -1,5 +1,20 @@
 var searchData=
 [
-  ['naming_20conventions_0',['Naming conventions',['../index.html#autotoc_md2',1,'']]],
-  ['normal_5fplaceholder_1',['NORMAL_PLACEHOLDER',['../actor_8hpp.html#ae3eb5cbfbb9784797ab53c06dccbd59e',1,'actor.hpp']]]
+  ['m_5fbutton_0',['m_button',['../classbloom_1_1_mouse_button_event.html#a7f1596c367ce353c9526355df06714d2',1,'bloom::MouseButtonEvent']]],
+  ['m_5fhandled_1',['m_handled',['../classbloom_1_1_event.html#a6891c44071438095e77ed94b176a244a',1,'bloom::Event']]],
+  ['m_5fkeycode_2',['m_keyCode',['../classbloom_1_1_key_event.html#a34a7db091ec956bfddfb7e725815b614',1,'bloom::KeyEvent']]],
+  ['main_2ecpp_3',['main.cpp',['../main_8cpp.html',1,'']]],
+  ['map_4',['Map',['../classbloom_1_1render_1_1_buffer.html#a7ae53712d6cecefcab4a6a6cef15f479',1,'bloom::render::Buffer']]],
+  ['matrix_5',['Matrix',['../structbloom_1_1_transform.html#acabdaf75834ef11b0e3d7ddc91bec11f',1,'bloom::Transform']]],
+  ['max_5fframes_5fin_5fflight_6',['MAX_FRAMES_IN_FLIGHT',['../classbloom_1_1render_1_1_swap_chain.html#abc12f5bfbd308fc9fa4401dcd5129e2e',1,'bloom::render::SwapChain']]],
+  ['max_5fobjects_7',['MAX_OBJECTS',['../classbloom_1_1render_1_1_simple_render_system.html#a6be1afe41e86bd9c629177b96e9797e7',1,'bloom::render::SimpleRenderSystem']]],
+  ['model_8',['Model',['../classbloom_1_1render_1_1_model.html',1,'bloom::render']]],
+  ['model_9',['model',['../classbloom_1_1_actor.html#ad72a712be4ad20f76d7c397840a0f5e6',1,'bloom::Actor']]],
+  ['model_2ehpp_10',['model.hpp',['../model_8hpp.html',1,'']]],
+  ['mouse_5fevent_2ehpp_11',['mouse_event.hpp',['../mouse__event_8hpp.html',1,'']]],
+  ['mousebuttonevent_12',['MouseButtonEvent',['../classbloom_1_1_mouse_button_event.html',1,'bloom::MouseButtonEvent'],['../classbloom_1_1_mouse_button_event.html#a2fa0ee41f2323bda453fe62815da3c62',1,'bloom::MouseButtonEvent::MouseButtonEvent()']]],
+  ['mousebuttonpressedevent_13',['MouseButtonPressedEvent',['../classbloom_1_1_mouse_button_pressed_event.html',1,'bloom::MouseButtonPressedEvent'],['../classbloom_1_1_mouse_button_pressed_event.html#a58e2ea349acb6263de29df48b66e1d83',1,'bloom::MouseButtonPressedEvent::MouseButtonPressedEvent()']]],
+  ['mousebuttonreleasedevent_14',['MouseButtonReleasedEvent',['../classbloom_1_1_mouse_button_released_event.html',1,'bloom::MouseButtonReleasedEvent'],['../classbloom_1_1_mouse_button_released_event.html#a65ce39ddb3fa14dde00b4e17405dcb2f',1,'bloom::MouseButtonReleasedEvent::MouseButtonReleasedEvent()']]],
+  ['mousemovedevent_15',['MouseMovedEvent',['../classbloom_1_1_mouse_moved_event.html',1,'bloom::MouseMovedEvent'],['../classbloom_1_1_mouse_moved_event.html#a0e2234c62b7cf4b6524c8fb3c8cf2795',1,'bloom::MouseMovedEvent::MouseMovedEvent()']]],
+  ['mousescrolledevent_16',['MouseScrolledEvent',['../classbloom_1_1_mouse_scrolled_event.html',1,'bloom::MouseScrolledEvent'],['../classbloom_1_1_mouse_scrolled_event.html#a681cb73ee7b5ffb6cbffe7b8825e917f',1,'bloom::MouseScrolledEvent::MouseScrolledEvent()']]]
 ];

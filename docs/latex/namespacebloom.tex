@@ -1,0 +1,203 @@
+\doxysection{bloom Namespace Reference}
+\hypertarget{namespacebloom}{}\label{namespacebloom}\index{bloom@{bloom}}
+
+
+Contains the core classes and functions for the bloom engine.  
+
+
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacebloom_1_1render}{render}}
+\begin{DoxyCompactList}\small\item\em Contains classes and functions related to rendering in the bloom engine. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classbloom_1_1_actor}{Actor}}
+\begin{DoxyCompactList}\small\item\em Represents a renderable and potentially interactive object within the game world. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classbloom_1_1_camera}{Camera}}
+\begin{DoxyCompactList}\small\item\em Represents a camera within the game world, providing a view and projection for rendering. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classbloom_1_1_engine}{Engine}}
+\begin{DoxyCompactList}\small\item\em Main class for the bloom engine. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classbloom_1_1_event}{Event}}
+\begin{DoxyCompactList}\small\item\em Abstract base class for all events in the Bloom \doxylink{classbloom_1_1_engine}{Engine}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classbloom_1_1_event_dispatcher}{Event\+Dispatcher}}
+\begin{DoxyCompactList}\small\item\em A utility class for dispatching events to appropriate handlers. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classbloom_1_1_factory}{Factory}}
+\begin{DoxyCompactList}\small\item\em Manages the creation of game objects. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classbloom_1_1_game_render_event}{Game\+Render\+Event}}
+\begin{DoxyCompactList}\small\item\em Represents an event triggered during the game rendering phase. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classbloom_1_1_game_tick_event}{Game\+Tick\+Event}}
+\begin{DoxyCompactList}\small\item\em Represents an event triggered during the game update phase. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classbloom_1_1_key_event}{Key\+Event}}
+\begin{DoxyCompactList}\small\item\em Base class for all keyboard events. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classbloom_1_1_key_pressed_event}{Key\+Pressed\+Event}}
+\begin{DoxyCompactList}\small\item\em Represents an event triggered when a key is pressed. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classbloom_1_1_key_released_event}{Key\+Released\+Event}}
+\begin{DoxyCompactList}\small\item\em Represents an event triggered when a key is released. The {\ttfamily \doxylink{classbloom_1_1_key_released_event}{Key\+Released\+Event}} class provides information about the key that has been released. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classbloom_1_1_key_typed_event}{Key\+Typed\+Event}}
+\begin{DoxyCompactList}\small\item\em Represents an event triggered when a printable key is typed. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classbloom_1_1_layer}{Layer}}
+\item 
+class \mbox{\hyperlink{classbloom_1_1_layer_stack}{Layer\+Stack}}
+\begin{DoxyCompactList}\small\item\em Manages a stack of layers and overlays. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classbloom_1_1_log}{Log}}
+\begin{DoxyCompactList}\small\item\em Centralized logging system for the engine and game. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classbloom_1_1_mouse_button_event}{Mouse\+Button\+Event}}
+\begin{DoxyCompactList}\small\item\em Base class for mouse button events. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classbloom_1_1_mouse_button_pressed_event}{Mouse\+Button\+Pressed\+Event}}
+\begin{DoxyCompactList}\small\item\em Represents an event triggered when a mouse button is pressed. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classbloom_1_1_mouse_button_released_event}{Mouse\+Button\+Released\+Event}}
+\begin{DoxyCompactList}\small\item\em Represents an event triggered when a mouse button is released. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classbloom_1_1_mouse_moved_event}{Mouse\+Moved\+Event}}
+\begin{DoxyCompactList}\small\item\em Represents an event triggered when the mouse is moved. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classbloom_1_1_mouse_scrolled_event}{Mouse\+Scrolled\+Event}}
+\begin{DoxyCompactList}\small\item\em Represents an event triggered when the mouse wheel is scrolled. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classbloom_1_1_object}{Object}}
+\begin{DoxyCompactList}\small\item\em Base class for all objects in the game world. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classbloom_1_1_resource_loader}{Resource\+Loader}}
+\item 
+struct \mbox{\hyperlink{structbloom_1_1_transform}{Transform}}
+\begin{DoxyCompactList}\small\item\em Represents the position, rotation, and scale of an object in 3D space. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classbloom_1_1_window}{Window}}
+\begin{DoxyCompactList}\small\item\em Manages the window and its events. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classbloom_1_1_window_close_event}{Window\+Close\+Event}}
+\begin{DoxyCompactList}\small\item\em Represents an event triggered when the application window is closed. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classbloom_1_1_window_resize_event}{Window\+Resize\+Event}}
+\begin{DoxyCompactList}\small\item\em Represents an event triggered when the application window is resized. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{core_8hpp_abaf665e52c9979a5f6eb9ecfce756efc}{id\+\_\+t}}, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1_actor}{Actor}} $>$ $>$ \mbox{\hyperlink{namespacebloom_a0a6a92f666ce85e7aaa009b4a2af96ee}{Actor\+Map}}
+\item 
+\Hypertarget{namespacebloom_ac65b651055bbc2100bc99fb9bd34ac17}\label{namespacebloom_ac65b651055bbc2100bc99fb9bd34ac17} 
+typedef std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{core_8hpp_abaf665e52c9979a5f6eb9ecfce756efc}{id\+\_\+t}}, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1_object}{Object}} $>$ $>$ {\bfseries Object\+Map}
+\begin{DoxyCompactList}\small\item\em A map of object IDs to shared pointers of Objects. Used for managing and accessing objects in the game world. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespacebloom_a62777e271a1f3f6e4a8ba9055c2e4df9}{Event\+Type}} \{ \newline
+{\bfseries None} = 0
+, {\bfseries Window\+Close}
+, {\bfseries Window\+Resize}
+, {\bfseries Window\+Focus}
+, \newline
+{\bfseries Window\+Lost\+Focus}
+, {\bfseries Window\+Moved}
+, {\bfseries Game\+Tick}
+, {\bfseries Game\+Update}
+, \newline
+{\bfseries Game\+Render}
+, {\bfseries Key\+Pressed}
+, {\bfseries Key\+Released}
+, {\bfseries Key\+Typed}
+, \newline
+{\bfseries Mouse\+Button\+Pressed}
+, {\bfseries Mouse\+Button\+Released}
+, {\bfseries Mouse\+Moved}
+, {\bfseries Mouse\+Scrolled}
+ \}
+\begin{DoxyCompactList}\small\item\em Represents the various types of events supported by the Bloom Engine. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespacebloom_a85f0d8c71d473ca68946d8c5bcdab3f5}{Event\+Category}} \{ \newline
+{\bfseries None} = 0
+, {\bfseries Event\+Category\+Game} = BIT(0)
+, {\bfseries Event\+Category\+Input} = BIT(1)
+, {\bfseries Event\+Category\+Keyboard} = BIT(2)
+, \newline
+{\bfseries Event\+Category\+Mouse} = BIT(3)
+, {\bfseries Event\+Category\+Mouse\+Button} = BIT(4)
+ \}
+\begin{DoxyCompactList}\small\item\em Represents categories of events, allowing for logical grouping of event types. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1_engine}{bloom\+::\+Engine}} $>$ \mbox{\hyperlink{namespacebloom_a8a68fb9b4e5dc5c0eb680b3f32781872}{Create\+Engine}} ()
+\begin{DoxyCompactList}\small\item\em Creates an entry point for the Bloom engine. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains the core classes and functions for the bloom engine. 
+
+The {\ttfamily bloom} namespace encapsulates the main components and utilities required for the bloom engine. This includes the main engine class, window management, factory for object creation, and core utilities.
+
+The {\ttfamily bloom} namespace is designed to provide a comprehensive set of tools for managing the game loop, rendering, and event handling. It includes classes for initializing and managing various subsystems such as the window, renderer, and input handling. The namespace is structured to facilitate the creation, management, and execution of a game using the bloom engine.
+
+Key Classes\+:
+\begin{DoxyItemize}
+\item {\bfseries{\doxylink{classbloom_1_1_engine}{Engine}\+:}} Manages the main game loop, rendering, and event handling.
+\item {\bfseries{\doxylink{classbloom_1_1_window}{Window}\+:}} Manages the window and its events.
+\item {\bfseries{\doxylink{classbloom_1_1_factory}{Factory}\+:}} Handles the creation and management of game objects.
+\end{DoxyItemize}
+
+Example Usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Create\ a\ class\ that\ inherits\ from\ the\ Engine\ class\ (sandbox.hpp)}}
+\DoxyCodeLine{\textcolor{keyword}{class\ }\mbox{\hyperlink{class_sandbox}{Sandbox}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classbloom_1_1_engine}{bloom::Engine}}\ \{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{class_sandbox}{Sandbox}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{void}\ OnBegin()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{void}\ Tick()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{void}\ End()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ And\ then\ create\ an\ instance\ of\ the\ engine\ (sandbox.cpp)\ using\ the\ CreateEngine\ function}}
+\DoxyCodeLine{\textcolor{keyword}{using\ namespace\ }\mbox{\hyperlink{namespacebloom}{bloom}};}
+\DoxyCodeLine{std::unique\_ptr<bloom::Engine>\ \mbox{\hyperlink{namespacebloom_a8a68fb9b4e5dc5c0eb680b3f32781872}{bloom::CreateEngine}}()\ \{\ \textcolor{keywordflow}{return}\ std::make\_unique<sandbox::Sandbox>();\ \}}
+
+\end{DoxyCode}
+ 
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{namespacebloom_a0a6a92f666ce85e7aaa009b4a2af96ee}\index{bloom@{bloom}!ActorMap@{ActorMap}}
+\index{ActorMap@{ActorMap}!bloom@{bloom}}
+\doxysubsubsection{\texorpdfstring{ActorMap}{ActorMap}}
+{\footnotesize\ttfamily \label{namespacebloom_a0a6a92f666ce85e7aaa009b4a2af96ee} 
+typedef std\+::unordered\+\_\+map$<$\mbox{\hyperlink{core_8hpp_abaf665e52c9979a5f6eb9ecfce756efc}{id\+\_\+t}},std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classbloom_1_1_actor}{Actor}}$>$ $>$ \mbox{\hyperlink{namespacebloom_a0a6a92f666ce85e7aaa009b4a2af96ee}{bloom\+::\+Actor\+Map}}}
+
+A map of \doxylink{classbloom_1_1_actor}{Actor} IDs to shared pointers of Actors. This map is used to store and manage all active actors in the game world. The ID is used as the key for efficient lookup and retrieval of individual actors. 
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{namespacebloom_a85f0d8c71d473ca68946d8c5bcdab3f5}\index{bloom@{bloom}!EventCategory@{EventCategory}}
+\index{EventCategory@{EventCategory}!bloom@{bloom}}
+\doxysubsubsection{\texorpdfstring{EventCategory}{EventCategory}}
+{\footnotesize\ttfamily \label{namespacebloom_a85f0d8c71d473ca68946d8c5bcdab3f5} 
+enum \mbox{\hyperlink{namespacebloom_a85f0d8c71d473ca68946d8c5bcdab3f5}{bloom\+::\+Event\+Category}}}
+
+
+
+Represents categories of events, allowing for logical grouping of event types. 
+
+Events are grouped into categories to facilitate efficient filtering and handling. Each category is represented by a single bit flag, enabling bitwise operations to determine if an event belongs to one or more categories. \Hypertarget{namespacebloom_a62777e271a1f3f6e4a8ba9055c2e4df9}\index{bloom@{bloom}!EventType@{EventType}}
+\index{EventType@{EventType}!bloom@{bloom}}
+\doxysubsubsection{\texorpdfstring{EventType}{EventType}}
+{\footnotesize\ttfamily \label{namespacebloom_a62777e271a1f3f6e4a8ba9055c2e4df9} 
+enum class \mbox{\hyperlink{namespacebloom_a62777e271a1f3f6e4a8ba9055c2e4df9}{bloom\+::\+Event\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Represents the various types of events supported by the Bloom \doxylink{classbloom_1_1_engine}{Engine}. 
+
+Each value in the enum corresponds to a specific type of event that can occur during the execution of the application. This enum is used to identify and differentiate between event types, allowing for specific handling logic to be applied. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacebloom_a8a68fb9b4e5dc5c0eb680b3f32781872}\index{bloom@{bloom}!CreateEngine@{CreateEngine}}
+\index{CreateEngine@{CreateEngine}!bloom@{bloom}}
+\doxysubsubsection{\texorpdfstring{CreateEngine()}{CreateEngine()}}
+{\footnotesize\ttfamily \label{namespacebloom_a8a68fb9b4e5dc5c0eb680b3f32781872} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1_engine}{bloom\+::\+Engine}} $>$ bloom\+::\+Create\+Engine (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Creates an entry point for the Bloom engine. 
+
+This function serves as the primary entry point for the engine, allowing it to handle the main execution flow instead of the game directly. By abstracting the {\ttfamily main} function, the engine can take full control over initialization, execution, and shutdown processes.
+
+\begin{DoxyNote}{Note}
+For future Xein\+: This design is intentional to ensure that the engine manages the {\ttfamily main} function rather than the game project. Any game-\/specific logic should integrate with this entry point.
+\end{DoxyNote}
+While this function is declared here, its implementation resides in \doxylink{main_8cpp}{main.\+cpp} within the game project. This separation ensures modularity between the engine and game layers.
+
+\begin{DoxyReturn}{Returns}
+A pointer to the {\ttfamily \doxylink{classbloom_1_1_engine}{Engine}} class instance, which is used to manage the engine\textquotesingle{}s lifecycle. 
+\end{DoxyReturn}

@@ -103,9 +103,9 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">public</span>:</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <a class="code hl_class" href="classwanderer_1_1_wanderer.html">Wanderer</a>() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  <span class="keywordtype">void</span> OnBegin() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <span class="keywordtype">void</span> Tick() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  <span class="keywordtype">void</span> End() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classwanderer_1_1_wanderer.html#adff28e303080ba7cb51fa8981d110fc5">OnBegin</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classwanderer_1_1_wanderer.html#a76a4f56cc7c32789d5d13e1cd17f2efe">OnTick</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classwanderer_1_1_wanderer.html#a5c8cf3c3facf15636db400a0756af372">OnClose</a>() <span class="keyword">override</span>;</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">private</span>:</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  std::shared_ptr&lt;EditorCamera&gt; m_camera;</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>};</div>
@@ -113,8 +113,11 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}</div>
 <div class="ttc" id="abloom_8hpp_html"><div class="ttname"><a href="bloom_8hpp.html">bloom.hpp</a></div><div class="ttdoc">DLL Wrapper for our game engine.</div></div>
-<div class="ttc" id="aclassbloom_1_1_engine_html"><div class="ttname"><a href="classbloom_1_1_engine.html">bloom::Engine</a></div><div class="ttdef"><b>Definition</b> engine.hpp:22</div></div>
+<div class="ttc" id="aclassbloom_1_1_engine_html"><div class="ttname"><a href="classbloom_1_1_engine.html">bloom::Engine</a></div><div class="ttdoc">Main class for the bloom engine.</div><div class="ttdef"><b>Definition</b> engine.hpp:66</div></div>
 <div class="ttc" id="aclasswanderer_1_1_wanderer_html"><div class="ttname"><a href="classwanderer_1_1_wanderer.html">wanderer::Wanderer</a></div><div class="ttdef"><b>Definition</b> wanderer.hpp:15</div></div>
+<div class="ttc" id="aclasswanderer_1_1_wanderer_html_a5c8cf3c3facf15636db400a0756af372"><div class="ttname"><a href="classwanderer_1_1_wanderer.html#a5c8cf3c3facf15636db400a0756af372">wanderer::Wanderer::OnClose</a></div><div class="ttdeci">void OnClose() override</div><div class="ttdoc">Called before ending the game loop.</div><div class="ttdef"><b>Definition</b> wanderer.cpp:29</div></div>
+<div class="ttc" id="aclasswanderer_1_1_wanderer_html_a76a4f56cc7c32789d5d13e1cd17f2efe"><div class="ttname"><a href="classwanderer_1_1_wanderer.html#a76a4f56cc7c32789d5d13e1cd17f2efe">wanderer::Wanderer::OnTick</a></div><div class="ttdeci">void OnTick() override</div><div class="ttdoc">Called every frame.</div><div class="ttdef"><b>Definition</b> wanderer.cpp:25</div></div>
+<div class="ttc" id="aclasswanderer_1_1_wanderer_html_adff28e303080ba7cb51fa8981d110fc5"><div class="ttname"><a href="classwanderer_1_1_wanderer.html#adff28e303080ba7cb51fa8981d110fc5">wanderer::Wanderer::OnBegin</a></div><div class="ttdeci">void OnBegin() override</div><div class="ttdoc">Called before starting game loop.</div><div class="ttdef"><b>Definition</b> wanderer.cpp:11</div></div>
 <div class="ttc" id="aeditor__camera_8hpp_html"><div class="ttname"><a href="editor__camera_8hpp.html">editor_camera.hpp</a></div><div class="ttdoc">[Brief description of the file's purpose]</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

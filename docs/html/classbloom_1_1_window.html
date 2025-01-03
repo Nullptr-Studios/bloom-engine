@@ -83,7 +83,7 @@ $(function(){ initResizable(false); });
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>bloom</b></li><li class="navelem"><a class="el" href="classbloom_1_1_window.html">Window</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacebloom.html">bloom</a></li><li class="navelem"><a class="el" href="classbloom_1_1_window.html">Window</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div id="doc-content">
@@ -91,59 +91,131 @@ $(function(){ initResizable(false); });
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="classbloom_1_1_window-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">bloom::Window Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Manages the window and its events.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="window_8hpp_source.html">window.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a6be788610a377a9e9aec70e766ce56ea" id="r_a6be788610a377a9e9aec70e766ce56ea"><td class="memItemLeft" align="right" valign="top"><a id="a6be788610a377a9e9aec70e766ce56ea" name="a6be788610a377a9e9aec70e766ce56ea"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>EventCalbackFn</b> = std::function&lt;void(<a class="el" href="classbloom_1_1_event.html">Event</a>&amp;)&gt;</td></tr>
-<tr class="separator:a6be788610a377a9e9aec70e766ce56ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed6c0144429017667faf68574789404a" id="r_aed6c0144429017667faf68574789404a"><td class="memItemLeft" align="right" valign="top"><a id="aed6c0144429017667faf68574789404a" name="aed6c0144429017667faf68574789404a"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>EventCallbackFn</b> = std::function&lt;void(<a class="el" href="classbloom_1_1_event.html">Event</a>&amp;)&gt;</td></tr>
+<tr class="memdesc:aed6c0144429017667faf68574789404a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type alias for the event callback function. <br /></td></tr>
+<tr class="separator:aed6c0144429017667faf68574789404a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2a19c3e7ed1c8883639fce9bec71e3d2" id="r_a2a19c3e7ed1c8883639fce9bec71e3d2"><td class="memItemLeft" align="right" valign="top"><a id="a2a19c3e7ed1c8883639fce9bec71e3d2" name="a2a19c3e7ed1c8883639fce9bec71e3d2"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Window</b> (int width, int height, std::string title)</td></tr>
-<tr class="separator:a2a19c3e7ed1c8883639fce9bec71e3d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d58dd99f686e7aa7558ab2c5ce0764a" id="r_a6d58dd99f686e7aa7558ab2c5ce0764a"><td class="memItemLeft" align="right" valign="top"><a id="a6d58dd99f686e7aa7558ab2c5ce0764a" name="a6d58dd99f686e7aa7558ab2c5ce0764a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>OnInit</b> ()</td></tr>
-<tr class="separator:a6d58dd99f686e7aa7558ab2c5ce0764a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcc7371eb16a41d2ed5c8124756fdd5f" id="r_adcc7371eb16a41d2ed5c8124756fdd5f"><td class="memItemLeft" align="right" valign="top"><a id="adcc7371eb16a41d2ed5c8124756fdd5f" name="adcc7371eb16a41d2ed5c8124756fdd5f"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Window</b> (int width, int height, const std::string &amp;title)</td></tr>
+<tr class="separator:adcc7371eb16a41d2ed5c8124756fdd5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06937d863fc9e5d6ec85d7c2e2831340" id="r_a06937d863fc9e5d6ec85d7c2e2831340"><td class="memItemLeft" align="right" valign="top"><a id="a06937d863fc9e5d6ec85d7c2e2831340" name="a06937d863fc9e5d6ec85d7c2e2831340"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>OnBegin</b> ()</td></tr>
+<tr class="separator:a06937d863fc9e5d6ec85d7c2e2831340"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a19ad73e6e9ff9e0984f07b6a52114eb1" id="r_a19ad73e6e9ff9e0984f07b6a52114eb1"><td class="memItemLeft" align="right" valign="top"><a id="a19ad73e6e9ff9e0984f07b6a52114eb1" name="a19ad73e6e9ff9e0984f07b6a52114eb1"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>OnTick</b> ()</td></tr>
 <tr class="separator:a19ad73e6e9ff9e0984f07b6a52114eb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae68f4fca49941274d9b303956973c5af" id="r_ae68f4fca49941274d9b303956973c5af"><td class="memItemLeft" align="right" valign="top"><a id="ae68f4fca49941274d9b303956973c5af" name="ae68f4fca49941274d9b303956973c5af"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>CloseWindow</b> ()</td></tr>
-<tr class="separator:ae68f4fca49941274d9b303956973c5af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a90033e72277154ebcaf116557335b3fc" id="r_a90033e72277154ebcaf116557335b3fc"><td class="memItemLeft" align="right" valign="top"><a id="a90033e72277154ebcaf116557335b3fc" name="a90033e72277154ebcaf116557335b3fc"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetEventCallback</b> (const EventCalbackFn &amp;callback)</td></tr>
-<tr class="separator:a90033e72277154ebcaf116557335b3fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a0cedcef089707bb829efe34c39e898" id="r_a3a0cedcef089707bb829efe34c39e898"><td class="memItemLeft" align="right" valign="top"><a id="a3a0cedcef089707bb829efe34c39e898" name="a3a0cedcef089707bb829efe34c39e898"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetVSync</b> (bool enabled)</td></tr>
-<tr class="separator:a3a0cedcef089707bb829efe34c39e898"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a30d6027cdcb41b77f91c3c19f68b880f" id="r_a30d6027cdcb41b77f91c3c19f68b880f"><td class="memItemLeft" align="right" valign="top"><a id="a30d6027cdcb41b77f91c3c19f68b880f" name="a30d6027cdcb41b77f91c3c19f68b880f"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsVSync</b> () const</td></tr>
-<tr class="separator:a30d6027cdcb41b77f91c3c19f68b880f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aecb3b154139b954243fa586a160bd5a0" id="r_aecb3b154139b954243fa586a160bd5a0"><td class="memItemLeft" align="right" valign="top"><a id="aecb3b154139b954243fa586a160bd5a0" name="aecb3b154139b954243fa586a160bd5a0"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>ShouldClose</b> () const</td></tr>
-<tr class="separator:aecb3b154139b954243fa586a160bd5a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93a55b73b23d976b64f2c09e4bcf59f8" id="r_a93a55b73b23d976b64f2c09e4bcf59f8"><td class="memItemLeft" align="right" valign="top"><a id="a93a55b73b23d976b64f2c09e4bcf59f8" name="a93a55b73b23d976b64f2c09e4bcf59f8"></a>
-VkExtent2D&#160;</td><td class="memItemRight" valign="bottom"><b>GetExtent</b> ()</td></tr>
-<tr class="separator:a93a55b73b23d976b64f2c09e4bcf59f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8192eb4224de16b4952d9583012b6cfb" id="r_a8192eb4224de16b4952d9583012b6cfb"><td class="memItemLeft" align="right" valign="top"><a id="a8192eb4224de16b4952d9583012b6cfb" name="a8192eb4224de16b4952d9583012b6cfb"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>SetEventCallback</b> (const <a class="el" href="#aed6c0144429017667faf68574789404a">EventCallbackFn</a> &amp;callback)</td></tr>
+<tr class="separator:a8192eb4224de16b4952d9583012b6cfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69a2ca8971d5563300484fe73350b5c1" id="r_a69a2ca8971d5563300484fe73350b5c1"><td class="memItemLeft" align="right" valign="top"><a id="a69a2ca8971d5563300484fe73350b5c1" name="a69a2ca8971d5563300484fe73350b5c1"></a>
+VkExtent2D&#160;</td><td class="memItemRight" valign="bottom"><b>GetExtent</b> () const</td></tr>
+<tr class="separator:a69a2ca8971d5563300484fe73350b5c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdaf7c75049a3efe699db53fc706f5c6" id="r_afdaf7c75049a3efe699db53fc706f5c6"><td class="memItemLeft" align="right" valign="top"><a id="afdaf7c75049a3efe699db53fc706f5c6" name="afdaf7c75049a3efe699db53fc706f5c6"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>GetWindowResized</b> () const</td></tr>
+<tr class="separator:afdaf7c75049a3efe699db53fc706f5c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afabecece6d3845584ac2a6e6a00e03ed" id="r_afabecece6d3845584ac2a6e6a00e03ed"><td class="memItemLeft" align="right" valign="top"><a id="afabecece6d3845584ac2a6e6a00e03ed" name="afabecece6d3845584ac2a6e6a00e03ed"></a>
+GLFWwindow *&#160;</td><td class="memItemRight" valign="bottom"><b>GetWindow</b> () const</td></tr>
+<tr class="separator:afabecece6d3845584ac2a6e6a00e03ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5ea8ce646f83ee6aa05407d943e8264" id="r_aa5ea8ce646f83ee6aa05407d943e8264"><td class="memItemLeft" align="right" valign="top"><a id="aa5ea8ce646f83ee6aa05407d943e8264" name="aa5ea8ce646f83ee6aa05407d943e8264"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>GetDeltaTime</b> ()</td></tr>
 <tr class="separator:aa5ea8ce646f83ee6aa05407d943e8264"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a027e302ac91df7254a1fba577be10796" id="r_a027e302ac91df7254a1fba577be10796"><td class="memItemLeft" align="right" valign="top"><a id="a027e302ac91df7254a1fba577be10796" name="a027e302ac91df7254a1fba577be10796"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>CreateWindowSurface</b> (VkInstance instance, VkSurfaceKHR *surface)</td></tr>
-<tr class="separator:a027e302ac91df7254a1fba577be10796"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3aa68bf0f3632d1fd9cb69d204c939ca" id="r_a3aa68bf0f3632d1fd9cb69d204c939ca"><td class="memItemLeft" align="right" valign="top"><a id="a3aa68bf0f3632d1fd9cb69d204c939ca" name="a3aa68bf0f3632d1fd9cb69d204c939ca"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>GetWindowResized</b> ()</td></tr>
-<tr class="separator:a3aa68bf0f3632d1fd9cb69d204c939ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3c61031a50660718dac55a1a6286744" id="r_af3c61031a50660718dac55a1a6286744"><td class="memItemLeft" align="right" valign="top"><a id="af3c61031a50660718dac55a1a6286744" name="af3c61031a50660718dac55a1a6286744"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>ResetWindowResized</b> ()</td></tr>
+<tr class="memitem:af3a4923ad1168fe26640fb00dd5592ab" id="r_af3a4923ad1168fe26640fb00dd5592ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af3a4923ad1168fe26640fb00dd5592ab">CreateWindowSurface</a> (VkInstance instance, VkSurfaceKHR *surface) const</td></tr>
+<tr class="memdesc:af3a4923ad1168fe26640fb00dd5592ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a Vulkan window surface.  <br /></td></tr>
+<tr class="separator:af3a4923ad1168fe26640fb00dd5592ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3c61031a50660718dac55a1a6286744" id="r_af3c61031a50660718dac55a1a6286744"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af3c61031a50660718dac55a1a6286744">ResetWindowResized</a> ()</td></tr>
+<tr class="memdesc:af3c61031a50660718dac55a1a6286744"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a Vulkan window surface.  <br /></td></tr>
 <tr class="separator:af3c61031a50660718dac55a1a6286744"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:abcc16d6fd1a436266e30feee29a3703b" id="r_abcc16d6fd1a436266e30feee29a3703b"><td class="memItemLeft" align="right" valign="top"><a id="abcc16d6fd1a436266e30feee29a3703b" name="abcc16d6fd1a436266e30feee29a3703b"></a>
+static <a class="el" href="classbloom_1_1_window.html">Window</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>GetInstance</b> ()</td></tr>
+<tr class="separator:abcc16d6fd1a436266e30feee29a3703b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Manages the window and its events. </p>
+<p>The <a class="el" href="classbloom_1_1_window.html" title="Manages the window and its events.">Window</a> class is responsible for creating and managing the window, handling events, and providing various window-related functionalities such as VSync and window resizing </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="af3a4923ad1168fe26640fb00dd5592ab" name="af3a4923ad1168fe26640fb00dd5592ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3a4923ad1168fe26640fb00dd5592ab">&#9670;&#160;</a></span>CreateWindowSurface()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bloom::Window::CreateWindowSurface </td>
+          <td>(</td>
+          <td class="paramtype">VkInstance</td>          <td class="paramname"><span class="paramname"><em>instance</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">VkSurfaceKHR *</td>          <td class="paramname"><span class="paramname"><em>surface</em></span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates a Vulkan window surface. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">instance</td><td>The Vulkan instance. </td></tr>
+    <tr><td class="paramname">surface</td><td>The Vulkan surface to create. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af3c61031a50660718dac55a1a6286744" name="af3c61031a50660718dac55a1a6286744"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3c61031a50660718dac55a1a6286744">&#9670;&#160;</a></span>ResetWindowResized()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bloom::Window::ResetWindowResized </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a Vulkan window surface. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">instance</td><td>The Vulkan instance. </td></tr>
+    <tr><td class="paramname">surface</td><td>The Vulkan surface to create. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>C:/Users/xgoni/bloom/bloom/src/<a class="el" href="window_8hpp_source.html">window.hpp</a></li>
 <li>C:/Users/xgoni/bloom/bloom/src/<b>window.cpp</b></li>

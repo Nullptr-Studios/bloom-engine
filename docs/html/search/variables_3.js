@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['scale_0',['scale',['../structbloom_1_1_transform.html#ae2da39dae20de6c860cb9c8b541092b9',1,'bloom::Transform']]]
+  ['globaldescriptorset_0',['globalDescriptorSet',['../structbloom_1_1render_1_1_frame_info.html#a1296e95a98551af6daae7b232e1ffd95',1,'bloom::render::FrameInfo']]]
 ];

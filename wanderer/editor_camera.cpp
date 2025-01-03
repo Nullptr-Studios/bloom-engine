@@ -3,6 +3,10 @@
 
 namespace wanderer {
 
+void EditorCamera::OnBegin() {
+  Camera::OnBegin();
+}
+
 void EditorCamera::OnTick(float deltaTime) {
   Camera::OnTick(deltaTime);
 

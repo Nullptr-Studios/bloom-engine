@@ -83,7 +83,7 @@ $(function(){ initResizable(false); });
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>bloom</b></li><li class="navelem"><a class="el" href="classbloom_1_1_key_event.html">KeyEvent</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacebloom.html">bloom</a></li><li class="navelem"><a class="el" href="classbloom_1_1_key_event.html">KeyEvent</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div id="doc-content">
@@ -107,9 +107,10 @@ Inheritance diagram for bloom::KeyEvent:</div>
  <div class="center">
   <img src="classbloom_1_1_key_event.png" usemap="#bloom::KeyEvent_map" alt=""/>
   <map id="bloom::KeyEvent_map" name="bloom::KeyEvent_map">
-<area href="classbloom_1_1_event.html" title="Abstract base class for all events in the Bloom Engine." alt="bloom::Event" shape="rect" coords="83,0,240,24"/>
+<area href="classbloom_1_1_event.html" title="Abstract base class for all events in the Bloom Engine." alt="bloom::Event" shape="rect" coords="167,0,324,24"/>
 <area href="classbloom_1_1_key_pressed_event.html" title="Represents an event triggered when a key is pressed." alt="bloom::KeyPressedEvent" shape="rect" coords="0,112,157,136"/>
 <area href="classbloom_1_1_key_released_event.html" title="Represents an event triggered when a key is released. The KeyReleasedEvent class provides information..." alt="bloom::KeyReleasedEvent" shape="rect" coords="167,112,324,136"/>
+<area href="classbloom_1_1_key_typed_event.html" title="Represents an event triggered when a printable key is typed." alt="bloom::KeyTypedEvent" shape="rect" coords="334,112,491,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -119,7 +120,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a72ff8f3941a9d575f4b3f9275fe93fde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the key code associated with the event.  <br /></td></tr>
 <tr class="separator:a72ff8f3941a9d575f4b3f9275fe93fde"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classbloom_1_1_event"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classbloom_1_1_event')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classbloom_1_1_event.html">bloom::Event</a></td></tr>
-<tr class="memitem:afb0cc62325b1fbd939fafe1096c6c624 inherit pub_methods_classbloom_1_1_event" id="r_afb0cc62325b1fbd939fafe1096c6c624"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="event_8hpp.html#a62777e271a1f3f6e4a8ba9055c2e4df9">EventType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbloom_1_1_event.html#afb0cc62325b1fbd939fafe1096c6c624">GetEventType</a> () const =0</td></tr>
+<tr class="memitem:afb0cc62325b1fbd939fafe1096c6c624 inherit pub_methods_classbloom_1_1_event" id="r_afb0cc62325b1fbd939fafe1096c6c624"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespacebloom.html#a62777e271a1f3f6e4a8ba9055c2e4df9">EventType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbloom_1_1_event.html#afb0cc62325b1fbd939fafe1096c6c624">GetEventType</a> () const =0</td></tr>
 <tr class="memdesc:afb0cc62325b1fbd939fafe1096c6c624 inherit pub_methods_classbloom_1_1_event"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type of the event.  <br /></td></tr>
 <tr class="separator:afb0cc62325b1fbd939fafe1096c6c624 inherit pub_methods_classbloom_1_1_event"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab5bb7f0fc80e71886658e3acb181fd16 inherit pub_methods_classbloom_1_1_event" id="r_ab5bb7f0fc80e71886658e3acb181fd16"><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbloom_1_1_event.html#ab5bb7f0fc80e71886658e3acb181fd16">GetName</a> () const =0</td></tr>
@@ -131,9 +132,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1e826d312aa922abd9401a02ee33ab3d inherit pub_methods_classbloom_1_1_event" id="r_a1e826d312aa922abd9401a02ee33ab3d"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbloom_1_1_event.html#a1e826d312aa922abd9401a02ee33ab3d">ToString</a> () const</td></tr>
 <tr class="memdesc:a1e826d312aa922abd9401a02ee33ab3d inherit pub_methods_classbloom_1_1_event"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the event to a string representation.  <br /></td></tr>
 <tr class="separator:a1e826d312aa922abd9401a02ee33ab3d inherit pub_methods_classbloom_1_1_event"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad407353c8d035d38f9bc21eedd0b8c69 inherit pub_methods_classbloom_1_1_event" id="r_ad407353c8d035d38f9bc21eedd0b8c69"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbloom_1_1_event.html#ad407353c8d035d38f9bc21eedd0b8c69">IsInCategory</a> (const <a class="el" href="event_8hpp.html#a85f0d8c71d473ca68946d8c5bcdab3f5">EventCategory</a> category) const</td></tr>
+<tr class="memitem:ad407353c8d035d38f9bc21eedd0b8c69 inherit pub_methods_classbloom_1_1_event" id="r_ad407353c8d035d38f9bc21eedd0b8c69"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbloom_1_1_event.html#ad407353c8d035d38f9bc21eedd0b8c69">IsInCategory</a> (const <a class="el" href="namespacebloom.html#a85f0d8c71d473ca68946d8c5bcdab3f5">EventCategory</a> category) const</td></tr>
 <tr class="memdesc:ad407353c8d035d38f9bc21eedd0b8c69 inherit pub_methods_classbloom_1_1_event"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the event belongs to a specific category.  <br /></td></tr>
 <tr class="separator:ad407353c8d035d38f9bc21eedd0b8c69 inherit pub_methods_classbloom_1_1_event"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace84b09cd877e4a64e0b9f538476819f inherit pub_methods_classbloom_1_1_event" id="r_ace84b09cd877e4a64e0b9f538476819f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbloom_1_1_event.html#ace84b09cd877e4a64e0b9f538476819f">IsHandled</a> () const</td></tr>
+<tr class="memdesc:ace84b09cd877e4a64e0b9f538476819f inherit pub_methods_classbloom_1_1_event"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the event has been handled.  <br /></td></tr>
+<tr class="separator:ace84b09cd877e4a64e0b9f538476819f inherit pub_methods_classbloom_1_1_event"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>

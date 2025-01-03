@@ -83,7 +83,7 @@ $(function(){ initResizable(false); });
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>bloom</b></li><li class="navelem"><b>render</b></li><li class="navelem"><a class="el" href="classbloom_1_1render_1_1_texture.html">Texture</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacebloom.html">bloom</a></li><li class="navelem"><a class="el" href="namespacebloom_1_1render.html">render</a></li><li class="navelem"><a class="el" href="classbloom_1_1render_1_1_texture.html">Texture</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div id="doc-content">
@@ -94,6 +94,11 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">bloom::render::Texture Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Manages Vulkan textures.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="texture_8hpp_source.html">texture.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -106,19 +111,135 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2b221027d210b2dc960e2cada43b3666" id="r_a2b221027d210b2dc960e2cada43b3666"><td class="memItemLeft" align="right" valign="top"><a id="a2b221027d210b2dc960e2cada43b3666" name="a2b221027d210b2dc960e2cada43b3666"></a>
 <a class="el" href="classbloom_1_1render_1_1_texture.html">Texture</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classbloom_1_1render_1_1_texture.html">Texture</a> &amp;)=delete</td></tr>
 <tr class="separator:a2b221027d210b2dc960e2cada43b3666"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3357357c1d2810037152de3199984d20" id="r_a3357357c1d2810037152de3199984d20"><td class="memItemLeft" align="right" valign="top"><a id="a3357357c1d2810037152de3199984d20" name="a3357357c1d2810037152de3199984d20"></a>
-Dimensions&#160;</td><td class="memItemRight" valign="bottom"><b>GetDimensions</b> () const</td></tr>
+<tr class="memitem:a3357357c1d2810037152de3199984d20" id="r_a3357357c1d2810037152de3199984d20"><td class="memItemLeft" align="right" valign="top">Dimensions&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3357357c1d2810037152de3199984d20">GetDimensions</a> () const</td></tr>
+<tr class="memdesc:a3357357c1d2810037152de3199984d20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the dimensions of the texture.  <br /></td></tr>
 <tr class="separator:a3357357c1d2810037152de3199984d20"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae458de02b6d108405032c6714852fa6f" id="r_ae458de02b6d108405032c6714852fa6f"><td class="memItemLeft" align="right" valign="top"><a id="ae458de02b6d108405032c6714852fa6f" name="ae458de02b6d108405032c6714852fa6f"></a>
-VkSampler&#160;</td><td class="memItemRight" valign="bottom"><b>GetSampler</b> () const</td></tr>
+<tr class="memitem:ae458de02b6d108405032c6714852fa6f" id="r_ae458de02b6d108405032c6714852fa6f"><td class="memItemLeft" align="right" valign="top">VkSampler&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae458de02b6d108405032c6714852fa6f">GetSampler</a> () const</td></tr>
+<tr class="memdesc:ae458de02b6d108405032c6714852fa6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the Vulkan sampler for the texture.  <br /></td></tr>
 <tr class="separator:ae458de02b6d108405032c6714852fa6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0cb05c609ec402f749b7895c92582991" id="r_a0cb05c609ec402f749b7895c92582991"><td class="memItemLeft" align="right" valign="top"><a id="a0cb05c609ec402f749b7895c92582991" name="a0cb05c609ec402f749b7895c92582991"></a>
-VkImageView&#160;</td><td class="memItemRight" valign="bottom"><b>GetImageView</b> () const</td></tr>
+<tr class="memitem:a0cb05c609ec402f749b7895c92582991" id="r_a0cb05c609ec402f749b7895c92582991"><td class="memItemLeft" align="right" valign="top">VkImageView&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0cb05c609ec402f749b7895c92582991">GetImageView</a> () const</td></tr>
+<tr class="memdesc:a0cb05c609ec402f749b7895c92582991"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the Vulkan image view for the texture.  <br /></td></tr>
 <tr class="separator:a0cb05c609ec402f749b7895c92582991"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae35663cac8673894d491eb90909b31ed" id="r_ae35663cac8673894d491eb90909b31ed"><td class="memItemLeft" align="right" valign="top"><a id="ae35663cac8673894d491eb90909b31ed" name="ae35663cac8673894d491eb90909b31ed"></a>
-VkImageLayout&#160;</td><td class="memItemRight" valign="bottom"><b>GetImageLayout</b> () const</td></tr>
+<tr class="memitem:ae35663cac8673894d491eb90909b31ed" id="r_ae35663cac8673894d491eb90909b31ed"><td class="memItemLeft" align="right" valign="top">VkImageLayout&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae35663cac8673894d491eb90909b31ed">GetImageLayout</a> () const</td></tr>
+<tr class="memdesc:ae35663cac8673894d491eb90909b31ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the Vulkan image layout for the texture.  <br /></td></tr>
 <tr class="separator:ae35663cac8673894d491eb90909b31ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Manages Vulkan textures. </p>
+<p>The <a class="el" href="classbloom_1_1render_1_1_texture.html" title="Manages Vulkan textures.">Texture</a> class handles the loading, management, and access of Vulkan textures, including image data, image views, samplers, and image layouts. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a3357357c1d2810037152de3199984d20" name="a3357357c1d2810037152de3199984d20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3357357c1d2810037152de3199984d20">&#9670;&#160;</a></span>GetDimensions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Dimensions bloom::render::Texture::GetDimensions </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the dimensions of the texture. </p>
+<dl class="section return"><dt>Returns</dt><dd>The Dimensions struct containing the texture dimensions. </dd></dl>
+
+</div>
+</div>
+<a id="ae35663cac8673894d491eb90909b31ed" name="ae35663cac8673894d491eb90909b31ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae35663cac8673894d491eb90909b31ed">&#9670;&#160;</a></span>GetImageLayout()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">VkImageLayout bloom::render::Texture::GetImageLayout </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the Vulkan image layout for the texture. </p>
+<dl class="section return"><dt>Returns</dt><dd>The Vulkan image layout. </dd></dl>
+
+</div>
+</div>
+<a id="a0cb05c609ec402f749b7895c92582991" name="a0cb05c609ec402f749b7895c92582991"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cb05c609ec402f749b7895c92582991">&#9670;&#160;</a></span>GetImageView()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">VkImageView bloom::render::Texture::GetImageView </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the Vulkan image view for the texture. </p>
+<dl class="section return"><dt>Returns</dt><dd>The Vulkan image view. </dd></dl>
+
+</div>
+</div>
+<a id="ae458de02b6d108405032c6714852fa6f" name="ae458de02b6d108405032c6714852fa6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae458de02b6d108405032c6714852fa6f">&#9670;&#160;</a></span>GetSampler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">VkSampler bloom::render::Texture::GetSampler </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the Vulkan sampler for the texture. </p>
+<dl class="section return"><dt>Returns</dt><dd>The Vulkan sampler. </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>C:/Users/xgoni/bloom/bloom/src/render/<a class="el" href="texture_8hpp_source.html">texture.hpp</a></li>
 <li>C:/Users/xgoni/bloom/bloom/src/render/<b>texture.cpp</b></li>

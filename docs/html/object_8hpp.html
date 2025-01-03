@@ -90,6 +90,8 @@ $(function(){ initResizable(false); });
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle"><div class="title">object.hpp File Reference</div></div>
 </div><!--header-->
@@ -97,9 +99,10 @@ $(function(){ initResizable(false); });
 
 <p>This file defines the base Object class and the Transform struct.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="devices_8hpp_source.html">src/render/devices.hpp</a>&quot;</code><br />
-<code>#include &lt;<a class="el" href="bloom__header_8hpp_source.html">bloom_header.hpp</a>&gt;</code><br />
+<div class="textblock"><code>#include &lt;<a class="el" href="bloom__header_8hpp_source.html">bloom_header.hpp</a>&gt;</code><br />
 <code>#include &lt;glm/gtx/euler_angles.hpp&gt;</code><br />
+<code>#include &lt;imgui.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="devices_8hpp_source.html">src/render/devices.hpp</a>&quot;</code><br />
 </div>
 <p><a href="object_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -112,10 +115,16 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class for all objects in the game world.  <a href="classbloom_1_1_object.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebloom.html">bloom</a></td></tr>
+<tr class="memdesc:namespacebloom"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the core classes and functions for the bloom engine. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:ac65b651055bbc2100bc99fb9bd34ac17" id="r_ac65b651055bbc2100bc99fb9bd34ac17"><td class="memItemLeft" align="right" valign="top"><a id="ac65b651055bbc2100bc99fb9bd34ac17" name="ac65b651055bbc2100bc99fb9bd34ac17"></a>
-typedef std::unordered_map&lt; id_t, std::shared_ptr&lt; <a class="el" href="classbloom_1_1_object.html">Object</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>bloom::ObjectMap</b></td></tr>
+typedef std::unordered_map&lt; <a class="el" href="core_8hpp.html#abaf665e52c9979a5f6eb9ecfce756efc">id_t</a>, std::shared_ptr&lt; <a class="el" href="classbloom_1_1_object.html">Object</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>bloom::ObjectMap</b></td></tr>
 <tr class="memdesc:ac65b651055bbc2100bc99fb9bd34ac17"><td class="mdescLeft">&#160;</td><td class="mdescRight">A map of object IDs to shared pointers of Objects. Used for managing and accessing objects in the game world. <br /></td></tr>
 <tr class="separator:ac65b651055bbc2100bc99fb9bd34ac17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>

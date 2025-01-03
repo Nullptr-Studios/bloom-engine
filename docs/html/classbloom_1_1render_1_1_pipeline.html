@@ -83,7 +83,7 @@ $(function(){ initResizable(false); });
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>bloom</b></li><li class="navelem"><b>render</b></li><li class="navelem"><a class="el" href="classbloom_1_1render_1_1_pipeline.html">Pipeline</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacebloom.html">bloom</a></li><li class="navelem"><a class="el" href="namespacebloom_1_1render.html">render</a></li><li class="navelem"><a class="el" href="classbloom_1_1render_1_1_pipeline.html">Pipeline</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div id="doc-content">
@@ -95,11 +95,16 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">bloom::render::Pipeline Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Manages a Vulkan graphics pipeline.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="pipeline_8hpp_source.html">pipeline.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a580698bec6166ee1ef70864307ab4f59" id="r_a580698bec6166ee1ef70864307ab4f59"><td class="memItemLeft" align="right" valign="top"><a id="a580698bec6166ee1ef70864307ab4f59" name="a580698bec6166ee1ef70864307ab4f59"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Pipeline</b> (<a class="el" href="classbloom_1_1render_1_1_devices.html">Devices</a> &amp;device, const std::string &amp;vertPath, const std::string &amp;fragPath, const <a class="el" href="structbloom_1_1render_1_1_pipeline_configuration.html">PipelineConfiguration</a> &amp;config)</td></tr>
+<tr class="memitem:a580698bec6166ee1ef70864307ab4f59" id="r_a580698bec6166ee1ef70864307ab4f59"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a580698bec6166ee1ef70864307ab4f59">Pipeline</a> (<a class="el" href="classbloom_1_1render_1_1_devices.html">Devices</a> &amp;device, const std::string &amp;vertPath, const std::string &amp;fragPath, const <a class="el" href="structbloom_1_1render_1_1_pipeline_configuration.html">PipelineConfiguration</a> &amp;config)</td></tr>
+<tr class="memdesc:a580698bec6166ee1ef70864307ab4f59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="classbloom_1_1render_1_1_pipeline.html" title="Manages a Vulkan graphics pipeline.">Pipeline</a> instance.  <br /></td></tr>
 <tr class="separator:a580698bec6166ee1ef70864307ab4f59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac74eadb137e91082c748ef4e203e6bc2" id="r_ac74eadb137e91082c748ef4e203e6bc2"><td class="memItemLeft" align="right" valign="top"><a id="ac74eadb137e91082c748ef4e203e6bc2" name="ac74eadb137e91082c748ef4e203e6bc2"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Pipeline</b> (const <a class="el" href="classbloom_1_1render_1_1_pipeline.html">Pipeline</a> &amp;)=delete</td></tr>
@@ -107,16 +112,121 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1e1d9fb9c3a178c9c8e5c7127a9f2002" id="r_a1e1d9fb9c3a178c9c8e5c7127a9f2002"><td class="memItemLeft" align="right" valign="top"><a id="a1e1d9fb9c3a178c9c8e5c7127a9f2002" name="a1e1d9fb9c3a178c9c8e5c7127a9f2002"></a>
 <a class="el" href="classbloom_1_1render_1_1_pipeline.html">Pipeline</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classbloom_1_1render_1_1_pipeline.html">Pipeline</a> &amp;)=delete</td></tr>
 <tr class="separator:a1e1d9fb9c3a178c9c8e5c7127a9f2002"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac28ed442b38284589db791cee2274eda" id="r_ac28ed442b38284589db791cee2274eda"><td class="memItemLeft" align="right" valign="top"><a id="ac28ed442b38284589db791cee2274eda" name="ac28ed442b38284589db791cee2274eda"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Bind</b> (VkCommandBuffer commandBuffer)</td></tr>
+<tr class="memitem:ac28ed442b38284589db791cee2274eda" id="r_ac28ed442b38284589db791cee2274eda"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac28ed442b38284589db791cee2274eda">Bind</a> (VkCommandBuffer commandBuffer)</td></tr>
+<tr class="memdesc:ac28ed442b38284589db791cee2274eda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binds the pipeline to the command buffer.  <br /></td></tr>
 <tr class="separator:ac28ed442b38284589db791cee2274eda"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a93ef0970da5c5859f99f01d83493fff6" id="r_a93ef0970da5c5859f99f01d83493fff6"><td class="memItemLeft" align="right" valign="top"><a id="a93ef0970da5c5859f99f01d83493fff6" name="a93ef0970da5c5859f99f01d83493fff6"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>defaultPipelineConfig</b> (<a class="el" href="structbloom_1_1render_1_1_pipeline_configuration.html">PipelineConfiguration</a> &amp;config)</td></tr>
-<tr class="separator:a93ef0970da5c5859f99f01d83493fff6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab52f079dd4e7050f95a86bb45dacec89" id="r_ab52f079dd4e7050f95a86bb45dacec89"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab52f079dd4e7050f95a86bb45dacec89">DefaultPipelineConfig</a> (<a class="el" href="structbloom_1_1render_1_1_pipeline_configuration.html">PipelineConfiguration</a> &amp;config)</td></tr>
+<tr class="memdesc:ab52f079dd4e7050f95a86bb45dacec89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the default pipeline configuration.  <br /></td></tr>
+<tr class="separator:ab52f079dd4e7050f95a86bb45dacec89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Manages a Vulkan graphics pipeline. </p>
+<p>The <a class="el" href="classbloom_1_1render_1_1_pipeline.html" title="Manages a Vulkan graphics pipeline.">Pipeline</a> class encapsulates the creation, management, and binding of a Vulkan graphics pipeline. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a580698bec6166ee1ef70864307ab4f59" name="a580698bec6166ee1ef70864307ab4f59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a580698bec6166ee1ef70864307ab4f59">&#9670;&#160;</a></span>Pipeline()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bloom::render::Pipeline::Pipeline </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classbloom_1_1render_1_1_devices.html">Devices</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>device</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>vertPath</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>fragPath</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structbloom_1_1render_1_1_pipeline_configuration.html">PipelineConfiguration</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>config</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs a <a class="el" href="classbloom_1_1render_1_1_pipeline.html" title="Manages a Vulkan graphics pipeline.">Pipeline</a> instance. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">device</td><td>Reference to the <a class="el" href="classbloom_1_1render_1_1_devices.html" title="Manages Vulkan devices and related resources.">Devices</a> instance. </td></tr>
+    <tr><td class="paramname">vertPath</td><td>Path to the vertex shader file. </td></tr>
+    <tr><td class="paramname">fragPath</td><td>Path to the fragment shader file. </td></tr>
+    <tr><td class="paramname">config</td><td>Reference to the <a class="el" href="structbloom_1_1render_1_1_pipeline_configuration.html" title="Holds configuration settings for creating a Vulkan graphics pipeline.">PipelineConfiguration</a> struct. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ac28ed442b38284589db791cee2274eda" name="ac28ed442b38284589db791cee2274eda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac28ed442b38284589db791cee2274eda">&#9670;&#160;</a></span>Bind()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bloom::render::Pipeline::Bind </td>
+          <td>(</td>
+          <td class="paramtype">VkCommandBuffer</td>          <td class="paramname"><span class="paramname"><em>commandBuffer</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Binds the pipeline to the command buffer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">commandBuffer</td><td>The Vulkan command buffer to bind the pipeline to. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab52f079dd4e7050f95a86bb45dacec89" name="ab52f079dd4e7050f95a86bb45dacec89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab52f079dd4e7050f95a86bb45dacec89">&#9670;&#160;</a></span>DefaultPipelineConfig()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bloom::render::Pipeline::DefaultPipelineConfig </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structbloom_1_1render_1_1_pipeline_configuration.html">PipelineConfiguration</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>config</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the default pipeline configuration. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">config</td><td>Reference to the <a class="el" href="structbloom_1_1render_1_1_pipeline_configuration.html" title="Holds configuration settings for creating a Vulkan graphics pipeline.">PipelineConfiguration</a> struct to set defaults for. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>C:/Users/xgoni/bloom/bloom/src/render/<a class="el" href="pipeline_8hpp_source.html">pipeline.hpp</a></li>
 <li>C:/Users/xgoni/bloom/bloom/src/render/<b>pipeline.cpp</b></li>

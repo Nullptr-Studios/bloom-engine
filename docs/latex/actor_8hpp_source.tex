@@ -11,14 +11,16 @@
 \DoxyCodeLine{00035\ }
 \DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{object_8hpp}{object.hpp}}"{}}}
 \DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{descriptors_8hpp}{src/render/descriptors.hpp}}"{}}}
-\DoxyCodeLine{00038\ }
-\DoxyCodeLine{00039\ \textcolor{keyword}{namespace\ }bloom\ \{}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{model_8hpp}{src/render/model.hpp}}"{}}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{texture_8hpp}{src/render/texture.hpp}}"{}}}
 \DoxyCodeLine{00040\ }
-\DoxyCodeLine{00050\ \textcolor{keyword}{class\ }BLOOM\_API\ \mbox{\hyperlink{classbloom_1_1_actor}{Actor}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classbloom_1_1_object}{Object}}\{}
-\DoxyCodeLine{00051\ \textcolor{comment}{//\ TODO:\ This\ should\ have\ a\ protected\ constructor\ later\ on\ -\/x}}
-\DoxyCodeLine{00052\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00065\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classbloom_1_1_actor}{Actor}}(id\_t\ \textcolor{keywordtype}{id},\ \mbox{\hyperlink{classbloom_1_1render_1_1_devices}{render::Devices}}\ *devices);}
-\DoxyCodeLine{00066\ \ \ \mbox{\hyperlink{classbloom_1_1_actor}{\string~Actor}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00041\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacebloom}{bloom}}\ \{}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{class\ }BLOOM\_API\ \mbox{\hyperlink{classbloom_1_1_actor}{Actor}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classbloom_1_1_object}{Object}}\{}
+\DoxyCodeLine{00053\ \textcolor{comment}{//\ TODO:\ This\ should\ have\ a\ protected\ constructor\ later\ on\ -\/x}}
+\DoxyCodeLine{00054\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00065\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classbloom_1_1_actor}{Actor}}(\mbox{\hyperlink{core_8hpp_abaf665e52c9979a5f6eb9ecfce756efc}{id\_t}}\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00066\ \ \ \mbox{\hyperlink{classbloom_1_1_actor}{\string~Actor}}()\ \textcolor{keyword}{override};}
 \DoxyCodeLine{00067\ }
 \DoxyCodeLine{00068\ \ \ \textcolor{comment}{//\ Copy\ destructors}}
 \DoxyCodeLine{00069\ \ \ \mbox{\hyperlink{classbloom_1_1_actor}{Actor}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classbloom_1_1_actor}{Actor}}\&)\ =\ \textcolor{keyword}{delete};}
@@ -26,38 +28,34 @@
 \DoxyCodeLine{00071\ \ \ \mbox{\hyperlink{classbloom_1_1_actor}{Actor}}(\mbox{\hyperlink{classbloom_1_1_actor}{Actor}}\&\&)\ =\ \textcolor{keywordflow}{default};}
 \DoxyCodeLine{00072\ \ \ \mbox{\hyperlink{classbloom_1_1_actor}{Actor}}\&\ operator=(\mbox{\hyperlink{classbloom_1_1_actor}{Actor}}\&\&)\ =\ \textcolor{keywordflow}{default};}
 \DoxyCodeLine{00073\ }
-\DoxyCodeLine{00074\ \ \ \textcolor{comment}{//\ Game\ loop}}
-\DoxyCodeLine{00075\ \ \ \textcolor{comment}{//\ TODO:\ Do\ we\ need\ to\ put\ the\ Object::Begin()\ if\ it's\ empty?\ -\/x}}
-\DoxyCodeLine{00076\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classbloom_1_1_actor_abb09ecd4a3722ba2dbf298ce115514ec}{Begin}}()\textcolor{keyword}{\ override\ }\{\ Object::Begin();\ \}}
-\DoxyCodeLine{00077\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classbloom_1_1_actor_a68a9c1ea7cbe1ce76783d334ce377e01}{Tick}}(\textcolor{keywordtype}{float}\ deltaTime)\textcolor{keyword}{\ override\ }\{\ Object::Tick(deltaTime);\ \}}
-\DoxyCodeLine{00078\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classbloom_1_1_actor_a2f6ebc7bb27c7ac2c72895fc4f5558bd}{End}}()\textcolor{keyword}{\ override\ }\{\ Object::End();\ \}}
-\DoxyCodeLine{00079\ }
-\DoxyCodeLine{00100\ \ \ \textcolor{keywordtype}{void}\ LoadTextures(}
-\DoxyCodeLine{00101\ \ \ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_set_layout}{render::DescriptorSetLayout}}*\ descriptorSetLayout,}
-\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ albedo\ =\ \mbox{\hyperlink{actor_8hpp_accc82e6365c270ab6e94c6c3c79dfcde}{ALBEDO\_PLACEHOLDER}},}
-\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ rmo\ =\ \mbox{\hyperlink{actor_8hpp_acfc88eeb0e56fd3961b1f9ed8436efc4}{RMO\_PLACEHOLDER}},}
-\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ normal\ =\ \mbox{\hyperlink{actor_8hpp_ae3eb5cbfbb9784797ab53c06dccbd59e}{NORMAL\_PLACEHOLDER}},}
-\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ emission\ =\ \mbox{\hyperlink{actor_8hpp_a6ae911d6602ee94ee39578ab8520052a}{EMISSION\_PLACEHOLDER}}}
-\DoxyCodeLine{00106\ \ \ );}
-\DoxyCodeLine{00107\ }
-\DoxyCodeLine{00108\ \ \ \textcolor{comment}{//\ Getters\ -\/\ Setters}}
-\DoxyCodeLine{00118\ \ \ VkDescriptorSet\ \mbox{\hyperlink{classbloom_1_1_actor_a74c1630af2eaa25f9a09c5ac854beedd}{GetDescriptorSet}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_textureDescriptorSet;\ \}}
-\DoxyCodeLine{00119\ }
-\DoxyCodeLine{00124\ \ \ std::shared\_ptr<render::Model>\ \mbox{\hyperlink{classbloom_1_1_actor_ad72a712be4ad20f76d7c397840a0f5e6}{model}};}
-\DoxyCodeLine{00129\ \ \ glm::vec3\ tintColor\ =\ glm::vec3(1.0f);;}
-\DoxyCodeLine{00130\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00138\ \ \ std::array<std::unique\_ptr<render::Texture>,\ 4>\ m\_textures;}
-\DoxyCodeLine{00139\ \ \ std::unique\_ptr<render::DescriptorPool>\ m\_materialPool;}
-\DoxyCodeLine{00140\ \ \ VkDescriptorSet\ m\_textureDescriptorSet\ =\ VK\_NULL\_HANDLE;}
-\DoxyCodeLine{00141\ \};}
-\DoxyCodeLine{00142\ }
-\DoxyCodeLine{00150\ \textcolor{keyword}{typedef}\ std::unordered\_map<id\_t,std::shared\_ptr<Actor>>\ \mbox{\hyperlink{actor_8hpp_a0a6a92f666ce85e7aaa009b4a2af96ee}{ActorMap}};}
-\DoxyCodeLine{00151\ }
-\DoxyCodeLine{00152\ \}}
-\DoxyCodeLine{00153\ }
-\DoxyCodeLine{00154\ \textcolor{preprocessor}{\#undef\ ALBEDO\_PLACEHOLDER}}
-\DoxyCodeLine{00155\ \textcolor{preprocessor}{\#undef\ RMO\_PLACEHOLDER}}
-\DoxyCodeLine{00156\ \textcolor{preprocessor}{\#undef\ NORMAL\_PLACEHOLDER}}
-\DoxyCodeLine{00157\ \textcolor{preprocessor}{\#undef\ EMISSION\_PLACEHOLDER}}
+\DoxyCodeLine{00074\ \ \ \textcolor{keywordtype}{void}\ PropertiesPanel()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00096\ \ \ \textcolor{keywordtype}{void}\ LoadTextures(}
+\DoxyCodeLine{00097\ \ \ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_set_layout}{render::DescriptorSetLayout}}*\ descriptorSetLayout,}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ albedo\ =\ \mbox{\hyperlink{actor_8hpp_accc82e6365c270ab6e94c6c3c79dfcde}{ALBEDO\_PLACEHOLDER}},}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ rmo\ =\ \mbox{\hyperlink{actor_8hpp_acfc88eeb0e56fd3961b1f9ed8436efc4}{RMO\_PLACEHOLDER}},}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ normal\ =\ \mbox{\hyperlink{actor_8hpp_ae3eb5cbfbb9784797ab53c06dccbd59e}{NORMAL\_PLACEHOLDER}},}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ emission\ =\ \mbox{\hyperlink{actor_8hpp_a6ae911d6602ee94ee39578ab8520052a}{EMISSION\_PLACEHOLDER}}}
+\DoxyCodeLine{00102\ \ \ );}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \textcolor{comment}{//\ Getters\ -\/\ Setters}}
+\DoxyCodeLine{00114\ \ \ VkDescriptorSet\ \mbox{\hyperlink{classbloom_1_1_actor_a74c1630af2eaa25f9a09c5ac854beedd}{GetDescriptorSet}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_textureDescriptorSet;\ \}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00120\ \ \ std::shared\_ptr<render::Model>\ \mbox{\hyperlink{classbloom_1_1_actor_ad72a712be4ad20f76d7c397840a0f5e6}{model}};}
+\DoxyCodeLine{00125\ \ \ glm::vec3\ tintColor\ =\ glm::vec3(1.0f);;}
+\DoxyCodeLine{00126\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00134\ \ \ std::array<std::unique\_ptr<render::Texture>,\ 4>\ m\_textures;}
+\DoxyCodeLine{00135\ \ \ std::unique\_ptr<render::DescriptorPool>\ m\_materialPool;}
+\DoxyCodeLine{00136\ \ \ VkDescriptorSet\ m\_textureDescriptorSet\ =\ VK\_NULL\_HANDLE;}
+\DoxyCodeLine{00137\ \};}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00146\ \textcolor{keyword}{typedef}\ std::unordered\_map<id\_t,std::shared\_ptr<Actor>>\ \mbox{\hyperlink{namespacebloom_a0a6a92f666ce85e7aaa009b4a2af96ee}{ActorMap}};}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \}}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \textcolor{preprocessor}{\#undef\ ALBEDO\_PLACEHOLDER}}
+\DoxyCodeLine{00151\ \textcolor{preprocessor}{\#undef\ RMO\_PLACEHOLDER}}
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#undef\ NORMAL\_PLACEHOLDER}}
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\#undef\ EMISSION\_PLACEHOLDER}}
 
 \end{DoxyCode}

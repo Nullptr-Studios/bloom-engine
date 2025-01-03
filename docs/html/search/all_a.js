@@ -1,19 +1,10 @@
 var searchData=
 [
-  ['m_5fbutton_0',['m_button',['../classbloom_1_1_mouse_button_event.html#a7f1596c367ce353c9526355df06714d2',1,'bloom::MouseButtonEvent']]],
-  ['m_5fdevices_1',['m_devices',['../classbloom_1_1_object.html#ae999a5538f3bdac566d964013dde8b7d',1,'bloom::Object']]],
-  ['m_5fhandled_2',['m_handled',['../classbloom_1_1_event.html#a6891c44071438095e77ed94b176a244a',1,'bloom::Event']]],
-  ['m_5fkeycode_3',['m_keyCode',['../classbloom_1_1_key_event.html#a34a7db091ec956bfddfb7e725815b614',1,'bloom::KeyEvent']]],
-  ['main_2ecpp_4',['main.cpp',['../main_8cpp.html',1,'']]],
-  ['map_5',['Map',['../classbloom_1_1render_1_1_buffer.html#a7ae53712d6cecefcab4a6a6cef15f479',1,'bloom::render::Buffer']]],
-  ['matrix_6',['Matrix',['../structbloom_1_1_transform.html#acabdaf75834ef11b0e3d7ddc91bec11f',1,'bloom::Transform']]],
-  ['model_7',['Model',['../classbloom_1_1render_1_1_model.html',1,'bloom::render']]],
-  ['model_8',['model',['../classbloom_1_1_actor.html#ad72a712be4ad20f76d7c397840a0f5e6',1,'bloom::Actor']]],
-  ['model_2ehpp_9',['model.hpp',['../model_8hpp.html',1,'']]],
-  ['mouse_5fevent_2ehpp_10',['mouse_event.hpp',['../mouse__event_8hpp.html',1,'']]],
-  ['mousebuttonevent_11',['MouseButtonEvent',['../classbloom_1_1_mouse_button_event.html',1,'bloom::MouseButtonEvent'],['../classbloom_1_1_mouse_button_event.html#a2fa0ee41f2323bda453fe62815da3c62',1,'bloom::MouseButtonEvent::MouseButtonEvent()']]],
-  ['mousebuttonpressedevent_12',['MouseButtonPressedEvent',['../classbloom_1_1_mouse_button_pressed_event.html',1,'bloom::MouseButtonPressedEvent'],['../classbloom_1_1_mouse_button_pressed_event.html#a58e2ea349acb6263de29df48b66e1d83',1,'bloom::MouseButtonPressedEvent::MouseButtonPressedEvent()']]],
-  ['mousebuttonreleasedevent_13',['MouseButtonReleasedEvent',['../classbloom_1_1_mouse_button_released_event.html',1,'bloom::MouseButtonReleasedEvent'],['../classbloom_1_1_mouse_button_released_event.html#a65ce39ddb3fa14dde00b4e17405dcb2f',1,'bloom::MouseButtonReleasedEvent::MouseButtonReleasedEvent()']]],
-  ['mousemovedevent_14',['MouseMovedEvent',['../classbloom_1_1_mouse_moved_event.html',1,'bloom::MouseMovedEvent'],['../classbloom_1_1_mouse_moved_event.html#a0e2234c62b7cf4b6524c8fb3c8cf2795',1,'bloom::MouseMovedEvent::MouseMovedEvent()']]],
-  ['mousescrolledevent_15',['MouseScrolledEvent',['../classbloom_1_1_mouse_scrolled_event.html',1,'bloom::MouseScrolledEvent'],['../classbloom_1_1_mouse_scrolled_event.html#a681cb73ee7b5ffb6cbffe7b8825e917f',1,'bloom::MouseScrolledEvent::MouseScrolledEvent()']]]
+  ['layer_0',['Layer',['../classbloom_1_1_layer.html',1,'bloom']]],
+  ['layer_2ehpp_1',['layer.hpp',['../layer_8hpp.html',1,'']]],
+  ['layer_5fstack_2ehpp_2',['layer_stack.hpp',['../layer__stack_8hpp.html',1,'']]],
+  ['layerstack_3',['LayerStack',['../classbloom_1_1_layer_stack.html',1,'bloom']]],
+  ['loadtextures_4',['LoadTextures',['../classbloom_1_1_actor.html#af1b7bdfb04767523cc214ed44099a0f1',1,'bloom::Actor']]],
+  ['log_5',['Log',['../classbloom_1_1_log.html',1,'bloom']]],
+  ['log_2ehpp_6',['log.hpp',['../log_8hpp.html',1,'']]]
 ];

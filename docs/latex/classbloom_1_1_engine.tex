@@ -1,5 +1,14 @@
 \doxysection{bloom\+::Engine Class Reference}
 \hypertarget{classbloom_1_1_engine}{}\label{classbloom_1_1_engine}\index{bloom::Engine@{bloom::Engine}}
+
+
+Main class for the bloom engine.  
+
+
+
+
+{\ttfamily \#include $<$engine.\+hpp$>$}
+
 Inheritance diagram for bloom\+::Engine\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -15,35 +24,40 @@ Inheritance diagram for bloom\+::Engine\+:\begin{figure}[H]
 \Hypertarget{classbloom_1_1_engine_a541e2dd7ada86a9a25b9477bd60553c8}\label{classbloom_1_1_engine_a541e2dd7ada86a9a25b9477bd60553c8} 
 \mbox{\hyperlink{classbloom_1_1_engine}{Engine}} \& {\bfseries operator=} (const \mbox{\hyperlink{classbloom_1_1_engine}{Engine}} \&)=delete
 \item 
-\Hypertarget{classbloom_1_1_engine_a88a1aae163129e74c7486ac57d310035}\label{classbloom_1_1_engine_a88a1aae163129e74c7486ac57d310035} 
-void {\bfseries Begin} ()
-\item 
-\Hypertarget{classbloom_1_1_engine_a14a73b59a5c71909ed7419bd385fd1c1}\label{classbloom_1_1_engine_a14a73b59a5c71909ed7419bd385fd1c1} 
-virtual void {\bfseries Tick} ()
-\item 
-\Hypertarget{classbloom_1_1_engine_ad255ccd51c12fec57ce713ff879d4775}\label{classbloom_1_1_engine_ad255ccd51c12fec57ce713ff879d4775} 
-void {\bfseries Render} ()
-\item 
-\Hypertarget{classbloom_1_1_engine_a56743ef3554bf57bc79ce5dc00fa234b}\label{classbloom_1_1_engine_a56743ef3554bf57bc79ce5dc00fa234b} 
-virtual void {\bfseries End} () const
+void \mbox{\hyperlink{classbloom_1_1_engine_aabae09bc72008aab7dad4a42ef714cf4}{Init}} ()
+\begin{DoxyCompactList}\small\item\em Handles the initialization of the engine. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classbloom_1_1_engine_ab2a15af9ead50c72c9953c5233cda115}{On\+Begin}} ()
+\begin{DoxyCompactList}\small\item\em Called before starting game loop. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classbloom_1_1_engine_a5f447cd38d38a127592dbc26d4193b13}{On\+Tick}} ()
+\begin{DoxyCompactList}\small\item\em Called every frame. \end{DoxyCompactList}\item 
+\Hypertarget{classbloom_1_1_engine_a0d017c0b8069e3fbbad47ab87b0a8495}\label{classbloom_1_1_engine_a0d017c0b8069e3fbbad47ab87b0a8495} 
+virtual void {\bfseries On\+Render} ()
+\begin{DoxyCompactList}\small\item\em Called every frame after the {\ttfamily Tick}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classbloom_1_1_engine_a036ac1451ce02a56b34e7039c51cf8c5}{On\+Close}} ()
+\begin{DoxyCompactList}\small\item\em Called before ending the game loop. \end{DoxyCompactList}\item 
+\Hypertarget{classbloom_1_1_engine_a68ea3be34a9a1b70a42d3c1b1760965f}\label{classbloom_1_1_engine_a68ea3be34a9a1b70a42d3c1b1760965f} 
+void {\bfseries On\+Event} (\mbox{\hyperlink{classbloom_1_1_event}{Event}} \&e)
 \item 
 \Hypertarget{classbloom_1_1_engine_aacbe3434463b409ea1d93f9db8ad37bc}\label{classbloom_1_1_engine_aacbe3434463b409ea1d93f9db8ad37bc} 
 bool {\bfseries Should\+Close} () const
-\item 
-\Hypertarget{classbloom_1_1_engine_a0e9e685a0831e8b2dcacb12fc3e026fa}\label{classbloom_1_1_engine_a0e9e685a0831e8b2dcacb12fc3e026fa} 
-void {\bfseries On\+Event} (const \mbox{\hyperlink{classbloom_1_1_event}{Event}} \&e) const
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Public Attributes}
+\doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classbloom_1_1_engine_ab6d184cb4b143c4bbcbfeb8906298adb}\label{classbloom_1_1_engine_ab6d184cb4b143c4bbcbfeb8906298adb} 
-std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1_factory}{Factory}} $>$ {\bfseries factory} = nullptr
-\end{DoxyCompactItemize}
+static \mbox{\hyperlink{structbloom_1_1render_1_1_descriptor_layouts}{render\+::\+Descriptor\+Layouts}} \mbox{\hyperlink{classbloom_1_1_engine_abe3d70c9d705bc71974323c178dab032}{Get\+Descriptor\+Layouts}} ()
+\begin{DoxyCompactList}\small\item\em Gets the Descriptor\+Layouts struct. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classbloom_1_1_engine_a960b4402be47ab7336696e4bdb9486ce}{Set\+UBOLayout}} (\mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_set_layout}{render\+::\+Descriptor\+Set\+Layout}} \texorpdfstring{$\ast$}{*}layout)
+\begin{DoxyCompactList}\small\item\em Sets the global descriptor set layout. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classbloom_1_1_engine_a816b16349da5bcac4df11e0a8fb9c256}{Set\+Material\+Layout}} (\mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_set_layout}{render\+::\+Descriptor\+Set\+Layout}} \texorpdfstring{$\ast$}{*}layout)
+\begin{DoxyCompactList}\small\item\em Sets the material descriptor set layout. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classbloom_1_1_engine_ab641a25e2842bf6c423117f3c2ca69e7}\label{classbloom_1_1_engine_ab641a25e2842bf6c423117f3c2ca69e7} 
-virtual void {\bfseries On\+Begin} ()
+\Hypertarget{classbloom_1_1_engine_ac7f7d3623bf7c3fbb1be84190fa5bbfb}\label{classbloom_1_1_engine_ac7f7d3623bf7c3fbb1be84190fa5bbfb} 
+void {\bfseries Push\+Layer} (\mbox{\hyperlink{classbloom_1_1_layer}{Layer}} \texorpdfstring{$\ast$}{*}layer)
+\item 
+\Hypertarget{classbloom_1_1_engine_a378c23d22dad9a5538083126ed0818c6}\label{classbloom_1_1_engine_a378c23d22dad9a5538083126ed0818c6} 
+void {\bfseries Push\+Overlay} (\mbox{\hyperlink{classbloom_1_1_layer}{Layer}} \texorpdfstring{$\ast$}{*}overlay)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
@@ -57,18 +71,118 @@ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1render_1_1_devices}{ren
 \Hypertarget{classbloom_1_1_engine_a2cba17e0da5ccea5d481664aac9357e1}\label{classbloom_1_1_engine_a2cba17e0da5ccea5d481664aac9357e1} 
 std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1render_1_1_renderer}{render\+::\+Renderer}} $>$ {\bfseries m\+\_\+renderer} = nullptr
 \item 
-\Hypertarget{classbloom_1_1_engine_a1e1f9560eea6c443b54afcf6fe49d913}\label{classbloom_1_1_engine_a1e1f9560eea6c443b54afcf6fe49d913} 
-\mbox{\hyperlink{classbloom_1_1_simple_render_system}{Simple\+Render\+System}} \texorpdfstring{$\ast$}{*} {\bfseries m\+\_\+simple\+Render\+System} = nullptr
-\item 
 \Hypertarget{classbloom_1_1_engine_a6652663ab06bfa57afb408ebceed42a8}\label{classbloom_1_1_engine_a6652663ab06bfa57afb408ebceed42a8} 
-std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1_camera}{Camera}} $>$ {\bfseries m\+\_\+active\+Camera}
-\item 
-\Hypertarget{classbloom_1_1_engine_a128425c9b6152891450060d898e0c6e0}\label{classbloom_1_1_engine_a128425c9b6152891450060d898e0c6e0} 
-std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_set_layout}{render\+::\+Descriptor\+Set\+Layout}} $>$ {\bfseries m\+\_\+material\+Set\+Layout}
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1_camera}{Camera}} $>$ {\bfseries m\+\_\+active\+Camera} = nullptr
 \item 
 \Hypertarget{classbloom_1_1_engine_af37376d08f33c7ed0e1133ff69df4567}\label{classbloom_1_1_engine_af37376d08f33c7ed0e1133ff69df4567} 
-float {\bfseries m\+\_\+delta\+Time}
+float {\bfseries m\+\_\+delta\+Time} = 0.\+016f
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main class for the bloom engine. 
+
+The \doxylink{classbloom_1_1_engine}{Engine} class manages the main game loop, rendering, and event handling. It initializes and manages various subsystems such as the window, renderer, and input handling. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classbloom_1_1_engine_abe3d70c9d705bc71974323c178dab032}\index{bloom::Engine@{bloom::Engine}!GetDescriptorLayouts@{GetDescriptorLayouts}}
+\index{GetDescriptorLayouts@{GetDescriptorLayouts}!bloom::Engine@{bloom::Engine}}
+\doxysubsubsection{\texorpdfstring{GetDescriptorLayouts()}{GetDescriptorLayouts()}}
+{\footnotesize\ttfamily \label{classbloom_1_1_engine_abe3d70c9d705bc71974323c178dab032} 
+static \mbox{\hyperlink{structbloom_1_1render_1_1_descriptor_layouts}{render\+::\+Descriptor\+Layouts}} bloom\+::\+Engine\+::\+Get\+Descriptor\+Layouts (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Gets the Descriptor\+Layouts struct. 
+
+\begin{DoxyReturn}{Returns}
+The Descriptor\+Layouts struct 
+\end{DoxyReturn}
+\Hypertarget{classbloom_1_1_engine_aabae09bc72008aab7dad4a42ef714cf4}\index{bloom::Engine@{bloom::Engine}!Init@{Init}}
+\index{Init@{Init}!bloom::Engine@{bloom::Engine}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily \label{classbloom_1_1_engine_aabae09bc72008aab7dad4a42ef714cf4} 
+void bloom\+::\+Engine\+::\+Init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Handles the initialization of the engine. 
+
+\begin{DoxyNote}{Note}
+Do not access this in other classes 
+\end{DoxyNote}
+\Hypertarget{classbloom_1_1_engine_ab2a15af9ead50c72c9953c5233cda115}\index{bloom::Engine@{bloom::Engine}!OnBegin@{OnBegin}}
+\index{OnBegin@{OnBegin}!bloom::Engine@{bloom::Engine}}
+\doxysubsubsection{\texorpdfstring{OnBegin()}{OnBegin()}}
+{\footnotesize\ttfamily \label{classbloom_1_1_engine_ab2a15af9ead50c72c9953c5233cda115} 
+virtual void bloom\+::\+Engine\+::\+On\+Begin (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Called before starting game loop. 
+
+
+
+Reimplemented in \mbox{\hyperlink{classwanderer_1_1_wanderer_adff28e303080ba7cb51fa8981d110fc5}{wanderer\+::\+Wanderer}}.
+
+\Hypertarget{classbloom_1_1_engine_a036ac1451ce02a56b34e7039c51cf8c5}\index{bloom::Engine@{bloom::Engine}!OnClose@{OnClose}}
+\index{OnClose@{OnClose}!bloom::Engine@{bloom::Engine}}
+\doxysubsubsection{\texorpdfstring{OnClose()}{OnClose()}}
+{\footnotesize\ttfamily \label{classbloom_1_1_engine_a036ac1451ce02a56b34e7039c51cf8c5} 
+void bloom\+::\+Engine\+::\+On\+Close (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Called before ending the game loop. 
+
+
+
+Reimplemented in \mbox{\hyperlink{classwanderer_1_1_wanderer_a5c8cf3c3facf15636db400a0756af372}{wanderer\+::\+Wanderer}}.
+
+\Hypertarget{classbloom_1_1_engine_a5f447cd38d38a127592dbc26d4193b13}\index{bloom::Engine@{bloom::Engine}!OnTick@{OnTick}}
+\index{OnTick@{OnTick}!bloom::Engine@{bloom::Engine}}
+\doxysubsubsection{\texorpdfstring{OnTick()}{OnTick()}}
+{\footnotesize\ttfamily \label{classbloom_1_1_engine_a5f447cd38d38a127592dbc26d4193b13} 
+void bloom\+::\+Engine\+::\+On\+Tick (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Called every frame. 
+
+
+
+Reimplemented in \mbox{\hyperlink{classwanderer_1_1_wanderer_a76a4f56cc7c32789d5d13e1cd17f2efe}{wanderer\+::\+Wanderer}}.
+
+\Hypertarget{classbloom_1_1_engine_a816b16349da5bcac4df11e0a8fb9c256}\index{bloom::Engine@{bloom::Engine}!SetMaterialLayout@{SetMaterialLayout}}
+\index{SetMaterialLayout@{SetMaterialLayout}!bloom::Engine@{bloom::Engine}}
+\doxysubsubsection{\texorpdfstring{SetMaterialLayout()}{SetMaterialLayout()}}
+{\footnotesize\ttfamily \label{classbloom_1_1_engine_a816b16349da5bcac4df11e0a8fb9c256} 
+static void bloom\+::\+Engine\+::\+Set\+Material\+Layout (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_set_layout}{render\+::\+Descriptor\+Set\+Layout}} \texorpdfstring{$\ast$}{*}}]{layout}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Sets the material descriptor set layout. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em layout} & The descriptor set layout \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classbloom_1_1_engine_a960b4402be47ab7336696e4bdb9486ce}\index{bloom::Engine@{bloom::Engine}!SetUBOLayout@{SetUBOLayout}}
+\index{SetUBOLayout@{SetUBOLayout}!bloom::Engine@{bloom::Engine}}
+\doxysubsubsection{\texorpdfstring{SetUBOLayout()}{SetUBOLayout()}}
+{\footnotesize\ttfamily \label{classbloom_1_1_engine_a960b4402be47ab7336696e4bdb9486ce} 
+static void bloom\+::\+Engine\+::\+Set\+UBOLayout (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbloom_1_1render_1_1_descriptor_set_layout}{render\+::\+Descriptor\+Set\+Layout}} \texorpdfstring{$\ast$}{*}}]{layout}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Sets the global descriptor set layout. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em layout} & The descriptor set layout \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

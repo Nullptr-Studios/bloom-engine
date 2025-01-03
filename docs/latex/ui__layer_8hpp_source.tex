@@ -1,0 +1,45 @@
+\doxysection{ui\+\_\+layer.\+hpp}
+\hypertarget{ui__layer_8hpp_source}{}\label{ui__layer_8hpp_source}\index{C:/Users/xgoni/bloom/bloom/src/layers/ui\_layer.hpp@{C:/Users/xgoni/bloom/bloom/src/layers/ui\_layer.hpp}}
+\mbox{\hyperlink{ui__layer_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{layer_8hpp}{layer.hpp}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{game__event_8hpp}{src/events/game\_event.hpp}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{key__event_8hpp}{src/events/key\_event.hpp}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mouse__event_8hpp}{src/events/mouse\_event.hpp}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{descriptors_8hpp}{src/render/descriptors.hpp}}"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{namespace\ }bloom::ui\ \{}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }BLOOM\_API\ \mbox{\hyperlink{classbloom_1_1ui_1_1_u_i_layer}{UILayer}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classbloom_1_1_layer}{Layer}}\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classbloom_1_1ui_1_1_u_i_layer}{UILayer}}(\textcolor{keyword}{const}\ std::string\&\ name\ =\ \textcolor{stringliteral}{"{}UI"{}})\ :\ \mbox{\hyperlink{classbloom_1_1_layer}{Layer}}(name)\ \{\}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \textcolor{comment}{//\ Game\ loop}}
+\DoxyCodeLine{00023\ \ \ \textcolor{keywordtype}{void}\ OnAttach()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00024\ \ \ \textcolor{keywordtype}{void}\ OnBegin()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00025\ \ \ \textcolor{keywordtype}{void}\ OnTick(\textcolor{keywordtype}{float}\ deltaTime)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00026\ \ \ \textcolor{keywordtype}{void}\ OnRender(\mbox{\hyperlink{structbloom_1_1render_1_1_frame_info}{render::FrameInfo}}\ frameInfo)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00027\ \ \ \textcolor{keywordtype}{void}\ OnDetach()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00028\ \ \ \textcolor{keywordtype}{void}\ OnEvent(\mbox{\hyperlink{classbloom_1_1_event}{Event}}\&\ e)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00031\ \ \ \textcolor{keywordtype}{bool}\ OnMouseButtonPressed(\mbox{\hyperlink{classbloom_1_1_mouse_button_pressed_event}{MouseButtonPressedEvent}}\&\ e);}
+\DoxyCodeLine{00032\ \ \ \textcolor{keywordtype}{bool}\ OnMouseButtonReleased(\mbox{\hyperlink{classbloom_1_1_mouse_button_released_event}{MouseButtonReleasedEvent}}\&\ e);}
+\DoxyCodeLine{00033\ \ \ \textcolor{keywordtype}{bool}\ OnMouseMoved(\mbox{\hyperlink{classbloom_1_1_mouse_moved_event}{MouseMovedEvent}}\&\ e);}
+\DoxyCodeLine{00034\ \ \ \textcolor{keywordtype}{bool}\ OnMouseScrolled(\mbox{\hyperlink{classbloom_1_1_mouse_scrolled_event}{MouseScrolledEvent}}\&\ e);}
+\DoxyCodeLine{00035\ \ \ \textcolor{keywordtype}{bool}\ OnKeyPressed(\mbox{\hyperlink{classbloom_1_1_key_pressed_event}{KeyPressedEvent}}\&\ e);}
+\DoxyCodeLine{00036\ \ \ \textcolor{keywordtype}{bool}\ OnKeyReleased(\mbox{\hyperlink{classbloom_1_1_key_released_event}{KeyReleasedEvent}}\&\ e);}
+\DoxyCodeLine{00037\ \ \ \textcolor{keywordtype}{bool}\ OnKeyTyped(\mbox{\hyperlink{classbloom_1_1_key_typed_event}{KeyTypedEvent}}\&\ e);}
+\DoxyCodeLine{00038\ \ \ \textcolor{keywordtype}{bool}\ OnWindowResized(\mbox{\hyperlink{classbloom_1_1_window_resize_event}{WindowResizeEvent}}\&\ e);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00045\ \ \ ImGuiKey\ TranslateToImGui(\textcolor{keywordtype}{int}\ keycode);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_devices}{render::Devices}}*\ m\_device\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00048\ \ \ std::unique\_ptr<render::DescriptorPool>\ m\_imguiPool;}
+\DoxyCodeLine{00049\ \};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \}}
+
+\end{DoxyCode}

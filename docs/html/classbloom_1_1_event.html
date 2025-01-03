@@ -83,7 +83,7 @@ $(function(){ initResizable(false); });
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>bloom</b></li><li class="navelem"><a class="el" href="classbloom_1_1_event.html">Event</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacebloom.html">bloom</a></li><li class="navelem"><a class="el" href="classbloom_1_1_event.html">Event</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div id="doc-content">
@@ -97,7 +97,7 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 
-<p>Abstract base class for all events in the Bloom <a class="el" href="classbloom_1_1_engine.html">Engine</a>.  
+<p>Abstract base class for all events in the Bloom <a class="el" href="classbloom_1_1_engine.html" title="Main class for the bloom engine.">Engine</a>.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="event_8hpp_source.html">event.hpp</a>&gt;</code></p>
@@ -120,7 +120,7 @@ Inheritance diagram for bloom::Event:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:afb0cc62325b1fbd939fafe1096c6c624" id="r_afb0cc62325b1fbd939fafe1096c6c624"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="event_8hpp.html#a62777e271a1f3f6e4a8ba9055c2e4df9">EventType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afb0cc62325b1fbd939fafe1096c6c624">GetEventType</a> () const =0</td></tr>
+<tr class="memitem:afb0cc62325b1fbd939fafe1096c6c624" id="r_afb0cc62325b1fbd939fafe1096c6c624"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespacebloom.html#a62777e271a1f3f6e4a8ba9055c2e4df9">EventType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afb0cc62325b1fbd939fafe1096c6c624">GetEventType</a> () const =0</td></tr>
 <tr class="memdesc:afb0cc62325b1fbd939fafe1096c6c624"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type of the event.  <br /></td></tr>
 <tr class="separator:afb0cc62325b1fbd939fafe1096c6c624"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab5bb7f0fc80e71886658e3acb181fd16" id="r_ab5bb7f0fc80e71886658e3acb181fd16"><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab5bb7f0fc80e71886658e3acb181fd16">GetName</a> () const =0</td></tr>
@@ -132,9 +132,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1e826d312aa922abd9401a02ee33ab3d" id="r_a1e826d312aa922abd9401a02ee33ab3d"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e826d312aa922abd9401a02ee33ab3d">ToString</a> () const</td></tr>
 <tr class="memdesc:a1e826d312aa922abd9401a02ee33ab3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the event to a string representation.  <br /></td></tr>
 <tr class="separator:a1e826d312aa922abd9401a02ee33ab3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad407353c8d035d38f9bc21eedd0b8c69" id="r_ad407353c8d035d38f9bc21eedd0b8c69"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad407353c8d035d38f9bc21eedd0b8c69">IsInCategory</a> (const <a class="el" href="event_8hpp.html#a85f0d8c71d473ca68946d8c5bcdab3f5">EventCategory</a> category) const</td></tr>
+<tr class="memitem:ad407353c8d035d38f9bc21eedd0b8c69" id="r_ad407353c8d035d38f9bc21eedd0b8c69"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad407353c8d035d38f9bc21eedd0b8c69">IsInCategory</a> (const <a class="el" href="namespacebloom.html#a85f0d8c71d473ca68946d8c5bcdab3f5">EventCategory</a> category) const</td></tr>
 <tr class="memdesc:ad407353c8d035d38f9bc21eedd0b8c69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the event belongs to a specific category.  <br /></td></tr>
 <tr class="separator:ad407353c8d035d38f9bc21eedd0b8c69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace84b09cd877e4a64e0b9f538476819f" id="r_ace84b09cd877e4a64e0b9f538476819f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ace84b09cd877e4a64e0b9f538476819f">IsHandled</a> () const</td></tr>
+<tr class="memdesc:ace84b09cd877e4a64e0b9f538476819f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the event has been handled.  <br /></td></tr>
+<tr class="separator:ace84b09cd877e4a64e0b9f538476819f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -148,7 +151,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>EventDispatcher</b><
 <tr class="separator:aad5f38ccd490ea17008460423f52325a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Abstract base class for all events in the Bloom <a class="el" href="classbloom_1_1_engine.html">Engine</a>. </p>
+<div class="textblock"><p>Abstract base class for all events in the Bloom <a class="el" href="classbloom_1_1_engine.html" title="Main class for the bloom engine.">Engine</a>. </p>
 <p>The <code><a class="el" href="classbloom_1_1_event.html" title="Abstract base class for all events in the Bloom Engine.">Event</a></code> class serves as the base for all event types. It provides a common interface for retrieving the event type, name, and category flags. Events can also be converted to string representations and checked against specific categories. Derived event classes must override the pure virtual functions to provide specific details for each event type. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="aae34b363173e9c057ac00f6fe78bcf9a" name="aae34b363173e9c057ac00f6fe78bcf9a"></a>
@@ -190,7 +193,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>EventDispatcher</b><
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="event_8hpp.html#a62777e271a1f3f6e4a8ba9055c2e4df9">EventType</a> bloom::Event::GetEventType </td>
+          <td class="memname">virtual <a class="el" href="namespacebloom.html#a62777e271a1f3f6e4a8ba9055c2e4df9">EventType</a> bloom::Event::GetEventType </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -239,6 +242,35 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>EventDispatcher</b><
 
 </div>
 </div>
+<a id="ace84b09cd877e4a64e0b9f538476819f" name="ace84b09cd877e4a64e0b9f538476819f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace84b09cd877e4a64e0b9f538476819f">&#9670;&#160;</a></span>IsHandled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool bloom::Event::IsHandled </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Indicates whether the event has been handled. </p>
+<p>This function returns a boolean value indicating whether the event has been handled. If the event has been handled, it should not be processed further.</p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the event has been handled; otherwise, <code>false</code>. </dd></dl>
+
+</div>
+</div>
 <a id="ad407353c8d035d38f9bc21eedd0b8c69" name="ad407353c8d035d38f9bc21eedd0b8c69"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad407353c8d035d38f9bc21eedd0b8c69">&#9670;&#160;</a></span>IsInCategory()</h2>
 
@@ -251,7 +283,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>EventDispatcher</b><
         <tr>
           <td class="memname">bool bloom::Event::IsInCategory </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="event_8hpp.html#a85f0d8c71d473ca68946d8c5bcdab3f5">EventCategory</a></td>          <td class="paramname"><span class="paramname"><em>category</em></span></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="namespacebloom.html#a85f0d8c71d473ca68946d8c5bcdab3f5">EventCategory</a></td>          <td class="paramname"><span class="paramname"><em>category</em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -302,7 +334,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>EventDispatcher</b><
 <dl class="section return"><dt>Returns</dt><dd>A <div class="fragment"><div class="line">std::string </div>
 </div><!-- fragment --> containing the string representation of the event. </dd></dl>
 
-<p>Reimplemented in <a class="el" href="classbloom_1_1_key_pressed_event.html#afc9dca82c85f300cca5f94f09e632448">bloom::KeyPressedEvent</a>, <a class="el" href="classbloom_1_1_key_released_event.html#a220adca8205466c1677d898e21763d90">bloom::KeyReleasedEvent</a>, <a class="el" href="classbloom_1_1_mouse_button_pressed_event.html#a127ef183371b8fef1b35977e5d2b5505">bloom::MouseButtonPressedEvent</a>, <a class="el" href="classbloom_1_1_mouse_button_released_event.html#a694f5d138b6082a7c47ab4315cde5ed5">bloom::MouseButtonReleasedEvent</a>, <a class="el" href="classbloom_1_1_mouse_moved_event.html#a66e03c370f8df2b5d8889926ed68b6d9">bloom::MouseMovedEvent</a>, <a class="el" href="classbloom_1_1_mouse_scrolled_event.html#ae373067be63601a16d7b7749059ff8df">bloom::MouseScrolledEvent</a>, and <a class="el" href="classbloom_1_1_window_resize_event.html#a8be8cba1d6436bd544894ba38426f556">bloom::WindowResizeEvent</a>.</p>
+<p>Reimplemented in <a class="el" href="classbloom_1_1_key_pressed_event.html#afc9dca82c85f300cca5f94f09e632448">bloom::KeyPressedEvent</a>, <a class="el" href="classbloom_1_1_key_released_event.html#a220adca8205466c1677d898e21763d90">bloom::KeyReleasedEvent</a>, <a class="el" href="classbloom_1_1_key_typed_event.html#a8c30f8628823dbc14fcc45ee3b4b9556">bloom::KeyTypedEvent</a>, <a class="el" href="classbloom_1_1_mouse_button_pressed_event.html#a127ef183371b8fef1b35977e5d2b5505">bloom::MouseButtonPressedEvent</a>, <a class="el" href="classbloom_1_1_mouse_button_released_event.html#a694f5d138b6082a7c47ab4315cde5ed5">bloom::MouseButtonReleasedEvent</a>, <a class="el" href="classbloom_1_1_mouse_moved_event.html#a66e03c370f8df2b5d8889926ed68b6d9">bloom::MouseMovedEvent</a>, <a class="el" href="classbloom_1_1_mouse_scrolled_event.html#ae373067be63601a16d7b7749059ff8df">bloom::MouseScrolledEvent</a>, and <a class="el" href="classbloom_1_1_window_resize_event.html#a8be8cba1d6436bd544894ba38426f556">bloom::WindowResizeEvent</a>.</p>
 
 </div>
 </div>

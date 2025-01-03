@@ -5,9 +5,10 @@
 This file defines the base Object class and the Transform struct.  
 
 
-{\ttfamily \#include "{}src/render/devices.\+hpp"{}}\newline
 {\ttfamily \#include $<$bloom\+\_\+header.\+hpp$>$}\newline
 {\ttfamily \#include $<$glm/gtx/euler\+\_\+angles.\+hpp$>$}\newline
+{\ttfamily \#include $<$imgui.\+h$>$}\newline
+{\ttfamily \#include "{}src/render/devices.\+hpp"{}}\newline
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
@@ -15,11 +16,16 @@ struct \mbox{\hyperlink{structbloom_1_1_transform}{bloom\+::\+Transform}}
 \begin{DoxyCompactList}\small\item\em Represents the position, rotation, and scale of an object in 3D space. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classbloom_1_1_object}{bloom\+::\+Object}}
 \begin{DoxyCompactList}\small\item\em Base class for all objects in the game world. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacebloom}{bloom}}
+\begin{DoxyCompactList}\small\item\em Contains the core classes and functions for the bloom engine. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{object_8hpp_ac65b651055bbc2100bc99fb9bd34ac17}\label{object_8hpp_ac65b651055bbc2100bc99fb9bd34ac17} 
-typedef std\+::unordered\+\_\+map$<$ id\+\_\+t, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1_object}{Object}} $>$ $>$ {\bfseries bloom\+::\+Object\+Map}
+\Hypertarget{namespacebloom_ac65b651055bbc2100bc99fb9bd34ac17}\label{namespacebloom_ac65b651055bbc2100bc99fb9bd34ac17} 
+typedef std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{core_8hpp_abaf665e52c9979a5f6eb9ecfce756efc}{id\+\_\+t}}, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classbloom_1_1_object}{Object}} $>$ $>$ {\bfseries bloom\+::\+Object\+Map}
 \begin{DoxyCompactList}\small\item\em A map of object IDs to shared pointers of Objects. Used for managing and accessing objects in the game world. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 

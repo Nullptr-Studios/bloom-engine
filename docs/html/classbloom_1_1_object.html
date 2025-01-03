@@ -83,7 +83,7 @@ $(function(){ initResizable(false); });
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>bloom</b></li><li class="navelem"><a class="el" href="classbloom_1_1_object.html">Object</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacebloom.html">bloom</a></li><li class="navelem"><a class="el" href="classbloom_1_1_object.html">Object</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div id="doc-content">
@@ -91,7 +91,7 @@ $(function(){ initResizable(false); });
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="classbloom_1_1_object-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">bloom::Object Class Reference</div></div>
 </div><!--header-->
@@ -115,9 +115,6 @@ Inheritance diagram for bloom::Object:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae1d557ffa7496298977cfbfdae1d4daf" id="r_ae1d557ffa7496298977cfbfdae1d4daf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae1d557ffa7496298977cfbfdae1d4daf">Object</a> (const id_t id, <a class="el" href="classbloom_1_1render_1_1_devices.html">render::Devices</a> *devices)</td></tr>
-<tr class="memdesc:ae1d557ffa7496298977cfbfdae1d4daf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new <a class="el" href="classbloom_1_1_object.html" title="Base class for all objects in the game world.">Object</a>.  <br /></td></tr>
-<tr class="separator:ae1d557ffa7496298977cfbfdae1d4daf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d2aef5263bdfa726167a7465d5e9ec6" id="r_a5d2aef5263bdfa726167a7465d5e9ec6"><td class="memItemLeft" align="right" valign="top"><a id="a5d2aef5263bdfa726167a7465d5e9ec6" name="a5d2aef5263bdfa726167a7465d5e9ec6"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Object</b> (const <a class="el" href="classbloom_1_1_object.html">Object</a> &amp;)=delete</td></tr>
 <tr class="separator:a5d2aef5263bdfa726167a7465d5e9ec6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -130,18 +127,30 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3bba1530790a31a41e0493794890cc72" id="r_a3bba1530790a31a41e0493794890cc72"><td class="memItemLeft" align="right" valign="top"><a id="a3bba1530790a31a41e0493794890cc72" name="a3bba1530790a31a41e0493794890cc72"></a>
 <a class="el" href="classbloom_1_1_object.html">Object</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="classbloom_1_1_object.html">Object</a> &amp;&amp;)=default</td></tr>
 <tr class="separator:a3bba1530790a31a41e0493794890cc72"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18d5a73479f99ed1fbb47b8b8b11acbc" id="r_a18d5a73479f99ed1fbb47b8b8b11acbc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a18d5a73479f99ed1fbb47b8b8b11acbc">Begin</a> ()</td></tr>
-<tr class="memdesc:a18d5a73479f99ed1fbb47b8b8b11acbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called at the beginning of the scene.  <br /></td></tr>
-<tr class="separator:a18d5a73479f99ed1fbb47b8b8b11acbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a010ab8fafcd25b7260ac0005d9d43091" id="r_a010ab8fafcd25b7260ac0005d9d43091"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a010ab8fafcd25b7260ac0005d9d43091">Tick</a> (float deltaTime)</td></tr>
-<tr class="memdesc:a010ab8fafcd25b7260ac0005d9d43091"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called every frame to update the object's state.  <br /></td></tr>
-<tr class="separator:a010ab8fafcd25b7260ac0005d9d43091"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a7cc6230ab4a3ee158126469cf04352" id="r_a7a7cc6230ab4a3ee158126469cf04352"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7a7cc6230ab4a3ee158126469cf04352">End</a> ()</td></tr>
-<tr class="memdesc:a7a7cc6230ab4a3ee158126469cf04352"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called at the end of the scene.  <br /></td></tr>
-<tr class="separator:a7a7cc6230ab4a3ee158126469cf04352"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab83ebdaed718b62ace71bd6877eeca8a" id="r_ab83ebdaed718b62ace71bd6877eeca8a"><td class="memItemLeft" align="right" valign="top">id_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab83ebdaed718b62ace71bd6877eeca8a">GetID</a> () const</td></tr>
+<tr class="memitem:ad983db52ab1348200a8708d5caa0f884" id="r_ad983db52ab1348200a8708d5caa0f884"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad983db52ab1348200a8708d5caa0f884">OnBegin</a> ()</td></tr>
+<tr class="memdesc:ad983db52ab1348200a8708d5caa0f884"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called at the beginning of the scene.  <br /></td></tr>
+<tr class="separator:ad983db52ab1348200a8708d5caa0f884"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6c21b3f5ba2014560a499d71820b23b" id="r_ab6c21b3f5ba2014560a499d71820b23b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab6c21b3f5ba2014560a499d71820b23b">OnTick</a> (float deltaTime)</td></tr>
+<tr class="memdesc:ab6c21b3f5ba2014560a499d71820b23b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called every frame to update the object's state.  <br /></td></tr>
+<tr class="separator:ab6c21b3f5ba2014560a499d71820b23b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a659545be34faab060113df793d069071" id="r_a659545be34faab060113df793d069071"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a659545be34faab060113df793d069071">OnClose</a> ()</td></tr>
+<tr class="memdesc:a659545be34faab060113df793d069071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called at the end of the scene.  <br /></td></tr>
+<tr class="separator:a659545be34faab060113df793d069071"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22f8f39d529a0bdb7b3091513e43afde" id="r_a22f8f39d529a0bdb7b3091513e43afde"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a22f8f39d529a0bdb7b3091513e43afde">OnEvent</a> (<a class="el" href="classbloom_1_1_event.html">Event</a> &amp;e)</td></tr>
+<tr class="memdesc:a22f8f39d529a0bdb7b3091513e43afde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when an event is received.  <br /></td></tr>
+<tr class="separator:a22f8f39d529a0bdb7b3091513e43afde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05cd737c50e85c9a05ac2a6284534c82" id="r_a05cd737c50e85c9a05ac2a6284534c82"><td class="memItemLeft" align="right" valign="top"><a id="a05cd737c50e85c9a05ac2a6284534c82" name="a05cd737c50e85c9a05ac2a6284534c82"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>PropertiesPanel</b> ()</td></tr>
+<tr class="separator:a05cd737c50e85c9a05ac2a6284534c82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab83ebdaed718b62ace71bd6877eeca8a" id="r_ab83ebdaed718b62ace71bd6877eeca8a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8hpp.html#abaf665e52c9979a5f6eb9ecfce756efc">id_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab83ebdaed718b62ace71bd6877eeca8a">GetID</a> () const</td></tr>
 <tr class="memdesc:ab83ebdaed718b62ace71bd6877eeca8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the object's unique ID.  <br /></td></tr>
 <tr class="separator:ab83ebdaed718b62ace71bd6877eeca8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3727fd5bab7f16866b1f5bf90d92330f" id="r_a3727fd5bab7f16866b1f5bf90d92330f"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3727fd5bab7f16866b1f5bf90d92330f">GetName</a> () const</td></tr>
+<tr class="memdesc:a3727fd5bab7f16866b1f5bf90d92330f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the object's name.  <br /></td></tr>
+<tr class="separator:a3727fd5bab7f16866b1f5bf90d92330f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad024fee23e84df72b3a028dd19bfba9" id="r_aad024fee23e84df72b3a028dd19bfba9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad024fee23e84df72b3a028dd19bfba9">SetName</a> (const std::string &amp;name)</td></tr>
+<tr class="memdesc:aad024fee23e84df72b3a028dd19bfba9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the object's name.  <br /></td></tr>
+<tr class="separator:aad024fee23e84df72b3a028dd19bfba9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -150,19 +159,18 @@ Public Attributes</h2></td></tr>
 <tr class="memdesc:a10805aae05e9965d0232e319cc43d9eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">The object's transform, representing its position, rotation, and scale. <br /></td></tr>
 <tr class="separator:a10805aae05e9965d0232e319cc43d9eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
-<tr class="memitem:ae999a5538f3bdac566d964013dde8b7d" id="r_ae999a5538f3bdac566d964013dde8b7d"><td class="memItemLeft" align="right" valign="top"><a id="ae999a5538f3bdac566d964013dde8b7d" name="ae999a5538f3bdac566d964013dde8b7d"></a>
-<a class="el" href="classbloom_1_1render_1_1_devices.html">render::Devices</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>m_devices</b> = nullptr</td></tr>
-<tr class="memdesc:ae999a5538f3bdac566d964013dde8b7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the Vulkan device management object. <br /></td></tr>
-<tr class="separator:ae999a5538f3bdac566d964013dde8b7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a2d5d96df2b3a38ca832fafb1831ba60a" id="r_a2d5d96df2b3a38ca832fafb1831ba60a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2d5d96df2b3a38ca832fafb1831ba60a">Object</a> (const <a class="el" href="core_8hpp.html#abaf665e52c9979a5f6eb9ecfce756efc">id_t</a> id)</td></tr>
+<tr class="memdesc:a2d5d96df2b3a38ca832fafb1831ba60a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new <a class="el" href="classbloom_1_1_object.html" title="Base class for all objects in the game world.">Object</a>.  <br /></td></tr>
+<tr class="separator:a2d5d96df2b3a38ca832fafb1831ba60a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Base class for all objects in the game world. </p>
 <p>The <a class="el" href="classbloom_1_1_object.html" title="Base class for all objects in the game world.">Object</a> class provides a common interface and basic functionality for all objects in the game. It manages the object's ID and provides virtual methods for the game loop stages: <code>Begin</code>, <code>Tick</code>, and <code>End</code>. Derived classes can override these methods to implement their specific behavior. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ae1d557ffa7496298977cfbfdae1d4daf" name="ae1d557ffa7496298977cfbfdae1d4daf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae1d557ffa7496298977cfbfdae1d4daf">&#9670;&#160;</a></span>Object()</h2>
+<a id="a2d5d96df2b3a38ca832fafb1831ba60a" name="a2d5d96df2b3a38ca832fafb1831ba60a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d5d96df2b3a38ca832fafb1831ba60a">&#9670;&#160;</a></span>Object()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -173,17 +181,13 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="memname">bloom::Object::Object </td>
           <td>(</td>
-          <td class="paramtype">const id_t</td>          <td class="paramname"><span class="paramname"><em>id</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype">const <a class="el" href="core_8hpp.html#abaf665e52c9979a5f6eb9ecfce756efc">id_t</a></td>          <td class="paramname"><span class="paramname"><em>id</em></span></td><td>)</td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classbloom_1_1render_1_1_devices.html">render::Devices</a> *</td>          <td class="paramname"><span class="paramname"><em>devices</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -192,7 +196,6 @@ Protected Attributes</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">id</td><td>The unique identifier for this object. </td></tr>
-    <tr><td class="paramname">devices</td><td>A pointer to the Vulkan device management object. </td></tr>
   </table>
   </dd>
 </dl>
@@ -200,64 +203,6 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a18d5a73479f99ed1fbb47b8b8b11acbc" name="a18d5a73479f99ed1fbb47b8b8b11acbc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a18d5a73479f99ed1fbb47b8b8b11acbc">&#9670;&#160;</a></span>Begin()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void bloom::Object::Begin </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Called at the beginning of the scene. </p>
-
-<p>Reimplemented in <a class="el" href="classbloom_1_1_actor.html#abb09ecd4a3722ba2dbf298ce115514ec">bloom::Actor</a>, and <a class="el" href="classbloom_1_1_camera.html#a2d8223c7b3e813dd4730cdfb65c09ad5">bloom::Camera</a>.</p>
-
-</div>
-</div>
-<a id="a7a7cc6230ab4a3ee158126469cf04352" name="a7a7cc6230ab4a3ee158126469cf04352"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7a7cc6230ab4a3ee158126469cf04352">&#9670;&#160;</a></span>End()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void bloom::Object::End </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Called at the end of the scene. </p>
-
-<p>Reimplemented in <a class="el" href="classbloom_1_1_actor.html#a2f6ebc7bb27c7ac2c72895fc4f5558bd">bloom::Actor</a>, and <a class="el" href="classbloom_1_1_camera.html#adc3b77f1fdc18380c9f4dbb564903f74">bloom::Camera</a>.</p>
-
-</div>
-</div>
 <a id="ab83ebdaed718b62ace71bd6877eeca8a" name="ab83ebdaed718b62ace71bd6877eeca8a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab83ebdaed718b62ace71bd6877eeca8a">&#9670;&#160;</a></span>GetID()</h2>
 
@@ -268,7 +213,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">id_t bloom::Object::GetID </td>
+          <td class="memname"><a class="el" href="core_8hpp.html#abaf665e52c9979a5f6eb9ecfce756efc">id_t</a> bloom::Object::GetID </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -286,8 +231,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a010ab8fafcd25b7260ac0005d9d43091" name="a010ab8fafcd25b7260ac0005d9d43091"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a010ab8fafcd25b7260ac0005d9d43091">&#9670;&#160;</a></span>Tick()</h2>
+<a id="a3727fd5bab7f16866b1f5bf90d92330f" name="a3727fd5bab7f16866b1f5bf90d92330f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3727fd5bab7f16866b1f5bf90d92330f">&#9670;&#160;</a></span>GetName()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -296,7 +241,128 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void bloom::Object::Tick </td>
+          <td class="memname">std::string bloom::Object::GetName </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieves the object's name. </p>
+<dl class="section return"><dt>Returns</dt><dd>The object's name. </dd></dl>
+
+</div>
+</div>
+<a id="ad983db52ab1348200a8708d5caa0f884" name="ad983db52ab1348200a8708d5caa0f884"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad983db52ab1348200a8708d5caa0f884">&#9670;&#160;</a></span>OnBegin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void bloom::Object::OnBegin </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Called at the beginning of the scene. </p>
+
+<p>Reimplemented in <a class="el" href="classbloom_1_1_camera.html#a4edcf10ceaedccad2b778ef7c5617902">bloom::Camera</a>, and <a class="el" href="classwanderer_1_1_editor_camera.html#aa46d543424aa7d0214c8e1ab7c92bd28">wanderer::EditorCamera</a>.</p>
+
+</div>
+</div>
+<a id="a659545be34faab060113df793d069071" name="a659545be34faab060113df793d069071"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a659545be34faab060113df793d069071">&#9670;&#160;</a></span>OnClose()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void bloom::Object::OnClose </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Called at the end of the scene. </p>
+
+<p>Reimplemented in <a class="el" href="classbloom_1_1_camera.html#a9fb663c023116859ec684a92ed4ae356">bloom::Camera</a>.</p>
+
+</div>
+</div>
+<a id="a22f8f39d529a0bdb7b3091513e43afde" name="a22f8f39d529a0bdb7b3091513e43afde"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22f8f39d529a0bdb7b3091513e43afde">&#9670;&#160;</a></span>OnEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void bloom::Object::OnEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classbloom_1_1_event.html">Event</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>e</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Called when an event is received. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">e</td><td>The event to handle. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented in <a class="el" href="classwanderer_1_1_editor_camera.html#a52c6b3da873fb3b94eae8f23a1baf64b">wanderer::EditorCamera</a>.</p>
+
+</div>
+</div>
+<a id="ab6c21b3f5ba2014560a499d71820b23b" name="ab6c21b3f5ba2014560a499d71820b23b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6c21b3f5ba2014560a499d71820b23b">&#9670;&#160;</a></span>OnTick()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void bloom::Object::OnTick </td>
           <td>(</td>
           <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>deltaTime</em></span></td><td>)</td>
           <td></td>
@@ -317,7 +383,40 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="classbloom_1_1_actor.html#a68a9c1ea7cbe1ce76783d334ce377e01">bloom::Actor</a>, <a class="el" href="classbloom_1_1_camera.html#a3bdd365fbd68115e04871bbecba7b7e6">bloom::Camera</a>, and <a class="el" href="classwanderer_1_1_editor_camera.html#a24a2839b7ce2cc98000a94f7bcd41b5f">wanderer::EditorCamera</a>.</p>
+<p>Reimplemented in <a class="el" href="classbloom_1_1_camera.html#ae88be94208c3ad0506c17de3378a9984">bloom::Camera</a>, and <a class="el" href="classwanderer_1_1_editor_camera.html#a968d3e1aede5413abeb562b77d16b7aa">wanderer::EditorCamera</a>.</p>
+
+</div>
+</div>
+<a id="aad024fee23e84df72b3a028dd19bfba9" name="aad024fee23e84df72b3a028dd19bfba9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad024fee23e84df72b3a028dd19bfba9">&#9670;&#160;</a></span>SetName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bloom::Object::SetName </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the object's name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>The new name for the object. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

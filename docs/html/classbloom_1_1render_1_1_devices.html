@@ -83,18 +83,24 @@ $(function(){ initResizable(false); });
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>bloom</b></li><li class="navelem"><b>render</b></li><li class="navelem"><a class="el" href="classbloom_1_1render_1_1_devices.html">Devices</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacebloom.html">bloom</a></li><li class="navelem"><a class="el" href="namespacebloom_1_1render.html">render</a></li><li class="navelem"><a class="el" href="classbloom_1_1render_1_1_devices.html">Devices</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div id="doc-content">
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="classbloom_1_1render_1_1_devices-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">bloom::render::Devices Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Manages Vulkan devices and related resources.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="devices_8hpp_source.html">devices.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -113,51 +119,63 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa8fa43f313aa2fd7790854d771a02233" id="r_aa8fa43f313aa2fd7790854d771a02233"><td class="memItemLeft" align="right" valign="top"><a id="aa8fa43f313aa2fd7790854d771a02233" name="aa8fa43f313aa2fd7790854d771a02233"></a>
 <a class="el" href="classbloom_1_1render_1_1_devices.html">Devices</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="classbloom_1_1render_1_1_devices.html">Devices</a> &amp;&amp;)=delete</td></tr>
 <tr class="separator:aa8fa43f313aa2fd7790854d771a02233"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4aba06e179cb539b59a144e024357fcd" id="r_a4aba06e179cb539b59a144e024357fcd"><td class="memItemLeft" align="right" valign="top"><a id="a4aba06e179cb539b59a144e024357fcd" name="a4aba06e179cb539b59a144e024357fcd"></a>
-VkCommandPool&#160;</td><td class="memItemRight" valign="bottom"><b>getCommandPool</b> ()</td></tr>
-<tr class="separator:a4aba06e179cb539b59a144e024357fcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a919c8667de135c316a8af7be233a168b" id="r_a919c8667de135c316a8af7be233a168b"><td class="memItemLeft" align="right" valign="top"><a id="a919c8667de135c316a8af7be233a168b" name="a919c8667de135c316a8af7be233a168b"></a>
-VkDevice&#160;</td><td class="memItemRight" valign="bottom"><b>device</b> ()</td></tr>
-<tr class="separator:a919c8667de135c316a8af7be233a168b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8e259681a8197ad08cf6199e97ee804" id="r_aa8e259681a8197ad08cf6199e97ee804"><td class="memItemLeft" align="right" valign="top"><a id="aa8e259681a8197ad08cf6199e97ee804" name="aa8e259681a8197ad08cf6199e97ee804"></a>
-VkSurfaceKHR&#160;</td><td class="memItemRight" valign="bottom"><b>surface</b> ()</td></tr>
-<tr class="separator:aa8e259681a8197ad08cf6199e97ee804"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a56b73d25e5b161a4314a3e1657cc1c" id="r_a7a56b73d25e5b161a4314a3e1657cc1c"><td class="memItemLeft" align="right" valign="top"><a id="a7a56b73d25e5b161a4314a3e1657cc1c" name="a7a56b73d25e5b161a4314a3e1657cc1c"></a>
-VkQueue&#160;</td><td class="memItemRight" valign="bottom"><b>graphicsQueue</b> ()</td></tr>
-<tr class="separator:a7a56b73d25e5b161a4314a3e1657cc1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd47331fe9a94abfedec083f501fe73e" id="r_afd47331fe9a94abfedec083f501fe73e"><td class="memItemLeft" align="right" valign="top"><a id="afd47331fe9a94abfedec083f501fe73e" name="afd47331fe9a94abfedec083f501fe73e"></a>
-VkQueue&#160;</td><td class="memItemRight" valign="bottom"><b>presentQueue</b> ()</td></tr>
-<tr class="separator:afd47331fe9a94abfedec083f501fe73e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d187fa8196704810fbce6bb5a13d78d" id="r_a9d187fa8196704810fbce6bb5a13d78d"><td class="memItemLeft" align="right" valign="top"><a id="a9d187fa8196704810fbce6bb5a13d78d" name="a9d187fa8196704810fbce6bb5a13d78d"></a>
-<a class="el" href="structbloom_1_1render_1_1_swap_chain_support_details.html">SwapChainSupportDetails</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getSwapChainSupport</b> ()</td></tr>
-<tr class="separator:a9d187fa8196704810fbce6bb5a13d78d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a49debed98bee5ba6c8b0b5d3b0b94cc5" id="r_a49debed98bee5ba6c8b0b5d3b0b94cc5"><td class="memItemLeft" align="right" valign="top"><a id="a49debed98bee5ba6c8b0b5d3b0b94cc5" name="a49debed98bee5ba6c8b0b5d3b0b94cc5"></a>
-uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>findMemoryType</b> (uint32_t typeFilter, VkMemoryPropertyFlags properties)</td></tr>
-<tr class="separator:a49debed98bee5ba6c8b0b5d3b0b94cc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe7c9f34a2489ce7377ad259c75a638f" id="r_abe7c9f34a2489ce7377ad259c75a638f"><td class="memItemLeft" align="right" valign="top"><a id="abe7c9f34a2489ce7377ad259c75a638f" name="abe7c9f34a2489ce7377ad259c75a638f"></a>
-<a class="el" href="structbloom_1_1render_1_1_queue_family_indices.html">QueueFamilyIndices</a>&#160;</td><td class="memItemRight" valign="bottom"><b>findPhysicalQueueFamilies</b> ()</td></tr>
-<tr class="separator:abe7c9f34a2489ce7377ad259c75a638f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08ddad4e612bb7f09f45a14e821ea341" id="r_a08ddad4e612bb7f09f45a14e821ea341"><td class="memItemLeft" align="right" valign="top"><a id="a08ddad4e612bb7f09f45a14e821ea341" name="a08ddad4e612bb7f09f45a14e821ea341"></a>
-VkFormat&#160;</td><td class="memItemRight" valign="bottom"><b>findSupportedFormat</b> (const std::vector&lt; VkFormat &gt; &amp;candidates, VkImageTiling tiling, VkFormatFeatureFlags features)</td></tr>
-<tr class="separator:a08ddad4e612bb7f09f45a14e821ea341"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d9417462cebbc48e659099056786a79" id="r_a4d9417462cebbc48e659099056786a79"><td class="memItemLeft" align="right" valign="top"><a id="a4d9417462cebbc48e659099056786a79" name="a4d9417462cebbc48e659099056786a79"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>createBuffer</b> (VkDeviceSize size, VkBufferUsageFlags usage, VkMemoryPropertyFlags properties, VkBuffer &amp;buffer, VkDeviceMemory &amp;bufferMemory)</td></tr>
-<tr class="separator:a4d9417462cebbc48e659099056786a79"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaad5b3f1ed3018736182a8eaff2a5718" id="r_aaad5b3f1ed3018736182a8eaff2a5718"><td class="memItemLeft" align="right" valign="top"><a id="aaad5b3f1ed3018736182a8eaff2a5718" name="aaad5b3f1ed3018736182a8eaff2a5718"></a>
-VkCommandBuffer&#160;</td><td class="memItemRight" valign="bottom"><b>beginSingleTimeCommands</b> ()</td></tr>
-<tr class="separator:aaad5b3f1ed3018736182a8eaff2a5718"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed7864948282268cc58beaa07a7a85d9" id="r_aed7864948282268cc58beaa07a7a85d9"><td class="memItemLeft" align="right" valign="top"><a id="aed7864948282268cc58beaa07a7a85d9" name="aed7864948282268cc58beaa07a7a85d9"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>endSingleTimeCommands</b> (VkCommandBuffer commandBuffer)</td></tr>
-<tr class="separator:aed7864948282268cc58beaa07a7a85d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab28526d95692aaacb2cd6831267fc13c" id="r_ab28526d95692aaacb2cd6831267fc13c"><td class="memItemLeft" align="right" valign="top"><a id="ab28526d95692aaacb2cd6831267fc13c" name="ab28526d95692aaacb2cd6831267fc13c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>copyBuffer</b> (VkBuffer srcBuffer, VkBuffer dstBuffer, VkDeviceSize size)</td></tr>
-<tr class="separator:ab28526d95692aaacb2cd6831267fc13c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1029a7356dc3afe07c215ac11999623b" id="r_a1029a7356dc3afe07c215ac11999623b"><td class="memItemLeft" align="right" valign="top"><a id="a1029a7356dc3afe07c215ac11999623b" name="a1029a7356dc3afe07c215ac11999623b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>copyBufferToImage</b> (VkBuffer buffer, VkImage image, uint32_t width, uint32_t height, uint32_t layerCount)</td></tr>
-<tr class="separator:a1029a7356dc3afe07c215ac11999623b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43fc532c675f3473449d20fa339d2d70" id="r_a43fc532c675f3473449d20fa339d2d70"><td class="memItemLeft" align="right" valign="top"><a id="a43fc532c675f3473449d20fa339d2d70" name="a43fc532c675f3473449d20fa339d2d70"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>createImageWithInfo</b> (const VkImageCreateInfo &amp;imageInfo, VkMemoryPropertyFlags properties, VkImage &amp;image, VkDeviceMemory &amp;imageMemory)</td></tr>
-<tr class="separator:a43fc532c675f3473449d20fa339d2d70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7f4c23b8ab7cb7d4d83c87387316dc5" id="r_ad7f4c23b8ab7cb7d4d83c87387316dc5"><td class="memItemLeft" align="right" valign="top">VkCommandPool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad7f4c23b8ab7cb7d4d83c87387316dc5">GetCommandPool</a> () const</td></tr>
+<tr class="memdesc:ad7f4c23b8ab7cb7d4d83c87387316dc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the command pool.  <br /></td></tr>
+<tr class="separator:ad7f4c23b8ab7cb7d4d83c87387316dc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a660db584247059c4430857a1405d7196" id="r_a660db584247059c4430857a1405d7196"><td class="memItemLeft" align="right" valign="top">VkDevice&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a660db584247059c4430857a1405d7196">Device</a> () const</td></tr>
+<tr class="memdesc:a660db584247059c4430857a1405d7196"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the logical device.  <br /></td></tr>
+<tr class="separator:a660db584247059c4430857a1405d7196"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c3539ba444cbd55c5ce487aa7acb7e2" id="r_a4c3539ba444cbd55c5ce487aa7acb7e2"><td class="memItemLeft" align="right" valign="top">VkPhysicalDevice&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4c3539ba444cbd55c5ce487aa7acb7e2">PhysicalDevice</a> () const</td></tr>
+<tr class="memdesc:a4c3539ba444cbd55c5ce487aa7acb7e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the physical device.  <br /></td></tr>
+<tr class="separator:a4c3539ba444cbd55c5ce487aa7acb7e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ce5fc1678a1a335d706cd6e4e8506dd" id="r_a0ce5fc1678a1a335d706cd6e4e8506dd"><td class="memItemLeft" align="right" valign="top">VkSurfaceKHR&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ce5fc1678a1a335d706cd6e4e8506dd">Surface</a> () const</td></tr>
+<tr class="memdesc:a0ce5fc1678a1a335d706cd6e4e8506dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the Vulkan surface.  <br /></td></tr>
+<tr class="separator:a0ce5fc1678a1a335d706cd6e4e8506dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1182b834c5fedc318ddcbaca084e6ee9" id="r_a1182b834c5fedc318ddcbaca084e6ee9"><td class="memItemLeft" align="right" valign="top">VkQueue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1182b834c5fedc318ddcbaca084e6ee9">GraphicsQueue</a> () const</td></tr>
+<tr class="memdesc:a1182b834c5fedc318ddcbaca084e6ee9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the graphics queue.  <br /></td></tr>
+<tr class="separator:a1182b834c5fedc318ddcbaca084e6ee9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af09e61e7f14964d04e47b467312483d4" id="r_af09e61e7f14964d04e47b467312483d4"><td class="memItemLeft" align="right" valign="top">VkQueue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af09e61e7f14964d04e47b467312483d4">PresentQueue</a> () const</td></tr>
+<tr class="memdesc:af09e61e7f14964d04e47b467312483d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the present queue.  <br /></td></tr>
+<tr class="separator:af09e61e7f14964d04e47b467312483d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88b46a97b7979913085a6f5064d63bb9" id="r_a88b46a97b7979913085a6f5064d63bb9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structbloom_1_1render_1_1_swap_chain_support_details.html">SwapChainSupportDetails</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a88b46a97b7979913085a6f5064d63bb9">GetSwapChainSupport</a> ()</td></tr>
+<tr class="memdesc:a88b46a97b7979913085a6f5064d63bb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets swap chain support details.  <br /></td></tr>
+<tr class="separator:a88b46a97b7979913085a6f5064d63bb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa889a531062e54842ba58f562c16e8b8" id="r_aa889a531062e54842ba58f562c16e8b8"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa889a531062e54842ba58f562c16e8b8">FindMemoryType</a> (uint32_t typeFilter, VkMemoryPropertyFlags properties)</td></tr>
+<tr class="memdesc:aa889a531062e54842ba58f562c16e8b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds a suitable memory type.  <br /></td></tr>
+<tr class="separator:aa889a531062e54842ba58f562c16e8b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a331cf28ab37c67a55876a36ed3b8ef3c" id="r_a331cf28ab37c67a55876a36ed3b8ef3c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structbloom_1_1render_1_1_queue_family_indices.html">QueueFamilyIndices</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a331cf28ab37c67a55876a36ed3b8ef3c">FindPhysicalQueueFamilies</a> ()</td></tr>
+<tr class="memdesc:a331cf28ab37c67a55876a36ed3b8ef3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds suitable queue families.  <br /></td></tr>
+<tr class="separator:a331cf28ab37c67a55876a36ed3b8ef3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4406f7c8b59dacc8132e5fcfa787d500" id="r_a4406f7c8b59dacc8132e5fcfa787d500"><td class="memItemLeft" align="right" valign="top">VkFormat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4406f7c8b59dacc8132e5fcfa787d500">FindSupportedFormat</a> (const std::vector&lt; VkFormat &gt; &amp;candidates, VkImageTiling tiling, VkFormatFeatureFlags features)</td></tr>
+<tr class="memdesc:a4406f7c8b59dacc8132e5fcfa787d500"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds a supported format.  <br /></td></tr>
+<tr class="separator:a4406f7c8b59dacc8132e5fcfa787d500"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea2cb61078fcf769a8177e48116b7e5b" id="r_aea2cb61078fcf769a8177e48116b7e5b"><td class="memItemLeft" align="right" valign="top">VkInstance&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea2cb61078fcf769a8177e48116b7e5b">GetVkInstance</a> () const</td></tr>
+<tr class="memdesc:aea2cb61078fcf769a8177e48116b7e5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the Vulkan instance.  <br /></td></tr>
+<tr class="separator:aea2cb61078fcf769a8177e48116b7e5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90f7214588c1859fb3f182eb93860e86" id="r_a90f7214588c1859fb3f182eb93860e86"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a90f7214588c1859fb3f182eb93860e86">CreateBuffer</a> (VkDeviceSize size, VkBufferUsageFlags usage, VkMemoryPropertyFlags properties, VkBuffer &amp;buffer, VkDeviceMemory &amp;bufferMemory)</td></tr>
+<tr class="memdesc:a90f7214588c1859fb3f182eb93860e86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a Vulkan buffer.  <br /></td></tr>
+<tr class="separator:a90f7214588c1859fb3f182eb93860e86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae96d2288f297ae6932d7f19d24229332" id="r_ae96d2288f297ae6932d7f19d24229332"><td class="memItemLeft" align="right" valign="top">VkCommandBuffer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae96d2288f297ae6932d7f19d24229332">BeginSingleTimeCommands</a> ()</td></tr>
+<tr class="memdesc:ae96d2288f297ae6932d7f19d24229332"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins single-time commands.  <br /></td></tr>
+<tr class="separator:ae96d2288f297ae6932d7f19d24229332"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7ae8ae456d8901de524ce0c21dba016" id="r_ad7ae8ae456d8901de524ce0c21dba016"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad7ae8ae456d8901de524ce0c21dba016">EndSingleTimeCommands</a> (VkCommandBuffer commandBuffer)</td></tr>
+<tr class="memdesc:ad7ae8ae456d8901de524ce0c21dba016"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ends and submits single-time commands.  <br /></td></tr>
+<tr class="separator:ad7ae8ae456d8901de524ce0c21dba016"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3c0bd167fdb9925755acfd89593221b" id="r_ad3c0bd167fdb9925755acfd89593221b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad3c0bd167fdb9925755acfd89593221b">CopyBuffer</a> (VkBuffer srcBuffer, VkBuffer dstBuffer, VkDeviceSize size)</td></tr>
+<tr class="memdesc:ad3c0bd167fdb9925755acfd89593221b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies data between buffers.  <br /></td></tr>
+<tr class="separator:ad3c0bd167fdb9925755acfd89593221b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a707963ee28ac762129d7fe1c320f05c1" id="r_a707963ee28ac762129d7fe1c320f05c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a707963ee28ac762129d7fe1c320f05c1">CopyBufferToImage</a> (VkBuffer buffer, VkImage image, uint32_t width, uint32_t height, uint32_t layerCount)</td></tr>
+<tr class="memdesc:a707963ee28ac762129d7fe1c320f05c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies data from buffer to image.  <br /></td></tr>
+<tr class="separator:a707963ee28ac762129d7fe1c320f05c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2b6b5c37be76f58a4a012fb4da175be" id="r_ab2b6b5c37be76f58a4a012fb4da175be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab2b6b5c37be76f58a4a012fb4da175be">CreateImageWithInfo</a> (const VkImageCreateInfo &amp;imageInfo, VkMemoryPropertyFlags properties, VkImage &amp;image, VkDeviceMemory &amp;imageMemory)</td></tr>
+<tr class="memdesc:ab2b6b5c37be76f58a4a012fb4da175be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a Vulkan image.  <br /></td></tr>
+<tr class="separator:ab2b6b5c37be76f58a4a012fb4da175be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a0bad1be07ee998e82795b084d74f2dcb" id="r_a0bad1be07ee998e82795b084d74f2dcb"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbloom_1_1render_1_1_devices.html">Devices</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0bad1be07ee998e82795b084d74f2dcb">GetInstance</a> ()</td></tr>
+<tr class="memdesc:a0bad1be07ee998e82795b084d74f2dcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the physical device.  <br /></td></tr>
+<tr class="separator:a0bad1be07ee998e82795b084d74f2dcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -168,6 +186,577 @@ const bool&#160;</td><td class="memItemRight" valign="bottom"><b>enableValidatio
 VkPhysicalDeviceProperties&#160;</td><td class="memItemRight" valign="bottom"><b>properties</b></td></tr>
 <tr class="separator:ae924c6ce72359e0725706de861120030"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Manages Vulkan devices and related resources. </p>
+<p>This class encapsulates the initialization and management of Vulkan devices, instances, surfaces, and other related resources. It provides methods for creating and configuring these resources, as well as helper functions for buffer and image operations. It serves as the central point of interaction with the Vulkan API. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="ae96d2288f297ae6932d7f19d24229332" name="ae96d2288f297ae6932d7f19d24229332"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae96d2288f297ae6932d7f19d24229332">&#9670;&#160;</a></span>BeginSingleTimeCommands()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VkCommandBuffer bloom::render::Devices::BeginSingleTimeCommands </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Begins single-time commands. </p>
+<dl class="section return"><dt>Returns</dt><dd>A command buffer for recording single-time use commands. This is typically used for operations like transferring data between buffers and images. </dd></dl>
+
+</div>
+</div>
+<a id="ad3c0bd167fdb9925755acfd89593221b" name="ad3c0bd167fdb9925755acfd89593221b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3c0bd167fdb9925755acfd89593221b">&#9670;&#160;</a></span>CopyBuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bloom::render::Devices::CopyBuffer </td>
+          <td>(</td>
+          <td class="paramtype">VkBuffer</td>          <td class="paramname"><span class="paramname"><em>srcBuffer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">VkBuffer</td>          <td class="paramname"><span class="paramname"><em>dstBuffer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">VkDeviceSize</td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copies data between buffers. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">srcBuffer</td><td>The source buffer. </td></tr>
+    <tr><td class="paramname">dstBuffer</td><td>The destination buffer. </td></tr>
+    <tr><td class="paramname">size</td><td>The size of the data to copy in bytes. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a707963ee28ac762129d7fe1c320f05c1" name="a707963ee28ac762129d7fe1c320f05c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a707963ee28ac762129d7fe1c320f05c1">&#9670;&#160;</a></span>CopyBufferToImage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bloom::render::Devices::CopyBufferToImage </td>
+          <td>(</td>
+          <td class="paramtype">VkBuffer</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">VkImage</td>          <td class="paramname"><span class="paramname"><em>image</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>width</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>height</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>layerCount</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copies data from buffer to image. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buffer</td><td>The source buffer. </td></tr>
+    <tr><td class="paramname">image</td><td>The destination image. </td></tr>
+    <tr><td class="paramname">width</td><td>The width of the image. </td></tr>
+    <tr><td class="paramname">height</td><td>The height of the image. </td></tr>
+    <tr><td class="paramname">layerCount</td><td>The number of layers in the image. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a90f7214588c1859fb3f182eb93860e86" name="a90f7214588c1859fb3f182eb93860e86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90f7214588c1859fb3f182eb93860e86">&#9670;&#160;</a></span>CreateBuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bloom::render::Devices::CreateBuffer </td>
+          <td>(</td>
+          <td class="paramtype">VkDeviceSize</td>          <td class="paramname"><span class="paramname"><em>size</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">VkBufferUsageFlags</td>          <td class="paramname"><span class="paramname"><em>usage</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">VkMemoryPropertyFlags</td>          <td class="paramname"><span class="paramname"><em>properties</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">VkBuffer &amp;</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">VkDeviceMemory &amp;</td>          <td class="paramname"><span class="paramname"><em>bufferMemory</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates a Vulkan buffer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">size</td><td>The size of the buffer in bytes. </td></tr>
+    <tr><td class="paramname">usage</td><td>The intended usage of the buffer. </td></tr>
+    <tr><td class="paramname">properties</td><td>The desired memory properties for the buffer. </td></tr>
+    <tr><td class="paramname">buffer</td><td>Output parameter for the created buffer handle. </td></tr>
+    <tr><td class="paramname">bufferMemory</td><td>Output parameter for the allocated buffer memory handle. The memory associated with the buffer. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab2b6b5c37be76f58a4a012fb4da175be" name="ab2b6b5c37be76f58a4a012fb4da175be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2b6b5c37be76f58a4a012fb4da175be">&#9670;&#160;</a></span>CreateImageWithInfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bloom::render::Devices::CreateImageWithInfo </td>
+          <td>(</td>
+          <td class="paramtype">const VkImageCreateInfo &amp;</td>          <td class="paramname"><span class="paramname"><em>imageInfo</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">VkMemoryPropertyFlags</td>          <td class="paramname"><span class="paramname"><em>properties</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">VkImage &amp;</td>          <td class="paramname"><span class="paramname"><em>image</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">VkDeviceMemory &amp;</td>          <td class="paramname"><span class="paramname"><em>imageMemory</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates a Vulkan image. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">imageInfo</td><td>The image create info structure. Describes the parameters of the image to be created. </td></tr>
+    <tr><td class="paramname">properties</td><td>The desired memory properties for the image. </td></tr>
+    <tr><td class="paramname">image</td><td>Output parameter for the created image handle. </td></tr>
+    <tr><td class="paramname">imageMemory</td><td>Output parameter for the allocated image memory handle. The memory associated with the image. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a660db584247059c4430857a1405d7196" name="a660db584247059c4430857a1405d7196"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a660db584247059c4430857a1405d7196">&#9670;&#160;</a></span>Device()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">VkDevice bloom::render::Devices::Device </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the logical device. </p>
+<dl class="section return"><dt>Returns</dt><dd>The logical device handle. The interface to the physical device. </dd></dl>
+
+</div>
+</div>
+<a id="ad7ae8ae456d8901de524ce0c21dba016" name="ad7ae8ae456d8901de524ce0c21dba016"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7ae8ae456d8901de524ce0c21dba016">&#9670;&#160;</a></span>EndSingleTimeCommands()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bloom::render::Devices::EndSingleTimeCommands </td>
+          <td>(</td>
+          <td class="paramtype">VkCommandBuffer</td>          <td class="paramname"><span class="paramname"><em>commandBuffer</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ends and submits single-time commands. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">commandBuffer</td><td>The command buffer to end and submit. Executes the recorded commands. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa889a531062e54842ba58f562c16e8b8" name="aa889a531062e54842ba58f562c16e8b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa889a531062e54842ba58f562c16e8b8">&#9670;&#160;</a></span>FindMemoryType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t bloom::render::Devices::FindMemoryType </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>typeFilter</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">VkMemoryPropertyFlags</td>          <td class="paramname"><span class="paramname"><em>properties</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Finds a suitable memory type. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">typeFilter</td><td>Bitmask of memory types to filter. </td></tr>
+    <tr><td class="paramname">properties</td><td>Desired memory properties. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Index of a suitable memory type that matches the filter and properties. </dd></dl>
+
+</div>
+</div>
+<a id="a331cf28ab37c67a55876a36ed3b8ef3c" name="a331cf28ab37c67a55876a36ed3b8ef3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a331cf28ab37c67a55876a36ed3b8ef3c">&#9670;&#160;</a></span>FindPhysicalQueueFamilies()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structbloom_1_1render_1_1_queue_family_indices.html">QueueFamilyIndices</a> bloom::render::Devices::FindPhysicalQueueFamilies </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Finds suitable queue families. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structbloom_1_1render_1_1_queue_family_indices.html" title="Queue family indices.">QueueFamilyIndices</a> containing the found graphics and present queue family indices. </dd></dl>
+
+</div>
+</div>
+<a id="a4406f7c8b59dacc8132e5fcfa787d500" name="a4406f7c8b59dacc8132e5fcfa787d500"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4406f7c8b59dacc8132e5fcfa787d500">&#9670;&#160;</a></span>FindSupportedFormat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VkFormat bloom::render::Devices::FindSupportedFormat </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; VkFormat &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>candidates</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">VkImageTiling</td>          <td class="paramname"><span class="paramname"><em>tiling</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">VkFormatFeatureFlags</td>          <td class="paramname"><span class="paramname"><em>features</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Finds a supported format. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">candidates</td><td>List of candidate formats. </td></tr>
+    <tr><td class="paramname">tiling</td><td>Image tiling mode. </td></tr>
+    <tr><td class="paramname">features</td><td>Desired format features. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The first supported format found, or VK_FORMAT_UNDEFINED if none are supported. </dd></dl>
+
+</div>
+</div>
+<a id="ad7f4c23b8ab7cb7d4d83c87387316dc5" name="ad7f4c23b8ab7cb7d4d83c87387316dc5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7f4c23b8ab7cb7d4d83c87387316dc5">&#9670;&#160;</a></span>GetCommandPool()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">VkCommandPool bloom::render::Devices::GetCommandPool </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the command pool. </p>
+<dl class="section return"><dt>Returns</dt><dd>The command pool handle. Used for allocating command buffers. </dd></dl>
+
+</div>
+</div>
+<a id="a0bad1be07ee998e82795b084d74f2dcb" name="a0bad1be07ee998e82795b084d74f2dcb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bad1be07ee998e82795b084d74f2dcb">&#9670;&#160;</a></span>GetInstance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classbloom_1_1render_1_1_devices.html">Devices</a> * bloom::render::Devices::GetInstance </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the physical device. </p>
+<dl class="section return"><dt>Returns</dt><dd>The physical device handle. Represents the GPU. </dd></dl>
+
+</div>
+</div>
+<a id="a88b46a97b7979913085a6f5064d63bb9" name="a88b46a97b7979913085a6f5064d63bb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88b46a97b7979913085a6f5064d63bb9">&#9670;&#160;</a></span>GetSwapChainSupport()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structbloom_1_1render_1_1_swap_chain_support_details.html">SwapChainSupportDetails</a> bloom::render::Devices::GetSwapChainSupport </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets swap chain support details. </p>
+<dl class="section return"><dt>Returns</dt><dd>The swap chain support details for the physical device. Provides information about supported capabilities, formats, and present modes. </dd></dl>
+
+</div>
+</div>
+<a id="aea2cb61078fcf769a8177e48116b7e5b" name="aea2cb61078fcf769a8177e48116b7e5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea2cb61078fcf769a8177e48116b7e5b">&#9670;&#160;</a></span>GetVkInstance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">VkInstance bloom::render::Devices::GetVkInstance </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the Vulkan instance. </p>
+<dl class="section return"><dt>Returns</dt><dd>The Vulkan instance handle. Represents the connection between the application and the Vulkan library. </dd></dl>
+
+</div>
+</div>
+<a id="a1182b834c5fedc318ddcbaca084e6ee9" name="a1182b834c5fedc318ddcbaca084e6ee9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1182b834c5fedc318ddcbaca084e6ee9">&#9670;&#160;</a></span>GraphicsQueue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">VkQueue bloom::render::Devices::GraphicsQueue </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the graphics queue. </p>
+<dl class="section return"><dt>Returns</dt><dd>The graphics queue handle. Used for submitting graphics commands. </dd></dl>
+
+</div>
+</div>
+<a id="a4c3539ba444cbd55c5ce487aa7acb7e2" name="a4c3539ba444cbd55c5ce487aa7acb7e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c3539ba444cbd55c5ce487aa7acb7e2">&#9670;&#160;</a></span>PhysicalDevice()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">VkPhysicalDevice bloom::render::Devices::PhysicalDevice </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the physical device. </p>
+<dl class="section return"><dt>Returns</dt><dd>The physical device handle. Represents the GPU. </dd></dl>
+
+</div>
+</div>
+<a id="af09e61e7f14964d04e47b467312483d4" name="af09e61e7f14964d04e47b467312483d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af09e61e7f14964d04e47b467312483d4">&#9670;&#160;</a></span>PresentQueue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">VkQueue bloom::render::Devices::PresentQueue </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the present queue. </p>
+<dl class="section return"><dt>Returns</dt><dd>The present queue handle. Used for presenting images to the surface. </dd></dl>
+
+</div>
+</div>
+<a id="a0ce5fc1678a1a335d706cd6e4e8506dd" name="a0ce5fc1678a1a335d706cd6e4e8506dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ce5fc1678a1a335d706cd6e4e8506dd">&#9670;&#160;</a></span>Surface()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">VkSurfaceKHR bloom::render::Devices::Surface </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the Vulkan surface. </p>
+<dl class="section return"><dt>Returns</dt><dd>The surface handle. Represents the connection between the window and Vulkan. </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>C:/Users/xgoni/bloom/bloom/src/render/<a class="el" href="devices_8hpp_source.html">devices.hpp</a></li>
 <li>C:/Users/xgoni/bloom/bloom/src/render/<b>devices.cpp</b></li>

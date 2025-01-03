@@ -1,0 +1,33 @@
+\doxysection{layer\+\_\+stack.\+hpp}
+\hypertarget{layer__stack_8hpp_source}{}\label{layer__stack_8hpp_source}\index{C:/Users/xgoni/bloom/bloom/src/layers/layer\_stack.hpp@{C:/Users/xgoni/bloom/bloom/src/layers/layer\_stack.hpp}}
+\mbox{\hyperlink{layer__stack_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{layer_8hpp}{layer.hpp}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{bloom__header_8hpp}{bloom\_header.hpp}}>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacebloom}{bloom}}\ \{}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }BLOOM\_API\ \mbox{\hyperlink{classbloom_1_1_layer_stack}{LayerStack}}\ \{}
+\DoxyCodeLine{00023\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \mbox{\hyperlink{classbloom_1_1_layer_stack}{LayerStack}}();}
+\DoxyCodeLine{00025\ \ \ \mbox{\hyperlink{classbloom_1_1_layer_stack}{\string~LayerStack}}();}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00031\ \ \ \textcolor{keywordtype}{void}\ PushLayer(\mbox{\hyperlink{classbloom_1_1_layer}{Layer}}*\ layer);}
+\DoxyCodeLine{00036\ \ \ \textcolor{keywordtype}{void}\ PushOverlay(\mbox{\hyperlink{classbloom_1_1_layer}{Layer}}*\ overlay);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00042\ \ \ \textcolor{keywordtype}{void}\ PopLayer(\mbox{\hyperlink{classbloom_1_1_layer}{Layer}}*\ layer);}
+\DoxyCodeLine{00047\ \ \ \textcolor{keywordtype}{void}\ PopOverlay(\mbox{\hyperlink{classbloom_1_1_layer}{Layer}}*\ overlay);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00053\ \ \ std::vector<Layer*>::iterator\ \mbox{\hyperlink{classbloom_1_1_layer_stack_a87d556b38d936931180bf1d212c2044d}{begin}}()\ \{\ \textcolor{keywordflow}{return}\ m\_layers.begin();\ \}}
+\DoxyCodeLine{00058\ \ \ std::vector<Layer*>::iterator\ \mbox{\hyperlink{classbloom_1_1_layer_stack_ac61805f33512233aa6b66ceeb0b69cab}{end}}()\ \{\ \textcolor{keywordflow}{return}\ m\_layers.end();\ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00061\ \ \ std::vector<Layer*>\ m\_layers;\ }
+\DoxyCodeLine{00062\ \ \ std::vector<Layer*>::iterator\ m\_layerInsert;\ }
+\DoxyCodeLine{00063\ \};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \}}
+
+\end{DoxyCode}

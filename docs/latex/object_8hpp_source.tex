@@ -4,54 +4,70 @@
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ }
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\#pragma\ once}}
-\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{devices_8hpp}{src/render/devices.hpp}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ GLM\_ENABLE\_EXPERIMENTAL}}
 \DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{bloom__header_8hpp}{bloom\_header.hpp}}>}}
 \DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <glm/gtx/euler\_angles.hpp>}}
-\DoxyCodeLine{00013\ }
-\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }bloom\ \{}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <imgui.h>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{devices_8hpp}{src/render/devices.hpp}}"{}}}
 \DoxyCodeLine{00015\ }
-\DoxyCodeLine{00025\ \textcolor{keyword}{struct\ }BLOOM\_API\ \mbox{\hyperlink{structbloom_1_1_transform}{Transform}}\ \{}
-\DoxyCodeLine{00026\ \ \ glm::vec3\ position\ =\ \{\};\ }
-\DoxyCodeLine{00027\ \ \ glm::vec3\ scale\ =\ \{1.0f,\ 1.0f,\ 1.0f\};\ }
-\DoxyCodeLine{00028\ \ \ glm::vec3\ rotation\ =\ \{\};\ }
-\DoxyCodeLine{00029\ }
-\DoxyCodeLine{00039\ \ \ glm::mat4\ \mbox{\hyperlink{structbloom_1_1_transform_acabdaf75834ef11b0e3d7ddc91bec11f}{Matrix}}()\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{const}\ glm::mat4\ rotationMatrix\ =\ glm::yawPitchRoll(rotation.y,\ rotation.x,\ rotation.z);}
-\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{const}\ glm::mat4\ scaleMatrix\ =\ glm::scale(glm::mat4(1.0f),\ scale);}
-\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{const}\ glm::mat4\ translationMatrix\ =\ glm::translate(glm::mat4(1.0f),\ position);}
-\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordflow}{return}\ translationMatrix\ *\ rotationMatrix\ *\ scaleMatrix;}
-\DoxyCodeLine{00044\ \ \ \}}
-\DoxyCodeLine{00045\ \};}
-\DoxyCodeLine{00046\ }
-\DoxyCodeLine{00056\ \textcolor{keyword}{class\ }BLOOM\_API\ \mbox{\hyperlink{classbloom_1_1_object}{Object}}\ \{}
-\DoxyCodeLine{00057\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00064\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classbloom_1_1_object_ae1d557ffa7496298977cfbfdae1d4daf}{Object}}(\textcolor{keyword}{const}\ id\_t\ \textcolor{keywordtype}{id},\ \mbox{\hyperlink{classbloom_1_1render_1_1_devices}{render::Devices}}*\ devices)\ :\ m\_devices(devices),\ m\_id(id)\ \{\};}
+\DoxyCodeLine{00016\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacebloom}{bloom}}\ \{}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{struct\ }BLOOM\_API\ \mbox{\hyperlink{structbloom_1_1_transform}{Transform}}\ \{}
+\DoxyCodeLine{00028\ \ \ glm::vec3\ position\ =\ \{\};\ }
+\DoxyCodeLine{00029\ \ \ glm::vec3\ scale\ =\ \{1.0f,\ 1.0f,\ 1.0f\};\ }
+\DoxyCodeLine{00030\ \ \ glm::vec3\ rotation\ =\ \{\};\ }
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00041\ \ \ glm::mat4\ \mbox{\hyperlink{structbloom_1_1_transform_acabdaf75834ef11b0e3d7ddc91bec11f}{Matrix}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{const}\ glm::mat4\ rotationMatrix\ =\ glm::yawPitchRoll(rotation.y,\ rotation.x,\ rotation.z);}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{const}\ glm::mat4\ scaleMatrix\ =\ glm::scale(glm::mat4(1.0f),\ scale);}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{const}\ glm::mat4\ translationMatrix\ =\ glm::translate(glm::mat4(1.0f),\ position);}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordflow}{return}\ translationMatrix\ *\ rotationMatrix\ *\ scaleMatrix;}
+\DoxyCodeLine{00046\ \ \ \}}
+\DoxyCodeLine{00047\ \};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00058\ \textcolor{keyword}{class\ }BLOOM\_API\ \mbox{\hyperlink{classbloom_1_1_object}{Object}}\ \{}
+\DoxyCodeLine{00059\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00064\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classbloom_1_1_object_a2d5d96df2b3a38ca832fafb1831ba60a}{Object}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{core_8hpp_abaf665e52c9979a5f6eb9ecfce756efc}{id\_t}}\ \textcolor{keywordtype}{id})\ :\ m\_id(id)\ \{\}}
 \DoxyCodeLine{00065\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classbloom_1_1_object}{\string~Object}}()\ =\ \textcolor{keywordflow}{default};}
 \DoxyCodeLine{00066\ }
-\DoxyCodeLine{00067\ \ \ \textcolor{comment}{//\ Copy\ constructors}}
-\DoxyCodeLine{00068\ \ \ \mbox{\hyperlink{classbloom_1_1_object}{Object}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classbloom_1_1_object}{Object}}\&)\ =\ \textcolor{keyword}{delete};\ }
-\DoxyCodeLine{00069\ \ \ \mbox{\hyperlink{classbloom_1_1_object}{Object}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classbloom_1_1_object}{Object}}\&)\ =\ \textcolor{keyword}{delete};\ }
-\DoxyCodeLine{00070\ \ \ \mbox{\hyperlink{classbloom_1_1_object}{Object}}(\mbox{\hyperlink{classbloom_1_1_object}{Object}}\&\&)\ =\ \textcolor{keywordflow}{default};\ }
-\DoxyCodeLine{00071\ \ \ \mbox{\hyperlink{classbloom_1_1_object}{Object}}\&\ operator=(\mbox{\hyperlink{classbloom_1_1_object}{Object}}\&\&)\ =\ \textcolor{keywordflow}{default};}
-\DoxyCodeLine{00072\ }
-\DoxyCodeLine{00073\ \ \ \textcolor{comment}{//\ Game\ loop}}
-\DoxyCodeLine{00077\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classbloom_1_1_object_a18d5a73479f99ed1fbb47b8b8b11acbc}{Begin}}()\ \{\}}
-\DoxyCodeLine{00082\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classbloom_1_1_object_a010ab8fafcd25b7260ac0005d9d43091}{Tick}}(\textcolor{keywordtype}{float}\ deltaTime)\ \{\}}
-\DoxyCodeLine{00086\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classbloom_1_1_object_a7a7cc6230ab4a3ee158126469cf04352}{End}}()\ \{\}}
-\DoxyCodeLine{00087\ }
-\DoxyCodeLine{00088\ \ \ \mbox{\hyperlink{structbloom_1_1_transform}{Transform}}\ \mbox{\hyperlink{classbloom_1_1_object_a10805aae05e9965d0232e319cc43d9eb}{transform}};\ }
-\DoxyCodeLine{00089\ }
-\DoxyCodeLine{00090\ \ \ \textcolor{comment}{//\ Getters\ -\/\ Setters}}
-\DoxyCodeLine{00091\ \ \ \textcolor{comment}{//\ ReSharper\ disable\ once\ CppInconsistentNaming}}
-\DoxyCodeLine{00097\ \ \ id\_t\ \mbox{\hyperlink{classbloom_1_1_object_ab83ebdaed718b62ace71bd6877eeca8a}{GetID}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_id;\ \}}
-\DoxyCodeLine{00098\ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00099\ \ \ \mbox{\hyperlink{classbloom_1_1render_1_1_devices}{render::Devices}}*\ m\_devices\ =\ \textcolor{keyword}{nullptr};\ }
-\DoxyCodeLine{00100\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00101\ \ \ id\_t\ m\_id;\ }
-\DoxyCodeLine{00102\ \};}
+\DoxyCodeLine{00067\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00068\ \ \ \textcolor{comment}{//\ Copy\ constructors}}
+\DoxyCodeLine{00069\ \ \ \mbox{\hyperlink{classbloom_1_1_object}{Object}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classbloom_1_1_object}{Object}}\&)\ =\ \textcolor{keyword}{delete};\ }
+\DoxyCodeLine{00070\ \ \ \mbox{\hyperlink{classbloom_1_1_object}{Object}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classbloom_1_1_object}{Object}}\&)\ =\ \textcolor{keyword}{delete};\ }
+\DoxyCodeLine{00071\ \ \ \mbox{\hyperlink{classbloom_1_1_object}{Object}}(\mbox{\hyperlink{classbloom_1_1_object}{Object}}\&\&)\ =\ \textcolor{keywordflow}{default};\ }
+\DoxyCodeLine{00072\ \ \ \mbox{\hyperlink{classbloom_1_1_object}{Object}}\&\ operator=(\mbox{\hyperlink{classbloom_1_1_object}{Object}}\&\&)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \textcolor{comment}{//\ Game\ loop}}
+\DoxyCodeLine{00078\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classbloom_1_1_object_ad983db52ab1348200a8708d5caa0f884}{OnBegin}}()\ \{\}}
+\DoxyCodeLine{00083\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classbloom_1_1_object_ab6c21b3f5ba2014560a499d71820b23b}{OnTick}}(\textcolor{keywordtype}{float}\ deltaTime)\ \{\}}
+\DoxyCodeLine{00087\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classbloom_1_1_object_a659545be34faab060113df793d069071}{OnClose}}()\ \{\}}
+\DoxyCodeLine{00092\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classbloom_1_1_object_a22f8f39d529a0bdb7b3091513e43afde}{OnEvent}}(\mbox{\hyperlink{classbloom_1_1_event}{Event}}\&\ e)\ \{\}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ PropertiesPanel()\ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordflow}{if}\ (ImGui::CollapsingHeader(\textcolor{stringliteral}{"{}Transform"{}}))\ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ ImGui::DragFloat3(\textcolor{stringliteral}{"{}Position"{}},\ \&transform.position.x,\ 0.1f);}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ ImGui::DragFloat3(\textcolor{stringliteral}{"{}Rotation"{}},\ \&transform.rotation.x,\ 0.1f);}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ ImGui::DragFloat3(\textcolor{stringliteral}{"{}Scale"{}},\ \&transform.scale.x,\ 0.1f);}
+\DoxyCodeLine{00099\ \ \ \ \ \}}
+\DoxyCodeLine{00100\ \ \ \}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \mbox{\hyperlink{structbloom_1_1_transform}{Transform}}\ \mbox{\hyperlink{classbloom_1_1_object_a10805aae05e9965d0232e319cc43d9eb}{transform}};\ }
 \DoxyCodeLine{00103\ }
-\DoxyCodeLine{00109\ \textcolor{keyword}{typedef}\ std::unordered\_map<id\_t,std::shared\_ptr<Object>>\ \mbox{\hyperlink{object_8hpp_ac65b651055bbc2100bc99fb9bd34ac17}{ObjectMap}};}
-\DoxyCodeLine{00110\ }
-\DoxyCodeLine{00111\ \}}
+\DoxyCodeLine{00104\ \ \ \textcolor{comment}{//\ Getters\ -\/\ Setters}}
+\DoxyCodeLine{00105\ \ \ \textcolor{comment}{//\ ReSharper\ disable\ once\ CppInconsistentNaming}}
+\DoxyCodeLine{00110\ \ \ \mbox{\hyperlink{core_8hpp_abaf665e52c9979a5f6eb9ecfce756efc}{id\_t}}\ \mbox{\hyperlink{classbloom_1_1_object_ab83ebdaed718b62ace71bd6877eeca8a}{GetID}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_id;\ \}}
+\DoxyCodeLine{00115\ \ \ std::string\ \mbox{\hyperlink{classbloom_1_1_object_a3727fd5bab7f16866b1f5bf90d92330f}{GetName}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_name;\ \}}
+\DoxyCodeLine{00120\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classbloom_1_1_object_aad024fee23e84df72b3a028dd19bfba9}{SetName}}(\textcolor{keyword}{const}\ std::string\&\ name)\ \{\ \textcolor{keywordflow}{if}\ (m\_name\ !=\ \textcolor{stringliteral}{"{}"{}})\ \mbox{\hyperlink{log_8hpp_a8c5578dbc768405ebaa784866ea2728e}{BLOOM\_LOG}}(\textcolor{stringliteral}{"{}Changed\ \{0\}'s\ name\ to\ \{1\}"{}},\ m\_name,\ name);\ m\_name\ =\ name;\ \}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00123\ \ \ \mbox{\hyperlink{core_8hpp_abaf665e52c9979a5f6eb9ecfce756efc}{id\_t}}\ m\_id;\ }
+\DoxyCodeLine{00124\ \ \ std::string\ m\_name;\ }
+\DoxyCodeLine{00125\ \};}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00132\ \textcolor{keyword}{typedef}\ std::unordered\_map<id\_t,std::shared\_ptr<Object>>\ \mbox{\hyperlink{namespacebloom_ac65b651055bbc2100bc99fb9bd34ac17}{ObjectMap}};}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \}}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \textcolor{preprocessor}{\#undef\ GLM\_ENABLE\_EXPERIMENTAL}}
 
 \end{DoxyCode}

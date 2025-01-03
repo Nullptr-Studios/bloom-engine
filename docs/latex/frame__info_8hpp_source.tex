@@ -4,17 +4,18 @@
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ }
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\#pragma\ once}}
-\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{bloom__header_8hpp}{bloom\_header.hpp}}>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{camera_8hpp}{src/objects/camera.hpp}}"{}}}
 \DoxyCodeLine{00011\ }
-\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }bloom::render\ \{}
-\DoxyCodeLine{00013\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structbloom_1_1render_1_1_frame_info}{FrameInfo}}\ \{}
-\DoxyCodeLine{00014\ \ \ \textcolor{keywordtype}{char}\ frameIndex;}
-\DoxyCodeLine{00015\ \ \ \textcolor{keywordtype}{float}\ frameTime;}
-\DoxyCodeLine{00016\ \ \ VkCommandBuffer\ commandBuffer;}
-\DoxyCodeLine{00017\ \ \ \mbox{\hyperlink{classbloom_1_1_camera}{Camera}}*\ activeCamera;}
-\DoxyCodeLine{00018\ \ \ VkDescriptorSet\ globalDescriptorSet;}
-\DoxyCodeLine{00019\ \};}
-\DoxyCodeLine{00020\ }
-\DoxyCodeLine{00021\ \}}
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacebloom_1_1render}{bloom::render}}\ \{}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structbloom_1_1render_1_1_frame_info}{FrameInfo}}\ \{}
+\DoxyCodeLine{00022\ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structbloom_1_1render_1_1_frame_info_ae85edc74d9b49729a3fb26bddca27cfa}{frameIndex}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00023\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structbloom_1_1render_1_1_frame_info_acfb1b84db8532e5fa7e1a4741251fdb5}{frameTime}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00024\ \ \ VkCommandBuffer\ \mbox{\hyperlink{structbloom_1_1render_1_1_frame_info_a73aae1fc356cdf5a22614bf04b5f7135}{commandBuffer}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00025\ \ \ \mbox{\hyperlink{classbloom_1_1_camera}{Camera}}*\ \mbox{\hyperlink{structbloom_1_1render_1_1_frame_info_aa8fab5df99f4c83ce224c9b2b0b6950b}{activeCamera}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00026\ \ \ VkDescriptorSet\ \mbox{\hyperlink{structbloom_1_1render_1_1_frame_info_a1296e95a98551af6daae7b232e1ffd95}{globalDescriptorSet}};\ }
+\DoxyCodeLine{00027\ \};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \}}
 
 \end{DoxyCode}

@@ -83,7 +83,7 @@ $(function(){ initResizable(false); });
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>bloom</b></li><li class="navelem"><b>render</b></li><li class="navelem"><a class="el" href="classbloom_1_1render_1_1_swap_chain.html">SwapChain</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacebloom.html">bloom</a></li><li class="navelem"><a class="el" href="namespacebloom_1_1render.html">render</a></li><li class="navelem"><a class="el" href="classbloom_1_1render_1_1_swap_chain.html">SwapChain</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div id="doc-content">
@@ -95,6 +95,11 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">bloom::render::SwapChain Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Manages the Vulkan swap chain and related resources.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="swap__chain_8hpp_source.html">swap_chain.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -110,52 +115,432 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a26dc27196abbca87f04b9b7058597b8e" id="r_a26dc27196abbca87f04b9b7058597b8e"><td class="memItemLeft" align="right" valign="top"><a id="a26dc27196abbca87f04b9b7058597b8e" name="a26dc27196abbca87f04b9b7058597b8e"></a>
 <a class="el" href="classbloom_1_1render_1_1_swap_chain.html">SwapChain</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classbloom_1_1render_1_1_swap_chain.html">SwapChain</a> &amp;)=delete</td></tr>
 <tr class="separator:a26dc27196abbca87f04b9b7058597b8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af5fd1e2123f9c7b3586233a00163c2c8" id="r_af5fd1e2123f9c7b3586233a00163c2c8"><td class="memItemLeft" align="right" valign="top"><a id="af5fd1e2123f9c7b3586233a00163c2c8" name="af5fd1e2123f9c7b3586233a00163c2c8"></a>
-VkFramebuffer&#160;</td><td class="memItemRight" valign="bottom"><b>GetFrameBuffer</b> (int index)</td></tr>
-<tr class="separator:af5fd1e2123f9c7b3586233a00163c2c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab5a3cb31a30d03c57785dfbcce8cf7a" id="r_aab5a3cb31a30d03c57785dfbcce8cf7a"><td class="memItemLeft" align="right" valign="top"><a id="aab5a3cb31a30d03c57785dfbcce8cf7a" name="aab5a3cb31a30d03c57785dfbcce8cf7a"></a>
-VkRenderPass&#160;</td><td class="memItemRight" valign="bottom"><b>GetRenderPass</b> ()</td></tr>
-<tr class="separator:aab5a3cb31a30d03c57785dfbcce8cf7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5061641c8e527b504a542704272ce7ee" id="r_a5061641c8e527b504a542704272ce7ee"><td class="memItemLeft" align="right" valign="top"><a id="a5061641c8e527b504a542704272ce7ee" name="a5061641c8e527b504a542704272ce7ee"></a>
-VkImageView&#160;</td><td class="memItemRight" valign="bottom"><b>GetImageView</b> (int index)</td></tr>
-<tr class="separator:a5061641c8e527b504a542704272ce7ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c12f7523fee3900ce267185b1a1e5a0" id="r_a2c12f7523fee3900ce267185b1a1e5a0"><td class="memItemLeft" align="right" valign="top"><a id="a2c12f7523fee3900ce267185b1a1e5a0" name="a2c12f7523fee3900ce267185b1a1e5a0"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>ImageCount</b> ()</td></tr>
-<tr class="separator:a2c12f7523fee3900ce267185b1a1e5a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add26f0e8078c1d307fbe12f035040a9b" id="r_add26f0e8078c1d307fbe12f035040a9b"><td class="memItemLeft" align="right" valign="top"><a id="add26f0e8078c1d307fbe12f035040a9b" name="add26f0e8078c1d307fbe12f035040a9b"></a>
-VkFormat&#160;</td><td class="memItemRight" valign="bottom"><b>GetSwapChainImageFormat</b> ()</td></tr>
-<tr class="separator:add26f0e8078c1d307fbe12f035040a9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af71201ba73fc33864e659747a47878e4" id="r_af71201ba73fc33864e659747a47878e4"><td class="memItemLeft" align="right" valign="top"><a id="af71201ba73fc33864e659747a47878e4" name="af71201ba73fc33864e659747a47878e4"></a>
-VkExtent2D&#160;</td><td class="memItemRight" valign="bottom"><b>GetSwapChainExtent</b> ()</td></tr>
-<tr class="separator:af71201ba73fc33864e659747a47878e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad2a85251188d1951574e4628e742c3c5" id="r_ad2a85251188d1951574e4628e742c3c5"><td class="memItemLeft" align="right" valign="top"><a id="ad2a85251188d1951574e4628e742c3c5" name="ad2a85251188d1951574e4628e742c3c5"></a>
-uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>width</b> ()</td></tr>
-<tr class="separator:ad2a85251188d1951574e4628e742c3c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a7a2e777155e94cd71e5cf564569db7" id="r_a8a7a2e777155e94cd71e5cf564569db7"><td class="memItemLeft" align="right" valign="top"><a id="a8a7a2e777155e94cd71e5cf564569db7" name="a8a7a2e777155e94cd71e5cf564569db7"></a>
-uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>height</b> ()</td></tr>
-<tr class="separator:a8a7a2e777155e94cd71e5cf564569db7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62c456af3361758b5e391b86f0253015" id="r_a62c456af3361758b5e391b86f0253015"><td class="memItemLeft" align="right" valign="top"><a id="a62c456af3361758b5e391b86f0253015" name="a62c456af3361758b5e391b86f0253015"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>ExtentAspectRatio</b> ()</td></tr>
-<tr class="separator:a62c456af3361758b5e391b86f0253015"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a213590ce50f0174cda76b7a9cb44b3da" id="r_a213590ce50f0174cda76b7a9cb44b3da"><td class="memItemLeft" align="right" valign="top"><a id="a213590ce50f0174cda76b7a9cb44b3da" name="a213590ce50f0174cda76b7a9cb44b3da"></a>
-VkFormat&#160;</td><td class="memItemRight" valign="bottom"><b>FindDepthFormat</b> ()</td></tr>
+<tr class="memitem:a14c37544d58c948a6d4e2b9ae598870e" id="r_a14c37544d58c948a6d4e2b9ae598870e"><td class="memItemLeft" align="right" valign="top">VkFramebuffer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a14c37544d58c948a6d4e2b9ae598870e">GetFrameBuffer</a> (int index) const</td></tr>
+<tr class="memdesc:a14c37544d58c948a6d4e2b9ae598870e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the framebuffer at the specified index.  <br /></td></tr>
+<tr class="separator:a14c37544d58c948a6d4e2b9ae598870e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a74e3ee6642535399b80dba56e1d0de" id="r_a2a74e3ee6642535399b80dba56e1d0de"><td class="memItemLeft" align="right" valign="top">VkRenderPass&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2a74e3ee6642535399b80dba56e1d0de">GetRenderPass</a> () const</td></tr>
+<tr class="memdesc:a2a74e3ee6642535399b80dba56e1d0de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the render pass.  <br /></td></tr>
+<tr class="separator:a2a74e3ee6642535399b80dba56e1d0de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae38baccbbda4c1c41af0d8be66a1f61e" id="r_ae38baccbbda4c1c41af0d8be66a1f61e"><td class="memItemLeft" align="right" valign="top">VkImageView&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae38baccbbda4c1c41af0d8be66a1f61e">GetImageView</a> (int index) const</td></tr>
+<tr class="memdesc:ae38baccbbda4c1c41af0d8be66a1f61e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the image view at the specified index.  <br /></td></tr>
+<tr class="separator:ae38baccbbda4c1c41af0d8be66a1f61e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43888a3c73f0c21031f70c1e0302eddd" id="r_a43888a3c73f0c21031f70c1e0302eddd"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a43888a3c73f0c21031f70c1e0302eddd">ImageCount</a> () const</td></tr>
+<tr class="memdesc:a43888a3c73f0c21031f70c1e0302eddd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of images in the swap chain.  <br /></td></tr>
+<tr class="separator:a43888a3c73f0c21031f70c1e0302eddd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ff148c8e1611fa7cd708496410f977b" id="r_a2ff148c8e1611fa7cd708496410f977b"><td class="memItemLeft" align="right" valign="top">VkFormat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2ff148c8e1611fa7cd708496410f977b">GetSwapChainImageFormat</a> () const</td></tr>
+<tr class="memdesc:a2ff148c8e1611fa7cd708496410f977b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the format of the swap chain images.  <br /></td></tr>
+<tr class="separator:a2ff148c8e1611fa7cd708496410f977b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a622ed834f1d2167efc39c45d09228915" id="r_a622ed834f1d2167efc39c45d09228915"><td class="memItemLeft" align="right" valign="top">VkExtent2D&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a622ed834f1d2167efc39c45d09228915">GetSwapChainExtent</a> () const</td></tr>
+<tr class="memdesc:a622ed834f1d2167efc39c45d09228915"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the extent of the swap chain.  <br /></td></tr>
+<tr class="separator:a622ed834f1d2167efc39c45d09228915"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22d7d19a16ddebed3df17853c2ffd75f" id="r_a22d7d19a16ddebed3df17853c2ffd75f"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a22d7d19a16ddebed3df17853c2ffd75f">Width</a> () const</td></tr>
+<tr class="memdesc:a22d7d19a16ddebed3df17853c2ffd75f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the width of the swap chain extent.  <br /></td></tr>
+<tr class="separator:a22d7d19a16ddebed3df17853c2ffd75f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40bd5a1765776ac84f82f6b832d66c01" id="r_a40bd5a1765776ac84f82f6b832d66c01"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a40bd5a1765776ac84f82f6b832d66c01">Height</a> () const</td></tr>
+<tr class="memdesc:a40bd5a1765776ac84f82f6b832d66c01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the height of the swap chain extent.  <br /></td></tr>
+<tr class="separator:a40bd5a1765776ac84f82f6b832d66c01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4d0e3ba566ffa010bc9fc5c38c8a947" id="r_ad4d0e3ba566ffa010bc9fc5c38c8a947"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad4d0e3ba566ffa010bc9fc5c38c8a947">ExtentAspectRatio</a> () const</td></tr>
+<tr class="memdesc:ad4d0e3ba566ffa010bc9fc5c38c8a947"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the aspect ratio of the swap chain extent.  <br /></td></tr>
+<tr class="separator:ad4d0e3ba566ffa010bc9fc5c38c8a947"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a213590ce50f0174cda76b7a9cb44b3da" id="r_a213590ce50f0174cda76b7a9cb44b3da"><td class="memItemLeft" align="right" valign="top">VkFormat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a213590ce50f0174cda76b7a9cb44b3da">FindDepthFormat</a> ()</td></tr>
+<tr class="memdesc:a213590ce50f0174cda76b7a9cb44b3da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the depth format for the swap chain.  <br /></td></tr>
 <tr class="separator:a213590ce50f0174cda76b7a9cb44b3da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99b800b12957dee7fcbb01c7f028e9c1" id="r_a99b800b12957dee7fcbb01c7f028e9c1"><td class="memItemLeft" align="right" valign="top"><a id="a99b800b12957dee7fcbb01c7f028e9c1" name="a99b800b12957dee7fcbb01c7f028e9c1"></a>
-VkResult&#160;</td><td class="memItemRight" valign="bottom"><b>AcquireNextImage</b> (uint32_t *imageIndex)</td></tr>
+<tr class="memitem:a99b800b12957dee7fcbb01c7f028e9c1" id="r_a99b800b12957dee7fcbb01c7f028e9c1"><td class="memItemLeft" align="right" valign="top">VkResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a99b800b12957dee7fcbb01c7f028e9c1">AcquireNextImage</a> (uint32_t *imageIndex)</td></tr>
+<tr class="memdesc:a99b800b12957dee7fcbb01c7f028e9c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Acquires the next image in the swap chain.  <br /></td></tr>
 <tr class="separator:a99b800b12957dee7fcbb01c7f028e9c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a303dcef852589ac18f833189491729fc" id="r_a303dcef852589ac18f833189491729fc"><td class="memItemLeft" align="right" valign="top"><a id="a303dcef852589ac18f833189491729fc" name="a303dcef852589ac18f833189491729fc"></a>
-VkResult&#160;</td><td class="memItemRight" valign="bottom"><b>SubmitCommandBuffers</b> (const VkCommandBuffer *buffers, uint32_t *imageIndex)</td></tr>
+<tr class="memitem:a303dcef852589ac18f833189491729fc" id="r_a303dcef852589ac18f833189491729fc"><td class="memItemLeft" align="right" valign="top">VkResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a303dcef852589ac18f833189491729fc">SubmitCommandBuffers</a> (const VkCommandBuffer *buffers, uint32_t *imageIndex)</td></tr>
+<tr class="memdesc:a303dcef852589ac18f833189491729fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Submits the command buffers for rendering.  <br /></td></tr>
 <tr class="separator:a303dcef852589ac18f833189491729fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52dbece54d8d5be298800ebca3c3f2e9" id="r_a52dbece54d8d5be298800ebca3c3f2e9"><td class="memItemLeft" align="right" valign="top"><a id="a52dbece54d8d5be298800ebca3c3f2e9" name="a52dbece54d8d5be298800ebca3c3f2e9"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>compareSwapFormats</b> (const <a class="el" href="classbloom_1_1render_1_1_swap_chain.html">SwapChain</a> &amp;swapChain) const</td></tr>
-<tr class="separator:a52dbece54d8d5be298800ebca3c3f2e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a262fa775ba52b1275034ef30951de928" id="r_a262fa775ba52b1275034ef30951de928"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a262fa775ba52b1275034ef30951de928">CompareSwapFormats</a> (const <a class="el" href="classbloom_1_1render_1_1_swap_chain.html">SwapChain</a> &amp;swapChain) const</td></tr>
+<tr class="memdesc:a262fa775ba52b1275034ef30951de928"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares the formats of two swap chains.  <br /></td></tr>
+<tr class="separator:a262fa775ba52b1275034ef30951de928"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:abc12f5bfbd308fc9fa4401dcd5129e2e" id="r_abc12f5bfbd308fc9fa4401dcd5129e2e"><td class="memItemLeft" align="right" valign="top"><a id="abc12f5bfbd308fc9fa4401dcd5129e2e" name="abc12f5bfbd308fc9fa4401dcd5129e2e"></a>
 static constexpr int&#160;</td><td class="memItemRight" valign="bottom"><b>MAX_FRAMES_IN_FLIGHT</b> = 2</td></tr>
+<tr class="memdesc:abc12f5bfbd308fc9fa4401dcd5129e2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of chains. <br /></td></tr>
 <tr class="separator:abc12f5bfbd308fc9fa4401dcd5129e2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Manages the Vulkan swap chain and related resources. </p>
+<p>The <a class="el" href="classbloom_1_1render_1_1_swap_chain.html" title="Manages the Vulkan swap chain and related resources.">SwapChain</a> class handles the creation and management of the Vulkan swap chain, including image views, framebuffers, depth resources, and synchronization objects. It also provides methods for acquiring the next image and submitting command buffers. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a99b800b12957dee7fcbb01c7f028e9c1" name="a99b800b12957dee7fcbb01c7f028e9c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99b800b12957dee7fcbb01c7f028e9c1">&#9670;&#160;</a></span>AcquireNextImage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VkResult bloom::render::SwapChain::AcquireNextImage </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t *</td>          <td class="paramname"><span class="paramname"><em>imageIndex</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Acquires the next image in the swap chain. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">imageIndex</td><td>Pointer to the index of the acquired image. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The Vulkan result of the acquisition. </dd></dl>
+
+</div>
+</div>
+<a id="a262fa775ba52b1275034ef30951de928" name="a262fa775ba52b1275034ef30951de928"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a262fa775ba52b1275034ef30951de928">&#9670;&#160;</a></span>CompareSwapFormats()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool bloom::render::SwapChain::CompareSwapFormats </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classbloom_1_1render_1_1_swap_chain.html">SwapChain</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>swapChain</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Compares the formats of two swap chains. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">swapChain</td><td>Reference to the other <a class="el" href="classbloom_1_1render_1_1_swap_chain.html" title="Manages the Vulkan swap chain and related resources.">SwapChain</a> instance. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the formats are the same, false otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="ad4d0e3ba566ffa010bc9fc5c38c8a947" name="ad4d0e3ba566ffa010bc9fc5c38c8a947"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4d0e3ba566ffa010bc9fc5c38c8a947">&#9670;&#160;</a></span>ExtentAspectRatio()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float bloom::render::SwapChain::ExtentAspectRatio </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the aspect ratio of the swap chain extent. </p>
+<dl class="section return"><dt>Returns</dt><dd>The aspect ratio. </dd></dl>
+
+</div>
+</div>
+<a id="a213590ce50f0174cda76b7a9cb44b3da" name="a213590ce50f0174cda76b7a9cb44b3da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a213590ce50f0174cda76b7a9cb44b3da">&#9670;&#160;</a></span>FindDepthFormat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VkFormat bloom::render::SwapChain::FindDepthFormat </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Finds the depth format for the swap chain. </p>
+<dl class="section return"><dt>Returns</dt><dd>The Vulkan format for depth. </dd></dl>
+
+</div>
+</div>
+<a id="a14c37544d58c948a6d4e2b9ae598870e" name="a14c37544d58c948a6d4e2b9ae598870e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14c37544d58c948a6d4e2b9ae598870e">&#9670;&#160;</a></span>GetFrameBuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">VkFramebuffer bloom::render::SwapChain::GetFrameBuffer </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the framebuffer at the specified index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>The index of the framebuffer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The Vulkan framebuffer. </dd></dl>
+
+</div>
+</div>
+<a id="ae38baccbbda4c1c41af0d8be66a1f61e" name="ae38baccbbda4c1c41af0d8be66a1f61e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae38baccbbda4c1c41af0d8be66a1f61e">&#9670;&#160;</a></span>GetImageView()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">VkImageView bloom::render::SwapChain::GetImageView </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the image view at the specified index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>The index of the image view. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The Vulkan image view. </dd></dl>
+
+</div>
+</div>
+<a id="a2a74e3ee6642535399b80dba56e1d0de" name="a2a74e3ee6642535399b80dba56e1d0de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a74e3ee6642535399b80dba56e1d0de">&#9670;&#160;</a></span>GetRenderPass()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">VkRenderPass bloom::render::SwapChain::GetRenderPass </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the render pass. </p>
+<dl class="section return"><dt>Returns</dt><dd>The Vulkan render pass. </dd></dl>
+
+</div>
+</div>
+<a id="a622ed834f1d2167efc39c45d09228915" name="a622ed834f1d2167efc39c45d09228915"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a622ed834f1d2167efc39c45d09228915">&#9670;&#160;</a></span>GetSwapChainExtent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">VkExtent2D bloom::render::SwapChain::GetSwapChainExtent </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the extent of the swap chain. </p>
+<dl class="section return"><dt>Returns</dt><dd>The Vulkan extent of the swap chain. </dd></dl>
+
+</div>
+</div>
+<a id="a2ff148c8e1611fa7cd708496410f977b" name="a2ff148c8e1611fa7cd708496410f977b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ff148c8e1611fa7cd708496410f977b">&#9670;&#160;</a></span>GetSwapChainImageFormat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">VkFormat bloom::render::SwapChain::GetSwapChainImageFormat </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the format of the swap chain images. </p>
+<dl class="section return"><dt>Returns</dt><dd>The Vulkan format of the swap chain images. </dd></dl>
+
+</div>
+</div>
+<a id="a40bd5a1765776ac84f82f6b832d66c01" name="a40bd5a1765776ac84f82f6b832d66c01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40bd5a1765776ac84f82f6b832d66c01">&#9670;&#160;</a></span>Height()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t bloom::render::SwapChain::Height </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the height of the swap chain extent. </p>
+<dl class="section return"><dt>Returns</dt><dd>The height of the swap chain extent. </dd></dl>
+
+</div>
+</div>
+<a id="a43888a3c73f0c21031f70c1e0302eddd" name="a43888a3c73f0c21031f70c1e0302eddd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43888a3c73f0c21031f70c1e0302eddd">&#9670;&#160;</a></span>ImageCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t bloom::render::SwapChain::ImageCount </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the number of images in the swap chain. </p>
+<dl class="section return"><dt>Returns</dt><dd>The number of images. </dd></dl>
+
+</div>
+</div>
+<a id="a303dcef852589ac18f833189491729fc" name="a303dcef852589ac18f833189491729fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a303dcef852589ac18f833189491729fc">&#9670;&#160;</a></span>SubmitCommandBuffers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VkResult bloom::render::SwapChain::SubmitCommandBuffers </td>
+          <td>(</td>
+          <td class="paramtype">const VkCommandBuffer *</td>          <td class="paramname"><span class="paramname"><em>buffers</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *</td>          <td class="paramname"><span class="paramname"><em>imageIndex</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Submits the command buffers for rendering. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buffers</td><td>Pointer to the command buffers. </td></tr>
+    <tr><td class="paramname">imageIndex</td><td>Pointer to the index of the image to submit. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The Vulkan result of the submission. </dd></dl>
+
+</div>
+</div>
+<a id="a22d7d19a16ddebed3df17853c2ffd75f" name="a22d7d19a16ddebed3df17853c2ffd75f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22d7d19a16ddebed3df17853c2ffd75f">&#9670;&#160;</a></span>Width()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t bloom::render::SwapChain::Width </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the width of the swap chain extent. </p>
+<dl class="section return"><dt>Returns</dt><dd>The width of the swap chain extent. </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>C:/Users/xgoni/bloom/bloom/src/render/<a class="el" href="swap__chain_8hpp_source.html">swap_chain.hpp</a></li>
 <li>C:/Users/xgoni/bloom/bloom/src/render/<b>swap_chain.cpp</b></li>

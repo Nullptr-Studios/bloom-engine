@@ -2,29 +2,46 @@
 \hypertarget{model_8hpp}{}\label{model_8hpp}\index{C:/Users/xgoni/bloom/bloom/src/render/model.hpp@{C:/Users/xgoni/bloom/bloom/src/render/model.hpp}}
 
 
-\mbox{[}Insert file description\mbox{]}  
+Defines the Model class used for rendering in the bloom engine.  
 
 
 {\ttfamily \#include "{}devices.\+hpp"{}}\newline
 {\ttfamily \#include "{}buffer.\+hpp"{}}\newline
 {\ttfamily \#include $<$bloom\+\_\+header.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/json.\+hpp$>$}\newline
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{classbloom_1_1render_1_1_model}{bloom\+::render\+::\+Model}}
-\item 
+\begin{DoxyCompactList}\small\item\em Represents a 3D model in the bloom rendering engine. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structbloom_1_1render_1_1_model_1_1_vertex}{bloom\+::render\+::\+Model\+::\+Vertex}}
-\item 
+\begin{DoxyCompactList}\small\item\em Represents a single vertex in the model. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structbloom_1_1render_1_1_model_1_1_builder}{bloom\+::render\+::\+Model\+::\+Builder}}
+\begin{DoxyCompactList}\small\item\em Helper struct to build a \doxylink{classbloom_1_1render_1_1_model}{Model} instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacebloom}{bloom}}
+\begin{DoxyCompactList}\small\item\em Contains the core classes and functions for the bloom engine. \end{DoxyCompactList}\item 
+namespace \mbox{\hyperlink{namespacebloom_1_1render}{bloom\+::render}}
+\begin{DoxyCompactList}\small\item\em Contains classes and functions related to rendering in the bloom engine. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{model_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}\label{model_8hpp_ab701e3ac61a85b337ec5c1abaad6742d} 
+using {\bfseries json} = nlohmann\+::json
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-\mbox{[}Insert file description\mbox{]} 
+Defines the Model class used for rendering in the bloom engine. 
 
 \begin{DoxyAuthor}{Author}
 Xein \href{mailto:xgonip@gmail.com}{\texttt{ xgonip@gmail.\+com}} 
 \end{DoxyAuthor}
 \begin{DoxyDate}{Date}
-29/11/2024 
+29/11/2024
 \end{DoxyDate}
+
+
+This file contains the declaration of the Model class, which is responsible for managing vertex and index buffers, and providing methods to bind and draw the model using Vulkan. 
