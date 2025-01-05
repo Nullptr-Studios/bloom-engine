@@ -81,9 +81,6 @@ void SimpleRenderSystem::RenderObjects(FrameInfo& frameInfo, ActorMap actors) {
       0, nullptr
     );
 
-    actor->transform.rotation.y = glm::mod(actor->transform.rotation.y + 0.001f, glm::two_pi<float>());
-    actor->transform.rotation.x = glm::mod(actor->transform.rotation.x + 0.0005f, glm::two_pi<float>());
-
     SimplePushConstantData push{};
     push.tint = actor->tintColor;
     push.transform = actor->transform.Matrix();

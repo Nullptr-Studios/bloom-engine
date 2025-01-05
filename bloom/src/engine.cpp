@@ -53,7 +53,6 @@ void Engine::OnRender() {
       // TODO: better camera management than this
       // Look for how cinemachine handles the camera used for the brain -x
       m_activeCamera.get(),
-      m_directionalLight.get(),
     };
 
     // render

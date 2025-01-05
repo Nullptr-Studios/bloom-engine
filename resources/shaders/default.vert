@@ -10,8 +10,9 @@ layout(location = 2) out vec3 fragColor;
 
 layout(set = 0, binding = 0) uniform GlobalUBO {
     mat4 projectionMatrix;
-    vec3 lightDirection;
-    float ambientIntensity;
+    vec4 lightDirection;
+    vec4 lightColor;
+    vec4 indirectLight;
 } ubo;
 
 layout(push_constant) uniform Push {
@@ -21,12 +22,18 @@ layout(push_constant) uniform Push {
 } push;
 
 void main() {
-    gl_Position = ubo.projectionMatrix * push.transform * vec4(position, 1.0);
+    vec4 worldPosition = push.transform * vec4(position, 1.0);
+    gl_Position = ubo.projectionMatrix * worldPosition;
+
+    // Light stuff
+    vec3 directionToLight = ubo.lightDirection.xyz - worldPosition.xyz;
+    float attenuation = 1.0 / dot(directionToLight, directionToLight);
+    vec3 normalWorldSpace = normalize(mat3(push.transform) * normal);
+    vec3 lightColor = ubo.lightColor.rgb * ubo.lightColor.a * attenuation;
+    vec3 indirectLight = ubo.indirectLight.rgb * ubo.indirectLight.a;
+    vec3 diffuseLight = lightColor * max(dot(normalize(normalWorldSpace), normalize(directionToLight)), 0.0);
+
+    fragColor = push.tint * (diffuseLight + indirectLight);
     fragNormal = normal;
     fragTexCoord = texCoord;
-
-    // TODO: This doesnt work with non linear scaling
-    vec3 normalWorldSpace = normalize(mat3(push.transform) * normal);
-    float lightIntensity = ubo.ambientIntensity + max(dot(normalWorldSpace, normalize(ubo.lightDirection)), 0.0);
-    fragColor = push.tint * lightIntensity;
 }

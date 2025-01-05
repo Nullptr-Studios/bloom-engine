@@ -17,5 +17,6 @@ layout(push_constant) uniform Push {
 } push;
 
 void main() {
-	outColor = texture(albedo, fragTexCoord) * vec4(fragColor, 1.0f);
+	// Disabling texture support for now
+	outColor = /*texture(albedo, fragTexCoord) */ vec4(fragColor, 1.0f);
 }

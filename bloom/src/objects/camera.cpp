@@ -5,7 +5,6 @@
 namespace bloom {
 
 void Camera::OnBegin() {
-  transform.position = glm::vec3(0.0f);
   SetPerspectiveProjection();
   UpdateView();
 }

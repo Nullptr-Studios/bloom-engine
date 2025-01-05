@@ -9,9 +9,10 @@ namespace bloom::render {
 
 // region UBO
 struct GlobalUBO {
-  alignas(16) glm::mat4 projectionMatrix = glm::mat4(1.0f);
-  alignas(16) glm::vec3 lightDirection = glm::vec3(2.0f, -3.0f, 1.0f);
-  float indirectIntensity = 0.05f;
+  glm::mat4 projectionMatrix = glm::mat4(1.0f);
+  glm::vec4 lightPosition = glm::vec4(0.0f, -0.5f, 0.0f, 0.0f); // w used as padding
+  glm::vec4 lightColor = glm::vec4(1.0f, 1.0f, 1.0f, 0.5f);
+  glm::vec4 indirectColor = glm::vec4(1.0f, 1.0f, 1.0f, 0.02f);
 };
 
 // region OnAttach
@@ -83,17 +84,6 @@ void GameLayer::OnRender(FrameInfo frameInfo) {
   // update
   GlobalUBO UBO{};
   UBO.projectionMatrix = frameInfo.activeCamera->GetProjection() * frameInfo.activeCamera->GetView();
-  if (frameInfo.directionalLight != nullptr) {
-    UBO.lightDirection = frameInfo.directionalLight->GetDirection();
-    UBO.indirectIntensity = frameInfo.directionalLight->GetIndirectIntensity();
-  } else {
-    if (!m_directionalLightWarningShown) {
-      BLOOM_WARN("A directional light is not set in the scene");
-      m_directionalLightWarningShown = true;
-    }
-    UBO.lightDirection = glm::vec3(0.0f);
-    UBO.indirectIntensity = 0.0f;
-  }
 
   m_UBOBuffers[frameInfo.frameIndex]->WriteToIndex(&UBO, 0);
   (void)m_UBOBuffers[frameInfo.frameIndex]->Flush();
