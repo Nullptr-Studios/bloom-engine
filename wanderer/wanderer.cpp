@@ -31,6 +31,21 @@ void Wanderer::OnBegin() {
   floor->transform.position = {0.0f, 0.0f, 0.0f};
   floor->transform.scale = glm::vec3(3.0f);
   floor->LoadTextures();
+
+  auto light1 = BLOOM_FACTORY->CreateObject<PointLight>("Light1");
+  light1->transform.position = {1.0f, -0.5f, 0.5f};
+  light1->SetIntensity(.6f);
+  light1->SetColor({1.0f, 1.0f, 0.0f});
+
+  auto light2 = BLOOM_FACTORY->CreateObject<PointLight>("Light2");
+  light2->transform.position = {-1.0f, -0.5f, 0.5f};
+  light2->SetIntensity(.6f);
+  light2->SetColor({1.0f, 0.0f, 1.0f});
+
+  auto light3 = BLOOM_FACTORY->CreateObject<PointLight>("Light3");
+  light3->transform.position = {0.0f, -0.5f, -0.5f};
+  light3->SetIntensity(.6f);
+  light3->SetColor({0.0f, 1.0f, 1.0f});
 }
 
 void Wanderer::OnTick() {

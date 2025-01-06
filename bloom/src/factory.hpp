@@ -9,6 +9,9 @@
 #pragma once
 #include "objects/actor.hpp"
 #include "objects/object.hpp"
+#include "objects/point_light.hpp"
+#include "objects/directional_light.hpp"
+#include "render/frame_info.hpp"
 
 namespace bloom {
 
@@ -48,6 +51,16 @@ public:
    */
   ActorMap GetRenderables() { return m_renderables; }
   /**
+   * @brief Gets all point lights
+   * @return Map of all point lights
+   */
+  PointLightMap GetPointLights() { return m_pointLights; }
+  /**
+   * @brief Gets the directional light
+   * @return Directional light
+   */
+  std::shared_ptr<DirectionalLight> GetDirectionalLight() { return m_directionalLight; }
+  /**
    * @brief Gets the instance of the Factory
    * @return The instance of the Factory
    */
@@ -71,9 +84,11 @@ public:
     m_renderables.clear();
   }
 private:
-  id_t m_currentID = 0;   ///< Keeps track of the current ID
-  ObjectMap m_objects;    ///< Map of all objects
-  ActorMap m_renderables; ///< Map of all actors
+  id_t m_currentID = 0;        ///< Keeps track of the current ID
+  ObjectMap m_objects;         ///< Map of all objects
+  ActorMap m_renderables;      ///< Map of all actors
+  PointLightMap m_pointLights; ///< Map of all point lights
+  std::shared_ptr<DirectionalLight> m_directionalLight = nullptr; ///< Directional light
 
   static Factory* m_instance;
 };
@@ -94,6 +109,19 @@ std::shared_ptr<T> Factory::CreateObject(const std::string& name) {
   // Adding to the renderable list if it's an Actor
   if constexpr (std::is_base_of_v<Actor, T>) {
     m_renderables.emplace(obj->GetID(), std::static_pointer_cast<Actor>(obj));
+  }
+
+  if constexpr (std::is_base_of_v<PointLight, T>) {
+    m_pointLights.emplace(obj->GetID(), std::static_pointer_cast<PointLight>(obj));
+  }
+
+  if constexpr (std::is_base_of_v<DirectionalLight, T>) {
+    if (m_directionalLight != nullptr) {
+      BLOOM_ERROR("Directional light {0} with name {1} already exists", m_directionalLight->GetID(), m_directionalLight->GetName());
+      obj.clear();
+      return nullptr;
+    }
+    m_directionalLight = std::static_pointer_cast<DirectionalLight>(obj);
   }
 
   BLOOM_INFO("Created object {0} with ID: {1}", name, obj->GetID());

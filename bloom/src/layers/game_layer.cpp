@@ -7,14 +7,6 @@
 
 namespace bloom::render {
 
-// region UBO
-struct GlobalUBO {
-  glm::mat4 projectionMatrix = glm::mat4(1.0f);
-  glm::vec4 lightPosition = glm::vec4(0.0f, -0.5f, 0.0f, 0.0f); // w used as padding
-  glm::vec4 lightColor = glm::vec4(1.0f, 1.0f, 1.0f, 0.5f);
-  glm::vec4 indirectColor = glm::vec4(1.0f, 1.0f, 1.0f, 0.02f);
-};
-
 // region OnAttach
 void GameLayer::OnAttach() {
   m_factory = std::make_unique<Factory>();
@@ -85,6 +77,18 @@ void GameLayer::OnRender(FrameInfo frameInfo) {
   // update
   GlobalUBO UBO{};
   UBO.projectionMatrix = frameInfo.activeCamera->GetProjection() * frameInfo.activeCamera->GetView();
+  auto directionalLight = BLOOM_FACTORY->GetDirectionalLight();
+  if (directionalLight != nullptr)
+    UBO.directionalLight = directionalLight->GetInfo();
+  else
+    UBO.directionalLight = DirectionalLightInfo {};
+  const auto pointLights = BLOOM_FACTORY->GetPointLights();
+  UBO.lightCount = pointLights.size();
+  int i = 0;
+  for (auto& [id, light] : pointLights) {
+    UBO.pointLights[i] = light->GetInfo();
+    i++;
+  }
 
   m_UBOBuffers[frameInfo.frameIndex]->WriteToIndex(&UBO, 0);
   (void)m_UBOBuffers[frameInfo.frameIndex]->Flush();

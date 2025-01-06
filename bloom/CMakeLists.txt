@@ -57,6 +57,11 @@ add_library(bloom-engine SHARED
         src/layers/ui_layer.hpp
         src/resource_loader.cpp
         src/resource_loader.hpp
+        src/objects/light.hpp
+        src/objects/point_light.cpp
+        src/objects/point_light.hpp
+        src/objects/directional_light.cpp
+        src/objects/directional_light.hpp
 )
 
 target_precompile_headers(bloom-engine PRIVATE bloom_header.hpp)
