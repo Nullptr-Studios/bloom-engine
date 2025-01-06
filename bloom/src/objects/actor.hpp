@@ -49,8 +49,28 @@ namespace bloom {
  *  their own textures, materials, and rendering properties.  They participate in the game's update loop
  *  through the @c Begin, @c Tick, and @c End methods, allowing for dynamic behavior and animation.
  */
-class BLOOM_API Actor : public Object{
-// TODO: This should have a protected constructor later on -x
+class BLOOM_API Actor : public Object {
+  /**
+   * @struct MaterialProperties
+   * @brief Contains all information for the material of the Actor aside from the textures
+   *
+   * This struct contains four bools that determine whether the Actor has some of those textures or not.
+   * We have a vector3 containing a tint color, two values for roughness and metallic for when an RMO
+   * texture is not provided and 2 values that determine the impact of the Emission effect and the Ambient
+   * Occlusion effect.
+   */
+  struct MaterialProperties {
+    bool hasAlbedoTexture = true;
+    alignas(4) bool hasRmoTexture = true;
+    alignas(4) bool hasNormals = false;
+    alignas(4) bool hasEmission = false;
+    alignas(4) float roughness = 0.6f;
+    float metallic = 0.0f;
+    float emissionStrength = 0.0f;
+    float occlusionStrength = 1.0f;
+    glm::vec4 tint = glm::vec4(1.0f);
+  };
+
 public:
   /**
    * @brief Constructs a new Actor object.
@@ -80,8 +100,6 @@ public:
    * albedo, roughness-metallic-occlusion (RMO), normal, and emission textures.  If
    * no paths are provided for the textures, placeholder textures will be used instead.
    *
-   * @param descriptorSetLayout The descriptor set layout for the textures. This layout
-   *                           defines how the texture data will be accessed by the shaders.
    * @param albedo The path to the albedo texture file. The albedo texture defines the
    *               base color of the actor's surface.
    * @param rmo The path to the roughness-metallic-occlusion (RMO) texture file. This
@@ -94,7 +112,6 @@ public:
    *                 areas of the actor that emit light, creating a glowing effect.
    */
   void LoadTextures(
-    render::DescriptorSetLayout* descriptorSetLayout,
     const std::string& albedo = ALBEDO_PLACEHOLDER,
     const std::string& rmo = RMO_PLACEHOLDER,
     const std::string& normal = NORMAL_PLACEHOLDER,
@@ -119,11 +136,13 @@ public:
    */
   std::shared_ptr<render::Model> model;
   /**
-   * @brief A color tint applied to the actor's overall appearance. This color
-   *        is passed on the push constant rather than on an UBO.
+   * @brief Material properties used for rendering the actor
    */
-  glm::vec3 tintColor = glm::vec3(1.0f);;
+  MaterialProperties materialProperties;
+
 private:
+  void RebuildDescriptorSet();
+
   /**
    * @brief An array of textures used by the actor, including:
    *        - @b Albedo: The base color of the actor's surface.
@@ -134,6 +153,8 @@ private:
   std::array<std::unique_ptr<render::Texture>, 4> m_textures;
   std::unique_ptr<render::DescriptorPool> m_materialPool;
   VkDescriptorSet m_textureDescriptorSet = VK_NULL_HANDLE;
+
+  render::Buffer* m_materialBuffer = nullptr;
 };
 
 /**

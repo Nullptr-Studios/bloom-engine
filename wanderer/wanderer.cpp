@@ -18,19 +18,19 @@ void Wanderer::OnBegin() {
   teapot->model = render::Model::LoadOBJ("resources/models/teapot_smooth.obj");;
   teapot->transform.position = {.50f, 0.0f, 0.0f};
   teapot->transform.scale = glm::vec3(0.5f, -0.5f, 0.5f);
-  teapot->LoadTextures(GetDescriptorLayouts().materialLayout, "resources/textures/cat.png");
+  teapot->LoadTextures("resources/textures/cat.png");
 
   auto hardteapot = BLOOM_FACTORY->CreateObject<Actor>("HardTeapot");
   hardteapot->model = render::Model::LoadOBJ("resources/models/teapot.obj");
   hardteapot->transform.position = {-.50f, 0.0f, 0.0f};
   hardteapot->transform.scale = glm::vec3(0.5f, -0.5f, 0.5f);
-  hardteapot->LoadTextures(GetDescriptorLayouts().materialLayout, "resources/textures/bloom.png");
+  hardteapot->LoadTextures("resources/textures/bloom.png");
 
   auto floor = BLOOM_FACTORY->CreateObject<Actor>("Floor");
   floor->model = render::Model::LoadOBJ("resources/models/plane.obj");
   floor->transform.position = {0.0f, 0.0f, 0.0f};
   floor->transform.scale = glm::vec3(3.0f);
-  floor->LoadTextures(GetDescriptorLayouts().materialLayout);
+  floor->LoadTextures();
 }
 
 void Wanderer::OnTick() {

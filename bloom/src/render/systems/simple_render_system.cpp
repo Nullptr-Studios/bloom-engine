@@ -7,12 +7,12 @@ namespace bloom::render {
 * @struct SimplePushConstantData
 * @brief Represents the push constant data used in the renderer.
 *
-* This struct contains transformation and color data that are passed to the shaders
+* This struct contains transformation and normal data that are passed to the shaders
 * as push constants.
 */
 struct SimplePushConstantData {
   glm::mat4 transform = glm::mat4(1.0f);
-  alignas(16) glm::vec3 tint;
+  glm::mat4 normalMatrix = glm::mat4(1.0f);
 };
 
 SimpleRenderSystem::SimpleRenderSystem(Devices* devices) : m_devices(devices) { }
@@ -68,8 +68,7 @@ void SimpleRenderSystem::RenderObjects(FrameInfo& frameInfo, ActorMap actors) {
     0, nullptr
   );
 
-  for (auto &[fst, snd] : actors) {
-    auto& actor = snd;
+  for (auto &[id, actor] : actors) {
     auto textureDescriptorSet = actor->GetDescriptorSet();
 
     vkCmdBindDescriptorSets(
@@ -82,7 +81,6 @@ void SimpleRenderSystem::RenderObjects(FrameInfo& frameInfo, ActorMap actors) {
     );
 
     SimplePushConstantData push{};
-    push.tint = actor->tintColor;
     push.transform = actor->transform.Matrix();
 
     vkCmdPushConstants(
