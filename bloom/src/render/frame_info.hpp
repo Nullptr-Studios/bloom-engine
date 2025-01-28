@@ -7,9 +7,9 @@
  */
 
 #pragma once
-#include "src/objects/camera.hpp"
 
 namespace bloom {
+class Camera;
 
 struct DirectionalLightInfo {
   glm::vec4 direction = glm::vec4(0.0f); ///< XYZ direction of the light

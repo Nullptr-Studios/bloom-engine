@@ -1,4 +1,5 @@
 #include "layer_stack.hpp"
+#include <bloom_header.hpp>
 
 namespace bloom {
 
@@ -24,7 +25,7 @@ namespace bloom {
 
   void LayerStack::PopLayer(Layer *layer) {
     layer->OnDetach();
-    auto i = std::find(m_layers.begin(), m_layers.end(), layer);
+    const auto i = std::ranges::find(m_layers, layer);
     delete layer;
     if (i != m_layers.end()) {
       m_layers.erase(i);
@@ -34,8 +35,7 @@ namespace bloom {
 
   void LayerStack::PopOverlay(Layer *overlay) {
     overlay->OnDetach();
-    auto i = std::find(m_layers.begin(), m_layers.end(), overlay);
-    if (i != m_layers.end())
+    if (const auto i = std::ranges::find(m_layers, overlay); i != m_layers.end())
       m_layers.erase(i);
   }
 

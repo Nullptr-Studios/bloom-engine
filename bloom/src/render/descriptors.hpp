@@ -1,6 +1,6 @@
 /**
  * @file Descriptors.hpp
- * @author Xein <xgonip@gmail.com>
+ * @author Xein 
  * @date 16/12/2024
  *
  * @brief Vulkan descriptor management helper classes

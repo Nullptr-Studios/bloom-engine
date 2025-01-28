@@ -1,9 +1,12 @@
 #include "game_layer.hpp"
-#include "src/engine.hpp"
+#include "src/factory.hpp"
 #include "src/render/descriptor_layouts.hpp"
+#include "src/render/systems/simple_render_system.hpp"
+#include "src/engine.hpp"
+#include "src/objects/camera.hpp"
+#include "src/render/buffer.hpp"
 #include "src/render/renderer.hpp"
 #include "src/render/swap_chain.hpp"
-#include "src/render/systems/simple_render_system.hpp"
 
 namespace bloom::render {
 

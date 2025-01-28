@@ -1,11 +1,12 @@
 #include "swap_chain.hpp"
+#include "devices.hpp"
 
 namespace bloom::render {
 
 SwapChain::SwapChain(Devices &deviceRef, VkExtent2D extent)
     : m_device{deviceRef}, m_windowExtent{extent} {
   Init();
-}SwapChain::SwapChain(Devices &deviceRef, VkExtent2D extent, std::shared_ptr<SwapChain> previous)
+}SwapChain::SwapChain(Devices &deviceRef, VkExtent2D extent, const std::shared_ptr<SwapChain>& previous)
     : m_device{deviceRef}, m_windowExtent{extent}, m_oldSwapChain{previous} {
   Init();
 
@@ -32,7 +33,7 @@ SwapChain::~SwapChain() {
     m_swapChain = nullptr;
   }
 
-  for (int i = 0; i < (int)m_depthImages.size(); i++) {
+  for (int i = 0; i < static_cast<int>(m_depthImages.size()); i++) {
     vkDestroyImageView(m_device.Device(), m_depthImageViews[i], nullptr);
     vkDestroyImage(m_device.Device(), m_depthImages[i], nullptr);
     vkFreeMemory(m_device.Device(), m_depthImageMemories[i], nullptr);
@@ -52,7 +53,7 @@ SwapChain::~SwapChain() {
   }
 }
 
-VkResult SwapChain::AcquireNextImage(uint32_t *imageIndex) {
+VkResult SwapChain::AcquireNextImage(uint32_t *imageIndex) const {
   vkWaitForFences(
       m_device.Device(),
       1,
@@ -72,7 +73,7 @@ VkResult SwapChain::AcquireNextImage(uint32_t *imageIndex) {
 }
 
 VkResult SwapChain::SubmitCommandBuffers(
-    const VkCommandBuffer *buffers, uint32_t *imageIndex) {
+    const VkCommandBuffer *buffers, const uint32_t *imageIndex) {
   if (m_imagesInFlight[*imageIndex] != VK_NULL_HANDLE) {
     vkWaitForFences(m_device.Device(), 1, &m_imagesInFlight[*imageIndex], VK_TRUE, UINT64_MAX);
   }
@@ -296,7 +297,7 @@ void SwapChain::CreateDepthResources() {
   m_depthImageMemories.resize(ImageCount());
   m_depthImageViews.resize(ImageCount());
 
-  for (int i = 0; i < (int)m_depthImages.size(); i++) {
+  for (int i = 0; i < static_cast<int>(m_depthImages.size()); i++) {
     VkImageCreateInfo imageInfo{};
     imageInfo.sType = VK_STRUCTURE_TYPE_IMAGE_CREATE_INFO;
     imageInfo.imageType = VK_IMAGE_TYPE_2D;
@@ -394,7 +395,7 @@ VkPresentModeKHR SwapChain::ChooseSwapPresentMode(
   return VK_PRESENT_MODE_FIFO_KHR;
 }
 
-VkExtent2D SwapChain::ChooseSwapExtent(const VkSurfaceCapabilitiesKHR &capabilities) {
+VkExtent2D SwapChain::ChooseSwapExtent(const VkSurfaceCapabilitiesKHR &capabilities) const {
   if (capabilities.currentExtent.width != std::numeric_limits<uint32_t>::max()) {
     return capabilities.currentExtent;
   } else {
@@ -410,7 +411,7 @@ VkExtent2D SwapChain::ChooseSwapExtent(const VkSurfaceCapabilitiesKHR &capabilit
   }
 }
 
-VkFormat SwapChain::FindDepthFormat() {
+VkFormat SwapChain::FindDepthFormat() const {
   return m_device.FindSupportedFormat(
       {VK_FORMAT_D32_SFLOAT, VK_FORMAT_D32_SFLOAT_S8_UINT, VK_FORMAT_D24_UNORM_S8_UINT},
       VK_IMAGE_TILING_OPTIMAL,

@@ -11,13 +11,14 @@
 #define GLM_FORCE_DEPTH_ZERO_TO_ONE
 #include <glm/glm.hpp>
 #include "object.hpp"
-#include "src/events/game_event.hpp"
 
 // thx windows.h I hate you -x
 #undef near
 #undef far
 
 namespace bloom {
+  
+class WindowResizeEvent;
 
 /**
  *  @class Camera
@@ -33,7 +34,7 @@ namespace bloom {
  */
 class BLOOM_API Camera : public Object {
 public:
-  explicit Camera(id_t id) : Object(id) {}
+  explicit Camera(const id_t id) : Object(id) {}
 
   // Game loop
   void OnBegin() override;
@@ -86,15 +87,14 @@ private:
    * the transform of the game object.
    */
   void UpdateView();
-  bool SetAspectRatio(WindowResizeEvent e);
+  bool SetAspectRatio(const WindowResizeEvent& e);
 
   glm::mat4 m_projectionMatrix = glm::mat4(1.0f); ///< @brief The camera's projection matrix.
   glm::mat4 m_viewMatrix = glm::mat4(1.0f); ///< @brief The camera's view matrix.
-  // TODO: Implement this with event window resize
   float m_aspect = 1.0f; // Width / Height
   float m_fov = 70; // Field of view
   float m_near = 0.1f; // Near clipping plane
   float m_far = 100.0f; // Far clipping plane
 };
 
-}
+} // namespace bloom

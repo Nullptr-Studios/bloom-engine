@@ -12,11 +12,11 @@
 
 #pragma once
 #include "src/objects/actor.hpp"
-#include "../devices.hpp"
-#include "../pipeline.hpp"
-#include "../frame_info.hpp"
+#include "src/render/pipeline.hpp"
 
 namespace bloom::render {
+struct FrameInfo;
+class Devices;
 
 /**
  * @class SimpleRenderSystem
@@ -47,7 +47,7 @@ public:
    * @param frameInfo Information about the current frame.
    * @param actors Map of actors to render.
    */
-  void RenderObjects(FrameInfo& frameInfo, ActorMap actors);
+  void RenderObjects(const FrameInfo& frameInfo, ActorMap actors) const;
   constexpr static unsigned int MAX_OBJECTS = 1024; ///< Maximum number of objects that can be rendered.
 
 protected:
@@ -65,7 +65,7 @@ protected:
 
   Devices* m_devices = nullptr;
   std::unique_ptr<Pipeline> m_pipeline = nullptr;
-  VkPipelineLayout m_pipelineLayout;
+  VkPipelineLayout m_pipelineLayout = nullptr;
 };
 
 }

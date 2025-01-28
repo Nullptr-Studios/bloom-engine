@@ -1,6 +1,6 @@
 /**
  * @file object.hpp
- * @author Xein <xgonip@gmail.com>
+ * @author Xein
  * @date 10/12/2024
  *
  * @brief This file defines the base Object class and the Transform struct
@@ -9,11 +9,11 @@
 #pragma once
 #define GLM_ENABLE_EXPERIMENTAL
 #include <bloom_header.hpp>
-#include <glm/gtx/euler_angles.hpp>
 #include <imgui.h>
-#include "src/render/devices.hpp"
+#include <glm/gtx/euler_angles.hpp>
 
 namespace bloom {
+class Event;
 
 /**
  *  @struct Transform

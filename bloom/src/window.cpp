@@ -1,5 +1,4 @@
 #include "window.hpp"
-
 #include "events/game_event.hpp"
 #include "events/key_event.hpp"
 #include "events/mouse_event.hpp"

@@ -10,9 +10,9 @@
  */
 
 #pragma once
-#include "devices.hpp"
 
 namespace bloom::render {
+class Devices;
 
 /**
  * @class Texture
@@ -72,12 +72,12 @@ private:
 
   Devices* m_device;
 
-  unsigned char* m_data; ///< Binary image data
   Dimensions m_dimensions;
-  VkImage m_image; ///< Vulkan image
+  unsigned char* m_data; ///< Binary image data
+  VkImage m_image;       ///< Vulkan image
+  VkSampler m_sampler;   ///< Vulkan sampler
   VkDeviceMemory m_imageMemory;
   VkImageView m_imageView;
-  VkSampler m_sampler; ///< Vulkan sampler
   VkFormat m_imageFormat;
   VkImageLayout m_imageLayout;
 };

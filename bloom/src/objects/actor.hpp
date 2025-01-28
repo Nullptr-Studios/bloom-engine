@@ -34,11 +34,15 @@
 #define EMISSION_PLACEHOLDER "resources/textures/T_Default_E.tga"
 
 #include "object.hpp"
-#include "src/render/descriptors.hpp"
-#include "src/render/model.hpp"
-#include "src/render/texture.hpp"
 
 namespace bloom {
+  
+namespace render {
+  class Model;
+  class Buffer;
+  class DescriptorPool;
+  class Texture;
+}
 
 /**
  *  @class Actor

@@ -8,13 +8,9 @@
 
 #pragma once
 #include <bloom_header.hpp>
-#include "core.hpp"
-#include "objects/camera.hpp"
-#include "render/descriptor_layouts.hpp"
 #include "layers/layer_stack.hpp"
-#include "render/devices.hpp"
+#include "render/descriptor_layouts.hpp"
 #include "render/renderer.hpp"
-#include "window.hpp"
 
 /**
  * @namespace bloom
@@ -52,8 +48,12 @@
  * @endcode
  */
 namespace bloom {
+class Layer;
+class Camera;
+class Event;
+
 namespace render {
-  class SimpleRenderSystem;
+class SimpleRenderSystem;
 }
 
 /**

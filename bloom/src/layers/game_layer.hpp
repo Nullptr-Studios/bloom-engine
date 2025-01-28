@@ -12,10 +12,13 @@
 #pragma once
 #include "layer.hpp"
 #include "src/factory.hpp"
-#include "src/render/descriptor_layouts.hpp"
-#include "src/render/systems/simple_render_system.hpp"
 
 namespace bloom::render {
+
+class SimpleRenderSystem;
+class DescriptorPool;
+class DescriptorSetLayout;
+class Buffer; 
 
 /**
  * @class GameLayer
@@ -25,7 +28,6 @@ namespace bloom::render {
  * handling of game elements
  */
 class GameLayer final : public Layer {
-
 public:
   explicit GameLayer(const std::string& name = "Game") : Layer(name) {}
 

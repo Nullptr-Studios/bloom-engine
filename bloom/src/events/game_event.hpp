@@ -12,7 +12,6 @@
 
 #pragma once
 #include "event.hpp"
-#include "bloom_header.hpp"
 
 namespace bloom {
 
@@ -30,7 +29,7 @@ public:
    * @param width The new width of the window.
    * @param height The new height of the window.
    */
-  WindowResizeEvent(unsigned int width, unsigned int height)
+  WindowResizeEvent(const unsigned int width, const unsigned int height)
       : m_width(width), m_height(height) {}
 
   /**

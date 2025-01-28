@@ -11,10 +11,10 @@
 
 #pragma once
 
-#include "devices.hpp"
 #include <bloom_header.hpp>
 
 namespace bloom::render {
+class Devices;
 
 /**
  * @struct PipelineConfiguration

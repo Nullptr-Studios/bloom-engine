@@ -8,8 +8,9 @@
 
 #pragma once
 #include "bloom_header.hpp"
-#include "events/event.hpp"
 #include <GLFW/glfw3.h>
+
+#include "events/event.hpp"
 
 namespace bloom {
 

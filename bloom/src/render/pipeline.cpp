@@ -1,4 +1,5 @@
 #include "pipeline.hpp"
+#include "devices.hpp"
 #include "model.hpp"
 #include <fstream>
 

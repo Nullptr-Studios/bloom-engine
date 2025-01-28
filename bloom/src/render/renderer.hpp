@@ -7,10 +7,13 @@
  */
 
 #pragma once
-#include "src/window.hpp"
-#include "devices.hpp"
-#include "swap_chain.hpp"
 #include <bloom_header.hpp>
+
+#include "swap_chain.hpp"
+
+namespace bloom {
+class Window;
+}
 
 /**
  * @namespace bloom::render
@@ -35,6 +38,7 @@
  * - @b SwapChain: Manages the Vulkan swap chain for rendering.
  */
 namespace bloom::render {
+class Devices;
 
 /**
  * @class Renderer

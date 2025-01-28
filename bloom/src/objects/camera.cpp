@@ -1,6 +1,6 @@
 #include "camera.hpp"
-#include <glm/ext/matrix_clip_space.hpp>
-#include <glm/ext/matrix_transform.hpp>
+#include "src/events/event.hpp"
+#include "src/events/game_event.hpp"
 
 namespace bloom {
 
@@ -48,7 +48,7 @@ void Camera::UpdateView() {
   m_viewMatrix = rotationMatrix * translationMatrix;
 }
 
-bool Camera::SetAspectRatio(WindowResizeEvent e) {
+bool Camera::SetAspectRatio(const WindowResizeEvent &e) {
   m_aspect = static_cast<float>(e.GetWidth()) / static_cast<float>(e.GetHeight());
   return false;
 }

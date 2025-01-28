@@ -20,12 +20,16 @@
 #include <string>
 #include <sstream>
 #include <vector>
+#include <list>
 #include <unordered_map>
+#include <set>
 #include <unordered_set>
 
 #include <GLFW/glfw3.h>
 #include <vulkan/vulkan.h>
 #include <glm/glm.hpp>
+
+#include <nlohmann/json.hpp>
 
 #include "src/core.hpp"
 #include "src/log.hpp"

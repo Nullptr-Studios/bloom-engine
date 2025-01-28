@@ -12,7 +12,6 @@
 
 #pragma once
 #include "event.hpp"
-#include "bloom_header.hpp"
 
 namespace bloom {
 
@@ -183,4 +182,4 @@ public:
   }
 };
 
-}  // namespace bloom
+}

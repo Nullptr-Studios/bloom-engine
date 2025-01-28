@@ -8,7 +8,6 @@
 
 #pragma once
 #include "layer.hpp"
-#include <bloom_header.hpp>
 
 namespace bloom {
 

@@ -8,10 +8,10 @@
 
 #pragma once
 
-#include "devices.hpp"
 #include <bloom_header.hpp>
 
 namespace bloom::render {
+class Devices;
 
 /**
  * @class SwapChain
@@ -26,7 +26,7 @@ public:
   static constexpr int MAX_FRAMES_IN_FLIGHT = 2; ///< Maximum number of chains
 
   SwapChain(Devices &deviceRef, VkExtent2D windowExtent);
-  SwapChain(Devices &deviceRef, VkExtent2D windowExtent, std::shared_ptr<SwapChain> previous);
+  SwapChain(Devices &deviceRef, VkExtent2D windowExtent, const std::shared_ptr<SwapChain>& previous);
   ~SwapChain();
 
   // Copy constructors
@@ -89,20 +89,20 @@ public:
    * @brief Finds the depth format for the swap chain.
    * @return The Vulkan format for depth.
    */
-  VkFormat FindDepthFormat();
+  VkFormat FindDepthFormat() const;
   /**
    * @brief Acquires the next image in the swap chain.
    * @param imageIndex Pointer to the index of the acquired image.
    * @return The Vulkan result of the acquisition.
    */
-  VkResult AcquireNextImage(uint32_t *imageIndex);
+  VkResult AcquireNextImage(uint32_t *imageIndex) const;
   /**
    * @brief Submits the command buffers for rendering.
    * @param buffers Pointer to the command buffers.
    * @param imageIndex Pointer to the index of the image to submit.
    * @return The Vulkan result of the submission.
    */
-  VkResult SubmitCommandBuffers(const VkCommandBuffer *buffers, uint32_t *imageIndex);
+  VkResult SubmitCommandBuffers(const VkCommandBuffer *buffers, const uint32_t *imageIndex);
   /**
    * @brief Compares the formats of two swap chains.
    * @param swapChain Reference to the other SwapChain instance.
@@ -161,7 +161,7 @@ private:
    * @param capabilities The surface capabilities.
    * @return The chosen extent.
    */
-  VkExtent2D ChooseSwapExtent(const VkSurfaceCapabilitiesKHR &capabilities);
+  VkExtent2D ChooseSwapExtent(const VkSurfaceCapabilitiesKHR &capabilities) const;
 
   VkFormat m_swapChainImageFormat;
   VkFormat m_swapChainDepthFormat;

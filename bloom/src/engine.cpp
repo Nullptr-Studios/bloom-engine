@@ -1,7 +1,14 @@
 #include "engine.hpp"
+#include "render/descriptor_layouts.hpp"
+#include "layers/layer_stack.hpp"
+#include "render/devices.hpp"
+#include "render/renderer.hpp"
+#include "window.hpp"
+#include "events/game_event.hpp"
 
 #include "layers/game_layer.hpp"
 #include "layers/ui_layer.hpp"
+#include "render/frame_info.hpp"
 #include "render/systems/simple_render_system.hpp"
 
 namespace bloom {

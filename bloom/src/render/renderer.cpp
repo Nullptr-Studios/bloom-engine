@@ -1,4 +1,7 @@
 #include "renderer.hpp"
+#include "src/window.hpp"
+#include "devices.hpp"
+#include "swap_chain.hpp"
 
 namespace bloom::render {
 

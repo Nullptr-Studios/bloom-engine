@@ -10,14 +10,12 @@
  */
 
 #pragma once
-#include "devices.hpp"
-#include "buffer.hpp"
 #include <bloom_header.hpp>
-#include <nlohmann/json.hpp>
 
 using json = nlohmann::json;
 
 namespace bloom::render {
+class Buffer;
 
 /**
  * @class Model

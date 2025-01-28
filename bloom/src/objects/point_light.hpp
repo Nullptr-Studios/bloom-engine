@@ -1,6 +1,6 @@
 /**
  * @file point_light.hpp
- * @author Xein <xgonip@gmail.com>
+ * @author Xein 
  * @date 06/01/2025
  *
  * @brief [Brief description of the file's purpose]

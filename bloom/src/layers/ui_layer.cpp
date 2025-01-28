@@ -1,8 +1,11 @@
 #include "ui_layer.hpp"
-#include <imgui.h>
 #include <imgui_impl_glfw.h>
 #include <imgui_impl_vulkan.h>
 #include "src/render/renderer.hpp"
+#include "src/events/game_event.hpp"
+#include "src/events/key_event.hpp"
+#include "src/events/mouse_event.hpp"
+#include "src/render/descriptors.hpp"
 
 #include "src/factory.hpp"
 
@@ -94,28 +97,28 @@ void UILayer::OnEvent(Event &e) {
 
 // Right now, all functions return false, we should work on this so events don't propagate down -x
 // TODO: Make sure events don't propagate down
-bool UILayer::OnMouseButtonPressed(MouseButtonPressedEvent &e) {
+bool UILayer::OnMouseButtonPressed(const MouseButtonPressedEvent &e) {
   ImGuiIO& io = ImGui::GetIO();
   io.MouseDown[e.GetMouseButton()] = true;
 
   return false;
 }
 
-bool UILayer::OnMouseButtonReleased(MouseButtonReleasedEvent &e) {
+bool UILayer::OnMouseButtonReleased(const MouseButtonReleasedEvent &e) {
   ImGuiIO& io = ImGui::GetIO();
   io.MouseDown[e.GetMouseButton()] = false;
 
   return false;
 }
 
-bool UILayer::OnMouseMoved(MouseMovedEvent &e) {
+bool UILayer::OnMouseMoved(const MouseMovedEvent &e) {
   ImGuiIO& io = ImGui::GetIO();
   io.MousePos = ImVec2(e.GetX(), e.GetY());
 
   return false;
 }
 
-bool UILayer::OnMouseScrolled(MouseScrolledEvent &e) {
+bool UILayer::OnMouseScrolled(const MouseScrolledEvent &e) {
   ImGuiIO& io = ImGui::GetIO();
   io.MouseWheel = e.GetYOffset();
   io.MouseWheelH = e.GetXOffset();
@@ -123,7 +126,7 @@ bool UILayer::OnMouseScrolled(MouseScrolledEvent &e) {
   return false;
 }
 
-bool UILayer::OnKeyPressed(KeyPressedEvent &e) {
+bool UILayer::OnKeyPressed(const KeyPressedEvent &e) {
   ImGuiIO& io = ImGui::GetIO();
   auto keyEvent = TranslateToImGui(e.GetKeyCode());
   io.AddKeyEvent(keyEvent, true);
@@ -138,7 +141,7 @@ bool UILayer::OnKeyPressed(KeyPressedEvent &e) {
   return false;
 }
 
-bool UILayer::OnKeyReleased(KeyReleasedEvent &e) {
+bool UILayer::OnKeyReleased(const KeyReleasedEvent &e) {
   ImGuiIO& io = ImGui::GetIO();
   auto keyEvent = TranslateToImGui(e.GetKeyCode());
   io.AddKeyEvent(TranslateToImGui(keyEvent), false);
@@ -152,7 +155,7 @@ bool UILayer::OnKeyReleased(KeyReleasedEvent &e) {
   return false;
 }
 
-bool UILayer::OnKeyTyped(KeyTypedEvent& e) {
+bool UILayer::OnKeyTyped(const KeyTypedEvent & e) {
   ImGuiIO& io = ImGui::GetIO();
   int keycode = e.GetKeyCode();
   if (keycode > 0 && keycode < 0x10000)
@@ -161,7 +164,7 @@ bool UILayer::OnKeyTyped(KeyTypedEvent& e) {
   return false;
 }
 
-bool UILayer::OnWindowResized(WindowResizeEvent &e) {
+bool UILayer::OnWindowResized(const WindowResizeEvent &e) {
   ImGuiIO &io = ImGui::GetIO();
   io.DisplaySize = ImVec2(e.GetWidth(), e.GetHeight());
   io.DisplayFramebufferScale = ImVec2(1.0f, 1.0f);

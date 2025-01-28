@@ -1,8 +1,9 @@
 #include "actor.hpp"
-
 #include "src/engine.hpp"
+#include "src/render/buffer.hpp"
 #include "src/render/descriptor_layouts.hpp"
-#include "src/render/swap_chain.hpp"
+#include "src/render/descriptors.hpp"
+#include "src/render/texture.hpp"
 
 namespace bloom {
 

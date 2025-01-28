@@ -4,6 +4,7 @@
  * @date 10/12/2024
  *
  * @brief [Brief description of the file's purpose]
+ * TODO: THIS NEEDS A REWRITE
  */
 
 #pragma once
@@ -11,7 +12,6 @@
 #include "objects/object.hpp"
 #include "objects/point_light.hpp"
 #include "objects/directional_light.hpp"
-#include "render/frame_info.hpp"
 
 namespace bloom {
 

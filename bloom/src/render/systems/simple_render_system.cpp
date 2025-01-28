@@ -1,5 +1,8 @@
 #include "simple_render_system.hpp"
-#include <glm/gtc/constants.hpp>
+#include "../devices.hpp"
+#include "../pipeline.hpp"
+#include "../frame_info.hpp"
+#include "src/render/model.hpp"
 
 namespace bloom::render {
 
@@ -56,7 +59,7 @@ void SimpleRenderSystem::CreatePipeline(VkRenderPass renderPass) {
   m_pipeline = std::make_unique<Pipeline>(*m_devices, "resources/shaders/default.vert.spv", "resources/shaders/default.frag.spv", pipelineConfig);
 }
 
-void SimpleRenderSystem::RenderObjects(FrameInfo& frameInfo, ActorMap actors) {
+void SimpleRenderSystem::RenderObjects(const FrameInfo& frameInfo, ActorMap actors) const {
   m_pipeline->Bind(frameInfo.commandBuffer);
 
   vkCmdBindDescriptorSets(
@@ -68,7 +71,7 @@ void SimpleRenderSystem::RenderObjects(FrameInfo& frameInfo, ActorMap actors) {
     0, nullptr
   );
 
-  for (auto &[id, actor] : actors) {
+  for (const auto& actor : actors | std::views::values) {
     auto textureDescriptorSet = actor->GetDescriptorSet();
 
     vkCmdBindDescriptorSets(
